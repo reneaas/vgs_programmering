@@ -7,7 +7,7 @@
         * While-løkker
         * For-løkker
     - If-else blokker
-    - Funksjoner
+    - [funksjoner](./funksjoner.md)
     - Avanserte temaer
 2. Oppgaver
     - Oppgaver: datatyper og variabler
