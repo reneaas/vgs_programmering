@@ -1,3 +1,5 @@
+# Introduksjon til Funksjoner
+
 # Funksjoner i Python
 
 
@@ -27,7 +29,7 @@ y = f(2) # Skrive inn x-verdien direkte
 y = f(x=2) # Presisere at det er `x` som skal settes lik 2.
 ```
 
-I vinduet under kan du eksperimentere litt med funksjonen og se at den regner ut verdien slik du forventer:
+<!-- I vinduet under kan du eksperimentere litt med funksjonen og se at den regner ut verdien slik du forventer:
 
 {% include trinket-open %}
 def f(x):
@@ -43,4 +45,4 @@ print(y)
 x = 2
 y = f(x)
 print(y)
-{% include trinket-close %}
+{% include trinket-close %} -->
