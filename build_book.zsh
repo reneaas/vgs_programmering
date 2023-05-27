@@ -1,4 +1,5 @@
-message = $1
+message=$1
+echo $message
 
 git add --all
 git commit -m "$message"
