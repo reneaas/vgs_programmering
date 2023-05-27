@@ -8,29 +8,17 @@ Her finner du programmeringsteori og oppgaver som er relevant for å mestre prog
 Siden er under utvikling og er i startfasen.
 ```
 
+{% include trinket-open type='python' %}
+import turtle
 
-{% include trinket-open type='html' %}
-<html>
-<head>
-    <style type="text/css">
-        body {
-            background-color: #008aff;
-            text-align: center;
-        }
-        .logo {
-            position: relative;
-            top: 50%;
-            transform: translateY(-60%);
-        }
-        .logo img {
-            max-width: 90%;
-        }
-    </style>
-</head>
-<body>
-    <div class="logo">
-        <img src="https://trinket.io/img/trinket-logo-big.png" />
-    </div>
-</body>
-</html>
+tina = turtle.Turtle()
+
+for c in ['red', 'green', 'yellow', 'blue']:
+    tina.color(c)
+    tina.forward(75)
+    tina.left(90)
+
+tina.penup()
+tina.backward(100)
+tina.write("Hello world!")
 {% include trinket-close %}
