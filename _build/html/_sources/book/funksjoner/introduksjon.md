@@ -34,3 +34,8 @@ Vi kan regne ut funksjonsverdier med et såkalt *funksjonskall*. Som eksempel, l
 y = f(2) # Skrive inn x-verdien direkte
 y = f(x=2) # Presisere at det er `x` som skal settes lik 2.
 ```
+
+
+Under kan du eksperimentere med funksjonen:
+
+<iframe src="https://trinket.io/embed/python3/a08d0eeda1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
