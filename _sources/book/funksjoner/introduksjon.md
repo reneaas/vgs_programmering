@@ -34,21 +34,3 @@ Vi kan regne ut funksjonsverdier med et såkalt *funksjonskall*. Som eksempel, l
 y = f(2) # Skrive inn x-verdien direkte
 y = f(x=2) # Presisere at det er `x` som skal settes lik 2.
 ```
-
-I vinduet under kan du eksperimentere litt med funksjonen og se at den regner ut verdien slik du forventer:
-
-{% include trinket-open %}
-def f(x):
-    return x**2 - 1
-
-y = f(2)
-print(y)
-
-y = f(x=2)
-print(y)
-
-# Enda en måte å regne ut funksjonsverdien på under!
-x = 2
-y = f(x)
-print(y)
-{% include trinket-close %}
