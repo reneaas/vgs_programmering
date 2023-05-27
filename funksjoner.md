@@ -13,7 +13,7 @@ def funksjonsnavn(variabelnavn):
 
 ### Eksempel 1:
 
-Funksjonen text \(f(x) = x^2 - 1\) kan vi skrive definere med koden
+Funksjonen text $f(x) = x^2 - 1$ kan vi skrive definere med koden
 
 ```Python
 def f(x):
