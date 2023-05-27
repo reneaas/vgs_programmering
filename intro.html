@@ -357,6 +357,31 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Siden er under utvikling og er i startfasen.</p>
 </div>
+<p>{% include trinket-open type=’html’ %}</p>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            background-color: #008aff;
+            text-align: center;
+        }
+        .logo {
+            position: relative;
+            top: 50%;
+            transform: translateY(-60%);
+        }
+        .logo img {
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://trinket.io/img/trinket-logo-big.png" />
+    </div>
+</body>
+</html>
+{% include trinket-close %}
 <div class="toctree-wrapper compound">
 </div>
 </section>
