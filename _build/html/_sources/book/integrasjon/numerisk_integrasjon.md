@@ -174,13 +174,7 @@ $$
 
 Vi tenker oss at $p(x)$ er en uniform sannsynlighetsfordeling på intervallet $[a, b]$, slik at
 
-$$
-p(x) = \begin{cases}
-
-\frac{1}{b - a}, & x \in [a, b], \\
-0, & \text{ellers}.
-\end{cases}
-$$
+$p(x) = 1/(b-a)$ for $x \in [a, b]$, og $p(x) = 0$ ellers.
 
 Vi kan trikse litt med integralet slik at vi får
 
@@ -191,7 +185,7 @@ $$
 Integralet kan altså skrives som forventningsverdien av $f(X)$. Vi kan tilnærme denne forventningsverdien ved å trekke $N$ tilfeldige tall av $X$ fra sannsynlighetsfordelingen $p(x)$, og regne ut gjennomsnittet av $f(X)$! Med andre ord
 
 $$
-I = \int\limits_a^b f(x) \, dx \approx (b-a)\frac{1}{N}\sum\limits_{i=1}^{N} f(x_i),
+I = \int\limits_a^b f(x) \, dx \approx \frac{b-a}{N}\sum\limits_{i=1}^{N} f(x_i),
 $$
 
 der $x_1, x_2, ..., x_N$ er $N$ tilfeldige tall trukket fra $p(x)$.
