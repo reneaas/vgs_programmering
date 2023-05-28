@@ -38,4 +38,4 @@ y = f(x=2) # Presisere at det er `x` som skal settes lik 2.
 
 Under kan du eksperimentere med funksjonen:
 
-<iframe src="https://trinket.io/embed/python3/a08d0eeda1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/dd5bbfca3d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
