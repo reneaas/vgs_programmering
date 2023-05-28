@@ -72,7 +72,9 @@ Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp 
 Vi kan for eksempel velge oss ut intervallet $[a, b] = [-2, 0]$. Da har vi $f(-2) = 3$ og $f(0) = -1$, så $f$ endrer fortegn på intervallet.
 Toleransen kan vi bare sette til $\epsilon = 10^{-8}$. 
 
-Under er et vindu der disse valgene er tatt. Sjekk om du kan endre et intervall så du finner det andre nullpunktet med koden!
+Under kan du prøve å skrive koden som finner det ene nullpunkte ved hjelp av halveringsmetoden selv.
+Løsningen ligger i fanen `sol.py`, hvis du trenger hjelp. 
+Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å velge et nytt intervall.
 
 
 <iframe src="https://trinket.io/embed/python/f74e2a41cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
