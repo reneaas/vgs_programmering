@@ -16,9 +16,11 @@ Tanken bak metoden er
 2. Vi kaller lengden til hvert delintervall for $h$. Da er $h = \frac{b - a}{n}$. Vi kaller også $x_0 = a$ og $x_n = b$. 
 3. Vi regner ut arealet av trapesene som er avgrenset av grafen til $f$ og de to linjene $x = x_i$ og $x = x_{i+1}$ for hvert delintervall. Vi kaller disse arealene for $S_i$.
 
+Se {ref}`trapesmetoden` for en illustrasjon av trapesmetoden. Her spiller $h = x_{i+1} - x_i$ rollen som "høyden" i hvert trapes, mens $f(x_i)$ og $f(x_{i+1})$ spiller rollen som "sidelengdene".
+
 ```{figure} ./figurer/Integration_num_trapezes_notation.svg
 ---
-name: trapesmetoden
+:name: trapesmetoden
 ---
 Figuren viser en graf av en funksjon $f$ og trapesene som er avgrenset av grafen til $f$ og de to linjene $x = x_i$ og $x = x_{i+1}$ for hvert delintervall. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg).
 ```
@@ -31,11 +33,11 @@ Påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
 $
 A = \frac{a + b}{2}h
 $
-der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I figur 1 ser du et trapes med høyde $h$ og sidelengder $a$ og $b$ for referanse.
+der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I {ref}`trapes` ser du et trapes med høyde $h$ og sidelengder $a$ og $b$ for referanse.
 
 ```{figure} ./figurer/Trapezoid.svg
 ---
-name: trapes
+:name: trapes
 ---
 Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 
