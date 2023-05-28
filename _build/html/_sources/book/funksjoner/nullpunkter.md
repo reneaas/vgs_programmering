@@ -72,8 +72,8 @@ Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp 
 Vi kan for eksempel velge oss ut intervallet $[a, b] = [-2, 0]$. Da har vi $f(-2) = 3$ og $f(0) = -1$, så $f$ endrer fortegn på intervallet.
 Toleransen kan vi bare sette til $\epsilon = 10^{-8}$. 
 
-Under kan du prøve å skrive koden som finner det ene nullpunkte ved hjelp av halveringsmetoden selv.
-Løsningen ligger i fanen `sol.py`, hvis du trenger hjelp. 
+Under kan du prøve å skrive koden som finner det ene nullpunktet ved hjelp av halveringsmetoden selv.
+Løsningen ligger i fanen `sol.py`, hvis du trenger hjelp.
 Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å velge et nytt intervall.
 
 
@@ -141,3 +141,18 @@ Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Al
 3. Returner $x_{i + 1}$.
 ```
 
+### Oppgaver
+
+#### Oppgave 1
+
+Finn et av nullpunktene til funksjonen
+
+$$
+f(x) = x^3 - 2x^2 - 5x + 6,
+$$
+
+ved å bruke Newtons metode. Bruk et startpunkt $x_0 = 2$ og en toleranse $\epsilon = 10^{-8}$.
+Du kan bruke kodeblokken under. *Det ligger et løsningsforslag i fanen `fasit.py` som du kan se på hvis du trenger hjelp.*
+
+
+<iframe src="https://trinket.io/embed/python/49b50912da" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
