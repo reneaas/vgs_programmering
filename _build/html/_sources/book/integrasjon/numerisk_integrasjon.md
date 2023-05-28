@@ -163,5 +163,36 @@ ved å bruke midtpunktsmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kod
 
 
 
+## Monte Carlo Integrasjon (Matematikk S2)
 
+Vi skal nå se på en metode for å tilnærme integralet ved å bruke teorien for kontinuerlige stokatiske variabler.
+Vi ønsker å løse integralet
+
+$$
+I = \int\limits_a^b f(x) \, dx. 
+$$
+
+Vi tenker oss at $p(x)$ er en uniform sannsynlighetsfordeling på intervallet $[a, b]$, slik at
+
+$$
+p(x) = \begin{cases}
+
+\frac{1}{b - a}, & x \in [a, b], \\
+0, & \text{ellers}.
+\end{cases}
+$$
+
+Vi kan trikse litt med integralet slik at vi får
+
+$$
+I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)}p(x) \, dx = (b-a)\int\limits_a^b f(x)p(x) \, dx. = (b-a)E[f(X)].
+$$
+
+Integralet kan altså skrives som forventningsverdien av $f(X)$. Vi kan tilnærme denne forventningsverdien ved å trekke $N$ tilfeldige tall av $X$ fra sannsynlighetsfordelingen $p(x)$, og regne ut gjennomsnittet av $f(X)$! Med andre ord
+
+$$
+I = \int\limits_a^b f(x) \, dx \approx (b-a)\frac{1}{N}\sum\limits_{i=1}^{N} f(x_i),
+$$
+
+der $x_1, x_2, ..., x_N$ er $N$ tilfeldige tall trukket fra $p(x)$.
 

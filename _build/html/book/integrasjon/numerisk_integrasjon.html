@@ -376,6 +376,7 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integrasjon-matematikk-s2">Monte Carlo Integrasjon (Matematikk S2)</a></li>
 </ul>
             </nav>
         </div>
@@ -530,6 +531,33 @@ I = \int\limits_0^1 e^{-x^2}\, dx
 </section>
 </section>
 </section>
+<section id="monte-carlo-integrasjon-matematikk-s2">
+<h2>Monte Carlo Integrasjon (Matematikk S2)<a class="headerlink" href="#monte-carlo-integrasjon-matematikk-s2" title="Permalink to this heading">#</a></h2>
+<p>Vi skal nå se på en metode for å tilnærme integralet ved å bruke teorien for kontinuerlige stokatiske variabler.
+Vi ønsker å løse integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_a^b f(x) \, dx. 
+\]</div>
+<p>Vi tenker oss at <span class="math notranslate nohighlight">\(p(x)\)</span> er en uniform sannsynlighetsfordeling på intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>, slik at</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+p(x) = \begin{cases}\\\begin{split}\frac{1}{b - a}, &amp; x \in [a, b], \\
+0, &amp; \text{ellers}.
+\end{cases}
+\end{split}\end{aligned}\end{align} \]</div>
+<p>Vi kan trikse litt med integralet slik at vi får</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)}p(x) \, dx = (b-a)\int\limits_a^b f(x)p(x) \, dx. = (b-a)E[f(X)].
+\]</div>
+<p>Integralet kan altså skrives som forventningsverdien av <span class="math notranslate nohighlight">\(f(X)\)</span>. Vi kan tilnærme denne forventningsverdien ved å trekke <span class="math notranslate nohighlight">\(N\)</span> tilfeldige tall av <span class="math notranslate nohighlight">\(X\)</span> fra sannsynlighetsfordelingen <span class="math notranslate nohighlight">\(p(x)\)</span>, og regne ut gjennomsnittet av <span class="math notranslate nohighlight">\(f(X)\)</span>! Med andre ord</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_a^b f(x) \, dx \approx (b-a)\frac{1}{N}\sum\limits_{i=1}^{N} f(x_i),
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_N\)</span> er <span class="math notranslate nohighlight">\(N\)</span> tilfeldige tall trukket fra <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -607,6 +635,7 @@ I = \int\limits_0^1 e^{-x^2}\, dx
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integrasjon-matematikk-s2">Monte Carlo Integrasjon (Matematikk S2)</a></li>
 </ul>
   </nav></div>
 
