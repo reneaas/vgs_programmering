@@ -392,6 +392,11 @@ I = \int\limits_a^b f(x) \, dx.
 <li><p>Vi regner ut arealet av trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Vi kaller disse arealene for <span class="math notranslate nohighlight">\(S_i\)</span>.</p></li>
 </ol>
 <p>Se <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 1</span></a> for en illustrasjon av trapesmetoden. Her spiller <span class="math notranslate nohighlight">\(h = x_{i+1} - x_i\)</span> rollen som “høyden” i hvert trapes, mens <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> spiller rollen som “sidelengdene”.</p>
+<p>Tilnærmingen til integralet blir da</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+\]</div>
 <figure class="align-default" id="id1">
 <img alt="../../_images/Integration_num_trapezes_notation.svg" src="../../_images/Integration_num_trapezes_notation.svg" /><figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Figuren viser en graf av en funksjon <span class="math notranslate nohighlight">\(f\)</span> og trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Figuren er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
