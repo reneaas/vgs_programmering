@@ -19,17 +19,20 @@ Alle de vanlige regneartene er mulig å bruke når man skriver Python kode.
 
 **Tabell 1**: Regneoperasjoner i Python.
 
-| Regneart | Operasjonstegn | Eksempel |
-|---|---|---|
-| Addisjon | `+` | `2 + 3` |
-| Subtraksjon | `-` | `2 - 3` |
-| Multiplikasjon | `*` | `2 * 3` |
-| Divisjon | `/` | `2 / 3` |
-| Potens | `**` | `2 ** 3` |
-| Heltallsdivisjon | `//` | `2 // 3` |
-| Modulo | `%` | `2 % 3` |
+| Regneart | Operasjonstegn | Eksempel | Resultat | 
+|---|---|---| --- |
+| Addisjon | `+` | `2 + 3` | `5` |
+| Subtraksjon | `-` | `2 - 3` | `-1` |
+| Multiplikasjon | `*` | `2 * 3` |  `6` |
+| Divisjon | `/` | `2 / 3` | `0.6666666666666666` |
+| Potens | `**` | `2 ** 3` | `8` |
+| Heltallsdivisjon | `//` | `2 // 3` | `0` |
+| Modulo (restdivisjon) | `%` | `2 % 3` | `2` |
 
-```{admonition} Regneartene i Python
+```{admonition} Hva betyr heltallsdivisjon og modulo?
 :class: tip
-I Python er det viktig å være klar over at regneartene ikke alltid betyr det samme som i matematikken.
+
+**Heltallsdivisjon** er antallet *hele* ganger et tall går opp i et annet. For eksempel går `3` opp i `10` tre ganger, og derfor er `10 // 3 = 3`.
+**Modulo** eller **restdivisjon** er resten av en heltallsdivisjon. For eksempel er `10 % 3 = 1` siden `3` går opp i `10` tre ganger med rest `1`. 
 ```
+
