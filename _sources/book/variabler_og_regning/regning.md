@@ -16,6 +16,7 @@ Det er vanligst å regne med `float`. Man kan regne med `int` på samme måte so
 ## Regneoperasjoner i Python
 
 Alle de vanlige regneartene er mulig å bruke når man skriver Python kode. 
+I tabell 1 vises de alle regneoperasjonene du kan gjøre med Python, og hvilket operasjonstegn du må bruke med et eksempel for hver regneart.
 
 **Tabell 1**: Regneoperasjoner i Python.
 
