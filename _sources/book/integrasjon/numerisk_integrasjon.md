@@ -24,11 +24,31 @@ $$
 \int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
 $$
 
-Denne formelen kan vi skrive om litt smartere, så vi ikke regner ut $f(x_i)$ og $f(x_{i+1})$ to ganger. Du skal vise at formelen i oppgavene.
+Denne formelen kan vi skrive om litt smartere, så vi ikke regner ut $f(x_i)$ og $f(x_{i+1})$ to ganger. I oppgavene skal du vise at uttrykket kan skrives om til:
 
 $$
 \int\limits_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i).
 $$
+
+
+Vi kan oppsummere med en algoritme:
+
+```{prf:algorithm} Trapesmetoden
+:label: trapesmetoden
+
+**Input**: $f$, $a$, $b$, $n$
+**Output**: Tilnærming til integralet $\int\limits_a^b f(x) \, dx$
+
+1. Sett $h = \frac{b - a}{n}$.
+2. Sett $I = 0$.
+3. For $i = 1,2,\ldots, n-1$:
+    1. Sett $x = a + ih$.
+    2. Sett $I = I + f(x)$.
+4. Sett $I = h \frac{f(a) + f(b)}{2} + hI$.
+5. Returner $I$.
+```
+
+
 
 ```{figure} ./figurer/Integration_num_trapezes_notation.svg
 ---
@@ -179,7 +199,7 @@ $p(x) = 1/(b-a)$ for $x \in [a, b]$, og $p(x) = 0$ ellers.
 Vi kan trikse litt med integralet slik at vi får
 
 $$
-I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)}p(x) \, dx = (b-a)\int\limits_a^b f(x)p(x) \, dx. = (b-a)E[f(X)].
+I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)}p(x) \, dx = (b-a)\int\limits_a^b f(x)p(x) \, dx = (b-a)E[f(X)].
 $$
 
 Integralet kan altså skrives som forventningsverdien av $f(X)$. Vi kan tilnærme denne forventningsverdien ved å trekke $N$ tilfeldige tall av $X$ fra sannsynlighetsfordelingen $p(x)$, og regne ut gjennomsnittet av $f(X)$! Med andre ord
