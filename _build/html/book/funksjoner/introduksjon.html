@@ -363,7 +363,8 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduksjon til Funksjoner</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjoner-i-python">Funksjoner i Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
 </ul>
 </li>
 </ul>
@@ -394,7 +395,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="eksempel-1">
-<h3>Eksempel 1:<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
+<h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
 <p>Funksjonen <span class="math notranslate nohighlight">\(f(x) = x^2 - 1\)</span> kan vi skrive definere med koden</p>
 <p>eller</p>
 <div class="math notranslate nohighlight">
@@ -411,7 +412,26 @@ f(x) = x^2 - 1.
 </pre></div>
 </div>
 <p>Under kan du eksperimentere med funksjonen:</p>
-<iframe src="https://trinket.io/embed/python/dd5bbfca3d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+<iframe src="https://trinket.io/embed/python/dd5bbfca3d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</section>
+<section id="eksempel-2">
+<h3>Eksempel 2<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
+<p>Noen funksjoner kan ikke skrives med elementære funksjoner (lukkede formler). Et eksempel er en rekke på formen</p>
+<div class="math notranslate nohighlight">
+\[
+S_N = \sum_{n=1}^N \frac{1}{n^2}.
+\]</div>
+<p>Vi kan anse <span class="math notranslate nohighlight">\(S_N\)</span> som en funksjon av antall ledd <span class="math notranslate nohighlight">\(N\)</span>. Vi kan da skrive funksjonen som</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">S</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+<p>Under kan du eksperimentere med funksjonen. Prøv å øke <code class="docutils literal notranslate"><span class="pre">N</span></code> og se hva som skjer.</p>
+<iframe src="https://trinket.io/embed/python/7a0bf0ce69" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</section>
 </section>
 </section>
 
@@ -485,7 +505,8 @@ f(x) = x^2 - 1.
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduksjon til Funksjoner</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjoner-i-python">Funksjoner i Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
 </ul>
 </li>
 </ul>
