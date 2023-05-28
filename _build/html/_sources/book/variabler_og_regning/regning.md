@@ -2,9 +2,7 @@
 
 Python kode kan gjøre vanlige regneoperasjoner som vi lærer om i matematikken, og siden vi skal bruke Python i de regnetunge realfagene, er det naturlig at vi må lære om dette.
 
-```{note}
-**Hvilke datatyper kan man regne med?** 
-
+```{admonition} Hvilke datatyper kan man regne med?
 Vi kan regne med to datatyper:
 
 1. **int** (heltall).
@@ -22,13 +20,13 @@ Alle de vanlige regneartene er mulig å bruke når man skriver Python kode.
 
 | Regneart | Operasjonstegn | Eksempel |
 |---|---|---|
-| Addisjon | `+` | `1 + 2` |
-| Subtraksjon | `-` | `1 - 2` |
-| Multiplikasjon | `*` | `1 * 2` |
-| Divisjon | `/` | `1 / 2` |
-| Potens | `**` | `1 ** 2` |
-| Heltallsdivisjon | `//` | `1 // 2` |
-| Modulo | `%` | `1 % 2` |
+| Addisjon | `+` | `2 + 3` |
+| Subtraksjon | `-` | `2 - 3` |
+| Multiplikasjon | `*` | `2 * 3` |
+| Divisjon | `/` | `2 / 3` |
+| Potens | `**` | `2 ** 3` |
+| Heltallsdivisjon | `//` | `2 // 3` |
+| Modulo | `%` | `2 % 3` |
 
 ```{admonition} Regneartene i Python
 :class: tip
