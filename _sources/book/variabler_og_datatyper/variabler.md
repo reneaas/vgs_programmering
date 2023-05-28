@@ -18,7 +18,12 @@ I tabell 1 ser du noen eksempler på variabler.
 | `melding` | `"Dette er en liten melding"` | `str` |
 
 
-Det finnes mange forskjellige datatyper i Python. De **viktigste** til å begynne med er `int` og `float` fordi det er datatypen som har med tall å gjøre.
+Det finnes mange forskjellige datatyper i Python. Men for nå holder det å kjenne til disse:
+
+1. `int` er *heltall*. 
+2. `float` er *reelle tall* (flyttall, egentlig) og er de man brukes når man regner.
+3. `str` er tekst.
+
 
 ## Øvelser: Verdi og datatype
 
