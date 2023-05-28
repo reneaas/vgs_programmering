@@ -59,7 +59,7 @@ Vi skal regne ut `2 + 4 / 2 * 2`.
 3. Til slutt plusser vi `2 + 4 = 6`.
 
 Her kan vi se hvorfor divisjon og multiplikasjon ikke kan være likestilt. 
-Hadde vi i stedet multiplisert nevneren med `2`, hadde vi fått:
+Hadde vi i stedet multiplisert nevneren med `2` først, hadde vi fått:
 
 `2 + 4 / 2 * 2 = 2 + 4 / 4 = 2 + 1 = 3`.
 

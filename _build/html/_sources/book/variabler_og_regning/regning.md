@@ -50,15 +50,21 @@ Regnerekkefølgen i Python er
 
 Dette er omtrent den samme rekkefølgen som man lærer om i matematikken. Den store forskjellen er at divisjon og multiplikasjon *ikke* stilles på lik linje. Man utfører divisjon *før* man utfører multiplikasjon.
 
-```{tip} Eksempel på regnerekkefølge
-
+```{admonition} Eksempel på regnerekkefølge
+:class: tip
 Vi skal regne ut `2 + 4 / 2 * 2`.
 
 1. Først utfører vi divisjonen `4 / 2 = 2`.
 2. Deretter utfører vi multiplikasjonen `2 * 2 = 4`.
-3. Deretter plusser vi `2 + 4 = 6`.
+3. Til slutt plusser vi `2 + 4 = 6`.
+
+Her kan vi se hvorfor divisjon og multiplikasjon ikke kan være likestilt. 
+Hadde vi i stedet multiplisert nevneren med `2`, hadde vi fått:
+
+`2 + 4 / 2 * 2 = 2 + 4 / 4 = 2 + 1 = 3`.
+
+som er et helt annet tall. Én av dem må derfor prioriteres, og det divisjon som er den prioriterte regnearten.
 ```
 
-```{admonition} Hva med parenteser?
 
 
