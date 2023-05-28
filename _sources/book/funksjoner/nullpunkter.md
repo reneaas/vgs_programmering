@@ -80,7 +80,7 @@ Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å 
 <iframe src="https://trinket.io/embed/python/f74e2a41cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
-```{admonition} Svakheter ved halveringsmetoden
+```{admonition} Svakheter med halveringsmetoden
 :class: warning
 
 1. Halveringsmetoden er en *iterativ* algoritme. Det vil si at den gjentar en prosess flere ganger. I praksis betyr dette at vi må velge et maksimalt antall iterasjoner. Hvis vi ikke gjør det, kan algoritmen potensielt kjøre i all evighet. Dette er en svakhet ved halveringsmetoden, og vi må derfor være forsiktige med å bruke den. 
