@@ -110,13 +110,14 @@ $$
 I = \int_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} f(x_{i+1/2})h.
 $$
 
-Vi oppsummerer det hele i en {prf:ref}`midtpunktsmetoden`.
+Vi oppsummerer det hele i {prf:ref}`midtpunktsmetoden`.
 
 ```{prf:algorithm} Midtpunktsmetoden
 :label: midtpunktsmetoden
 
-**Inputs** $a$, $b$, $n$, $f$.
-**Outputs** Tilnærmingen til integralet $I$.
+**Input**: $a$, $b$, $n$, $f$.
+
+**Output**: Tilnærmingen til integralet $I$.
 
 1. Regn ut $h = (b - a) / n$.
 2. Sett $I = 0$.
