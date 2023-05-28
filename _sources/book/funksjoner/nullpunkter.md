@@ -101,7 +101,7 @@ Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å 
 ```{figure} ./figurer/NewtonIteration_Ani.gif
 ---
 name: newtonsmetode_fig
-
+---
 Animasjonen viser bla bla
 ```
 
