@@ -88,3 +88,45 @@ Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å 
 3. Algoritmen krever også at vi har litt kjennskap til funksjonen vi skal finne nullpunktet til. Vi må vite at nullpunktet ligger i et intervall $[a, b]$. Dette kan være vanskelig å vite på forhånd, og må alltid sjekkes.
 
 ```
+
+
+## Newtons metode
+
+**Newtons metode** er en effektiv måte å finne nullpunktene til en funksjon $f$ dersom vi også kjenner til den deriverte $f'$. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen $f$ i et punkt $x_0$. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen $f'$, som vi kjenner til. Dette gir oss et nytt punkt $x_1$. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til $f$ i $x_1$. Dette gir oss et nytt punkt $x_2$. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. {prf:ref}`newtonsmetode` viser pseudokode for algoritmen.
+
+Vi kan begrunne algoritmen som følger.
+Bruker vi ettpunktsformelen for en tangent som tangerer funksjonen vår i punktet $x_0$, får vi likningen
+
+$$
+y = f(x_0) + f'(x_0)(x - x_0).
+$$
+
+Ideen er å finne en tilnærming til nullpunktet til $f$ ved å finne nullpunktet til tangenten i stedet. Nullpunktet til tangenten er gitt ved løsningen av likningen
+
+$$
+f(x_0) + f'(x_0)(x_1 - x_0) = 0,
+$$
+
+som gir
+
+$$
+x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.
+$$
+
+Denne formelen kan vi repetere igjen og igjen, slik at vi kommer nærmere og nærmere et nullpunktet til $f$. Mer generelt kan vi finne et nytt estimat på nullpunktet med $x_{i+1}$ ved å bruke funksjonsverdien $f(x_i)$ og den deriverte $f'(x_i)$ i punktet $x_i$ ved formelen
+
+$$
+x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
+$$
+
+```{prf:algorithm} Newtons metode
+:label: newtonsmetode
+**Input:** En funksjon $f(x)$, den deriverte $f'(x)$, et startpunkt $x_0$ og en toleranse $\epsilon$.
+**Output:** Et tilnærmet nullpunkt $x$.
+
+1. Regn ut $x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}$.
+2. While $|f(x_i)| > \epsilon$:
+    1. Regn ut $x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}$.
+3. Returner $x_{i + 1}$.
+```
+
