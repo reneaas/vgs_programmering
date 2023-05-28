@@ -33,6 +33,7 @@ Alle de vanlige regneartene er mulig å bruke når man skriver Python kode.
 :class: tip
 
 **Heltallsdivisjon** er antallet *hele* ganger et tall går opp i et annet. For eksempel går `3` opp i `10` tre ganger, og derfor er `10 // 3 = 3`.
+
 **Modulo** eller **restdivisjon** er resten av en heltallsdivisjon. For eksempel er `10 % 3 = 1` siden `3` går opp i `10` tre ganger med rest `1`. 
 ```
 
