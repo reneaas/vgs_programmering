@@ -49,7 +49,6 @@ Vi kan oppsummere med en algoritme:
 ```
 
 
-
 ```{figure} ./figurer/Integration_num_trapezes_notation.svg
 ---
 name: trapesmetoden
