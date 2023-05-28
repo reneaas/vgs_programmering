@@ -368,6 +368,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden">Eksempel 2: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-metode">Newtons metode</a></li>
 </ul>
             </nav>
         </div>
@@ -461,6 +462,46 @@ Prøv å bruke løsningen din til å finne det <em>andre</em> nullpunktet også 
 </div>
 </section>
 </section>
+<section id="newtons-metode">
+<h2>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this heading">#</a></h2>
+<p><strong>Newtons metode</strong> er en effektiv måte å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> dersom vi også kjenner til den deriverte <span class="math notranslate nohighlight">\(f'\)</span>. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f'\)</span>, som vi kjenner til. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_1\)</span>. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x_1\)</span>. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_2\)</span>. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. <a class="reference internal" href="#newtonsmetode">Algorithm 2</a> viser pseudokode for algoritmen.</p>
+<p>Vi kan begrunne algoritmen som følger.
+Bruker vi ettpunktsformelen for en tangent som tangerer funksjonen vår i punktet <span class="math notranslate nohighlight">\(x_0\)</span>, får vi likningen</p>
+<div class="math notranslate nohighlight">
+\[
+y = f(x_0) + f'(x_0)(x - x_0).
+\]</div>
+<p>Ideen er å finne en tilnærming til nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> ved å finne nullpunktet til tangenten i stedet. Nullpunktet til tangenten er gitt ved løsningen av likningen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x_0) + f'(x_0)(x_1 - x_0) = 0,
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.
+\]</div>
+<p>Denne formelen kan vi repetere igjen og igjen, slik at vi kommer nærmere og nærmere et nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>. Mer generelt kan vi finne et nytt estimat på nullpunktet med <span class="math notranslate nohighlight">\(x_{i+1}\)</span> ved å bruke funksjonsverdien <span class="math notranslate nohighlight">\(f(x_i)\)</span> og den deriverte <span class="math notranslate nohighlight">\(f'(x_i)\)</span> i punktet <span class="math notranslate nohighlight">\(x_i\)</span> ved formelen</p>
+<div class="math notranslate nohighlight">
+\[
+x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
+\]</div>
+<div class="proof algorithm admonition" id="newtonsmetode">
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Newtons metode)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span>, et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.
+<strong>Output:</strong> Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Regn ut <span class="math notranslate nohighlight">\(x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}\)</span>.</p></li>
+<li><p>While <span class="math notranslate nohighlight">\(|f(x_i)| &gt; \epsilon\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Regn ut <span class="math notranslate nohighlight">\(x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}\)</span>.</p></li>
+</ol>
+</li>
+<li><p>Returner <span class="math notranslate nohighlight">\(x_{i + 1}\)</span>.</p></li>
+</ol>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -538,6 +579,7 @@ Prøv å bruke løsningen din til å finne det <em>andre</em> nullpunktet også 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden">Eksempel 2: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-metode">Newtons metode</a></li>
 </ul>
   </nav></div>
 
