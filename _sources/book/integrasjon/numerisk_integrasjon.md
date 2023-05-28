@@ -123,9 +123,8 @@ Vi oppsummerer det hele i {prf:ref}`midtpunktsmetoden`.
 2. Sett $I = 0$.
 3. For $i = 0, 1, 2, ..., n-1$:
     1. $x_{i+1/2} = a + (i + 1/2)h$.
-    2. $f(x_{i+1/2})$.
-    3. $S = f(x_{i+1/2})h$.
-    4. $I = I + S$
+    2. $S = f(x_{i+1/2})h$.
+    3. $I = I + S$
 4. Returner $I$.
 ```
 
