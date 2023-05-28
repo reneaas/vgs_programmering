@@ -16,7 +16,7 @@ Det er vanligst å regne med `float`. Man kan regne med `int` på samme måte so
 ## Regneoperasjoner i Python
 
 Alle de vanlige regneartene er mulig å bruke når man skriver Python kode. 
-I tabell 1 vises de alle regneoperasjonene du kan gjøre med Python, og hvilket operasjonstegn du må bruke med et eksempel for hver regneart.
+I tabell 1 vises alle regneoperasjonene du kan gjøre med Python og hvilket operasjonstegn du må bruke.
 
 **Tabell 1**: Regneoperasjoner i Python.
 
@@ -37,4 +37,28 @@ I tabell 1 vises de alle regneoperasjonene du kan gjøre med Python, og hvilket 
 
 **Modulo** eller **restdivisjon** er resten av en heltallsdivisjon. For eksempel er `10 % 3 = 1` siden `3` går opp i `10` tre ganger med rest `1`. 
 ```
+
+## Regnerekkefølgen i Python
+
+Regnerekkefølgen i Python er
+
+1. Parenteser
+2. Potenser.
+3. Divisjon
+4. Multiplikasjon
+5. Addisjon og substraksjon
+
+Dette er omtrent den samme rekkefølgen som man lærer om i matematikken. Den store forskjellen er at divisjon og multiplikasjon *ikke* stilles på lik linje. Man utfører divisjon *før* man utfører multiplikasjon.
+
+```{tip} Eksempel på regnerekkefølge
+
+Vi skal regne ut `2 + 4 / 2 * 2`.
+
+1. Først utfører vi divisjonen `4 / 2 = 2`.
+2. Deretter utfører vi multiplikasjonen `2 * 2 = 4`.
+3. Deretter plusser vi `2 + 4 = 6`.
+```
+
+```{admonition} Hva med parenteser?
+
 
