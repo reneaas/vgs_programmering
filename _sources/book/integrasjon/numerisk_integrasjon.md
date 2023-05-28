@@ -24,6 +24,12 @@ $$
 \int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
 $$
 
+Denne formelen kan vi skrive om litt smartere, så vi ikke regner ut $f(x_i)$ og $f(x_{i+1})$ to ganger. Du skal vise at formelen i oppgavene.
+
+$$
+\int\limits_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i).
+$$
+
 ```{figure} ./figurer/Integration_num_trapezes_notation.svg
 ---
 name: trapesmetoden
@@ -50,3 +56,33 @@ Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hen
 ```
 
 
+### Oppgaver
+
+#### Oppgave 1
+
+Finn en tilnærming til integralet
+
+$$
+I = \int_0^1 e^{-x^2} \, dx 
+$$
+
+ved å bruke trapesmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+*Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
+
+<iframe src="https://trinket.io/embed/python/41c0defb70" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+
+#### Oppgave 2
+
+Vis at vi kan skrive formelen for tilnærmingen til integralet som
+
+$$
+\int_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i),
+$$
+
+ved å starte fra summen
+
+$$
+\int_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+$$

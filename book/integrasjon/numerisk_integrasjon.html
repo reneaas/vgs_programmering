@@ -360,7 +360,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapesmetoden">Trapesmetoden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapesmetoden">Trapesmetoden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -397,6 +404,11 @@ I = \int\limits_a^b f(x) \, dx.
 \[
 \int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
 \]</div>
+<p>Denne formelen kan vi skrive om litt smartere, så vi ikke regner ut <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> to ganger. Du skal vise at formelen i oppgavene.</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i).
+\]</div>
 <figure class="align-default" id="id1">
 <img alt="../../_images/Integration_num_trapezes_notation.svg" src="../../_images/Integration_num_trapezes_notation.svg" /><figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Figuren viser en graf av en funksjon <span class="math notranslate nohighlight">\(f\)</span> og trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Figuren er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
@@ -415,6 +427,33 @@ der <span class="math notranslate nohighlight">\(h\)</span> er høyden til trape
 </figcaption>
 </figure>
 </div>
+<section id="oppgaver">
+<h3>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-1">
+<h4>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h4>
+<p>Finn en tilnærming til integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_0^1 e^{-x^2} \, dx 
+\]</div>
+<p>ved å bruke trapesmetoden. Bruk <span class="math notranslate nohighlight">\(n = 1000\)</span> delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+<em>Du finner et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> hvis du trenger hjelp</em>.</p>
+<iframe src="https://trinket.io/embed/python/41c0defb70" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</section>
+<section id="oppgave-2">
+<h4>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h4>
+<p>Vis at vi kan skrive formelen for tilnærmingen til integralet som</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i),
+\]</div>
+<p>ved å starte fra summen</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+\]</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -477,7 +516,14 @@ der <span class="math notranslate nohighlight">\(h\)</span> er høyden til trape
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapesmetoden">Trapesmetoden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapesmetoden">Trapesmetoden</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
