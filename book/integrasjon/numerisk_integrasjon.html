@@ -368,6 +368,7 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midtpunktsmetoden">Midtpunktsmetoden</a></li>
 </ul>
             </nav>
         </div>
@@ -455,6 +456,50 @@ I = \int_0^1 e^{-x^2} \, dx
 </section>
 </section>
 </section>
+<section id="midtpunktsmetoden">
+<h2>Midtpunktsmetoden<a class="headerlink" href="#midtpunktsmetoden" title="Permalink to this heading">#</a></h2>
+<p>En annen metode for å finne en tilnærming til integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_a^b f(x) \, dx,
+\]</div>
+<p>er ved å ta i bruk <strong>midtpunktsmetoden</strong>. Ingrediensene i midtpunktsmetoden er</p>
+<ol class="arabic simple">
+<li><p>Del opp intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> i <span class="math notranslate nohighlight">\(n\)</span> delintervaller <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>, <span class="math notranslate nohighlight">\([x_1, x_2]\)</span>, …, <span class="math notranslate nohighlight">\([x_{n-1}, x_n]\)</span> med bredde <span class="math notranslate nohighlight">\(h = (b - a) / n\)</span>.</p></li>
+<li><p>Regn ut <span class="math notranslate nohighlight">\(f\)</span> i midtpunktet til hvert delintervall. Vi kaller disse verdiene for <span class="math notranslate nohighlight">\(f(x_{i+1/2})\)</span>, der <span class="math notranslate nohighlight">\(x_{i + 1/2} = a + (i + 1/2)h\)</span>.</p></li>
+<li><p>Regn ut arealet av rektangel <span class="math notranslate nohighlight">\(i\)</span> med høyde <span class="math notranslate nohighlight">\(f(x_{i+1/2})\)</span> og bredde <span class="math notranslate nohighlight">\(h\)</span>. Vi kaller disse arealene for <span class="math notranslate nohighlight">\(S_i\)</span>.</p></li>
+<li><p>Summer opp arealene som en tilnærming til integralet <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+</ol>
+<p>Tilnærmingen til integralet blir da</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} f(x_{i+1/2})h.
+\]</div>
+<p>Vi oppsummerer det hele i en <a class="reference internal" href="#midtpunktsmetoden">Algorithm 2</a>.</p>
+<div class="proof algorithm admonition" id="midtpunktsmetoden">
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Midtpunktsmetoden)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Inputs</strong> <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f\)</span>.
+<strong>Outputs</strong> Tilnærmingen til integralet <span class="math notranslate nohighlight">\(I\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Regn ut <span class="math notranslate nohighlight">\(h = (b - a) / n\)</span>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(I = 0\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i = 0, 1, 2, ..., n-1\)</span>:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_{i+1/2} = a + (i + 1/2)h\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x_{i+1/2})\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(S = f(x_{i+1/2})h\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(I = I + S\)</span></p></li>
+</ol>
+</li>
+<li><p>Returner <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+</ol>
+</section>
+</div><div class="tip admonition">
+<p class="admonition-title">Midtpunktsmetoden vs. trapesmetoden</p>
+<p>Midtpunktsmetoden har mange likheter med trapesmetoden. Forskjellen ligger i hvordan selve arealet regnes ut. I midtpunktsmetoden regner vi ut arealet av rektangler, mens vi i trapesmetoden regner ut arealet av trapeser. Det som gjør midtpunktsmetoden god, er måten man velger ut høyden i rektanglene. Generelt sett, er midtpunktsmetoden mer nøyaktig enn trapesmetoden!</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -524,6 +569,7 @@ I = \int_0^1 e^{-x^2} \, dx
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midtpunktsmetoden">Midtpunktsmetoden</a></li>
 </ul>
   </nav></div>
 
