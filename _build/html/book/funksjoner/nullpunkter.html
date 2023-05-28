@@ -427,17 +427,31 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math no
 <li><p>Returner <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
 </ol>
 </section>
-</div><div class="warning admonition">
+</div><section id="eksempel-2-finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden">
+<h3>Eksempel 2: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden<a class="headerlink" href="#eksempel-2-finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden" title="Permalink to this heading">#</a></h3>
+<p>Vi skal finne nullpunktene til funksjonen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 - 1.
+\]</div>
+<p>Nullpunktene til denne funksjonen er <span class="math notranslate nohighlight">\(x = \pm 1\)</span>, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge <a class="reference internal" href="#halveringsmetoden">Algorithm 1</a> velge oss ut:</p>
+<ol class="arabic simple">
+<li><p>En funksjon <span class="math notranslate nohighlight">\(f\)</span>. Check.</p></li>
+<li><p>Et intervall <span class="math notranslate nohighlight">\([a,b]\)</span> der vi vet at <span class="math notranslate nohighlight">\(f\)</span> har et nullpunkt, så <span class="math notranslate nohighlight">\(f\)</span> <em>må</em> endre fortegn på intervallet.</p></li>
+<li><p>En toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p></li>
+</ol>
+<p>Vi kan for eksempel velge oss ut intervallet <span class="math notranslate nohighlight">\([a, b] = [-2, 0]\)</span>. Da har vi <span class="math notranslate nohighlight">\(f(-2) = 3\)</span> og <span class="math notranslate nohighlight">\(f(0) = -1\)</span>, så <span class="math notranslate nohighlight">\(f\)</span> endrer fortegn på intervallet.
+Toleransen kan vi bare sette til <span class="math notranslate nohighlight">\(\epsilon = 10^{-8}\)</span>.</p>
+<p>Under er et vindu der disse valgene er tatt. Sjekk om du kan endre et intervall så du finner det andre nullpunktet med koden!</p>
+<iframe src="https://trinket.io/embed/python/f74e2a41cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<div class="warning admonition">
 <p class="admonition-title">Svakheter ved halveringsmetoden</p>
 <ol class="arabic simple">
 <li><p>Halveringsmetoden er en <em>iterativ</em> algoritme. Det vil si at den gjentar en prosess flere ganger. I praksis betyr dette at vi må velge et maksimalt antall iterasjoner. Hvis vi ikke gjør det, kan algoritmen potensielt kjøre i all evighet. Dette er en svakhet ved halveringsmetoden, og vi må derfor være forsiktige med å bruke den.</p></li>
-<li><p>Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger.</p></li>
+<li><p>Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. Dette erfarte vi <span class="xref myst">eksempel 2</span>.</p></li>
 <li><p>Algoritmen krever også at vi har litt kjennskap til funksjonen vi skal finne nullpunktet til. Vi må vite at nullpunktet ligger i et intervall <span class="math notranslate nohighlight">\([a, b]\)</span>. Dette kan være vanskelig å vite på forhånd, og må alltid sjekkes.</p></li>
 </ol>
 </div>
-<section id="eksempel-2-finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden">
-<h3>Eksempel 2: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden<a class="headerlink" href="#eksempel-2-finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden" title="Permalink to this heading">#</a></h3>
-<p>Vi skal finne nullpunktene til funksjonen</p>
 </section>
 </section>
 </section>

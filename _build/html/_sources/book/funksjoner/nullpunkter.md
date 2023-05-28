@@ -54,15 +54,35 @@ Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det
 4. Returner $m$.
 ```
 
+
+### Eksempel 2: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden 
+
+Vi skal finne nullpunktene til funksjonen
+
+$$
+f(x) = x^2 - 1.
+$$
+
+Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge {prf:ref}`halveringsmetoden` velge oss ut:
+
+1. En funksjon $f$. Check.
+2. Et intervall $[a,b]$ der vi vet at $f$ har et nullpunkt, så $f$ *må* endre fortegn på intervallet.
+3. En toleranse $\epsilon$.
+
+Vi kan for eksempel velge oss ut intervallet $[a, b] = [-2, 0]$. Da har vi $f(-2) = 3$ og $f(0) = -1$, så $f$ endrer fortegn på intervallet.
+Toleransen kan vi bare sette til $\epsilon = 10^{-8}$. 
+
+Under er et vindu der disse valgene er tatt. Sjekk om du kan endre et intervall så du finner det andre nullpunktet med koden!
+
+
+<iframe src="https://trinket.io/embed/python/f74e2a41cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
 ```{admonition} Svakheter ved halveringsmetoden
 :class: warning
 
 1. Halveringsmetoden er en *iterativ* algoritme. Det vil si at den gjentar en prosess flere ganger. I praksis betyr dette at vi må velge et maksimalt antall iterasjoner. Hvis vi ikke gjør det, kan algoritmen potensielt kjøre i all evighet. Dette er en svakhet ved halveringsmetoden, og vi må derfor være forsiktige med å bruke den. 
-2. Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. 
+2. Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. Dette erfarte vi [eksempel 2](#Eksempel-2:-Finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden).
 3. Algoritmen krever også at vi har litt kjennskap til funksjonen vi skal finne nullpunktet til. Vi må vite at nullpunktet ligger i et intervall $[a, b]$. Dette kan være vanskelig å vite på forhånd, og må alltid sjekkes.
 
 ```
-
-### Eksempel 2: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden
-
-Vi skal finne nullpunktene til funksjonen
