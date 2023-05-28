@@ -24,7 +24,7 @@ Deler vi opp intervallet
 
 ```{figure} ./figurer/Trapezoid.svg
 ---
-name: trapes
+label: trapes
 ---
-Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. 
+Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 ```
