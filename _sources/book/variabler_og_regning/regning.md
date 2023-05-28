@@ -3,6 +3,7 @@
 Python kode kan gjøre vanlige regneoperasjoner som vi lærer om i matematikken, og siden vi skal bruke Python i de regnetunge realfagene, er det naturlig at vi må lære om dette.
 
 ```{admonition} Hvilke datatyper kan man regne med?
+:class: tip
 Vi kan regne med to datatyper:
 
 1. **int** (heltall).
