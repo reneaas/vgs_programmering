@@ -141,7 +141,7 @@ Midtpunktsmetoden har mange likheter med trapesmetoden. Forskjellen ligger i hvo
 Finn en tilnærming til integralet
 
 $$
-I = \int\limits_0^1 x**2 * e^{-x} \, dx,
+I = \int\limits_0^1 x^2 e^{-x} \, dx,
 $$
 
 ved å bruke midtpunktsmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
