@@ -95,14 +95,12 @@ Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å 
 **Newtons metode** er en effektiv måte å finne nullpunktene til en funksjon $f$ dersom vi også kjenner til den deriverte $f'$. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen $f$ i et punkt $x_0$. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen $f'$, som vi kjenner til. Dette gir oss et nytt punkt $x_1$. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til $f$ i $x_1$. Dette gir oss et nytt punkt $x_2$. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. {numref}`newtonsmetode_fig` viser pseudokode for algoritmen.
 
 
-<!-- ![Animasjon av Newtons metode.](./figurer/NewtonIteration_Ani.gif) -->
-
 
 ```{figure} ./figurer/NewtonIteration_Ani.gif
 ---
 name: newtonsmetode_fig
 ---
-Animasjonen viser bla bla
+Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon $f$ vist i blå. Animasjonen er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Newton%27s_method#/media/File:NewtonIteration_Ani.gif).
 ```
 
 Vi kan begrunne algoritmen som følger.
