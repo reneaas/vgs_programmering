@@ -201,7 +201,7 @@ $$
 I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
 $$
 
-Integralet bør nærme seg en veldig kjent matematisk konstant når du trekker mange tall $N$.
+Integralet bør nærme seg en veldig kjent matematisk konstant når du trekker mange tall.
 
 Du kan bruke kodeblokken under. *Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
 
