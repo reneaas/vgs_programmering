@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Variabler &#8212; Programmering i Videregående Skole</title>
+    <title>Finne nullpunkter med Python &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -62,11 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/variabler_og_regning/variabler';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/funksjoner/nullpunkter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Å regne med Python" href="regning.html" />
-    <link rel="prev" title="Programmering i Videregående Skole" href="../../intro.html" />
+    <link rel="prev" title="Introduksjon til Funksjoner" href="introduksjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,15 +153,15 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Variabler, datatyper og regning</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variabler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regning.html">Å regne med Python</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduksjon.html">Introduksjon til Funksjoner</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/nullpunkter.html">Finne nullpunkter med Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Finne nullpunkter med Python</a></li>
 </ul>
 
     </div>
@@ -232,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/variabler_og_regning/variabler.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/funksjoner/nullpunkter.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -262,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/variabler_og_regning/variabler.md" target="_blank"
+      <li><a href="../../_sources/book/funksjoner/nullpunkter.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +345,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Variabler</h1>
+    <h1>Finne nullpunkter med Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,11 +355,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelser-verdi-og-datatype">Øvelser: Verdi og datatype.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-skrive-ut-verdi-og-datatype">Øvelse 1: Skrive ut verdi og datatype.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-2-sette-riktig-verdi-og-datatype">Øvelse 2: Sette riktig verdi og datatype.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-finne-nullpunktene-til-en-lineaer-funksjon">Eksempel 1: Finne nullpunktene til en lineær funksjon</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halveringsmetoden">Halveringsmetoden</a></li>
 </ul>
             </nav>
         </div>
@@ -370,69 +371,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="variabler">
-<h1>Variabler<a class="headerlink" href="#variabler" title="Permalink to this heading">#</a></h1>
-<p>Den grunnleggende størrelsen i Python som du kommer til å bruke er <em>variabler</em>. En variabel har</p>
-<ol class="arabic simple">
-<li><p>Et <strong>variabelnavn</strong>. Dette bestemmes av deg som skriver koden.</p></li>
-<li><p>En <strong>verdi</strong>. Denne kan settes av deg manuelt eller regnes ut som en del av programmet.</p></li>
-<li><p>En <strong>datatype</strong>. Datatypen bestemmer hva man kan bruke variabelen til.</p></li>
-</ol>
-<p>I tabell 1 ser du noen eksempler på variabler.</p>
-<p><strong>Tabell 1</strong>: Eksempler på variabler og deres variabelnavn, verdi og datatype.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Variabelnavn</p></th>
-<th class="head"><p>Verdi</p></th>
-<th class="head"><p>Datatype</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">i</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">a</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">res1</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">-5.0</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">melding</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Dette</span> <span class="pre">er</span> <span class="pre">en</span> <span class="pre">liten</span> <span class="pre">melding&quot;</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<p>Det finnes mange forskjellige datatyper i Python. Men for nå holder det å kjenne til disse:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> er <em>heltall</em>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> er <em>flyttall</em> og er de man brukes når man regner. Du kan tenke på det som desimaltall eller <em>reelle tall</em>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> er tekst.</p></li>
-</ol>
-<section id="ovelser-verdi-og-datatype">
-<h2>Øvelser: Verdi og datatype.<a class="headerlink" href="#ovelser-verdi-og-datatype" title="Permalink to this heading">#</a></h2>
-<section id="ovelse-1-skrive-ut-verdi-og-datatype">
-<h3>Øvelse 1: Skrive ut verdi og datatype.<a class="headerlink" href="#ovelse-1-skrive-ut-verdi-og-datatype" title="Permalink to this heading">#</a></h3>
-<p>Under kan du se hvordan man kan skrive ut verdien til en variabel med <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen og datatypen til variabelen ved å bruke <code class="docutils literal notranslate"><span class="pre">type</span></code>-funksjonen:</p>
-<iframe src="https://trinket.io/embed/python/61f0fa2c97" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+  <section class="tex2jax_ignore mathjax_ignore" id="finne-nullpunkter-med-python">
+<h1>Finne nullpunkter med Python<a class="headerlink" href="#finne-nullpunkter-med-python" title="Permalink to this heading">#</a></h1>
+<section id="introduksjon">
+<h2>Introduksjon<a class="headerlink" href="#introduksjon" title="Permalink to this heading">#</a></h2>
+<p>En klassisk problem i matematikken er å finne nullpunktene til en funksjon. Formelt sett er nullpunkter de verdiene <span class="math notranslate nohighlight">\(x\)</span> som gjør at funksjonsverdien er null, eller da alle <span class="math notranslate nohighlight">\(x\)</span> der <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p>
+<section id="eksempel-1-finne-nullpunktene-til-en-lineaer-funksjon">
+<h3>Eksempel 1: Finne nullpunktene til en lineær funksjon<a class="headerlink" href="#eksempel-1-finne-nullpunktene-til-en-lineaer-funksjon" title="Permalink to this heading">#</a></h3>
+<p>Vi tenker oss at vi har den lineære funksjonen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 2x - 1.
+\]</div>
+<p>Vi kan finne nullpunktet numerisk med Python kode slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span> <span class="c1"># startverdi for x.</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># steglengde for x.</span>
+<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge funksjonsverdien er negativ.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span> <span class="c1"># øk x med dx.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Her har vi løst problemet med <em>brute-force</em>. Ved å se på funksjonsuttrykket ser vi at funksjonsverdien er negativ ved <span class="math notranslate nohighlight">\(x = -10\)</span>. Siden stigningstallet er positivt, <em>må</em> funksjonen bli positiv en eller annen gang. Så ved å starte fra denne verdien og gradvis øke verdien til <span class="math notranslate nohighlight">\(x\)</span> frem til <span class="math notranslate nohighlight">\(f(x)\)</span> skifter fortegn, vil vi finne et tilnærming til nullpunktet.</p>
 </section>
-<section id="ovelse-2-sette-riktig-verdi-og-datatype">
-<h3>Øvelse 2: Sette riktig verdi og datatype.<a class="headerlink" href="#ovelse-2-sette-riktig-verdi-og-datatype" title="Permalink to this heading">#</a></h3>
-<p>Under er en uferdig kode der to variabler ikke er implementert (derfor markert med <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>). Sammen med den uferdige koden er det en notis som sier at</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> skal ha verdien <code class="docutils literal notranslate"><span class="pre">10</span></code> og datatypen <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> skal ha verdien <code class="docutils literal notranslate"><span class="pre">-0.5</span></code> og datatypen <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
-</ul>
-<p>Fullfør koden. Trykk på run og se om du har gjort riktig.</p>
-<iframe src="https://trinket.io/embed/python/2fd0bb1151" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
 </section>
+<section id="halveringsmetoden">
+<h2>Halveringsmetoden<a class="headerlink" href="#halveringsmetoden" title="Permalink to this heading">#</a></h2>
+<p>En systematisk måte å finne nullpunkter til vilkårlige funksjoner <span class="math notranslate nohighlight">\(f(x)\)</span> på, er å bruke <strong>halveringsmetoden</strong>.
+Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der vi vet at nullpunktet ligger. Hvordan kan vi vite at nullpunktet ligger der? Funksjonsverdien må ha forskjellig fortegn i endepunktet. Det vil si <span class="math notranslate nohighlight">\(f(a) &lt; 0\)</span> og <span class="math notranslate nohighlight">\(f(b) &gt; 0\)</span>, eller motsatt. Dette kan vi sjekke ved å regne ut funksjonsverdien i endepunktene, og gange de sammen. Hvis produktet er negativt, vet vi at funksjonsverdiene har forskjellig fortegn. Ideen er vi så regne ut midtpunktet på intervallet, for å deretter velge ut et nytt intervall som er halvparten så stort. Vi gjør dette ved å velge den halvdelen av intervallet som vi <em>vet</em> nullpunktet ligger i:</p>
+<ol class="arabic simple">
+<li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(m) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = m\)</span>. Så midtpunktet blir høyre endepunkt på det nye intervallet.</p></li>
+<li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = m\)</span>. Midtpunktet blir da venstre endepunkt på det nye intervallet.</p></li>
+</ol>
+<p>Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når <span class="math notranslate nohighlight">\(|f(m)| &lt; \epsilon\)</span>, der <span class="math notranslate nohighlight">\(\epsilon\)</span> er en toleranseverdi som ofte settes til <span class="math notranslate nohighlight">\(\epsilon \approx 10^{-8}\)</span>. <a class="reference internal" href="#halveringsmetoden">Algorithm 1</a> viser pseudokode for algoritmen.</p>
+<div class="proof algorithm admonition" id="halveringsmetoden">
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Halveringsmetoden)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der vi vet at nullpunktet ligger, og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p><strong>Output:</strong> Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Sjekk at <span class="math notranslate nohighlight">\(f(a) \cdot f(b) &lt; 0\)</span>. Hvis ikke, avslutt algoritmen.</p></li>
+<li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(m = (a + b) / 2\)</span>.</p></li>
+<li><p>While <span class="math notranslate nohighlight">\(|f(m)| &gt; \epsilon\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(m) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = m\)</span>.</p></li>
+<li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = m\)</span>.</p></li>
+<li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(m = (a + b) / 2\)</span>.</p></li>
+</ol>
+</li>
+<li><p>Returner <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+</ol>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -448,7 +440,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/variabler_og_regning"
+            path: "./book/funksjoner"
         },
         predefinedOutput: true
     }
@@ -467,22 +459,13 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../intro.html"
+       href="introduksjon.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Programmering i Videregående Skole</p>
+        <p class="prev-next-title">Introduksjon til Funksjoner</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="regning.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Å regne med Python</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -502,11 +485,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelser-verdi-og-datatype">Øvelser: Verdi og datatype.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-skrive-ut-verdi-og-datatype">Øvelse 1: Skrive ut verdi og datatype.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-2-sette-riktig-verdi-og-datatype">Øvelse 2: Sette riktig verdi og datatype.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-finne-nullpunktene-til-en-lineaer-funksjon">Eksempel 1: Finne nullpunktene til en lineær funksjon</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halveringsmetoden">Halveringsmetoden</a></li>
 </ul>
   </nav></div>
 
