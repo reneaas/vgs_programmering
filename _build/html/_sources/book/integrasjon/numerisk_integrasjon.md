@@ -20,7 +20,7 @@ Se {numref}`trapesmetoden` for en illustrasjon av trapesmetoden. Her spiller $h 
 
 ```{figure} ./figurer/Integration_num_trapezes_notation.svg
 ---
-:name: trapesmetoden
+name: trapesmetoden
 ---
 Figuren viser en graf av en funksjon $f$ og trapesene som er avgrenset av grafen til $f$ og de to linjene $x = x_i$ og $x = x_{i+1}$ for hvert delintervall. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg).
 ```
@@ -37,7 +37,7 @@ der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I {numref}`trape
 
 ```{figure} ./figurer/Trapezoid.svg
 ---
-:name: trapes
+name: trapes
 ---
 Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 

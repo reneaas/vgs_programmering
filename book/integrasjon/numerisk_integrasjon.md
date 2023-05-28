@@ -18,6 +18,12 @@ Tanken bak metoden er
 
 Se {numref}`trapesmetoden` for en illustrasjon av trapesmetoden. Her spiller $h = x_{i+1} - x_i$ rollen som "høyden" i hvert trapes, mens $f(x_i)$ og $f(x_{i+1})$ spiller rollen som "sidelengdene".
 
+Tilnærmingen til integralet blir da
+
+$$
+\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+$$
+
 ```{figure} ./figurer/Integration_num_trapezes_notation.svg
 ---
 name: trapesmetoden
