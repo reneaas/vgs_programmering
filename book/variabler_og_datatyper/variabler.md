@@ -25,9 +25,9 @@ Det finnes mange forskjellige datatyper i Python. Men for nå holder det å kjen
 3. `str` er tekst.
 
 
-## Øvelser: Verdi og datatype
+## Øvelser: Verdi og datatype.
 
-### Øvelse 1: Skrive ut verdi og datatype
+### Øvelse 1: Skrive ut verdi og datatype.
 
 Under kan du se hvordan man kan skrive ut verdien til en variabel med `print`-funksjonen og datatypen til variabelen ved å bruke `type`-funksjonen:
 
