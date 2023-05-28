@@ -22,7 +22,20 @@ Det finnes mange forskjellige datatyper i Python. De **viktigste** til å begynn
 
 ## Øvelser: Verdi og datatype
 
-Under kan du eksperimentere litt
+### Øvelse 1: Skrive ut verdi og datatype
+
+Under kan du se hvordan man kan skrive ut verdien til en variabel med `print`-funksjonen og datatypen til variabelen ved å bruke `type`-funksjonen:
 
 <iframe src="https://trinket.io/embed/python/61f0fa2c97" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
+
+### Øvelse 2: Sette riktig verdi og datatype.
+
+Under er en uferdig kode der to variabler ikke er implementert (derfor markert med `NotImplemented`). Sammen med den uferdige koden er det en notis som sier at
+
+- `a` skal ha verdien `10` og datatypen `int`.
+- `r` skal ha verdien `-0.5` og datatypen `float`.
+
+Fullfør koden. Trykk på run og se om du har gjort riktig.
+
+<iframe src="https://trinket.io/embed/python/2fd0bb1151" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
