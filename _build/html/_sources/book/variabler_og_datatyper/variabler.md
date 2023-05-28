@@ -21,7 +21,7 @@ I tabell 1 ser du noen eksempler på variabler.
 Det finnes mange forskjellige datatyper i Python. Men for nå holder det å kjenne til disse:
 
 1. `int` er *heltall*. 
-2. `float` er *reelle tall* (flyttall, egentlig) og er de man brukes når man regner.
+2. `float` er *flyttall* og er de man brukes når man regner. Du kan tenke på det som desimaltall.
 3. `str` er tekst.
 
 
