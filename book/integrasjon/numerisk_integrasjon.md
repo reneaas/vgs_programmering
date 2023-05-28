@@ -26,7 +26,4 @@ name: trapes
 ---
 Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 
-
-```
-
 ```

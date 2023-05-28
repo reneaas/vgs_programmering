@@ -14,10 +14,10 @@ $$
 ```{admonition} Arealet av et trapes
 :class: tip
 
-Først trenger vi en påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
-$$
+Påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
+$
 A = \frac{a + b}{2}h
-$$
+$
 der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I figur 1 ser du et trapes med høyde $h$ og sidelengder $a$ og $b$ for referanse.
 
 ```{figure} ./figurer/Trapezoid.svg
@@ -28,16 +28,5 @@ Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hen
 
 
 ```
-Først trenger vi en påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
-$$
-A = \frac{a + b}{2}h
-$$
-der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I figur 1 ser du et trapes med høyde $h$ og sidelengder $a$ og $b$ for referanse.
 
-```{figure} ./figurer/Trapezoid.svg
----
-name: trapes
----
-Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 ```
-
