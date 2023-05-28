@@ -63,3 +63,20 @@ def S(N):
 Under kan du eksperimentere med funksjonen. Prøv å øke `N` og se hva som skjer.
 
 <iframe src="https://trinket.io/embed/python/7a0bf0ce69" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+
+## Oppgaver
+
+### Oppgave 1
+
+Skriv en Python funksjon for følgende funksjoner:
+
+1. $f(x) = 2x + 1$
+2. $g(x) = x^2 - 3x + 2$
+3. $h(x) = \frac{1}{x^2 + 1}$
+
+
+Du kan bruke kodeblokken under til å skrive kode. *Du finner et løsningsforslag under fanen `fasit.py`.*
+
+<iframe src="https://trinket.io/embed/python/2e17476d19" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
