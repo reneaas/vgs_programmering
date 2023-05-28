@@ -352,7 +352,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvilke-datatyper-kan-man-regne-med">Hvilke datatyper kan man regne med?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
 </ul>
             </nav>
         </div>
@@ -367,14 +367,6 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="a-regne-med-python">
 <h1>Å regne med Python<a class="headerlink" href="#a-regne-med-python" title="Permalink to this heading">#</a></h1>
 <p>Python kode kan gjøre vanlige regneoperasjoner som vi lærer om i matematikken, og siden vi skal bruke Python i de regnetunge realfagene, er det naturlig at vi må lære om dette.</p>
-<section id="hvilke-datatyper-kan-man-regne-med">
-<h2>Hvilke datatyper kan man regne med?<a class="headerlink" href="#hvilke-datatyper-kan-man-regne-med" title="Permalink to this heading">#</a></h2>
-<p>Vi kan regne med to datatyper:</p>
-<ol class="arabic simple">
-<li><p><strong>int</strong> (heltall).</p></li>
-<li><p><strong>float</strong> (flyttall/desimaltall).</p></li>
-</ol>
-<p>Det er vanligst å regne med <code class="docutils literal notranslate"><span class="pre">float</span></code>. Man kan regne med <code class="docutils literal notranslate"><span class="pre">int</span></code> på samme måte som man regner med <code class="docutils literal notranslate"><span class="pre">float</span></code>, men resultatet blir ofte omgjort til en <code class="docutils literal notranslate"><span class="pre">float</span></code> selv om du opprinnelig hadde en eller flere <code class="docutils literal notranslate"><span class="pre">int</span></code> i regnestykket. Mer om dette senere.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Hvilke datatyper kan man regne med?</strong></p>
@@ -384,6 +376,52 @@ document.write(`
 <li><p><strong>float</strong> (flyttall/desimaltall).</p></li>
 </ol>
 <p>Det er vanligst å regne med <code class="docutils literal notranslate"><span class="pre">float</span></code>. Man kan regne med <code class="docutils literal notranslate"><span class="pre">int</span></code> på samme måte som man regner med <code class="docutils literal notranslate"><span class="pre">float</span></code>, men resultatet blir ofte omgjort til en <code class="docutils literal notranslate"><span class="pre">float</span></code> selv om du opprinnelig hadde en eller flere <code class="docutils literal notranslate"><span class="pre">int</span></code> i regnestykket. Mer om dette senere.</p>
+</div>
+<section id="regneoperasjoner-i-python">
+<h2>Regneoperasjoner i Python<a class="headerlink" href="#regneoperasjoner-i-python" title="Permalink to this heading">#</a></h2>
+<p>Alle de vanlige regneartene er mulig å bruke når man skriver Python kode.</p>
+<p><strong>Tabell 1</strong>: Regneoperasjoner i Python.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Regneart</p></th>
+<th class="head"><p>Operasjonstegn</p></th>
+<th class="head"><p>Eksempel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Addisjon</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Subtraksjon</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Multiplikasjon</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">*</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Divisjon</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Potens</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">**</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Heltallsdivisjon</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">//</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Modulo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">%</span> <span class="pre">2</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">Regneartene i Python</p>
+<p>I Python er det viktig å være klar over at regneartene ikke alltid betyr det samme som i matematikken.</p>
 </div>
 </section>
 </section>
@@ -455,7 +493,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvilke-datatyper-kan-man-regne-med">Hvilke datatyper kan man regne med?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
 </ul>
   </nav></div>
 
