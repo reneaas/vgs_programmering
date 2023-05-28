@@ -37,6 +37,7 @@ Vi kan oppsummere med en algoritme:
 :label: trapesmetoden
 
 **Input**: $f$, $a$, $b$, $n$
+
 **Output**: Tilnærming til integralet $\int\limits_a^b f(x) \, dx$
 
 1. Sett $h = \frac{b - a}{n}$.
