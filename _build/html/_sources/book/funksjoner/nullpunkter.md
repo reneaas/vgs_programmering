@@ -95,6 +95,8 @@ Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å 
 **Newtons metode** er en effektiv måte å finne nullpunktene til en funksjon $f$ dersom vi også kjenner til den deriverte $f'$. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen $f$ i et punkt $x_0$. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen $f'$, som vi kjenner til. Dette gir oss et nytt punkt $x_1$. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til $f$ i $x_1$. Dette gir oss et nytt punkt $x_2$. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. {numref}`newtonsmetode_fig` viser pseudokode for algoritmen.
 
 
+<img src="./figurer/NetwonIteration_Ani.gif" width="750" align="center">
+
 ```{figure} ./figurer/NetwonIteration_Ani.gif
 name: newtonsmetode_fig
 
