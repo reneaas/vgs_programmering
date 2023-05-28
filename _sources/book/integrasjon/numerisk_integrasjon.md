@@ -190,3 +190,19 @@ $$
 
 der $x_1, x_2, ..., x_N$ er $N$ tilfeldige tall trukket fra $p(x)$.
 
+
+### Oppgaver
+
+#### Oppgave 1
+
+Bruk Monte Carlo integrasjon til å tilnærme integralet
+
+$$
+I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
+$$
+
+Integralet bør nærme seg en veldig kjent matematisk konstant når du trekker mange tall $N$.
+
+Du kan bruke kodeblokken under. *Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
+
+<iframe src="https://trinket.io/embed/python/a75a7ef20b" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
