@@ -36,7 +36,7 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall $[a, b]$ der vi vet 
 1. Hvis $f(a) \cdot f(m) < 0$, sett $b = m$. Så midtpunktet blir høyre endepunkt på det nye intervallet.
 2. Hvis ikke, sett $a = m$. Midtpunktet blir da venstre endepunkt på det nye intervallet.
 
-Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(m)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. ```{prf:algorithm}halveringsmetoden``` viser pseudokode for algoritmen.
+Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(m)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`halveringsmetoden` viser pseudokode for algoritmen.
 
 
 ```{prf:algorithm} Halveringsmetoden
