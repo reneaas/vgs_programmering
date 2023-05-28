@@ -353,6 +353,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolgen-i-python">Regnerekkefølgen i Python</a></li>
 </ul>
             </nav>
         </div>
@@ -379,7 +380,7 @@ document.write(`
 <section id="regneoperasjoner-i-python">
 <h2>Regneoperasjoner i Python<a class="headerlink" href="#regneoperasjoner-i-python" title="Permalink to this heading">#</a></h2>
 <p>Alle de vanlige regneartene er mulig å bruke når man skriver Python kode.
-I tabell 1 vises de alle regneoperasjonene du kan gjøre med Python, og hvilket operasjonstegn du må bruke med et eksempel for hver regneart.</p>
+I tabell 1 vises alle regneoperasjonene du kan gjøre med Python og hvilket operasjonstegn du må bruke.</p>
 <p><strong>Tabell 1</strong>: Regneoperasjoner i Python.</p>
 <table class="table">
 <thead>
@@ -431,6 +432,31 @@ I tabell 1 vises de alle regneoperasjonene du kan gjøre med Python, og hvilket 
 <p class="admonition-title">Hva betyr heltallsdivisjon og modulo?</p>
 <p><strong>Heltallsdivisjon</strong> er antallet <em>hele</em> ganger et tall går opp i et annet. For eksempel går <code class="docutils literal notranslate"><span class="pre">3</span></code> opp i <code class="docutils literal notranslate"><span class="pre">10</span></code> tre ganger, og derfor er <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">//</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
 <p><strong>Modulo</strong> eller <strong>restdivisjon</strong> er resten av en heltallsdivisjon. For eksempel er <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">1</span></code> siden <code class="docutils literal notranslate"><span class="pre">3</span></code> går opp i <code class="docutils literal notranslate"><span class="pre">10</span></code> tre ganger med rest <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</div>
+</section>
+<section id="regnerekkefolgen-i-python">
+<h2>Regnerekkefølgen i Python<a class="headerlink" href="#regnerekkefolgen-i-python" title="Permalink to this heading">#</a></h2>
+<p>Regnerekkefølgen i Python er</p>
+<ol class="arabic simple">
+<li><p>Parenteser</p></li>
+<li><p>Potenser.</p></li>
+<li><p>Divisjon</p></li>
+<li><p>Multiplikasjon</p></li>
+<li><p>Addisjon og substraksjon</p></li>
+</ol>
+<p>Dette er omtrent den samme rekkefølgen som man lærer om i matematikken. Den store forskjellen er at divisjon og multiplikasjon <em>ikke</em> stilles på lik linje. Man utfører divisjon <em>før</em> man utfører multiplikasjon.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Eksempel på regnerekkefølge</p>
+<p>Vi skal regne ut <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Først utfører vi divisjonen <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">2</span></code>.</p></li>
+<li><p>Deretter utfører vi multiplikasjonen <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code>.</p></li>
+<li><p>Deretter plusser vi <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">=</span> <span class="pre">6</span></code>.</p></li>
+</ol>
+</div>
+<div class="admonition-hva-med-parenteser admonition">
+<p class="admonition-title">Hva med parenteser?</p>
 </div>
 </section>
 </section>
@@ -503,6 +529,7 @@ I tabell 1 vises de alle regneoperasjonene du kan gjøre med Python, og hvilket 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolgen-i-python">Regnerekkefølgen i Python</a></li>
 </ul>
   </nav></div>
 
