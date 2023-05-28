@@ -11,6 +11,19 @@ $$
 I = \int\limits_a^b f(x) \, dx.
 $$
 
+Tanken bak metoden er 
+1. Vi deler opp intervallet $[a, b]$ i $n$ like store delintervaller, slik at vi får delintervallene $[x_0, x_1]$, $[x_1, x_2]$, ..., $[x_{n-1}, x_n]$.
+2. Vi kaller lengden til hvert delintervall for $h$. Da er $h = \frac{b - a}{n}$. Vi kaller også $x_0 = a$ og $x_n = b$. 
+3. Vi regner ut arealet av trapesene som er avgrenset av grafen til $f$ og de to linjene $x = x_i$ og $x = x_{i+1}$ for hvert delintervall. Vi kaller disse arealene for $S_i$.
+
+```{figure} ./figurer/Integration_num_trapezes_notation.svg
+---
+name: trapesmetoden
+---
+Figuren viser en graf av en funksjon $f$ og trapesene som er avgrenset av grafen til $f$ og de to linjene $x = x_i$ og $x = x_{i+1}$ for hvert delintervall. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg).
+```
+
+
 ```{admonition} Arealet av et trapes
 :class: tip
 
@@ -27,3 +40,5 @@ name: trapes
 Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 
 ```
+
+
