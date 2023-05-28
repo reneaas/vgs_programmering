@@ -17,14 +17,14 @@ Ideen er å dele opp intervallet $[a, b]$ i $n$ like store delintervaller, og s�
 $$
 A = \frac{a + b}{2}h
 $$
-der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I figur [trapes](#trapes) ser du et trapes med høyde $h$ og sidelengder $a$ og $b$ for referanse.
+der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I figur 1 ser du et trapes med høyde $h$ og sidelengder $a$ og $b$ for referanse.
 
 Deler vi opp intervallet 
 
 
 ```{figure} ./figurer/Trapezoid.svg
 ---
-label: trapes
+name: trapes
 ---
 Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 ```
