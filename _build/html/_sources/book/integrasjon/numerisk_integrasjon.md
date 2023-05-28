@@ -63,7 +63,7 @@ Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hen
 Finn en tilnærming til integralet
 
 $$
-I = \int_0^1 e^{-x^2} \, dx 
+I = \int\limits_0^1 e^{-x^2} \, dx 
 $$
 
 ved å bruke trapesmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
@@ -84,7 +84,7 @@ $$
 ved å starte fra summen
 
 $$
-\int_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
 $$
 
 
@@ -93,7 +93,7 @@ $$
 En annen metode for å finne en tilnærming til integralet 
 
 $$
-I = \int_a^b f(x) \, dx,
+I = \int\limits_a^b f(x) \, dx,
 $$
 
 er ved å ta i bruk **midtpunktsmetoden**. Ingrediensene i midtpunktsmetoden er
@@ -107,7 +107,7 @@ Tilnærmingen til integralet blir da
 
 
 $$
-I = \int_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} f(x_{i+1/2})h.
+I = \int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} f(x_{i+1/2})h.
 $$
 
 Vi oppsummerer det hele i {prf:ref}`midtpunktsmetoden`.
@@ -133,6 +133,34 @@ Vi oppsummerer det hele i {prf:ref}`midtpunktsmetoden`.
 
 Midtpunktsmetoden har mange likheter med trapesmetoden. Forskjellen ligger i hvordan selve arealet regnes ut. I midtpunktsmetoden regner vi ut arealet av rektangler, mens vi i trapesmetoden regner ut arealet av trapeser. Det som gjør midtpunktsmetoden god, er måten man velger ut høyden i rektanglene. Generelt sett, er midtpunktsmetoden mer nøyaktig enn trapesmetoden!
 ```
+
+### Oppgaver
+
+#### Oppgave 1
+
+Finn en tilnærming til integralet
+
+$$
+I = \int\limits_0^1 x**2 * e^{-x} \, dx,
+$$
+
+ved å bruke midtpunktsmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+*Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
+
+<iframe src="https://trinket.io/embed/python/27d766e4e2" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+#### Oppgave 2
+
+Finn en tilnærming til integralet
+
+$$
+I = \int\limits_0^1 e^{-x^2}\, dx
+$$
+
+ved å bruke midtpunktsmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+
+<iframe src="https://trinket.io/embed/python/352bd16743" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
 
 
 
