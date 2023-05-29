@@ -9,7 +9,7 @@ Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:
 
 | Funksjon | Ren Python | `math` | `numpy` |
 | --- | --- | --- | --- |
-| $f(x) = |x|$ | `abs(x)`| - | `numpy.abs(x)` |
+| $f(x) = \|x\|$ | `abs(x)`| - | `numpy.abs(x)` |
 | $f(x) = x^a$ | `x**a` | - |`numpy.power(x, a)` |
 | $f(x) = e^x$ | - |`math.exp(x)` | `numpy.exp(x)` |
 | $f(x) = \sqrt{x}$ | - |`math.sqrt(x)` | `numpy.sqrt(x)` |

@@ -12,6 +12,9 @@ Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:
 | $f(x) = \|x\|$ | `abs(x)`| - | `numpy.abs(x)` |
 | $f(x) = x^a$ | `x**a` | - |`numpy.power(x, a)` |
 | $f(x) = e^x$ | - |`math.exp(x)` | `numpy.exp(x)` |
+| $f(x) = \ln(x)$ | - |`math.log(x)` | `numpy.log(x)` |
+| $f(x) = \log_a(x)$ | - |`math.log(x, a)` | `numpy.log(x, a)` |
+| $f(x) = \log_{10}(x)$ | - |`math.log10(x)` | `numpy.log10(x)` |
 | $f(x) = \sqrt{x}$ | - |`math.sqrt(x)` | `numpy.sqrt(x)` |
 | $f(x) = \sin(x)$ | - |`math.sin(x)` | `numpy.sin(x)` |
 | $f(x) = \cos(x)$ | - |`math.cos(x)` | `numpy.cos(x)` |
