@@ -33,12 +33,13 @@ Her har vi løst problemet med *brute-force*. Ved å se på funksjonsuttrykket s
 En systematisk måte å finne nullpunkter til vilkårlige funksjoner $f(x)$ på, er å bruke **halveringsmetoden**. 
 Algoritmen tar utgangspunkt i at vi velger oss et intervall $[a, b]$ der vi vet at nullpunktet ligger. Hvordan kan vi vite at nullpunktet ligger der? Funksjonsverdien må ha forskjellig fortegn i endepunktet. Det vil si $f(a) < 0$ og $f(b) > 0$, eller motsatt. Dette kan vi sjekke ved å regne ut funksjonsverdien i endepunktene, og gange de sammen. Hvis produktet er negativt, vet vi at funksjonsverdiene har forskjellig fortegn. Ideen er vi så regne ut midtpunktet på intervallet, for å deretter velge ut et nytt intervall som er halvparten så stort. Vi gjør dette ved å velge den halvdelen av intervallet som vi *vet* nullpunktet ligger i:
 
-1. Hvis $f(a) \cdot f(m) < 0$, sett $b = m$. Så midtpunktet blir høyre endepunkt på det nye intervallet.
-2. Hvis ikke, sett $a = m$. Midtpunktet blir da venstre endepunkt på det nye intervallet.
+1. Regn ut midtpunktet $c = (a + b) / 2$.
+2. Hvis $f(a) \cdot f(c) < 0$, sett $b = c$. Så midtpunktet blir høyre endepunkt på det nye intervallet.
+3. Hvis ikke, sett $a = c$. Midtpunktet blir da venstre endepunkt på det nye intervallet.
 
-Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(m)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`halveringsmetoden` viser pseudokode for algoritmen.
+Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(c)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`halveringsmetoden` viser pseudokode for algoritmen.
 
-{numref}`bisection` viser en animasjon av halveringsmetoden, der midtpunktet blir kalt $c$ i stedet for $m$. 
+{numref}`bisection` viser en animasjon av halveringsmetoden.
 
 
 
@@ -56,15 +57,15 @@ Animasjon av halveringsmetoden. Hentet fra [Wikimedia Commons](https://upload.wi
 :label: halveringsmetoden
 **Input:** En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
 
-**Output:** Et tilnærmet nullpunkt $x$.
+**Output:** Et tilnærming til et nullpunkt til $f$.
 
 1. Sjekk at $f(a) \cdot f(b) < 0$. Hvis ikke, avslutt algoritmen.
-2. Regn ut midtpunktet $m = (a + b) / 2$.
-3. While $|f(m)| > \epsilon$:
-    1. Hvis $f(a) \cdot f(m) < 0$, sett $b = m$.
-    2. Hvis ikke, sett $a = m$.
-    3. Regn ut midtpunktet $m = (a + b) / 2$.
-4. Returner $m$.
+2. Regn ut midtpunktet $c = (a + b) / 2$.
+3. While $|f(c)| > \epsilon$:
+    1. Hvis $f(a) \cdot f(c) < 0$, sett $b = c$.
+    2. Hvis ikke, sett $a = c$.
+    3. Regn ut midtpunktet $c = (a + b) / 2$.
+4. Returner $c$.
 ```
 
 
@@ -86,7 +87,7 @@ Vi kan for eksempel velge oss ut intervallet $[a, b] = [-2, 0]$. Da har vi $f(-2
 Toleransen kan vi bare sette til $\epsilon = 10^{-8}$. 
 
 Under kan du prøve å skrive koden som finner det ene nullpunktet ved hjelp av halveringsmetoden selv.
-Løsningen ligger i fanen `sol.py`, hvis du trenger hjelp.
+Løsningen ligger i fanen `fasit.py`, hvis du trenger hjelp.
 Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å velge et nytt intervall.
 
 

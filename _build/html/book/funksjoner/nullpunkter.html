@@ -417,11 +417,12 @@ f(x) = 2x - 1.
 <p>En systematisk måte å finne nullpunkter til vilkårlige funksjoner <span class="math notranslate nohighlight">\(f(x)\)</span> på, er å bruke <strong>halveringsmetoden</strong>.
 Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der vi vet at nullpunktet ligger. Hvordan kan vi vite at nullpunktet ligger der? Funksjonsverdien må ha forskjellig fortegn i endepunktet. Det vil si <span class="math notranslate nohighlight">\(f(a) &lt; 0\)</span> og <span class="math notranslate nohighlight">\(f(b) &gt; 0\)</span>, eller motsatt. Dette kan vi sjekke ved å regne ut funksjonsverdien i endepunktene, og gange de sammen. Hvis produktet er negativt, vet vi at funksjonsverdiene har forskjellig fortegn. Ideen er vi så regne ut midtpunktet på intervallet, for å deretter velge ut et nytt intervall som er halvparten så stort. Vi gjør dette ved å velge den halvdelen av intervallet som vi <em>vet</em> nullpunktet ligger i:</p>
 <ol class="arabic simple">
-<li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(m) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = m\)</span>. Så midtpunktet blir høyre endepunkt på det nye intervallet.</p></li>
-<li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = m\)</span>. Midtpunktet blir da venstre endepunkt på det nye intervallet.</p></li>
+<li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(c = (a + b) / 2\)</span>.</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(c) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = c\)</span>. Så midtpunktet blir høyre endepunkt på det nye intervallet.</p></li>
+<li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = c\)</span>. Midtpunktet blir da venstre endepunkt på det nye intervallet.</p></li>
 </ol>
-<p>Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når <span class="math notranslate nohighlight">\(|f(m)| &lt; \epsilon\)</span>, der <span class="math notranslate nohighlight">\(\epsilon\)</span> er en toleranseverdi som ofte settes til <span class="math notranslate nohighlight">\(\epsilon \approx 10^{-8}\)</span>. <a class="reference internal" href="#halveringsmetoden">Algorithm 1</a> viser pseudokode for algoritmen.</p>
-<p><a class="reference internal" href="#bisection"><span class="std std-numref">Fig. 1</span></a> viser en animasjon av halveringsmetoden, der midtpunktet blir kalt <span class="math notranslate nohighlight">\(c\)</span> i stedet for <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når <span class="math notranslate nohighlight">\(|f(c)| &lt; \epsilon\)</span>, der <span class="math notranslate nohighlight">\(\epsilon\)</span> er en toleranseverdi som ofte settes til <span class="math notranslate nohighlight">\(\epsilon \approx 10^{-8}\)</span>. <a class="reference internal" href="#halveringsmetoden">Algorithm 1</a> viser pseudokode for algoritmen.</p>
+<p><a class="reference internal" href="#bisection"><span class="std std-numref">Fig. 1</span></a> viser en animasjon av halveringsmetoden.</p>
 <figure class="align-default" id="bisection">
 <img alt="../../_images/Bisection_ani.gif" src="../../_images/Bisection_ani.gif" />
 <figcaption>
@@ -432,18 +433,18 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math no
 <p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Halveringsmetoden)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input:</strong> En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der vi vet at nullpunktet ligger, og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
-<p><strong>Output:</strong> Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><strong>Output:</strong> Et tilnærming til et nullpunkt til <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <ol class="arabic simple">
 <li><p>Sjekk at <span class="math notranslate nohighlight">\(f(a) \cdot f(b) &lt; 0\)</span>. Hvis ikke, avslutt algoritmen.</p></li>
-<li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(m = (a + b) / 2\)</span>.</p></li>
-<li><p>While <span class="math notranslate nohighlight">\(|f(m)| &gt; \epsilon\)</span>:</p>
+<li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(c = (a + b) / 2\)</span>.</p></li>
+<li><p>While <span class="math notranslate nohighlight">\(|f(c)| &gt; \epsilon\)</span>:</p>
 <ol class="arabic simple">
-<li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(m) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = m\)</span>.</p></li>
-<li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = m\)</span>.</p></li>
-<li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(m = (a + b) / 2\)</span>.</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(c) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = c\)</span>.</p></li>
+<li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = c\)</span>.</p></li>
+<li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(c = (a + b) / 2\)</span>.</p></li>
 </ol>
 </li>
-<li><p>Returner <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p>Returner <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
 </ol>
 </section>
 </div><section id="eksempel-2-finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden">
@@ -462,7 +463,7 @@ f(x) = x^2 - 1.
 <p>Vi kan for eksempel velge oss ut intervallet <span class="math notranslate nohighlight">\([a, b] = [-2, 0]\)</span>. Da har vi <span class="math notranslate nohighlight">\(f(-2) = 3\)</span> og <span class="math notranslate nohighlight">\(f(0) = -1\)</span>, så <span class="math notranslate nohighlight">\(f\)</span> endrer fortegn på intervallet.
 Toleransen kan vi bare sette til <span class="math notranslate nohighlight">\(\epsilon = 10^{-8}\)</span>.</p>
 <p>Under kan du prøve å skrive koden som finner det ene nullpunktet ved hjelp av halveringsmetoden selv.
-Løsningen ligger i fanen <code class="docutils literal notranslate"><span class="pre">sol.py</span></code>, hvis du trenger hjelp.
+Løsningen ligger i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code>, hvis du trenger hjelp.
 Prøv å bruke løsningen din til å finne det <em>andre</em> nullpunktet også ved å velge et nytt intervall.</p>
 <iframe src="https://trinket.io/embed/python/f74e2a41cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 <div class="warning admonition">
