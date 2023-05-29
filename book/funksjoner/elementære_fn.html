@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduksjon til Funksjoner &#8212; Programmering i Videregående Skole</title>
+    <title>Elementære Funksjoner i Python &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,11 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/funksjoner/introduksjon';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/funksjoner/elementære_fn';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Finne nullpunkter med Python" href="nullpunkter.html" />
-    <link rel="prev" title="Å regne med Python" href="../variabler_og_regning/regning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduksjon til Funksjoner</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduksjon.html">Introduksjon til Funksjoner</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="nullpunkter.html">Finne nullpunkter med Python</a></li>
 </ul>
@@ -242,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/funksjoner/introduksjon.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/funksjoner/elementære_fn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -272,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/funksjoner/introduksjon.md" target="_blank"
+      <li><a href="../../_sources/book/funksjoner/elementære_fn.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,9 +339,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -354,32 +350,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduksjon til Funksjoner</h1>
+    <h1>Elementære Funksjoner i Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduksjon til Funksjoner</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjoner-i-python">Funksjoner i Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -389,71 +364,63 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduksjon-til-funksjoner">
-<h1>Introduksjon til Funksjoner<a class="headerlink" href="#introduksjon-til-funksjoner" title="Permalink to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="funksjoner-i-python">
-<h1>Funksjoner i Python<a class="headerlink" href="#funksjoner-i-python" title="Permalink to this heading">#</a></h1>
-<section id="introduksjon">
-<h2>Introduksjon<a class="headerlink" href="#introduksjon" title="Permalink to this heading">#</a></h2>
-<p>En funksjon i Python har mange likheter med en funksjon i matematikken. Den generelle måten vi skriver funksjoner på er</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funksjonsnavn</span><span class="p">(</span><span class="n">variabelnavn</span><span class="p">):</span>
-    <span class="c1"># Kodeblokk</span>
-    <span class="k">return</span> <span class="c1"># returner funksjonsverdien</span>
-</pre></div>
-</div>
-<section id="eksempel-1">
-<h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
-<p>Funksjonen <span class="math notranslate nohighlight">\(f(x) = x^2 - 1\)</span> kan vi skrive definere med koden</p>
-<p>eller</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^2 - 1.
-\]</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>Vi kan regne ut funksjonsverdier med et såkalt <em>funksjonskall</em>. Som eksempel, la oss regne ut funksjonsverdien i <span class="math notranslate nohighlight">\(x = 2\)</span>. Dette kan gjøres på to måter:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Skrive inn x-verdien direkte</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Presisere at det er `x` som skal settes lik 2.</span>
-</pre></div>
-</div>
-<p>Under kan du eksperimentere med funksjonen:</p>
-<iframe src="https://trinket.io/embed/python/dd5bbfca3d" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</section>
-<section id="eksempel-2">
-<h3>Eksempel 2<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
-<p>Noen funksjoner kan ikke skrives med elementære funksjoner (lukkede formler). Et eksempel er en rekke på formen</p>
-<div class="math notranslate nohighlight">
-\[
-S_N = \sum_{n=1}^N \frac{1}{n^2}.
-\]</div>
-<p>Vi kan anse <span class="math notranslate nohighlight">\(S_N\)</span> som en funksjon av antall ledd <span class="math notranslate nohighlight">\(N\)</span>. Vi kan da skrive funksjonen som</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">S</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">return</span> <span class="n">res</span>
-</pre></div>
-</div>
-<p>Under kan du eksperimentere med funksjonen. Prøv å øke <code class="docutils literal notranslate"><span class="pre">N</span></code> og se hva som skjer.</p>
-<iframe src="https://trinket.io/embed/python/7a0bf0ce69" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</section>
-</section>
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Skriv en Python funksjon for følgende funksjoner:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="elementaere-funksjoner-i-python">
+<h1>Elementære Funksjoner i Python<a class="headerlink" href="#elementaere-funksjoner-i-python" title="Permalink to this heading">#</a></h1>
+<p>Mange funksjoner kan uttrykkes ved hjelp av elementære funksjoner. Vi skal se på noen eksempler på hvordan vi kan skrive disse i Python. Men først oppgir vi en liste over de viktigste elementære funksjonene som dukker opp i matematikken så vi har en oversikt over dem.</p>
+<div class="admonition-liste-over-elementaere-funksjoner admonition">
+<p class="admonition-title">Liste over elementære funksjoner</p>
+<p>Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(f(x) = 2x + 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g(x) = x^2 - 3x + 2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(h(x) = \frac{1}{x^2 + 1}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math</span></code>-biblioteket. Det kan beregne funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code> og <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-biblioteket. Det kan bergen funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> og <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p></li>
 </ol>
-<p>Du kan bruke kodeblokken under til å skrive kode. <em>Du finner et løsningsforslag under fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code>.</em></p>
-<iframe src="https://trinket.io/embed/python/2e17476d19" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
-</section>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Funksjon</p></th>
+<th class="head"><p>Ren Python</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$f(x) =</p></td>
+<td><p>x</p></td>
+<td><p>$</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = x^a\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x**a</span></code></p></td>
+<td><p>-</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(x,</span> <span class="pre">a)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = e^x\)</span></p></td>
+<td><p>-</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.exp(x)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span></p></td>
+<td><p>-</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sqrt(x)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span></p></td>
+<td><p>-</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">math.sin(x)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sin(x)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span></p></td>
+<td><p>-</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">math.cos(x)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.cos(x)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = \tan(x)\)</span></p></td>
+<td><p>-</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">math.tan(x)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.tan(x)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -487,24 +454,6 @@ S_N = \sum_{n=1}^N \frac{1}{n^2}.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../variabler_og_regning/regning.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Å regne med Python</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="nullpunkter.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Finne nullpunkter med Python</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -514,33 +463,6 @@ S_N = \sum_{n=1}^N \frac{1}{n^2}.
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduksjon til Funksjoner</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjoner-i-python">Funksjoner i Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
