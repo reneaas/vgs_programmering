@@ -38,6 +38,19 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall $[a, b]$ der vi vet 
 
 Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(m)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`halveringsmetoden` viser pseudokode for algoritmen.
 
+{numref}`bisection` viser en animasjon av halveringsmetoden, der midtpunktet blir kalt $c$ i stedet for $m$. 
+
+
+
+```{figure} ./figurer/Bisection_ani.gif
+---
+name: bisection
+---
+
+Animasjon av halveringsmetoden. Hentet fra [Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/d/d9/Bisection_anime.gif)
+```
+
+
 
 ```{prf:algorithm} Halveringsmetoden
 :label: halveringsmetoden
