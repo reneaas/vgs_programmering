@@ -3,7 +3,7 @@ message=$1
 # sjekker om melding er tom, isåfall settes en default melding.
 if [ -z "$message" ]
 then
-    message="Oppdaterte boken"
+    message="updated website"
 fi
 
 git add --all
