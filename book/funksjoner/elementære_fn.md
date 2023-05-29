@@ -8,7 +8,7 @@ Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:
 1. `math`-biblioteket. Det kan beregne funksjonsverdien for inputs med datatypene `int` og `float`.
 2. `numpy`-biblioteket. Det kan bergen funksjonsverdien for inputs med datatypene `int`, `float` og `numpy.ndarray`.
 
-| Funksjon | Ren Python | `math` | `numpy` |
+| Funksjon $f(x)$ | Ren Python | `math` | `numpy` |
 | --- | --- | --- | --- |
 | \|x\|$ | `abs(x)`| - | `numpy.abs(x)` |
 | x^a$ | `x**a` | - |`numpy.power(x, a)` |
