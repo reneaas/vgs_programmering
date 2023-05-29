@@ -85,8 +85,7 @@ Bruk kodeblokken under til å regne ut følgende regnestykker med Python kode (*
 2. $b = 4 - 2$
 3. $c = 5 \cdot 3$
 4. $d = 20 / 4$
-5. $e = 2^3 - 3 * 2 + 5$
-
+5. $e = 2^3 - 3 \cdot 2 + 5$
 
 
 <iframe src="https://trinket.io/embed/python/c6fcba1622" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
