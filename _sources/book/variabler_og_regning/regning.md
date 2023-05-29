@@ -63,8 +63,30 @@ Hadde vi i stedet multiplisert nevneren med `2` først, hadde vi fått:
 
 `2 + 4 / 2 * 2 = 2 + 4 / 4 = 2 + 1 = 3`.
 
-som er et helt annet tall. Én av dem må derfor prioriteres, og det divisjon som er den prioriterte regnearten.
+som er et helt annet tall. Én av dem må derfor prioriteres, og det er divisjon som er den prioriterte regnearten.
 ```
 
 
+## Eksempel: kode for alle regneartene
 
+Under ser du et eksempel der alle regneartene er brukt med Python kode. Kjør koden ved å trykke på *run*. 
+
+<iframe src="https://trinket.io/embed/python/3649cf38ba" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+
+## Oppgaver
+
+### Oppgave 1
+
+Bruk kodeblokken under til å regne ut følgende regnestykker med Python kode (*du finner et løsningsforslag i fanen `fasit.py`*):
+
+1. $a = 3 + 1$
+2. $b = 4 - 2$
+3. $c = 5 \cdot 3$
+4. $d = 20 / 4$
+5. $e = 2^3 - 3 * 2 + 5$
+
+
+
+<iframe src="https://trinket.io/embed/python/c6fcba1622" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
