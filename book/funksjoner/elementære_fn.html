@@ -62,8 +62,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/funksjoner/elementære_fn';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -370,7 +368,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="elementaere-funksjoner-i-python">
 <h1>Elementære Funksjoner i Python<a class="headerlink" href="#elementaere-funksjoner-i-python" title="Permalink to this heading">#</a></h1>
 <p>Mange funksjoner kan uttrykkes ved hjelp av elementære funksjoner. Vi skal se på noen eksempler på hvordan vi kan skrive disse i Python. Men først oppgir vi en liste over de viktigste elementære funksjonene som dukker opp i matematikken så vi har en oversikt over dem.</p>
-<div class="admonition-liste-over-elementaere-funksjoner admonition">
+<div class="tip admonition">
 <p class="admonition-title">Liste over elementære funksjoner</p>
 <p>Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:</p>
 <ol class="arabic simple">
@@ -386,52 +384,52 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = |x|\)</span></p></td>
+<tr class="row-even"><td><p>|x|$</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.abs(x)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = x^a\)</span></p></td>
+<tr class="row-odd"><td><p>x^a$</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">x**a</span></code></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(x,</span> <span class="pre">a)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = e^x\)</span></p></td>
+<tr class="row-even"><td><p>e^x$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.exp(x)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span></p></td>
+<tr class="row-odd"><td><p>\ln(x)$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.log(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = \log_a(x)\)</span></p></td>
+<tr class="row-even"><td><p>\log_a(x)$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">a)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x,</span> <span class="pre">a)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = \log_{10}(x)\)</span></p></td>
+<tr class="row-odd"><td><p>\log_{10}(x)$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.log10(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.log10(x)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span></p></td>
+<tr class="row-even"><td><p>\sqrt{x}$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.sqrt(x)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span></p></td>
+<tr class="row-odd"><td><p>\sin(x)$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.sin(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.sin(x)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span></p></td>
+<tr class="row-even"><td><p>\cos(x)$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.cos(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.cos(x)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x) = \tan(x)\)</span></p></td>
+<tr class="row-odd"><td><p>\tan(x)$</p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.tan(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.tan(x)</span></code></p></td>
