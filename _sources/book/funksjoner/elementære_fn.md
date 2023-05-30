@@ -8,11 +8,12 @@ Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:
 1. `math`-biblioteket. Det kan beregne funksjonsverdien for inputs med datatypene `int` og `float`.
 2. `numpy`-biblioteket. Det kan bergen funksjonsverdien for inputs med datatypene `int`, `float` og `numpy.ndarray`.
 
-| Funksjon $f(x)$ | Ren Python | `math` | `numpy` |
+| Funksjon $f(x)$ | Innebygd i Python | `math` | `numpy` |
 | --- | --- | --- | --- |
 | $\|x\|$ | `abs(x)`| - | `numpy.abs(x)` |
 | $x^a$ | `x ** a` | - |`numpy.power(x, a)` |
 | $e^x$ | - |`math.exp(x)` | `numpy.exp(x)` |
+|$ a^x $ | `a ** x` | - |`numpy.power(a, x)` |
 | $\ln(x)$ | - |`math.log(x)` | `numpy.log(x)` |
 | $\log_a(x)$ | - |`math.log(x, a)` | `numpy.log(x, a)` |
 | $\log_{10}(x)$ | - |`math.log10(x)` | `numpy.log10(x)` |
