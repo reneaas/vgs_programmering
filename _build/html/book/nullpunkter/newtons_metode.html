@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Elementære Funksjoner i Python &#8212; Programmering i Videregående Skole</title>
+    <title>Newtons metode &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/funksjoner/elementære_fn';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/nullpunkter/newtons_metode';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduksjon" href="../nullpunkter/intro.html" />
-    <link rel="prev" title="Introduksjon til Funksjoner" href="introduksjon.html" />
+    <link rel="next" title="Introduksjon" href="../integrasjon2/introduksjon.html" />
+    <link rel="prev" title="Halveringsmetoden" href="halveringsmetoden.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,16 +159,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduksjon.html">Introduksjon til Funksjoner</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nullpunkter</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/intro.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Newtons metode</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
 <ul class="nav bd-sidenav">
@@ -263,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/funksjoner/elementære_fn.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/nullpunkter/newtons_metode.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/funksjoner/elementære_fn.md" target="_blank"
+      <li><a href="../../_sources/book/nullpunkter/newtons_metode.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -373,11 +375,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Elementære Funksjoner i Python</h1>
+    <h1>Newtons metode</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -387,83 +400,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="elementaere-funksjoner-i-python">
-<h1>Elementære Funksjoner i Python<a class="headerlink" href="#elementaere-funksjoner-i-python" title="Permalink to this heading">#</a></h1>
-<p>Mange funksjoner kan uttrykkes ved hjelp av elementære funksjoner. Vi skal se på noen eksempler på hvordan vi kan skrive disse i Python. Men først oppgir vi en liste over de viktigste elementære funksjonene som dukker opp i matematikken så vi har en oversikt over dem.</p>
-<div class="tip admonition">
-<p class="admonition-title">Liste over elementære funksjoner</p>
-<p>Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="newtons-metode">
+<h1>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this heading">#</a></h1>
+<p><strong>Newtons metode</strong> er en effektiv måte å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> dersom vi også kjenner til den deriverte <span class="math notranslate nohighlight">\(f'\)</span>. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f'\)</span>, som vi kjenner til. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_1\)</span>. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x_1\)</span>. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_2\)</span>. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. <a class="reference internal" href="#newtonsmetode-fig"><span class="std std-numref">Fig. 2</span></a> viser en animasjon av prosessen.</p>
+<figure class="align-default" id="newtonsmetode-fig">
+<img alt="../../_images/NewtonIteration_Ani.gif" src="../../_images/NewtonIteration_Ani.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> vist i blå. Animasjonen er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_method#/media/File:NewtonIteration_Ani.gif">Wikimedia Commons</a>.</span><a class="headerlink" href="#newtonsmetode-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Vi kan formelt komme frem til en algoritme som følger. La <span class="math notranslate nohighlight">\(x_0\)</span> være et vilkårlig startpunkt.
+Bruker vi ettpunktsformelen for en tangent som tangerer funksjonen vår i punktet <span class="math notranslate nohighlight">\(x_0\)</span>, får vi likningen</p>
+<div class="math notranslate nohighlight">
+\[
+y = f(x_0) + f'(x_0)(x - x_0).
+\]</div>
+<p>Ideen er å finne en tilnærming til nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> ved å finne nullpunktet til tangenten i stedet. Nullpunktet til tangenten er gitt ved løsningen av likningen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x_0) + f'(x_0)(x_1 - x_0) = 0,
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.
+\]</div>
+<p>Denne formelen kan vi repetere igjen og igjen, slik at vi kommer nærmere og nærmere et nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>. Mer generelt kan vi finne et nytt estimat på nullpunktet med <span class="math notranslate nohighlight">\(x_{i+1}\)</span> ved å bruke funksjonsverdien <span class="math notranslate nohighlight">\(f(x_i)\)</span> og den deriverte <span class="math notranslate nohighlight">\(f'(x_i)\)</span> i punktet <span class="math notranslate nohighlight">\(x_i\)</span> ved formelen</p>
+<div class="math notranslate nohighlight">
+\[
+x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
+\]</div>
+<p>Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Algoritmen for Newtons metode er vist i <a class="reference internal" href="#newtonsmetode">Algorithm 2</a>.</p>
+<div class="proof algorithm admonition" id="newtonsmetode">
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Newtons metode)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span>, et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p><strong>Output:</strong> Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">math</span></code>-biblioteket. Det kan beregne funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code> og <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-biblioteket. Det kan bergen funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> og <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p></li>
+<li><p>Regn ut <span class="math notranslate nohighlight">\(x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}\)</span>.</p></li>
+<li><p>While <span class="math notranslate nohighlight">\(|f(x_i)| &gt; \epsilon\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Regn ut <span class="math notranslate nohighlight">\(x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}\)</span>.</p></li>
 </ol>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Funksjon <span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="head"><p>Innebygd i Python</p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(|x|\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.abs(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x^a\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">a</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(x,</span> <span class="pre">a)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^x\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.exp(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( a^x \)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**</span> <span class="pre">x</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(a,</span> <span class="pre">x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ln(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\log_a(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">a)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x,</span> <span class="pre">a)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\log_{10}(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log10(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log10(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">0.5</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sqrt(x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.sin(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sin(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.cos(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.cos(x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tan(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.tan(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.tan(x)</span></code></p></td>
-</tr>
-</tbody>
-</table>
+</li>
+<li><p>Returner <span class="math notranslate nohighlight">\(x_{i + 1}\)</span>.</p></li>
+</ol>
+</section>
+</div><div class="warning admonition">
+<p class="admonition-title">Svakheter med Newtons metode</p>
+<ol class="arabic simple">
+<li><p>Newtons metode bruker tangenten til en funksjon. Hvis en funksjon har asymptoter, kan algoritmen feile eller gi feil svar fordi den aldri konvergerer mot et sant nullpunkt. Dette er en svakhet med Newtons metode, og vi må derfor være forsiktige med å bruke den, og dette er også hvorfor man noen ganger får “?” som løsning når man bruker NLØS i CAS i Geogebra.</p></li>
+<li><p>Netwons metode, akkurat som halveringsmetoden, gir oss bare ett nullpunkt. Vi må derfor bruke den flere ganger hvis vi har en funksjon med flere nullpunkter.</p></li>
+</ol>
 </div>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Finn et av nullpunktene til funksjonen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^3 - 2x^2 - 5x + 6,
+\]</div>
+<p>ved å bruke Newtons metode. Bruk et startpunkt <span class="math notranslate nohighlight">\(x_0 = 2\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon = 10^{-8}\)</span>.
+Du kan bruke kodeblokken under. <em>Det ligger et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> som du kan se på hvis du trenger hjelp.</em></p>
+<iframe src="https://trinket.io/embed/python/49b50912da" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -479,7 +481,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/funksjoner"
+            path: "./book/nullpunkter"
         },
         predefinedOutput: true
     }
@@ -498,16 +500,16 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduksjon.html"
+       href="halveringsmetoden.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduksjon til Funksjoner</p>
+        <p class="prev-next-title">Halveringsmetoden</p>
       </div>
     </a>
     <a class="right-next"
-       href="../nullpunkter/intro.html"
+       href="../integrasjon2/introduksjon.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -524,6 +526,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
