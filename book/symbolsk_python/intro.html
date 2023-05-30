@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Elementære Funksjoner i Python &#8212; Programmering i Videregående Skole</title>
+    <title>Introduksjon &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -62,13 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/funksjoner/elementære_fn';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/symbolsk_python/intro';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduksjon" href="../nullpunkter/intro.html" />
-    <link rel="prev" title="Introduksjon til Funksjoner" href="introduksjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,10 +155,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduksjon.html">Introduksjon til Funksjoner</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nullpunkter</span></p>
 <ul class="nav bd-sidenav">
@@ -263,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/funksjoner/elementære_fn.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/symbolsk_python/intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/funksjoner/elementære_fn.md" target="_blank"
+      <li><a href="../../_sources/book/symbolsk_python/intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -373,11 +371,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Elementære Funksjoner i Python</h1>
+    <h1>Introduksjon</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-symbolsk-programmering">Hva er symbolsk programmering?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-sympy">Hva er <code class="docutils literal notranslate"><span class="pre">sympy</span></code>?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -387,83 +394,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="elementaere-funksjoner-i-python">
-<h1>Elementære Funksjoner i Python<a class="headerlink" href="#elementaere-funksjoner-i-python" title="Permalink to this heading">#</a></h1>
-<p>Mange funksjoner kan uttrykkes ved hjelp av elementære funksjoner. Vi skal se på noen eksempler på hvordan vi kan skrive disse i Python. Men først oppgir vi en liste over de viktigste elementære funksjonene som dukker opp i matematikken så vi har en oversikt over dem.</p>
-<div class="tip admonition">
-<p class="admonition-title">Liste over elementære funksjoner</p>
-<p>Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">math</span></code>-biblioteket. Det kan beregne funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code> og <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-biblioteket. Det kan bergen funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> og <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p></li>
-</ol>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Funksjon <span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="head"><p>Innebygd i Python</p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(|x|\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.abs(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x^a\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">a</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(x,</span> <span class="pre">a)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^x\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.exp(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( a^x \)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**</span> <span class="pre">x</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(a,</span> <span class="pre">x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ln(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\log_a(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">a)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x,</span> <span class="pre">a)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\log_{10}(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log10(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log10(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">0.5</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sqrt(x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.sin(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sin(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.cos(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.cos(x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tan(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.tan(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.tan(x)</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduksjon">
+<h1>Introduksjon<a class="headerlink" href="#introduksjon" title="Permalink to this heading">#</a></h1>
+<p>I denne seksjonen gir vi en kort introduksjon til hva symbolsk programmering og et bibliotek Python tilbyr for dette formålet kalt <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
+<section id="hva-er-symbolsk-programmering">
+<h2>Hva er symbolsk programmering?<a class="headerlink" href="#hva-er-symbolsk-programmering" title="Permalink to this heading">#</a></h2>
+<p>Symbolsk programmering er regning med symboler i stedet for tall. Dette innebærer ofte bokstavregning, men også tall i form av symboler. Det vil si datamaskinen behandler ikke tallene i koden som tall, men som tekststrenger. For brukere av Geogebra, kan du forstå det som en kraftig, utvidet og raskere versjon av CAS-verktøyet i Geogebra.</p>
+<p>Symbolsk programmering kan løse problemer som</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="derivasjon.html"><span class="doc std std-doc">Derivasjon</span></a></p></li>
+<li><p><a class="reference internal" href="integrasjon.html"><span class="doc std std-doc">Integrasjon</span></a></p></li>
+</ul>
+<!-- - [Løse likninger](./likninger)
+- [Løse likningssystemer](./likningssystemer)
+- Forenkle uttrykk
+- Finne grenseverdier -->
+<p>og mye mer. Vi skal gi en introduksjon til alle disse temaene.</p>
+</section>
+<section id="hva-er-sympy">
+<h2>Hva er <code class="docutils literal notranslate"><span class="pre">sympy</span></code>?<a class="headerlink" href="#hva-er-sympy" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sympy</span></code> er et bibliotek for Python som lar deg utføre symbolsk matematikk. Det vil si at du kan utføre matematiske operasjoner på symboler, som for eksempel bokstaver, og få uttrykket forenklet. <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kan også løse likninger og derivere og integrere funksjoner.
+Her skal vi se på hvordan man kan integrere med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -479,7 +431,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/funksjoner"
+            path: "./book/symbolsk_python"
         },
         predefinedOutput: true
     }
@@ -497,24 +449,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="introduksjon.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduksjon til Funksjoner</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../nullpunkter/intro.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduksjon</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -524,6 +458,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-symbolsk-programmering">Hva er symbolsk programmering?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-sympy">Hva er <code class="docutils literal notranslate"><span class="pre">sympy</span></code>?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

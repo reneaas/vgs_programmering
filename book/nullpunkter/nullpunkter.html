@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Elementære Funksjoner i Python &#8212; Programmering i Videregående Skole</title>
+    <title>&lt;no title&gt; &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -62,13 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/funksjoner/elementære_fn';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/nullpunkter/nullpunkter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduksjon" href="../nullpunkter/intro.html" />
-    <link rel="prev" title="Introduksjon til Funksjoner" href="introduksjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,16 +155,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduksjon.html">Introduksjon til Funksjoner</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nullpunkter</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/intro.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newtons_metode.html">Newtons metode</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
 <ul class="nav bd-sidenav">
@@ -263,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/funksjoner/elementære_fn.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/nullpunkter/nullpunkter.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/funksjoner/elementære_fn.md" target="_blank"
+      <li><a href="../../_sources/book/nullpunkter/nullpunkter.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -373,11 +371,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Elementære Funksjoner i Python</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -387,85 +393,187 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="elementaere-funksjoner-i-python">
-<h1>Elementære Funksjoner i Python<a class="headerlink" href="#elementaere-funksjoner-i-python" title="Permalink to this heading">#</a></h1>
-<p>Mange funksjoner kan uttrykkes ved hjelp av elementære funksjoner. Vi skal se på noen eksempler på hvordan vi kan skrive disse i Python. Men først oppgir vi en liste over de viktigste elementære funksjonene som dukker opp i matematikken så vi har en oversikt over dem.</p>
-<div class="tip admonition">
-<p class="admonition-title">Liste over elementære funksjoner</p>
-<p>Elementære funksjoner i Python kan hentes fra to biblioteker. De to er:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">math</span></code>-biblioteket. Det kan beregne funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code> og <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-biblioteket. Det kan bergen funksjonsverdien for inputs med datatypene <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> og <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p></li>
-</ol>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Funksjon <span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="head"><p>Innebygd i Python</p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(|x|\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.abs(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x^a\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">a</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(x,</span> <span class="pre">a)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^x\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.exp(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( a^x \)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**</span> <span class="pre">x</span></code></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(a,</span> <span class="pre">x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ln(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\log_a(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">a)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x,</span> <span class="pre">a)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\log_{10}(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.log10(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.log10(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">0.5</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sqrt(x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.sin(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sin(x)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.cos(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.cos(x)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tan(x)\)</span></p></td>
-<td><p>-</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">math.tan(x)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">numpy.tan(x)</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
+  <!-- # Finne nullpunkter med Python
 
+## Introduksjon
+
+En klassisk problem i matematikken er å finne nullpunktene til en funksjon. Formelt sett er nullpunkter de verdiene $x$ som gjør at funksjonsverdien er null, eller da alle $x$ der $f(x) = 0$. 
+
+### Eksempel 1: Finne nullpunktene til en lineær funksjon
+
+Vi tenker oss at vi har den lineære funksjonen
+
+$$
+f(x) = 2x - 1.
+$$
+
+Vi kan finne nullpunktet numerisk med Python kode slik:
+
+```python
+def f(x):
+    return 2*x - 1
+
+x = -10 # startverdi for x.
+dx = 0.1 # steglengde for x.
+while f(x) < 0: # Så lenge funksjonsverdien er negativ.
+    x = x + dx # øk x med dx.
+print(x)
+```
+
+Her har vi løst problemet med *brute-force*. Ved å se på funksjonsuttrykket ser vi at funksjonsverdien er negativ ved $x = -10$. Siden stigningstallet er positivt, *må* funksjonen bli positiv en eller annen gang. Så ved å starte fra denne verdien og gradvis øke verdien til $x$ frem til $f(x)$ skifter fortegn, vil vi finne et tilnærming til nullpunktet.
+
+
+## Halveringsmetoden
+
+En systematisk måte å finne nullpunkter til vilkårlige funksjoner $f(x)$ på, er å bruke **halveringsmetoden**. 
+Algoritmen tar utgangspunkt i at vi velger oss et intervall $[a, b]$ der vi vet at nullpunktet ligger. Hvordan kan vi vite at nullpunktet ligger der? Funksjonsverdien må ha forskjellig fortegn i endepunktet. Det vil si $f(a) < 0$ og $f(b) > 0$, eller motsatt. Dette kan vi sjekke ved å regne ut funksjonsverdien i endepunktene, og gange de sammen. Hvis produktet er negativt, vet vi at funksjonsverdiene har forskjellig fortegn. Ideen er vi så regne ut midtpunktet på intervallet, for å deretter velge ut et nytt intervall som er halvparten så stort. Vi gjør dette ved å velge den halvdelen av intervallet som vi *vet* nullpunktet ligger i:
+
+1. Regn ut midtpunktet $c = (a + b) / 2$.
+2. Hvis $f(a) \cdot f(c) < 0$, sett $b = c$. Så midtpunktet blir høyre endepunkt på det nye intervallet.
+3. Hvis ikke, sett $a = c$. Midtpunktet blir da venstre endepunkt på det nye intervallet.
+
+Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(c)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`halveringsmetoden` viser pseudokode for algoritmen.
+
+{numref}`bisection` viser en animasjon av halveringsmetoden.
+
+
+
+```{figure} ./figurer/Bisection_ani.gif
+---
+name: bisection
+---
+
+Animasjon av halveringsmetoden. Hentet fra [Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/d/d9/Bisection_anime.gif)
+```
+
+
+
+```{prf:algorithm} Halveringsmetoden
+:label: halveringsmetoden
+**Input:** En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
+
+**Output:** Et tilnærming til et nullpunkt til $f$.
+
+1. Sjekk at $f(a) \cdot f(b) < 0$. Hvis ikke, avslutt algoritmen.
+2. Regn ut midtpunktet $c = (a + b) / 2$.
+3. While $|f(c)| > \epsilon$:
+    1. Hvis $f(a) \cdot f(c) < 0$, sett $b = c$.
+    2. Hvis ikke, sett $a = c$.
+    3. Regn ut midtpunktet $c = (a + b) / 2$.
+4. Returner $c$.
+```
+
+
+### Eksempel 2: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden 
+
+Vi skal finne nullpunktene til funksjonen
+
+$$
+f(x) = x^2 - 1.
+$$
+
+Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge {prf:ref}`halveringsmetoden` velge oss ut:
+
+1. En funksjon $f$. Check.
+2. Et intervall $[a,b]$ der vi vet at $f$ har et nullpunkt, så $f$ *må* endre fortegn på intervallet.
+3. En toleranse $\epsilon$.
+
+Vi kan for eksempel velge oss ut intervallet $[a, b] = [-2, 0]$. Da har vi $f(-2) = 3$ og $f(0) = -1$, så $f$ endrer fortegn på intervallet.
+Toleransen kan vi bare sette til $\epsilon = 10^{-8}$. 
+
+Under kan du prøve å skrive koden som finner det ene nullpunktet ved hjelp av halveringsmetoden selv.
+Løsningen ligger i fanen `fasit.py`, hvis du trenger hjelp.
+Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å velge et nytt intervall.
+
+
+<iframe src="https://trinket.io/embed/python/f74e2a41cb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+```{admonition} Svakheter med halveringsmetoden
+:class: warning
+
+1. Halveringsmetoden er en *iterativ* algoritme. Det vil si at den gjentar en prosess flere ganger. I praksis betyr dette at vi må velge et maksimalt antall iterasjoner. Hvis vi ikke gjør det, kan algoritmen potensielt kjøre i all evighet. Dette er en svakhet ved halveringsmetoden, og vi må derfor være forsiktige med å bruke den. 
+2. Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. Dette erfarte vi [eksempel 2](#Eksempel-2:-Finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden).
+3. Algoritmen krever også at vi har litt kjennskap til funksjonen vi skal finne nullpunktet til. Vi må vite at nullpunktet ligger i et intervall $[a, b]$. Dette kan være vanskelig å vite på forhånd, og må alltid sjekkes.
+
+```
+
+
+## Newtons metode
+
+**Newtons metode** er en effektiv måte å finne nullpunktene til en funksjon $f$ dersom vi også kjenner til den deriverte $f'$. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen $f$ i et punkt $x_0$. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen $f'$, som vi kjenner til. Dette gir oss et nytt punkt $x_1$. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til $f$ i $x_1$. Dette gir oss et nytt punkt $x_2$. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. {numref}`newtonsmetode_fig` viser en animasjon av prosessen.
+
+
+
+```{figure} ./figurer/NewtonIteration_Ani.gif
+---
+name: newtonsmetode_fig
+---
+Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon $f$ vist i blå. Animasjonen er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Newton%27s_method#/media/File:NewtonIteration_Ani.gif).
+```
+
+Vi kan formelt komme frem til en algoritme som følger. La $x_0$ være et vilkårlig startpunkt.
+Bruker vi ettpunktsformelen for en tangent som tangerer funksjonen vår i punktet $x_0$, får vi likningen
+
+$$
+y = f(x_0) + f'(x_0)(x - x_0).
+$$
+
+Ideen er å finne en tilnærming til nullpunktet til $f$ ved å finne nullpunktet til tangenten i stedet. Nullpunktet til tangenten er gitt ved løsningen av likningen
+
+$$
+f(x_0) + f'(x_0)(x_1 - x_0) = 0,
+$$
+
+som gir
+
+$$
+x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.
+$$
+
+Denne formelen kan vi repetere igjen og igjen, slik at vi kommer nærmere og nærmere et nullpunktet til $f$. Mer generelt kan vi finne et nytt estimat på nullpunktet med $x_{i+1}$ ved å bruke funksjonsverdien $f(x_i)$ og den deriverte $f'(x_i)$ i punktet $x_i$ ved formelen
+
+$$
+x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
+$$
+
+Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Algoritmen for Newtons metode er vist i {prf:ref}`newtonsmetode`.
+
+```{prf:algorithm} Newtons metode
+:label: newtonsmetode
+**Input:** En funksjon $f(x)$, den deriverte $f'(x)$, et startpunkt $x_0$ og en toleranse $\epsilon$.
+
+**Output:** Et tilnærmet nullpunkt $x$.
+
+1. Regn ut $x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}$.
+2. While $|f(x_i)| > \epsilon$:
+    1. Regn ut $x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}$.
+3. Returner $x_{i + 1}$.
+```
+
+
+```{admonition} Svakheter med Newtons metode
+:class: warning
+
+1. Newtons metode bruker tangenten til en funksjon. Hvis en funksjon har asymptoter, kan algoritmen feile eller gi feil svar fordi den aldri konvergerer mot et sant nullpunkt. Dette er en svakhet med Newtons metode, og vi må derfor være forsiktige med å bruke den, og dette er også hvorfor man noen ganger får "?" som løsning når man bruker NLØS i CAS i Geogebra.
+2. Netwons metode, akkurat som halveringsmetoden, gir oss bare ett nullpunkt. Vi må derfor bruke den flere ganger hvis vi har en funksjon med flere nullpunkter.
+```
+
+### Oppgaver
+
+#### Oppgave 1
+
+Finn et av nullpunktene til funksjonen
+
+$$
+f(x) = x^3 - 2x^2 - 5x + 6,
+$$
+
+ved å bruke Newtons metode. Bruk et startpunkt $x_0 = 2$ og en toleranse $\epsilon = 10^{-8}$.
+Du kan bruke kodeblokken under. *Det ligger et løsningsforslag i fanen `fasit.py` som du kan se på hvis du trenger hjelp.*
+
+
+<iframe src="https://trinket.io/embed/python/49b50912da" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> -->
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -479,7 +587,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/funksjoner"
+            path: "./book/nullpunkter"
         },
         predefinedOutput: true
     }
@@ -497,24 +605,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="introduksjon.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduksjon til Funksjoner</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../nullpunkter/intro.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduksjon</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -524,6 +614,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
