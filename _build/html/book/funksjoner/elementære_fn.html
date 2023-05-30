@@ -380,7 +380,7 @@ document.write(`
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Funksjon <span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="head"><p>Ren Python</p></th>
+<th class="head"><p>Innebygd i Python</p></th>
 <th class="head"><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></th>
 <th class="head"><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></th>
 </tr>
@@ -401,37 +401,42 @@ document.write(`
 <td><p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.exp(x)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\ln(x)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( a^x \)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">**</span> <span class="pre">x</span></code></p></td>
+<td><p>-</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.power(a,</span> <span class="pre">x)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ln(x)\)</span></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.log(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\log_a(x)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\log_a(x)\)</span></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">a)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.log(x,</span> <span class="pre">a)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\log_{10}(x)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\log_{10}(x)\)</span></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.log10(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.log10(x)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
 <td><p>x ** 0.5</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.sqrt(x)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.sin(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.sin(x)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.cos(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.cos(x)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\tan(x)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tan(x)\)</span></p></td>
 <td><p>-</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">math.tan(x)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">numpy.tan(x)</span></code></p></td>
