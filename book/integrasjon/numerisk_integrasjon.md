@@ -1,4 +1,4 @@
-# Numerisk integrasjon med Python
+<!-- # Numerisk integrasjon med Python
 
 ## Introduksjon
 Å finne verdien til bestemte integraler er en viktig oppgave i matematikken og fysikken. I mange tilfeller er det ikke mulig å finne en analytisk løsning på integralet, og vi må da ty til numeriske metoder. I dette kapittelet skal vi se på hvordan vi kan finne tilnærmede verdier til bestemte integraler ved hjelp av Python. 
@@ -225,4 +225,4 @@ Integralet bør nærme seg en veldig kjent matematisk konstant når du trekker m
 
 Du kan bruke kodeblokken under. *Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
 
-<iframe src="https://trinket.io/embed/python/a75a7ef20b" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/a75a7ef20b" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> -->
