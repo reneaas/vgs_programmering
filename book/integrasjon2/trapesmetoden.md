@@ -70,11 +70,11 @@ Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hen
 ```
 
 
-### Innøvingsoppgaver
+## Oppgaver
 
 
 
-#### Oppgave 1
+### Oppgave 1
 
 Finn en tilnærming til integralet
 
@@ -89,7 +89,7 @@ ved å bruke trapesmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblo
 
 
 
-#### Oppgave 2
+### Oppgave 2
 
 Vis at vi kan skrive formelen for tilnærmingen til integralet som
 

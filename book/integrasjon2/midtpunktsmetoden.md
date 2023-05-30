@@ -1,4 +1,4 @@
-## Midtpunktsmetoden
+# Midtpunktsmetoden
 
 I denne seksjonen skal vi se på en annen måte å tilnærme verdien til et integral på formen
 
@@ -46,9 +46,9 @@ Vi oppsummerer det hele i {prf:ref}`midtpunktsmetoden`.
 ```
 
 
-### Oppgaver
+## Oppgaver
 
-#### Oppgave 1
+### Oppgave 1
 
 Finn en tilnærming til integralet
 
@@ -61,7 +61,7 @@ ved å bruke midtpunktsmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kod
 
 <iframe src="https://trinket.io/embed/python/27d766e4e2" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-#### Oppgave 2
+### Oppgave 2
 
 Finn en tilnærming til integralet
 

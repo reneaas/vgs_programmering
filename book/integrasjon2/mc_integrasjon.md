@@ -26,9 +26,9 @@ $$
 der $x_1, x_2, ..., x_N$ er $N$ tilfeldige tall trukket fra $p(x)$.
 
 
-### Oppgaver
+## Oppgaver
 
-#### Oppgave 1
+### Oppgave 1
 
 Bruk Monte Carlo integrasjon til å tilnærme integralet
 
