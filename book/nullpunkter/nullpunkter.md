@@ -1,4 +1,4 @@
-# Finne nullpunkter med Python
+<!-- # Finne nullpunkter med Python
 
 ## Introduksjon
 
@@ -178,4 +178,4 @@ ved å bruke Newtons metode. Bruk et startpunkt $x_0 = 2$ og en toleranse $\epsi
 Du kan bruke kodeblokken under. *Det ligger et løsningsforslag i fanen `fasit.py` som du kan se på hvis du trenger hjelp.*
 
 
-<iframe src="https://trinket.io/embed/python/49b50912da" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/49b50912da" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> -->

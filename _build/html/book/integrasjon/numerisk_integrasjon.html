@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Numerisk integrasjon med Python &#8212; Programmering i Videregående Skole</title>
+    <title>&lt;no title&gt; &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -62,13 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/integrasjon/numerisk_integrasjon';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Oppgaver: Numerisk Integrasjon" href="../oppgaver/integrasjon_nb.html" />
-    <link rel="prev" title="Finne nullpunkter med Python" href="../funksjoner/nullpunkter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,9 +161,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/nullpunkter.html">Finne nullpunkter med Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrasjon</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerisk integrasjon med Python</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/introduksjon.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Matematikk</span></p>
 <ul class="nav bd-sidenav">
@@ -367,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Numerisk integrasjon med Python</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,32 +375,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapesmetoden">Trapesmetoden</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midtpunktsmetoden">Midtpunktsmetoden</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Oppgave 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Oppgave 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integrasjon-matematikk-s2">Monte Carlo Integrasjon (Matematikk S2)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Oppgave 1</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+
             </nav>
         </div>
     </div>
@@ -412,205 +388,234 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numerisk-integrasjon-med-python">
-<h1>Numerisk integrasjon med Python<a class="headerlink" href="#numerisk-integrasjon-med-python" title="Permalink to this heading">#</a></h1>
-<section id="introduksjon">
-<h2>Introduksjon<a class="headerlink" href="#introduksjon" title="Permalink to this heading">#</a></h2>
-<p>Å finne verdien til bestemte integraler er en viktig oppgave i matematikken og fysikken. I mange tilfeller er det ikke mulig å finne en analytisk løsning på integralet, og vi må da ty til numeriske metoder. I dette kapittelet skal vi se på hvordan vi kan finne tilnærmede verdier til bestemte integraler ved hjelp av Python.</p>
-</section>
-<section id="trapesmetoden">
-<h2>Trapesmetoden<a class="headerlink" href="#trapesmetoden" title="Permalink to this heading">#</a></h2>
-<p>En av de enkleste metodene for å finne tilnærmede verdier til bestemte integraler er <strong>trapesmetoden</strong>. Vi tenker oss at vi har en funksjon <span class="math notranslate nohighlight">\(f\)</span> og skal regne ut integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx.
-\]</div>
-<p>Tanken bak metoden er</p>
-<ol class="arabic simple">
-<li><p>Vi deler opp intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> i <span class="math notranslate nohighlight">\(n\)</span> like store delintervaller, slik at vi får delintervallene <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>, <span class="math notranslate nohighlight">\([x_1, x_2]\)</span>, …, <span class="math notranslate nohighlight">\([x_{n-1}, x_n]\)</span>.</p></li>
-<li><p>Vi kaller lengden til hvert delintervall for <span class="math notranslate nohighlight">\(h\)</span>. Da er <span class="math notranslate nohighlight">\(h = \frac{b - a}{n}\)</span>. Vi kaller også <span class="math notranslate nohighlight">\(x_0 = a\)</span> og <span class="math notranslate nohighlight">\(x_n = b\)</span>.</p></li>
-<li><p>Vi regner ut arealet av trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Vi kaller disse arealene for <span class="math notranslate nohighlight">\(S_i\)</span>.</p></li>
-</ol>
-<p>Se <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 3</span></a> for en illustrasjon av trapesmetoden. Her spiller <span class="math notranslate nohighlight">\(h = x_{i+1} - x_i\)</span> rollen som “høyden” i hvert trapes, mens <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> spiller rollen som “sidelengdene”.</p>
-<p>Tilnærmingen til integralet blir da</p>
-<div class="math notranslate nohighlight">
-\[
-\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
-\]</div>
-<p>Denne formelen kan vi skrive om litt smartere, så vi ikke regner ut <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> to ganger. I oppgavene skal du vise at uttrykket kan skrives om til:</p>
-<div class="math notranslate nohighlight">
-\[
-\int\limits_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i).
-\]</div>
-<p>Vi kan oppsummere med en algoritme:</p>
-<div class="proof algorithm admonition" id="trapesmetoden">
-<p class="admonition-title"><span class="caption-number">Algorithm 3 </span> (Trapesmetoden)</p>
-<section class="algorithm-content" id="proof-content">
-<p><strong>Input</strong>: <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(n\)</span></p>
-<p><strong>Output</strong>: Tilnærming til integralet <span class="math notranslate nohighlight">\(\int\limits_a^b f(x) \, dx\)</span></p>
-<ol class="arabic simple">
-<li><p>Sett <span class="math notranslate nohighlight">\(h = \frac{b - a}{n}\)</span>.</p></li>
-<li><p>Sett <span class="math notranslate nohighlight">\(I = 0\)</span>.</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(i = 1,2,\ldots, n-1\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Sett <span class="math notranslate nohighlight">\(x = a + ih\)</span>.</p></li>
-<li><p>Sett <span class="math notranslate nohighlight">\(I = I + f(x)\)</span>.</p></li>
-</ol>
-</li>
-<li><p>Sett <span class="math notranslate nohighlight">\(I = h \frac{f(a) + f(b)}{2} + hI\)</span>.</p></li>
-<li><p>Returner <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
-</ol>
-</section>
-</div><figure class="align-default" id="id1">
-<img alt="../../_images/Integration_num_trapezes_notation.svg" src="../../_images/Integration_num_trapezes_notation.svg" /><figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Figuren viser en graf av en funksjon <span class="math notranslate nohighlight">\(f\)</span> og trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Figuren er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="tip admonition">
-<p class="admonition-title">Arealet av et trapes</p>
-<p>Påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
-<span class="math notranslate nohighlight">\(
-A = \frac{a + b}{2}h
-\)</span>
-der <span class="math notranslate nohighlight">\(h\)</span> er høyden til trapeset, og <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> er sidelengdene. I <a class="reference internal" href="#trapes"><span class="std std-numref">Fig. 4</span></a> ser du et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> for referanse.</p>
-<figure class="align-default" id="trapes">
-<img alt="../../_images/Trapezoid.svg" src="../../_images/Trapezoid.svg" /><figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Figuren viser et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span>. Figuren er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#trapes" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</div>
-<section id="oppgaver">
-<h3>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h3>
-<section id="oppgave-1">
-<h4>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h4>
-<p>Finn en tilnærming til integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_0^1 e^{-x^2} \, dx 
-\]</div>
-<p>ved å bruke trapesmetoden. Bruk <span class="math notranslate nohighlight">\(n = 1000\)</span> delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
-<em>Du finner et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> hvis du trenger hjelp</em>.</p>
-<iframe src="https://trinket.io/embed/python/41c0defb70" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</section>
-<section id="oppgave-2">
-<h4>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h4>
-<p>Vis at vi kan skrive formelen for tilnærmingen til integralet som</p>
-<div class="math notranslate nohighlight">
-\[
-\int_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i),
-\]</div>
-<p>ved å starte fra summen</p>
-<div class="math notranslate nohighlight">
-\[
-\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
-\]</div>
-</section>
-</section>
-</section>
-<section id="midtpunktsmetoden">
-<h2>Midtpunktsmetoden<a class="headerlink" href="#midtpunktsmetoden" title="Permalink to this heading">#</a></h2>
-<p>En annen metode for å finne en tilnærming til integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx,
-\]</div>
-<p>er ved å ta i bruk <strong>midtpunktsmetoden</strong>. Ingrediensene i midtpunktsmetoden er</p>
-<ol class="arabic simple">
-<li><p>Del opp intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> i <span class="math notranslate nohighlight">\(n\)</span> delintervaller <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>, <span class="math notranslate nohighlight">\([x_1, x_2]\)</span>, …, <span class="math notranslate nohighlight">\([x_{n-1}, x_n]\)</span> med bredde <span class="math notranslate nohighlight">\(h = (b - a) / n\)</span>.</p></li>
-<li><p>Regn ut <span class="math notranslate nohighlight">\(f\)</span> i midtpunktet til hvert delintervall. Vi kaller disse verdiene for <span class="math notranslate nohighlight">\(f(x_{i+1/2})\)</span>, der <span class="math notranslate nohighlight">\(x_{i + 1/2} = a + (i + 1/2)h\)</span>.</p></li>
-<li><p>Regn ut arealet av rektangel <span class="math notranslate nohighlight">\(i\)</span> med høyde <span class="math notranslate nohighlight">\(f(x_{i+1/2})\)</span> og bredde <span class="math notranslate nohighlight">\(h\)</span>. Vi kaller disse arealene for <span class="math notranslate nohighlight">\(S_i\)</span>.</p></li>
-<li><p>Summer opp arealene som en tilnærming til integralet <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
-</ol>
-<p>Tilnærmingen til integralet blir da</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} f(x_{i+1/2})h.
-\]</div>
-<p>Vi oppsummerer det hele i <a class="reference internal" href="#midtpunktsmetoden">Algorithm 4</a>.</p>
-<div class="proof algorithm admonition" id="midtpunktsmetoden">
-<p class="admonition-title"><span class="caption-number">Algorithm 4 </span> (Midtpunktsmetoden)</p>
-<section class="algorithm-content" id="proof-content">
-<p><strong>Input</strong>: <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<p><strong>Output</strong>: Tilnærmingen til integralet <span class="math notranslate nohighlight">\(I\)</span>.</p>
-<ol class="arabic simple">
-<li><p>Regn ut <span class="math notranslate nohighlight">\(h = (b - a) / n\)</span>.</p></li>
-<li><p>Sett <span class="math notranslate nohighlight">\(I = 0\)</span>.</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(i = 0, 1, 2, ..., n-1\)</span>:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(x_{i+1/2} = a + (i + 1/2)h\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(S = f(x_{i+1/2})h\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(I = I + S\)</span></p></li>
-</ol>
-</li>
-<li><p>Returner <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
-</ol>
-</section>
-</div><div class="tip admonition">
-<p class="admonition-title">Midtpunktsmetoden vs. trapesmetoden</p>
-<p>Midtpunktsmetoden har mange likheter med trapesmetoden. Forskjellen ligger i hvordan selve arealet regnes ut. I midtpunktsmetoden regner vi ut arealet av rektangler, mens vi i trapesmetoden regner ut arealet av trapeser. Det som gjør midtpunktsmetoden god, er måten man velger ut høyden i rektanglene. Generelt sett, er midtpunktsmetoden mer nøyaktig enn trapesmetoden!</p>
-</div>
-<section id="id2">
-<h3>Oppgaver<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<section id="id3">
-<h4>Oppgave 1<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
-<p>Finn en tilnærming til integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_0^1 x^2 e^{-x} \, dx,
-\]</div>
-<p>ved å bruke midtpunktsmetoden. Bruk <span class="math notranslate nohighlight">\(n = 1000\)</span> delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
-<em>Du finner et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> hvis du trenger hjelp</em>.</p>
-<iframe src="https://trinket.io/embed/python/27d766e4e2" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</section>
-<section id="id4">
-<h4>Oppgave 2<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
-<p>Finn en tilnærming til integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_0^1 e^{-x^2}\, dx
-\]</div>
-<p>ved å bruke midtpunktsmetoden. Bruk <span class="math notranslate nohighlight">\(n = 1000\)</span> delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.</p>
-<iframe src="https://trinket.io/embed/python/352bd16743" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</section>
-</section>
-</section>
-<section id="monte-carlo-integrasjon-matematikk-s2">
-<h2>Monte Carlo Integrasjon (Matematikk S2)<a class="headerlink" href="#monte-carlo-integrasjon-matematikk-s2" title="Permalink to this heading">#</a></h2>
-<p>Vi skal nå se på en metode for å tilnærme integralet ved å bruke teorien for kontinuerlige stokatiske variabler.
-Vi ønsker å løse integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx. 
-\]</div>
-<p>Vi tenker oss at <span class="math notranslate nohighlight">\(p(x)\)</span> er en uniform sannsynlighetsfordeling på intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>, slik at</p>
-<p><span class="math notranslate nohighlight">\(p(x) = 1/(b-a)\)</span> for <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>, og <span class="math notranslate nohighlight">\(p(x) = 0\)</span> ellers.</p>
-<p>Vi kan trikse litt med integralet slik at vi får</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)}p(x) \, dx = (b-a)\int\limits_a^b f(x)p(x) \, dx = (b-a)E[f(X)].
-\]</div>
-<p>Integralet kan altså skrives som forventningsverdien av <span class="math notranslate nohighlight">\(f(X)\)</span>. Vi kan tilnærme denne forventningsverdien ved å trekke <span class="math notranslate nohighlight">\(N\)</span> tilfeldige tall av <span class="math notranslate nohighlight">\(X\)</span> fra sannsynlighetsfordelingen <span class="math notranslate nohighlight">\(p(x)\)</span>, og regne ut gjennomsnittet av <span class="math notranslate nohighlight">\(f(X)\)</span>! Med andre ord</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx \approx \frac{b-a}{N}\sum\limits_{i=1}^{N} f(x_i),
-\]</div>
-<p>der <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_N\)</span> er <span class="math notranslate nohighlight">\(N\)</span> tilfeldige tall trukket fra <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
-<section id="id5">
-<h3>Oppgaver<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<section id="id6">
-<h4>Oppgave 1<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
-<p>Bruk Monte Carlo integrasjon til å tilnærme integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
-\]</div>
-<p>Integralet bør nærme seg en veldig kjent matematisk konstant når du trekker mange tall.</p>
-<p>Du kan bruke kodeblokken under. <em>Du finner et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> hvis du trenger hjelp</em>.</p>
-<iframe src="https://trinket.io/embed/python/a75a7ef20b" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
-</section>
-</section>
-</section>
+  <!-- # Numerisk integrasjon med Python
 
+## Introduksjon
+Å finne verdien til bestemte integraler er en viktig oppgave i matematikken og fysikken. I mange tilfeller er det ikke mulig å finne en analytisk løsning på integralet, og vi må da ty til numeriske metoder. I dette kapittelet skal vi se på hvordan vi kan finne tilnærmede verdier til bestemte integraler ved hjelp av Python. 
+
+
+## Trapesmetoden
+En av de enkleste metodene for å finne tilnærmede verdier til bestemte integraler er **trapesmetoden**. Vi tenker oss at vi har en funksjon $f$ og skal regne ut integralet
+
+$$
+I = \int\limits_a^b f(x) \, dx.
+$$
+
+Tanken bak metoden er 
+1. Vi deler opp intervallet $[a, b]$ i $n$ like store delintervaller, slik at vi får delintervallene $[x_0, x_1]$, $[x_1, x_2]$, ..., $[x_{n-1}, x_n]$.
+2. Vi kaller lengden til hvert delintervall for $h$. Da er $h = \frac{b - a}{n}$. Vi kaller også $x_0 = a$ og $x_n = b$. 
+3. Vi regner ut arealet av trapesene som er avgrenset av grafen til $f$ og de to linjene $x = x_i$ og $x = x_{i+1}$ for hvert delintervall. Vi kaller disse arealene for $S_i$.
+
+Se {numref}`trapesmetoden` for en illustrasjon av trapesmetoden. Her spiller $h = x_{i+1} - x_i$ rollen som "høyden" i hvert trapes, mens $f(x_i)$ og $f(x_{i+1})$ spiller rollen som "sidelengdene".
+
+Tilnærmingen til integralet blir da
+
+$$
+\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+$$
+
+Denne formelen kan vi skrive om litt smartere, så vi ikke regner ut $f(x_i)$ og $f(x_{i+1})$ to ganger. I oppgavene skal du vise at uttrykket kan skrives om til:
+
+$$
+\int\limits_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i).
+$$
+
+
+Vi kan oppsummere med en algoritme:
+
+```{prf:algorithm} Trapesmetoden
+:label: trapesmetoden
+
+**Input**: $f$, $a$, $b$, $n$
+
+**Output**: Tilnærming til integralet $\int\limits_a^b f(x) \, dx$
+
+1. Sett $h = \frac{b - a}{n}$.
+2. Sett $I = 0$.
+3. For $i = 1,2,\ldots, n-1$:
+    1. Sett $x = a + ih$.
+    2. Sett $I = I + f(x)$.
+4. Sett $I = h \frac{f(a) + f(b)}{2} + hI$.
+5. Returner $I$.
+```
+
+
+```{figure} ./figurer/Integration_num_trapezes_notation.svg
+---
+name: trapesmetoden
+---
+Figuren viser en graf av en funksjon $f$ og trapesene som er avgrenset av grafen til $f$ og de to linjene $x = x_i$ og $x = x_{i+1}$ for hvert delintervall. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg).
+```
+
+
+```{admonition} Arealet av et trapes
+:class: tip
+
+Påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
+$
+A = \frac{a + b}{2}h
+$
+der $h$ er høyden til trapeset, og $a$ og $b$ er sidelengdene. I {numref}`trapes` ser du et trapes med høyde $h$ og sidelengder $a$ og $b$ for referanse.
+
+```{figure} ./figurer/Trapezoid.svg
+---
+name: trapes
+---
+Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
+
+```
+
+
+### Oppgaver
+
+#### Oppgave 1
+
+Finn en tilnærming til integralet
+
+$$
+I = \int\limits_0^1 e^{-x^2} \, dx 
+$$
+
+ved å bruke trapesmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+*Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
+
+<iframe src="https://trinket.io/embed/python/41c0defb70" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+
+#### Oppgave 2
+
+Vis at vi kan skrive formelen for tilnærmingen til integralet som
+
+$$
+\int_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i),
+$$
+
+ved å starte fra summen
+
+$$
+\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+$$
+
+
+## Midtpunktsmetoden
+
+En annen metode for å finne en tilnærming til integralet 
+
+$$
+I = \int\limits_a^b f(x) \, dx,
+$$
+
+er ved å ta i bruk **midtpunktsmetoden**. Ingrediensene i midtpunktsmetoden er
+
+1. Del opp intervallet $[a, b]$ i $n$ delintervaller $[x_0, x_1]$, $[x_1, x_2]$, ..., $[x_{n-1}, x_n]$ med bredde $h = (b - a) / n$.
+2. Regn ut $f$ i midtpunktet til hvert delintervall. Vi kaller disse verdiene for $f(x_{i+1/2})$, der $x_{i + 1/2} = a + (i + 1/2)h$.
+3. Regn ut arealet av rektangel $i$ med høyde $f(x_{i+1/2})$ og bredde $h$. Vi kaller disse arealene for $S_i$.
+4. Summer opp arealene som en tilnærming til integralet $I$.
+
+Tilnærmingen til integralet blir da
+
+
+$$
+I = \int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} f(x_{i+1/2})h.
+$$
+
+Vi oppsummerer det hele i {prf:ref}`midtpunktsmetoden`.
+
+```{prf:algorithm} Midtpunktsmetoden
+:label: midtpunktsmetoden
+
+**Input**: $a$, $b$, $n$, $f$.
+
+**Output**: Tilnærmingen til integralet $I$.
+
+1. Regn ut $h = (b - a) / n$.
+2. Sett $I = 0$.
+3. For $i = 0, 1, 2, ..., n-1$:
+    1. $x_{i+1/2} = a + (i + 1/2)h$.
+    2. $S = f(x_{i+1/2})h$.
+    3. $I = I + S$
+4. Returner $I$.
+```
+
+```{admonition} Midtpunktsmetoden vs. trapesmetoden
+:class: tip
+
+Midtpunktsmetoden har mange likheter med trapesmetoden. Forskjellen ligger i hvordan selve arealet regnes ut. I midtpunktsmetoden regner vi ut arealet av rektangler, mens vi i trapesmetoden regner ut arealet av trapeser. Det som gjør midtpunktsmetoden god, er måten man velger ut høyden i rektanglene. Generelt sett, er midtpunktsmetoden mer nøyaktig enn trapesmetoden!
+```
+
+### Oppgaver
+
+#### Oppgave 1
+
+Finn en tilnærming til integralet
+
+$$
+I = \int\limits_0^1 x^2 e^{-x} \, dx,
+$$
+
+ved å bruke midtpunktsmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+*Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
+
+<iframe src="https://trinket.io/embed/python/27d766e4e2" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+#### Oppgave 2
+
+Finn en tilnærming til integralet
+
+$$
+I = \int\limits_0^1 e^{-x^2}\, dx
+$$
+
+ved å bruke midtpunktsmetoden. Bruk $n = 1000$ delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+
+<iframe src="https://trinket.io/embed/python/352bd16743" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+
+## Monte Carlo Integrasjon (Matematikk S2)
+
+Vi skal nå se på en metode for å tilnærme integralet ved å bruke teorien for kontinuerlige stokatiske variabler.
+Vi ønsker å løse integralet
+
+$$
+I = \int\limits_a^b f(x) \, dx. 
+$$
+
+Vi tenker oss at $p(x)$ er en uniform sannsynlighetsfordeling på intervallet $[a, b]$, slik at
+
+$p(x) = 1/(b-a)$ for $x \in [a, b]$, og $p(x) = 0$ ellers.
+
+Vi kan trikse litt med integralet slik at vi får
+
+$$
+I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)}p(x) \, dx = (b-a)\int\limits_a^b f(x)p(x) \, dx = (b-a)E[f(X)].
+$$
+
+Integralet kan altså skrives som forventningsverdien av $f(X)$. Vi kan tilnærme denne forventningsverdien ved å trekke $N$ tilfeldige tall av $X$ fra sannsynlighetsfordelingen $p(x)$, og regne ut gjennomsnittet av $f(X)$! Med andre ord
+
+$$
+I = \int\limits_a^b f(x) \, dx \approx \frac{b-a}{N}\sum\limits_{i=1}^{N} f(x_i),
+$$
+
+der $x_1, x_2, ..., x_N$ er $N$ tilfeldige tall trukket fra $p(x)$.
+
+
+### Oppgaver
+
+#### Oppgave 1
+
+Bruk Monte Carlo integrasjon til å tilnærme integralet
+
+$$
+I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
+$$
+
+Integralet bør nærme seg en veldig kjent matematisk konstant når du trekker mange tall.
+
+Du kan bruke kodeblokken under. *Du finner et løsningsforslag i fanen `fasit.py` hvis du trenger hjelp*.
+
+<iframe src="https://trinket.io/embed/python/a75a7ef20b" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> -->
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -642,24 +647,6 @@ I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../funksjoner/nullpunkter.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Finne nullpunkter med Python</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../oppgaver/integrasjon_nb.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Oppgaver: Numerisk Integrasjon</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -677,32 +664,9 @@ I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapesmetoden">Trapesmetoden</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#midtpunktsmetoden">Midtpunktsmetoden</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Oppgave 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Oppgave 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integrasjon-matematikk-s2">Monte Carlo Integrasjon (Matematikk S2)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Oppgave 1</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+
   </nav></div>
 
 </div></div>
