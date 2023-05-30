@@ -433,6 +433,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-matematikk-r2">Oppgave 4 (Matematikk R2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-matematikk-s2">Oppgave 5 (Matematikk S2)</a></li>
 </ul>
             </nav>
         </div>
@@ -456,6 +459,7 @@ I = \int\limits_0^1 \frac{4}{1+x^2} \, dx
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
 
@@ -479,13 +483,100 @@ I = \int\limits_0^\infty e^{-x} \, dx
 <p><em>Du kan ikke faktisk bruke <span class="math notranslate nohighlight">\(\infty\)</span> som øvre grense i Python. I stedet er det tilstrekkelig å sette den øvre grensen på integralet til et stort tall, for eksempel 1000.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
 <span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
 <span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="oppgave-3">
+<h2>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h2>
+<p>Bruk midtpunktsmetoden til å regne ut en tilnærming til integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_0^1 x^2 \ln x \, dx.
+\]</div>
+<p><em>Merk at her det ikke mulig å bruke trapesmetoden fordi <span class="math notranslate nohighlight">\(\ln x\)</span> ikke definert i <span class="math notranslate nohighlight">\(x = 0\)</span></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="oppgave-4-matematikk-r2">
+<h2>Oppgave 4 (Matematikk R2)<a class="headerlink" href="#oppgave-4-matematikk-r2" title="Permalink to this heading">#</a></h2>
+<p>Bruk midtpunktsmetoden til å regne ut en tilnærming til integralene</p>
+<div class="math notranslate nohighlight">
+\[
+I_1 = \int\limits_0^{2\pi} \cos^2 x \, dx
+\]</div>
+<p>og</p>
+<div class="math notranslate nohighlight">
+\[
+I_2 = \int\limits_0^{2\pi} \sin^2 x \, dx.
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">cos</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I1</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">cos</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="n">I2</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">sin</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="oppgave-5-matematikk-s2">
+<h2>Oppgave 5 (Matematikk S2)<a class="headerlink" href="#oppgave-5-matematikk-s2" title="Permalink to this heading">#</a></h2>
+<p>Bruk Monte Carlo integrasjon til å regne ut en tilnærming til integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.</span>
+<span class="sd">    </span>
+<span class="sd">    f(x) = 2 / sqrt(1 - x^2).</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="k">def</span> <span class="nf">monte_carlo_integrasjon</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="n">I</span> <span class="o">=</span> <span class="n">monte_carlo_integrasjon</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
 </pre></div>
 </div>
 </div>
@@ -553,6 +644,9 @@ I = \int\limits_0^\infty e^{-x} \, dx
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-matematikk-r2">Oppgave 4 (Matematikk R2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-matematikk-s2">Oppgave 5 (Matematikk S2)</a></li>
 </ul>
   </nav></div>
 
