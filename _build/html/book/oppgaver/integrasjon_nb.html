@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/oppgaver/integrasjon_nb';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Oppgaver: Numerisk Integrasjon" href="../oppgaver_solutions/integrasjon_nb_sol.html" />
+    <link rel="next" title="Løsningsforslag: Numerisk Integrasjon" href="../oppgaver_solutions/integrasjon_nb_sol.html" />
     <link rel="prev" title="Numerisk integrasjon med Python" href="../integrasjon/numerisk_integrasjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -541,17 +541,19 @@ I_2 = \int\limits_0^{2\pi} \sin^2 x \, dx.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="k">def</span> <span class="nf">cos</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">cos_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til cos^2(x)&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
-<span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">sin_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til sin^2(x)&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
 <span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
-<span class="n">I1</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">cos</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
-<span class="n">I2</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">sin</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">cos_squared</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="n">I2</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">sin_squared</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
 </pre></div>
 </div>
 </div>
@@ -568,6 +570,7 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">random</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.</span>
 <span class="sd">    </span>
@@ -634,7 +637,7 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Oppgaver: Numerisk Integrasjon</p>
+        <p class="prev-next-title">Løsningsforslag: Numerisk Integrasjon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Oppgaver: Numerisk Integrasjon &#8212; Programmering i Videregående Skole</title>
+    <title>Løsningsforslag: Numerisk Integrasjon &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -425,7 +425,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Oppgaver: Numerisk Integrasjon</h1>
+    <h1>Løsningsforslag: Numerisk Integrasjon</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -451,8 +451,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oppgaver-numerisk-integrasjon">
-<h1>Oppgaver: Numerisk Integrasjon<a class="headerlink" href="#oppgaver-numerisk-integrasjon" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="losningsforslag-numerisk-integrasjon">
+<h1>Løsningsforslag: Numerisk Integrasjon<a class="headerlink" href="#losningsforslag-numerisk-integrasjon" title="Permalink to this heading">#</a></h1>
 <section id="oppgave-1">
 <h2>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h2>
 <p>Bruk trapesmetoden til å regne ut en tilnærming til integralet</p>
@@ -462,16 +462,53 @@ I = \int\limits_0^1 \frac{4}{1+x^2} \, dx
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til f(x) = 4 / (1 + x^2).</span>
+<span class="sd">    </span>
+<span class="sd">    Argumenter:</span>
+<span class="sd">        x (float, np.ndarray):</span>
+<span class="sd">            Punktet eller punktene som funksjonsverdien skal regnes ut i.</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer:</span>
+<span class="sd">        float, np.ndarray: Funksjonsverdien f(x).</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">4</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">trapesmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer tilnærmingen til integralet av f fra a til b ved hjelp av trapesmetoden.</span>
+<span class="sd">    </span>
+<span class="sd">    Argumenter:</span>
+<span class="sd">        f (callable):</span>
+<span class="sd">            Funksjonen som skal integreres.</span>
+<span class="sd">        a (float):</span>
+<span class="sd">            Nedre grense for integrasjonen.</span>
+<span class="sd">        b (float):</span>
+<span class="sd">            Øvre grense for integrasjonen.</span>
+<span class="sd">        n (int):</span>
+<span class="sd">            Antall trapeser som skal brukes i tilnærmingen.</span>
+
+<span class="sd">    Returnerer:</span>
+<span class="sd">        float: Tilnærmingen til integralet.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Regner ut h</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">h</span>
+        <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+    <span class="k">return</span> <span class="n">I</span>
+
 
 
 <span class="n">integral</span> <span class="o">=</span> <span class="n">trapesmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># Eksempel på funksjonskall når koden er ferdig.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14139263192214
 </pre></div>
 </div>
 </div>
@@ -487,15 +524,50 @@ I = \int\limits_0^\infty e^{-x} \, dx
 <p><em>Du kan ikke faktisk bruke <span class="math notranslate nohighlight">\(\infty\)</span> som øvre grense i Python. I stedet er det tilstrekkelig å sette den øvre grensen på integralet til et stort tall, for eksempel 1000.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til exp(-x).</span>
+<span class="sd">    </span>
+<span class="sd">    Argumenter:</span>
+<span class="sd">        x (float, np.ndarray):</span>
+<span class="sd">            Punktet eller punktene som funksjonsverdien skal regnes ut i.</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer:</span>
+<span class="sd">        float, np.ndarray: Funksjonsverdien f(x).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer tilnærmingen til integralet av f fra a til b ved hjelp av midtpunktsmetoden.</span>
+<span class="sd">    </span>
+<span class="sd">    Argumenter:</span>
+<span class="sd">        f (callable):</span>
+<span class="sd">            Funksjonen som skal integreres.</span>
+<span class="sd">        a (float): </span>
+<span class="sd">            Nedre grense for integrasjonen.</span>
+<span class="sd">        b (float):</span>
+<span class="sd">            Øvre grense for integrasjonen.</span>
+<span class="sd">        n (int):</span>
+<span class="sd">            Antall rektangler som skal brukes i tilnærmingen.</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer:</span>
+<span class="sd">        float: Tilnærmingen til integralet.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># sidelengde på rektangel</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+    <span class="k">return</span> <span class="n">I</span>
 
 <span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9995834548290823
 </pre></div>
 </div>
 </div>
@@ -511,15 +583,50 @@ I = \int\limits_0^1 x^2 \ln x \, dx.
 <p><em>Merk at her det ikke mulig å bruke trapesmetoden fordi <span class="math notranslate nohighlight">\(\ln x\)</span> ikke definert i <span class="math notranslate nohighlight">\(x = 0\)</span></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til x^2 ln(x) </span>
+<span class="sd">    </span>
+<span class="sd">    Argumenter:</span>
+<span class="sd">        x (float, np.ndarray):</span>
+<span class="sd">            Punktet eller punktene som funksjonsverdien skal regnes ut i.</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer:</span>
+<span class="sd">        float, np.ndarray: Funksjonsverdien f(x).    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer tilnærmingen til integralet av f fra a til b ved hjelp av midtpunktsmetoden.</span>
+<span class="sd">    </span>
+<span class="sd">    Argumenter:</span>
+<span class="sd">        f (callable):</span>
+<span class="sd">            Funksjonen som skal integreres.</span>
+<span class="sd">        a (float): </span>
+<span class="sd">            Nedre grense for integrasjonen.</span>
+<span class="sd">        b (float):</span>
+<span class="sd">            Øvre grense for integrasjonen.</span>
+<span class="sd">        n (int):</span>
+<span class="sd">            Antall rektangler som skal brukes i tilnærmingen.</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer:</span>
+<span class="sd">        float: Tilnærmingen til integralet.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># sidelengde på rektangel</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+    <span class="k">return</span> <span class="n">I</span>
 
 <span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.11111111152780043
 </pre></div>
 </div>
 </div>
@@ -539,18 +646,51 @@ I_2 = \int\limits_0^{2\pi} \sin^2 x \, dx.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="k">def</span> <span class="nf">cos</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">cos_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til cos^2(x).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 
-<span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="k">def</span> <span class="nf">sin_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til sin^2(x).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+
+
 
 <span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer tilnærmingen til integralet av f fra a til b ved hjelp av midtpunktsmetoden.</span>
+<span class="sd">    </span>
+<span class="sd">    Argumenter:</span>
+<span class="sd">        f (callable):</span>
+<span class="sd">            Funksjonen som skal integreres.</span>
+<span class="sd">        a (float): </span>
+<span class="sd">            Nedre grense for integrasjonen.</span>
+<span class="sd">        b (float):</span>
+<span class="sd">            Øvre grense for integrasjonen.</span>
+<span class="sd">        n (int):</span>
+<span class="sd">            Antall rektangler som skal brukes i tilnærmingen.</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer:</span>
+<span class="sd">        float: Tilnærmingen til integralet.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># sidelengde på rektangel</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+    <span class="k">return</span> <span class="n">I</span>
 
-<span class="n">I1</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">cos</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
-<span class="n">I2</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">sin</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">cos_squared</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="n">I2</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">sin_squared</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1415926535897793
+3.1415926535897976
 </pre></div>
 </div>
 </div>
@@ -565,22 +705,34 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">random</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.</span>
 <span class="sd">    </span>
 <span class="sd">    f(x) = 2 / sqrt(1 - x^2).</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">monte_carlo_integrasjon</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer tilnærmingen til integralet av f fra a til b ved hjelp av Monte Carlo-integrasjon.&quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">*=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">res</span>
 
 
 <span class="n">I</span> <span class="o">=</span> <span class="n">monte_carlo_integrasjon</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1566461803262427
 </pre></div>
 </div>
 </div>
