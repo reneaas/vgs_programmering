@@ -496,13 +496,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sympy in /opt/homebrew/lib/python3.11/site-packages (1.11.1)
-Requirement already satisfied: mpmath&gt;=0.19 in /opt/homebrew/lib/python3.11/site-packages (from sympy) (1.3.0)
-Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-</div>
 </div>
 <section id="ubestemte-integraler">
 <h2>Ubestemte integraler<a class="headerlink" href="#ubestemte-integraler" title="Permalink to this heading">#</a></h2>
@@ -518,6 +511,7 @@ I = \int x^2 \, dx = \frac{x^3}{3} + C.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Funksjonen vi skal integrere.</span>
 <span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="c1"># pprint skriver ut løsningen med mattenotasjon.</span>
 </pre></div>
@@ -549,7 +543,8 @@ I = \int x^2 e^{-x} \, dx = -(x^2 + 2x  + 2 )e^{-x} + C.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Funksjonen vi skal integrere</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -573,6 +568,7 @@ I = (-x^2 - 2x - 2)e^{-x} + C = -(x^2 + 2x  + 2 )e^{-x} + C.
 <ol class="arabic simple">
 <li><p>Importere <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sp</span></code></p></li>
 <li><p>Definere en symbolsk variabel med <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sp.symbols(&quot;x&quot;)</span></code></p></li>
+<li><p>Du må definere funksjonsuttrykket <code class="docutils literal notranslate"><span class="pre">f</span></code>, for eksempel med <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">x**2</span> <span class="pre">*</span> <span class="pre">sp.exp(-x)</span></code>.</p></li>
 <li><p>Bruke <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">=</span> <span class="pre">sp.integrate(funksjonsuttrykk,</span> <span class="pre">x)</span></code> til å løse integralet.</p></li>
 <li><p>Skrive ut løsningen med <code class="docutils literal notranslate"><span class="pre">sp.pprint(I)</span></code>.</p></li>
 </ol>
@@ -593,6 +589,7 @@ I = \int_0^2 x^2 \, dx = \frac{8}{3}.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Funksjonen vi skal integrere</span>
 <span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
 </pre></div>
@@ -619,7 +616,8 @@ La oss finne løsningen på det bestemte integralet</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Funksjonen vi skal integrere</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -640,6 +638,7 @@ La oss finne løsningen på det bestemte integralet</p>
 <ol class="arabic simple">
 <li><p>Du må importere <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sp</span></code></p></li>
 <li><p>Du må definere en symbolsk variabel med <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sp.symbols(&quot;x&quot;)</span></code></p></li>
+<li><p>Du må definere funksjonen <code class="docutils literal notranslate"><span class="pre">f</span></code>, for eksempel med <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">x**2</span></code>.</p></li>
 <li><p>Du må bruke <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">=</span> <span class="pre">sp.integrate(funksjonsuttrykk,</span> <span class="pre">(x,</span> <span class="pre">nedre</span> <span class="pre">grense,</span> <span class="pre">øvre</span> <span class="pre">grense))</span></code> til å løse integralet.</p></li>
 <li><p>Du må skrive ut løsningen med <code class="docutils literal notranslate"><span class="pre">sp.pprint(I)</span></code>.</p></li>
 </ol>
@@ -661,7 +660,8 @@ La oss finne løsningen på det bestemte integralet</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x a b c&quot;</span><span class="p">)</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># Integrerer med hensyn på x fra 0 til 1.</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span> <span class="c1"># Funksjonen vi skal integrere</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># Integrerer med hensyn på x fra 0 til 1.</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -688,7 +688,8 @@ I = \int_0^\infty e^{-ax} \, dx = \frac{1}{a}.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x a&quot;</span><span class="p">)</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Funksjonen vi skal integrere</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -715,6 +716,7 @@ I = \int_0^\infty e^{-ax} \, dx = \frac{1}{a}.
 <ol class="arabic simple">
 <li><p>Du må importere <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sp</span></code></p></li>
 <li><p>Du må definere symbolske variabler, for eksempel: <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">sp.symbols(&quot;a,</span> <span class="pre">b,</span> <span class="pre">c&quot;)</span></code></p></li>
+<li><p>Definere funksjonen, for eksempel med <span class="math notranslate nohighlight">\(f = a * x**2 + b * x + c\)</span></p></li>
 <li><p>Du må bruke:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">=</span> <span class="pre">sp.integrate(funksjonsuttrykk,</span> <span class="pre">(x,</span> <span class="pre">nedre</span> <span class="pre">grense,</span> <span class="pre">øvre</span> <span class="pre">grense))</span></code> for bestemte integraler.</p></li>
