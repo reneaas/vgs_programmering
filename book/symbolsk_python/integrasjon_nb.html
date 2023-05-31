@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Monte Carlo Integrasjon (Matematikk S2) &#8212; Programmering i Videregående Skole</title>
+    <title>Symbolsk Integrasjon med sympy &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/integrasjon/mc_integrasjon';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/symbolsk_python/integrasjon_nb';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Oppgaver: Numerisk Integrasjon" href="../oppgaver/integrasjon_nb.html" />
-    <link rel="prev" title="Midtpunktsmetoden" href="midtpunktsmetoden.html" />
+    <link rel="next" title="Introduksjon til Funksjoner" href="../funksjoner/introduksjon.html" />
+    <link rel="prev" title="Å regne med Python" href="../variabler_og_regning/regning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Symbolsk Programmering</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../symbolsk_python/integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
 <ul class="nav bd-sidenav">
@@ -175,11 +175,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduksjon.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trapesmetoden.html">Trapesmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Monte Carlo Integrasjon (S2)</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/introduksjon.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Matematikk</span></p>
 <ul class="nav bd-sidenav">
@@ -242,6 +242,73 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/git/https%3A//github.com/reneaas/vgs_programmering/book/gh-pages/?urlpath=lab/tree/book/book/symbolsk_python/integrasjon_nb.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/vgs_programmering/book/blob/gh-pages//book/book/symbolsk_python/integrasjon_nb.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -267,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/integrasjon/mc_integrasjon.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/symbolsk_python/integrasjon_nb.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/integrasjon/mc_integrasjon.md" target="_blank"
+      <li><a href="../../_sources/book/symbolsk_python/integrasjon_nb.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -379,7 +446,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Monte Carlo Integrasjon (Matematikk S2)</h1>
+    <h1>Symbolsk Integrasjon med sympy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,8 +456,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubestemte-integraler">Ubestemte integraler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-ubestemt-integral-av-en-polynomfunksjon">Eksempel 1: Ubestemt integral av en polynomfunksjon</a></li>
 </ul>
 </li>
 </ul>
@@ -404,39 +471,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="monte-carlo-integrasjon-matematikk-s2">
-<h1>Monte Carlo Integrasjon (Matematikk S2)<a class="headerlink" href="#monte-carlo-integrasjon-matematikk-s2" title="Permalink to this heading">#</a></h1>
-<p>Vi skal nå se på en metode for å tilnærme integralet ved å bruke teorien for kontinuerlige stokatiske variabler.
-Vi ønsker å løse integralet</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="symbolsk-integrasjon-med-sympy">
+<h1>Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#symbolsk-integrasjon-med-sympy" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>Derivasjon er et håndverk, integrasjon er en kunst! - Viggo Brun</p>
+</div></blockquote>
+<p>Når man lærer å derivere funksjoner, så lærer man regneregler som kan anvendes direkte på vilkårlige funksjonsuttrykk uansett hvor kompliserte de måtte se ut. Man trenger bare holde tunga rett i munn og slavisk følge derivasjonsreglene, så kan man regne seg frem til den deriverte.</p>
+<p>Integraler, på en annen side, er sjelden rett frem å løse. Prøving og feiling er nødvendig for å bygge opp intuisjon for hvilke integrasjonsteknikker så må anvendes. For å gjøre ting vondt verre, finnes det også integraler som ikke har noen antiderivert i det hele tatt, så å løse integralet for hånd er håpløst. Andre integraler kan løses for hånd, men kan være svært tidkrevende eller kreve avanserte teknikker som ikke undervises i videregående skole. Da er det greit å ha en datamaskin tilgjengelig som kan gjøre jobben for deg. Og det er her <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kommer inn i bildet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install sympy # kjør denne kodecellen for å installere sympy først!
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sympy in /opt/homebrew/lib/python3.11/site-packages (1.11.1)
+Requirement already satisfied: mpmath&gt;=0.19 in /opt/homebrew/lib/python3.11/site-packages (from sympy) (1.3.0)
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ubestemte-integraler">
+<h2>Ubestemte integraler<a class="headerlink" href="#ubestemte-integraler" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-1-ubestemt-integral-av-en-polynomfunksjon">
+<h3>Eksempel 1: Ubestemt integral av en polynomfunksjon<a class="headerlink" href="#eksempel-1-ubestemt-integral-av-en-polynomfunksjon" title="Permalink to this heading">#</a></h3>
+<p>Vi kan starte med et konkret eksempel der skal finne løsningen på det ubestemte integralet</p>
 <div class="math notranslate nohighlight">
 \[
-I = \int\limits_a^b f(x) \, dx. 
+I = \int x^2 \, dx = \frac{x^3}{3} + C.
 \]</div>
-<p>Vi tenker oss at <span class="math notranslate nohighlight">\(p(x)\)</span> er en uniform sannsynlighetsfordeling på intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>, slik at</p>
-<p><span class="math notranslate nohighlight">\(p(x) = 1/(b-a)\)</span> for <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>, og <span class="math notranslate nohighlight">\(p(x) = 0\)</span> ellers.</p>
-<p>Vi kan trikse litt med integralet slik at vi får</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)}p(x) \, dx = (b-a)\int\limits_a^b f(x)p(x) \, dx = (b-a)E[f(X)].
-\]</div>
-<p>Integralet kan altså skrives som forventningsverdien av <span class="math notranslate nohighlight">\(f(X)\)</span>. Vi kan tilnærme denne forventningsverdien ved å trekke <span class="math notranslate nohighlight">\(N\)</span> tilfeldige tall av <span class="math notranslate nohighlight">\(X\)</span> fra sannsynlighetsfordelingen <span class="math notranslate nohighlight">\(p(x)\)</span>, og regne ut gjennomsnittet av <span class="math notranslate nohighlight">\(f(X)\)</span>! Med andre ord</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_a^b f(x) \, dx \approx \frac{b-a}{N}\sum\limits_{i=1}^{N} f(x_i),
-\]</div>
-<p>der <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_N\)</span> er <span class="math notranslate nohighlight">\(N\)</span> tilfeldige tall trukket fra <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Bruk Monte Carlo integrasjon til å tilnærme integralet</p>
-<div class="math notranslate nohighlight">
-\[
-I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
-\]</div>
-<p>Integralet bør nærme seg en veldig kjent matematisk konstant når du trekker mange tall.</p>
-<p>Du kan bruke kodeblokken under. <em>Du finner et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> hvis du trenger hjelp</em>.</p>
-<iframe src="https://trinket.io/embed/python/a75a7ef20b" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+<p>Med <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kan vi oppnå det med følgende kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="c1"># pprint skriver ut løsningen med mattenotasjon.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 3
+x 
+──
+3 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Ubestemte integraler, men ingen integrasjonskonstant?</p>
+<p>Når man bruker <code class="docutils literal notranslate"><span class="pre">sympy.integrate</span></code> til å løse ubestemte integraler, vil ikke integrasjonskonstanten <span class="math notranslate nohighlight">\(C\)</span> vises. Dette er fordi <code class="docutils literal notranslate"><span class="pre">sympy</span></code> ikke vet hva <span class="math notranslate nohighlight">\(C\)</span> er, og derfor ikke kan skrive den ut. Det er derfor viktig å huske på at alle ubestemte integraler har en integrasjonskonstant, selv om den ikke vises.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -453,7 +541,7 @@ I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/integrasjon"
+            path: "./book/symbolsk_python"
         },
         predefinedOutput: true
     }
@@ -472,20 +560,20 @@ I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="midtpunktsmetoden.html"
+       href="../variabler_og_regning/regning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Midtpunktsmetoden</p>
+        <p class="prev-next-title">Å regne med Python</p>
       </div>
     </a>
     <a class="right-next"
-       href="../oppgaver/integrasjon_nb.html"
+       href="../funksjoner/introduksjon.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Oppgaver: Numerisk Integrasjon</p>
+        <p class="prev-next-title">Introduksjon til Funksjoner</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -507,8 +595,8 @@ I = \int\limits_0^1 4\sqrt{1 - x^2} \, dx.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubestemte-integraler">Ubestemte integraler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-ubestemt-integral-av-en-polynomfunksjon">Eksempel 1: Ubestemt integral av en polynomfunksjon</a></li>
 </ul>
 </li>
 </ul>

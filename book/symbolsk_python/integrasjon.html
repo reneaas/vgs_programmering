@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/symbolsk_python/integrasjon';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -153,6 +155,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Symbolsk Programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
 <ul class="nav bd-sidenav">
@@ -381,7 +387,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-sympy">Hva er <code class="docutils literal notranslate"><span class="pre">sympy</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubestemte-integraler">Ubestemte integraler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-ubestemt-integral-av-en-polynomfunksjon">Eksempel 1: Ubestemt integral av en polynomfunksjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-ubestemt-integral-av-en-transcendental-funksjon">Eksempel 2: Ubestemt integral av en transcendental funksjon</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestemte-integraler">Bestemte integraler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-bestemt-integral-av-en-polynomfunksjon">Eksempel 3: Bestemt integral av en polynomfunksjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-bestemte-uegentlige-integraler">Eksempel 4: Bestemte <em>uegentlige</em> integraler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integraler-med-flere-symboler">Integraler med flere symboler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5-ubestemt-integral-av-en-polynomfunksjon-med-flere-symboler">Eksempel 5: Ubestemt integral av en polynomfunksjon med flere symboler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-6">Eksempel 6:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -400,10 +420,153 @@ document.write(`
 </div></blockquote>
 <p>Når man lærer å derivere funksjoner, så lærer man regneregler som kan anvendes direkte på vilkårlige funksjonsuttrykk uansett hvor kompliserte de måtte se ut. Man trenger bare holde tunga rett i munn og slavisk følge derivasjonsreglene, så kan man regne seg frem til den deriverte.</p>
 <p>Integraler, på en annen side, er sjelden rett frem å løse. Prøving og feiling er nødvendig for å bygge opp intuisjon for hvilke integrasjonsteknikker så må anvendes. For å gjøre ting vondt verre, finnes det også integraler som ikke har noen antiderivert i det hele tatt, så å løse integralet for hånd er håpløst. Andre integraler kan løses for hånd, men kan være svært tidkrevende eller kreve avanserte teknikker som ikke undervises i videregående skole. Da er det greit å ha en datamaskin tilgjengelig som kan gjøre jobben for deg. Og det er her <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kommer inn i bildet.</p>
-<section id="hva-er-sympy">
-<h2>Hva er <code class="docutils literal notranslate"><span class="pre">sympy</span></code>?<a class="headerlink" href="#hva-er-sympy" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">sympy</span></code> er et bibliotek for Python som lar deg utføre symbolsk matematikk. Det vil si at du kan utføre matematiske operasjoner på symboler, som for eksempel bokstaver, og få uttrykket forenklet. <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kan også løse likninger og derivere og integrere funksjoner.
-Her skal vi se på hvordan man kan integrere med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
+<section id="ubestemte-integraler">
+<h2>Ubestemte integraler<a class="headerlink" href="#ubestemte-integraler" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-1-ubestemt-integral-av-en-polynomfunksjon">
+<h3>Eksempel 1: Ubestemt integral av en polynomfunksjon<a class="headerlink" href="#eksempel-1-ubestemt-integral-av-en-polynomfunksjon" title="Permalink to this heading">#</a></h3>
+<p>Vi kan starte med et konkret eksempel der skal finne løsningen på det ubestemte integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int x^2 \, dx = \frac{x^3}{3} + C.
+\]</div>
+<p>Med <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kan vi oppnå det med følgende kode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="c1"># pprint skriver ut løsningen med mattenotasjon.</span>
+</pre></div>
+</div>
+<p>Da skrives det</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> 3</span>
+<span class="go">x </span>
+<span class="go">──</span>
+<span class="go">3 </span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Ubestemte integraler, men ingen integrasjonskonstant?</p>
+<p>Når man bruker <code class="docutils literal notranslate"><span class="pre">sympy.integrate</span></code> til å løse ubestemte integraler, vil ikke integrasjonskonstanten <span class="math notranslate nohighlight">\(C\)</span> vises. Dette er fordi <code class="docutils literal notranslate"><span class="pre">sympy</span></code> ikke vet hva <span class="math notranslate nohighlight">\(C\)</span> er, og derfor ikke kan skrive den ut. Det er derfor viktig å huske på at alle ubestemte integraler har en integrasjonskonstant, selv om den ikke vises.</p>
+</div>
+</section>
+<section id="eksempel-2-ubestemt-integral-av-en-transcendental-funksjon">
+<h3>Eksempel 2: Ubestemt integral av en transcendental funksjon<a class="headerlink" href="#eksempel-2-ubestemt-integral-av-en-transcendental-funksjon" title="Permalink to this heading">#</a></h3>
+<p>Vi kan også løse integraler av transcendente funksjoner. La oss finne løsningen på det ubestemte integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int x^2 e^{-x} \, dx = -(x^2 + 2x  + 2 )e^{-x} + C.
+\]</div>
+<p>Dette integralet kan man løse med delvis integrasjon, men er ganske tidkrevende. Med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>, er det som følger alt vi trenger å skrive for å løse samme integral analytisk (altså med en eksakt løsning):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">⎛   2          ⎞  -x</span>
+<span class="go">⎝- x  - 2⋅x - 2⎠⋅ℯ  </span>
+</pre></div>
+</div>
+<p>som vi tolker som at</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int x^2 e^{-x} \, dx = (-x^2 - 2x - 2)e^{-x} + C = -(x^2 + 2x + 2)e^{-x} + C.
+\]</div>
+<p>Vi får altså akkurat samme svar, men på brøkdelen av tiden vi ville brukt på å løse integralet for hånd.</p>
+<div class="tip admonition">
+<p class="admonition-title">Generell syntaks for ubestemte integraler</p>
+<p>Når man integrerer en funksjon analytisk må man</p>
+<ol class="arabic simple">
+<li><p>Importere <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sp</span></code></p></li>
+<li><p>Definere en symbolsk variabel med <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sp.symbols(&quot;x&quot;)</span></code></p></li>
+<li><p>Bruke <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">=</span> <span class="pre">sp.integrate(funksjonsuttrykk,</span> <span class="pre">x)</span></code> til å løse integralet.</p></li>
+<li><p>Skrive ut løsningen med <code class="docutils literal notranslate"><span class="pre">sp.pprint(I)</span></code>.</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="bestemte-integraler">
+<h2>Bestemte integraler<a class="headerlink" href="#bestemte-integraler" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-3-bestemt-integral-av-en-polynomfunksjon">
+<h3>Eksempel 3: Bestemt integral av en polynomfunksjon<a class="headerlink" href="#eksempel-3-bestemt-integral-av-en-polynomfunksjon" title="Permalink to this heading">#</a></h3>
+<p>Vi kan også løse bestemte integraler med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. La oss finne løsningen på det bestemte integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_0^2 x^2 \, dx = \frac{8}{3}.
+\]</div>
+<p>Vi kan løse det samme integralet med <code class="docutils literal notranslate"><span class="pre">sympy</span></code> slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">8/3</span>
+</pre></div>
+</div>
+</section>
+<section id="eksempel-4-bestemte-uegentlige-integraler">
+<h3>Eksempel 4: Bestemte <em>uegentlige</em> integraler<a class="headerlink" href="#eksempel-4-bestemte-uegentlige-integraler" title="Permalink to this heading">#</a></h3>
+<p>Vi kan også løse bestemte <em>uegentlige</em> integraler med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Disse dukker spesielt opp i sannsynlighetsteori i S2, for eksempel.
+La oss finne løsningen på det bestemte integralet</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^\infty e^{-x} \, dx = 1.
+\]</div>
+<p>Vi kan løse det samme integralet med <code class="docutils literal notranslate"><span class="pre">sympy</span></code> slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Generell syntaks for bestemte integraler</p>
+<ol class="arabic simple">
+<li><p>Du må importere <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sp</span></code></p></li>
+<li><p>Du må definere en symbolsk variabel med <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sp.symbols(&quot;x&quot;)</span></code></p></li>
+<li><p>Du må bruke <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">=</span> <span class="pre">sp.integrate(funksjonsuttrykk,</span> <span class="pre">(x,</span> <span class="pre">nedre</span> <span class="pre">grense,</span> <span class="pre">øvre</span> <span class="pre">grense))</span></code> til å løse integralet.</p></li>
+<li><p>Du må skrive ut løsningen med <code class="docutils literal notranslate"><span class="pre">sp.pprint(I)</span></code>.</p></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Legg merke til i eksempel 4 at vi bruker <code class="docutils literal notranslate"><span class="pre">sp.oo</span></code> for å angi uendelig. Dette er fordi <code class="docutils literal notranslate"><span class="pre">sympy</span></code> ikke kjenner til symbolet <span class="math notranslate nohighlight">\(\infty\)</span>, så vi må bruke <code class="docutils literal notranslate"><span class="pre">sp.oo</span></code> i stedet.</p>
+</div>
+</section>
+</section>
+<section id="integraler-med-flere-symboler">
+<h2>Integraler med flere symboler<a class="headerlink" href="#integraler-med-flere-symboler" title="Permalink to this heading">#</a></h2>
+<p>Noen ganger kan det være aktuelt å integrere en funksjon med flere symboler.</p>
+<section id="eksempel-5-ubestemt-integral-av-en-polynomfunksjon-med-flere-symboler">
+<h3>Eksempel 5: Ubestemt integral av en polynomfunksjon med flere symboler<a class="headerlink" href="#eksempel-5-ubestemt-integral-av-en-polynomfunksjon-med-flere-symboler" title="Permalink to this heading">#</a></h3>
+<p>La oss se på et eksempel der vi skal finne løsningen på det bestemte integralet</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^1 ax^2 + bx + c = \frac{a}{3} + \frac{b}{2} + c.
+\]</div>
+<p>For å finne dette kan vi skrive en kode som inkluderer flere symboler, et for hver koeffisient <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x a b c&quot;</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># Integrerer med hensyn på x fra 0 til 1.</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a   b    </span>
+<span class="go">─ + ─ + c</span>
+<span class="go">3   2    </span>
+</pre></div>
+</div>
+<p>som er akkurat det samme som vi ville fått om vi løste integralet for hånd.</p>
+</section>
+<section id="eksempel-6">
+<h3>Eksempel 6:<a class="headerlink" href="#eksempel-6" title="Permalink to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -456,7 +619,21 @@ Her skal vi se på hvordan man kan integrere med <code class="docutils literal n
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-sympy">Hva er <code class="docutils literal notranslate"><span class="pre">sympy</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubestemte-integraler">Ubestemte integraler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-ubestemt-integral-av-en-polynomfunksjon">Eksempel 1: Ubestemt integral av en polynomfunksjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-ubestemt-integral-av-en-transcendental-funksjon">Eksempel 2: Ubestemt integral av en transcendental funksjon</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestemte-integraler">Bestemte integraler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-bestemt-integral-av-en-polynomfunksjon">Eksempel 3: Bestemt integral av en polynomfunksjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-bestemte-uegentlige-integraler">Eksempel 4: Bestemte <em>uegentlige</em> integraler</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integraler-med-flere-symboler">Integraler med flere symboler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5-ubestemt-integral-av-en-polynomfunksjon-med-flere-symboler">Eksempel 5: Ubestemt integral av en polynomfunksjon med flere symboler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-6">Eksempel 6:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
