@@ -171,10 +171,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/introduksjon.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/trapesmetoden.html">Trapesmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon2/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/introduksjon.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Matematikk</span></p>
 <ul class="nav bd-sidenav">
@@ -472,7 +472,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="losningsforslag-elastiske-kollisjoner-som-en-pi-fabrikk">
 <h1>Løsningsforslag: Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk<a class="headerlink" href="#losningsforslag-elastiske-kollisjoner-som-en-pi-fabrikk" title="Permalink to this heading">#</a></h1>
 <p>Det finnes en underlig sammenheng mellom elastiske kollisjoner og siffer i tallet <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
-<p>Scenario er som følger: Vi har en uendelig tung vegg. Vi plasserer en lett kloss med masse <span class="math notranslate nohighlight">\(m\)</span> foran veggen. Så dytter vi en tyngere kloss med masse <span class="math notranslate nohighlight">\(M\)</span> (så <span class="math notranslate nohighlight">\(m &gt; M\)</span>), og så teller vi total antall kollisjoner som klossene har med hverandre og veggen. Hvor mange kollisjoner blir det?</p>
+<p>Scenario er som følger: Vi har en uendelig tung vegg. Vi plasserer en lett kloss med masse <span class="math notranslate nohighlight">\(m\)</span> foran veggen. Så dytter vi en tyngere kloss med masse <span class="math notranslate nohighlight">\(M\)</span> (så <span class="math notranslate nohighlight">\(M &gt; m\)</span>), og så teller vi total antall kollisjoner som klossene har med hverandre og veggen. Hvor mange kollisjoner blir det?</p>
 <p>Så lenge <span class="math notranslate nohighlight">\(M = 100^pm\)</span> for <span class="math notranslate nohighlight">\(p = 0, 1, 2, 3, ... \)</span>, så kan vi hente ut de <span class="math notranslate nohighlight">\(p + 1\)</span> første siffrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>Din oppgave er å skrive en kode som simulerer denne prosessen og genererer de første siffrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <section id="bakgrunnsteori">
@@ -589,7 +589,7 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <p><em>Under er et kodeskall for funksjonen. Du må fylle inn alle steder det står</em> <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_tid</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,</span>
 <span class="sd">    der klossene har hastighetene v og V ved start. </span>
 
@@ -598,8 +598,7 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <span class="sd">        V: Hastighet til stor kloss ved start.</span>
 <span class="sd">        m: Masse til liten kloss.</span>
 <span class="sd">        M: Masse til stor kloss.</span>
-<span class="sd">        dt: Tidssteg for simuleringen.</span>
-<span class="sd">        max_tid: Maksimal tid som skal gå mellom to kollisjoner.</span>
+<span class="sd">        dt: Tidssteg for simuleringen. Default: 0.001</span>
 <span class="sd">    </span>
 <span class="sd">    Returnerer:</span>
 <span class="sd">        antall_kollisjoner: Antall kollisjoner som har skjedd i løpet av simuleringen.</span>
@@ -607,25 +606,25 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
     <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># startposisjon til liten kloss</span>
     <span class="n">X</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># startposisjon til stor kloss.</span>
     <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># tid siden sist kollisjon</span>
-    <span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">max_tid</span><span class="p">:</span> <span class="c1"># Stopp kjøring hvis det går mer enn `max_tid` sekunder siden den siste kollisjonen inntreffer.</span>
-        
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span> <span class="c1"># Kjører helt til vi manuelt bryter ut av løkken med `break`.</span>
         <span class="c1"># Sjekk om liten kloss treffer veggen og oppdater hastighet hvis den gjør det.</span>
         <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># når x &lt; 0, har den lille klossen gått inn i veggen, så vi må snu den rundt! </span>
             <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="n">v</span> <span class="c1"># Klossen reflekterer av veggen!</span>
             <span class="n">antall_kollisjoner</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Sett tiden siden sist kollisjon til 0.</span>
 
 
         <span class="c1"># Sjekk om liten kloss og stor kloss kolliderer og oppdater hastighetene hvis de gjør det.</span>
-        <span class="k">if</span> <span class="n">X</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span> <span class="c1"># Dersom X &lt; x, har stor kloss passert gjennom liten kloss. Dette er en kollisjon!</span>
+        <span class="k">elif</span> <span class="n">X</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span> <span class="c1"># Dersom X &lt; x, har stor kloss passert gjennom liten kloss. Dette er en kollisjon!</span>
             <span class="n">v</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
             <span class="n">antall_kollisjoner</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">V</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">V</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">:</span> <span class="c1"># Klossene kan aldri lenger treffe hverandre. Vi avslutter simuleringen.</span>
+            <span class="k">break</span>
         
         <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span> <span class="c1"># Oppdater posisjon til liten kloss. x = x + v * dt</span>
         <span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">V</span> <span class="o">*</span> <span class="n">dt</span> <span class="c1"># Oppdater posisjonen til stor kloss.</span>
-        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>     <span class="c1"># Oppdater tiden siden sist kollisjon.</span>
+
 
     <span class="k">return</span> <span class="n">antall_kollisjoner</span>
 </pre></div>
@@ -635,7 +634,7 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_simuler_kollisjoner</span><span class="p">():</span>
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_tid</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">antall_kollisjoner</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
@@ -644,11 +643,11 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <span class="s2">        &quot;&quot;&quot;</span>
         <span class="p">)</span>
 
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_tid</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">antall_kollisjoner</span> <span class="o">!=</span> <span class="mi">31</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Antall kollisjoner skulle vært 31 når m=1 og M=100. Koden din returnerte </span><span class="si">{</span><span class="n">antall_kollisjoner</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_tid</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">antall_kollisjoner</span> <span class="o">!=</span> <span class="mi">314</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Antall kollisjoner skulle vært 314 når m=1 og M=100**2. Koden din returnerte </span><span class="si">{</span><span class="n">antall_kollisjoner</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
         
@@ -662,7 +661,7 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p + 1 siffer av pi for p = 0, 1, 2, ..., 7:</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="o">**</span><span class="n">p</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_tid</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="o">**</span><span class="n">p</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">antall_kollisjoner</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
