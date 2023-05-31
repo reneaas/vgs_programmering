@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Newtons metode &#8212; Programmering i Videregående Skole</title>
+    <title>Trapesmetoden &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/nullpunkter/newtons_metode';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/integrasjon/trapesmetoden';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introduksjon" href="../integrasjon/introduksjon.html" />
-    <link rel="prev" title="Halveringsmetoden" href="halveringsmetoden.html" />
+    <link rel="next" title="Midtpunktsmetoden" href="midtpunktsmetoden.html" />
+    <link rel="prev" title="Introduksjon" href="introduksjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,17 +165,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nullpunkter</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="halveringsmetoden.html">Halveringsmetoden</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Newtons metode</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/intro.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/introduksjon.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduksjon.html">Introduksjon</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Trapesmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Matematikk</span></p>
 <ul class="nav bd-sidenav">
@@ -263,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/nullpunkter/newtons_metode.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/book/issues/new?title=Issue%20on%20page%20%2Fbook/integrasjon/trapesmetoden.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/nullpunkter/newtons_metode.md" target="_blank"
+      <li><a href="../../_sources/book/integrasjon/trapesmetoden.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Newtons metode</h1>
+    <h1>Trapesmetoden</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,8 +387,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-oppgaver-pa-temaet">Flere oppgaver på temaet</a></li>
 </ul>
             </nav>
         </div>
@@ -400,71 +402,97 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="newtons-metode">
-<h1>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this heading">#</a></h1>
-<p><strong>Newtons metode</strong> er en effektiv måte å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> dersom vi også kjenner til den deriverte <span class="math notranslate nohighlight">\(f'\)</span>. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f'\)</span>, som vi kjenner til. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_1\)</span>. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x_1\)</span>. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_2\)</span>. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. <a class="reference internal" href="#newtonsmetode-fig"><span class="std std-numref">Fig. 2</span></a> viser en animasjon av prosessen.</p>
-<figure class="align-default" id="newtonsmetode-fig">
-<img alt="../../_images/NewtonIteration_Ani.gif" src="../../_images/NewtonIteration_Ani.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> vist i blå. Animasjonen er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_method#/media/File:NewtonIteration_Ani.gif">Wikimedia Commons</a>.</span><a class="headerlink" href="#newtonsmetode-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Vi kan formelt komme frem til en algoritme som følger. La <span class="math notranslate nohighlight">\(x_0\)</span> være et vilkårlig startpunkt.
-Bruker vi ettpunktsformelen for en tangent som tangerer funksjonen vår i punktet <span class="math notranslate nohighlight">\(x_0\)</span>, får vi likningen</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="trapesmetoden">
+<h1>Trapesmetoden<a class="headerlink" href="#trapesmetoden" title="Permalink to this heading">#</a></h1>
+<p>En av de enkleste metodene for å finne tilnærmede verdier til bestemte integraler er <strong>trapesmetoden</strong>. Vi tenker oss at vi har en funksjon <span class="math notranslate nohighlight">\(f\)</span> og skal regne ut integralet</p>
 <div class="math notranslate nohighlight">
 \[
-y = f(x_0) + f'(x_0)(x - x_0).
+I = \int\limits_a^b f(x) \, dx.
 \]</div>
-<p>Ideen er å finne en tilnærming til nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> ved å finne nullpunktet til tangenten i stedet. Nullpunktet til tangenten er gitt ved løsningen av likningen</p>
+<p>Tanken bak metoden er</p>
+<ol class="arabic simple">
+<li><p>Vi deler opp intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> i <span class="math notranslate nohighlight">\(n\)</span> like store delintervaller, slik at vi får delintervallene <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>, <span class="math notranslate nohighlight">\([x_1, x_2]\)</span>, …, <span class="math notranslate nohighlight">\([x_{n-1}, x_n]\)</span>.</p></li>
+<li><p>Vi kaller lengden til hvert delintervall for <span class="math notranslate nohighlight">\(h\)</span>. Da er <span class="math notranslate nohighlight">\(h = \frac{b - a}{n}\)</span>. Vi kaller også <span class="math notranslate nohighlight">\(x_0 = a\)</span> og <span class="math notranslate nohighlight">\(x_n = b\)</span>.</p></li>
+<li><p>Vi regner ut arealet av trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Vi kaller disse arealene for <span class="math notranslate nohighlight">\(S_i\)</span>.</p></li>
+</ol>
+<p>Se <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 3</span></a> for en illustrasjon av trapesmetoden. Her spiller <span class="math notranslate nohighlight">\(h = x_{i+1} - x_i\)</span> rollen som “høyden” i hvert trapes, mens <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> spiller rollen som “sidelengdene”.</p>
+<p>Tilnærmingen til integralet blir da</p>
 <div class="math notranslate nohighlight">
 \[
-f(x_0) + f'(x_0)(x_1 - x_0) = 0,
+\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} S_i = \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
 \]</div>
-<p>som gir</p>
+<p>Denne formelen kan vi skrive om litt smartere, så vi ikke regner ut <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> to ganger. I oppgavene skal du vise at uttrykket kan skrives om til:</p>
 <div class="math notranslate nohighlight">
 \[
-x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.
+\int\limits_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i).
 \]</div>
-<p>Denne formelen kan vi repetere igjen og igjen, slik at vi kommer nærmere og nærmere et nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>. Mer generelt kan vi finne et nytt estimat på nullpunktet med <span class="math notranslate nohighlight">\(x_{i+1}\)</span> ved å bruke funksjonsverdien <span class="math notranslate nohighlight">\(f(x_i)\)</span> og den deriverte <span class="math notranslate nohighlight">\(f'(x_i)\)</span> i punktet <span class="math notranslate nohighlight">\(x_i\)</span> ved formelen</p>
-<div class="math notranslate nohighlight">
-\[
-x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
-\]</div>
-<p>Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Algoritmen for Newtons metode er vist i <a class="reference internal" href="#newtonsmetode">Algorithm 2</a>.</p>
-<div class="proof algorithm admonition" id="newtonsmetode">
-<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Newtons metode)</p>
+<p>Vi kan oppsummere med en algoritme:</p>
+<div class="proof algorithm admonition" id="trapesmetoden">
+<p class="admonition-title"><span class="caption-number">Algorithm 3 </span> (Trapesmetoden)</p>
 <section class="algorithm-content" id="proof-content">
-<p><strong>Input:</strong> En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span>, et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
-<p><strong>Output:</strong> Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><strong>Input</strong>: <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(n\)</span></p>
+<p><strong>Output</strong>: Tilnærming til integralet <span class="math notranslate nohighlight">\(\int\limits_a^b f(x) \, dx\)</span></p>
 <ol class="arabic simple">
-<li><p>Regn ut <span class="math notranslate nohighlight">\(x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}\)</span>.</p></li>
-<li><p>While <span class="math notranslate nohighlight">\(|f(x_i)| &gt; \epsilon\)</span>:</p>
+<li><p>Sett <span class="math notranslate nohighlight">\(h = \frac{b - a}{n}\)</span>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(I = 0\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i = 1,2,\ldots, n-1\)</span>:</p>
 <ol class="arabic simple">
-<li><p>Regn ut <span class="math notranslate nohighlight">\(x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}\)</span>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(x = a + ih\)</span>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(I = I + f(x)\)</span>.</p></li>
 </ol>
 </li>
-<li><p>Returner <span class="math notranslate nohighlight">\(x_{i + 1}\)</span>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(I = h \frac{f(a) + f(b)}{2} + hI\)</span>.</p></li>
+<li><p>Returner <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
 </ol>
 </section>
-</div><div class="warning admonition">
-<p class="admonition-title">Svakheter med Newtons metode</p>
-<ol class="arabic simple">
-<li><p>Newtons metode bruker tangenten til en funksjon. Hvis en funksjon har asymptoter, kan algoritmen feile eller gi feil svar fordi den aldri konvergerer mot et sant nullpunkt. Dette er en svakhet med Newtons metode, og vi må derfor være forsiktige med å bruke den, og dette er også hvorfor man noen ganger får “?” som løsning når man bruker NLØS i CAS i Geogebra.</p></li>
-<li><p>Netwons metode, akkurat som halveringsmetoden, gir oss bare ett nullpunkt. Vi må derfor bruke den flere ganger hvis vi har en funksjon med flere nullpunkter.</p></li>
-</ol>
+</div><figure class="align-default" id="id1">
+<img alt="../../_images/Integration_num_trapezes_notation.svg" src="../../_images/Integration_num_trapezes_notation.svg" /><figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Figuren viser en graf av en funksjon <span class="math notranslate nohighlight">\(f\)</span> og trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Figuren er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoidal_rule#/media/File:Integration_num_trapezes_notation.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Arealet av et trapes</p>
+<p>Påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
+<span class="math notranslate nohighlight">\(
+A = \frac{a + b}{2}h
+\)</span>
+der <span class="math notranslate nohighlight">\(h\)</span> er høyden til trapeset, og <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> er sidelengdene. I <a class="reference internal" href="#trapes"><span class="std std-numref">Fig. 4</span></a> ser du et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> for referanse.</p>
+<figure class="align-default" id="trapes">
+<img alt="../../_images/Trapezoid.svg" src="../../_images/Trapezoid.svg" /><figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Figuren viser et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span>. Figuren er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#trapes" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Finn et av nullpunktene til funksjonen</p>
+<p>Finn en tilnærming til integralet</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = x^3 - 2x^2 - 5x + 6,
+I = \int\limits_0^1 e^{-x^2} \, dx 
 \]</div>
-<p>ved å bruke Newtons metode. Bruk et startpunkt <span class="math notranslate nohighlight">\(x_0 = 2\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon = 10^{-8}\)</span>.
-Du kan bruke kodeblokken under. <em>Det ligger et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> som du kan se på hvis du trenger hjelp.</em></p>
-<iframe src="https://trinket.io/embed/python/49b50912da" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+<p>ved å bruke trapesmetoden. Bruk <span class="math notranslate nohighlight">\(n = 1000\)</span> delintervaller. Du kan bruke kodeblokken under til å regne ut svaret.
+<em>Du finner et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> hvis du trenger hjelp</em>.</p>
+<iframe src="https://trinket.io/embed/python/41c0defb70" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Vis at vi kan skrive formelen for tilnærmingen til integralet som</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x) \, dx \approx h \frac{f(a) + f(b)}{2} + h\sum_{i=1}^{n-2} f(x_i),
+\]</div>
+<p>ved å starte fra summen</p>
+<div class="math notranslate nohighlight">
+\[
+\int\limits_a^b f(x) \, dx \approx \sum\limits_{i=0}^{n-1} \frac{f(x_i) + f(x_{i+1})}{2}h.
+\]</div>
+</section>
+</section>
+<section id="flere-oppgaver-pa-temaet">
+<h2>Flere oppgaver på temaet<a class="headerlink" href="#flere-oppgaver-pa-temaet" title="Permalink to this heading">#</a></h2>
+<p><a class="reference internal" href="../oppgaver/integrasjon_nb.html"><span class="doc std std-doc">Flere oppgaver på numerisk integrasjon finner du her.</span></a></p>
 </section>
 </section>
 
@@ -481,7 +509,7 @@ Du kan bruke kodeblokken under. <em>Det ligger et løsningsforslag i fanen <code
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/nullpunkter"
+            path: "./book/integrasjon"
         },
         predefinedOutput: true
     }
@@ -500,20 +528,20 @@ Du kan bruke kodeblokken under. <em>Det ligger et løsningsforslag i fanen <code
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="halveringsmetoden.html"
+       href="introduksjon.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Halveringsmetoden</p>
+        <p class="prev-next-title">Introduksjon</p>
       </div>
     </a>
     <a class="right-next"
-       href="../integrasjon/introduksjon.html"
+       href="midtpunktsmetoden.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduksjon</p>
+        <p class="prev-next-title">Midtpunktsmetoden</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -537,8 +565,10 @@ Du kan bruke kodeblokken under. <em>Det ligger et løsningsforslag i fanen <code
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-oppgaver-pa-temaet">Flere oppgaver på temaet</a></li>
 </ul>
   </nav></div>
 
