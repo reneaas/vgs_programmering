@@ -1,6 +1,14 @@
-name: my_binder
+name: example-environment
 channels:
-  - defaults
+  - conda-forge
 dependencies:
-  - matplotlib
+  - python
   - numpy
+  - pip
+  - pip:
+    - nbgitpuller
+    - sphinx-gallery
+    - pandas
+    - matplotlib
+    - numpy
+    - sympy
