@@ -1,1 +1,0 @@
-FROM reneaas/vgs_programmering:latest
