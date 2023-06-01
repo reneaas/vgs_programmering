@@ -1,1 +1,1 @@
-from reneaas/vgs_programmering:latest
+FROM reneaas/vgs_programmering:latest
