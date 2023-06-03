@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Løsningsforslag: Numerisk Integrasjon" href="../oppgaver_solutions/integrasjon_nb_sol.html" />
-    <link rel="prev" title="Monte Carlo Integrasjon (Matematikk S2)" href="../integrasjon/mc_integrasjon.html" />
+    <link rel="prev" title="Lage Funksjoner med Python" href="../oppgaver_python/funksjoner.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,6 +181,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Python kode</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver_python/funksjoner.html">Lage Funksjoner med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Matematikk</span></p>
 <ul class="current nav bd-sidenav">
@@ -466,7 +470,7 @@ I = \int\limits_0^1 \frac{4}{1+x^2} \, dx
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
@@ -491,7 +495,7 @@ I = \int\limits_0^\infty e^{-x} \, dx
 <p><em>Du kan ikke faktisk bruke <span class="math notranslate nohighlight">\(\infty\)</span> som øvre grense i Python. I stedet er det tilstrekkelig å sette den øvre grensen på integralet til et stort tall, for eksempel 1000.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
@@ -515,7 +519,7 @@ I = \int\limits_0^1 x^2 \ln x \, dx.
 <p><em>Merk at her det ikke mulig å bruke trapesmetoden fordi <span class="math notranslate nohighlight">\(\ln x\)</span> ikke definert i <span class="math notranslate nohighlight">\(x = 0\)</span></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
@@ -543,7 +547,7 @@ I_2 = \int\limits_0^{2\pi} \sin^2 x \, dx.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">cos_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til cos^2(x)&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
@@ -571,8 +575,7 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.</span>
@@ -627,12 +630,12 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../integrasjon/mc_integrasjon.html"
+       href="../oppgaver_python/funksjoner.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Monte Carlo Integrasjon (Matematikk S2)</p>
+        <p class="prev-next-title">Lage Funksjoner med Python</p>
       </div>
     </a>
     <a class="right-next"
