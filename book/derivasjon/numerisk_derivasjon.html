@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Programmering i Videregående Skole</title>
+    <title>Numerisk Derivasjon med Python &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/derivasjon/numerisk_derivasjon';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -380,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Numerisk Derivasjon med Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,9 +391,12 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#netwons-kvotient">Netwons kvotient</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-deriverte-av-et-polynom">Eksempel: Deriverte av et polynom</a></li>
 </ul>
-
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -402,7 +407,42 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="numerisk-derivasjon-med-python">
+<h1>Numerisk Derivasjon med Python<a class="headerlink" href="#numerisk-derivasjon-med-python" title="Permalink to this heading">#</a></h1>
+<p>Selv om man i prinsippet alltid kan finne en formel for den deriverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span>, er det i blant
+bedre å bruke en mer robust og fleksibel måte regne ut en tilnærming til den deriverte. Dette kan vi gjøre med
+numerisk derivasjon.</p>
+<section id="netwons-kvotient">
+<h2>Netwons kvotient<a class="headerlink" href="#netwons-kvotient" title="Permalink to this heading">#</a></h2>
+<p><strong>Newtons kvotient</strong> er en metode for numerisk derivasjon som vi kan motivere ut ifra definisjonen av den deriverte</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h},
+\]</div>
+<p>ved å redusere kravet om at <span class="math notranslate nohighlight">\(h \to 0\)</span> til at vi i stedet setter <span class="math notranslate nohighlight">\(h\)</span> til et <em>lite tall</em>. Vi kan da tilnærme den deriverte som</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) \approx \frac{f(x+h) - f(x)}{h},
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(h \ll 1\)</span> (symbolet <span class="math notranslate nohighlight">\(\ll\)</span> betyr “mye mindre enn”, forresten).</p>
+<section id="eksempel-deriverte-av-et-polynom">
+<h3>Eksempel: Deriverte av et polynom<a class="headerlink" href="#eksempel-deriverte-av-et-polynom" title="Permalink to this heading">#</a></h3>
+<p>La oss se på et eksempel der vi ønsker å finne den deriverte til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 + 2x + 1,
+\]</div>
+<p>i $x = 1. Vi kan løse dette for hånd ganske lett som</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = 2x + 2 \implies f'(1) = 4.
+\]</div>
+<p>Under ser du hvordan vi kan tilnærme den deriverte med Newtons kvotient for flere verdier av <span class="math notranslate nohighlight">\(h\)</span>. Merk hvordan vi får en bedre tilnærming jo mindre <span class="math notranslate nohighlight">\(h\)</span> er (dog det blir faktisk dårligere etter at vi passerer <span class="math notranslate nohighlight">\(h = 10^{-7}\)</span>, men dette er en avrundingsfeil som skjer på datamaskinen og ikke et direkte matterelatert problem).</p>
+<iframe src="https://trinket.io/embed/python/09977207eb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</section>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -451,9 +491,12 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#netwons-kvotient">Netwons kvotient</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-deriverte-av-et-polynom">Eksempel: Deriverte av et polynom</a></li>
 </ul>
-
+</li>
+</ul>
   </nav></div>
 
 </div></div>
