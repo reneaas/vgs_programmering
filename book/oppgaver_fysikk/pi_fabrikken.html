@@ -545,22 +545,12 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag:</p>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
     <span class="n">v_neste</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">M</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span>
     <span class="n">V_neste</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">M</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span>
     <span class="k">return</span> <span class="n">v_neste</span><span class="p">,</span> <span class="n">V_neste</span>
 </pre></div>
 </div>
-</div>
-</details>
 </div>
 <p>Du kan kjøre testkoden under for å sjekke at funksjonen din gjør det den skal.</p>
 <div class="cell docutils container">
@@ -636,8 +626,8 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 </div>
 </div>
 </div>
-<p>````{admonition} Løsningsforlag til <code class="docutils literal notranslate"><span class="pre">simuler_kollisjoner</span></code>:
-:class: dropdown</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforlag:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,</span>
@@ -680,53 +670,6 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-+++
-
-````{dropdown} Løsningsforlag til `simuler_kollisjoner`:
-```{code-cell} python
-
-def simuler_kollisjoner(v, V, m, M, dt=0.001):
-    &quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,
-    der klossene har hastighetene v og V ved start. 
-
-    Argumenter:
-        v: Hastighet til liten kloss ved start.
-        V: Hastighet til stor kloss ved start.
-        m: Masse til liten kloss.
-        M: Masse til stor kloss.
-        dt: Tidssteg for simuleringen. Default: 0.001
-    
-    Returnerer:
-        antall_kollisjoner: Antall kollisjoner som har skjedd i løpet av simuleringen.
-    &quot;&quot;&quot;
-    x = 0.5 # startposisjon til liten kloss
-    X = 1 # startposisjon til stor kloss.
-    antall_kollisjoner = 0
-
-    while True: # Kjører helt til vi manuelt bryter ut av løkken med `break`.
-        # Sjekk om liten kloss treffer veggen og oppdater hastighet hvis den gjør det.
-        if x &lt; 0: # når x &lt; 0, har den lille klossen gått inn i veggen, så vi må snu den rundt! 
-            v = -v # Klossen reflekterer av veggen!
-            antall_kollisjoner += 1
-
-
-        # Sjekk om liten kloss og stor kloss kolliderer og oppdater hastighetene hvis de gjør det.
-        elif X &lt; x: # Dersom X &lt; x, har stor kloss passert gjennom liten kloss. Dette er en kollisjon!
-            v, V = kollisjon(v, V, m, M)
-            antall_kollisjoner += 1
-
-        if v &gt;= 0 and V &gt;= 0 and V &gt;= v: # Klossene kan aldri lenger treffe hverandre. Vi avslutter simuleringen.
-            break
-        
-        x = x + v * dt # Oppdater posisjon til liten kloss. x = x + v * dt
-        X = X + V * dt # Oppdater posisjonen til stor kloss.
-
-
-    return antall_kollisjoner
-
-```
-</pre></div>
 </div>
 <p>Du kan kjøre kodecellen under for å sjekke at koden din fungerer som den skal!</p>
 <div class="cell docutils container">
