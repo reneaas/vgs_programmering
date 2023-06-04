@@ -11,6 +11,17 @@ def funksjonsnavn(argument):
     return # returner funksjonsverdien
 ```
 
+```{Admonition} Forklaring av skrivemåten til funksjoner
+:class: tip, dropdown
+
+Vi må gi en funksjon et `funksjonsnavn` slik at vi kan bruke den i koden vår. I tillegg må vi oppgi
+
+- `argument` som er en variabel som vi kan bruke inne i funksjonen. Det kan være mer enn ett argument også, men det skal vi se på senere.
+- `def` er et *nøkkelord* som forteller Python at vi skal definere en funksjon.
+- `return` er et *nøkkelord* som forteller Python at vi skal returnere en verdi. Denne verdien vil ofte være en funksjonsverdi.
+
+```
+
 ### Eksempel 1
 
 Funksjonen $f(x) = x^2 - 1$ kan vi skrive definere med koden
@@ -26,17 +37,6 @@ def f(x):
     return x**2 - 1
 ```
 
-```{Admonition} Dypdukk i funksjonsdefinisjonen av $f(x)$
-:class: tip, dropdown
-
-I definisjonen av funksjonen over har vi:
-
-- `def` som er et nøkkelord som forteller at vi skal definere en funksjon.
-- `f` som er navnet på funksjonen.
-- `x` som er argumentet til funksjonen.
-- `return` som er et nøkkelord som forteller at vi skal returnere en verdi. Denne verdien er funksjonsverdien til $f$ i $x$.
-
-```
 
 Vi kan regne ut funksjonsverdier med et såkalt *funksjonskall*. Som eksempel, la oss regne ut funksjonsverdien i $x = 2$. Dette kan gjøres på to måter:
 
