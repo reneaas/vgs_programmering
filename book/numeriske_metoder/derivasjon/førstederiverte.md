@@ -1,4 +1,4 @@
-# Numeriske derivasjon av første orden (førstederiverte)
+# Numerisk derivasjon av første orden (førstederiverte)
 
 Selv om man i prinsippet alltid kan finne en formel for den deriverte til en funksjon $f$, er det i blant
 bedre å bruke en mer robust og fleksibel måte regne ut en tilnærming til den deriverte. Dette kan vi gjøre med
