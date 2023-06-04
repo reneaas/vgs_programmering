@@ -69,8 +69,7 @@ def kollisjon(v, V, m, M):
     return v_neste, V_neste
 ```
 
-````{Admonition} Løsningsforslag:
-:class: dropdown
+````{dropdown} Løsningsforslag:
     
 ```python
 def kollisjon(v, V, m, M):
@@ -151,8 +150,7 @@ def simuler_kollisjoner(v, V, m, M, dt=0.001):
     return antall_kollisjoner
 ```
 
-````{admonition} Løsningsforlag:
-:class: dropdown
+````{dropdown} Løsningsforlag:
 
 ```python
 
