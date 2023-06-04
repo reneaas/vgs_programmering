@@ -485,7 +485,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -533,6 +536,23 @@ Din kode</label><div class="sd-tab-content docutils">
 Løsningsforslag</label><div class="sd-tab-content docutils">
 </div>
 </div>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Enda en test:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn hastighetene v og V til to legemer med massene m og M,</span>
+<span class="sd">    og returnerer hastighetene v_neste og V_neste etter kollisjonen.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">v_neste</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">M</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span>
+    <span class="n">V_neste</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="p">(</span><span class="n">M</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span>
+    <span class="k">return</span> <span class="n">v_neste</span><span class="p">,</span> <span class="n">V_neste</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -605,7 +625,10 @@ Løsningsforslag</label><div class="sd-tab-content docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
