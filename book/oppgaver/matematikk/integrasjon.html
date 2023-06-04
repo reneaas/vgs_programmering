@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Løsningsforslag: Numerisk Integrasjon &#8212; Programmering i Videregående Skole</title>
+    <title>Oppgaver: Numerisk Integrasjon &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -19,56 +19,58 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../_static/tabs.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/oppgaver_solutions/integrasjon_nb_sol';</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/oppgaver/matematikk/integrasjon';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Fysikk" href="../fysikk/oversikt.html" />
+    <link rel="prev" title="Oppgaver: Numerisk derivasjon" href="derivasjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -96,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -134,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="../../intro.html">
+<a class="navbar-brand logo" href="../../../intro.html">
   
   
   
@@ -148,57 +150,57 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../../intro.html">
                     Programmering i Videregående Skole
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Variabler, datatyper og regning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler.html">Variabler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Symbolsk Programmering</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../symbolsk_python/derivasjon_nb.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../symbolsk_python/integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../symbolsk_python/derivasjon_nb.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../symbolsk_python/integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nullpunkter</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/intro.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nullpunkter/intro.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Derivasjon</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/numerisk_derivasjon.html">Numerisk Derivasjon med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../derivasjon/numerisk_derivasjon.html">Numerisk Derivasjon med Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/introduksjon.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integrasjon/introduksjon.html">Introduksjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../oppgaver/python/oversikt.html">Python oppgaver</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../oppgaver/python/funksjoner.html">Lage Funksjoner med Python</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/oversikt.html">Python oppgaver</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/funksjoner.html">Lage Funksjoner med Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../oppgaver/matematikk/oversikt.html">Matematikk</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../oppgaver/matematikk/derivasjon.html">Oppgaver: Numerisk derivasjon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../oppgaver/matematikk/integrasjon.html">Oppgaver: Numerisk Integrasjon</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="oversikt.html">Matematikk</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="derivasjon.html">Oppgaver: Numerisk derivasjon</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Oppgaver: Numerisk Integrasjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../oppgaver/fysikk/oversikt.html">Fysikk</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../oppgaver/fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fysikk/oversikt.html">Fysikk</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
 </ul>
 </li>
 </ul>
@@ -255,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/oppgaver_solutions/integrasjon_nb_sol.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/oppgaver/matematikk/integrasjon.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img src="../../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -273,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/reneaas/vgs_programmering/blob/main//book/book/oppgaver_solutions/integrasjon_nb_sol.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/reneaas/vgs_programmering/blob/main//book/book/oppgaver/matematikk/integrasjon.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img src="../../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -339,7 +341,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/oppgaver_solutions/integrasjon_nb_sol.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/oppgaver/matematikk/integrasjon.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/oppgaver_solutions/integrasjon_nb_sol.ipynb" target="_blank"
+      <li><a href="../../../_sources/book/oppgaver/matematikk/integrasjon.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -451,7 +453,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Løsningsforslag: Numerisk Integrasjon</h1>
+    <h1>Oppgaver: Numerisk Integrasjon</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -477,8 +479,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="losningsforslag-numerisk-integrasjon">
-<h1>Løsningsforslag: Numerisk Integrasjon<a class="headerlink" href="#losningsforslag-numerisk-integrasjon" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="oppgaver-numerisk-integrasjon">
+<h1>Oppgaver: Numerisk Integrasjon<a class="headerlink" href="#oppgaver-numerisk-integrasjon" title="Permalink to this heading">#</a></h1>
 <section id="oppgave-1">
 <h2>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h2>
 <p>Bruk trapesmetoden til å regne ut en tilnærming til integralet</p>
@@ -488,15 +490,36 @@ I = \int\limits_0^1 \frac{4}{1+x^2} \, dx
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="k">def</span> <span class="nf">trapesmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="n">integral</span> <span class="o">=</span> <span class="n">trapesmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># Eksempel på funksjonskall når koden er ferdig.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til f(x) = 4 / (1 + x^2).</span>
 <span class="sd">    </span>
 <span class="sd">    Argumenter:</span>
-<span class="sd">        x (float, np.ndarray):</span>
+<span class="sd">        x (float):</span>
 <span class="sd">            Punktet eller punktene som funksjonsverdien skal regnes ut i.</span>
 <span class="sd">    </span>
 <span class="sd">    Returnerer:</span>
-<span class="sd">        float, np.ndarray: Funksjonsverdien f(x).</span>
+<span class="sd">        float: Funksjonsverdien f(x).</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">4</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -525,21 +548,14 @@ I = \int\limits_0^1 \frac{4}{1+x^2} \, dx
         <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
     <span class="k">return</span> <span class="n">I</span>
-
-
-
-<span class="n">integral</span> <span class="o">=</span> <span class="n">trapesmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># Eksempel på funksjonskall når koden er ferdig.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">3.14139263192214</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14139263192214
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+</details></section>
 <section id="oppgave-2">
 <h2>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h2>
 <p>Bruk midtpunktsmetoden til å regne ut en tilnærming til integralet</p>
@@ -550,7 +566,27 @@ I = \int\limits_0^\infty e^{-x} \, dx
 <p><em>Du kan ikke faktisk bruke <span class="math notranslate nohighlight">\(\infty\)</span> som øvre grense i Python. I stedet er det tilstrekkelig å sette den øvre grensen på integralet til et stort tall, for eksempel 1000.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til exp(-x).</span>
 <span class="sd">    </span>
@@ -586,19 +622,14 @@ I = \int\limits_0^\infty e^{-x} \, dx
         <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
     <span class="k">return</span> <span class="n">I</span>
-
-<span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0.9995834548290823</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9995834548290823
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+</details></section>
 <section id="oppgave-3">
 <h2>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h2>
 <p>Bruk midtpunktsmetoden til å regne ut en tilnærming til integralet</p>
@@ -609,7 +640,27 @@ I = \int\limits_0^1 x^2 \ln x \, dx.
 <p><em>Merk at her det ikke mulig å bruke trapesmetoden fordi <span class="math notranslate nohighlight">\(\ln x\)</span> ikke definert i <span class="math notranslate nohighlight">\(x = 0\)</span></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til x^2 ln(x) </span>
 <span class="sd">    </span>
@@ -645,19 +696,14 @@ I = \int\limits_0^1 x^2 \ln x \, dx.
         <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
     <span class="k">return</span> <span class="n">I</span>
-
-<span class="n">integral</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">integral</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-0.11111111152780043</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.11111111152780043
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+</details></section>
 <section id="oppgave-4-matematikk-r2">
 <h2>Oppgave 4 (Matematikk R2)<a class="headerlink" href="#oppgave-4-matematikk-r2" title="Permalink to this heading">#</a></h2>
 <p>Bruk midtpunktsmetoden til å regne ut en tilnærming til integralene</p>
@@ -672,7 +718,32 @@ I_2 = \int\limits_0^{2\pi} \sin^2 x \, dx.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">cos_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til cos^2(x)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">sin_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til sin^2(x)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I1</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">cos_squared</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+<span class="n">I2</span> <span class="o">=</span> <span class="n">midtpunktsmetoden</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">sin_squared</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">cos_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returnerer funksjonsverdien til cos^2(x).&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
@@ -713,15 +784,13 @@ I_2 = \int\limits_0^{2\pi} \sin^2 x \, dx.
 <span class="nb">print</span><span class="p">(</span><span class="n">I2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1415926535897793
-3.1415926535897976
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">3.1415926535897793</span>
+<span class="go">3.1415926535897976</span>
 </pre></div>
 </div>
 </div>
-</div>
-</section>
+</details></section>
 <section id="oppgave-5-matematikk-s2">
 <h2>Oppgave 5 (Matematikk S2)<a class="headerlink" href="#oppgave-5-matematikk-s2" title="Permalink to this heading">#</a></h2>
 <p>Bruk Monte Carlo integrasjon til å regne ut en tilnærming til integralet</p>
@@ -731,7 +800,36 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.</span>
+<span class="sd">    </span>
+<span class="sd">    f(x) = 2 / sqrt(1 - x^2).</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="k">def</span> <span class="nf">monte_carlo_integrasjon</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="n">I</span> <span class="o">=</span> <span class="n">monte_carlo_integrasjon</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span> <span class="c1"># eksempel på funksjonskall</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Funksjonen som skal integreres.</span>
@@ -756,14 +854,13 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
 <span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1566461803262427
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">3.1566461803262427</span>
 </pre></div>
 </div>
+<p class="sd-card-text"><em>Merk at verdien vil variere litt fra gang til gang fordi man bruker tilfeldig genererte tall til å regne ut estimater av integralet</em>.</p>
 </div>
-</div>
-</section>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -779,7 +876,7 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/oppgaver_solutions"
+            path: "./book/oppgaver/matematikk"
         },
         predefinedOutput: true
     }
@@ -797,6 +894,24 @@ I = \int\limits_0^1 \frac{2}{\sqrt{1 - x^2}} \, dx.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="derivasjon.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Oppgaver: Numerisk derivasjon</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../fysikk/oversikt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fysikk</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -867,8 +982,8 @@ By René Ask
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
