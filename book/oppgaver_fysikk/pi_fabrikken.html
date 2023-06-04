@@ -377,6 +377,23 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       <li><a href="../../_sources/book/oppgaver_fysikk/pi_fabrikken.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/book/oppgaver_fysikk/pi_fabrikken.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -515,7 +532,7 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <p><em>Under er et kodeskall for funksjonen. Du må fylle inn alle steder det står</em> <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn hastighetene v og V til to legemer med massene m og M,</span>
 <span class="sd">    og returnerer hastighetene v_neste og V_neste etter kollisjonen.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -530,32 +547,30 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <p class="admonition-title">Løsningsforslag:</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Du kan kjøre testkoden under for å sjekke at funksjonen din gjør det den skal.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_kollisjon</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tester kollisjonsfunksjonen for tilfelle der v = 0, V = -1, m = 1, M = 1.</span>
-<span class="sd">    Da skal v_neste = -1 og V_neste = 0. Gir en feilmelding hvis dette ikke stemmer.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">V</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">v_neste</span><span class="p">,</span> <span class="n">V_neste</span> <span class="o">=</span> <span class="n">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">v_neste</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">V_neste</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Feil i kollisjon(v, V, m, M). Testen feilet for v = 0, V = -1, m = 1, M = 1.&quot;</span>
++++
 
-    <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">V</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">v_neste</span><span class="p">,</span> <span class="n">V_neste</span> <span class="o">=</span> <span class="n">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">v_neste</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">V_neste</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Feil i kollisjon(v, V, m, M). Testen feilet for v = 1, V = 0, m = 1, M = 1.&quot;</span>
-<span class="n">test_kollisjon</span><span class="p">()</span>
+Du kan kjøre testkoden under for å sjekke at funksjonen din gjør det den skal.
+
+```{code-cell} ipython3
+def test_kollisjon():
+    &quot;&quot;&quot;Tester kollisjonsfunksjonen for tilfelle der v = 0, V = -1, m = 1, M = 1.
+    Da skal v_neste = -1 og V_neste = 0. Gir en feilmelding hvis dette ikke stemmer.
+    &quot;&quot;&quot;
+    v = 0
+    V = -1
+    m = 1
+    M = 1
+    v_neste, V_neste = kollisjon(v, V, m, M)
+    assert v_neste == -1 and V_neste == 0, &quot;Feil i kollisjon(v, V, m, M). Testen feilet for v = 0, V = -1, m = 1, M = 1.&quot;
+
+    v = 1
+    V = 0
+    m = 1
+    M = 1
+    v_neste, V_neste = kollisjon(v, V, m, M)
+    assert v_neste == 0 and V_neste == 1, &quot;Feil i kollisjon(v, V, m, M). Testen feilet for v = 1, V = 0, m = 1, M = 1.&quot;
+test_kollisjon()
 </pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="oppgave-2">
@@ -564,7 +579,7 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <p><em>Under er et kodeskall for funksjonen. Du må fylle inn alle steder det står</em> <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,</span>
 <span class="sd">    der klossene har hastighetene v og V ved start. </span>
 
@@ -608,17 +623,102 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 </div>
 <p>````{admonition} Løsningsforlag til <code class="docutils literal notranslate"><span class="pre">simuler_kollisjoner</span></code>:
 :class: dropdown</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,</span>
+<span class="sd">    der klossene har hastighetene v og V ved start. </span>
+
+<span class="sd">    Argumenter:</span>
+<span class="sd">        v: Hastighet til liten kloss ved start.</span>
+<span class="sd">        V: Hastighet til stor kloss ved start.</span>
+<span class="sd">        m: Masse til liten kloss.</span>
+<span class="sd">        M: Masse til stor kloss.</span>
+<span class="sd">        dt: Tidssteg for simuleringen. Default: 0.001</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer:</span>
+<span class="sd">        antall_kollisjoner: Antall kollisjoner som har skjedd i løpet av simuleringen.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># startposisjon til liten kloss</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># startposisjon til stor kloss.</span>
+    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span> <span class="c1"># Kjører helt til vi manuelt bryter ut av løkken med `break`.</span>
+        <span class="c1"># Sjekk om liten kloss treffer veggen og oppdater hastighet hvis den gjør det.</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># når x &lt; 0, har den lille klossen gått inn i veggen, så vi må snu den rundt! </span>
+            <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="n">v</span> <span class="c1"># Klossen reflekterer av veggen!</span>
+            <span class="n">antall_kollisjoner</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+        <span class="c1"># Sjekk om liten kloss og stor kloss kolliderer og oppdater hastighetene hvis de gjør det.</span>
+        <span class="k">elif</span> <span class="n">X</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span> <span class="c1"># Dersom X &lt; x, har stor kloss passert gjennom liten kloss. Dette er en kollisjon!</span>
+            <span class="n">v</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+            <span class="n">antall_kollisjoner</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">V</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">V</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">:</span> <span class="c1"># Klossene kan aldri lenger treffe hverandre. Vi avslutter simuleringen.</span>
+            <span class="k">break</span>
+        
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span> <span class="c1"># Oppdater posisjon til liten kloss. x = x + v * dt</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">V</span> <span class="o">*</span> <span class="n">dt</span> <span class="c1"># Oppdater posisjonen til stor kloss.</span>
+
+
+    <span class="k">return</span> <span class="n">antall_kollisjoner</span>
 </pre></div>
 </div>
-<p>````{dropdown} Løsningsforlag til <code class="docutils literal notranslate"><span class="pre">simuler_kollisjoner</span></code>:</p>
+</div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
++++
+
+````{dropdown} Løsningsforlag til `simuler_kollisjoner`:
+```{code-cell} ipython3
+
+def simuler_kollisjoner(v, V, m, M, dt=0.001):
+    &quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,
+    der klossene har hastighetene v og V ved start. 
+
+    Argumenter:
+        v: Hastighet til liten kloss ved start.
+        V: Hastighet til stor kloss ved start.
+        m: Masse til liten kloss.
+        M: Masse til stor kloss.
+        dt: Tidssteg for simuleringen. Default: 0.001
+    
+    Returnerer:
+        antall_kollisjoner: Antall kollisjoner som har skjedd i løpet av simuleringen.
+    &quot;&quot;&quot;
+    x = 0.5 # startposisjon til liten kloss
+    X = 1 # startposisjon til stor kloss.
+    antall_kollisjoner = 0
+
+    while True: # Kjører helt til vi manuelt bryter ut av løkken med `break`.
+        # Sjekk om liten kloss treffer veggen og oppdater hastighet hvis den gjør det.
+        if x &lt; 0: # når x &lt; 0, har den lille klossen gått inn i veggen, så vi må snu den rundt! 
+            v = -v # Klossen reflekterer av veggen!
+            antall_kollisjoner += 1
+
+
+        # Sjekk om liten kloss og stor kloss kolliderer og oppdater hastighetene hvis de gjør det.
+        elif X &lt; x: # Dersom X &lt; x, har stor kloss passert gjennom liten kloss. Dette er en kollisjon!
+            v, V = kollisjon(v, V, m, M)
+            antall_kollisjoner += 1
+
+        if v &gt;= 0 and V &gt;= 0 and V &gt;= v: # Klossene kan aldri lenger treffe hverandre. Vi avslutter simuleringen.
+            break
+        
+        x = x + v * dt # Oppdater posisjon til liten kloss. x = x + v * dt
+        X = X + V * dt # Oppdater posisjonen til stor kloss.
+
+
+    return antall_kollisjoner
+
+```
 </pre></div>
 </div>
 <p>Du kan kjøre kodecellen under for å sjekke at koden din fungerer som den skal!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_simuler_kollisjoner</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_simuler_kollisjoner</span><span class="p">():</span>
     <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_tid</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">antall_kollisjoner</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
