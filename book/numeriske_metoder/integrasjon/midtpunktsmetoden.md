@@ -9,7 +9,7 @@ $$
 men metode som kalles for **midtpunktsmetoden**. Midtpunktsmetoden er en metode for å tilnærme integralet med arealet av rektangler der man bruker funksjonsverdien i midtpunktet på hvert intervall som høydene til rektanglene. 
 
 ```{admonition} Midtpunktsmetoden vs. trapesmetoden
-:class: tip
+:class: tip, dropdown
 
 Midtpunktsmetoden har mange likheter med trapesmetoden. Forskjellen ligger i hvordan selve arealet regnes ut. I midtpunktsmetoden regner vi ut arealet av rektangler, mens vi i trapesmetoden regner ut arealet av trapeser. Det som gjør midtpunktsmetoden god, er måten man velger ut høyden i rektanglene. Generelt sett, er midtpunktsmetoden mer nøyaktig enn trapesmetoden!
 ```

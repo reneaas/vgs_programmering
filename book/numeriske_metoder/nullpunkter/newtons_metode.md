@@ -52,7 +52,7 @@ Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Al
 
 
 ```{admonition} Svakheter med Newtons metode
-:class: warning
+:class: warning, dropdown
 
 1. Newtons metode bruker tangenten til en funksjon. Hvis en funksjon har asymptoter, kan algoritmen feile eller gi feil svar fordi den aldri konvergerer mot et sant nullpunkt. Dette er en svakhet med Newtons metode, og vi må derfor være forsiktige med å bruke den, og dette er også hvorfor man noen ganger får "?" som løsning når man bruker NLØS i CAS i Geogebra.
 2. Netwons metode, akkurat som halveringsmetoden, gir oss bare ett nullpunkt. Vi må derfor bruke den flere ganger hvis vi har en funksjon med flere nullpunkter.

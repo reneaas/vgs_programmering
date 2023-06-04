@@ -52,8 +52,8 @@ Figuren viser en graf av en funksjon $f$ og trapesene som er avgrenset av grafen
 ```
 
 
-```{admonition} Arealet av et trapes
-:class: tip
+```{admonition} Repetisjon: Arealet av et trapes
+:class: tip, dropdown
 
 Påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
 $
@@ -71,7 +71,6 @@ Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hen
 
 
 ## Oppgaver
-
 
 
 ### Oppgave 1
