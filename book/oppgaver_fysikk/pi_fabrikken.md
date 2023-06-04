@@ -72,23 +72,14 @@ def kollisjon(v, V, m, M):
 ````{Admonition} Løsningsforslag:
 :class: dropdown
     
-```{code-cell} ipython3
+```python
 def kollisjon(v, V, m, M):
     v_neste = (m - M) / (m + M) * v + 2*M / (m + M) * V
     V_neste = 2*m / (m + M) + (M - m) / (m + M) * V
     return v_neste, V_neste
 ```
-
 ````
 
-```{code-cell} ipython3
-:tags: [hide-cell]
-
-def kollisjon(v, V, m, M):
-    v_neste = (m - M) / (m + M) * v + 2*M / (m + M) * V
-    V_neste = 2*m / (m + M) + (M - m) / (m + M) * V
-    return v_neste, V_neste
-```
 
 Du kan kjøre testkoden under for å sjekke at funksjonen din gjør det den skal.
 
@@ -160,7 +151,7 @@ def simuler_kollisjoner(v, V, m, M, dt=0.001):
     return antall_kollisjoner
 ```
 
-````{admonition} Løsningsforlag til `simuler_kollisjoner`:
+````{admonition} Løsningsforlag:
 :class: dropdown
 
 ```python
@@ -207,55 +198,6 @@ def simuler_kollisjoner(v, V, m, M, dt=0.001):
 ```
 
 ````
-
-+++
-
-````{dropdown} Løsningsforlag til `simuler_kollisjoner`:
-```{code-cell} python
-
-def simuler_kollisjoner(v, V, m, M, dt=0.001):
-    """Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,
-    der klossene har hastighetene v og V ved start. 
-
-    Argumenter:
-        v: Hastighet til liten kloss ved start.
-        V: Hastighet til stor kloss ved start.
-        m: Masse til liten kloss.
-        M: Masse til stor kloss.
-        dt: Tidssteg for simuleringen. Default: 0.001
-    
-    Returnerer:
-        antall_kollisjoner: Antall kollisjoner som har skjedd i løpet av simuleringen.
-    """
-    x = 0.5 # startposisjon til liten kloss
-    X = 1 # startposisjon til stor kloss.
-    antall_kollisjoner = 0
-
-    while True: # Kjører helt til vi manuelt bryter ut av løkken med `break`.
-        # Sjekk om liten kloss treffer veggen og oppdater hastighet hvis den gjør det.
-        if x < 0: # når x < 0, har den lille klossen gått inn i veggen, så vi må snu den rundt! 
-            v = -v # Klossen reflekterer av veggen!
-            antall_kollisjoner += 1
-
-
-        # Sjekk om liten kloss og stor kloss kolliderer og oppdater hastighetene hvis de gjør det.
-        elif X < x: # Dersom X < x, har stor kloss passert gjennom liten kloss. Dette er en kollisjon!
-            v, V = kollisjon(v, V, m, M)
-            antall_kollisjoner += 1
-
-        if v >= 0 and V >= 0 and V >= v: # Klossene kan aldri lenger treffe hverandre. Vi avslutter simuleringen.
-            break
-        
-        x = x + v * dt # Oppdater posisjon til liten kloss. x = x + v * dt
-        X = X + V * dt # Oppdater posisjonen til stor kloss.
-
-
-    return antall_kollisjoner
-
-```
-````
-
-+++
 
 Du kan kjøre kodecellen under for å sjekke at koden din fungerer som den skal!
 

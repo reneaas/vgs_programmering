@@ -62,7 +62,7 @@ def kollisjon(v, V, m, M):
 
 ````{tab-item} Løsningsforslag
 
-```{code-cell} ipython3
+```python
 def kollisjon(v, V, m, M):
     """Tar inn hastighetene v og V til to legemer med massene m og M,
     og returnerer hastighetene v_neste og V_neste etter kollisjonen.
