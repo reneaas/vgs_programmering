@@ -69,20 +69,26 @@ def kollisjon(v, V, m, M):
     return v_neste, V_neste
 ```
 
-```{Admonition} Løsningsforslag:
+````{Admonition} Løsningsforslag:
 :class: dropdown
-
+    
 ```{code-cell} ipython3
-
 def kollisjon(v, V, m, M):
     v_neste = (m - M) / (m + M) * v + 2*M / (m + M) * V
     V_neste = 2*m / (m + M) + (M - m) / (m + M) * V
     return v_neste, V_neste
 ```
 
-```
+````
 
-+++
+```{code-cell} ipython3
+:tags: [hide-cell]
+
+def kollisjon(v, V, m, M):
+    v_neste = (m - M) / (m + M) * v + 2*M / (m + M) * V
+    V_neste = 2*m / (m + M) + (M - m) / (m + M) * V
+    return v_neste, V_neste
+```
 
 Du kan kjøre testkoden under for å sjekke at funksjonen din gjør det den skal.
 
@@ -157,7 +163,7 @@ def simuler_kollisjoner(v, V, m, M, dt=0.001):
 ````{admonition} Løsningsforlag til `simuler_kollisjoner`:
 :class: dropdown
 
-```{code-cell} ipython3
+```python
 
 def simuler_kollisjoner(v, V, m, M, dt=0.001):
     """Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,
@@ -205,7 +211,7 @@ def simuler_kollisjoner(v, V, m, M, dt=0.001):
 +++
 
 ````{dropdown} Løsningsforlag til `simuler_kollisjoner`:
-```{code-cell} ipython3
+```{code-cell} python
 
 def simuler_kollisjoner(v, V, m, M, dt=0.001):
     """Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,
