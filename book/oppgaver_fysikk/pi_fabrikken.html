@@ -525,6 +525,27 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 </div>
 </div>
 </div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løsningsforslag</span>
+
+<span class="k">def</span> <span class="nf">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn hastighetene v og V til to legemer med massene m og M,</span>
+<span class="sd">    og returnerer hastighetene v_neste og V_neste etter kollisjonen.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">v_neste</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">M</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span>
+    <span class="n">V_neste</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="p">(</span><span class="n">M</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">V</span>
+    <span class="k">return</span> <span class="n">v_neste</span><span class="p">,</span> <span class="n">V_neste</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <p>Du kan kjøre testkoden under for å sjekke at funksjonen din gjør det den skal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
