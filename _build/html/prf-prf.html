@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,6 +50,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -155,58 +157,56 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Variabler, datatyper og regning</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Programmering</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/variabler_og_regning/variabler.html">Variabler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/variabler_og_regning/regning.html">Å regne med Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/python/variabler_og_regning/intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/python/variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Symbolsk Programmering</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/symbolsk_python/derivasjon_nb.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/symbolsk_python/integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="book/funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/python/symbolsk_python/intro.html">Symbolsk Programmering</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/python/symbolsk_python/derivasjon_nb.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/python/symbolsk_python/integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nullpunkter</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/nullpunkter/intro.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/nullpunkter/newtons_metode.html">Newtons metode</a></li>
+</li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Derivasjon</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numeriske Metoder i Matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/derivasjon/numerisk_derivasjon.html">Numerisk Derivasjon med Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/numeriske_metoder/nullpunkter/intro.html">Finne Nullpunkter</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/numeriske_metoder/nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/numeriske_metoder/nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/integrasjon/introduksjon.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/numeriske_metoder/derivasjon/intro.html">Numerisk Derivasjon</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/numeriske_metoder/derivasjon/f%C3%B8rstederiverte.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/numeriske_metoder/derivasjon/andrederiverte.html">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Python kode</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/oppgaver_python/funksjoner.html">Lage Funksjoner med Python</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/numeriske_metoder/integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/numeriske_metoder/integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/numeriske_metoder/integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/numeriske_metoder/integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (Matematikk S2)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Matematikk</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/oppgaver/integrasjon_nb.html">Numerisk Integrasjon</a></li>
+</li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Løsningsforslag til Oppgaver i Matematikk</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/oppgaver_solutions/integrasjon_nb_sol.html">Numerisk Integrasjon</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/oppgaver/python/oversikt.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/oppgaver/python/funksjoner.html">Lage Funksjoner med Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Fysikk</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/oppgaver_fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/oppgaver/matematikk/oversikt.html">Matematikk</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/oppgaver/matematikk/derivasjon.html">Oppgaver: Numerisk derivasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/oppgaver/matematikk/integrasjon.html">Oppgaver: Numerisk Integrasjon</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Løsningsforslag til Oppgaver i Fysikk</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/oppgaver_fysikk_solutions/pi_fabrikken_sol.html">Løsningsforslag: Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/oppgaver/fysikk/oversikt.html">Fysikk</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/oppgaver/fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -371,7 +371,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="book/nullpunkter/halveringsmetoden.html#halveringsmetoden"><code class="xref">halveringsmetoden</code></a> <em>(book/nullpunkter/halveringsmetoden)</em></td><td>
+       <a href="book/numeriske_metoder/nullpunkter/halveringsmetoden.html#halveringsmetoden"><code class="xref">halveringsmetoden</code></a> <em>(book/numeriske_metoder/nullpunkter/halveringsmetoden)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-midtpunktsmetoden"><td></td><td>
@@ -379,7 +379,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="book/integrasjon/midtpunktsmetoden.html#midtpunktsmetoden"><code class="xref">midtpunktsmetoden</code></a> <em>(book/integrasjon/midtpunktsmetoden)</em></td><td>
+       <a href="book/numeriske_metoder/integrasjon/midtpunktsmetoden.html#midtpunktsmetoden"><code class="xref">midtpunktsmetoden</code></a> <em>(book/numeriske_metoder/integrasjon/midtpunktsmetoden)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-newtonsmetode"><td></td><td>
@@ -387,7 +387,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="book/nullpunkter/newtons_metode.html#newtonsmetode"><code class="xref">newtonsmetode</code></a> <em>(book/nullpunkter/newtons_metode)</em></td><td>
+       <a href="book/numeriske_metoder/nullpunkter/newtons_metode.html#newtonsmetode"><code class="xref">newtonsmetode</code></a> <em>(book/numeriske_metoder/nullpunkter/newtons_metode)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-trapesmetoden"><td></td><td>
@@ -395,7 +395,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="book/integrasjon/trapesmetoden.html#trapesmetoden"><code class="xref">trapesmetoden</code></a> <em>(book/integrasjon/trapesmetoden)</em></td><td>
+       <a href="book/numeriske_metoder/integrasjon/trapesmetoden.html#trapesmetoden"><code class="xref">trapesmetoden</code></a> <em>(book/numeriske_metoder/integrasjon/trapesmetoden)</em></td><td>
        <em>algorithm</em></td></tr>
    </table>
 

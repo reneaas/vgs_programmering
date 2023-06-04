@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,6 +51,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -67,7 +69,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/oppgaver_fysikk_solutions/pi_fabrikken_sol';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Elastiske kollisjoner som en \(\pi\)-fabrikk" href="../oppgaver_fysikk/pi_fabrikken.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,58 +153,56 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Variabler, datatyper og regning</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Programmering</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler.html">Variabler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/variabler_og_regning/intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Symbolsk Programmering</span></p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/symbolsk_python/intro.html">Symbolsk Programmering</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/symbolsk_python/derivasjon_nb.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/symbolsk_python/integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numeriske Metoder i Matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../symbolsk_python/derivasjon_nb.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../symbolsk_python/integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numeriske_metoder/nullpunkter/intro.html">Finne Nullpunkter</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numeriske_metoder/nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numeriske_metoder/nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funksjoner</span></p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numeriske_metoder/derivasjon/intro.html">Numerisk Derivasjon</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numeriske_metoder/derivasjon/f%C3%B8rstederiverte.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numeriske_metoder/derivasjon/andrederiverte.html">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numeriske_metoder/integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numeriske_metoder/integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numeriske_metoder/integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numeriske_metoder/integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (Matematikk S2)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/introduksjon.html">Introduksjon til Funksjoner</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/element%C3%A6re_fn.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../oppgaver/python/oversikt.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oppgaver/python/funksjoner.html">Lage Funksjoner med Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nullpunkter</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/intro.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../oppgaver/matematikk/oversikt.html">Matematikk</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oppgaver/matematikk/derivasjon.html">Oppgaver: Numerisk derivasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oppgaver/matematikk/integrasjon.html">Oppgaver: Numerisk Integrasjon</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Derivasjon</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../derivasjon/numerisk_derivasjon.html">Numerisk Derivasjon med Python</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../oppgaver/fysikk/oversikt.html">Fysikk</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oppgaver/fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk Integrasjon</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/introduksjon.html">Introduksjon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (S2)</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Python kode</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../oppgaver_python/funksjoner.html">Lage Funksjoner med Python</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Matematikk</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../oppgaver/integrasjon_nb.html">Numerisk Integrasjon</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Løsningsforslag til Oppgaver i Matematikk</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../oppgaver_solutions/integrasjon_nb_sol.html">Numerisk Integrasjon</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver i Fysikk</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../oppgaver_fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Løsningsforslag til Oppgaver i Fysikk</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Løsningsforslag: Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+</li>
 </ul>
 
     </div>
@@ -258,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=tree/book/book/oppgaver_fysikk_solutions/pi_fabrikken_sol.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/oppgaver_fysikk_solutions/pi_fabrikken_sol.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -510,6 +509,11 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <section id="losning">
 <h3>Løsning<a class="headerlink" href="#losning" title="Permalink to this heading">#</a></h3>
 <p>Bevaring av bevegelsesmengde gir</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3b072045-21b2-4654-b6fc-fb53dccf9a13">
+<span class="eqno">()<a class="headerlink" href="#equation-3b072045-21b2-4654-b6fc-fb53dccf9a13" title="Permalink to this equation">#</a></span>\[\begin{equation}
+mv + MV = mv' + MV',
+\label{eq:bevbev}
+\end{equation}\]</div>
 <div class="math notranslate nohighlight">
 \[
 mv + MV = mv' + MV',
@@ -519,7 +523,7 @@ mv + MV = mv' + MV',
 \[
 \frac{1}{2}mv^2 + \frac{1}{2}MV^2 = \frac{1}{2}mv'^2 + \frac{1}{2}MV'^2.
 \]</div>
-<p>Vi kan skrive om likning eq. \eqref{eq:bevaring_av_kinetisk_energi} til</p>
+<p>Vi kan skrive om til</p>
 <div class="math notranslate nohighlight">
 \[
 m(v^2 - v'^2) = M(V'^2 - V^2),
@@ -598,7 +602,7 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 </section>
 <section id="oppgave-2">
 <h2>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h2>
-<p>Skriv en funksjon som simulerer flere kollisjoner mellom både klossene, og kloss og vegg over tid. Funksjonen skal returnere antall kollisjoner totalt, det vil si antall kollisjoner mellom de to klossene, og antall kollisjoner mellom kloss <span class="math notranslate nohighlight">\(m\)</span> og veggen.</p>
+<p>Skriv en funksjon som simulerer flere kollisjoner mellom både klossene, og kloss og vegg over tid. Funksjonen skal returnere antall kollisjoner totalt, det vil si antall kollisjoner mellom de to klossene, og antall kollisjoner mellom kloss <span class="math notranslate nohighlight">\(m\)</span> og veggen. Bruk funksjonen til å regne ut antall kollisjoner for <span class="math notranslate nohighlight">\(M = 100^pm\)</span> for <span class="math notranslate nohighlight">\(p = 0, 1, 2, 3, ..., 7\)</span>.</p>
 <p><em>Under er et kodeskall for funksjonen. Du må fylle inn alle steder det står</em> <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,32 +650,6 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_simuler_kollisjoner</span><span class="p">():</span>
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">antall_kollisjoner</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Feil i simuler_kollisjoner(v, V, m, M, dt, max_tid). Testen feilet for v = 0, V = -1, m = 1, M = 1.</span>
-<span class="s2">        Antall kollisjoner skulle vært 3, men koden din returnerte </span><span class="si">{</span><span class="n">antall_kollisjoner</span><span class="si">}</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-        <span class="p">)</span>
-
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">antall_kollisjoner</span> <span class="o">!=</span> <span class="mi">31</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Antall kollisjoner skulle vært 31 når m=1 og M=100. Koden din returnerte </span><span class="si">{</span><span class="n">antall_kollisjoner</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-    
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">antall_kollisjoner</span> <span class="o">!=</span> <span class="mi">314</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Antall kollisjoner skulle vært 314 når m=1 og M=100**2. Koden din returnerte </span><span class="si">{</span><span class="n">antall_kollisjoner</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-        
-    
-<span class="n">test_simuler_kollisjoner</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p + 1 siffer av pi for p = 0, 1, 2, ..., 7:</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
     <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="n">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">100</span><span class="o">**</span><span class="n">p</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
@@ -686,12 +664,8 @@ p = 2 ; antall_kollisjoner = 314
 p = 3 ; antall_kollisjoner = 3141
 p = 4 ; antall_kollisjoner = 31415
 p = 5 ; antall_kollisjoner = 314159
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p = 6 ; antall_kollisjoner = 3141592
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p = 7 ; antall_kollisjoner = 31415926
+p = 6 ; antall_kollisjoner = 3141592
+p = 7 ; antall_kollisjoner = 31415926
 </pre></div>
 </div>
 </div>
@@ -730,15 +704,6 @@ p = 5 ; antall_kollisjoner = 314159
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../oppgaver_fysikk/pi_fabrikken.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</p>
-      </div>
-    </a>
 </div></div>
   
 </div>
