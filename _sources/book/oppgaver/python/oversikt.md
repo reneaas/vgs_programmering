@@ -1,4 +1,4 @@
-# Python oppgaver
+# Python 
 
 Her finner du Python oppgaver på temaene
 

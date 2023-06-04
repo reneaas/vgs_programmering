@@ -41,20 +41,3 @@ Under ser du hvordan vi kan tilnærme den deriverte med Newtons kvotient for fle
 <iframe src="https://trinket.io/embed/python/09977207eb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
-### Oppgave:
-
-Finn en tilnærming til den deriverte av
-
-$$
-f(x) = 3x^3 - 2x^2 + 1,
-$$
-
-i $x = 1$ ved å bruke Newtons kvotient. Finn tilnærmingen ved å bruke $h = 10^{-3}, 10^{-5}, 10^{-7}$.
-
-
-<iframe src="https://trinket.io/embed/python/31949a779e" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-
-
-
-
