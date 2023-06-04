@@ -1,6 +1,4 @@
-# Introduksjon til Funksjoner
-
-# Funksjoner i Python
+# Pythonfunksjoner
 
 
 ## Introduksjon
@@ -8,7 +6,7 @@
 En funksjon i Python har mange likheter med en funksjon i matematikken. Den generelle måten vi skriver funksjoner på er
 
 ```python
-def funksjonsnavn(variabelnavn):
+def funksjonsnavn(argument):
     # Kodeblokk
     return # returner funksjonsverdien
 ```
@@ -26,6 +24,18 @@ $$
 ```python
 def f(x):
     return x**2 - 1
+```
+
+```{Admonition} Dypdukk i funksjonsdefinisjonen av $f(x)$
+:class: tip, dropdown
+
+I definisjonen av funksjonen over har vi:
+
+- `def` som er et nøkkelord som forteller at vi skal definere en funksjon.
+- `f` som er navnet på funksjonen.
+- `x` som er argumentet til funksjonen.
+- `return` som er et nøkkelord som forteller at vi skal returnere en verdi. Denne verdien er funksjonsverdien til $f$ i $x$.
+
 ```
 
 Vi kan regne ut funksjonsverdier med et såkalt *funksjonskall*. Som eksempel, la oss regne ut funksjonsverdien i $x = 2$. Dette kan gjøres på to måter:
