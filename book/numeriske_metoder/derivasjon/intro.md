@@ -5,5 +5,5 @@ Selv om det i prinsippet er mulig å regne ut et eksakt funksjonsuttrykk for de 
 
 Oversikt:
 
-- [Numeriske estimat av førstederiverte](første_derivert.md)
-- [Numeriske estimat av andrederiverte](andre_deriverte.md)
+- [Numerisk derivasjon av første orden (førstederiverte)](førstederiverte.md)
+- [Numerisk derivasjon av andre orden (andrederiverte)](andrederiverte.md)

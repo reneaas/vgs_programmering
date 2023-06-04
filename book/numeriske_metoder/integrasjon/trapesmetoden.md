@@ -52,7 +52,7 @@ Figuren viser en graf av en funksjon $f$ og trapesene som er avgrenset av grafen
 ```
 
 
-```{admonition} Repetisjon: Arealet av et trapes
+````{admonition} Repetisjon: Arealet av et trapes
 :class: tip, dropdown
 
 Påminnelse om hva arealet av et trapes er gitt ved. Det finner vi med formelen
@@ -68,7 +68,7 @@ name: trapes
 Figuren viser et trapes med høyde $h$ og sidelengder $a$ og $b$. Figuren er hentet fra [Wikimedia Commons](https://en.wikipedia.org/wiki/Trapezoid#/media/File:Trapezoid.svg).
 
 ```
-
+````
 
 ## Oppgaver
 
