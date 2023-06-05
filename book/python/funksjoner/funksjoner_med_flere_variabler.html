@@ -487,17 +487,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funksjoner-med-flere-variabler">
 <h1>Funksjoner med flere variabler<a class="headerlink" href="#funksjoner-med-flere-variabler" title="Permalink to this heading">#</a></h1>
-<p>I matematikken i videregående skole møter vi bare funksjoner av én variabel. Likevel kan det være naturlig å tenke seg funksjoner som kan ha flere variabler. For eksempel:</p>
-<ul class="simple">
-<li><p>En funksjon der det er en eller flere konstanter som kan variere fra gang til gang, for eksempel
-$<span class="math notranslate nohighlight">\(
-g(x) = ax + b.
-\)</span>$</p></li>
-<li><p>Eller en andregradsfunksjon
-$<span class="math notranslate nohighlight">\(
-f(x) = ax^2 + bx + c.
-\)</span>$</p></li>
-</ul>
+<p>I matematikken i videregående skole møter vi bare funksjoner av én variabel. Likevel kan det være naturlig å tenke seg funksjoner som kan ha flere variabler. Et eksempel på dette er en lineær funksjon <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span> eller en andregradsfunksjon <span class="math notranslate nohighlight">\(f(x) = ax^2 + bx + c\)</span>. I begge disse tilfellene har vi <span class="math notranslate nohighlight">\(x\)</span> som den vanlig (uavhengige) variabelen, men vi må også spesifisiere hvilke verdier <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span> skal ha.</p>
 <p>Vi skal se på hvordan vi kan definere funksjoner som støtter flere variabler.</p>
 <section id="funksjoner-med-konstanter">
 <h2>Funksjoner med konstanter<a class="headerlink" href="#funksjoner-med-konstanter" title="Permalink to this heading">#</a></h2>
@@ -587,9 +577,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">def f(x, a, b, c):
-return a * x**2 + b*x + c</p>
-<p class="sd-card-text">print(f”{f(x=3, a=2, b=3, c=1) = }”)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </details></section>
 <section id="ovingsoppgave-2">
