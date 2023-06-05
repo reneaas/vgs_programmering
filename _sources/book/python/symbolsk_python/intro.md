@@ -1,4 +1,4 @@
-# Introduksjon
+# Symbolsk Programmering med Python
 
 I denne seksjonen gir vi en kort introduksjon til hva symbolsk programmering og et bibliotek Python tilbyr for dette formålet kalt `sympy`.
 
