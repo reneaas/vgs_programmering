@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Symbolsk Derivasjon med sympy &#8212; Programmering i Videregående Skole</title>
+    <title>Løse likninger med sympy &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -66,11 +66,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/symbolsk_python/derivasjon_nb';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/symbolsk_python/likninger_nb';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Symbolsk Integrasjon med sympy" href="integrasjon_nb.html" />
-    <link rel="prev" title="Løse likninger med sympy" href="likninger_nb.html" />
+    <link rel="next" title="Symbolsk Derivasjon med sympy" href="derivasjon_nb.html" />
+    <link rel="prev" title="Symbolsk Programmering med Python" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,8 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Symbolsk Programmering</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="likninger_nb.html">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivasjon_nb.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="integrasjon_nb.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 </li>
@@ -263,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/symbolsk_python/derivasjon_nb.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/symbolsk_python/likninger_nb.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/reneaas/vgs_programmering/blob/main//book/book/python/symbolsk_python/derivasjon_nb.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/reneaas/vgs_programmering/blob/main//book/book/python/symbolsk_python/likninger_nb.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/symbolsk_python/derivasjon_nb.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/symbolsk_python/likninger_nb.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/python/symbolsk_python/derivasjon_nb.ipynb" target="_blank"
+      <li><a href="../../../_sources/book/python/symbolsk_python/likninger_nb.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -459,7 +459,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Symbolsk Derivasjon med sympy</h1>
+    <h1>Løse likninger med sympy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -469,9 +469,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-derivasjon-av-et-polynom">Eksempel 1: Derivasjon av et polynom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-derivasjon-av-sammensatte-funksjoner">Eksempel 2: Derivasjon av sammensatte funksjoner</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-derivasjon-av-sammensatte-funksjoner-2">Eksempel 3: Derivasjon av sammensatte funksjoner 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-med-en-ukjent">Likninger med én ukjent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-transcendentale-funksjoner">Eksempel 4: Likning med transcendentale funksjoner</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -483,138 +492,221 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="symbolsk-derivasjon-med-sympy">
-<h1>Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#symbolsk-derivasjon-med-sympy" title="Permalink to this heading">#</a></h1>
-<p>Å derivere funksjoner er i prinsippet en enkel sak der man kan følge en oppskrift slavisk å ende opp med riktig derivert til slutt. Men noen funksjoner kan være kompliserte nok til at det kan være tidkrevende å regne ut den deriverte, eller lett å gjøre feil. Her skal vi se på noen eksempler på hvordan man kan finne uttrykket for den deriverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span> ved å bruke <code class="docutils literal notranslate"><span class="pre">sympy.diff</span></code> til å derivere symbolsk.</p>
-<section id="eksempel-1-derivasjon-av-et-polynom">
-<h2>Eksempel 1: Derivasjon av et polynom<a class="headerlink" href="#eksempel-1-derivasjon-av-et-polynom" title="Permalink to this heading">#</a></h2>
-<p>La oss tenke oss at vi ønsker å finne den deriverte til polynomet</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^3 + 4x^2 + 3x - 1.
-\]</div>
-<p>Følger vi derivasjonsregelen <span class="math notranslate nohighlight">\((x^n)' = nx^{n-1}\)</span> får vi</p>
-<div class="math notranslate nohighlight">
-\[
-f'(x) = 3x^2 + 8x + 3.
-\]</div>
-<p>Med sympy kan vi oppnå det samme med koden</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Funksjonen vi skal derivere.</span>
-<span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Deriverte av f med hensyn på x.</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   2          
-3⋅x  + 8⋅x + 3
-</pre></div>
-</div>
-</div>
-</div>
-<p>som gir oss akkurat det samme uttrykket for den deriverte!</p>
-</section>
-<section id="eksempel-2-derivasjon-av-sammensatte-funksjoner">
-<h2>Eksempel 2: Derivasjon av sammensatte funksjoner<a class="headerlink" href="#eksempel-2-derivasjon-av-sammensatte-funksjoner" title="Permalink to this heading">#</a></h2>
-<p>Funksjoner der man må benytte seg av produktregel, brøkregel, kjerneregel eller en kombinasjon av disse kan være tungvinte å derivere for hånd. Som eksempel, la oss se på den deriverte av</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = e^{(x^2 + 1)^2}.
-\]</div>
-<p>Dette uttrykket er et mareritt å derivere for hånd. Hvis vi skal være forsiktige å sørge for at vi får dette rett, bør vi definere</p>
-<ul class="simple">
-<li><p>En kjerne <span class="math notranslate nohighlight">\(u(x) = x^2 + 1\)</span>.</p></li>
-<li><p>En annen kjerne <span class="math notranslate nohighlight">\(v(u) = u^2\)</span>.</p></li>
-</ul>
-<p>Den deriverte blir da</p>
-<div class="math notranslate nohighlight">
-\[
-f'(x) = e^{(x^2 + 1)^2}v'(u)u'(x) = e^{(x^2 + 1)^2} \cdot 2u(x) \cdot 2x = 4x(x^2 + 1)e^{(x^2 + 1)^2}.
-\]</div>
-<p>Dette kan være mye å holde styr på. Med <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kan vi gjøre det enkelt med koden:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#funksjonen vi skal derivere</span>
-<span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#deriverte av f med hensyn på x</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              ⎛        2⎞
-              ⎜⎛ 2    ⎞ ⎟
-    ⎛ 2    ⎞  ⎝⎝x  + 1⎠ ⎠
-4⋅x⋅⎝x  + 1⎠⋅ℯ           
-</pre></div>
-</div>
-</div>
-</div>
-<p>Igjen, får vi akkurat det samme uttrykket uten å måtte bruke et snev av hjernekraft på å holde styr på kjerne 1 og kjerne 2 når vi deriverer!</p>
-</section>
-<section id="eksempel-3-derivasjon-av-sammensatte-funksjoner-2">
-<h2>Eksempel 3: Derivasjon av sammensatte funksjoner 2<a class="headerlink" href="#eksempel-3-derivasjon-av-sammensatte-funksjoner-2" title="Permalink to this heading">#</a></h2>
-<p>La oss se på et siste eksempel der vi skal derivere en sammensatt funksjon. Denne gangen skal vi derivere</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = \frac{xe^{x^2} - 1}{x}.
-\]</div>
-<p>For å derivere denne funksjonen må man både bruke produktregel og brøkregel. La oss minne oss på disse reglene:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lose-likninger-med-sympy">
+<h1>Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#lose-likninger-med-sympy" title="Permalink to this heading">#</a></h1>
+<p>Å løse likninger er en viktig del av matematikken. I dette notatet skal vi se på hvordan vi kan løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
+<section id="likninger-med-en-ukjent">
+<h2>Likninger med én ukjent<a class="headerlink" href="#likninger-med-en-ukjent" title="Permalink to this heading">#</a></h2>
+<p>For å løse likninger, bruker vi funksjonen <code class="docutils literal notranslate"><span class="pre">solve</span></code>. Denne funksjonen tar to argumenter,</p>
 <ol class="arabic simple">
-<li><p>Produktregel: <span class="math notranslate nohighlight">\((uv)' = u'v + uv'\)</span>,</p></li>
-<li><p>Brøkregel: <span class="math notranslate nohighlight">\(\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}\)</span>.</p></li>
+<li><p>Venstesiden av likningen som skal løses. Det er antatt at likningen er på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, så vi skal bare sende inn hva <span class="math notranslate nohighlight">\(f(x)\)</span> er.</p></li>
+<li><p>Den ukjente variabelen som skal løses for.</p></li>
 </ol>
-<p>La oss i lys av dette definere <span class="math notranslate nohighlight">\(g = xe^{x^2} - 1\)</span> og <span class="math notranslate nohighlight">\(h = x\)</span>. Da blir den deriverte av <span class="math notranslate nohighlight">\(f\)</span> gitt ved</p>
+<p>Den generelle skrivemåten blir derfor</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span> <span class="c1"># Må importere biblioteket</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Definerer den ukjente variabelen, vanligvis kaller vi denne x når det bare er én ukjent.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen f(x) = 0 for x.</span>
+</pre></div>
+</div>
+<section id="eksempel-1-lose-en-lineaer-likning">
+<h3>Eksempel 1: Løse en lineær likning<a class="headerlink" href="#eksempel-1-lose-en-lineaer-likning" title="Permalink to this heading">#</a></h3>
+<p>La oss se på hvordan vi kan løse likningen</p>
 <div class="math notranslate nohighlight">
 \[
-f'(x) = \frac{g'h - gh'}{h^2} = \frac{(e^{x^2} + 2x^2e^{x^2})x - (xe^{x^2} - 1)}{x^2} = \frac{2x^2e^{x^2} + 1}{x^2} = 2xe^{x^2} + \frac{1}{x^2}.
+2x - 1 = 0.
 \]</div>
-<p>Nok et mareritt av en derivasjonsoperasjon kunne vært unngått om vi bare hadde brukt <code class="docutils literal notranslate"><span class="pre">sympy</span></code> fra starten av:</p>
+<p>Dette kan vi selvfølgelig gjøre for hånd, og da finner vi at <span class="math notranslate nohighlight">\(x = 1/2\)</span>.</p>
+<p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> må vi identifisere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er for noe, og i dette tilfellet er det <span class="math notranslate nohighlight">\(f(x) = 2x - 1\)</span>. Vi kan derfor skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span> <span class="c1">#funksjonen vi skal derivere</span>
-<span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#deriverte av f med hensyn på x</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      ⎛ 2⎞    ⎛ 2⎞      ⎛ 2⎞    
-   2  ⎝x ⎠    ⎝x ⎠      ⎝x ⎠    
-2⋅x ⋅ℯ     + ℯ       x⋅ℯ     - 1
-────────────────── - ───────────
-        x                  2    
-                          x     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1/2]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Det kan være en smule vanskelig å se at dette faktisk er det samme uttrykket, men vi kan benytte oss av <code class="docutils literal notranslate"><span class="pre">sp.simplify</span></code> funksjonen som gir oss det enkleste uttrykket for den deriverte:</p>
+</section>
+<section id="eksempel-2-lose-en-andregradslikning">
+<h3>Eksempel 2: Løse en andregradslikning<a class="headerlink" href="#eksempel-2-lose-en-andregradslikning" title="Permalink to this heading">#</a></h3>
+<p>La oss se på hvordan vi kan løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^2 + x - 2 = 0,
+\]</div>
+<p>ved å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Vi kan løse denne likningen for hånd ved å faktorisere venstresiden av likningen, og da finner vi at <span class="math notranslate nohighlight">\(x = -2\)</span> eller <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
+<p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>, må vi identifiere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er her, og det er <span class="math notranslate nohighlight">\(f(x) = x^2 + x - 2\)</span>. Vi kan derfor skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ⎛ 2⎞     
-     ⎝x ⎠   1 
-2⋅x⋅ℯ     + ──
-             2
-            x 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-2, 1]
 </pre></div>
 </div>
 </div>
 </div>
-<p>som samsvarer med det vi fikk for hånd.</p>
+</section>
+<section id="eksempel-3-lose-en-tredjegradslikning">
+<h3>Eksempel 3: Løse en tredjegradslikning<a class="headerlink" href="#eksempel-3-lose-en-tredjegradslikning" title="Permalink to this heading">#</a></h3>
+<p>La oss se på et eksempel der vi skal løse en tredjegradslikning. Vi skal løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^3 + 2x^2 = x - 2.
+\]</div>
+<p>Første steg er å flytte alt over på venstresiden, slik at vi får en likning på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>. Da får vi</p>
+<div class="math notranslate nohighlight">
+\[
+x^3 - 2x^2 - x + 2 = 0,
+\]</div>
+<p>så vi kan sette <span class="math notranslate nohighlight">\(f(x) = x^3 - 2x^2 - x + 2\)</span> i tråd med det vi har gjort tidligere. For å løse likningen skriver vi derfor koden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1, 1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksempel-4-likning-med-transcendentale-funksjoner">
+<h3>Eksempel 4: Likning med transcendentale funksjoner<a class="headerlink" href="#eksempel-4-likning-med-transcendentale-funksjoner" title="Permalink to this heading">#</a></h3>
+<p>La oss se på et eksempel der vi ønsker å finne nullpunktet til likningen</p>
+<div class="math notranslate nohighlight">
+\[
+e^x + 2x = 0.
+\]</div>
+<p>Her finnes det ingen analytisk løsning. Noen ganger uttrykkes svaret ved hjelp av spesielle funksjoner som vi ikke kjenner til i videregående skole. Som eksempel under:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-LambertW(1/2)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dette er riktig svar, men forteller oss ikke stort. Vi kan likevel få et tilnærmet svar ved å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> ved å legge inn en <code class="docutils literal notranslate"><span class="pre">float</span></code> i likningen. I stedet for at vi skriver likningen som <code class="docutils literal notranslate"><span class="pre">sp.exp(x)</span> <span class="pre">+</span> <span class="pre">2*x</span></code>, skriver vi den som <code class="docutils literal notranslate"><span class="pre">sp.exp(x)</span> <span class="pre">+</span> <span class="pre">2.0*x</span></code>. Da vil <code class="docutils literal notranslate"><span class="pre">sympy</span></code> behandle <code class="docutils literal notranslate"><span class="pre">2.0</span></code> som et flyttall, og ikke som et heltall. Gjør vi dette får vi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.351733711249196]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nå fikk vi et tallsvar vi kan tolke!</p>
+</section>
+</section>
+<section id="ovingsoppgaver">
+<h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+3x - 2 = 0.
+\]</div>
+<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NotImplemented
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen 3*x - 2 = 0 for x.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^2 - 3x + 2 = 0.
+\]</div>
+<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NotImplemented
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 - 3*x + 2 = 0 for x.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -650,20 +742,20 @@ f'(x) = \frac{g'h - gh'}{h^2} = \frac{(e^{x^2} + 2x^2e^{x^2})x - (xe^{x^2} - 1)}
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="likninger_nb.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
+        <p class="prev-next-title">Symbolsk Programmering med Python</p>
       </div>
     </a>
     <a class="right-next"
-       href="integrasjon_nb.html"
+       href="derivasjon_nb.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
+        <p class="prev-next-title">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -685,9 +777,18 @@ f'(x) = \frac{g'h - gh'}{h^2} = \frac{(e^{x^2} + 2x^2e^{x^2})x - (xe^{x^2} - 1)}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-derivasjon-av-et-polynom">Eksempel 1: Derivasjon av et polynom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-derivasjon-av-sammensatte-funksjoner">Eksempel 2: Derivasjon av sammensatte funksjoner</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-derivasjon-av-sammensatte-funksjoner-2">Eksempel 3: Derivasjon av sammensatte funksjoner 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-med-en-ukjent">Likninger med én ukjent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-transcendentale-funksjoner">Eksempel 4: Likning med transcendentale funksjoner</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
