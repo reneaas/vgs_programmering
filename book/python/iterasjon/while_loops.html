@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/iterasjon/while_loops';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Funksjoner i Python" href="../funksjoner/intro.html" />
+    <link rel="next" title="for-løkker" href="for_loops.html" />
     <link rel="prev" title="Iterasjon" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Iterasjon med løkker</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -461,10 +462,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summere-alle-heltall-fra-1-til-5">Eksempel 2: Summere alle heltall fra 1 til 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1-legenden-om-gauss-og-summen-av-de-forste-100-heltallene">Øvingsoppgave 1: Legenden om Gauss og summen av de første 100 heltallene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-regne-ut-boligpris-etter-10-ar">Eksempel 3: Regne ut boligpris etter 10 år</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2-regne-ut-boligpris-etter-20-ar">Øvingsoppgave 2: Regne ut boligpris etter 20 år</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">Øvingsoppgave 3: Finne ut når verdien til en bil er halvert</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2-regne-ut-boligpris-etter-20-ar">Øvingsoppgave 2: Regne ut boligpris etter 20 år</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">Øvingsoppgave 3: Finne ut når verdien til en bil er halvert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-sparing-med-fast-innskudd">Eksempel 4: Sparing med fast innskudd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4-sparing-med-fast-innskudd">Øvingsoppgave 4: Sparing med fast innskudd</a></li>
 </ul>
             </nav>
         </div>
@@ -493,8 +494,8 @@ Deretter, når <code class="docutils literal notranslate"><span class="pre">n</s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Starter med 0</span>
 <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># øker n med 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># printer ut verdien til n</span>
 </pre></div>
 </div>
 </div>
@@ -664,8 +665,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
-</details><section id="ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">
-<h3>Øvingsoppgave 3: Finne ut når verdien til en bil er halvert<a class="headerlink" href="#ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert" title="Permalink to this heading">#</a></h3>
+</details></section>
+<section id="ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">
+<h2>Øvingsoppgave 3: Finne ut når verdien til en bil er halvert<a class="headerlink" href="#ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert" title="Permalink to this heading">#</a></h2>
 <p>Tenk deg at du kjøper en bil til 100 000 kr, og at verdien til bilen synker med 10% hvert år.</p>
 <p>Skriv en Pythonkode og regn ut hvor mange år det tar før verdien til bilen er halvert.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
@@ -705,7 +707,68 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
+<section id="eksempel-4-sparing-med-fast-innskudd">
+<h2>Eksempel 4: Sparing med fast innskudd<a class="headerlink" href="#eksempel-4-sparing-med-fast-innskudd" title="Permalink to this heading">#</a></h2>
+<p>Tenk deg at du sparer hver måned og du setter inn 1000 kr hver måned med en månedlig rente på 0.3%. Hvor mye har vi da spart etter 2 år?</p>
+<p>Vi kan tenke oss at vi på slutten av hver legger på renten på det vi har spart. Deretter setter vi inn et nytt innskudd på 1000 kr.</p>
+<p>En mulig løsning på dette problemet ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke blir da:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi har ikke spart noe enda</span>
+<span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Vi setter inn 1000 kr i måneden. Fast innskudd</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 0.3% rente</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi starter på måned 0</span>
+<span class="k">while</span> <span class="n">måned</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="o">*</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># 12 måneder per år, og vi sparer i 2 år --&gt; 2 år * 12 måneder/år = 24 måneder. </span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Renten løper på sparebeløpet som har vokst siden forrige måned</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Vi setter inn et nytt innskudd på sparebeløpet</span>
+    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Vi øker måneden med 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+<section id="ovingsoppgave-4-sparing-med-fast-innskudd">
+<h2>Øvingsoppgave 4: Sparing med fast innskudd<a class="headerlink" href="#ovingsoppgave-4-sparing-med-fast-innskudd" title="Permalink to this heading">#</a></h2>
+<p>Tenk deg at du skal spare 1000 kr hver måned med en årlig rente på 3% (så renten løper bare hvert år i dette tilfellet).</p>
+<p>Skriv en Pythonkode til å regne ut hvor mye du har spart etter 10 år.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan tenkes du kan eller må legge til flere linjer med kode</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">innskudd</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># 1000 kr * 12 måneder per år = 12 000 kr per år</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3% rente</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">år</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># Sparer i 10 år</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Legger på rente på sparebeløpet og setter inn innskuddet</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -749,11 +812,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
       </div>
     </a>
     <a class="right-next"
-       href="../funksjoner/intro.html"
+       href="for_loops.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Funksjoner i Python</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -779,10 +842,10 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summere-alle-heltall-fra-1-til-5">Eksempel 2: Summere alle heltall fra 1 til 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1-legenden-om-gauss-og-summen-av-de-forste-100-heltallene">Øvingsoppgave 1: Legenden om Gauss og summen av de første 100 heltallene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-regne-ut-boligpris-etter-10-ar">Eksempel 3: Regne ut boligpris etter 10 år</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2-regne-ut-boligpris-etter-20-ar">Øvingsoppgave 2: Regne ut boligpris etter 20 år</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">Øvingsoppgave 3: Finne ut når verdien til en bil er halvert</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2-regne-ut-boligpris-etter-20-ar">Øvingsoppgave 2: Regne ut boligpris etter 20 år</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">Øvingsoppgave 3: Finne ut når verdien til en bil er halvert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-sparing-med-fast-innskudd">Eksempel 4: Sparing med fast innskudd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4-sparing-med-fast-innskudd">Øvingsoppgave 4: Sparing med fast innskudd</a></li>
 </ul>
   </nav></div>
 
