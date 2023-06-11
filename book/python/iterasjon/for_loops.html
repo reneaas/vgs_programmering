@@ -465,6 +465,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-summen-av-de-10-forste-heltallene">Eksempel 1: Summen av de 10 første heltallene</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summen-av-alle-partall-under-500">Eksempel 2: Summen av alle partall under 500</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-sparekonto-med-renter">Eksempel 3: Sparekonto med renter</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -472,6 +473,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2-regn-ut-summen-av-alle-oddetall-under-500">Øvingsoppgave 2: Regn ut summen av alle oddetall under 500</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3-regn-ut-n">Øvingsoppgave 3: Regn ut <span class="math notranslate nohighlight">\(n!\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4-regn-ut-summen-av-de-100-forste-kvadrattallene">Øvingsoppgave 4: Regn ut summen av de 100 første kvadrattallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-5-annuitetslan">Øvingsoppgave 5: Annuitetslån</a></li>
 </ul>
 </li>
 </ul>
@@ -605,6 +607,48 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s = 62250
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksempel-3-sparekonto-med-renter">
+<h3>Eksempel 3: Sparekonto med renter<a class="headerlink" href="#eksempel-3-sparekonto-med-renter" title="Permalink to this heading">#</a></h3>
+<p>Se for deg at du skal spare opp penger over tid, så du oppretter en sparekonto. På denne kontoen setter du inn 1000 kr hver måned og det er 1.5% rente per år. Hvor mye penger har du på kontoen etter 3 år?</p>
+<p>Vi kan løse dette problemet med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke. Men først bør vi formulere en algoritme som løser problemet. Hvert år så skal vi sette inn 12 000 kr på kontoen (fordi deter 1000 kr hver måned). I tillegg skal vi legge til 1.5% rente på kontoen. Vi ser for oss at innskuddet settes inn i sin helhet på slutten av året, og at renten legges til på samme tidspunkt. Algoritmen kan da se slik ut</p>
+<div class="proof algorithm admonition" id="sparing">
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Sparing med fast innskudd og rente)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> Antall år <span class="math notranslate nohighlight">\(n\)</span>, fast innskudd <span class="math notranslate nohighlight">\(I\)</span> og rente <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p><strong>Output:</strong> Sparebeløp om <span class="math notranslate nohighlight">\(n\)</span> år.</p>
+<ol class="arabic simple">
+<li><p>Regn ut vekstfaktoren <span class="math notranslate nohighlight">\(V \gets 1 + r/100\)</span>.</p></li>
+<li><p>Sett sparebeløpet <span class="math notranslate nohighlight">\(S \gets I\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Legg til renten <span class="math notranslate nohighlight">\(S \gets S \cdot V\)</span>.</p></li>
+<li><p>Legg til renten <span class="math notranslate nohighlight">\(S \gets S + I\)</span>.</p></li>
+</ol>
+</li>
+<li><p>Returner sparebeløpet <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Vi kan oversette dette til Pythonkode slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rente</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1"># Rente i prosent</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># Vekstfaktoren</span>
+<span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1_000</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># 1000 kr/mnd * 12 mnd/år = 12 000 kr/år</span>
+<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span> <span class="c1"># vi starter med ett innskudd på kontoen.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c1"># 10 år </span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Legger til renten på sparebeløpet som har stått på konto i et år</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Legger til et nytt innskudd på kontoen.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparebeløp = 49090.84 kr.
 </pre></div>
 </div>
 </div>
@@ -744,6 +788,60 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
+<section id="ovingsoppgave-5-annuitetslan">
+<h3>Øvingsoppgave 5: Annuitetslån<a class="headerlink" href="#ovingsoppgave-5-annuitetslan" title="Permalink to this heading">#</a></h3>
+<p>Du har tatt opp et lån på 1 000 000 kr. Lånet skal betales tilbake over 20 år med et fast årlig terminbeløp. Lånet har en rente på 2.5% per år. En algoritme som beskrives nedbetalingen kan formuleres slik:</p>
+<div class="proof algorithm admonition" id="algorithm-1">
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Nedbetaling av lån)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input</strong> Lånebeløp <span class="math notranslate nohighlight">\(L\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall år <span class="math notranslate nohighlight">\(n\)</span> og fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p><strong>Output</strong> Gjenstående lånebeløp etter <span class="math notranslate nohighlight">\(n\)</span> år.</p>
+<ol class="arabic simple">
+<li><p>Regn ut vekstfaktoren <span class="math notranslate nohighlight">\(V \gets 1 + r/100\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i = 1, 2, ..., n\)</span></p>
+<ol class="arabic simple">
+<li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L \cdot V\)</span> (renter legges til).</p></li>
+<li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L - T\)</span> (terminbeløp trekkes fra).</p></li>
+</ol>
+</li>
+<li><p>Returner gjenstående lånebeløp <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Skriv en Pythonkode som regner ut gjenstående lånebeløp etter 20 år, dersom du betaler 50 000 kr i året. Sjekk også dersom du betaler 70 000 kr i stedet.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn delene der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">nedbetalingstid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">):</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">nedbetalingstid</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">50_000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nedbetalingstid</span><span class="p">):</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="o">-</span> <span class="n">terminbeløp</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">,</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -821,6 +919,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-summen-av-de-10-forste-heltallene">Eksempel 1: Summen av de 10 første heltallene</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summen-av-alle-partall-under-500">Eksempel 2: Summen av alle partall under 500</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-sparekonto-med-renter">Eksempel 3: Sparekonto med renter</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -828,6 +927,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2-regn-ut-summen-av-alle-oddetall-under-500">Øvingsoppgave 2: Regn ut summen av alle oddetall under 500</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3-regn-ut-n">Øvingsoppgave 3: Regn ut <span class="math notranslate nohighlight">\(n!\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4-regn-ut-summen-av-de-100-forste-kvadrattallene">Øvingsoppgave 4: Regn ut summen av de 100 første kvadrattallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-5-annuitetslan">Øvingsoppgave 5: Annuitetslån</a></li>
 </ul>
 </li>
 </ul>
