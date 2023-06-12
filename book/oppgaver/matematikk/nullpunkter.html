@@ -590,7 +590,24 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details><section id="oppgave-3-sekantmetoden">
 <h3>Oppgave 3: Sekantmetoden<a class="headerlink" href="#oppgave-3-sekantmetoden" title="Permalink to this heading">#</a></h3>
 <p>En annen metode for å estimere nullpunkter kalles for <strong>sekantmetoden</strong>. Sekantmetoden likner på Newtons metode. Den store forskjellen er at sekantmetoden bruker en <em>sekant</em> i stedet for en <em>tangent</em> for å estimere nullpunktet. En sekant er en rett linje som går gjennom to punkter. I sekantmetoden bruker vi to punkter på grafen til funksjonen <span class="math notranslate nohighlight">\(f(x)\)</span> for å estimere nullpunktet. Algoritmen er som følger:</p>
-<p>Skriv en Pythonkode som bruker algoritmen til å regne ut et nullpunkt til funksjonen</p>
+<div class="proof algorithm admonition" id="algorithm-0">
+<p class="admonition-title"><span class="caption-number">Algorithm 7 </span> (Sekantmetoden)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input</strong> Funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, startverdier <span class="math notranslate nohighlight">\(x_0\)</span> og <span class="math notranslate nohighlight">\(x_1\)</span> og toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p><strong>Output</strong> Et estimat på et nullpunkt til <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Sett <span class="math notranslate nohighlight">\(x = x_1\)</span>.</p></li>
+<li><p>While <span class="math notranslate nohighlight">\(|f(x)| &gt; \epilson\)</span></p>
+<ol class="arabic simple">
+<li><p>Sett <span class="math notranslate nohighlight">\(x = x_1 - f(x_1) (x_1 - x_0) / (f(x_1) - f(x_0))\)</span>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(x_0 = x_1\)</span>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(x_1 = x\)</span>.</p></li>
+</ol>
+</li>
+<li><p>Returner <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Skriv en Pythonkode som bruker algoritmen til å regne ut et nullpunkt til funksjonen</p>
 <div class="math notranslate nohighlight">
 \[
 f(x) = e^x - x^2.
