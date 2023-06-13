@@ -1,6 +1,6 @@
 # Monte Carlo Integrasjon (Matematikk S2)
 
-Vi skal nå se på en metode for å tilnærme integralet ved å bruke teorien for kontinuerlige stokatiske variabler.
+Vi skal nå se på en metode for å tilnærme integralet ved å bruke teorien for kontinuerlige stokastiske variabler.
 Vi ønsker å løse integralet
 
 $$
