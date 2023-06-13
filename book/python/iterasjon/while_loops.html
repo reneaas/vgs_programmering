@@ -801,12 +801,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><strong>Output</strong> Antall år <span class="math notranslate nohighlight">\(t\)</span> det tar å nedbetale lånet.</p>
 <ol class="arabic simple">
 <li><p>Regn ut vekstfaktoren <span class="math notranslate nohighlight">\(V \gets 1 + r/100\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(t = 0\)</span> # antall år</p></li>
+<li><p><span class="math notranslate nohighlight">\(t = 0\)</span> <em>(tiden i år)</em></p></li>
 <li><p>While <span class="math notranslate nohighlight">\(L \geq 0\)</span>:</p>
 <ol class="arabic simple">
 <li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L \cdot V\)</span> (renter legges til).</p></li>
 <li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L - T\)</span> (terminbeløp trekkes fra).</p></li>
-<li><p><span class="math notranslate nohighlight">\(t \gets t + 1\)</span> \comment{øker året med 1}</p></li>
+<li><p><span class="math notranslate nohighlight">\(t \gets t + 1\)</span> <em>(øker antall år som har gått med 1)</em></p></li>
 </ol>
 </li>
 <li><p>Returner antall år <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
@@ -856,7 +856,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">lån</span> <span class="pre">=</span> <span class="pre">lån</span> <span class="pre">*</span> <span class="pre">vekstfaktor</span></code></p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">lån</span> <span class="pre">=</span> <span class="pre">lån</span> <span class="pre">-</span> <span class="pre">terminbeløp</span></code></p></li>
 </ol>
-<p class="sd-card-text">slik at <code class="docutils literal notranslate"><span class="pre">while</span></code> løkke ser slik ut:</p>
+<p class="sd-card-text">slik at <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka ser slik ut:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">lån</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Legger til renten</span>
     <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">-</span> <span class="n">terminbeløp</span> <span class="c1"># Trekker fra det årlige terminbeløpet.</span>
