@@ -564,7 +564,7 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 <p class="admonition-title">Flere måter å bruke range-funksjonen </p>
 <p>Vi kan altså bruke <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen på tre forskjellige måter:</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n):</span></code> gir <code class="docutils literal notranslate"><span class="pre">i</span></code> verdiene fra 0 til <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> i steg på 1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n):</span></code> gir <code class="docutils literal notranslate"><span class="pre">i</span></code> verdiene fra <code class="docutils literal notranslate"><span class="pre">0</span></code>  til <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> i steg på 1.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(startverdi,</span> <span class="pre">n):</span></code> gir <code class="docutils literal notranslate"><span class="pre">i</span></code> verdiene fra <code class="docutils literal notranslate"><span class="pre">startverdi</span></code> til <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> i steg på 1.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(startverdi,</span> <span class="pre">n,</span> <span class="pre">steglengde):</span></code> gir <code class="docutils literal notranslate"><span class="pre">i</span></code> verdiene fra <code class="docutils literal notranslate"><span class="pre">startverdi</span></code> til <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> med en <code class="docutils literal notranslate"><span class="pre">steglengde</span></code> mellom hvert fall.</p></li>
 </ol>
@@ -618,7 +618,7 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 <p>Se for deg at du skal spare opp penger over tid, så du oppretter en sparekonto. På denne kontoen setter du inn 1000 kr hver måned og det er 1.5% rente per år. Hvor mye penger har du på kontoen etter 3 år?</p>
 <p>Vi kan løse dette problemet med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke. Men først bør vi formulere en algoritme som løser problemet. Hvert år så skal vi sette inn 12 000 kr på kontoen (fordi deter 1000 kr hver måned). I tillegg skal vi legge til 1.5% rente på kontoen. Vi ser for oss at innskuddet settes inn i sin helhet på slutten av året, og at renten legges til på samme tidspunkt. Algoritmen kan da se slik ut</p>
 <div class="proof algorithm admonition" id="sparing">
-<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Sparing med fast innskudd og rente)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Sparing med fast innskudd og rente)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input:</strong> Antall år <span class="math notranslate nohighlight">\(n\)</span>, fast innskudd <span class="math notranslate nohighlight">\(I\)</span> og rente <span class="math notranslate nohighlight">\(r\)</span>.</p>
 <p><strong>Output:</strong> Sparebeløp om <span class="math notranslate nohighlight">\(n\)</span> år.</p>
@@ -793,7 +793,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <h3>Øvingsoppgave 5: Annuitetslån<a class="headerlink" href="#ovingsoppgave-5-annuitetslan" title="Permalink to this heading">#</a></h3>
 <p>Du har tatt opp et lån på 1 000 000 kr. Lånet skal betales tilbake over 20 år med et fast årlig terminbeløp. Lånet har en rente på 2.5% per år. En algoritme som beskrives nedbetalingen kan formuleres slik:</p>
 <div class="proof algorithm admonition" id="algorithm-1">
-<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Nedbetaling av lån)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 3 </span> (Nedbetaling av lån)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong> Lånebeløp <span class="math notranslate nohighlight">\(L\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall år <span class="math notranslate nohighlight">\(n\)</span> og fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p><strong>Output</strong> Gjenstående lånebeløp etter <span class="math notranslate nohighlight">\(n\)</span> år.</p>
@@ -812,13 +812,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn delene der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">nedbetalingstid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startlånet</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Renten som løper på låned</span>
+<span class="n">nedbetalingstid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor mange år du skal betale ned lånet på.</span>
 <span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Beløpet du betaler fast hvert år.</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">):</span>
-    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater gjenværende lån.</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
