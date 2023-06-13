@@ -795,14 +795,14 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <h3>Øvingsoppgave 5: Annuitetslån<a class="headerlink" href="#ovingsoppgave-5-annuitetslan" title="Permalink to this heading">#</a></h3>
 <p>Du har tatt opp et lån på 1 000 000 kr. Lånet skal betales tilbake over 20 år med et fast årlig terminbeløp. Lånet har en rente på 2.5% per år. En algoritme for å finne ut hvor lang tid det tar nå nedbetale lånet for et gitt fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span> er da</p>
 <div class="proof algorithm admonition" id="algorithm-0">
-<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Nedbetaling av lån)</p>
+<p class="admonition-title"><span>Algorithm </span> (Nedbetaling av lån)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong> Lånebeløp <span class="math notranslate nohighlight">\(L\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall år <span class="math notranslate nohighlight">\(n\)</span> og fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p><strong>Output</strong> Antall år <span class="math notranslate nohighlight">\(t\)</span> det tar å nedbetale lånet.</p>
 <ol class="arabic simple">
 <li><p>Regn ut vekstfaktoren <span class="math notranslate nohighlight">\(V \gets 1 + r/100\)</span>.</p></li>
-<li><p>t = 0 # antall år</p></li>
-<li><p>While L \geq 0:</p>
+<li><p><span class="math notranslate nohighlight">\(t = 0\)</span> # antall år</p></li>
+<li><p>While <span class="math notranslate nohighlight">\(L \geq 0\)</span>:</p>
 <ol class="arabic simple">
 <li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L \cdot V\)</span> (renter legges til).</p></li>
 <li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L - T\)</span> (terminbeløp trekkes fra).</p></li>
