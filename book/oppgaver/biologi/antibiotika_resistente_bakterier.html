@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Antibiotika Resistente Bakterier &#8212; Programmering i Videregående Skole</title>
+    <title>Antibiotikaresistente Bakterier &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Biologi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Antibiotika Resistente Bakterier</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Antibiotikaresistente Bakterier</a></li>
 </ul>
 </li>
 </ul>
@@ -452,7 +452,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Antibiotika Resistente Bakterier</h1>
+    <h1>Antibiotikaresistente Bakterier</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,11 +465,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#egenskap-bevegelse">Egenskap: Bevegelse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reprodusjon">Reprodusjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksjon">Reproduksjon</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lagre-flere-bakterier">Hvordan lagre flere bakterier?</a></li>
 </ul>
 </li>
 </ul>
@@ -483,12 +484,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="antibiotika-resistente-bakterier">
-<h1>Antibiotika Resistente Bakterier<a class="headerlink" href="#antibiotika-resistente-bakterier" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="antibiotikaresistente-bakterier">
+<h1>Antibiotikaresistente Bakterier<a class="headerlink" href="#antibiotikaresistente-bakterier" title="Permalink to this heading">#</a></h1>
 <p>Målet med dette prosjektet er å simulere evolusjon av antibiotika resistente bakterier og gjenskape et eksperiment gjort ved <em>Harvard Medical School</em>. Forklaringen av eksperimentet er utgangspunktet for modellen som skal brukes i dette prosjektet, så det er nødvendig å se videoen under før du går videre:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/plVk4NVIUh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Når du har løst prosjektet, vil du ha produsert simuleringer som gir resultater som dette:</p>
 <figure class="align-default" id="bacteria">
-<img alt="../../../_images/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_1000_ensidig.gif" src="../../../_images/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_1000_ensidig.gif" />
+<img alt="book/oppgaver/biologi/animations/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_1000_ensidig.gif" src="book/oppgaver/biologi/animations/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_1000_ensidig.gif" />
 <figcaption>
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">Animasjon av evolusjon av bakterier.</span><a class="headerlink" href="#bacteria" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -516,8 +517,8 @@ document.write(`
 <li><p><em>Dødsfall</em>: Bakteriene er nødt til å kunne dø i populasjonen.</p></li>
 </ol>
 </section>
-<section id="egenskap-bevegelse">
-<h3>Egenskap: Bevegelse<a class="headerlink" href="#egenskap-bevegelse" title="Permalink to this heading">#</a></h3>
+<section id="bevegelse">
+<h3>Bevegelse<a class="headerlink" href="#bevegelse" title="Permalink to this heading">#</a></h3>
 <p>Modellen for bakteriene må sørge for at forflytningen til bakteriene reflekterer hvordan <strong>ekte</strong> bakterier beveger seg. I praksis, vil bevegelsesmønsteret til bakterier opptre som svært tilfeldig. En enkel modell for bevegelsen til bakterien er derfor å generere hvilken retningen den går som <strong>helt tilfeldig</strong>. Det viser seg at dette garanterer at bakterien vil besøke alle mulige posisjoner på den rektangulære platen, et resultat som følger fra den matematisk teorien for <strong>virrevandring</strong>. Du kan derfor flytte bakteriene rundt helt tilfeldig.</p>
 <p>Siden bakterien lever på en rektangulær plate med <span class="math notranslate nohighlight">\(L\)</span> posisjoner langs langsiden og <span class="math notranslate nohighlight">\(K\)</span> posisjoner langs kortsiden, vil bakterien kunne leve på <span class="math notranslate nohighlight">\(L \times K\)</span> ruter/celler i “Universet” til bakteriene. La oss kalle langsiden for <span class="math notranslate nohighlight">\(x\)</span>-retning og kortsiden for <span class="math notranslate nohighlight">\(y\)</span>-retning. Da kan bakterien ha posisjoner langs <span class="math notranslate nohighlight">\(x\)</span>-aksen med verdiene</p>
 <div class="math notranslate nohighlight">
@@ -559,8 +560,8 @@ Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gang
 </div>
 </div>
 </section>
-<section id="reprodusjon">
-<h3>Reprodusjon<a class="headerlink" href="#reprodusjon" title="Permalink to this heading">#</a></h3>
+<section id="reproduksjon">
+<h3>Reproduksjon<a class="headerlink" href="#reproduksjon" title="Permalink to this heading">#</a></h3>
 <p>En egenskap vi må ta hensyn til i en populasjon av bakterier er at når antall bakterier i populasjonen blir svært høy (og nærmer seg det maksimale antalle individer kalt <strong>bæreevnen</strong> til populasjonen), så vil sannsynligheten for at en bakterie i populasjon vil ha reprodusere bli svært lav. Dersom det er få individerer i populasjonen, derimot, vil sannsynligheten for reproduksjon av en tilfeldig bakterie være høy. Vi forventer at populasjonen følger en logistisk vekst, og vi kan sørge for at populasjonsveksten tilfredstiller en slik modell evd å benytte en sannsynlighetsfordeling for at en tilfeldig bakterie reproduserer ved</p>
 <div class="math notranslate nohighlight">
 \[
@@ -575,6 +576,21 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <li><p>Hvis ikke er det for vanskelig for bakterien å reprodusere, og ingen reproduksjon vil skje.</p></li>
 </ol>
 </section>
+</section>
+<section id="hvordan-lagre-flere-bakterier">
+<h3>Hvordan lagre flere bakterier?<a class="headerlink" href="#hvordan-lagre-flere-bakterier" title="Permalink to this heading">#</a></h3>
+<p>I lys av hva vi har sett på så langt, er det naturlig å lure på hvordan vi skal lagre mange bakterier av gangen. Tross alt består jo en populasjon av bakterier av flere enn én bakterie. Python bidrar med en nyttig datatype kalt for en <em>liste</em>, eller <code class="docutils literal notranslate"><span class="pre">list</span></code>, som gir oss evnen til å lagre flere ting i ett og samme objekt.</p>
+<p>For eksempel, kan vi vi lagre to bakterier på følgende vis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterier</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="c1"># bakterie 1 på koordinat (1, 3)</span>
+    <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span> <span class="c1"># bakterie 2 på koordinat (3, 5)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -640,11 +656,12 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#egenskap-bevegelse">Egenskap: Bevegelse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reprodusjon">Reprodusjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksjon">Reproduksjon</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lagre-flere-bakterier">Hvordan lagre flere bakterier?</a></li>
 </ul>
 </li>
 </ul>
