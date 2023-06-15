@@ -465,6 +465,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#egenskap-bevegelse">Egenskap: Bevegelse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reprodusjon">Reprodusjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -510,6 +515,66 @@ document.write(`
 <li><p><em>Mutasjon</em>: Bakteriene må kunne undergå genetiske mutasjoner slik at genetisk variasjon kan forekomme i populasjonen av bakterier.</p></li>
 <li><p><em>Dødsfall</em>: Bakteriene er nødt til å kunne dø i populasjonen.</p></li>
 </ol>
+</section>
+<section id="egenskap-bevegelse">
+<h3>Egenskap: Bevegelse<a class="headerlink" href="#egenskap-bevegelse" title="Permalink to this heading">#</a></h3>
+<p>Modellen for bakteriene må sørge for at forflytningen til bakteriene reflekterer hvordan <strong>ekte</strong> bakterier beveger seg. I praksis, vil bevegelsesmønsteret til bakterier opptre som svært tilfeldig. En enkel modell for bevegelsen til bakterien er derfor å generere hvilken retningen den går som <strong>helt tilfeldig</strong>. Det viser seg at dette garanterer at bakterien vil besøke alle mulige posisjoner på den rektangulære platen, et resultat som følger fra den matematisk teorien for <strong>virrevandring</strong>. Du kan derfor flytte bakteriene rundt helt tilfeldig.</p>
+<p>Siden bakterien lever på en rektangulær plate med <span class="math notranslate nohighlight">\(L\)</span> posisjoner langs langsiden og <span class="math notranslate nohighlight">\(K\)</span> posisjoner langs kortsiden, vil bakterien kunne leve på <span class="math notranslate nohighlight">\(L \times K\)</span> ruter/celler i “Universet” til bakteriene. La oss kalle langsiden for <span class="math notranslate nohighlight">\(x\)</span>-retning og kortsiden for <span class="math notranslate nohighlight">\(y\)</span>-retning. Da kan bakterien ha posisjoner langs <span class="math notranslate nohighlight">\(x\)</span>-aksen med verdiene</p>
+<div class="math notranslate nohighlight">
+\[
+x = 0, 1, 2, 3, \ldots, L - 1,
+\]</div>
+<p>og langs <span class="math notranslate nohighlight">\(y\)</span>-retningen</p>
+<div class="math notranslate nohighlight">
+\[
+y = 0, 1, 2, 3, \ldots, K - 1.
+\]</div>
+<p>Vi kan derfor assosiere et koordinat <span class="math notranslate nohighlight">\((x, y)\)</span> som en beskrivelse av posisjonen til en bakterie på den rektangulære platen.</p>
+<p>Det er naturlig å benytte seg av et objekt i Python som heter <em>dictionary</em>, med datatype <code class="docutils literal notranslate"><span class="pre">dict</span></code>, som kan lagre denne informasjonen på følgende måte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterie</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I eksemplet her er <code class="docutils literal notranslate"><span class="pre">bakerie</span></code> plassert i koordinatet <span class="math notranslate nohighlight">\((2, 3)\)</span>. Med andre ord er <span class="math notranslate nohighlight">\(x = 2\)</span> og <span class="math notranslate nohighlight">\(y = 3\)</span>.
+Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gangen i <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-retning, vil vi kunne flytte bakterien på følgende måte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># bibliotek for numerisk matte</span>
+<span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Trekker tilfeldig en av tallene -1, 0 eller 1.</span>
+<span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bakterie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 1, &#39;y&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reprodusjon">
+<h3>Reprodusjon<a class="headerlink" href="#reprodusjon" title="Permalink to this heading">#</a></h3>
+<p>En egenskap vi må ta hensyn til i en populasjon av bakterier er at når antall bakterier i populasjonen blir svært høy (og nærmer seg det maksimale antalle individer kalt <strong>bæreevnen</strong> til populasjonen), så vil sannsynligheten for at en bakterie i populasjon vil ha reprodusere bli svært lav. Dersom det er få individerer i populasjonen, derimot, vil sannsynligheten for reproduksjon av en tilfeldig bakterie være høy. Vi forventer at populasjonen følger en logistisk vekst, og vi kan sørge for at populasjonsveksten tilfredstiller en slik modell evd å benytte en sannsynlighetsfordeling for at en tilfeldig bakterie reproduserer ved</p>
+<div class="math notranslate nohighlight">
+\[
+p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(n\)</span> er antall individerer i bakteriepopulasjonen og <span class="math notranslate nohighlight">\(b\)</span> er en parameter som bestemmer bæreevnene til populasjonen.</p>
+<section id="hvordan-sjekke-om-en-bakterie-kan-reprodusere">
+<h4>Hvordan sjekke om en bakterie kan reprodusere?<a class="headerlink" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere" title="Permalink to this heading">#</a></h4>
+<p>For å sjekke om en bakterie kan reprodusere, må du hente ut hvor mange bakterier som er i populasjonen. Vi skal se på hvordan vi gjør det senere. For nå, la oss bare anta at antall bakterier i populasjonen er <span class="math notranslate nohighlight">\(n\)</span>. For å sjekke om en bakterie for reprodusere, trekker vi da et tilfeldig tall <span class="math notranslate nohighlight">\(u\)</span> mellom <span class="math notranslate nohighlight">\(0\)</span> og <span class="math notranslate nohighlight">\(1\)</span> (som vi kan gjøre med <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">np.random.uniform()</span></code>). Da gjelder følgende:</p>
+<ol class="arabic simple">
+<li><p>Hvis <span class="math notranslate nohighlight">\(p(n) &gt; u\)</span> så får bakterien reprodusert.</p></li>
+<li><p>Hvis ikke er det for vanskelig for bakterien å reprodusere, og ingen reproduksjon vil skje.</p></li>
+</ol>
+</section>
 </section>
 </section>
 </section>
@@ -575,6 +640,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#egenskap-bevegelse">Egenskap: Bevegelse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reprodusjon">Reprodusjon</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
