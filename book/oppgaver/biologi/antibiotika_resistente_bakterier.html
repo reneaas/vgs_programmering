@@ -64,9 +64,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/oppgaver/biologi/antibiotika_resistente_bakterier';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Biologi" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/oversikt.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python/funksjoner.html">Lage Funksjoner med Python</a></li>
 </ul>
@@ -211,6 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../fysikk/oversikt.html">Fysikk</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Biologi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Antibiotika Resistente Bakterier</a></li>
 </ul>
 </li>
 </ul>
@@ -432,7 +439,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -448,6 +457,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -464,9 +485,33 @@ document.write(`
 <figure class="align-default" id="bacteria">
 <img alt="../../../_images/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_1000_ensidig.gif" src="../../../_images/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_1000_ensidig.gif" />
 <figcaption>
-<p><span class="caption-text">Animasjon av evolusjon av bakterier.</span><a class="headerlink" href="#bacteria" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Animasjon av evolusjon av bakterier.</span><a class="headerlink" href="#bacteria" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<section id="prosjektbeskrivelse">
+<h2>Prosjektbeskrivelse<a class="headerlink" href="#prosjektbeskrivelse" title="Permalink to this heading">#</a></h2>
+<p>Du skal utvikle en Python-kode som simulerer bakterier i en petriskål der det er økende konsentrasjonsgrad av antibiotika i ulike soner, slik som i eksperimentet ved Harvard Medical School. Numeriske simuleringer har i stor grad fått stor plass som en form for eksperiment der man tester ut modeller med simuleringer for å studere egenskapene til modellen og sjekke om de samsvarer med observasjoner i naturen. Relatert til evolusjonsteorien, er det spesielt to betingelser som må være tilstede for at genforrådet til en art skal endre seg slik at vi observerer evolusjon:</p>
+<ol class="arabic simple">
+<li><p>Genetisk variasjon. Vi trenger et genforråd som har eller kan skape gener som gir forskjellige egenskaper hos arten. Mutasjon er en viktig komponent her, siden genforrådet kan endres ved at DNA til individer i en populasjon muterer og dermed endres.</p></li>
+<li><p>Variasjon i miljø. Vi trenger et miljø som arten lever i der noen gener gir individer egenskaper som gir de en fordel med tanke på å overleve og reprodusere seg over andre individer i arten.</p></li>
+</ol>
+<p>Som mål skal du blant lage en animasjon og en figur som kartlegger populasjonsveksten over tid.</p>
+</section>
+<section id="modell-for-bakterien">
+<h2>Modell for bakterien<a class="headerlink" href="#modell-for-bakterien" title="Permalink to this heading">#</a></h2>
+<p>Her skal du sette opp modellen for bakterien og legge grunnlaget for simulering ved å skrive mindre funksjoner som løser deler av problemet. Til slutt skal du sy det sammen og simulere et system av mange bakterier.</p>
+<section id="en-modell-for-bakterien-og-kode-for-modellen">
+<h3>En modell for bakterien og kode for modellen<a class="headerlink" href="#en-modell-for-bakterien-og-kode-for-modellen" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at bakteriene levere i på en rektangulær plate. Tenk deg at vi deler opp langsiden i <span class="math notranslate nohighlight">\(L\)</span> deler og kortsiden i <span class="math notranslate nohighlight">\(K\)</span> deler. Tilsammen kan vi da tenke oss at det finnes <span class="math notranslate nohighlight">\(L \times K\)</span> ruter som vi kan plassere en bakterie på.</p>
+<p>Når man skal sette lage en modell for et fysisk system, er første steg å forenkle og velge ut relevante variabler som vi tror har en effekt på hvordan systemet fungerer. I dette tilfellet er det fysiske systemet en bakterie. Hvis vi tenker oss om, bør vi i det minste passe på å ha en modell som fanger opp vanlige egenskaper hos en bakterie:</p>
+<ol class="arabic simple">
+<li><p><em>Bevegelse</em>: Modellen for bakteriene må sørge for at bakteriene kan flytte seg rundt på en måte som replikerer bevegelsesmønstre til bakterier.</p></li>
+<li><p><em>Reproduksjon</em>: Modellen for bakteriene må ta hensyn til at bakteriene kan reprodusere gjennom ukjønnet formering.</p></li>
+<li><p><em>Mutasjon</em>: Bakteriene må kunne undergå genetiske mutasjoner slik at genetisk variasjon kan forekomme i populasjonen av bakterier.</p></li>
+<li><p><em>Dødsfall</em>: Bakteriene er nødt til å kunne dø i populasjonen.</p></li>
+</ol>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -500,6 +545,15 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Biologi</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -509,6 +563,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
