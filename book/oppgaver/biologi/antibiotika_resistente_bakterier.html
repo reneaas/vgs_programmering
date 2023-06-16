@@ -466,6 +466,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antibiotikaresistens">Antibiotikaresistens</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksjon">Reproduksjon</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
 </ul>
@@ -487,11 +488,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="antibiotikaresistente-bakterier">
 <h1>Antibiotikaresistente Bakterier<a class="headerlink" href="#antibiotikaresistente-bakterier" title="Permalink to this heading">#</a></h1>
 <p>Målet med dette prosjektet er å simulere evolusjon av antibiotika resistente bakterier og gjenskape et eksperiment gjort ved <em>Harvard Medical School</em>. Forklaringen av eksperimentet er utgangspunktet for modellen som skal brukes i dette prosjektet, så det er nødvendig å se videoen under før du går videre:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/plVk4NVIUh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Når du har løst prosjektet, vil du ha produsert simuleringer som gir resultater som dette:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/plVk4NVIUh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Når du har løst prosjektet, vil du ha produsert simuleringer som gir resultater som i <a class="reference internal" href="#bacteria"><span class="std std-numref">Fig. 5</span></a>.</p>
 <figure class="align-default" id="bacteria">
 <img alt="../../../_images/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_5000_ensidig.gif" src="../../../_images/antibiotika_resistente_bakterier_xceller_300_yceller_150_niter_5000_ensidig.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Animasjon av evolusjon av bakterier.</span><a class="headerlink" href="#bacteria" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Animasjon av evolusjon av bakterier. Den rektangulære platen er delt opp i 5 soner med økende konsentrasjonsgrad med antibiotika.</span><a class="headerlink" href="#bacteria" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="prosjektbeskrivelse">
@@ -511,10 +512,11 @@ document.write(`
 <p>Tenk deg at bakteriene levere i på en rektangulær plate. Tenk deg at vi deler opp langsiden i <span class="math notranslate nohighlight">\(L\)</span> deler og kortsiden i <span class="math notranslate nohighlight">\(K\)</span> deler. Tilsammen kan vi da tenke oss at det finnes <span class="math notranslate nohighlight">\(L \times K\)</span> ruter som vi kan plassere en bakterie på.</p>
 <p>Når man skal sette lage en modell for et fysisk system, er første steg å forenkle og velge ut relevante variabler som vi tror har en effekt på hvordan systemet fungerer. I dette tilfellet er det fysiske systemet en bakterie. Hvis vi tenker oss om, bør vi i det minste passe på å ha en modell som fanger opp vanlige egenskaper hos en bakterie:</p>
 <ol class="arabic simple">
-<li><p><em>Bevegelse</em>: Modellen for bakteriene må sørge for at bakteriene kan flytte seg rundt på en måte som replikerer bevegelsesmønstre til bakterier.</p></li>
-<li><p><em>Reproduksjon</em>: Modellen for bakteriene må ta hensyn til at bakteriene kan reprodusere gjennom ukjønnet formering.</p></li>
-<li><p><em>Mutasjon</em>: Bakteriene må kunne undergå genetiske mutasjoner slik at genetisk variasjon kan forekomme i populasjonen av bakterier.</p></li>
-<li><p><em>Dødsfall</em>: Bakteriene er nødt til å kunne dø i populasjonen.</p></li>
+<li><p><strong>Bevegelse</strong>: Modellen for bakteriene må sørge for at bakteriene kan flytte seg rundt på en måte som replikerer bevegelsesmønstre til bakterier.</p></li>
+<li><p><strong>Antibiotikaresistens</strong>: Modellen for bakterien må ha en måte å representere antibiotikaresistens på.</p></li>
+<li><p><strong>Dødsfall</strong>: Bakteriene er nødt til å kunne dø i populasjonen.</p></li>
+<li><p><strong>Reproduksjon</strong>: Modellen for bakteriene må ta hensyn til at bakteriene kan reprodusere gjennom ukjønnet formering.</p></li>
+<li><p><strong>Mutasjon</strong>: Bakteriene må kunne undergå genetiske mutasjoner slik at genetisk variasjon kan forekomme i populasjonen av bakterier.</p></li>
 </ol>
 </section>
 <section id="bevegelse">
@@ -559,6 +561,10 @@ Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gang
 </div>
 </div>
 </div>
+</section>
+<section id="antibiotikaresistens">
+<h3>Antibiotikaresistens<a class="headerlink" href="#antibiotikaresistens" title="Permalink to this heading">#</a></h3>
+<p>Vi må ha en måte å inkludere antibiotikaresistens i modellen for bakteriene. Vi skal gå for en enkel løsning som</p>
 </section>
 <section id="reproduksjon">
 <h3>Reproduksjon<a class="headerlink" href="#reproduksjon" title="Permalink to this heading">#</a></h3>
@@ -657,6 +663,7 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antibiotikaresistens">Antibiotikaresistens</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksjon">Reproduksjon</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
 </ul>
