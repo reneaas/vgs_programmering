@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Iterasjon &#8212; Programmering i Videregående Skole</title>
+    <title>Numpy Arrays &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,11 +64,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/iterasjon/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/containers/numpy_arrays';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="while-løkker" href="while_loops.html" />
-    <link rel="prev" title="Å regne med Python" href="../variabler_og_regning/regning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,19 +152,19 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Programmering</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../variabler_og_regning/intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../variabler_og_regning/variabler.html">Variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Iterasjon med løkker</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../iterasjon/intro.html">Iterasjon med løkker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../containers/intro.html">Beholdere (containers)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../containers/lists.html">Lister</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Beholdere (containers)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">Lister</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -265,6 +263,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/containers/numpy_arrays.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -290,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/iterasjon/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/containers/numpy_arrays.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/python/iterasjon/intro.md" target="_blank"
+      <li><a href="../../../_sources/book/python/containers/numpy_arrays.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -400,7 +447,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Iterasjon</h1>
+    <h1>Numpy Arrays</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -414,16 +461,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="iterasjon">
-<h1>Iterasjon<a class="headerlink" href="#iterasjon" title="Permalink to this heading">#</a></h1>
-<p><em>Iterasjon</em> handler om å gjenta en handling eller instruks flere ganger. Dette er et sentralt verktøy verktøy i programmering som gjør at vi kan løse mange problemer på en elegant måte. Det finnes to typer iterasjon:</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="while_loops.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</span></a></p></li>
-<li><p><a class="reference internal" href="for_loops.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">for</span></code>-loops</span></a></p></li>
-</ol>
-<p>Vi kaller de ofte bare for <em>løkker</em> (engelsk: <em>loops</em>) for vi gjentar noe flere ganger.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="numpy-arrays">
+<h1>Numpy Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,7 +478,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/python/iterasjon"
+            path: "./book/python/containers"
         },
         predefinedOutput: true
     }
@@ -457,24 +496,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../variabler_og_regning/regning.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Å regne med Python</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="while_loops.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
