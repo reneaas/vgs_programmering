@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Antibiotikaresistente Bakterier &#8212; Programmering i Videregående Skole</title>
+    <title>Prosjekt: Simulering av Antibiotikaresistente Bakterier &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Biologi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Antibiotikaresistente Bakterier</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Prosjekt: Simulering av Antibiotikaresistente Bakterier</a></li>
 </ul>
 </li>
 </ul>
@@ -452,7 +452,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Antibiotikaresistente Bakterier</h1>
+    <h1>Prosjekt: Simulering av Antibiotikaresistente Bakterier</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,8 +465,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antibiotikaresistens">Antibiotikaresistens</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-antibiotikaresistens">Modell for antibiotikaresistens</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konsentrasjonsgrad-av-antibiotika-og-effekten-pa-bakterien">Konsentrasjonsgrad av antibiotika og effekten på bakterien</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-dor-bakteriene">Hvordan dør bakteriene?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksjon">Reproduksjon</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
 </ul>
@@ -485,8 +489,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="antibiotikaresistente-bakterier">
-<h1>Antibiotikaresistente Bakterier<a class="headerlink" href="#antibiotikaresistente-bakterier" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="prosjekt-simulering-av-antibiotikaresistente-bakterier">
+<h1>Prosjekt: Simulering av Antibiotikaresistente Bakterier<a class="headerlink" href="#prosjekt-simulering-av-antibiotikaresistente-bakterier" title="Permalink to this heading">#</a></h1>
 <p>Målet med dette prosjektet er å simulere evolusjon av antibiotika resistente bakterier og gjenskape et eksperiment gjort ved <em>Harvard Medical School</em>. Forklaringen av eksperimentet er utgangspunktet for modellen som skal brukes i dette prosjektet, så det er nødvendig å se videoen under før du går videre:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/plVk4NVIUh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>Når du har løst prosjektet, vil du ha produsert simuleringer som gir resultater som i <a class="reference internal" href="#bacteria"><span class="std std-numref">Fig. 5</span></a>.</p>
 <figure class="align-default" id="bacteria">
@@ -522,15 +526,15 @@ document.write(`
 <section id="bevegelse">
 <h3>Bevegelse<a class="headerlink" href="#bevegelse" title="Permalink to this heading">#</a></h3>
 <p>Modellen for bakteriene må sørge for at forflytningen til bakteriene reflekterer hvordan <strong>ekte</strong> bakterier beveger seg. I praksis, vil bevegelsesmønsteret til bakterier opptre som svært tilfeldig. En enkel modell for bevegelsen til bakterien er derfor å generere hvilken retningen den går som <strong>helt tilfeldig</strong>. Det viser seg at dette garanterer at bakterien vil besøke alle mulige posisjoner på den rektangulære platen, et resultat som følger fra den matematisk teorien for <strong>virrevandring</strong>. Du kan derfor flytte bakteriene rundt helt tilfeldig.</p>
-<p>Siden bakterien lever på en rektangulær plate med <span class="math notranslate nohighlight">\(L\)</span> posisjoner langs langsiden og <span class="math notranslate nohighlight">\(K\)</span> posisjoner langs kortsiden, vil bakterien kunne leve på <span class="math notranslate nohighlight">\(L \times K\)</span> ruter/celler i “Universet” til bakteriene. La oss kalle langsiden for <span class="math notranslate nohighlight">\(x\)</span>-retning og kortsiden for <span class="math notranslate nohighlight">\(y\)</span>-retning. Da kan bakterien ha posisjoner langs <span class="math notranslate nohighlight">\(x\)</span>-aksen med verdiene</p>
+<p>Siden bakterien lever på en rektangulær plate med <span class="math notranslate nohighlight">\(n_x\)</span> posisjoner langs langsiden og <span class="math notranslate nohighlight">\(n_y\)</span> posisjoner langs kortsiden, vil bakterien kunne leve på <span class="math notranslate nohighlight">\(n_x \times n_y\)</span> ruter/celler i “Universet” til bakteriene. La oss kalle langsiden for <span class="math notranslate nohighlight">\(x\)</span>-retning og kortsiden for <span class="math notranslate nohighlight">\(y\)</span>-retning. Da kan bakterien ha posisjoner langs <span class="math notranslate nohighlight">\(x\)</span>-aksen med verdiene</p>
 <div class="math notranslate nohighlight">
 \[
-x = 0, 1, 2, 3, \ldots, L - 1,
+x = 0, 1, 2, 3, \ldots, n_x - 1,
 \]</div>
-<p>og langs <span class="math notranslate nohighlight">\(y\)</span>-retningen</p>
+<p>og langs <span class="math notranslate nohighlight">\(y\)</span>-aksen</p>
 <div class="math notranslate nohighlight">
 \[
-y = 0, 1, 2, 3, \ldots, K - 1.
+y = 0, 1, 2, 3, \ldots, n_y - 1.
 \]</div>
 <p>Vi kan derfor assosiere et koordinat <span class="math notranslate nohighlight">\((x, y)\)</span> som en beskrivelse av posisjonen til en bakterie på den rektangulære platen.</p>
 <p>Det er naturlig å benytte seg av et objekt i Python som heter <em>dictionary</em>, med datatype <code class="docutils literal notranslate"><span class="pre">dict</span></code>, som kan lagre denne informasjonen på følgende måte:</p>
@@ -556,15 +560,162 @@ Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gang
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 1, &#39;y&#39;: 3}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 2, &#39;y&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan også hente ut dataen som er lagret i <code class="docutils literal notranslate"><span class="pre">bakterie</span></code> slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 2
+y = 3
+</pre></div>
+</div>
+</div>
+</div>
+<section id="modell-for-antibiotikaresistens">
+<h4>Modell for antibiotikaresistens<a class="headerlink" href="#modell-for-antibiotikaresistens" title="Permalink to this heading">#</a></h4>
+<p>Vi må ha en måte å inkludere antibiotikaresistens i modellen for bakteriene. Vi skal gå for en enkel løsning der vi modellerer en bakterie sin grad av antibiotikaresistens som et tall mellom 0 og 1, der 0 representerer <em>ingen</em> antibiotikaresistens og 1 representerer 100% antibiotikaresistens.</p>
+<p>Vi kan derfor utvide måten vi lagrer informasjon om bakterien. En bakterie med ingen antibiotikaresistens kan for eksempel lages slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterie</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>På samme måte som før, kan vi både endre og hente ut antibiotikaresistensen fra <code class="docutils literal notranslate"><span class="pre">bakterie</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;resistens&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="c1"># Øker antibiotikaresistens med 0.1</span>
+<span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span> <span class="c1"># Henter ut antibiotikaresistens fra bakterien </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">resistens</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resistens = 0.1
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="antibiotikaresistens">
-<h3>Antibiotikaresistens<a class="headerlink" href="#antibiotikaresistens" title="Permalink to this heading">#</a></h3>
-<p>Vi må ha en måte å inkludere antibiotikaresistens i modellen for bakteriene. Vi skal gå for en enkel løsning som</p>
+<section id="konsentrasjonsgrad-av-antibiotika-og-effekten-pa-bakterien">
+<h4>Konsentrasjonsgrad av antibiotika og effekten på bakterien<a class="headerlink" href="#konsentrasjonsgrad-av-antibiotika-og-effekten-pa-bakterien" title="Permalink to this heading">#</a></h4>
+<p>Vi kan modellere konsentrasjonsgrad av antibiotika på akkurat samme måte som vi modellerer antibiotikaresistens hos bakterien. Lar vi konsentrasjonen være et tall mellom 0 og 1 på ulike områder på den rektangulære platen, akkurat som i eksperimentet ved Harvard Medical School, så får vi gjenskapt miljøvariasjonen de hadde. Vi trenger i praksis da en funksjon som har såkalt <em>delt forskrift</em>. La konsentrasjon være en funksjon <span class="math notranslate nohighlight">\(K(x)\)</span>. Da kan den være på formen</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+K(x) = 
+\begin{cases}
+    0, \qquad 0 \leq x &lt; 0.2 n_x, \\
+    0.25, \qquad 0.2 n_x \leq x &lt; 0.4 n_x, \\
+    0.5, \qquad 0.4 n_x \leq x &lt; 0.6 n_x, \\
+    0.75, \qquad 0.6 n_x \leq x &lt; 0.8 n_x, \\
+    0.99, \qquad 0.8 n_x \leq x &lt; n_x, \\
+\end{cases}
+\end{split}\]</div>
+<p>der <span class="math notranslate nohighlight">\(x\)</span> er <span class="math notranslate nohighlight">\(x\)</span>-koordinaten til bakterien.
+Da vil vi ha <strong>fem soner</strong> med økende grad av antibiotikakonsentasjon. For å sjekke hvilken konsentrasjon en gitt bakterie lever i, kan du bruke en Pythonfunksjon som tar inn bakterien sin <span class="math notranslate nohighlight">\(x\)</span>-koordinat og returnerer antibiotikakonsentrasjonen.</p>
+<p><em>For å lage en slik funksjon, kan du ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.25</span>
+    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.25</span>
+    <span class="k">elif</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span>
+    <span class="k">elif</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.75</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.99</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="hvordan-dor-bakteriene">
+<h3>Hvordan dør bakteriene?<a class="headerlink" href="#hvordan-dor-bakteriene" title="Permalink to this heading">#</a></h3>
+<p>Bakterier har ingen form for alderdom, så i en modell for bakterien, holder at vi sjekker om antibiotikaresistensen tar livet av bakterien eller ikke.
+La <span class="math notranslate nohighlight">\(r\)</span> være antibiotikaresistensen til en bakterie og <span class="math notranslate nohighlight">\(x\)</span> være den posisjon, og <span class="math notranslate nohighlight">\(K(x)\)</span> være konsentrasjon av antibiotika i <span class="math notranslate nohighlight">\(x\)</span>. En logisk måte å modellere hvorvidt en bakterie skal dø er slik:</p>
+<ol class="arabic simple">
+<li><p>Dersom konsentrasjonen er mindre enn eller lik resistensen, så overlever bakterien uansett.</p></li>
+<li><p>Dersom konsentrasjonen er større enn resistensen, så har bakterien en viss sjanse for å overleve og en viss sjanse for å dø. Jo større forskjellen er mellom resistensen og konsentrasjonen, jo høyere er sjansen for å dø.</p></li>
+</ol>
+<p>Punkt nr. 2 kan oppnås ved å benytte seg av noe som kalles for <strong>slice sampling</strong>.</p>
+<div class="proof algorithm admonition" id="algorithm-0">
+<p class="admonition-title"><span>Algorithm </span> (Bakteriedrap)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input</strong> Antibitiokaresistens <span class="math notranslate nohighlight">\(r\)</span>, posisjon <span class="math notranslate nohighlight">\(x\)</span></p>
+<ol class="arabic simple">
+<li><p>Regn ut konsentrasjon av antibiotika i <span class="math notranslate nohighlight">\(x\)</span> med <span class="math notranslate nohighlight">\(K(x)\)</span>.</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(r &gt;= K(x)\)</span>, så overlever bakterien.</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(r &lt; K(x)\)</span>:</p>
+<ul class="simple">
+<li><p>Trekk et tilfeldig tall <span class="math notranslate nohighlight">\(u\)</span> mellom 0 og 1.</p></li>
+<li><p>Dersom <span class="math notranslate nohighlight">\(u \geq K(x) - r\)</span>, så overlever bakterien. Hvis ikke dør den.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</div><p><em>Du ta utgangspunkt i kodeskallet for en funksjon <code class="docutils literal notranslate"><span class="pre">bakteriedrap</span></code> som implementerer denne algoritmen. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bakteriedrap</span><span class="p">(</span><span class="n">bakterie</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn en bakterie sjekker om den skal dø. </span>
+<span class="sd">    Returnerer `False` hvis bakterien skal overleve, og `True` hvis den skal dø.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">resistens</span> <span class="o">&gt;=</span> <span class="n">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="c1"># Returner false, ikke drep bakterien!</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="c1"># tilfeldig tall mellom 0 og 1.</span>
+        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="reproduksjon">
 <h3>Reproduksjon<a class="headerlink" href="#reproduksjon" title="Permalink to this heading">#</a></h3>
@@ -662,8 +813,12 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosjektbeskrivelse">Prosjektbeskrivelse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-bakterien">Modell for bakterien</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-modell-for-bakterien-og-kode-for-modellen">En modell for bakterien og kode for modellen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antibiotikaresistens">Antibiotikaresistens</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bevegelse">Bevegelse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-for-antibiotikaresistens">Modell for antibiotikaresistens</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konsentrasjonsgrad-av-antibiotika-og-effekten-pa-bakterien">Konsentrasjonsgrad av antibiotika og effekten på bakterien</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-dor-bakteriene">Hvordan dør bakteriene?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproduksjon">Reproduksjon</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-en-bakterie-kan-reprodusere">Hvordan sjekke om en bakterie kan reprodusere?</a></li>
 </ul>
