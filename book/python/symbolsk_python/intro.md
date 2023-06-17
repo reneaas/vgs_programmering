@@ -10,9 +10,9 @@ Symbolsk programmering kan løse problemer som
 
 - [Derivasjon](./derivasjon)
 - [Integrasjon](./integrasjon)
-<!-- - [Løse likninger](./likninger)
-- [Løse likningssystemer](./likningssystemer)
-- Forenkle uttrykk
+- [Løse likninger](./likninger_nb)
+- [Løse likningssystemer](./likningssystemer_nb)
+<!-- - Forenkle uttrykk
 - Finne grenseverdier -->
 
 og mye mer. Vi skal gi en introduksjon til alle disse temaene. 
