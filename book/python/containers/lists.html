@@ -474,7 +474,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-hente-ut-elementer-fra-en-liste">Hvordan hente ut elementer fra en liste</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-ett-og-ett-element-med-en-indeks">Hente ut ett og ett element med en indeks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-ett-og-ett-element-med-en-indeks">Hente ut ett og ett element med en indeks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3">Øvingsoppgave 3</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-flere-elementer-med-slicing">Hente ut flere elementer med slicing</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-hente-ut-alle-elementene-fra-en-liste">Eksempel 1: Hente ut <em>alle</em> elementene fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-hente-ut-de-tre-forste-elementene-fra-en-liste">Eksempel 2: Hente ut de tre første elementene fra en liste</a></li>
@@ -492,7 +495,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-fjerne-elementer-fra-en-liste">Hvordan fjerne elementer fra en liste</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-1-pop">Metode 1: <code class="docutils literal notranslate"><span class="pre">pop</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-2-remove">Metode 2: <code class="docutils literal notranslate"><span class="pre">remove</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-3-del">Metode 3: <code class="docutils literal notranslate"><span class="pre">del</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -586,7 +588,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Eller litt mer ryddig ved å pakke den ut og plassere alle elementene på hver sin linje:</p>
+<p>Men vi kan også printe ut listen på en mer oversiktlig måte ved å <em>pakke ut</em> lista med <code class="docutils literal notranslate"><span class="pre">*</span></code>-operatoren foran listen <code class="docutils literal notranslate"><span class="pre">*planter</span></code> og separere elementene med ny linje ved å bruke <code class="docutils literal notranslate"><span class="pre">\n</span></code> i print:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">planeter</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># stjerna (*) pakker ut lista og sep=&quot;\n&quot; setter linjeskift mellom hvert element</span>
@@ -605,6 +607,40 @@ neptun
 </pre></div>
 </div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Flere skrivemåter for å definere lister</p>
+<p>La oss se på noen flere skrivemåter for å definere lister med utgangspunkt i planetene.</p>
+<ol class="arabic">
+<li><p>Definert på én linje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;venus&quot;</span><span class="p">,</span> <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Definert over flere linjer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;merkur&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;venus&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;mars&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;neptun&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Definert over flere linjer, men flere elementer per linje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;venus&quot;</span><span class="p">,</span> <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Ofte er alternativ 2 eller 3 bedre fordi det er lettere å lese koden. Det er anbefalt å bruke alternativ 2 eller 3 når du har mange elementer i listen.</p>
 </div>
 </section>
 <section id="ovingsoppgave-1-lag-en-liste-med-flyttall">
@@ -807,6 +843,43 @@ element_2 = 9
 </div>
 </div>
 </div>
+<section id="ovingsoppgave-3">
+<h4>Øvingsoppgave 3<a class="headerlink" href="#ovingsoppgave-3" title="Permalink to this heading">#</a></h4>
+<p>Skriv en Pythonkode som henter ut det <em>tredje</em> elementet i lista</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planter</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;epletre&quot;</span><span class="p">,</span> <span class="s2">&quot;pæretrær&quot;</span><span class="p">,</span> <span class="s2">&quot;plommetre&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;kirsebærtre&quot;</span><span class="p">,</span> <span class="s2">&quot;fikentre&quot;</span><span class="p">,</span> <span class="s2">&quot;appelsintre&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;sitrontrær&quot;</span><span class="p">,</span> <span class="s2">&quot;avokadotre&quot;</span><span class="p">,</span> <span class="s2">&quot;bananplante&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Du kan bruke kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tredje_plante</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tredje_plante</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Vi må huske på at i Python så begynner vi å telle på 0. Dermed vil det tredje elementet ha indeks <code class="docutils literal notranslate"><span class="pre">2</span></code>
+fordi de tre første indeksene er <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">2</span></code>. Dermed kan vi hente ut det tredje elementet slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tredje_plante</span> <span class="o">=</span> <span class="n">planter</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 <section id="hente-ut-flere-elementer-med-slicing">
 <h3>Hente ut flere elementer med slicing<a class="headerlink" href="#hente-ut-flere-elementer-med-slicing" title="Permalink to this heading">#</a></h3>
@@ -957,7 +1030,6 @@ element_2 = 9
 <ol class="arabic simple">
 <li><p>Fjerne et element med en spesifikk indeks med <code class="docutils literal notranslate"><span class="pre">pop()</span></code>.</p></li>
 <li><p>Fjerne et element med en spesifikk verdi med <code class="docutils literal notranslate"><span class="pre">remove()</span></code>.</p></li>
-<li><p>Fjerne et element ved å bruke <code class="docutils literal notranslate"><span class="pre">del</span></code>-operatoren.</p></li>
 </ol>
 <section id="metode-1-pop">
 <h3>Metode 1: <code class="docutils literal notranslate"><span class="pre">pop</span></code><a class="headerlink" href="#metode-1-pop" title="Permalink to this heading">#</a></h3>
@@ -977,10 +1049,10 @@ l = [1, 2, -100, 3, 4, 5, 10, 100, 200]
 </div>
 </div>
 </div>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Indeksering med negative tall</p>
 <p>Vi kan bruke <em>negative</em> indekser når vi henter ut elementer fra en liste. Dette betyr at vi kan hente ut elementer fra slutten av lista. Det siste elementet i lista har indeks <code class="docutils literal notranslate"><span class="pre">-1</span></code>, det nest siste elementet har indeks <code class="docutils literal notranslate"><span class="pre">-2</span></code>, det tredje siste elementet har indeks <code class="docutils literal notranslate"><span class="pre">-3</span></code> og så videre. Det første elementet i lista har indeks <code class="docutils literal notranslate"><span class="pre">-n</span></code>, der <code class="docutils literal notranslate"><span class="pre">n</span></code> er antall elementer i lista.</p>
-<p>Vi kan også hente ut disse elementene ved å indeksere med <code class="docutils literal notranslate"><span class="pre">~0</span></code> for <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">~1</span></code> for <code class="docutils literal notranslate"><span class="pre">-2</span></code> osv. Symbolet <code class="docutils literal notranslate"><span class="pre">~</span></code> indikerer at vi skal starte på slutten lista i stedet for på starten.</p>
+<p>Vi kan også hente ut disse elementene ved å indeksere med <code class="docutils literal notranslate"><span class="pre">~0</span></code> for <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">~1</span></code> for <code class="docutils literal notranslate"><span class="pre">-2</span></code> osv. Symbolet <code class="docutils literal notranslate"><span class="pre">~</span></code> indikerer at vi skal starte på slutten lista i stedet for på starten. Med andre ord, vil <code class="docutils literal notranslate"><span class="pre">l[-1]</span></code> og <code class="docutils literal notranslate"><span class="pre">l[~0]</span></code> gi samme resultat.</p>
 <p>Men hver varsom på hvilken versjon av Python du bruker. Det er ikke sikkert den siste måten å indeksere på her fungerer med gamle versjoner av Python. Det kan være en egenskap som ble introdusert i senere tid.</p>
 </div>
 </section>
@@ -998,25 +1070,6 @@ l = [1, 2, -100, 3, 4, 5, 10, 100, 200]
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>l = [1, 2, -100, 3, 4, 5, 10, 100, 200] før vi fjerner element med verdi 1
 l = [2, -100, 3, 4, 5, 10, 100, 200] etter vi fjerne element med verdi 1
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="metode-3-del">
-<h3>Metode 3: <code class="docutils literal notranslate"><span class="pre">del</span></code><a class="headerlink" href="#metode-3-del" title="Permalink to this heading">#</a></h3>
-<p>Hvis du vet <em>hvor</em> i listen et element du ønsker å fjerne befinner seg, kan du bruke <code class="docutils literal notranslate"><span class="pre">del</span></code> til å fjerne elementet. Du må da spesifisere indeksen til elementet du ønsker å fjerne. Vi kan bruke <code class="docutils literal notranslate"><span class="pre">del</span></code> slik:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2"> før vi fjerner element på indeks 3&quot;</span><span class="p">)</span> <span class="c1"># lista før vi fjerner elementet</span>
-<span class="k">del</span> <span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># Fjerner elementet på indeks 3</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2"> etter vi fjernet element på indeks 3&quot;</span><span class="p">)</span> <span class="c1"># lista etter vi fjerner elementet</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>l = [2, -100, 3, 4, 5, 10, 100, 200] før vi fjerner element på indeks 3
-l = [2, -100, 3, 5, 10, 100, 200] etter vi fjernet element på indeks 3
 </pre></div>
 </div>
 </div>
@@ -1105,7 +1158,10 @@ l = [2, -100, 3, 5, 10, 100, 200] etter vi fjernet element på indeks 3
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-hente-ut-elementer-fra-en-liste">Hvordan hente ut elementer fra en liste</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-ett-og-ett-element-med-en-indeks">Hente ut ett og ett element med en indeks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-ett-og-ett-element-med-en-indeks">Hente ut ett og ett element med en indeks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3">Øvingsoppgave 3</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-flere-elementer-med-slicing">Hente ut flere elementer med slicing</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-hente-ut-alle-elementene-fra-en-liste">Eksempel 1: Hente ut <em>alle</em> elementene fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-hente-ut-de-tre-forste-elementene-fra-en-liste">Eksempel 2: Hente ut de tre første elementene fra en liste</a></li>
@@ -1123,7 +1179,6 @@ l = [2, -100, 3, 5, 10, 100, 200] etter vi fjernet element på indeks 3
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-fjerne-elementer-fra-en-liste">Hvordan fjerne elementer fra en liste</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-1-pop">Metode 1: <code class="docutils literal notranslate"><span class="pre">pop</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-2-remove">Metode 2: <code class="docutils literal notranslate"><span class="pre">remove</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-3-del">Metode 3: <code class="docutils literal notranslate"><span class="pre">del</span></code></a></li>
 </ul>
 </li>
 </ul>
