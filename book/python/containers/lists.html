@@ -482,6 +482,8 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-hente-ut-alle-elementene-fra-en-liste">Eksempel 1: Hente ut <em>alle</em> elementene fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-hente-ut-de-tre-forste-elementene-fra-en-liste">Eksempel 2: Hente ut de tre første elementene fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-hente-ut-hvert-andre-element-fra-en-liste">Eksempel 3: Hente ut hvert andre element fra en liste</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4">Øvingsoppgave 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-5">Øvingsoppgave 5</a></li>
 </ul>
 </li>
 </ul>
@@ -626,7 +628,7 @@ neptun
     <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> 
     <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> 
     <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;neptun&quot;</span>
+    <span class="s2">&quot;neptun&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -634,7 +636,7 @@ neptun
 <li><p>Definert over flere linjer, men flere elementer per linje:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;venus&quot;</span><span class="p">,</span> <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span>
+    <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -851,7 +853,7 @@ element_2 = 9
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planter</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;epletre&quot;</span><span class="p">,</span> <span class="s2">&quot;pæretrær&quot;</span><span class="p">,</span> <span class="s2">&quot;plommetre&quot;</span><span class="p">,</span> 
     <span class="s2">&quot;kirsebærtre&quot;</span><span class="p">,</span> <span class="s2">&quot;fikentre&quot;</span><span class="p">,</span> <span class="s2">&quot;appelsintre&quot;</span><span class="p">,</span> 
-    <span class="s2">&quot;sitrontrær&quot;</span><span class="p">,</span> <span class="s2">&quot;avokadotre&quot;</span><span class="p">,</span> <span class="s2">&quot;bananplante&quot;</span>
+    <span class="s2">&quot;sitrontrær&quot;</span><span class="p">,</span> <span class="s2">&quot;avokadotre&quot;</span><span class="p">,</span> <span class="s2">&quot;bananplante&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -961,6 +963,87 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 </div>
 </div>
 </section>
+<section id="ovingsoppgave-4">
+<h4>Øvingsoppgave 4<a class="headerlink" href="#ovingsoppgave-4" title="Permalink to this heading">#</a></h4>
+<p>Hent ut alle oddetallene i listen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heltall_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ved å bruke <em>slicing</em>.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oddetall_liste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">oddetall_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Oddetallene er 1, 3, 5, 7 og 9. Vi kan hente ut alle oddetallene ved å starte på indeks 0 og gå gjennom lista med steglengde på 2. Da hopper vi over alle partallene. Vi kan gjøre dette slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oddetall_liste</span> <span class="o">=</span> <span class="n">heltall_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Vi trenger strengt tatt ikke ta med <code class="docutils literal notranslate"><span class="pre">0</span></code> i <code class="docutils literal notranslate"><span class="pre">0::2</span></code> fordi det er standardverdien til <code class="docutils literal notranslate"><span class="pre">startindeks</span></code>. Vi kan derfor skrive det slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oddetall_liste</span> <span class="o">=</span> <span class="n">heltall_liste</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="ovingsoppgave-5">
+<h4>Øvingsoppgave 5<a class="headerlink" href="#ovingsoppgave-5" title="Permalink to this heading">#</a></h4>
+<p>Hent ut de tre siste elementene i listen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matvarer</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;melk&quot;</span><span class="p">,</span> <span class="s2">&quot;brød&quot;</span><span class="p">,</span> <span class="s2">&quot;ost&quot;</span><span class="p">,</span> <span class="s2">&quot;egg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;yoghurt&quot;</span><span class="p">,</span> <span class="s2">&quot;smør&quot;</span><span class="p">,</span> <span class="s2">&quot;syltetøy&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;knekkebrød&quot;</span><span class="p">,</span> <span class="s2">&quot;makrell i tomat&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ved å bruke <em>slicing</em>.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tre_siste_matvarer</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tre_siste_matvarer</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Vi kan hente ut de tre siste elementene ved å sette <code class="docutils literal notranslate"><span class="pre">startindeks</span></code> lik <code class="docutils literal notranslate"><span class="pre">-3</span></code>. Python tolker dette som at vi ønsker å starte på de tredje <em>siste</em> elementet i lista. Så, konklusjon, vi kan hente ut de tre siste elementene slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tre_siste_matvarer</span> <span class="o">=</span> <span class="n">matvarer</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Det er også mulig å sette <code class="docutils literal notranslate"><span class="pre">startindeks=len(matvarer)</span> <span class="pre">-</span> <span class="pre">3</span></code>, slik at koden blir</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tre_siste_matvarer</span> <span class="o">=</span> <span class="n">matvarer</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">matvarer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Men dette er mer tungvint og gjør ikke koden noe mer lesbar. Derfor er det bedre å bruke <code class="docutils literal notranslate"><span class="pre">-3</span></code> som vi gjorde i første eksempel.</p>
+</div>
+</details></section>
 </section>
 </section>
 <section id="hvordan-legge-til-elementer-i-en-liste">
@@ -1166,6 +1249,8 @@ l = [2, -100, 3, 4, 5, 10, 100, 200] etter vi fjerne element med verdi 1
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-hente-ut-alle-elementene-fra-en-liste">Eksempel 1: Hente ut <em>alle</em> elementene fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-hente-ut-de-tre-forste-elementene-fra-en-liste">Eksempel 2: Hente ut de tre første elementene fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-hente-ut-hvert-andre-element-fra-en-liste">Eksempel 3: Hente ut hvert andre element fra en liste</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4">Øvingsoppgave 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-5">Øvingsoppgave 5</a></li>
 </ul>
 </li>
 </ul>
