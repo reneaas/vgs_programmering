@@ -116,7 +116,7 @@ def main():
     get_antibiotic_concentration_fn = make_antibiotic_concentration_fn(x_cells=x_cells)
     move_bacterium_fn = make_move_bacterium_fn(x_cells=x_cells, y_cells=y_cells)
     get_section_fn = make_section_fn(x_cells=x_cells)
-    get_probability_of_reproduction_fn = make_probability_of_reproduction_fn(b=0.0005)
+    get_probability_of_reproduction_fn = make_probability_of_reproduction_fn(b=0.0003)
 
     bacteria = get_init_colony(n_bacteria=n_bacteria, x_cells=x_cells, y_cells=y_cells)
 
@@ -124,7 +124,7 @@ def main():
     x = []
     y = []
 
-    num_iter = 4000  # Number of generations to simulate.
+    num_iter = 5000  # Number of generations to simulate.
     it = trange(num_iter, leave=True)
     n_dead_bacteria = 0
     for _ in it:
@@ -176,15 +176,23 @@ def main():
                             x=b.get("x"), y=b.get("y"), resistance=b.get("resistance")
                         )
                     )
-
-        # Then, kill all bacteria that are in the antibiotic concentration.
-        for b in bacteria:
+            
+            # Kill all bacteria that cannot survive the antibiotic concentration.
             if (
                 get_antibiotic_concentration_fn(b.get("x")) - b.get("resistance")
                 > np.random.uniform()
             ):
                 n_dead_bacteria += 1
                 bacteria.remove(b)
+
+        # Then, kill all bacteria that are in the antibiotic concentration.
+        # for b in bacteria:
+        #     if (
+        #         get_antibiotic_concentration_fn(b.get("x")) - b.get("resistance")
+        #         > np.random.uniform()
+        #     ):
+        #         n_dead_bacteria += 1
+        #         bacteria.remove(b)
 
         # Finally, add the new bacteria to the population.
         bacteria.extend(new_bacteria)
