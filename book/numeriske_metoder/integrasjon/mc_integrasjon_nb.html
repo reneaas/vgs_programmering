@@ -656,11 +656,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Her kan vi velge den uniforme fordelingen</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
+\[\begin{split}
 p(x) = 
-\begin{cases}\\\begin{split}1 &amp; \text{for } x \in [0, 1], \\
-0 &amp; \text{ellers}.
-\end{split}\end{aligned}\end{align} \]</div>
+\begin{cases}
+1 &amp; \text{for } x \in [0, 1], \\
+0 &amp; \text{ellers}\\.
+\end{cases}
+\end{split}\]</div>
 <p class="sd-card-text">Da kan vi tilnærme integralet med</p>
 <div class="math notranslate nohighlight">
 \[
@@ -838,7 +840,7 @@ I stedet velger man seg en annen fordeling <span class="math notranslate nohighl
 \[
 I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)} p(x) \, dx = \int\limits_a^b g(x) p(x) \, dx = E[g(X)],
 \]</div>
-<p>der <span class="math notranslate nohighlight">\(g(x) = f(x) / p(x)\)</span>. Vi må altså regne ut en tilnærmingen til forventningsverdien til <span class="math notranslate nohighlight">\(g(x)\)</span> i stedet, men nå er det ikke satt noe krav på hvilken sannsynlighetsfordeling $p(x) vi velger. I stedet blir tilnærmingen slik:</p>
+<p>der <span class="math notranslate nohighlight">\(g(x) = f(x) / p(x)\)</span>. Vi må altså regne ut en tilnærmingen til forventningsverdien til <span class="math notranslate nohighlight">\(g(x)\)</span> i stedet, men nå er det ikke satt noe krav på hvilken sannsynlighetsfordeling <span class="math notranslate nohighlight">\(p(x)\)</span> vi velger. I stedet blir tilnærmingen slik:</p>
 <div class="math notranslate nohighlight">
 \[
 I = \int\limits_a^b f(x) \, dx \approx \frac{1}{N}\sum_{i=1}^N g(x_i),
