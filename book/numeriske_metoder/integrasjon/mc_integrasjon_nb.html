@@ -471,6 +471,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1">Øvingsoppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2">Øvingsoppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3">Øvingsoppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4-mer-effektiv-trekking-av-tilfeldige-tall-med-importance-samling">Øvingsoppgave 4: Mer effektiv trekking av tilfeldige tall med <em>Importance samling</em></a></li>
 </ul>
 </li>
 </ul>
@@ -676,6 +679,239 @@ I = \int\limits_0^1 x^2 \, dx \approx \frac{1}{N}\sum\limits_{i=1}^{N} x_i^2,
 </div>
 </div>
 </details></section>
+<section id="ovingsoppgave-2">
+<h3>Øvingsoppgave 2<a class="headerlink" href="#ovingsoppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Bruk Monte Carlo integrasjon til å tilnærme verdien av integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_0^1 x\ln x\, dx.
+\]</div>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># trengs for å trekke tilfeldige tall med np.random.uniform</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">*=</span> <span class="bp">NotImplemented</span>
+<span class="n">I</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Vi velger den uniforme fordelingen på intervallet <span class="math notranslate nohighlight">\([0, 1]\)</span> som gir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+p(x) =
+\begin{cases}
+1 &amp; \text{for } x \in [0, 1], \\
+0 &amp; \text{ellers}.
+\end{cases}
+\end{split}\]</div>
+<p class="sd-card-text">Med teorien om Monte Carlo integrasjon, blir tilnærmingen til integralet da</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_0^1 x\ln x\, dx \approx \frac{1}{N}\sum\limits_{i=1}^{N} x_i\ln x_i,
+\]</div>
+<p class="sd-card-text">der <span class="math notranslate nohighlight">\(x_i\)</span> er tilfeldig tall trukket på uniform på intervallet <span class="math notranslate nohighlight">\([0, 1]\)</span>.</p>
+<p class="sd-card-text">En Pythonkode som implementerer denne løsningen er:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># trengs for å trekke tilfeldige tall med np.random.uniform</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1_000_000</span> 
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># trekker tilfeldig tall på integrasjonsintervallet</span>
+    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+
+<span class="n">I</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># ganger med b - a = 1 - 0. </span>
+<span class="n">I</span> <span class="o">/=</span> <span class="n">N</span> <span class="c1"># Tar gjennomsnittet av verdiene.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir oss at integralet er omtrent <span class="math notranslate nohighlight">\(I \approx -0.25\)</span></p>
+</div>
+</details></section>
+<section id="ovingsoppgave-3">
+<h3>Øvingsoppgave 3<a class="headerlink" href="#ovingsoppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Bruk Monte Carlo integrasjon til å tilnærme integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_0^2 \sqrt{4 - x^2} \, dx.
+\]</div>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># trengs for å trekke tilfeldige tall med np.random.uniform </span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">*=</span> <span class="bp">NotImplemented</span>
+<span class="n">I</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Integrasjonsintervallet er <span class="math notranslate nohighlight">\([0, 2]\)</span>, så vi velger den uniforme fordelingen</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+p(x) =
+\begin{cases}
+\frac{1}{2} &amp; \text{for } x \in [0, 2], \\
+0 &amp; \text{ellers}.
+\end{cases}
+\end{split}\]</div>
+<p class="sd-card-text">Tilnærmingen til integralet med teorien for Monte Carlo integrasjon blir da</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_0^2 \sqrt{4 - x^2} \, dx \approx \frac{2}{N}\sum\limits_{i=1}^{N} \sqrt{4 - x_i^2},
+\]</div>
+<p class="sd-card-text">der <span class="math notranslate nohighlight">\(x_i\)</span> er tilfeldige tall trukket fra den uniforme fordelingen <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
+<p class="sd-card-text">En Pythonkode som implementerer denne løsningen er:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">I</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">/=</span> <span class="n">N</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir oss en tilnærming på <span class="math notranslate nohighlight">\(I \approx 3.14...\)</span>.</p>
+<p class="sd-card-text">Den eksakte løsningen er <span class="math notranslate nohighlight">\(I = \pi\)</span>. Merk at verdien du får fra gang til gang vil variere fordi vi trekker tall tilfeldige. Ved store veldige store valg av <span class="math notranslate nohighlight">\(N\)</span> vil du få en verdi som er nærmere den eksakte løsningen.</p>
+</div>
+</details><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="ovingsoppgave-4-mer-effektiv-trekking-av-tilfeldige-tall-med-importance-samling">
+<h3>Øvingsoppgave 4: Mer effektiv trekking av tilfeldige tall med <em>Importance samling</em><a class="headerlink" href="#ovingsoppgave-4-mer-effektiv-trekking-av-tilfeldige-tall-med-importance-samling" title="Permalink to this heading">#</a></h3>
+<p>I denne oppgaven skal vi se på en metode som kalles <em>importance sampling</em>. Denne metoden er en variant av Monte Carlo integrasjon som kan brukes til å tilnærme integraler der den uniforme fordelingen ikke er et godt valg.
+I stedet velger man seg en annen fordeling <span class="math notranslate nohighlight">\(p(x)\)</span> som i større grad trekker ut tall der integranden <span class="math notranslate nohighlight">\(f(x)\)</span> har store funksjonsverdier, og unngår å trekke tall fra der <span class="math notranslate nohighlight">\(f(x)\)</span> har små funksjonsverdier. På denne måten kan vi trekke færre tilfeldige tall før vi får en god tilnærming til integralet. Tanken er som følger. Vi bruker samme notasjon som i teorien over.</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_a^b f(x) \, dx = \int\limits_a^b \frac{f(x)}{p(x)} p(x) \, dx = \int\limits_a^b g(x) p(x) \, dx = E[g(X)],
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(g(x) = f(x) / p(x)\)</span>. Vi må altså regne ut en tilnærmingen til forventningsverdien til <span class="math notranslate nohighlight">\(g(x)\)</span> i stedet, men nå er det ikke satt noe krav på hvilken sannsynlighetsfordeling $p(x) vi velger. I stedet blir tilnærmingen slik:</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int\limits_a^b f(x) \, dx \approx \frac{1}{N}\sum_{i=1}^N g(x_i),
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(x_i\)</span> er tilfeldige tall trukket fra sannsynlighetsfordelingen <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
+<p>Bruk denne teorien til å tilnærme verdien av integralet</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_0^\infty x^2e^{-x} \, dx,
+\]</div>
+<p>ved å bruke eksponentialfordelingen</p>
+<div class="math notranslate nohighlight">
+\[
+p(x) = e^{-x}, \quad x \in [0, \infty),
+\]</div>
+<p>som sannsynlighetsfordelingen du trekker tall fra.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du også tenke deg litt om så du får definert <span class="math notranslate nohighlight">\(g(x)\)</span> riktig. Merk at for å trekke tall fra eksponentialfordelingen over, kan du bruke <code class="docutils literal notranslate"><span class="pre">np.random.exponential(scale=1.0)</span></code></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Trekk tilfeldig tall fra en eksponentialfordelingen</span>
+    <span class="n">I</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Ved å bruke teorien for importance sampling, der <span class="math notranslate nohighlight">\(p(x) = e^{-x}\)</span>, får vi at</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_0^\infty x^2e^{-x} \, dx \approx \frac{1}{N} \sum_{i=1}^N g(x_i) = \frac{1}{N} \sum_{i=1}^N \frac{x_i^2e^{-x_i}}{e^{-x_i}} = \frac{1}{N} \sum_{i=1}^N x_i^2,
+\]</div>
+<p class="sd-card-text">der <span class="math notranslate nohighlight">\(x_i\)</span> er tilfeldige tall trukket fra eksponentialfordelingen <span class="math notranslate nohighlight">\(p(x) = e^{-x}\)</span>. Vi kunne forenklet koden betraktelig, og bare tatt gjennomsnittet av verdiene <span class="math notranslate nohighlight">\(x_i^2\)</span>, men vi kan heller bare følge teorien slavisk og implementere en funksjon for <span class="math notranslate nohighlight">\(g(x) = f(x) / p(x)\)</span>, og regne ut gjennomsnittet av funksjonsverdiene <span class="math notranslate nohighlight">\(g(x_i)\)</span>.
+I koden under har vi valgt å gjøre det slik i stedet, som gir</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span> <span class="c1"># Trekk tilfeldig tall fra en eksponentialfordelingen</span>
+    <span class="n">I</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">/=</span> <span class="n">N</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir oss en tilnærming på <span class="math notranslate nohighlight">\(I \approx 2.00...\)</span>.</p>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -754,6 +990,9 @@ I = \int\limits_0^1 x^2 \, dx \approx \frac{1}{N}\sum\limits_{i=1}^{N} x_i^2,
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1">Øvingsoppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2">Øvingsoppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-3">Øvingsoppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-4-mer-effektiv-trekking-av-tilfeldige-tall-med-importance-samling">Øvingsoppgave 4: Mer effektiv trekking av tilfeldige tall med <em>Importance samling</em></a></li>
 </ul>
 </li>
 </ul>
