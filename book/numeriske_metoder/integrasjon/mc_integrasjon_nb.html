@@ -498,7 +498,14 @@ Vi ønsker å løse integralet</p>
 I = \int\limits_a^b f(x) \, dx. 
 \]</div>
 <p>Vi tenker oss at <span class="math notranslate nohighlight">\(p(x)\)</span> er en uniform sannsynlighetsfordeling på intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>, slik at</p>
-<p><span class="math notranslate nohighlight">\(p(x) = 1/(b-a)\)</span> for <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>, og <span class="math notranslate nohighlight">\(p(x) = 0\)</span> ellers.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+p(x) = 
+\begin{cases}
+\frac{1}{b-a} &amp; \text{for } x \in [a, b] \\
+0 &amp; \text{ellers}.
+\end{cases}
+\end{split}\]</div>
 <p>Vi kan trikse litt med integralet slik at vi får</p>
 <div class="math notranslate nohighlight">
 \[
@@ -532,7 +539,7 @@ p(x) =
 <p>så sier teorien at vi kan tilnærme integralet ved</p>
 <div class="math notranslate nohighlight">
 \[
-I = \int\limits_0^1 4\sqrt{1 + x^2} \, dx \approx \frac{1}{N}\sum\limits_{i=1}^{N} \frac{4}{1 + x_i^2},
+I = \int\limits_0^1 \frac{4}{1 + x^2} \, dx \approx \frac{1}{N}\sum\limits_{i=1}^{N} \frac{4}{1 + x_i^2},
 \]</div>
 <p>der <span class="math notranslate nohighlight">\(x_i\)</span> for <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, N\)</span> er tilfeldige tall trukket fra den uniforme fordelingen <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
 <p>Dette kan vi programmere med følgende kode:</p>
