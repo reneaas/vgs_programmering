@@ -64,6 +64,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/oppgaver/fysikk/solsystemet';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -215,6 +217,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="oversikt.html">Fysikk</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../biologi/intro.html">Biologi</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../biologi/antibiotika_resistente_bakterier.html">Prosjekt: Simulering av Antibiotikaresistente Bakterier</a></li>
 </ul>
 </li>
 </ul>
@@ -464,6 +470,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-loade-datasettet">Hvordan loade datasettet?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -495,6 +506,41 @@ document.write(`
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="bakgrunnsteori">
+<h2>Bakgrunnsteori<a class="headerlink" href="#bakgrunnsteori" title="Permalink to this heading">#</a></h2>
+<section id="en-mer-generell-gravitasjonslov">
+<h3>En mer generell gravitasjonslov<a class="headerlink" href="#en-mer-generell-gravitasjonslov" title="Permalink to this heading">#</a></h3>
+<p>I fysikk 2 lærer man at gravitasjonsloven kan skrives som</p>
+<div class="math notranslate nohighlight">
+\[
+F = -\gamma \frac{m_1 m_2}{r^2},
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(r\)</span> er avstanden mellom de to legemene, <span class="math notranslate nohighlight">\(m_1\)</span> og <span class="math notranslate nohighlight">\(m_2\)</span> er massene til objektene og <span class="math notranslate nohighlight">\(\gamma\)</span> er gravitasjonskonstanten. Skal man håndtere solsystemet, må man ta hensyn til at de har interaksjoner mellom hverandre. Da får vi nytte for en mer generell form av gravitasjonsloven:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{F}_{i} = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}, 
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(\vec{r}_i\)</span> er posisjonen til legeme <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(m_i\)</span> er massen til legeme <span class="math notranslate nohighlight">\(i\)</span> og <span class="math notranslate nohighlight">\(\gamma\)</span> er gravitasjonskonstanten. Tilsvarende er <span class="math notranslate nohighlight">\(\vec{r}_j\)</span> og <span class="math notranslate nohighlight">\(m_j\)</span> posisjonen og massen til legeme <span class="math notranslate nohighlight">\(j\)</span>. Størrelsen <span class="math notranslate nohighlight">\(\vec{F}_i\)</span> er kraften som virker på legeme <span class="math notranslate nohighlight">\(i\)</span> fra alle andre legemer i systemet. I tilfellet her kunne for eksempel <span class="math notranslate nohighlight">\(i\)</span> vært jorden, og da vil <span class="math notranslate nohighlight">\(\vec{F}_i\)</span> være kraften som virker på jorden fra solen og de andre plantene i solsystemet.</p>
+</section>
+<section id="newtons-2-lov">
+<h3>Newtons 2.lov<a class="headerlink" href="#newtons-2-lov" title="Permalink to this heading">#</a></h3>
+<p>Når vi ønsker å finne bevegelsen til et legeme over tid, er Newtons 2.lov vår <em>go-to</em> lov. Kjenner vi alle kreftene på legeme, kan vi finne bevegelsen til legemet over tid. Newtons 2.lov kan oppsummeres som</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n} \vec{F}_n = m\vec{a},
+\]</div>
+<p>I dette tilfellet, er summen av kreftene den totale gravitasjonskraften som virker på legemet. For legemet <span class="math notranslate nohighlight">\(i\)</span> kan vi skrive dette som</p>
+<div class="math notranslate nohighlight">
+\[
+m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}, 
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_i = -\gamma \sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}.
+\]</div>
 </section>
 </section>
 </section>
@@ -551,6 +597,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasettet">Datasettet</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-laste-ned-datasettet">Hvordan laste ned datasettet?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-loade-datasettet">Hvordan loade datasettet?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
 </ul>
 </li>
 </ul>
