@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/variabler_og_regning/variabler_nb';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Å regne med Python" href="regning_nb.html" />
+    <link rel="prev" title="Variabler, Datatyper og Regning" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,10 +154,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Programmering</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="variabler.html">Variabler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regning.html">Å regne med Python</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Variabler, Datatyper og Regning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regning_nb.html">Å regne med Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../iterasjon/intro.html">Iterasjon med løkker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -463,8 +465,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelser-verdi-og-datatype">Øvelser: Verdi og datatype.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-skrive-ut-verdi-og-datatype">Øvelse 1: Skrive ut verdi og datatype.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-gi-verdi-til-en-variabel">Hvordan gi verdi til en variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-verdien-til-en-variabel">Hvordan sjekke verdien til en variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-datatypen-til-en-variabel">Hvordan sjekke datatypen til en variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver-verdi-og-datatype">Øvingsoppgaver: Verdi og datatype.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-skrive-ut-verdi-og-datatype">Øvelse 1: Skrive ut verdi og datatype</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-2-sette-riktig-verdi-og-datatype">Øvelse 2: Sette riktig verdi og datatype.</a></li>
 </ul>
 </li>
@@ -525,1010 +530,160 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> er <em>flyttall</em> og er de man brukes når man regner. Du kan tenke på det som desimaltall eller <em>reelle tall</em>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> er tekst.</p></li>
 </ol>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+<section id="hvordan-gi-verdi-til-en-variabel">
+<h2>Hvordan gi verdi til en variabel<a class="headerlink" href="#hvordan-gi-verdi-til-en-variabel" title="Permalink to this heading">#</a></h2>
+<p>I Python kan vi gi variabler verdi med <code class="docutils literal notranslate"><span class="pre">=</span></code>-tegnet. Dette kalles en <em>tilordning</em>. Tar vi utgangspunkt i variablene i tabell 1, kan vi gi dem verdiene deres slik:</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spørsmål1</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;En variabel er definert som følger: &lt;code&gt;res = 2.0&lt;/code&gt;. Hva er datatypen til &lt;code&gt;res&lt;/code&gt;?&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;answer&quot;</span><span class="p">:</span>  <span class="s2">&quot;&lt;code&gt;int&lt;/code&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-                <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;Feil.&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;code&gt;str&lt;/code&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-                <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;Feil.&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;answer&quot;</span><span class="p">:</span>  <span class="s2">&quot;&lt;code&gt;float&lt;/code&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;Riktig!&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;code&gt;list&lt;/code&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-                <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;Feil.&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.0</span>
+<span class="n">melding</span> <span class="o">=</span> <span class="s2">&quot;Dette er en liten melding&quot;</span>
 </pre></div>
 </div>
 </div>
-</details>
 </div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyterquiz</span> <span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">spørsmål1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="pbBURwRhFjFt" data-shufflequestions="False"
-               data-shuffleanswers="True"
-               data-preserveresponses="false"
-               data-numquestions="1000000"
-               data-maxwidth="600"
-               style="border-radius: 10px; text-align: left"> <style>
-#pbBURwRhFjFt {
-   --jq-multiple-choice-bg: #6f78ffff;
-   --jq-mc-button-bg: #fafafa;
-   --jq-mc-button-border: #e0e0e0e0;
-   --jq-mc-button-inset-shadow: #555555;
-   --jq-many-choice-bg: #f75c03ff;
-   --jq-numeric-bg: #392061ff;
-   --jq-numeric-input-bg: #c0c0c0;
-   --jq-numeric-input-label: #101010;
-   --jq-numeric-input-shadow: #999999;
-   --jq-incorrect-color: #c80202;
-   --jq-correct-color: #009113;
-   --jq-text-color: #fafafa;
-}
-
-.Quiz {
-    max-width: 600px;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-    padding-bottom: 4px;
-    padding-top: 4px;
-    line-height: 1.1;
-    font-size: 16pt;
-    border-radius: inherit;
-}
-
-.QuizCode {
-    font-size: 14pt;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.QuizCode>pre {
-    padding: 4px;
-}
-
-.Answer {
-    margin: 10px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    border-radius: inherit;
-}
-
-.Feedback {
-    font-size: 16pt;
-    text-align: center;
-    min-height: 2em;
-}
-
-.Input {
-    align: left;
-    font-size: 20pt;
-}
-
-.Input-text {
-    display: block;
-    margin: 10px;
-    color: inherit;
-    width: 140px;
-    background-color: var(--jq-numeric-input-bg);
-    color: var(--jq-text-color);
-    padding: 5px;
-    padding-left: 10px;
-    font-family: inherit;
-    font-size: 20px;
-    font-weight: inherit;
-    line-height: 20pt;
-    border: none;
-    border-radius: 0.2rem;
-    transition: box-shadow 0.1s);
-}
-
-.Input-text:focus {
-    outline: none;
-    background-color: var(--jq-numeric-input-bg);
-    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
-}
-
-.MCButton {
-    background: var(--jq-mc-button-bg);
-    border: 1px solid var(--jq-mc-button-border);
-    border-radius: inherit;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.MCButton p {
-    color: inherit;
-}
-
-.MultipleChoiceQn {
-    padding: 10px;
-    background: var(--jq-multiple-choice-bg);
-    color: var(--jq-text-color);
-    border-radius: inherit;
-}
-
-.ManyChoiceQn {
-    padding: 10px;
-    background: var(--jq-many-choice-bg);
-    color: var(--jq-text-color);
-    border-radius: inherit;
-}
-
-.NumericQn {
-    padding: 10px;
-    background: var(--jq-numeric-bg);
-    color: var(--jq-text-color);
-    border-radius: inherit;
-}
-
-.NumericQn p {
-    color: inherit;
-}
-
-.InpLabel {
-    line-height: 34px;
-    float: left;
-    margin-right: 10px;
-    color: var(--jq-numeric-input-label);
-    font-size: 15pt;
-}
-
-.incorrect {
-    color: var(--jq-incorrect-color);
-}
-
-.correct {
-    color: var(--jq-correct-color);
-}
-
-.correctButton {
-    /*
-    background: var(--jq-correct-color);
-   */
-    animation: correct-anim 0.6s ease;
-    animation-fill-mode: forwards;
-    color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
-}
-
-.incorrectButton {
-    animation: incorrect-anim 0.8s ease;
-    animation-fill-mode: forwards;
-    color: var(--jq-text-color);
-    box-shadow: inset 0px 0px 5px var(--jq-mc-button-inset-shadow);
-    outline: none;
-}
-
-@keyframes incorrect-anim {
-    100% {
-        background-color: var(--jq-incorrect-color);
-    }
-}
-
-@keyframes correct-anim {
-    100% {
-        background-color: var(--jq-correct-color);
-    }
-}
-</style></div><script type="application/javascript">var questionspbBURwRhFjFt=[{"question": "En variabel er definert som f\u00f8lger: <code>res = 2.0</code>. Hva er datatypen til <code>res</code>?", "type": "multiple_choice", "answers": [{"answer": "<code>int</code>", "correct": false, "feedback": "Feil."}, {"answer": "<code>str</code>", "correct": false, "feedback": "Feil."}, {"answer": "<code>float</code>", "correct": true, "feedback": "Riktig!"}, {"answer": "<code>list</code>", "correct": false, "feedback": "Feil."}]}];
-    // Make a random ID
-function makeid(length) {
-    var result = [];
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-        result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
-    }
-    return result.join('');
-}
-
-// Choose a random subset of an array. Can also be used to shuffle the array
-function getRandomSubarray(arr, size) {
-    var shuffled = arr.slice(0), i = arr.length, temp, index;
-    while (i--) {
-        index = Math.floor((i + 1) * Math.random());
-        temp = shuffled[index];
-        shuffled[index] = shuffled[i];
-        shuffled[i] = temp;
-    }
-    return shuffled.slice(0, size);
-}
-
-function printResponses(responsesContainer) {
-    var responses=JSON.parse(responsesContainer.dataset.responses);
-    var stringResponses='<B>IMPORTANT!</B>To preserve this answer sequence for submission, when you have finalized your answers: <ol> <li> Copy the text in this cell below "Answer String"</li> <li> Double click on the cell directly below the Answer String, labeled "Replace Me"</li> <li> Select the whole "Replace Me" text</li> <li> Paste in your answer string and press shift-Enter.</li><li>Save the notebook using the save icon or File->Save Notebook menu item</li></ul><br><br><br><b>Answer String:</b><br> ';
-    console.log(responses);
-    responses.forEach((response, index) => {
-        if (response) {
-            console.log(index + ': ' + response);
-            stringResponses+= index + ': ' + response +"<BR>";
-        }
-    });
-    responsesContainer.innerHTML=stringResponses;
-}
-function check_mc() {
-    var id = this.id.split('-')[0];
-    //var response = this.id.split('-')[1];
-    //console.log(response);
-    //console.log("In check_mc(), id="+id);
-    //console.log(event.srcElement.id)           
-    //console.log(event.srcElement.dataset.correct)   
-    //console.log(event.srcElement.dataset.feedback)
-
-    var label = event.srcElement;
-    //console.log(label, label.nodeName);
-    var depth = 0;
-    while ((label.nodeName != "LABEL") && (depth < 20)) {
-        label = label.parentElement;
-        console.log(depth, label);
-        depth++;
-    }
-
-
-
-    var answers = label.parentElement.children;
-
-    //console.log(answers);
-
-
-    // Split behavior based on multiple choice vs many choice:
-    var fb = document.getElementById("fb" + id);
-
-
-
-
-    if (fb.dataset.numcorrect == 1) {
-        // What follows is for the saved responses stuff
-        var outerContainer = fb.parentElement.parentElement;
-        var responsesContainer = document.getElementById("responses" + outerContainer.id);
-        if (responsesContainer) {
-            //console.log(responsesContainer);
-            var response = label.firstChild.innerText;
-            if (label.querySelector(".QuizCode")){
-                response+= label.querySelector(".QuizCode").firstChild.innerText;
-            }
-            console.log(response);
-            //console.log(document.getElementById("quizWrap"+id));
-            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
-            console.log("Question " + qnum);
-            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
-            var responses=JSON.parse(responsesContainer.dataset.responses);
-            console.log(responses);
-            responses[qnum]= response;
-            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
-            printResponses(responsesContainer);
-        }
-        // End code to preserve responses
-        
-        for (var i = 0; i < answers.length; i++) {
-            var child = answers[i];
-            //console.log(child);
-            child.className = "MCButton";
-        }
-
-
-
-        if (label.dataset.correct == "true") {
-            // console.log("Correct action");
-            if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
-            } else {
-                fb.textContent = "Correct!";
-            }
-            label.classList.add("correctButton");
-
-            fb.className = "Feedback";
-            fb.classList.add("correct");
-
-        } else {
-            if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
-            } else {
-                fb.textContent = "Incorrect -- try again.";
-            }
-            //console.log("Error action");
-            label.classList.add("incorrectButton");
-            fb.className = "Feedback";
-            fb.classList.add("incorrect");
-        }
-    }
-    else {
-        var reset = false;
-        var feedback;
-         if (label.dataset.correct == "true") {
-            if ("feedback" in label.dataset) {
-                feedback = jaxify(label.dataset.feedback);
-            } else {
-                feedback = "Correct!";
-            }
-            if (label.dataset.answered <= 0) {
-                if (fb.dataset.answeredcorrect < 0) {
-                    fb.dataset.answeredcorrect = 1;
-                    reset = true;
-                } else {
-                    fb.dataset.answeredcorrect++;
-                }
-                if (reset) {
-                    for (var i = 0; i < answers.length; i++) {
-                        var child = answers[i];
-                        child.className = "MCButton";
-                        child.dataset.answered = 0;
-                    }
-                }
-                label.classList.add("correctButton");
-                label.dataset.answered = 1;
-                fb.className = "Feedback";
-                fb.classList.add("correct");
-
-            }
-        } else {
-            if ("feedback" in label.dataset) {
-                feedback = jaxify(label.dataset.feedback);
-            } else {
-                feedback = "Incorrect -- try again.";
-            }
-            if (fb.dataset.answeredcorrect > 0) {
-                fb.dataset.answeredcorrect = -1;
-                reset = true;
-            } else {
-                fb.dataset.answeredcorrect--;
-            }
-
-            if (reset) {
-                for (var i = 0; i < answers.length; i++) {
-                    var child = answers[i];
-                    child.className = "MCButton";
-                    child.dataset.answered = 0;
-                }
-            }
-            label.classList.add("incorrectButton");
-            fb.className = "Feedback";
-            fb.classList.add("incorrect");
-        }
-        // What follows is for the saved responses stuff
-        var outerContainer = fb.parentElement.parentElement;
-        var responsesContainer = document.getElementById("responses" + outerContainer.id);
-        if (responsesContainer) {
-            //console.log(responsesContainer);
-            var response = label.firstChild.innerText;
-            if (label.querySelector(".QuizCode")){
-                response+= label.querySelector(".QuizCode").firstChild.innerText;
-            }
-            console.log(response);
-            //console.log(document.getElementById("quizWrap"+id));
-            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
-            console.log("Question " + qnum);
-            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
-            var responses=JSON.parse(responsesContainer.dataset.responses);
-            if (label.dataset.correct == "true") {
-                if (typeof(responses[qnum]) == "object"){
-                    if (!responses[qnum].includes(response))
-                        responses[qnum].push(response);
-                } else{
-                    responses[qnum]= [ response ];
-                }
-            } else {
-                responses[qnum]= response;
-            }
-            console.log(responses);
-            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
-            printResponses(responsesContainer);
-        }
-        // End save responses stuff
-
-
-
-        var numcorrect = fb.dataset.numcorrect;
-        var answeredcorrect = fb.dataset.answeredcorrect;
-        if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
-        } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
-        }
-
-
-    }
-
-    if (typeof MathJax != 'undefined') {
-        var version = MathJax.version;
-        console.log('MathJax version', version);
-        if (version[0] == "2") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        } else if (version[0] == "3") {
-            MathJax.typeset([fb]);
-        }
-    } else {
-        console.log('MathJax not detected');
-    }
-
-}
-
-function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
-    var shuffled;
-    if (shuffle_answers == "True") {
-        //console.log(shuffle_answers+" read as true");
-        shuffled = getRandomSubarray(qa.answers, qa.answers.length);
-    } else {
-        //console.log(shuffle_answers+" read as false");
-        shuffled = qa.answers;
-    }
-
-
-    var num_correct = 0;
-
-
-
-    shuffled.forEach((item, index, ans_array) => {
-        //console.log(answer);
-
-        // Make input element
-        var inp = document.createElement("input");
-        inp.type = "radio";
-        inp.id = "quizo" + id + index;
-        inp.style = "display:none;";
-        aDiv.append(inp);
-
-        //Make label for input element
-        var lab = document.createElement("label");
-        lab.className = "MCButton";
-        lab.id = id + '-' + index;
-        lab.onclick = check_mc;
-        var aSpan = document.createElement('span');
-        aSpan.classsName = "";
-        //qDiv.id="quizQn"+id+index;
-        if ("answer" in item) {
-            aSpan.innerHTML = jaxify(item.answer);
-            //aSpan.innerHTML=item.answer;
-        }
-        lab.append(aSpan);
-
-        // Create div for code inside question
-        var codeSpan;
-        if ("code" in item) {
-            codeSpan = document.createElement('span');
-            codeSpan.id = "code" + id + index;
-            codeSpan.className = "QuizCode";
-            var codePre = document.createElement('pre');
-            codeSpan.append(codePre);
-            var codeCode = document.createElement('code');
-            codePre.append(codeCode);
-            codeCode.innerHTML = item.code;
-            lab.append(codeSpan);
-            //console.log(codeSpan);
-        }
-
-        //lab.textContent=item.answer;
-
-        // Set the data attributes for the answer
-        lab.setAttribute('data-correct', item.correct);
-        if (item.correct) {
-            num_correct++;
-        }
-        if ("feedback" in item) {
-            lab.setAttribute('data-feedback', item.feedback);
-        }
-        lab.setAttribute('data-answered', 0);
-
-        aDiv.append(lab);
-
-    });
-
-    if (num_correct > 1) {
-        outerqDiv.className = "ManyChoiceQn";
-    } else {
-        outerqDiv.className = "MultipleChoiceQn";
-    }
-
-    return num_correct;
-
-}
-function check_numeric(ths, event) {
-
-    if (event.keyCode === 13) {
-        ths.blur();
-
-        var id = ths.id.split('-')[0];
-
-        var submission = ths.value;
-        if (submission.indexOf('/') != -1) {
-            var sub_parts = submission.split('/');
-            //console.log(sub_parts);
-            submission = sub_parts[0] / sub_parts[1];
-        }
-        //console.log("Reader entered", submission);
-
-        if ("precision" in ths.dataset) {
-            var precision = ths.dataset.precision;
-            // console.log("1:", submission)
-            submission = Math.round((1 * submission + Number.EPSILON) * 10 ** precision) / 10 ** precision;
-            // console.log("Rounded to ", submission, " precision=", precision  );
-        }
-
-
-        //console.log("In check_numeric(), id="+id);
-        //console.log(event.srcElement.id)           
-        //console.log(event.srcElement.dataset.feedback)
-
-        var fb = document.getElementById("fb" + id);
-        fb.style.display = "none";
-        fb.textContent = "Incorrect -- try again.";
-
-        var answers = JSON.parse(ths.dataset.answers);
-        //console.log(answers);
-
-        var defaultFB = "";
-        var correct;
-        var done = false;
-        answers.every(answer => {
-            //console.log(answer.type);
-
-            correct = false;
-            // if (answer.type=="value"){
-            if ('value' in answer) {
-                if (submission == answer.value) {
-                    if ("feedback" in answer) {
-                        fb.textContent = jaxify(answer.feedback);
-                    } else {
-                        fb.textContent = jaxify("Correct");
-                    }
-                    correct = answer.correct;
-                    //console.log(answer.correct);
-                    done = true;
-                }
-                // } else if (answer.type=="range") {
-            } else if ('range' in answer) {
-                //console.log(answer.range);
-                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
-                    fb.textContent = jaxify(answer.feedback);
-                    correct = answer.correct;
-                    //console.log(answer.correct);
-                    done = true;
-                }
-            } else if (answer.type == "default") {
-                defaultFB = answer.feedback;
-            }
-            if (done) {
-                return false; // Break out of loop if this has been marked correct
-            } else {
-                return true; // Keep looking for case that includes this as a correct answer
-            }
-        });
-
-        if ((!done) && (defaultFB != "")) {
-            fb.innerHTML = jaxify(defaultFB);
-            //console.log("Default feedback", defaultFB);
-        }
-
-        fb.style.display = "block";
-        if (correct) {
-            ths.className = "Input-text";
-            ths.classList.add("correctButton");
-            fb.className = "Feedback";
-            fb.classList.add("correct");
-        } else {
-            ths.className = "Input-text";
-            ths.classList.add("incorrectButton");
-            fb.className = "Feedback";
-            fb.classList.add("incorrect");
-        }
-
-        // What follows is for the saved responses stuff
-        var outerContainer = fb.parentElement.parentElement;
-        var responsesContainer = document.getElementById("responses" + outerContainer.id);
-        if (responsesContainer) {
-            console.log(submission);
-            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
-            //console.log("Question " + qnum);
-            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
-            var responses=JSON.parse(responsesContainer.dataset.responses);
-            console.log(responses);
-            if (submission == ths.value){
-                responses[qnum]= submission;
-            } else {
-                responses[qnum]= ths.value + "(" + submission +")";
-            }
-            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
-            printResponses(responsesContainer);
-        }
-        // End code to preserve responses
-
-        if (typeof MathJax != 'undefined') {
-            var version = MathJax.version;
-            console.log('MathJax version', version);
-            if (version[0] == "2") {
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-            } else if (version[0] == "3") {
-                MathJax.typeset([fb]);
-            }
-        } else {
-            console.log('MathJax not detected');
-        }
-        return false;
-    }
-
-}
-
-function isValid(el, charC) {
-    //console.log("Input char: ", charC);
-    if (charC == 46) {
-        if (el.value.indexOf('.') === -1) {
-            return true;
-        } else if (el.value.indexOf('/') != -1) {
-            var parts = el.value.split('/');
-            if (parts[1].indexOf('.') === -1) {
-                return true;
-            }
-        }
-        else {
-            return false;
-        }
-    } else if (charC == 47) {
-        if (el.value.indexOf('/') === -1) {
-            if ((el.value != "") && (el.value != ".")) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    } else if (charC == 45) {
-        var edex = el.value.indexOf('e');
-        if (edex == -1) {
-            edex = el.value.indexOf('E');
-        }
-
-        if (el.value == "") {
-            return true;
-        } else if (edex == (el.value.length - 1)) { // If just after e or E
-            return true;
-        } else {
-            return false;
-        }
-    } else if (charC == 101) { // "e"
-        if ((el.value.indexOf('e') === -1) && (el.value.indexOf('E') === -1) && (el.value.indexOf('/') == -1)) {
-            // Prev symbol must be digit or decimal point:
-            if (el.value.slice(-1).search(/\d/) >= 0) {
-                return true;
-            } else if (el.value.slice(-1).search(/\./) >= 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    } else {
-        if (charC > 31 && (charC < 48 || charC > 57))
-            return false;
-    }
-    return true;
-}
-
-function numeric_keypress(evnt) {
-    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
-
-    if (charC == 13) {
-        check_numeric(this, evnt);
-    } else {
-        return isValid(this, charC);
-    }
-}
-
-
-
-
-
-function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
-
-
-
-    //console.log(answer);
-
-
-    outerqDiv.className = "NumericQn";
-    aDiv.style.display = 'block';
-
-    var lab = document.createElement("label");
-    lab.className = "InpLabel";
-    lab.textContent = "Type numeric answer here:";
-    aDiv.append(lab);
-
-    var inp = document.createElement("input");
-    inp.type = "text";
-    //inp.id="input-"+id;
-    inp.id = id + "-0";
-    inp.className = "Input-text";
-    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
-    if ("precision" in qa) {
-        inp.setAttribute('data-precision', qa.precision);
-    }
-    aDiv.append(inp);
-    //console.log(inp);
-
-    //inp.addEventListener("keypress", check_numeric);
-    //inp.addEventListener("keypress", numeric_keypress);
-    /*
-    inp.addEventListener("keypress", function(event) {
-        return numeric_keypress(this, event);
-    }
-                        );
-                        */
-    //inp.onkeypress="return numeric_keypress(this, event)";
-    inp.onkeypress = numeric_keypress;
-    inp.onpaste = event => false;
-
-    inp.addEventListener("focus", function (event) {
-        this.value = "";
-        return false;
-    }
-    );
-
-
-}
-function jaxify(string) {
-    var mystring = string;
-
-    var count = 0;
-    var loc = mystring.search(/([^\\]|^)(\$)/);
-
-    var count2 = 0;
-    var loc2 = mystring.search(/([^\\]|^)(\$\$)/);
-
-    //console.log(loc);
-
-    while ((loc >= 0) || (loc2 >= 0)) {
-
-        /* Have to replace all the double $$ first with current implementation */
-        if (loc2 >= 0) {
-            if (count2 % 2 == 0) {
-                mystring = mystring.replace(/([^\\]|^)(\$\$)/, "$1\\[");
-            } else {
-                mystring = mystring.replace(/([^\\]|^)(\$\$)/, "$1\\]");
-            }
-            count2++;
-        } else {
-            if (count % 2 == 0) {
-                mystring = mystring.replace(/([^\\]|^)(\$)/, "$1\\(");
-            } else {
-                mystring = mystring.replace(/([^\\]|^)(\$)/, "$1\\)");
-            }
-            count++;
-        }
-        loc = mystring.search(/([^\\]|^)(\$)/);
-        loc2 = mystring.search(/([^\\]|^)(\$\$)/);
-        //console.log(mystring,", loc:",loc,", loc2:",loc2);
-    }
-
-    //console.log(mystring);
-    return mystring;
-}
-
-
-function show_questions(json, mydiv) {
-    console.log('show_questions');
-    //var mydiv=document.getElementById(myid);
-    var shuffle_questions = mydiv.dataset.shufflequestions;
-    var num_questions = mydiv.dataset.numquestions;
-    var shuffle_answers = mydiv.dataset.shuffleanswers;
-    var max_width = mydiv.dataset.maxwidth;
-
-    if (num_questions > json.length) {
-        num_questions = json.length;
-    }
-
-    var questions;
-    if ((num_questions < json.length) || (shuffle_questions == "True")) {
-        //console.log(num_questions+","+json.length);
-        questions = getRandomSubarray(json, num_questions);
-    } else {
-        questions = json;
-    }
-
-    //console.log("SQ: "+shuffle_questions+", NQ: " + num_questions + ", SA: ", shuffle_answers);
-
-    // Iterate over questions
-    questions.forEach((qa, index, array) => {
-        //console.log(qa.question); 
-
-        var id = makeid(8);
-        //console.log(id);
-
-
-        // Create Div to contain question and answers
-        var iDiv = document.createElement('div');
-        //iDiv.id = 'quizWrap' + id + index;
-        iDiv.id = 'quizWrap' + id;
-        iDiv.className = 'Quiz';
-        iDiv.setAttribute('data-qnum', index);
-        iDiv.style.maxWidth  =max_width+"px";
-        mydiv.appendChild(iDiv);
-        // iDiv.innerHTML=qa.question;
-        
-        var outerqDiv = document.createElement('div');
-        outerqDiv.id = "OuterquizQn" + id + index;
-        // Create div to contain question part
-        var qDiv = document.createElement('div');
-        qDiv.id = "quizQn" + id + index;
-        
-        if (qa.question) {
-            iDiv.append(outerqDiv);
-
-            //qDiv.textContent=qa.question;
-            qDiv.innerHTML = jaxify(qa.question);
-            outerqDiv.append(qDiv);
-        }
-
-        // Create div for code inside question
-        var codeDiv;
-        if ("code" in qa) {
-            codeDiv = document.createElement('div');
-            codeDiv.id = "code" + id + index;
-            codeDiv.className = "QuizCode";
-            var codePre = document.createElement('pre');
-            codeDiv.append(codePre);
-            var codeCode = document.createElement('code');
-            codePre.append(codeCode);
-            codeCode.innerHTML = qa.code;
-            outerqDiv.append(codeDiv);
-            //console.log(codeDiv);
-        }
-
-
-        // Create div to contain answer part
-        var aDiv = document.createElement('div');
-        aDiv.id = "quizAns" + id + index;
-        aDiv.className = 'Answer';
-        iDiv.append(aDiv);
-
-        //console.log(qa.type);
-
-        var num_correct;
-        if ((qa.type == "multiple_choice") || (qa.type == "many_choice") ) {
-            num_correct = make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
-            if ("answer_cols" in qa) {
-                //aDiv.style.gridTemplateColumns = 'auto '.repeat(qa.answer_cols);
-                aDiv.style.gridTemplateColumns = 'repeat(' + qa.answer_cols + ', 1fr)';
-            }
-        } else if (qa.type == "numeric") {
-            //console.log("numeric");
-            make_numeric(qa, outerqDiv, qDiv, aDiv, id);
-        }
-
-
-        //Make div for feedback
-        var fb = document.createElement("div");
-        fb.id = "fb" + id;
-        //fb.style="font-size: 20px;text-align:center;";
-        fb.className = "Feedback";
-        fb.setAttribute("data-answeredcorrect", 0);
-        fb.setAttribute("data-numcorrect", num_correct);
-        iDiv.append(fb);
-
-
-    });
-    var preserveResponses = mydiv.dataset.preserveresponses;
-    console.log(preserveResponses);
-    console.log(preserveResponses == "true");
-    if (preserveResponses == "true") {
-        console.log(preserveResponses);
-        // Create Div to contain record of answers
-        var iDiv = document.createElement('div');
-        iDiv.id = 'responses' + mydiv.id;
-        iDiv.className = 'JCResponses';
-        // Create a place to store responses as an empty array
-        iDiv.setAttribute('data-responses', '[]');
-
-        // Dummy Text
-        iDiv.innerHTML="<b>Select your answers and then follow the directions that will appear here.</b>"
-        //iDiv.className = 'Quiz';
-        mydiv.appendChild(iDiv);
-    }
-//console.log("At end of show_questions");
-    if (typeof MathJax != 'undefined') {
-        console.log("MathJax version", MathJax.version);
-        var version = MathJax.version;
-        setTimeout(function(){
-            var version = MathJax.version;
-            console.log('After sleep, MathJax version', version);
-            if (version[0] == "2") {
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-            } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
-            }
-        }, 500);
-if (typeof version == 'undefined') {
-        } else
-        {
-            if (version[0] == "2") {
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-            } else if (version[0] == "3") {
-                MathJax.typeset([mydiv]);
-            } else {
-                console.log("MathJax not found");
-            }
-        }
-    }
-    return false;
-}
-/* This is to handle asynchrony issues in loading Jupyter notebooks
-           where the quiz has been previously run. The Javascript was generally
-           being run before the div was added to the DOM. I tried to do this
-           more elegantly using Mutation Observer, but I didn't get it to work.
-
-           Someone more knowledgeable could make this better ;-) */
-
-        function try_show() {
-          if(document.getElementById("pbBURwRhFjFt")) {
-            show_questions(questionspbBURwRhFjFt,  pbBURwRhFjFt); 
-          } else {
-             setTimeout(try_show, 200);
-          }
-        };
-    
-        {
-        // console.log(element);
-
-        //console.log("pbBURwRhFjFt");
-        // console.log(document.getElementById("pbBURwRhFjFt"));
-
-        try_show();
-        }
-        </script></div>
-</div>
-<section id="ovelser-verdi-og-datatype">
-<h2>Øvelser: Verdi og datatype.<a class="headerlink" href="#ovelser-verdi-og-datatype" title="Permalink to this heading">#</a></h2>
-<section id="ovelse-1-skrive-ut-verdi-og-datatype">
-<h3>Øvelse 1: Skrive ut verdi og datatype.<a class="headerlink" href="#ovelse-1-skrive-ut-verdi-og-datatype" title="Permalink to this heading">#</a></h3>
-<p>Under kan du se hvordan man kan skrive ut verdien til en variabel med <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen og datatypen til variabelen ved å bruke <code class="docutils literal notranslate"><span class="pre">type</span></code>-funksjonen:</p>
-<iframe src="https://trinket.io/embed/python/61f0fa2c97" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </section>
+<section id="hvordan-sjekke-verdien-til-en-variabel">
+<h2>Hvordan sjekke verdien til en variabel<a class="headerlink" href="#hvordan-sjekke-verdien-til-en-variabel" title="Permalink to this heading">#</a></h2>
+<p>Vi kan sjekke verdien til en variabel ved å bruke <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen. Dette gjør vi ved å skrive <code class="docutils literal notranslate"><span class="pre">print(variabel)</span></code>. Da vil verdien til <code class="docutils literal notranslate"><span class="pre">variabel</span></code> skrives ut til skjerm. Vi kan gjøre dette med alle variablene i tabell 1, siden vi har definert dem og tilordnet dem verdier allerede.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1.0
+1.0
+-5.0
+Dette er en liten melding
+</pre></div>
+</div>
+</div>
+</div>
+<p>En penere måte å bruke <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen på er som følger</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res1</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">melding</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i = 1
+a = 1.0
+s = &#39;1.0&#39;
+res1 = -5.0
+melding = &#39;Dette er en liten melding&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da blir det hele langt mer leselig.</p>
+</section>
+<section id="hvordan-sjekke-datatypen-til-en-variabel">
+<h2>Hvordan sjekke datatypen til en variabel<a class="headerlink" href="#hvordan-sjekke-datatypen-til-en-variabel" title="Permalink to this heading">#</a></h2>
+<p>Vi kan også hente ut datatypen med <code class="docutils literal notranslate"><span class="pre">type</span></code>-funksjonen. Typisk bruker vi den i kombinasjon med <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen så vi kan se hva datatypen er. Vi kan gjøre dette med variablene fra tabell 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">res1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">melding</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eller igjen, med litt penere format på utskriften:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type(i) = &lt;class &#39;int&#39;&gt;
+type(a) = &lt;class &#39;float&#39;&gt;
+type(s) = &lt;class &#39;str&#39;&gt;
+type(res1) = &lt;class &#39;float&#39;&gt;
+type(melding) = &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ovingsoppgaver-verdi-og-datatype">
+<h2>Øvingsoppgaver: Verdi og datatype.<a class="headerlink" href="#ovingsoppgaver-verdi-og-datatype" title="Permalink to this heading">#</a></h2>
+<section id="ovelse-1-skrive-ut-verdi-og-datatype">
+<h3>Øvelse 1: Skrive ut verdi og datatype<a class="headerlink" href="#ovelse-1-skrive-ut-verdi-og-datatype" title="Permalink to this heading">#</a></h3>
+<p>Under er et lite program der noen variabler er definert. Bruk <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen og <code class="docutils literal notranslate"><span class="pre">type</span></code>-funksjonen til å skrive ut verdiene og datatypene til variabelene:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.25</span>
+<span class="n">beskjed</span> <span class="o">=</span> <span class="s2">&quot;En kort melding uten noen meningsfull beskjed. Vær så god. Bare hyggelig.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Du kan ta utgangspunkt i kodesnutten under. Her må du fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `b`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `b`</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `c`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `c`</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `beskjed`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `beskjed`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `b`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `b`</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `c`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `c`</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">beskjed</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `beskjed`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">beskjed</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `beskjed`</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 <section id="ovelse-2-sette-riktig-verdi-og-datatype">
 <h3>Øvelse 2: Sette riktig verdi og datatype.<a class="headerlink" href="#ovelse-2-sette-riktig-verdi-og-datatype" title="Permalink to this heading">#</a></h3>
 <p>Under er en uferdig kode der to variabler ikke er implementert (derfor markert med <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>). Sammen med den uferdige koden er det en notis som sier at</p>
@@ -1536,8 +691,38 @@ if (typeof version == 'undefined') {
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> skal ha verdien <code class="docutils literal notranslate"><span class="pre">10</span></code> og datatypen <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> skal ha verdien <code class="docutils literal notranslate"><span class="pre">-0.5</span></code> og datatypen <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
 </ul>
-<p>Fullfør koden. Trykk på run og se om du har gjort riktig.</p>
-<iframe src="https://trinket.io/embed/python/2fd0bb1151" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+<p><em>Du må fullføre koden under. Fyll inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> og sjekk at du får riktig resultat.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `a`</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `a`</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `r`</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `r`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `a`</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `a`</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `r`</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `r`</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -1572,6 +757,24 @@ if (typeof version == 'undefined') {
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Variabler, Datatyper og Regning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="regning_nb.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Å regne med Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1590,8 +793,11 @@ if (typeof version == 'undefined') {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelser-verdi-og-datatype">Øvelser: Verdi og datatype.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-skrive-ut-verdi-og-datatype">Øvelse 1: Skrive ut verdi og datatype.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-gi-verdi-til-en-variabel">Hvordan gi verdi til en variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-verdien-til-en-variabel">Hvordan sjekke verdien til en variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-datatypen-til-en-variabel">Hvordan sjekke datatypen til en variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver-verdi-og-datatype">Øvingsoppgaver: Verdi og datatype.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-skrive-ut-verdi-og-datatype">Øvelse 1: Skrive ut verdi og datatype</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-2-sette-riktig-verdi-og-datatype">Øvelse 2: Sette riktig verdi og datatype.</a></li>
 </ul>
 </li>
