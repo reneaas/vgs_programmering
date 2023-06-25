@@ -5,5 +5,5 @@ Men funksjoner kan også være mer sammensatte og gjøre andre ting en å bare r
 
 Anbefalt rekkefølge: 
 
-1. [Introduksjon til funksjoner i Python](./funksjoner.md)
-2. [Elementære funksjoner i Python](./elementære_funksjoner.md)
+1. [Introduksjon til funksjoner i Python](./funksjoner_nb.ipynb)
+2. [Elementære funksjoner i Python](./elementære_funksjoner_nb.ipynb)

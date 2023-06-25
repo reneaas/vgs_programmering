@@ -111,12 +111,13 @@ def main():
     y_cells = 250
     n_bacteria = 100
     probability_of_mutation = 1e-5
+    b = 0.001
 
     # Get the necessary functions for the simulaiton.
     get_antibiotic_concentration_fn = make_antibiotic_concentration_fn(x_cells=x_cells)
     move_bacterium_fn = make_move_bacterium_fn(x_cells=x_cells, y_cells=y_cells)
     get_section_fn = make_section_fn(x_cells=x_cells)
-    get_probability_of_reproduction_fn = make_probability_of_reproduction_fn(b=0.0003)
+    get_probability_of_reproduction_fn = make_probability_of_reproduction_fn(b=b)
 
     bacteria = get_init_colony(n_bacteria=n_bacteria, x_cells=x_cells, y_cells=y_cells)
 
@@ -124,7 +125,7 @@ def main():
     x = []
     y = []
 
-    num_iter = 5000  # Number of generations to simulate.
+    num_iter = 10_000  # Number of generations to simulate.
     it = trange(num_iter, leave=True)
     n_dead_bacteria = 0
     for _ in it:
@@ -149,33 +150,18 @@ def main():
         for b in bacteria:
             b = move_bacterium_fn(bacterium=b)
 
-        # Count number of bacteria in each section
-        # bacteria_per_section = [0, 0, 0, 0, 0]
-        # for b in bacteria:
-        #     section = get_section_fn(b.get("x"))
-        #     bacteria_per_section[section] += 1
-
-        # Each bacteria tries to reproduce in their respective sections.
-
         new_bacteria = []
         for b in bacteria:
             if np.random.uniform() < get_probability_of_reproduction_fn(
                 bacteria_per_section[get_section_fn(b.get("x"))]
             ):
-                if np.random.uniform() > probability_of_mutation:
-                    new_bacteria.append(
-                        get_bacterium(
-                            x=b.get("x"),
-                            y=b.get("y"),
-                            resistance=b.get("resistance") + np.random.uniform(0, 0.01),
-                        )
+                new_bacteria.append(
+                    get_bacterium(
+                        x=b.get("x"), y=b.get("y"), resistance=b.get("resistance")
                     )
-                else:
-                    new_bacteria.append(
-                        get_bacterium(
-                            x=b.get("x"), y=b.get("y"), resistance=b.get("resistance")
-                        )
-                    )
+                )
+            
+            # Check if the bacteria mutates.
             
             # Kill all bacteria that cannot survive the antibiotic concentration.
             if (
@@ -184,20 +170,14 @@ def main():
             ):
                 n_dead_bacteria += 1
                 bacteria.remove(b)
-
-        # Then, kill all bacteria that are in the antibiotic concentration.
-        # for b in bacteria:
-        #     if (
-        #         get_antibiotic_concentration_fn(b.get("x")) - b.get("resistance")
-        #         > np.random.uniform()
-        #     ):
-        #         n_dead_bacteria += 1
-        #         bacteria.remove(b)
-
+            
+            # Check if the bacteria mutates.
+            if np.random.uniform() < probability_of_mutation:
+                b["resistance"] += np.random.uniform(0, 0.01)
+            
         # Finally, add the new bacteria to the population.
         bacteria.extend(new_bacteria)
 
-        # Update the resistance of all bacteria
 
     create_animation(
         f"animations/animation_grid_{x_cells}X{y_cells}_iterations_{num_iter}.gif",
@@ -205,6 +185,7 @@ def main():
         y=y,
         x_cells=x_cells,
         y_cells=y_cells,
+        skip=100,
     )
 
 

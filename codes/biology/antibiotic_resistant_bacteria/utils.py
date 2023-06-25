@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 import numpy as np
 
 
-def create_images(x, y, x_cells, y_cells, skip=50):
+def create_images(x, y, x_cells, y_cells):
     fig, ax = plt.subplots()
     plt.axis("off")
     imgs = []
@@ -19,8 +19,8 @@ def create_images(x, y, x_cells, y_cells, skip=50):
     return fig, ax, imgs
 
 
-def create_animation(fname, x_cells, y_cells, x, y, fps=240):
-    fig, ax, imgs = create_images(x=x, y=y, x_cells=x_cells, y_cells=y_cells)
+def create_animation(fname, x_cells, y_cells, x, y, fps=240, skip=50):
+    fig, ax, imgs = create_images(x=x, y=y, x_cells=x_cells, y_cells=y_cells, skip=skip)
     ani = animation.ArtistAnimation(fig, imgs, blit=True)
     ani.save(fname, fps=fps, writer="ffmpeg")
     plt.close()

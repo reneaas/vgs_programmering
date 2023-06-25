@@ -9,7 +9,7 @@ Symbolsk programmering er regning med symboler i stedet for tall. Dette innebær
 Symbolsk programmering kan løse problemer som
 
 - [Løse likninger](./likninger_nb)
-- [Løse likningssystemer](./likningssystemer_nb)
+- [Løse likningssystemer](./likningsystemer_nb)
 - [Derivasjon](./derivasjon)
 - [Integrasjon](./integrasjon)
 <!-- - Forenkle uttrykk
