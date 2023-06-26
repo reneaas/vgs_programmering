@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det (funksjoner for viderekomne)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -472,6 +472,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
@@ -497,6 +498,7 @@ document.write(`
 </ol>
 <p>Den generelle skrivemåten blir derfor</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span> <span class="c1"># Må importere biblioteket</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Definerer den ukjente variabelen, vanligvis kaller vi denne x når det bare er én ukjent.</span>
 <span class="n">løsninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen f(x) = 0 for x.</span>
 </pre></div>
@@ -513,8 +515,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen 2*x - 1 = 0.</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -538,8 +542,10 @@ x^2 + x - 2 = 0,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 + x - 2 = 0.</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -567,8 +573,10 @@ x^3 - 2x^2 - x + 2 = 0,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**3 - 2*x**2 - x + 2 = 0.</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -591,8 +599,10 @@ e^x + 2x = 0.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0.</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -607,8 +617,10 @@ e^x + 2x = 0.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen exp(x) + 2*x = 0.</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -635,8 +647,10 @@ e^x + 2x = 0.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
 <span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -655,11 +669,18 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
 <span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen 3*x - 2 = 0 for x.</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2/3]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Løsningen av likningen er altså <span class="math notranslate nohighlight">\(x = \frac{3}{2}\)</span></p>
 </div>
 </details></section>
 <section id="oppgave-2">
@@ -673,8 +694,10 @@ x^2 - 3x + 2 = 0.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lager et symbol x for sympy.</span>
 <span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -693,11 +716,65 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
 <span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 - 3*x + 2 = 0 for x.</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1, 2]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 1\)</span> eller <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+</div>
+</details></section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^3 - 13x^2 + 52x - 60 = 0.
+\]</div>
+<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag et symbol for `x`</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">52</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">60</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x^3 - 2x^2 + x - 6 = 0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2, 5, 6]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 2\)</span> eller <span class="math notranslate nohighlight">\(x = 5\)</span> eller <span class="math notranslate nohighlight">\(x = 6\)</span>.</p>
 </div>
 </details></section>
 </section>
@@ -780,6 +857,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>

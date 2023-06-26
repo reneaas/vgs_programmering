@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det (funksjoner for viderekomne)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -517,9 +517,11 @@ f'(x) = 3x^2 + 8x + 3.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Funksjonen vi skal derivere.</span>
 <span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Deriverte av f med hensyn på x.</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -554,9 +556,11 @@ f'(x) = e^{(x^2 + 1)^2}v'(u)u'(x) = e^{(x^2 + 1)^2} \cdot 2u(x) \cdot 2x = 4x(x^
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#funksjonen vi skal derivere</span>
 <span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#deriverte av f med hensyn på x</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -593,9 +597,11 @@ f'(x) = \frac{g'h - gh'}{h^2} = \frac{(e^{x^2} + 2x^2e^{x^2})x - (xe^{x^2} - 1)}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span> <span class="c1">#funksjonen vi skal derivere</span>
 <span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1">#deriverte av f med hensyn på x</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -615,6 +621,7 @@ f'(x) = \frac{g'h - gh'}{h^2} = \frac{(e^{x^2} + 2x^2e^{x^2})x - (xe^{x^2} - 1)}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -645,9 +652,11 @@ f(x) = 2x^2 - 5x + 1.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span> <span class="c1"># Husk at du må importere biblioteket</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag et symbol for `x`</span>
 <span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv inn funksjonsuttrykket til `f`</span>
 <span class="n">dfdx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Bruk `sp.diff` til å derivere funksjonen</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -661,9 +670,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span> 
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> 
 <span class="n">f</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> 
 <span class="n">dfdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dfdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -689,9 +700,11 @@ g(x) = e^{-2x}x^2.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag et symbol for `x`</span>
 <span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv inn funksjonsuttrykket til `g`</span>
 <span class="n">dgdx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Deriver `g` med sp.diff</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dgdx</span><span class="p">)</span> <span class="c1"># Printer ut den deriverte</span>
 </pre></div>
 </div>
@@ -705,9 +718,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Symbol for variabelen `x`</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Funksjonsuttrykket til e^{-2x} * x^2</span>
 <span class="n">dgdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Regner ut den deriverte</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dgdx</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -744,12 +759,15 @@ f(x) = x^2 - 1 \qquad \text{og} \qquad g(x) = e^{-2x}.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Definer et symbol for `x`</span>
 <span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Definer funksjonsuttrykket til `f`</span>
 <span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Definer funksjonsuttrykket til `g`</span>
 <span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Definert funksjonsuttrykket til `h`</span>
 <span class="n">dhdx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut den deriverte av `h` med sp.diff</span>
+
 <span class="n">dhdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dhdx</span><span class="p">)</span> <span class="c1"># h&#39;(x) blir et stygt uttrykk som kan forenkles med `sp.simplify`</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dhdx</span><span class="p">)</span> <span class="c1"># skriver ut h&#39;(x) til skjermen.</span>
 </pre></div>
 </div>
@@ -763,12 +781,15 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Definer et symbol for `x`</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Definer funksjonsuttrykket til `f`</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Definer funksjonsuttrykket til `g`</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">f</span> <span class="o">/</span> <span class="n">g</span> <span class="c1"># Definert funksjonsuttrykket til `h`</span>
 <span class="n">dhdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Regn ut den deriverte av `h` med sp.diff</span>
+
 <span class="n">dhdx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">dhdx</span><span class="p">)</span> <span class="c1"># h&#39;(x) kan forenkles `sp.simplify` så det blir faktorisert pent og pyntelig</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">dhdx</span><span class="p">)</span> <span class="c1"># Skriver ut den deriverte</span>
 </pre></div>
 </div>
