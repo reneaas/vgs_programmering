@@ -7,7 +7,7 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall $[a, b]$ der vi vet 
 2. Hvis $f(a) \cdot f(c) < 0$, sett $b = c$. Så midtpunktet blir høyre endepunkt på det nye intervallet.
 3. Hvis ikke, sett $a = c$. Midtpunktet blir da venstre endepunkt på det nye intervallet.
 
-Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(c)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`halveringsmetoden` viser pseudokode for algoritmen.
+Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(c)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`algo-halveringsmetoden` viser pseudokode for algoritmen.
 
 {numref}`bisection` viser en animasjon av halveringsmetoden.
 
@@ -24,10 +24,11 @@ Animasjon av halveringsmetoden. Hentet fra [Wikimedia Commons](https://upload.wi
 
 
 ```{prf:algorithm} Halveringsmetoden
-:label: halveringsmetoden
-**Input:** En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
+:label: algo-halveringsmetoden
 
-**Output:** Et tilnærming til et nullpunkt til $f$.
+**Input**: En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
+
+**Output**: Et tilnærming til et nullpunkt til $f$.
 
 1. Sjekk at $f(a) \cdot f(b) < 0$. Hvis ikke, avslutt algoritmen.
 2. Regn ut midtpunktet $c = (a + b) / 2$.
@@ -47,7 +48,7 @@ $$
 f(x) = x^2 - 1.
 $$
 
-Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge {prf:ref}`halveringsmetoden` velge oss ut:
+Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge {prf:ref}`algo-halveringsmetoden` velge oss ut:
 
 1. En funksjon $f$. Check.
 2. Et intervall $[a,b]$ der vi vet at $f$ har et nullpunkt, så $f$ *må* endre fortegn på intervallet.
@@ -68,6 +69,6 @@ Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å 
 :class: warning, dropdown
 
 1. Halveringsmetoden er en *iterativ* algoritme. Det vil si at den gjentar en prosess flere ganger. I praksis betyr dette at vi må velge et maksimalt antall iterasjoner. Hvis vi ikke gjør det, kan algoritmen potensielt kjøre i all evighet. Dette er en svakhet ved halveringsmetoden, og vi må derfor være forsiktige med å bruke den. 
-2. Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. Dette erfarte vi [eksempel 2](#Eksempel-2:-Finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden).
+2. Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. 
 3. Algoritmen krever også at vi har litt kjennskap til funksjonen vi skal finne nullpunktet til. Vi må vite at nullpunktet ligger i et intervall $[a, b]$. Dette kan være vanskelig å vite på forhånd, og må alltid sjekkes.
 ```
