@@ -502,9 +502,9 @@ document.write(`
 <section id="eksempel-1">
 <h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
 <p>Tenk deg at du tar en dose <span class="math notranslate nohighlight">\(M_0 = 400 \ \text{mg}\)</span> med Paracet én gang i døgnet. Per time brytes det ned 29 % av virkestoffet i blodplasma. Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
-<p>Virkestoffet brytes ned med 29 % per time, som gir en vekstfaktor <span class="math notranslate nohighlight">\(V = 1 - 0.29 = 0.71\)</span> per time. En dose vil da ha en vekstfaktor på <span class="math notranslate nohighlight">\(V^24\)</span> per døgn (fordi det 24 timer i døgnet). En strategi for å regne ut virkestoffet i kroppen over tid vises i <a class="reference internal" href="#paracet_daglig_dose">Algorithm </a>.</p>
+<p>Virkestoffet brytes ned med 29 % per time, som gir en vekstfaktor <span class="math notranslate nohighlight">\(V = 1 - 0.29 = 0.71\)</span> per time. En dose vil da ha en vekstfaktor på <span class="math notranslate nohighlight">\(V^24\)</span> per døgn (fordi det 24 timer i døgnet). En strategi for å regne ut virkestoffet i kroppen over tid vises i <a class="reference internal" href="#paracet_daglig_dose">Algorithm 6</a>.</p>
 <div class="proof algorithm admonition" id="paracet_daglig_dose">
-<p class="admonition-title"><span>Algorithm </span> (Nedbrytning av virkestoff per døgn)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 6 </span> (Nedbrytning av virkestoff per døgn)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Daglig dose <span class="math notranslate nohighlight">\(M_0\)</span>, nedbrytning i prosent per time <span class="math notranslate nohighlight">\(r\)</span>, antall døgn <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>Output</strong>: Mengde virkestoff i kroppen <span class="math notranslate nohighlight">\(M\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> døgn.</p>
@@ -550,9 +550,9 @@ document.write(`
 <h3>Eksempel 2: En dose av paracet hver 6.time<a class="headerlink" href="#eksempel-2-en-dose-av-paracet-hver-6-time" title="Permalink to this heading">#</a></h3>
 <p>Et mer realistisk eksempel er at man tar to tabletter med paracet hver 6.time som tilsvarer 1000 mg. Nedbrytningen per time er på 29% av dosen.
 Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
-<p>Vi kan modifisere algoritmen litt for å løse dette problemet, som vises i <a class="reference internal" href="#paracet_6t">Algorithm </a>.</p>
+<p>Vi kan modifisere algoritmen litt for å løse dette problemet, som vises i <a class="reference internal" href="#paracet_6t">Algorithm 7</a>.</p>
 <div class="proof algorithm admonition" id="paracet_6t">
-<p class="admonition-title"><span>Algorithm </span> (Nedbrytning av Paracet ved inntak hver 6.time.)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 7 </span> (Nedbrytning av Paracet ved inntak hver 6.time.)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Dose <span class="math notranslate nohighlight">\(M_0\)</span> hver 6.time, nedbrytning i prosent per time <span class="math notranslate nohighlight">\(r\)</span>, antall døgn <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>Output</strong>: Mengde virkestoff i kroppen <span class="math notranslate nohighlight">\(M\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> døgn.</p>

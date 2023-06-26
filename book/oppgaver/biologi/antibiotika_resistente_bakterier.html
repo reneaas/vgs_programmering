@@ -855,9 +855,9 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 </section>
 <section id="en-algoritme-for-tidsutviklingen-av-bakteriene">
 <h3>En algoritme for tidsutviklingen av bakteriene<a class="headerlink" href="#en-algoritme-for-tidsutviklingen-av-bakteriene" title="Permalink to this heading">#</a></h3>
-<p>Nå har vi satt sammen modellen som gir oss grunnlaget for å lage en algoritme for tidsutviklingen til bakteriene. Tidsutviklingen av bakteriepopulasjonen kan simuleres med <a class="reference internal" href="#bakteriepopulasjon">Algorithm 7</a>. Den inneholder alle de grunnleggende stegene vi må gjennom. Hvert tidssteg <span class="math notranslate nohighlight">\(t\)</span> kan tenkes på som hvilken generasjon vi er på i bakteriepopulasjonen.</p>
+<p>Nå har vi satt sammen modellen som gir oss grunnlaget for å lage en algoritme for tidsutviklingen til bakteriene. Tidsutviklingen av bakteriepopulasjonen kan simuleres med <a class="reference internal" href="#bakteriepopulasjon">Algorithm 9</a>. Den inneholder alle de grunnleggende stegene vi må gjennom. Hvert tidssteg <span class="math notranslate nohighlight">\(t\)</span> kan tenkes på som hvilken generasjon vi er på i bakteriepopulasjonen.</p>
 <div class="proof algorithm admonition" id="bakteriepopulasjon">
-<p class="admonition-title"><span class="caption-number">Algorithm 7 </span> (Tidsutvikling av bakteriepopulasjon)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 9 </span> (Tidsutvikling av bakteriepopulasjon)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Antall bakterier <span class="math notranslate nohighlight">\(N\)</span>, antall tidssteg <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <ol class="arabic simple">
@@ -890,7 +890,7 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <section id="prosjektmal">
 <h2>Prosjektmål<a class="headerlink" href="#prosjektmal" title="Permalink to this heading">#</a></h2>
 <p>Når man skriver en kode for større prosjekter, er det god kodepraksis å skrive funksjoner som gjør én spesifikk bit av algoritmen. Deretter vil hovedkoden bestå av kall til funksjonene i riktig rekkefølge for å gjennomføre algoritmen. En fordel med dette er at du kan teste hver funksjon for seg, og du kan gjenbruke funksjonene i andre prosjekter. Hvis noe går galt i koden, er det også lettere å finne ut hvor feilen ligger.</p>
-<p>Fra <a class="reference internal" href="#bakteriepopulasjon">Algorithm 7</a> kan vi se at vi trenger funksjoner for å:</p>
+<p>Fra <a class="reference internal" href="#bakteriepopulasjon">Algorithm 9</a> kan vi se at vi trenger funksjoner for å:</p>
 <ol class="arabic simple">
 <li><p>Lage <span class="math notranslate nohighlight">\(N\)</span> bakterier til å starte med.</p>
 <ul class="simple">
