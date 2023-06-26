@@ -511,11 +511,11 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Sett <span class="math notranslate nohighlight">\(M = M_0\)</span></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(V = 1 - r/100\)</span></p></li>
-<li><p>Sett <span class="math notranslate nohighlight">\(k = V^24\)</span></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(k = V^{24}\)</span></p></li>
 <li><p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
 <ol class="arabic simple">
-<li><p>Sett <span class="math notranslate nohighlight">\(M = k \cdot M\)</span> <em>nedbrytning av virkestoff</em></p></li>
-<li><p>Sett $M = M + M_0#  <em>ny dose</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(M = k \cdot M\)</span> <em>(Nedbrytning av virkestoff)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(M = M + M_0\)</span>  <em>(Ny dose)</em></p></li>
 </ol>
 </li>
 <li><p>Returner <span class="math notranslate nohighlight">\(M\)</span></p></li>
@@ -559,16 +559,16 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 <ol class="arabic simple">
 <li><p>Sett <span class="math notranslate nohighlight">\(M = M_0\)</span></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(V = 1 - r/100\)</span></p></li>
-<li><p>Sett <span class="math notranslate nohighlight">\(k = V^6\)</span> <em>nedbrytning per 6.time</em></p></li>
-<li><p>Sett <span class="math notranslate nohighlight">\(M = M_0\)</span> <em>først dose</em></p></li>
-<li><p>Sett <span class="math notranslate nohighlight">\(M_\text{max} = M\)</span> <em>Høyeste dose så langt</em>.</p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(k = V^6\)</span> <em>(Vekstfaktor for nedbrytning per 6.time)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(M = M_0\)</span> <em>(Første dose)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(M_\text{max} = M\)</span> <em>(Høyeste dose så langt)</em>.</p></li>
 <li><p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
 <ol class="arabic simple">
-<li><p>Sett <span class="math notranslate nohighlight">\(M = k \cdot M\)</span> <em>nedbrytning av virkestoff</em></p></li>
-<li><p>Sett $M = M + M_0#  <em>ny dose</em></p></li>
-<li><p>If <span class="math notranslate nohighlight">\(M &gt; M_\text{max}\)</span>: <em>Hvis dosen er nå høyere enn forrige maksdose</em></p>
+<li><p>Sett <span class="math notranslate nohighlight">\(M = k \cdot M\)</span> <em>(Nedbrytning av virkestoff)</em></p></li>
+<li><p>Sett $M = M + M_0#  <em>(Ny dose)</em></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(M &gt; M_\text{max}\)</span>: <em>(Hvis dosen er nå høyere enn forrige maksdose)</em></p>
 <ul class="simple">
-<li><p>Sett <span class="math notranslate nohighlight">\(M_\text{max} = M\)</span> <em>Sett ny maksdose</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(M_\text{max} = M\)</span> <em>(Sett ny maksdose)</em></p></li>
 </ul>
 </li>
 </ol>
