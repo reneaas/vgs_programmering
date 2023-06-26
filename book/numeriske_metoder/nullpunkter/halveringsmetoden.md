@@ -7,7 +7,7 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall $[a, b]$ der vi vet 
 2. Hvis $f(a) \cdot f(c) < 0$, sett $b = c$. Så midtpunktet blir høyre endepunkt på det nye intervallet.
 3. Hvis ikke, sett $a = c$. Midtpunktet blir da venstre endepunkt på det nye intervallet.
 
-Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(c)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`halveringsmetoden` viser pseudokode for algoritmen.
+Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når $|f(c)| < \epsilon$, der $\epsilon$ er en toleranseverdi som ofte settes til $\epsilon \approx 10^{-8}$. {prf:ref}`algo-halveringsmetoden` viser pseudokode for algoritmen.
 
 {numref}`bisection` viser en animasjon av halveringsmetoden.
 
@@ -23,12 +23,12 @@ Animasjon av halveringsmetoden. Hentet fra [Wikimedia Commons](https://upload.wi
 
 
 
-<!-- ```{prf:algorithm} Halveringsmetoden
-:label: halveringsmetoden
+```{prf:algorithm} Halveringsmetoden
+:label: algo-halveringsmetoden
 
-__Input__: En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
+**Input**: En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
 
-__Output__: Et tilnærming til et nullpunkt til $f$.
+**Output**: Et tilnærming til et nullpunkt til $f$.
 
 1. Sjekk at $f(a) \cdot f(b) < 0$. Hvis ikke, avslutt algoritmen.
 2. Regn ut midtpunktet $c = (a + b) / 2$.
@@ -37,7 +37,7 @@ __Output__: Et tilnærming til et nullpunkt til $f$.
     2. Hvis ikke, sett $a = c$.
     3. Regn ut midtpunktet $c = (a + b) / 2$.
 4. Returner $c$.
-``` -->
+```
 
 
 ## Eksempel: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden 
@@ -48,7 +48,7 @@ $$
 f(x) = x^2 - 1.
 $$
 
-Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge {prf:ref}`halveringsmetoden` velge oss ut:
+Nullpunktene til denne funksjonen er $x = \pm 1$, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge {prf:ref}`algo-halveringsmetoden` velge oss ut:
 
 1. En funksjon $f$. Check.
 2. Et intervall $[a,b]$ der vi vet at $f$ har et nullpunkt, så $f$ *må* endre fortegn på intervallet.

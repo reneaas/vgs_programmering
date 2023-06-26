@@ -6,5 +6,5 @@ Vi skal se på følgende metoder:
 
 1. [Trapesmetoden](./trapesmetoden)
 2. [Midtpunktsmetoden](./midtpunktsmetoden)
-3. [Monte Carlo Integrasjon (matematikk S2)](./mc_integrasjon_nb)
+3. [Monte Carlo Integrasjon (matematikk S2)](./mc_integrasjon)
 
