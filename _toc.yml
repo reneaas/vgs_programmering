@@ -2,41 +2,43 @@ format: jb-book
 
 root: intro
 
+
 parts:
-  - caption: Python Programmering
+  - caption: Grunnleggende Python
     chapters:
     - file: book/python/variabler_og_regning/intro
       title: Variabler, Datatyper og Regning
       sections:
       - file: book/python/variabler_og_regning/variabler_nb
       - file: book/python/variabler_og_regning/regning_nb
-    - file: book/python/iterasjon/intro
-      title: Iterasjon med løkker
+    - file : book/python/iterasjon/intro
+      title: Løkker
       sections:
       - file: book/python/iterasjon/while_loops
       - file: book/python/iterasjon/for_loops
-    - file: book/python/containers/intro
-      sections:
-      - file: book/python/containers/lists
+    - file: book/python/containers/lists
+    
+  - caption: Viderekommen Python
+    chapters:
     - file: book/python/funksjoner/intro
-      title: Funksjoner
+      title: Funksjoner i Python
       sections:
       - file: book/python/funksjoner/funksjoner_nb
       - file: book/python/funksjoner/elementære_funksjoner_nb
       - file: book/python/funksjoner/funksjoner_med_flere_variabler
-      - file: book/python/funksjoner/funksjoner_avansert
+
+
+  - caption: Matematikk med Python
+    chapters:
     - file: book/python/symbolsk_python/intro
-      title: Symbolsk Programmering
-      sections:
+      title: Symbolsk Programmering med Python (CAS)
+      sections: 
       - file: book/python/symbolsk_python/likninger_nb
       - file: book/python/symbolsk_python/likningsystemer_nb
       - file: book/python/symbolsk_python/derivasjon_nb
       - file: book/python/symbolsk_python/integrasjon_nb
-
-  - caption: Numeriske Metoder i Matematikk
-    chapters:
     - file: book/numeriske_metoder/nullpunkter/intro
-      title: Finne Nullpunkter
+      title: Finne Nullpunkter Numerisk
       sections:
       - file: book/numeriske_metoder/nullpunkter/halveringsmetoden
       - file: book/numeriske_metoder/nullpunkter/newtons_metode
@@ -56,32 +58,89 @@ parts:
       sections:
       - file: book/numeriske_metoder/følger_og_rekker/sequences
       - file: book/numeriske_metoder/følger_og_rekker/praktiske_anvendelser_av_rekker
+    
 
-  - caption: Oppgaver
+
+  - caption: Fysikk med Python
     chapters:
-    - file: book/oppgaver/python/oversikt
-      sections:
-      - file: book/oppgaver/python/funksjoner
-    - file: book/oppgaver/matematikk/oversikt
-      sections:
-      - file: book/oppgaver/matematikk/nullpunkter
-      - file: book/oppgaver/matematikk/derivasjon
-      - file: book/oppgaver/matematikk/integrasjon
-    - file: book/oppgaver/fysikk/oversikt
-      sections:
-      - file: book/oppgaver/fysikk/pi_fabrikken
-    - file: book/oppgaver/biologi/intro
-      sections:
-      - file: book/oppgaver/biologi/antibiotika_resistente_bakterier
+    - file: book/oppgaver/fysikk/pi_fabrikken
+    
+  - caption: Biologi med Python
+    chapters:
+    - file: book/oppgaver/biologi/antibiotika_resistente_bakterier
 
 
 
 # parts:
-#   - caption: Variabler, Datatyper og Regning
+#   - caption: Python Programmering
 #     chapters:
-#     - file: book/python/variabler_og_datatyper/variabler
-#     - file: book/python/variabler_og_datatyper/regning
+#     - file: book/python/variabler_og_regning/intro
+#       title: Variabler, Datatyper og Regning
+#       sections:
+#       - file: book/python/variabler_og_regning/variabler_nb
+#       - file: book/python/variabler_og_regning/regning_nb
+#     - file: book/python/iterasjon/intro
+#       title: Iterasjon med løkker
+#       sections:
+#       - file: book/python/iterasjon/while_loops
+#       - file: book/python/iterasjon/for_loops
+#     - file: book/python/containers/intro
+#       sections:
+#       - file: book/python/containers/lists
+#     - file: book/python/funksjoner/intro
+#       title: Funksjoner
+#       sections:
+#       - file: book/python/funksjoner/funksjoner_nb
+#       - file: book/python/funksjoner/elementære_funksjoner_nb
+#       - file: book/python/funksjoner/funksjoner_med_flere_variabler
+#       - file: book/python/funksjoner/funksjoner_avansert
+#     - file: book/python/symbolsk_python/intro
+#       title: Symbolsk Programmering
+#       sections:
+#       - file: book/python/symbolsk_python/likninger_nb
+#       - file: book/python/symbolsk_python/likningsystemer_nb
+#       - file: book/python/symbolsk_python/derivasjon_nb
+#       - file: book/python/symbolsk_python/integrasjon_nb
 
-#   - caption: Funksjoner i Python
+#   - caption: Numeriske Metoder i Matematikk
 #     chapters:
-#     - file: 
+#     - file: book/numeriske_metoder/nullpunkter/intro
+#       title: Finne Nullpunkter
+#       sections:
+#       - file: book/numeriske_metoder/nullpunkter/halveringsmetoden
+#       - file: book/numeriske_metoder/nullpunkter/newtons_metode
+#     - file: book/numeriske_metoder/derivasjon/intro
+#       title: Numerisk Derivasjon
+#       sections:
+#       - file: book/numeriske_metoder/derivasjon/førstederiverte
+#       - file: book/numeriske_metoder/derivasjon/andrederiverte
+#     - file: book/numeriske_metoder/integrasjon/intro
+#       title: Numerisk Integrasjon
+#       sections:
+#       - file: book/numeriske_metoder/integrasjon/trapesmetoden
+#       - file: book/numeriske_metoder/integrasjon/midtpunktsmetoden
+#       - file: book/numeriske_metoder/integrasjon/mc_integrasjon_nb
+#     - file: book/numeriske_metoder/følger_og_rekker/intro
+#       title: Følger og Rekker
+#       sections:
+#       - file: book/numeriske_metoder/følger_og_rekker/sequences
+#       - file: book/numeriske_metoder/følger_og_rekker/praktiske_anvendelser_av_rekker
+
+#   - caption: Oppgaver
+#     chapters:
+#     - file: book/oppgaver/python/oversikt
+#       sections:
+#       - file: book/oppgaver/python/funksjoner
+#     - file: book/oppgaver/matematikk/oversikt
+#       sections:
+#       - file: book/oppgaver/matematikk/nullpunkter
+#       - file: book/oppgaver/matematikk/derivasjon
+#       - file: book/oppgaver/matematikk/integrasjon
+#     - file: book/oppgaver/fysikk/oversikt
+#       sections:
+#       - file: book/oppgaver/fysikk/pi_fabrikken
+#     - file: book/oppgaver/biologi/intro
+#       sections:
+#       - file: book/oppgaver/biologi/antibiotika_resistente_bakterier
+
+
