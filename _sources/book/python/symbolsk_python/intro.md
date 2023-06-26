@@ -8,8 +8,8 @@ Symbolsk programmering er regning med symboler i stedet for tall. Dette innebær
 
 Symbolsk programmering kan løse problemer som
 
-- [Løse likninger](./likninger_nb)
-- [Løse likningssystemer](./likningsystemer_nb)
+- [Løse likninger](./likninger)
+- [Løse likningssystemer](./likningsystemer)
 - [Derivasjon](./derivasjon)
 - [Integrasjon](./integrasjon)
 <!-- - Forenkle uttrykk
