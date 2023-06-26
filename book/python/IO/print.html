@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Løse likninger med sympy &#8212; Programmering i Videregående Skole</title>
+    <title>print-funksjonen for å skrive ut resultateter &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,13 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/symbolsk_python/likninger';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/IO/print';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Løse Likningssystemer med sympy" href="likningsystemer.html" />
-    <link rel="prev" title="Symbolsk Programmering med Python" href="intro.html" />
+    <link rel="next" title="Funksjoner i Python" href="../funksjoner/intro.html" />
+    <link rel="prev" title="Lister" href="../containers/lists.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grunnleggende Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../variabler_og_regning/intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../variabler_og_regning/variabler_nb.html">Variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../variabler_og_regning/regning_nb.html">Å regne med Python</a></li>
@@ -168,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../containers/lists.html">Lister</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../IO/print.html"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
@@ -184,12 +182,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Symbolsk Programmering med Python (CAS)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivasjon.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/likninger.html">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/derivasjon.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../numeriske_metoder/nullpunkter/intro.html">Finne Nullpunkter Numerisk</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -275,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/symbolsk_python/likninger.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/IO/print.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +339,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/symbolsk_python/likninger.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/IO/print.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/python/symbolsk_python/likninger.ipynb" target="_blank"
+      <li><a href="../../../_sources/book/python/IO/print.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -453,7 +451,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Løse likninger med sympy</h1>
+    <h1>print-funksjonen for å skrive ut resultateter</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -463,13 +461,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-med-en-ukjent">Likninger med én ukjent</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-transcendentale-funksjoner">Eksempel 4: Likning med transcendentale funksjoner</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printe-med-print-uten-formattering">Printe med <code class="docutils literal notranslate"><span class="pre">print</span></code> uten formattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-funksjonen-med-f-string-formattering"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bruke-print-med-f-string-formattering-for-a-printe-ut-med-valgfritt-antall-desimaler">Bruke <code class="docutils literal notranslate"><span class="pre">print</span></code> med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering for å printe ut med valgfritt antall desimaler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-ekstra-tekst-med-f-string-formattering">Legge til ekstra tekst med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -487,177 +482,240 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lose-likninger-med-sympy">
-<h1>Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#lose-likninger-med-sympy" title="Permalink to this heading">#</a></h1>
-<p>Å løse likninger er en viktig del av matematikken. I dette notatet skal vi se på hvordan vi kan løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
-<section id="likninger-med-en-ukjent">
-<h2>Likninger med én ukjent<a class="headerlink" href="#likninger-med-en-ukjent" title="Permalink to this heading">#</a></h2>
-<p>For å løse likninger, bruker vi funksjonen <code class="docutils literal notranslate"><span class="pre">solve</span></code>. Denne funksjonen tar to argumenter,</p>
-<ol class="arabic simple">
-<li><p>Venstesiden av likningen som skal løses. Det er antatt at likningen er på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, så vi skal bare sende inn hva <span class="math notranslate nohighlight">\(f(x)\)</span> er.</p></li>
-<li><p>Den ukjente variabelen som skal løses for.</p></li>
-</ol>
-<p>Den generelle skrivemåten blir derfor</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span> <span class="c1"># Må importere biblioteket</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Definerer den ukjente variabelen, vanligvis kaller vi denne x når det bare er én ukjent.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen f(x) = 0 for x.</span>
-</pre></div>
-</div>
-<section id="eksempel-1-lose-en-lineaer-likning">
-<h3>Eksempel 1: Løse en lineær likning<a class="headerlink" href="#eksempel-1-lose-en-lineaer-likning" title="Permalink to this heading">#</a></h3>
-<p>La oss se på hvordan vi kan løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-2x - 1 = 0.
-\]</div>
-<p>Dette kan vi selvfølgelig gjøre for hånd, og da finner vi at <span class="math notranslate nohighlight">\(x = 1/2\)</span>.</p>
-<p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> må vi identifisere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er for noe, og i dette tilfellet er det <span class="math notranslate nohighlight">\(f(x) = 2x - 1\)</span>. Vi kan derfor skrive</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="print-funksjonen-for-a-skrive-ut-resultateter">
+<h1><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter<a class="headerlink" href="#print-funksjonen-for-a-skrive-ut-resultateter" title="Permalink to this heading">#</a></h1>
+<p>I Python kan vi bruke en innebygd funksjonen kalt <code class="docutils literal notranslate"><span class="pre">print</span></code> for å skrive eller <em>printe</em> ut verdien til en variabel til skjermen. Ofte vil vi være interessert i å printe ut verdien på slutten av en beregning, men det er også et nyttig verktøy for å sjekke at koden vår gjør det vi tror den gjør underveis.</p>
+<section id="printe-med-print-uten-formattering">
+<h2>Printe med <code class="docutils literal notranslate"><span class="pre">print</span></code> uten formattering<a class="headerlink" href="#printe-med-print-uten-formattering" title="Permalink to this heading">#</a></h2>
+<p>La oss tenke oss at vi har variabelene</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen 2*x - 1 = 0.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="n">litta_melding</span> <span class="o">=</span> <span class="s2">&quot;En liten oppmuntring til deg som lærer deg Python. Dette får du til!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan skrive ut verdiene til variabelen ved å bruke <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1/2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">litta_melding</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>En liten oppmuntring til deg som lærer deg Python. Dette får du til!
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="eksempel-2-lose-en-andregradslikning">
-<h3>Eksempel 2: Løse en andregradslikning<a class="headerlink" href="#eksempel-2-lose-en-andregradslikning" title="Permalink to this heading">#</a></h3>
-<p>La oss se på hvordan vi kan løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-x^2 + x - 2 = 0,
-\]</div>
-<p>ved å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Vi kan løse denne likningen for hånd ved å faktorisere venstresiden av likningen, og da finner vi at <span class="math notranslate nohighlight">\(x = -2\)</span> eller <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
-<p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>, må vi identifiere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er her, og det er <span class="math notranslate nohighlight">\(f(x) = x^2 + x - 2\)</span>. Vi kan derfor skrive</p>
+<section id="print-funksjonen-med-f-string-formattering">
+<h2><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering<a class="headerlink" href="#print-funksjonen-med-f-string-formattering" title="Permalink to this heading">#</a></h2>
+<p>Vi kan også bruke <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen til å printe ut tekststrenger og variabler sammen. Dette gjør vi ved å bruke en <code class="docutils literal notranslate"><span class="pre">f</span></code>-string. Dette er rett og slett en tekststreng <code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code> der vi plasserer en <code class="docutils literal notranslate"><span class="pre">f</span></code> <strong>før</strong> strengen start. Det vil si, den vil se slik ut <code class="docutils literal notranslate"><span class="pre">f&quot;...&quot;</span></code>. I seg selv vil ikke dette gjøre noe spesielt, men det er først når vi plasserer en variabel inn i strengen med krøllparenteser rundt, som <code class="docutils literal notranslate"><span class="pre">f&quot;{varabel}&quot;</span></code> at noe spesielt vil skje.</p>
+<p>La oss se på noen eksempler:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 + x - 2 = 0.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-2, 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">litta_melding</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>En liten oppmuntring til deg som lærer deg Python. Dette får du til!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Så dette ga akkurat de samme resultatene som når vi bare brukte <code class="docutils literal notranslate"><span class="pre">print(variabel)</span></code> direkte. Men nytteverdien kommer når vi bruker <code class="docutils literal notranslate"><span class="pre">print(f&quot;{variabel</span> <span class="pre">=</span> <span class="pre">}&quot;)</span></code>. Da vil vi nemlig får følgende utskrift:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r = -1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">litta_melding</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>litta_melding = &#39;En liten oppmuntring til deg som lærer deg Python. Dette får du til!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Siden vi nå automatisk legger inn variabelnavnet og en likhet, kan vi like gjerne skrive det ut alt på samme tid:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">litta_melding</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1
+r = -1.0
+litta_melding = &#39;En liten oppmuntring til deg som lærer deg Python. Dette får du til!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eller vi kan skrive de ut alle samme i samme <code class="docutils literal notranslate"><span class="pre">print</span></code>-kall:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">litta_melding</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1 ; r = -1.0 ; litta_melding = &#39;En liten oppmuntring til deg som lærer deg Python. Dette får du til!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uansett hvordan vi velger å gjøre det, får vi en mye større evne til å formattere utskriften vår!</p>
+</section>
+<section id="bruke-print-med-f-string-formattering-for-a-printe-ut-med-valgfritt-antall-desimaler">
+<h2>Bruke <code class="docutils literal notranslate"><span class="pre">print</span></code> med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering for å printe ut med valgfritt antall desimaler<a class="headerlink" href="#bruke-print-med-f-string-formattering-for-a-printe-ut-med-valgfritt-antall-desimaler" title="Permalink to this heading">#</a></h2>
+<p>I mange tilfeller er det ikke ønskelig at vi printer ut verdien til en variabel etter en beregning med 16 desimaler. Ofte er vi mer interessert i de 2, 3 kanskje 4 første. Da kan man man for eksempel utvide <code class="docutils literal notranslate"><span class="pre">f</span></code>-strengen med</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">variabel</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>for å få 4 desimaler. Det er altså bare å legge til <code class="docutils literal notranslate"><span class="pre">:.4f</span></code> etter variabelnavnet eller likhetstegnet. Her er noen eksempler:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.23456789</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 2 desimaler</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 4 desimaler</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= :</span><span class="s2">.10f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 10 desimaler</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1.23
+a = 1.2346
+a = 1.2345678900
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="eksempel-3-lose-en-tredjegradslikning">
-<h3>Eksempel 3: Løse en tredjegradslikning<a class="headerlink" href="#eksempel-3-lose-en-tredjegradslikning" title="Permalink to this heading">#</a></h3>
-<p>La oss se på et eksempel der vi skal løse en tredjegradslikning. Vi skal løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-x^3 + 2x^2 = x - 2.
-\]</div>
-<p>Første steg er å flytte alt over på venstresiden, slik at vi får en likning på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>. Da får vi</p>
-<div class="math notranslate nohighlight">
-\[
-x^3 - 2x^2 - x + 2 = 0,
-\]</div>
-<p>så vi kan sette <span class="math notranslate nohighlight">\(f(x) = x^3 - 2x^2 - x + 2\)</span> i tråd med det vi har gjort tidligere. For å løse likningen skriver vi derfor koden:</p>
+<section id="legge-til-ekstra-tekst-med-f-string-formattering">
+<h2>Legge til ekstra tekst med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering<a class="headerlink" href="#legge-til-ekstra-tekst-med-f-string-formattering" title="Permalink to this heading">#</a></h2>
+<p>Vi kan også legge til ekstra tekst i <code class="docutils literal notranslate"><span class="pre">f</span></code>-strengen. Dette gjør vi ved å skrive teksten vi ønsker å legge til i <code class="docutils literal notranslate"><span class="pre">f</span></code>-strengen. La oss se på et eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> før vi gang med 3&quot;</span><span class="p">)</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**3 - 2*x**2 - x + 2 = 0.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> etter vi gang med 3&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1, 1, 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1 før vi gang med 3
+a = 3 etter vi gang med 3
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="eksempel-4-likning-med-transcendentale-funksjoner">
-<h3>Eksempel 4: Likning med transcendentale funksjoner<a class="headerlink" href="#eksempel-4-likning-med-transcendentale-funksjoner" title="Permalink to this heading">#</a></h3>
-<p>La oss se på et eksempel der vi ønsker å finne nullpunktet til likningen</p>
-<div class="math notranslate nohighlight">
-\[
-e^x + 2x = 0.
-\]</div>
-<p>Her finnes det ingen analytisk løsning. Noen ganger uttrykkes svaret ved hjelp av spesielle funksjoner som vi ikke kjenner til i videregående skole. Som eksempel under:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-LambertW(1/2)]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dette er riktig svar, men forteller oss ikke stort. Vi kan likevel få et tilnærmet svar ved å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> ved å legge inn en <code class="docutils literal notranslate"><span class="pre">float</span></code> i likningen. I stedet for at vi skriver likningen som <code class="docutils literal notranslate"><span class="pre">sp.exp(x)</span> <span class="pre">+</span> <span class="pre">2*x</span></code>, skriver vi den som <code class="docutils literal notranslate"><span class="pre">sp.exp(x)</span> <span class="pre">+</span> <span class="pre">2.0*x</span></code>. Da vil <code class="docutils literal notranslate"><span class="pre">sympy</span></code> behandle <code class="docutils literal notranslate"><span class="pre">2.0</span></code> som et flyttall, og ikke som et heltall. Gjør vi dette får vi:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen exp(x) + 2*x = 0.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.351733711249196]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Nå fikk vi et tallsvar vi kan tolke!</p>
-</section>
 </section>
 <section id="ovingsoppgaver">
 <h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-3x - 2 = 0.
-\]</div>
-<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen til å skrive ut verdien til variabelene under:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="n">melding</span> <span class="o">=</span> <span class="s2">&quot;Til alle reisende. Plattform 3 er forsinket med 10 minutter.&quot;</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NotImplemented
+</div>
+<p><em>Du kan bruke kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Print ut verden til `c`</span>
+<span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Print ut verden til `d`</span>
+<span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Print ut verden til `melding`</span>
 </pre></div>
 </div>
 </div>
@@ -669,42 +727,35 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen 3*x - 2 = 0 for x.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2/3]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2.0</span>
+<span class="go">12</span>
+<span class="go">Til alle reisende. Plattform 3 er forsinket med 10 minutter.</span>
 </pre></div>
 </div>
-<p class="sd-card-text">Løsningen av likningen er altså <span class="math notranslate nohighlight">\(x = \frac{3}{2}\)</span></p>
 </div>
 </details></section>
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-x^2 - 3x + 2 = 0.
-\]</div>
-<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering til å printe ut variabelene</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">melding_til_reisende</span> <span class="o">=</span> <span class="s2">&quot;Nok en melding til de reisende. Plattform 3 er forsinket med 10 minutter. Vi beklager.&quot;</span>
+<span class="n">antall_som_venter</span> <span class="o">=</span> <span class="mi">58</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NotImplemented
+</div>
+<p><em>Du kan bruke kodeskallet under for å løse oppgaven. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">NotImplemented</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Print ut verden til `melding_til_reisende`</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">NotImplemented</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Print ut verden til `antall_som_venter`&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -716,42 +767,31 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 - 3*x + 2 = 0 for x.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">melding_til_reisende</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">antall_som_venter</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1, 2]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">melding_til_reisende = &#39;Nok en melding til de reisende. Plattform 3 er forsinket med 10 minutter. Vi beklager.&#39;</span>
+<span class="go">antall_som_venter = 58</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 1\)</span> eller <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
 </div>
 </details></section>
 <section id="oppgave-3">
 <h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
-<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-x^3 - 13x^2 + 52x - 60 = 0.
-\]</div>
-<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering til å printe ut variabelen <code class="docutils literal notranslate"><span class="pre">res</span></code> med 2 desimaler.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag et symbol for `x`</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="o">-</span><span class="mf">20.3047473838</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 5, 6]
+</div>
+<p><em>Du kan bruke kodeskallet under til å løse oppgaven. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -763,19 +803,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># Lager et symbol x for sympy.</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">52</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">60</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x^3 - 2x^2 + x - 6 = 0</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2, 5, 6]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">res = -20.30</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 2\)</span> eller <span class="math notranslate nohighlight">\(x = 5\)</span> eller <span class="math notranslate nohighlight">\(x = 6\)</span>.</p>
 </div>
 </details></section>
 </section>
@@ -794,7 +828,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/python/symbolsk_python"
+            path: "./book/python/IO"
         },
         predefinedOutput: true
     }
@@ -813,20 +847,20 @@ Løsningsforslag<div class="sd-summary-down docutils">
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="../containers/lists.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Symbolsk Programmering med Python</p>
+        <p class="prev-next-title">Lister</p>
       </div>
     </a>
     <a class="right-next"
-       href="likningsystemer.html"
+       href="../funksjoner/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
+        <p class="prev-next-title">Funksjoner i Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -848,13 +882,10 @@ Løsningsforslag<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-med-en-ukjent">Likninger med én ukjent</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-transcendentale-funksjoner">Eksempel 4: Likning med transcendentale funksjoner</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printe-med-print-uten-formattering">Printe med <code class="docutils literal notranslate"><span class="pre">print</span></code> uten formattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-funksjonen-med-f-string-formattering"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bruke-print-med-f-string-formattering-for-a-printe-ut-med-valgfritt-antall-desimaler">Bruke <code class="docutils literal notranslate"><span class="pre">print</span></code> med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering for å printe ut med valgfritt antall desimaler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-ekstra-tekst-med-f-string-formattering">Legge til ekstra tekst med <code class="docutils literal notranslate"><span class="pre">f</span></code>-string formattering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
