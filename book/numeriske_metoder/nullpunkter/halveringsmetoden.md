@@ -23,11 +23,12 @@ Animasjon av halveringsmetoden. Hentet fra [Wikimedia Commons](https://upload.wi
 
 
 
-```{prf:algorithm} Halveringsmetoden
+<!-- ```{prf:algorithm} Halveringsmetoden
 :label: halveringsmetoden
-**Input:** En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
 
-**Output:** Et tilnærming til et nullpunkt til $f$.
+__Input__: En funksjon $f(x)$, et intervall $[a, b]$ der vi vet at nullpunktet ligger, og en toleranse $\epsilon$.
+
+__Output__: Et tilnærming til et nullpunkt til $f$.
 
 1. Sjekk at $f(a) \cdot f(b) < 0$. Hvis ikke, avslutt algoritmen.
 2. Regn ut midtpunktet $c = (a + b) / 2$.
@@ -36,7 +37,7 @@ Animasjon av halveringsmetoden. Hentet fra [Wikimedia Commons](https://upload.wi
     2. Hvis ikke, sett $a = c$.
     3. Regn ut midtpunktet $c = (a + b) / 2$.
 4. Returner $c$.
-```
+``` -->
 
 
 ## Eksempel: Finne nullpunktene til en andregradsfunksjon med halveringsmetoden 
@@ -68,6 +69,6 @@ Prøv å bruke løsningen din til å finne det *andre* nullpunktet også ved å 
 :class: warning, dropdown
 
 1. Halveringsmetoden er en *iterativ* algoritme. Det vil si at den gjentar en prosess flere ganger. I praksis betyr dette at vi må velge et maksimalt antall iterasjoner. Hvis vi ikke gjør det, kan algoritmen potensielt kjøre i all evighet. Dette er en svakhet ved halveringsmetoden, og vi må derfor være forsiktige med å bruke den. 
-2. Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. Dette erfarte vi [eksempel 2](#Eksempel-2:-Finne-nullpunktene-til-en-andregradsfunksjon-med-halveringsmetoden).
+2. Halveringsmetoden klarer bare å finne ett nullpunkt av gangen. Har en funksjon flere nullpunkter, må vi derfor bruke den flere ganger. 
 3. Algoritmen krever også at vi har litt kjennskap til funksjonen vi skal finne nullpunktet til. Vi må vite at nullpunktet ligger i et intervall $[a, b]$. Dette kan være vanskelig å vite på forhånd, og må alltid sjekkes.
 ```

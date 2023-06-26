@@ -40,6 +40,7 @@ Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Al
 
 ```{prf:algorithm} Newtons metode
 :label: newtonsmetode
+
 **Input:** En funksjon $f(x)$, den deriverte $f'(x)$, et startpunkt $x_0$ og en toleranse $\epsilon$.
 
 **Output:** Et tilnærmet nullpunkt $x$.
