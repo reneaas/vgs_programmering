@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Iterasjon &#8212; Programmering i Videregående Skole</title>
+    <title>if-else tester &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,11 +64,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/iterasjon/intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/if_else/if_else';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="while-løkker" href="while_loops.html" />
-    <link rel="prev" title="if-else tester" href="../if_else/if_else.html" />
+    <link rel="next" title="Iterasjon" href="../iterasjon/intro.html" />
+    <link rel="prev" title="print-funksjonen for å skrive ut resultateter" href="../IO/print.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,10 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../IO/print.html"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Løkker</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../iterasjon/intro.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../containers/lists.html">Lister</a></li>
@@ -266,6 +268,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/if_else/if_else.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -291,7 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/iterasjon/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/if_else/if_else.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +372,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/python/iterasjon/intro.md" target="_blank"
+      <li><a href="../../../_sources/book/python/if_else/if_else.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +382,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -390,7 +441,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -401,11 +454,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Iterasjon</h1>
+    <h1>if-else tester</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkle-if-else-tester">Enkle <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave">Underveisoppgave</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -415,16 +479,153 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="iterasjon">
-<h1>Iterasjon<a class="headerlink" href="#iterasjon" title="Permalink to this heading">#</a></h1>
-<p><em>Iterasjon</em> handler om å gjenta en handling eller instruks flere ganger. Dette er et sentralt verktøy verktøy i programmering som gjør at vi kan løse mange problemer på en elegant måte. Det finnes to typer iterasjon:</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="while_loops.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</span></a></p></li>
-<li><p><a class="reference internal" href="for_loops.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">for</span></code>-loops</span></a></p></li>
-</ol>
-<p>Vi kaller de ofte bare for <em>løkker</em> (engelsk: <em>loops</em>) for vi gjentar noe flere ganger.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="if-else-tester">
+<h1><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester<a class="headerlink" href="#if-else-tester" title="Permalink to this heading">#</a></h1>
+<p>Et sentralt verktøy i programmering er <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester. De lar oss kjøre deler av programmet hvis en betingelse er oppfylt, og kjøre en annen hvis den ikke er det.</p>
+<section id="enkle-if-else-tester">
+<h2>Enkle <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester<a class="headerlink" href="#enkle-if-else-tester" title="Permalink to this heading">#</a></h2>
+<p>En <em>enkel</em> <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> test vil har formen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Kjør denne koden hvis betingelse er True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Kjør denne koden hvis betingelse er False</span>
+</pre></div>
 </div>
+<p>La oss se på et eksempel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null
+</pre></div>
+</div>
+</div>
+</div>
+<p>Det kan hende du reagerer på at det ikke står <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span> <span class="pre">is</span> <span class="pre">True</span></code> i stedet for bare <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>. Vel, vi kan skrive det:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er mindre enn null
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+/var/folders/qn/k22_3xrj3yg85dktk2y1gm2h0000gn/T/ipykernel_20940/1849004886.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if a &gt;= 0 is True:
+</pre></div>
+</div>
+</div>
+</div>
+<p>Men dette gir en <code class="docutils literal notranslate"><span class="pre">SyntaxWarning</span></code>, det vil si et varsel på at vi ikke følger riktig skrive måte. Dette skylder i bunn og grunn at hvis <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>. Sannheten er at hvis vi plasserer <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> i en parentes, så får vi ingen slik advarsel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null
+</pre></div>
+</div>
+</div>
+</div>
+<p>Det vi kan lære av dette er at <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>. Derfor er det ikke nødvendig å skrive <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span> <span class="pre">is</span> <span class="pre">True</span></code>, i stedet er det tilstrekkelig å skrive</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null
+</pre></div>
+</div>
+</div>
+</div>
+<p>Konklusjonen er at en enklere måte å skrive det hele på, hvertfall når vi driver med matematiske betingelser som at <span class="math notranslate nohighlight">\(a \geq 0\)</span>, så kan vi bare skrive</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse</span><span class="p">:</span>
+    <span class="c1"># Kjør denne koden hvis betingelse er True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Kjør denne koden hvis betingelse er False</span>
+</pre></div>
+</div>
+<p>La oss se på et eksempel der betingelsen evalueres til <code class="docutils literal notranslate"><span class="pre">False</span></code> i stedet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null eller lik null&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null eller lik null
+</pre></div>
+</div>
+</div>
+</div>
+<p>Her var betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> som ikke er sant siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>. Med andre ord er betingelsen <code class="docutils literal notranslate"><span class="pre">False</span></code>, som er grunnen til at blokken som etterfølger <code class="docutils literal notranslate"><span class="pre">else</span></code> er den som kjøres. Vi kan bekrefte at <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> faktisk er lik <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<section id="underveisoppgave">
+<h3>Underveisoppgave<a class="headerlink" href="#underveisoppgave" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi har koden</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bruttolønn</span> <span class="o">=</span> <span class="mi">4000</span>
+<span class="n">skatt</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># Skatt i prosent</span>
+<span class="n">nettolønn</span> <span class="o">=</span> <span class="n">bruttolønn</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">skatt</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nettolønn</span> <span class="o">&gt;</span> <span class="mi">3000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du tjener mer enn 3000 kr i måneden&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du tjener mindre enn 3000 kr i måneden&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hva blir utskriften av denne koden?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">nettolønn</span></code> vil være lik <code class="docutils literal notranslate"><span class="pre">3400</span></code>, som er større enn <code class="docutils literal notranslate"><span class="pre">3000</span></code>. Derfor vil utskriften være</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Du tjener mer enn 3000 kr i måneden</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -440,7 +641,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/python/iterasjon"
+            path: "./book/python/if_else"
         },
         predefinedOutput: true
     }
@@ -459,20 +660,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../if_else/if_else.html"
+       href="../IO/print.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</p>
       </div>
     </a>
     <a class="right-next"
-       href="while_loops.html"
+       href="../iterasjon/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</p>
+        <p class="prev-next-title">Iterasjon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -485,6 +686,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkle-if-else-tester">Enkle <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave">Underveisoppgave</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

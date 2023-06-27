@@ -163,6 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../IO/print.html"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../iterasjon/intro.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
@@ -491,7 +492,7 @@ document.write(`
 <li><p>Noen er tungvinte å bruke fordi vi må sende inn mange argumenter, men bare én av dem varierer fra gang til gang, mens de andre er de samme hver gang.</p></li>
 <li><p>Noen funksjoner er ikke fleksible for gjenbruk eller tilpasning til nye behov, men er spesialisert for ett spesifikt problem.</p></li>
 </ul>
-<p>Vi skal se på en måte å skrive funksjoner på som løser disse problemene, og som er mer i tråd med hvordan profesjonelle programmerere skriver funksjoner. Blant annet er det vanlig å skrive funksjoner på denne måten i prosjekter drevet av Google DeepMind, en av de fremste forskningsgruppene innen utvikling av kunstig intelligens.</p>
+<p>Vi skal se på en måte å skrive funksjoner på som løser disse problemene, og som er mer i tråd med hvordan profesjonelle programmerere skriver funksjoner. Blant annet er det vanlig å skrive funksjoner på denne måten i prosjekter drevet av Google DeepMind, en av de fremste forskningsgruppene innen utvikling av kunstig intelligens. <em>What? Bruker de Python også? You betcha.</em></p>
 <section id="funksjoner-som-lager-funksjoner">
 <h2>Funksjoner som <em>lager</em> funksjoner<a class="headerlink" href="#funksjoner-som-lager-funksjoner" title="Permalink to this heading">#</a></h2>
 <p>For å gjøre funksjoner enda mer slagkraftige, fleksible og brukervennlige, er det vanlig å bruker funksjoner som lager funksjoner. For å få en forståelse av hva dette vil si, skal vi se på noen eksempler som viser hvor nyttig denne programmeringsstilen er.</p>
@@ -522,6 +523,7 @@ f(x) = ax^2 + bx + c.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_andregradsfunksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">andregradsfunksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+    
     <span class="k">return</span> <span class="n">andregradsfunksjon</span>
 </pre></div>
 </div>
@@ -587,6 +589,7 @@ g(x=-1) = 0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_derivert</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+    
     <span class="k">return</span> <span class="n">dfdx</span>
 </pre></div>
 </div>
@@ -658,6 +661,7 @@ g(x) = 2x + 1,
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_lineær_funksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">lineær_funksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">NotImplemented</span>
+    
     <span class="k">return</span> <span class="n">lineær_funksjon</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag funksjonen for g her.</span>
@@ -677,6 +681,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_lineær_funksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">lineær_funksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+        
     <span class="k">return</span> <span class="n">lineær_funksjon</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="n">lag_lineær_funksjon</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -705,6 +710,7 @@ r(x) = x^3 - 2x^2 + 3x - 4,
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_tredjegradsfunksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">tredjegradsfunksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">NotImplemented</span>
+    
     <span class="k">return</span> <span class="n">tredjegradsfunksjon</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag funksjonen for r her.</span>
@@ -724,6 +730,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_tredjegradsfunksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">tredjegradsfunksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span>
+        
     <span class="k">return</span> <span class="n">tredjegradsfunksjon</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">lag_tredjegradsfunksjon</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">d</span><span class="o">=-</span><span class="mi">4</span><span class="p">)</span>
