@@ -468,11 +468,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjoner-som-lager-funksjoner">Funksjoner som <em>lager</em> funksjoner</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-andregradsfunksjoner">Eksempel 1: Andregradsfunksjoner</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lage-en-funksjon-for-den-deriverte-av-en-funksjon">Eksempel 2: Lage en funksjon for den deriverte av en funksjon</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1">Øvingsoppgave 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2">Øvingsoppgave 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1">Øvingsoppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2">Øvingsoppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
@@ -496,7 +497,7 @@ document.write(`
 <p>Vi skal se på en måte å skrive funksjoner på som løser disse problemene, og som er mer i tråd med hvordan profesjonelle programmerere skriver funksjoner. Blant annet er det vanlig å skrive funksjoner på denne måten i prosjekter drevet av Google DeepMind, en av de fremste forskningsgruppene innen utvikling av kunstig intelligens. <em>What? Bruker de Python også? You betcha.</em></p>
 <section id="funksjoner-som-lager-funksjoner">
 <h2>Funksjoner som <em>lager</em> funksjoner<a class="headerlink" href="#funksjoner-som-lager-funksjoner" title="Permalink to this heading">#</a></h2>
-<p>For å gjøre funksjoner enda mer slagkraftige, fleksible og brukervennlige, er det vanlig å bruker funksjoner som lager funksjoner. For å få en forståelse av hva dette vil si, skal vi se på noen eksempler som viser hvor nyttig denne programmeringsstilen er.</p>
+<p>For å gjøre funksjoner enda mer slagkraftige, fleksible og brukervennlige, er det vanlig å bruke funksjoner som lager funksjoner. For å få en forståelse av hva dette vil si, skal vi se på noen eksempler som viser hvor nyttig denne programmeringsstilen er.</p>
 <section id="eksempel-1-andregradsfunksjoner">
 <h3>Eksempel 1: Andregradsfunksjoner<a class="headerlink" href="#eksempel-1-andregradsfunksjoner" title="Permalink to this heading">#</a></h3>
 <p>Se for deg at vi ønsker å lage en Pythonfunksjon for andregradsfunksjonen</p>
@@ -508,7 +509,7 @@ f(x) = 2x^2 - 3x + 1.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -523,7 +524,7 @@ f(x) = ax^2 + bx + c.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_andregradsfunksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">andregradsfunksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
     
     <span class="k">return</span> <span class="n">andregradsfunksjon</span>
 </pre></div>
@@ -605,7 +606,7 @@ f(x) = x^2 + 2x - 1.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="n">dfdx</span> <span class="o">=</span> <span class="n">lag_derivert</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
 </pre></div>
@@ -639,12 +640,12 @@ dfdx(x=0) = 2.00
 </div>
 </div>
 </div>
-<p>Men før vi ser på flere eksempler, er det på tide med noen relevante øvingsoppgaver:</p>
+</section>
 </section>
 <section id="ovingsoppgaver">
-<h3>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h3>
+<h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
 <section id="ovingsoppgave-1">
-<h4>Øvingsoppgave 1<a class="headerlink" href="#ovingsoppgave-1" title="Permalink to this heading">#</a></h4>
+<h3>Øvingsoppgave 1<a class="headerlink" href="#ovingsoppgave-1" title="Permalink to this heading">#</a></h3>
 <p>Lag en funksjon som <em>lager</em> en funksjon for en vilkårlig lineær funksjon</p>
 <div class="math notranslate nohighlight">
 \[
@@ -681,7 +682,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_lineær_funksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">lineær_funksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
         
     <span class="k">return</span> <span class="n">lineær_funksjon</span>
 
@@ -693,7 +694,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="ovingsoppgave-2">
-<h4>Øvingsoppgave 2<a class="headerlink" href="#ovingsoppgave-2" title="Permalink to this heading">#</a></h4>
+<h3>Øvingsoppgave 2<a class="headerlink" href="#ovingsoppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Lag en funksjon som <em>lager</em> en funksjon for en vilkårlig tredjegradsfunksjon på formen</p>
 <div class="math notranslate nohighlight">
 \[
@@ -730,7 +731,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_tredjegradsfunksjon</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">tredjegradsfunksjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">d</span>
         
     <span class="k">return</span> <span class="n">tredjegradsfunksjon</span>
 
@@ -741,7 +742,69 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
-</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Lag en funksjon for den deriverte ved å bruke tilnærmingen til den deriverte ved</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) \approx \frac{f(x + h) - f(x - h)}{2h}.
+\]</div>
+<p>Bruk funksjonen til å regne ut en tilnærming til den deriverte av</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 + 2x - 1,
+\]</div>
+<p>i <span class="math notranslate nohighlight">\(x = 3\)</span> med <span class="math notranslate nohighlight">\(h = 0.001\)</span>.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">lag_derivert</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>
+    
+    <span class="k">return</span> <span class="n">dfdx</span>
+
+<span class="n">dfdx</span> <span class="o">=</span> <span class="n">lag_derivert</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dfdx</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut med 2 desimaler.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">En mulig måte å løse oppgaven på er slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">lag_derivert</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">)</span>
+        <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">dfdx</span>
+
+
+<span class="n">dfdx</span> <span class="o">=</span> <span class="n">lag_derivert</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dfdx(x=3) = 8.00</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -815,11 +878,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjoner-som-lager-funksjoner">Funksjoner som <em>lager</em> funksjoner</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-andregradsfunksjoner">Eksempel 1: Andregradsfunksjoner</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lage-en-funksjon-for-den-deriverte-av-en-funksjon">Eksempel 2: Lage en funksjon for den deriverte av en funksjon</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1">Øvingsoppgave 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2">Øvingsoppgave 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-1">Øvingsoppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-2">Øvingsoppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
