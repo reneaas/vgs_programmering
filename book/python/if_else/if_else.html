@@ -64,8 +64,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/if_else/if_else';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -177,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
 </ul>
@@ -465,9 +464,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkle-if-else-tester">Enkle <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave">Underveisoppgave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-1">Underveisoppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-2">Underveisoppgave 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mer-sammensatte-if-else-tester">Mer sammensatte <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
 </ul>
             </nav>
         </div>
@@ -485,125 +486,64 @@ document.write(`
 <section id="enkle-if-else-tester">
 <h2>Enkle <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester<a class="headerlink" href="#enkle-if-else-tester" title="Permalink to this heading">#</a></h2>
 <p>En <em>enkel</em> <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> test vil har formen</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="c1"># Kjør denne koden hvis betingelse er True</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># Kjør denne koden hvis betingelse er False</span>
-</pre></div>
-</div>
-<p>La oss se på et eksempel:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null
-</pre></div>
-</div>
-</div>
-</div>
-<p>Det kan hende du reagerer på at det ikke står <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span> <span class="pre">is</span> <span class="pre">True</span></code> i stedet for bare <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>. Vel, vi kan skrive det:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er mindre enn null
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-/var/folders/qn/k22_3xrj3yg85dktk2y1gm2h0000gn/T/ipykernel_20940/1849004886.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if a &gt;= 0 is True:
-</pre></div>
-</div>
-</div>
-</div>
-<p>Men dette gir en <code class="docutils literal notranslate"><span class="pre">SyntaxWarning</span></code>, det vil si et varsel på at vi ikke følger riktig skrive måte. Dette skylder i bunn og grunn at hvis <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>. Sannheten er at hvis vi plasserer <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> i en parentes, så får vi ingen slik advarsel:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null
-</pre></div>
-</div>
-</div>
-</div>
-<p>Det vi kan lære av dette er at <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>. Derfor er det ikke nødvendig å skrive <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span> <span class="pre">is</span> <span class="pre">True</span></code>, i stedet er det tilstrekkelig å skrive</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null
-</pre></div>
-</div>
-</div>
-</div>
-<p>Konklusjonen er at en enklere måte å skrive det hele på, hvertfall når vi driver med matematiske betingelser som at <span class="math notranslate nohighlight">\(a \geq 0\)</span>, så kan vi bare skrive</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse</span><span class="p">:</span>
     <span class="c1"># Kjør denne koden hvis betingelse er True</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Kjør denne koden hvis betingelse er False</span>
 </pre></div>
 </div>
-<p>La oss se på et eksempel der betingelsen evalueres til <code class="docutils literal notranslate"><span class="pre">False</span></code> i stedet.</p>
+<p>Vi kaller den første delen for <code class="docutils literal notranslate"><span class="pre">if</span></code>-<em>blokken</em> og den andre for <code class="docutils literal notranslate"><span class="pre">else</span></code>-<em>blokken</em>.</p>
+<p>La oss se på et eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er mindre enn null&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn eller lik null.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn null eller lik null&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er negativ eller null.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn null eller lik null
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a er større enn eller lik null.
 </pre></div>
 </div>
 </div>
 </div>
-<p>Her var betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> som ikke er sant siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>. Med andre ord er betingelsen <code class="docutils literal notranslate"><span class="pre">False</span></code>, som er grunnen til at blokken som etterfølger <code class="docutils literal notranslate"><span class="pre">else</span></code> er den som kjøres. Vi kan bekrefte at <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> faktisk er lik <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<p>Det vi kan lære av dette er at <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> er en <em>betingelse</em> som kan være <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code>. Hvis den er <code class="docutils literal notranslate"><span class="pre">True</span></code> kjører vi koden i den første blokken, hvis den er <code class="docutils literal notranslate"><span class="pre">False</span></code> kjører vi koden i den andre blokken. Her er <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, så <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code>, og vi får utskriften <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">er</span> <span class="pre">større</span> <span class="pre">enn</span> <span class="pre">eller</span> <span class="pre">lik</span> <span class="pre">null</span></code>.</p>
+<p>Vi kan printe ut betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> for å se at den faktisk evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
-<section id="underveisoppgave">
-<h3>Underveisoppgave<a class="headerlink" href="#underveisoppgave" title="Permalink to this heading">#</a></h3>
+<section id="underveisoppgave-1">
+<h3>Underveisoppgave 1<a class="headerlink" href="#underveisoppgave-1" title="Permalink to this heading">#</a></h3>
+<p>La oss si vi setter <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-1</span></code>. Hva blir da utskriften? Hvorfor?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Når <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-1</span></code>, vil betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> være <code class="docutils literal notranslate"><span class="pre">False</span></code>. Dermed vil <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken av koden kjøres, og vi får utskriften <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">er</span> <span class="pre">mindre</span> <span class="pre">enn</span> <span class="pre">null</span></code>.</p>
+</div>
+</details></section>
+<section id="underveisoppgave-2">
+<h3>Underveisoppgave 2<a class="headerlink" href="#underveisoppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Tenk deg at vi har koden</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bruttolønn</span> <span class="o">=</span> <span class="mi">4000</span>
 <span class="n">skatt</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># Skatt i prosent</span>
-<span class="n">nettolønn</span> <span class="o">=</span> <span class="n">bruttolønn</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">skatt</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">skatt</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">nettolønn</span> <span class="o">=</span> <span class="n">bruttolønn</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
 
 <span class="k">if</span> <span class="n">nettolønn</span> <span class="o">&gt;</span> <span class="mi">3000</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du tjener mer enn 3000 kr i måneden&quot;</span><span class="p">)</span>
@@ -625,6 +565,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
+</section>
+<section id="mer-sammensatte-if-else-tester">
+<h2>Mer sammensatte <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester<a class="headerlink" href="#mer-sammensatte-if-else-tester" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -696,9 +639,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkle-if-else-tester">Enkle <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave">Underveisoppgave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-1">Underveisoppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-2">Underveisoppgave 2</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mer-sammensatte-if-else-tester">Mer sammensatte <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
 </ul>
   </nav></div>
 
