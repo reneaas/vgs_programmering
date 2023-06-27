@@ -267,6 +267,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/numeriske_metoder/nullpunkter/newtons_metode.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -322,7 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/numeriske_metoder/nullpunkter/newtons_metode.md" target="_blank"
+      <li><a href="../../../_sources/book/numeriske_metoder/nullpunkter/newtons_metode.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -414,6 +463,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 </ul>
@@ -463,17 +517,17 @@ x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
 <div class="proof algorithm admonition" id="algo-newtonsmetode">
 <p class="admonition-title"><span class="caption-number">Algorithm 4 </span> (Newtons metode)</p>
 <section class="algorithm-content" id="proof-content">
-<p><strong>Input:</strong> En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span>, et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
-<p><strong>Output:</strong> Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<ol class="arabic simple">
+<p><strong>Input</strong>: En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span>, et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p><strong>Output</strong>: Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<ul class="simple">
 <li><p>Regn ut <span class="math notranslate nohighlight">\(x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}\)</span>.</p></li>
 <li><p>While <span class="math notranslate nohighlight">\(|f(x_i)| &gt; \epsilon\)</span>:</p>
-<ol class="arabic simple">
+<ul>
 <li><p>Regn ut <span class="math notranslate nohighlight">\(x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}\)</span>.</p></li>
-</ol>
+</ul>
 </li>
 <li><p>Returner <span class="math notranslate nohighlight">\(x_{i + 1}\)</span>.</p></li>
-</ol>
+</ul>
 </section>
 </div><div class="warning dropdown admonition">
 <p class="admonition-title">Svakheter med Newtons metode</p>
@@ -482,6 +536,98 @@ x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
 <li><p>Netwons metode, akkurat som halveringsmetoden, gir oss bare ett nullpunkt. Vi må derfor bruke den flere ganger hvis vi har en funksjon med flere nullpunkter.</p></li>
 </ol>
 </div>
+<section id="eksempler">
+<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-1">
+<h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
+<p>Vi skal finne et nullpunkt til funksjonen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 - 1. 
+\]</div>
+<p>Etter <a class="reference internal" href="#algo-newtonsmetode">Algorithm 4</a> trenger vi å kunne regne ut den deriverte til <span class="math notranslate nohighlight">\(f\)</span>, samt et stardpunkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan velge <span class="math notranslate nohighlight">\(x_0 = 10\)</span> og regne ut den deriverte til <span class="math notranslate nohighlight">\(f\)</span> ved å bruke regelen for den deriverte av en potensfunksjon. Vi får da at</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = 2x.
+\]</div>
+<p>En Pythonkode som implementerer <a class="reference internal" href="#algo-newtonsmetode">Algorithm 4</a> med denne funksjonen er da</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Startverdi</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># toleranse</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># maks antall iterasjoner</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjon så langt.</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">num_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunktet er </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> og ble funnet etter </span><span class="si">{</span><span class="n">num_iter</span><span class="si">}</span><span class="s2"> iterasjoner.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er 1.00 og ble funnet etter 7 iterasjoner.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksempel-2">
+<h3>Eksempel 2<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
+<p>I eksempel 1 fant vi et eksakt uttrykk for den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span>, men vi trenger strengt tatt bare å tilnærme den med numerisk derivasjon. Vi vil fortsatt ende opp med en svært god tilnærming til nullpunktet til <span class="math notranslate nohighlight">\(f(x)\)</span>. La oss benytte oss av dette i et nytt eksempel. Vi skal finne et nullpunkt til funksjonen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 - 2x + 1,
+\]</div>
+<p>der vi bruker en tilnærming til den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span> gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) \approx \frac{f(x + h) - f(x)}{h},
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(h\)</span> er et lite tall. For å gjøre det konkret, kan vi sette <span class="math notranslate nohighlight">\(h = 10^{-5}\)</span>.</p>
+<p>Følger vi <a class="reference internal" href="#algo-newtonsmetode">Algorithm 4</a> får vi følgende Pythonkode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-5</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">h</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Startverdi</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># toleranse</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># maks antall iterasjoner</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjon så langt.</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">num_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunktet er </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> og ble funnet etter </span><span class="si">{</span><span class="n">num_iter</span><span class="si">}</span><span class="s2"> iterasjoner.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er 1.00 og ble funnet etter 17 iterasjoner.
+</pre></div>
+</div>
+</div>
+</div>
+<p>som er riktig fordi <span class="math notranslate nohighlight">\(x^2 - 2x + 1 = (x-1)^2\)</span>, som betyr at det er det eneste nullpunktet til funksjonen. <em>Poeng: vi kan bruke Newtons metode ved å tilnærme den deriverte i stedet for å kjenne den eksakt og fortsatt få en god tilnærming til nullpunktet.</em></p>
+</section>
+</section>
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
@@ -491,9 +637,77 @@ x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
 \[
 f(x) = x^3 - 2x^2 - 5x + 6,
 \]</div>
-<p>ved å bruke Newtons metode. Bruk et startpunkt <span class="math notranslate nohighlight">\(x_0 = 2\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon = 10^{-8}\)</span>.
-Du kan bruke kodeblokken under. <em>Det ligger et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code> som du kan se på hvis du trenger hjelp.</em></p>
-<iframe src="https://trinket.io/embed/python/49b50912da" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+<p>ved å bruke Newtons metode. Bruk et startpunkt <span class="math notranslate nohighlight">\(x_0 = 2\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon = 10^{-8}\)</span>.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut funksjonsverdien til</span>
+<span class="sd">    f(x) = x^3 - 2x^2 - 5x + 6</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut f&#39;(x).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="n">tol</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Toleranse.</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi.</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Maks antall iterasjoner.</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjoner så langt</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunkt: </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut funksjonsverdien til</span>
+<span class="sd">    f(x) = x^3 - 2x^2 - 5x + 6</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut f&#39;(x).&quot;&quot;&quot;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-5</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="p">)</span> <span class="o">/</span> <span class="n">h</span>
+
+
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># Toleranse.</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Startverdi.</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">1_000_000</span> <span class="c1"># Maks antall iterasjoner.</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">num_iter</span> <span class="o">&lt;=</span> <span class="n">max_iter</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunkt: </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nullpunkt: -2.00</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -564,6 +778,11 @@ Du kan bruke kodeblokken under. <em>Det ligger et løsningsforslag i fanen <code
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 </ul>

@@ -801,20 +801,20 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="proof algorithm admonition" id="annuitetslaan">
 <p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Nedbetaling av lån)</p>
 <section class="algorithm-content" id="proof-content">
-<p><strong>Input</strong> Lånebeløp <span class="math notranslate nohighlight">\(L\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall år <span class="math notranslate nohighlight">\(n\)</span> og fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span>.</p>
-<p><strong>Output</strong> Antall år <span class="math notranslate nohighlight">\(t\)</span> det tar å nedbetale lånet.</p>
-<ol class="arabic simple">
+<p><strong>Input</strong>: Lånebeløp <span class="math notranslate nohighlight">\(L\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall år <span class="math notranslate nohighlight">\(n\)</span> og fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p><strong>Output</strong>: Antall år <span class="math notranslate nohighlight">\(t\)</span> det tar å nedbetale lånet.</p>
+<ul class="simple">
 <li><p>Regn ut vekstfaktoren <span class="math notranslate nohighlight">\(V \gets 1 + r/100\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(t = 0\)</span> <em>(tiden i år)</em></p></li>
 <li><p>While <span class="math notranslate nohighlight">\(L \geq 0\)</span>:</p>
-<ol class="arabic simple">
+<ul>
 <li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L \cdot V\)</span> (renter legges til).</p></li>
 <li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L - T\)</span> (terminbeløp trekkes fra).</p></li>
 <li><p><span class="math notranslate nohighlight">\(t \gets t + 1\)</span> <em>(øker antall år som har gått med 1)</em></p></li>
-</ol>
+</ul>
 </li>
 <li><p>Returner antall år <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
-</ol>
+</ul>
 </section>
 </div><p>Skriv en kode som implementerer algoritmen over og finn ut hvor mange år det tar å nedbetale lånet dersom du setter terminbeløpet til 75 000 kr.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn delene der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du kan fritt legge til linjer med kode du trenger, og fjerne linjer du ikke trenger.</em></p>

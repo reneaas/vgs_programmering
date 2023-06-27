@@ -499,18 +499,18 @@ document.write(`
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Daglig dose <span class="math notranslate nohighlight">\(M_0\)</span>, nedbrytning i prosent per time <span class="math notranslate nohighlight">\(r\)</span>, antall døgn <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>Output</strong>: Mengde virkestoff i kroppen <span class="math notranslate nohighlight">\(M\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> døgn.</p>
-<ol class="arabic simple">
+<ul class="simple">
 <li><p>Sett <span class="math notranslate nohighlight">\(M = M_0\)</span></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(V = 1 - r/100\)</span></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(k = V^{24}\)</span></p></li>
 <li><p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
-<ol class="arabic simple">
+<ul>
 <li><p>Sett <span class="math notranslate nohighlight">\(M = k \cdot M\)</span> <em>(Nedbrytning av virkestoff)</em></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(M = M + M_0\)</span>  <em>(Ny dose)</em></p></li>
-</ol>
+</ul>
 </li>
 <li><p>Returner <span class="math notranslate nohighlight">\(M\)</span></p></li>
-</ol>
+</ul>
 </section>
 </div><p>Vi kan implementere algoritmen med en Pythonkode slik:</p>
 <div class="cell docutils container">
@@ -547,25 +547,25 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Dose <span class="math notranslate nohighlight">\(M_0\)</span> hver 6.time, nedbrytning i prosent per time <span class="math notranslate nohighlight">\(r\)</span>, antall døgn <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>Output</strong>: Mengde virkestoff i kroppen <span class="math notranslate nohighlight">\(M\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> døgn.</p>
-<ol class="arabic simple">
+<ul class="simple">
 <li><p>Sett <span class="math notranslate nohighlight">\(M = M_0\)</span></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(V = 1 - r/100\)</span></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(k = V^6\)</span> <em>(Vekstfaktor for nedbrytning per 6.time)</em></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(M = M_0\)</span> <em>(Første dose)</em></p></li>
 <li><p>Sett <span class="math notranslate nohighlight">\(M_\text{max} = M\)</span> <em>(Høyeste dose så langt)</em>.</p></li>
 <li><p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
-<ol class="arabic simple">
+<ul>
 <li><p>Sett <span class="math notranslate nohighlight">\(M = k \cdot M\)</span> <em>(Nedbrytning av virkestoff)</em></p></li>
 <li><p>Sett $M = M + M_0#  <em>(Ny dose)</em></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(M &gt; M_\text{max}\)</span>: <em>(Hvis dosen er nå høyere enn forrige maksdose)</em></p>
-<ul class="simple">
+<ul>
 <li><p>Sett <span class="math notranslate nohighlight">\(M_\text{max} = M\)</span> <em>(Sett ny maksdose)</em></p></li>
 </ul>
 </li>
-</ol>
+</ul>
 </li>
 <li><p>Returner <span class="math notranslate nohighlight">\(M_\text{max}\)</span></p></li>
-</ol>
+</ul>
 </section>
 </div><p>Vi kan regne ut dette med følgende kode:</p>
 <div class="cell docutils container">

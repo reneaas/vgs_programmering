@@ -505,18 +505,18 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math no
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der vi vet at nullpunktet ligger, og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 <p><strong>Output</strong>: Et tilnærming til et nullpunkt til <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<ol class="arabic simple">
+<ul class="simple">
 <li><p>Sjekk at <span class="math notranslate nohighlight">\(f(a) \cdot f(b) &lt; 0\)</span>. Hvis ikke, avslutt algoritmen.</p></li>
 <li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(c = (a + b) / 2\)</span>.</p></li>
 <li><p>While <span class="math notranslate nohighlight">\(|f(c)| &gt; \epsilon\)</span>:</p>
-<ol class="arabic simple">
+<ul>
 <li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(c) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = c\)</span>.</p></li>
 <li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = c\)</span>.</p></li>
 <li><p>Regn ut midtpunktet <span class="math notranslate nohighlight">\(c = (a + b) / 2\)</span>.</p></li>
-</ol>
+</ul>
 </li>
 <li><p>Returner <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
-</ol>
+</ul>
 </section>
 </div><section id="eksempler">
 <h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
