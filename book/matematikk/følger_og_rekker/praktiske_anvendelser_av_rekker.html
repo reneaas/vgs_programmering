@@ -66,10 +66,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/numeriske_metoder/følger_og_rekker/praktiske_anvendelser_av_rekker';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/følger_og_rekker/praktiske_anvendelser_av_rekker';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Elastiske kollisjoner som en \(\pi\)-fabrikk" href="../../fysikk/pi_fabrikken.html" />
+    <link rel="next" title="Følger og rekker med rekursive funksjoner" href="rekursive_funksjoner.html" />
     <link rel="prev" title="Intro til følger og rekker med Python" href="sequences.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,6 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Følger og Rekker</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sequences.html">Intro til følger og rekker med Python</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Praktiske Anvendelser av Rekker med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
 </ul>
@@ -277,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/numeriske_metoder/følger_og_rekker/praktiske_anvendelser_av_rekker.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/matematikk/følger_og_rekker/praktiske_anvendelser_av_rekker.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +344,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/numeriske_metoder/følger_og_rekker/praktiske_anvendelser_av_rekker.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/matematikk/følger_og_rekker/praktiske_anvendelser_av_rekker.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/numeriske_metoder/følger_og_rekker/praktiske_anvendelser_av_rekker.ipynb" target="_blank"
+      <li><a href="../../../_sources/book/matematikk/følger_og_rekker/praktiske_anvendelser_av_rekker.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -470,6 +471,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-en-dose-av-paracet-hver-6-time">Eksempel 2: En dose av paracet hver 6.time</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nedbetaling-av-lan">Nedbetaling av lån</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-finne-restlan-etter-n-terminer">Eksempel 1: Finne restlån etter <span class="math notranslate nohighlight">\(n\)</span> terminer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-finne-terminbelop-for-a-betale-ned-lanet-pa-10-ar">Eksempel 2: Finne terminbeløp for å betale ned lånet på 10 år</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -558,7 +568,7 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 <li><p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
 <ul>
 <li><p>Sett <span class="math notranslate nohighlight">\(M = k \cdot M\)</span> <em>(Nedbrytning av virkestoff)</em></p></li>
-<li><p>Sett $M = M + M_0#  <em>(Ny dose)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(M = M + M_0\)</span>  <em>(Ny dose)</em></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(M &gt; M_\text{max}\)</span>: <em>(Hvis dosen er nå høyere enn forrige maksdose)</em></p>
 <ul>
 <li><p>Sett <span class="math notranslate nohighlight">\(M_\text{max} = M\)</span> <em>(Sett ny maksdose)</em></p></li>
@@ -597,6 +607,207 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 </div>
 </section>
 </section>
+<section id="nedbetaling-av-lan">
+<h2>Nedbetaling av lån<a class="headerlink" href="#nedbetaling-av-lan" title="Permalink to this heading">#</a></h2>
+<p>En annen typisk anvendelse av rekker er nedbetaling av lån. Vi kan formulere en algoritme for dette som vises i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 9</a>.</p>
+<div class="proof algorithm admonition" id="algo-annuitetslaan">
+<p class="admonition-title"><span class="caption-number">Algorithm 9 </span> (Nedbetaling av lån)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input</strong>: Lånebeløp <span class="math notranslate nohighlight">\(L_0\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall terminer <span class="math notranslate nohighlight">\(n\)</span>, terminbeløp <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><strong>Output</strong>: Gjenstående lån <span class="math notranslate nohighlight">\(L_0\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> terminer.</p>
+<ul class="simple">
+<li><p>Sett <span class="math notranslate nohighlight">\(L = L_0\)</span></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(V = 1 + r/100\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
+<ul>
+<li><p>Sett <span class="math notranslate nohighlight">\(L = L\cdot V\)</span> <em>(Lånet øker med renten)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(L = L - x\)</span> <em>(Lånet reduseres med terminbeløpet)</em></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> <span class="math notranslate nohighlight">\(L\)</span> <em>(Gjenstående lån)</em></p></li>
+</ul>
+</section>
+</div><p>Målet vårt er å se på hvordan vi kan bestemme hvilket terminbeløp vi skal betale ved å bruke <a class="reference internal" href="#algo-annuitetslaan">Algorithm 9</a>. Vi kan gjøre dette ved å løse likningen <span class="math notranslate nohighlight">\(L = 0\)</span> for <span class="math notranslate nohighlight">\(x\)</span>. Og selv om vi har sett på effektive metoder for å gjøre dette i <a class="reference internal" href="../nullpunkter/intro.html"><span class="doc std std-doc">Finne nullpunkter numerisk</span></a>, så skal vi først se på et eksempel der vi har en <em>naiv</em> implementasjon av algoritmen.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">En naiv algoritme, hva er det?</p>
+<p>En <em>naiv</em> algoritme er en løser problemet med <em>brute force</em>, og vil løse problemet, men er ikke spesielt effektiv og vil ofte være ganske treig.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Sammenheng mellom algoritmen og summeformler for rekker anvendt på annuitetslån</p>
+<p>Hvis vi følger algoritmen her og antar av vi skal betale ned lånet på <span class="math notranslate nohighlight">\(n\)</span> terminer, så vil vi få følgende sammenhenger:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+L_1 &amp; = L_0V - x, \\
+L_2 &amp; = L_1V - x = L_0V^2 - xV - x, \\
+L_3 &amp; = L_2V - x = L_0V^3 - xV^2 - xV - x, \\
+\vdots &amp; \qquad \qquad \qquad \vdots \qquad \qquad \qquad  \vdots &amp; \\
+L_n &amp; = L_0V^n - xV^{n-1} - xV^{n-2} - \ldots - xV^2 - xV - x.
+\end{align*}\]</div>
+<p>Typisk er målet etter <span class="math notranslate nohighlight">\(n\)</span> terminer at restlånet skal være null slik at <span class="math notranslate nohighlight">\(L_n = 0\)</span>. Vi kan da løse ut for <span class="math notranslate nohighlight">\(x\)</span> og få følgende formel for terminbeløpet:</p>
+<div class="math notranslate nohighlight">
+\[
+0 = L_0V^n - xV^{n-1} - xV^{n-2} - \ldots - xV^2 - xV - x,
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+x + xV + xV^2 + \ldots + xV^{n-2} + xV^{n-1} = L_0V^n.
+\]</div>
+<p>som er det man ofte kaller for å bruke <em>sluttverdier</em>. Og hvis vi deler med <span class="math notranslate nohighlight">\(V^n\)</span> i alle ledd får vi</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x}{V} + \frac{x}{V^2} + \frac{x}{V^3} + \ldots + \frac{x}{V^{n-1}} + \frac{x}{V^n} = L_0,
+\]</div>
+<p>som er da vi bruker <em>nåverdier</em>.</p>
+<p>Konklusjonen er at algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 9</a> er mer generell og gir oss restlån etter <span class="math notranslate nohighlight">\(n\)</span> terminer med et vilkårlig terminbeløp <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</div>
+<section id="eksempel-1-finne-restlan-etter-n-terminer">
+<h3>Eksempel 1: Finne restlån etter <span class="math notranslate nohighlight">\(n\)</span> terminer<a class="headerlink" href="#eksempel-1-finne-restlan-etter-n-terminer" title="Permalink to this heading">#</a></h3>
+<p>Anta vi tar et lån på 1 million kroner med en rente på 3% per år. Vi velger å betale ned lånet med et terminbeløp på 70 000 kr over 10 år. Hva er da restlånet etter 10 år?</p>
+<p>Først kan vi systematisere informasjonen litt, sånn at det er i tråd med notasjonen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 9</a>. Vi har</p>
+<ul class="simple">
+<li><p>Lånetbeløpet <span class="math notranslate nohighlight">\(L_0 = 1 000 000 \text{ kr}\)</span>.</p></li>
+<li><p>Renten <span class="math notranslate nohighlight">\(r = 3\%\)</span>.</p></li>
+<li><p>Antall terminer <span class="math notranslate nohighlight">\(n = 10\)</span>.</p></li>
+<li><p>Terminbeløp <span class="math notranslate nohighlight">\(x = 70 000 \text{ kr}\)</span>.</p></li>
+</ul>
+<p>Vi kan da bruke algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 9</a> til å finne restlånet etter 10 år:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mi">1_000_000</span> <span class="c1"># kroner</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3 prosent rente per år</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1"># vekstfaktor per år</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">70_000</span> <span class="c1"># Terminbeløp per år</span>
+<span class="n">n_terminer</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># antall terminer (her: antall år)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_terminer</span><span class="p">):</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">-</span> <span class="n">terminbeløp</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr gjenstår etter </span><span class="si">{</span><span class="n">n_terminer</span><span class="si">}</span><span class="s2"> år.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lån = 541444.83 kr gjenstår etter 10 år.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Så det gjenstår altså et lån ca. 541 445 kr etter 10 år med et terminbeløp på 70 000 kr.</p>
+</section>
+<section id="eksempel-2-finne-terminbelop-for-a-betale-ned-lanet-pa-10-ar">
+<h3>Eksempel 2: Finne terminbeløp for å betale ned lånet på 10 år<a class="headerlink" href="#eksempel-2-finne-terminbelop-for-a-betale-ned-lanet-pa-10-ar" title="Permalink to this heading">#</a></h3>
+<p>La oss ta utgangspunkt i samme lånesituasjon, men nå skal vi finne hvilket terminbeløp <span class="math notranslate nohighlight">\(x\)</span> vi må betale for å betale ned lånet på 10 år. Vi kan da bruke algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 9</a> til å finne terminbeløpet.</p>
+<p>Men denne gangen, så justerer vi algoritmen litt for å finne terminbeløpet <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="proof algorithm admonition" id="algo-annuitetslaan-belop">
+<p class="admonition-title"><span class="caption-number">Algorithm 10 </span> (Finne terminbeløp for å betale ned lånet på <span class="math notranslate nohighlight">\(n\)</span> terminer)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input</strong>: Lånebeløp <span class="math notranslate nohighlight">\(L_0\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall terminer <span class="math notranslate nohighlight">\(n\)</span>, endring av terminbeløp <span class="math notranslate nohighlight">\(\Delta x\)</span> mellom forsøk.</p>
+<p><strong>Output</strong>: Terminbeløpet <span class="math notranslate nohighlight">\(x\)</span> som gjør at lånet er nedbetalt etter <span class="math notranslate nohighlight">\(n\)</span> terminer.</p>
+<ul class="simple">
+<li><p>Sett <span class="math notranslate nohighlight">\(V = 1 + r/100\)</span> <em>(Vekstfaktoren til renten)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(x = 0\)</span> <em>(Vi starter med å sette terminbeløpet til 0)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> <span class="math notranslate nohighlight">\(L &gt; 0\)</span>: <em>(Så lenge restlånet er større enn 0 etter et nedbetalingforsøk)</em></p>
+<ul>
+<li><p>Sett <span class="math notranslate nohighlight">\(L = L_0\)</span> <em>(Setter restlånet lik opprinnelig ved hvert forsøk)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(x = x + \Delta x\)</span> <em>(Øker terminbeløpet med <span class="math notranslate nohighlight">\(\Delta x\)</span>)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(V = 1 + r/100\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>:</p>
+<ul>
+<li><p>Sett <span class="math notranslate nohighlight">\(L = L\cdot V\)</span> <em>(Lånet øker med renten)</em></p></li>
+<li><p>Sett <span class="math notranslate nohighlight">\(L = L - x\)</span> <em>(Lånet reduseres med terminbeløpet)</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> <span class="math notranslate nohighlight">\(x\)</span> <em>(Returnerer terminbeløpet som betaler ned hele lånet)</em></p></li>
+</ul>
+</section>
+</div><p>Følger vi <a class="reference internal" href="#algo-annuitetslaan-belop">Algorithm 10</a>, kan vi skrive koden slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="c1"># 1 000 000 kroner</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3 prosent rente per år</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1"># vekstfaktor per år</span>
+
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># 100 kroner økning i terminbeløp per år</span>
+<span class="n">n_terminer</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">restlån</span> <span class="o">=</span> <span class="n">lån</span>
+
+<span class="k">while</span> <span class="n">restlån</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">terminbeløp</span> <span class="o">+=</span> <span class="n">dx</span>
+    <span class="n">restlån</span> <span class="o">=</span> <span class="n">lån</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_terminer</span><span class="p">):</span>
+        <span class="n">restlån</span> <span class="o">=</span> <span class="n">restlån</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+        <span class="n">restlån</span> <span class="o">=</span> <span class="n">restlån</span> <span class="o">-</span> <span class="n">terminbeløp</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">terminbeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr per år.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>terminbeløp = 117230.60 kr per år.
+</pre></div>
+</div>
+</div>
+</div>
+<p>som gir at hvis vi setter terminbeløpet <span class="math notranslate nohighlight">\(x = 117230.60 \text{ kr}\)</span>, så vil lånet være nedbetalt etter 10 år. Dette er bare en tilnærming til det <em>sanne</em> terminbeløpet siden vi har brukt <span class="math notranslate nohighlight">\(\Delta x = 0.01 \ \text{kr}\)</span> mellom hvert forsøk. Men det er en god nok tilnærming med tanke på størrelsen på terminbeløpet. En endring på 0.01 kr er ikke merkbar i forhold til et terminbeløp på <span class="math notranslate nohighlight">\(117 230.60\)</span> kr.</p>
+</section>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Du tar opp et lån på 3 millioner kroner. Renten på lånet er på 2.5 % per år. Terminbeløpet du skal betale per termin (per år) er 130 000 kroner. Bruk Python til å finne ut hvor mange år det tar før du har betalt ned hele lånet.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mi">3_000_000</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">rente</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">130_000</span>
+
+<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">lån</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="o">-</span> <span class="n">terminbeløp</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gjenstående </span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">år = 18</span>
+<span class="go">gjenstående lån = -1273.92 kr</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -612,7 +823,7 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/numeriske_metoder/følger_og_rekker"
+            path: "./book/matematikk/følger_og_rekker"
         },
         predefinedOutput: true
     }
@@ -640,11 +851,11 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../fysikk/pi_fabrikken.html"
+       href="rekursive_funksjoner.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</p>
+        <p class="prev-next-title">Følger og rekker med rekursive funksjoner</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -669,6 +880,15 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medikamenter-i-blodet">Medikamenter i blodet</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-en-dose-av-paracet-hver-6-time">Eksempel 2: En dose av paracet hver 6.time</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nedbetaling-av-lan">Nedbetaling av lån</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-finne-restlan-etter-n-terminer">Eksempel 1: Finne restlån etter <span class="math notranslate nohighlight">\(n\)</span> terminer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-finne-terminbelop-for-a-betale-ned-lanet-pa-10-ar">Eksempel 2: Finne terminbeløp for å betale ned lånet på 10 år</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 </ul>
 </li>
 </ul>

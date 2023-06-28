@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Numerisk Derivasjon &#8212; Programmering i Videregående Skole</title>
+    <title>Numerisk derivasjon av første orden (førstederiverte) &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -66,11 +66,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/numeriske_metoder/derivasjon/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/derivasjon/førstederiverte';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Numerisk derivasjon av første orden (førstederiverte)" href="f%C3%B8rstederiverte.html" />
-    <link rel="prev" title="Newtons metode" href="../nullpunkter/newtons_metode.html" />
+    <link rel="next" title="Numerisk derivasjon av andre orden (andrederiverte)" href="andrederiverte.html" />
+    <link rel="prev" title="Numerisk Derivasjon" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -199,8 +199,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Numerisk Derivasjon</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="f%C3%B8rstederiverte.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Numerisk Derivasjon</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Numerisk derivasjon av første orden (førstederiverte)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="andrederiverte.html">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
 </ul>
 </li>
@@ -213,6 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../f%C3%B8lger_og_rekker/intro.html">Følger og Rekker</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/sequences.html">Intro til følger og rekker med Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/praktiske_anvendelser_av_rekker.html">Praktiske Anvendelser av Rekker med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
 </ul>
@@ -294,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/numeriske_metoder/derivasjon/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/matematikk/derivasjon/førstederiverte.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/numeriske_metoder/derivasjon/intro.md" target="_blank"
+      <li><a href="../../../_sources/book/matematikk/derivasjon/førstederiverte.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -393,7 +394,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -404,11 +407,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Numerisk Derivasjon</h1>
+    <h1>Numerisk derivasjon av første orden (førstederiverte)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#netwons-kvotient-fremover">Netwons kvotient (fremover)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-deriverte-av-et-polynom">Eksempel: Deriverte av et polynom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave">Oppgave:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -418,17 +433,50 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numerisk-derivasjon">
-<h1>Numerisk Derivasjon<a class="headerlink" href="#numerisk-derivasjon" title="Permalink to this heading">#</a></h1>
-<p>Den deriverte til en funksjon <span class="math notranslate nohighlight">\(f'(x)\)</span> gir oss stigningstallet, eller mer formelt sett <em>vekstfarten</em>, til en funksjon <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x\)</span>.
-Selv om det i prinsippet er mulig å regne ut et eksakt funksjonsuttrykk for de fleste deriverte, er det i praksis ofte mer hensiktsmessig å bruke en numerisk metode for å finne en tilnærming til den deriverte. Dette gjør at vi kan skrive programmer som kan løse problemer mer generelt uten at vi trenger å tenke for mye på hvilken form funksjonen har. På den måten kan vi automatisere prosessen med å finne den deriverte til en funksjon, uansett hvor komplisert den er.</p>
-<p>Oversikt:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="f%C3%B8rstederiverte.html"><span class="doc std std-doc">Numerisk derivasjon av første orden (førstederiverte)</span></a></p></li>
-<li><p><a class="reference internal" href="andrederiverte.html"><span class="doc std std-doc">Numerisk derivasjon av andre orden (andrederiverte)</span></a></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="numerisk-derivasjon-av-forste-orden-forstederiverte">
+<h1>Numerisk derivasjon av første orden (førstederiverte)<a class="headerlink" href="#numerisk-derivasjon-av-forste-orden-forstederiverte" title="Permalink to this heading">#</a></h1>
+<p>Selv om man i prinsippet alltid kan finne en formel for den deriverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span>, er det i blant
+bedre å bruke en mer robust og fleksibel måte regne ut en tilnærming til den deriverte. Dette kan vi gjøre med
+numerisk derivasjon.</p>
+<section id="netwons-kvotient-fremover">
+<h2>Netwons kvotient (fremover)<a class="headerlink" href="#netwons-kvotient-fremover" title="Permalink to this heading">#</a></h2>
+<p><strong>Newtons kvotient</strong> er en metode for numerisk derivasjon som vi kan motivere ut ifra definisjonen av den deriverte</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h},
+\]</div>
+<p>ved å redusere kravet om at <span class="math notranslate nohighlight">\(h \to 0\)</span> til at vi i stedet setter <span class="math notranslate nohighlight">\(h\)</span> til et <em>lite tall</em>. Vi kan da tilnærme den deriverte som</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) \approx \frac{f(x+h) - f(x)}{h},
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(h \ll 1\)</span> (symbolet <span class="math notranslate nohighlight">\(\ll\)</span> betyr “mye mindre enn”, forresten).</p>
+<section id="eksempel-deriverte-av-et-polynom">
+<h3>Eksempel: Deriverte av et polynom<a class="headerlink" href="#eksempel-deriverte-av-et-polynom" title="Permalink to this heading">#</a></h3>
+<p>La oss se på et eksempel der vi ønsker å finne den deriverte til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 + 2x + 1,
+\]</div>
+<p>i $x = 1. Vi kan løse dette for hånd ganske lett som</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = 2x + 2 \implies f'(1) = 4.
+\]</div>
+<p>Under ser du hvordan vi kan tilnærme den deriverte med Newtons kvotient for flere verdier av <span class="math notranslate nohighlight">\(h\)</span>. Merk hvordan vi får en bedre tilnærming jo mindre <span class="math notranslate nohighlight">\(h\)</span> er (dog det blir faktisk dårligere etter at vi passerer <span class="math notranslate nohighlight">\(h = 10^{-7}\)</span>, men dette er en avrundingsfeil som skjer på datamaskinen og ikke et direkte matterelatert problem).</p>
+<iframe src="https://trinket.io/embed/python/09977207eb" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</section>
+<section id="oppgave">
+<h3>Oppgave:<a class="headerlink" href="#oppgave" title="Permalink to this heading">#</a></h3>
+<p>Finn en tilnærming til den deriverte av</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 3x^3 - 2x^2 + 1,
+\]</div>
+<p>i <span class="math notranslate nohighlight">\(x = 1\)</span> ved å bruke Newtons kvotient. Finn tilnærmingen ved å bruke <span class="math notranslate nohighlight">\(h = 10^{-3}, 10^{-5}, 10^{-7}\)</span>.</p>
+<iframe src="https://trinket.io/embed/python/31949a779e" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -444,7 +492,7 @@ Selv om det i prinsippet er mulig å regne ut et eksakt funksjonsuttrykk for de 
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/numeriske_metoder/derivasjon"
+            path: "./book/matematikk/derivasjon"
         },
         predefinedOutput: true
     }
@@ -463,20 +511,20 @@ Selv om det i prinsippet er mulig å regne ut et eksakt funksjonsuttrykk for de 
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../nullpunkter/newtons_metode.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Newtons metode</p>
+        <p class="prev-next-title">Numerisk Derivasjon</p>
       </div>
     </a>
     <a class="right-next"
-       href="f%C3%B8rstederiverte.html"
+       href="andrederiverte.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numerisk derivasjon av første orden (førstederiverte)</p>
+        <p class="prev-next-title">Numerisk derivasjon av andre orden (andrederiverte)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -489,6 +537,24 @@ Selv om det i prinsippet er mulig å regne ut et eksakt funksjonsuttrykk for de 
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#netwons-kvotient-fremover">Netwons kvotient (fremover)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-deriverte-av-et-polynom">Eksempel: Deriverte av et polynom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave">Oppgave:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
