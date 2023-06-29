@@ -4,6 +4,6 @@ Det første vi skal se på er variabler, datatyper og regning. Dette er konsepte
 
 Oversikt:
 
-1. [Variabler og Datatyper](./variabler.md)
-2. [Regning og Regnerekkefølgen](./regning.md)
+1. [Variabler og Datatyper](./variabler)
+2. [Regning og Regnerekkefølgen](./regning)
 
