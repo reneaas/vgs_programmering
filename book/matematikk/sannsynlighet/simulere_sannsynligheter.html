@@ -64,9 +64,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/sannsynlighet/simulere_sannsynligheter';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Elastiske kollisjoner som en \(\pi\)-fabrikk" href="../../fysikk/pi_fabrikken.html" />
+    <link rel="prev" title="Følger og rekker med rekursive funksjoner" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,8 +158,8 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grunnleggende Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/variabler_og_regning/intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/variabler_nb.html">Variabler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/regning_nb.html">Å regne med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/IO/print.html"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
@@ -182,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likninger.html">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -212,6 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
@@ -439,7 +444,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -455,6 +462,38 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-vil-det-si-a-simulere-utfall">Hva vil det si å simulere utfall?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oversikt-over-sannsynlighetsfordelinger-i-numpy-random">Oversikt over sannsynlighetsfordelinger i <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler-pa-a-regne-ut-sannsynlighet-med-simulering">Eksempler på å regne ut sannsynlighet med simulering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-terningkast-med-en-terning">Eksempel 1: Terningkast med én terning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-terningkast-med-to-terninger">Eksempel 2: Terningkast med to terninger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-normalfordelte-hoyder-i-en-populasjon">Eksempel 3: Normalfordelte høyder i en populasjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-normalfordelte-hoyder-i-en-populasjon-igjen">Eksempel 4: Normalfordelte høyder i en populasjon (igjen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5-normalfordelte-hoyder-fra-to-populasjoner">Eksempel 5: Normalfordelte høyder fra to populasjoner</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-velge-ut-en-gutt-eller-en-jente-fra-elevene-pa-skolen">Hvordan velge ut en gutt eller en jente fra elevene på skolen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-trekke-en-hoyde-avhengig-av-om-det-er-en-gutt-eller-jente">Hvordan trekke en høyde avhengig av om det er en gutt eller jente</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulering">Simulering</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a">Oppgave 3a</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -472,6 +511,723 @@ document.write(`
 </ul>
 <p>Å simulere utfall i ulike situasjoner er en effektiv måte å utforske sannsynlighetsfordelinger på, og å regne ut sannsynligheter, forvetningsverdier, varians og standardavvik i mer kompliserte situasjoner der det ikke er like lett å regne ut disse verdiene for hånd - hvis mulig i det hele tatt.</p>
 <p>Et viktig bibliotek her er <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>, som lar oss trekke tilfeldig tall fra ulike sannsynlighetsfordelinger.</p>
+<section id="hva-vil-det-si-a-simulere-utfall">
+<h2>Hva vil det si å simulere utfall?<a class="headerlink" href="#hva-vil-det-si-a-simulere-utfall" title="Permalink to this heading">#</a></h2>
+<p>Å simulere utfall vil si å gjennomføre et eksperiment eller forsøk mange ganger, og telle opp hvor mange ganger de ulike utfallene inntreffer.
+Som en tilnærming til sannsynligheten til et utfall, tar vi forholdet mellom antall ganger utfallet inntreffer og antall ganger vi gjennomfører eksperimentet.</p>
+<p>Mer formelt, la <span class="math notranslate nohighlight">\(X\)</span> være en <em>stokastisk</em> variabel (tilfeldig variabel), la <span class="math notranslate nohighlight">\(n_A\)</span> være antall ganger et utfall <span class="math notranslate nohighlight">\(A\)</span> skjedde, og <span class="math notranslate nohighlight">\(n\)</span> være antall ganger vi gjennomførte eksperimentet. Da kan vi tilnærme sannsynligheten for at utfall <span class="math notranslate nohighlight">\(A\)</span> skjer med</p>
+<div class="math notranslate nohighlight" id="equation-eq-tilnarmet-sannsynlighet">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-tilnarmet-sannsynlighet" title="Permalink to this equation">#</a></span>\[
+P(X = A) \approx \frac{n_A}{n}.
+\]</div>
+<p>Da kan vi garantere at når <span class="math notranslate nohighlight">\(n\)</span> blir veldig stor, så vil tilnærmingen bli veldig god.</p>
+</section>
+<section id="oversikt-over-sannsynlighetsfordelinger-i-numpy-random">
+<h2>Oversikt over sannsynlighetsfordelinger i <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code><a class="headerlink" href="#oversikt-over-sannsynlighetsfordelinger-i-numpy-random" title="Permalink to this heading">#</a></h2>
+<p>Vi skal se på noen av de vanligste sannsynlighetsfordelingene, og hvordan vi kan simulere utfall fra dem.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sannsynlighetsfordeling</p></th>
+<th class="head"><p>Matematisk funksjon</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>-funksjon</p></th>
+<th class="head"><p>Parametre</p></th>
+<th class="head"><p>Forklaring</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Binomisk</p></td>
+<td><p><span class="math notranslate nohighlight">\(B(n, p)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">binomial</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span></code> angir antall forsøk og <code class="docutils literal notranslate"><span class="pre">p</span></code> angir sannsynligheten for å oppnå suksess</p></td>
+</tr>
+<tr class="row-odd"><td><p>Geometrisk</p></td>
+<td><p><span class="math notranslate nohighlight">\(G(p)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">geometric</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">p</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">p</span></code> angir sannsynligheten for å oppnå suksess. Er det samme som binomisk fordeling med <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Normal</p></td>
+<td><p><span class="math notranslate nohighlight">\(N(\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{1}{2}\left((x-\mu)/\sigma\right)^2} \)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">normal</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">loc</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">loc</span></code> angir forventningsverdien og <code class="docutils literal notranslate"><span class="pre">scale</span></code> angir standardavviket</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eksponential</p></td>
+<td><p><span class="math notranslate nohighlight">\(E(\lambda) = \lambda e^{-\lambda X}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">exponential</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">scale</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">scale</span></code> angir gjennomsnittlig tid mellom suksesser</p></td>
+</tr>
+<tr class="row-even"><td><p>Uniform (heltall)</p></td>
+<td><p><span class="math notranslate nohighlight">\(U(a, b)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">randint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">low</span></code> angir minimum og <code class="docutils literal notranslate"><span class="pre">high</span></code> angir maksimum. Henter ut et heltall på intervallet <code class="docutils literal notranslate"><span class="pre">[low,</span> <span class="pre">high)</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uniform (flyttall)</p></td>
+<td><p><span class="math notranslate nohighlight">\(U(a, b)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uniform</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">low</span></code> angir minimum og <code class="docutils literal notranslate"><span class="pre">high</span></code> angir maksimum. Henter ut et flyttall på intervallet <code class="docutils literal notranslate"><span class="pre">[low,</span> <span class="pre">high)</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="eksempler-pa-a-regne-ut-sannsynlighet-med-simulering">
+<h2>Eksempler på å regne ut sannsynlighet med simulering<a class="headerlink" href="#eksempler-pa-a-regne-ut-sannsynlighet-med-simulering" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-1-terningkast-med-en-terning">
+<h3>Eksempel 1: Terningkast med én terning<a class="headerlink" href="#eksempel-1-terningkast-med-en-terning" title="Permalink to this heading">#</a></h3>
+<p>Se for deg at vi ønsker å finne sannsynligheten for å få en sekser når vi kaster en terning. Vi kan simulere dette ved å gjennomføre mange terningkast, og telle opp hvor mange ganger vi får en sekser. Så bruker vi likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(17)</a> til å regne ut en tilnærmet verdi for terningkastet.</p>
+<p>I et terningkast er det 6 mulige utfall, og alle er like sannsynlige. Dermed er sannsynligheten for å få en sekser <span class="math notranslate nohighlight">\(1/6\)</span>. Lar vi <span class="math notranslate nohighlight">\(X\)</span> være antall øyne på en terning i et tilfeldig terningkast, så er <span class="math notranslate nohighlight">\(X\)</span> en stokastisk variabel med sannsynlighetsfordeling</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(6\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(P(X = x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/6\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Vi kan simulere et terningkast ved å trekke ut et tilfeldig tall fra en uniform heltallsfordeling med <code class="docutils literal notranslate"><span class="pre">low=0</span></code> og <code class="docutils literal notranslate"><span class="pre">high=7</span></code>. Da kan vi få tallene 0, 1, 2, 3, 4, 5 eller 6, og vi kan tolke disse som antall øyne på terningen. Vi kan simulere et terningkast med <code class="docutils literal notranslate"><span class="pre">np.random.randint(0,</span> <span class="pre">7)</span></code>, som følger:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># 10 000 terningkast</span>
+<span class="n">n_seksere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall seksere</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Kaster en terning</span>
+    <span class="k">if</span> <span class="n">kast</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> <span class="c1"># Hvis vi får en sekser</span>
+        <span class="n">n_seksere</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Legg til enda en sekser</span>
+
+<span class="n">sannsynlighet_sekser</span> <span class="o">=</span> <span class="n">n_seksere</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få en sekser: </span><span class="si">{</span><span class="n">sannsynlighet_sekser</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. Det eksakte svaret er </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å få en sekser: 0.167. Det eksakte svaret er 0.167 til tre desimaler.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Med andre ord er <span class="math notranslate nohighlight">\(P(X = 6) \approx 0.167\)</span>.</p>
+<p>Siden vi trekker tilfeldige tall, og vi har begrenset oss til 100 000 forsøk, vil vi få noe varierte resultater fra gang til gang når vi kjører programmet. Med store verdier for <code class="docutils literal notranslate"><span class="pre">n_forsøk</span></code> vil resultatet bli nærmere den eksakte verdien, og det vil være lite variasjon fra gang til gang.</p>
+</section>
+<section id="eksempel-2-terningkast-med-to-terninger">
+<h3>Eksempel 2: Terningkast med to terninger<a class="headerlink" href="#eksempel-2-terningkast-med-to-terninger" title="Permalink to this heading">#</a></h3>
+<p>Vi kan også simulere et terningkast med to terninger. Da er det 36 mulige utfall, og alle er like sannsynlige. Men summen av øynene har ulike sannsynligheter. Lar vi <span class="math notranslate nohighlight">\(X\)</span> være antall øyne vi får på to terninger i et tilfeldig terningkast, så er <span class="math notranslate nohighlight">\(X\)</span> en stokastisk variabel med sannsynlighetsfordeling</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(6\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(7\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(8\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(9\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(10\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(11\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(12\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(P(X = x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(6/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2/36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1/36\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Tenk deg at vi ønsker å finne sannsynligheten for å få 7 øyne. Vi kan simulere dette ved å gjennomføre mange terningkast, og telle opp hvor mange ganger vi får 7 øyne. Så bruker vi likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(17)</a> til å regne ut en tilnærmet verdi for terningkastet.</p>
+<p>Igjen bruker vi <code class="docutils literal notranslate"><span class="pre">numpy.random.randint(1,</span> <span class="pre">7)</span></code> for å kaste en terning, men nå må vi kaste to ganger per forsøk. En Pythonkode som løser dette er:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># 100 000 terningkast med to terninger</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får 7 som summen av øyne på terningene</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Kaster to terninger, derfor `size=2`</span>
+    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kast</span><span class="p">)</span> <span class="c1"># Summerer terningene</span>
+    <span class="k">if</span> <span class="n">sum_av_terninger</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">sannsynlighet_7</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få 7 som summen av øyne på to terninger: </span><span class="si">{</span><span class="n">sannsynlighet_7</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. Det eksakte svaret er </span><span class="si">{</span><span class="mi">6</span><span class="o">/</span><span class="mi">36</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å få 7 som summen av øyne på to terninger: 0.166. Det eksakte svaret er 0.167 til tre desimaler.
+</pre></div>
+</div>
+</div>
+</div>
+<p>så vi kan konkludere at <span class="math notranslate nohighlight">\(P(X = 7) \approx 0.167\)</span>.</p>
+</section>
+<section id="eksempel-3-normalfordelte-hoyder-i-en-populasjon">
+<h3>Eksempel 3: Normalfordelte høyder i en populasjon<a class="headerlink" href="#eksempel-3-normalfordelte-hoyder-i-en-populasjon" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at høydene <span class="math notranslate nohighlight">\(X\)</span> til jenter i en populasjon er normalfordelte med forventningsverdi <span class="math notranslate nohighlight">\(\mu = 175 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma = 5 \ \text{cm}\)</span>. Vi kan simulere dette ved å trekke ut tilfeldige tall fra en normalfordeling med <code class="docutils literal notranslate"><span class="pre">loc=175</span></code> og <code class="docutils literal notranslate"><span class="pre">scale=5</span></code> som parametere i <code class="docutils literal notranslate"><span class="pre">numpy.random.normal(loc=175,</span> <span class="pre">scale=5)</span></code>. Da vil vi få tall som er normalfordelt med forventningsverdi 175 og standardavvik 5.</p>
+<p>Tenk deg at vi ønsker å regne ut sannsynligheten for at en høyden til en tilfeldig jente er større enn <span class="math notranslate nohighlight">\(180 \ \text{cm}\)</span>. Dette kan vi gjøre ved å trekke ut høyder fra normalfordelingen og telle opp antaller ganger <span class="math notranslate nohighlight">\(X \geq 180 \ \text{cm}\)</span>.</p>
+<p>En pythonkode som simulerer dette kan se slik ut:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Måler 100 000 høyder </span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&gt;=</span> <span class="mi">180</span><span class="p">:</span> <span class="c1"># Hvis høyden er større enn eller lik 180 cm, så legger vi til en suksess</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_høyde_over_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få en høyde over 180 cm: </span><span class="si">{</span><span class="n">sannsynlighet_høyde_over_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å få en høyde over 180 cm: 0.159.
+</pre></div>
+</div>
+</div>
+</div>
+<p>som vi tolker som at <span class="math notranslate nohighlight">\(P(X \geq 180 \ \text{cm}) \approx 0.16\)</span>.</p>
+</section>
+<section id="eksempel-4-normalfordelte-hoyder-i-en-populasjon-igjen">
+<h3>Eksempel 4: Normalfordelte høyder i en populasjon (igjen)<a class="headerlink" href="#eksempel-4-normalfordelte-hoyder-i-en-populasjon-igjen" title="Permalink to this heading">#</a></h3>
+<p>La oss fortsette med eksempel 3, men vi ønsker nå i stedet å regne ut sannsynligheten for at en høyde er mellom 170 cm og 180 cm. Fra teorien om normalfordelinger vet vi at dette er ca. 68 % siden det er sannsynligheten for å ligge ett standardavvik over eller under forventningsverdien.</p>
+<p>Vi kan simulere dette ved å trekke ut høyder fra normalfordelingen og telle opp antaller ganger <span class="math notranslate nohighlight">\(170 \ \text{cm} \leq X \leq 180 \ \text{cm}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Måler 100 000 høyder</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+    <span class="k">if</span> <span class="mi">170</span> <span class="o">&lt;=</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">180</span><span class="p">:</span> <span class="c1"># Hvis høyden ligger mellom 170 og 180 cm, så legger vi til en suksess</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_høyde_mellom_170_og_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få en høyde mellom 170 og 180 cm: </span><span class="si">{</span><span class="n">sannsynlighet_høyde_mellom_170_og_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å få en høyde mellom 170 og 180 cm: 0.683.
+</pre></div>
+</div>
+</div>
+</div>
+<p>som vi tolker som at <span class="math notranslate nohighlight">\(P(170 \ \text{cm} \leq X \leq 180 \ \text{cm}) \approx 0.683\)</span>.</p>
+</section>
+<section id="eksempel-5-normalfordelte-hoyder-fra-to-populasjoner">
+<h3>Eksempel 5: Normalfordelte høyder fra to populasjoner<a class="headerlink" href="#eksempel-5-normalfordelte-hoyder-fra-to-populasjoner" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at det på en skole går 200 jenter og 300 gutter. Jentene er normalfordelt med forventningsverdi <span class="math notranslate nohighlight">\(\mu = 168 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma = 5 \ \text{cm}\)</span>, mens guttene er normalfordelt med forventningsverdi <span class="math notranslate nohighlight">\(\mu = 180 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma = 6 \ \text{cm}\)</span>.</p>
+<p>Tenk deg at vi ønsker å regne ut sannsynligheten for at en tilfeldig trukket person har en høyde som er lavere enn 160 cm. Vi lar <span class="math notranslate nohighlight">\(X\)</span> være høyden til en tilfeldig utvalgt elev fra skolen. Vi ønsker derfor å regne ut <span class="math notranslate nohighlight">\(P(X \leq 160 \ \text{cm})\)</span>.</p>
+<p>Det som er vrient her, er at det ikke er så lett å sette opp en sannsynlighetsfordeling fordi vi har en normalfordeling for den ene delen av populasjon (guttene), og en annen normalfordeling for den andre delen (jentene).</p>
+<p>Vi skal bryte ned problemet i to biter.</p>
+<ol class="arabic simple">
+<li><p>Hvordan velge om vi har trukket ut en jente eller en gutt.</p></li>
+<li><p>Deretter trekke et tilfeldig høyde avhengig om det var en gutt eller jente som ble trukket ut.</p></li>
+</ol>
+<section id="hvordan-velge-ut-en-gutt-eller-en-jente-fra-elevene-pa-skolen">
+<h4>Hvordan velge ut en gutt eller en jente fra elevene på skolen<a class="headerlink" href="#hvordan-velge-ut-en-gutt-eller-en-jente-fra-elevene-pa-skolen" title="Permalink to this heading">#</a></h4>
+<p>La <span class="math notranslate nohighlight">\(N_\text{jenter} = 200\)</span> og <span class="math notranslate nohighlight">\(N_\text{gutter} = 300\)</span>. Det totale antallet elever er <span class="math notranslate nohighlight">\(N_\text{elever} = N_\text{jenter} + N_\text{gutter} = 500\)</span>. Sannsynligheten for at vi en tilfeldig utvalgt elev er en jente er da</p>
+<div class="math notranslate nohighlight">
+\[
+p_\text{jente} = \frac{N_\text{jenter}}{N_\text{elever}} = \frac{200}{500} = \frac{2}{5} = 0.4. 
+\]</div>
+<p>Vi kan betrakte dette som en binomisk fordeling med <span class="math notranslate nohighlight">\(n = 1\)</span> og <span class="math notranslate nohighlight">\(p = p_\text{jente}\)</span>.</p>
+<p>La <span class="math notranslate nohighlight">\(X\)</span> være antall jenter vi trekker ut. Da er <span class="math notranslate nohighlight">\(X\)</span> binomisk fordelt med <span class="math notranslate nohighlight">\(n = 1\)</span> og <span class="math notranslate nohighlight">\(p = p_\text{jente}\)</span>. Da vil <span class="math notranslate nohighlight">\(X = 1\)</span> dersom vi trekker ut en jente, og <span class="math notranslate nohighlight">\(X = 0\)</span> dersom vi ikke gjør det (og dermed trekker en gutt i stedet).
+Vi kan simulere dette ved å bruke <code class="docutils literal notranslate"><span class="pre">numpy.random.binomial(n=1,</span> <span class="pre">p=p_jente)</span></code>.</p>
+<p>La oss sjekke at dette gir mening:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall elever vi trekker ut</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi trekker ut en jente</span>
+<span class="n">n_jenter</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">n_gutter</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">n_elever</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">+</span> <span class="n">n_gutter</span>
+<span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
+    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis vi trekker ut en jente</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Legg til en suksess</span>
+    
+<span class="n">sannsynlighet_jente</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å trekke ut en jente: </span><span class="si">{</span><span class="n">sannsynlighet_jente</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. Det eksakte svaret er </span><span class="si">{</span><span class="n">n_jenter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_elever</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å trekke ut en jente: 0.400. Det eksakte svaret er 0.400 til tre desimaler.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Så vi får bekreftet at <span class="math notranslate nohighlight">\(P(X = \text{jente}) = p_\text{jente} = 0.4\)</span>.</p>
+</section>
+<section id="hvordan-trekke-en-hoyde-avhengig-av-om-det-er-en-gutt-eller-jente">
+<h4>Hvordan trekke en høyde avhengig av om det er en gutt eller jente<a class="headerlink" href="#hvordan-trekke-en-hoyde-avhengig-av-om-det-er-en-gutt-eller-jente" title="Permalink to this heading">#</a></h4>
+<p>Nå har vi funnet ut hvordan vi kan velge om vi har trukket ut en jente eller en gutt. Nå skal vi finne ut hvordan vi kan trekke en høyde avhengig av om det er en jente eller gutt.</p>
+<ol class="arabic simple">
+<li><p>Hvis vi har en jente, trekker vi en høyde fra en normalfordeling med forventningsverdi <span class="math notranslate nohighlight">\(\mu_\text{jente} = 168 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma_\text{jente} = 6 \ \text{cm}\)</span>.</p></li>
+<li><p>Hvis det er en gutt trekker vi en høyde fra en normalfordeling med forventningsverdi <span class="math notranslate nohighlight">\(\mu_\text{gutt} = 180 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma_\text{gutt} = 8 \ \text{cm}\)</span>.</p></li>
+</ol>
+</section>
+<section id="simulering">
+<h4>Simulering<a class="headerlink" href="#simulering" title="Permalink to this heading">#</a></h4>
+<p>Vi er nå klare til å sette det hele sammen. Algoritmen vi skal bruke går som følger:</p>
+<ol class="arabic simple">
+<li><p>Velg om vi har trukket ut en jente eller en gutt.</p>
+<ul class="simple">
+<li><p>Hvis vi har trukket ut en jente, trekker vi en høyde fra en normalfordeling med forventningsverdi <span class="math notranslate nohighlight">\(\mu_\text{jente} = 168 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma_\text{jente} = 6 \ \text{cm}\)</span>.</p></li>
+<li><p>Hvis det er en gutt trekker vi en høyde fra en normalfordeling med forventningsverdi <span class="math notranslate nohighlight">\(\mu_\text{gutt} = 180 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma_\text{gutt} = 8 \ \text{cm}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Dersom høyden er under 160 cm, legger vi til 1 på <span class="math notranslate nohighlight">\(n_\text{suksess}\)</span>.</p></li>
+<li><p>Gjenta 1 og 2 <span class="math notranslate nohighlight">\(n_\text{forsøk}\)</span> ganger.</p></li>
+</ol>
+<p>Til slutt regner vi ut sannsynligheten med likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(17)</a> som</p>
+<div class="math notranslate nohighlight">
+\[
+P(X \leq 160 \ \text{cm}) \approx \frac{n_\text{suksess}}{n_\text{forsøk}}.
+\]</div>
+<p>Pythonkoden kan da se slik ut:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">1000_000</span> <span class="c1"># Antall elever vi trekker ut</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde &lt;= 160 cm.</span>
+<span class="n">n_jenter</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">n_gutter</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">n_elever</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">+</span> <span class="n">n_gutter</span>
+<span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
+    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis vi trekker ut en jente</span>
+        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 180 cm og standardavvik 6 cm</span>
+    
+    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">160</span><span class="p">:</span> <span class="c1"># Hvis høyden er mindre eller lik 160 cm, så legger vi til en suksess</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_høyde_under_160</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_høyde_under_160</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sannsynlighet_høyde_under_160 = 0.04057
+</pre></div>
+</div>
+</div>
+</div>
+<p>Så sannsynligheten for at en tilfeldig utvalgt elev har en høyde som er lavere enn 160cm er</p>
+<div class="math notranslate nohighlight">
+\[
+P(X \leq 160 \ \text{cm}) \approx 0.04 = 4 \%.
+\]</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ovingsoppgaver">
+<h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Du skal kaste to terninger. Skriv en Pythonkode for å regne ut sannsynligheten for at man får 9 eller flere øyne.</p>
+<p>Gjør 100 000 forsøk i simuleringen din.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sett antall terningkast</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">kast</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett betingelse for når du skal øke antall suksesser</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut sannsynligheten </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">For-løkke</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kast</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sum_av_terninger</span> <span class="o">&gt;=</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Vektorisert med Numpy</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># Kaster to terninger, derfor `size=(n_forsøk, 2)`</span>
+<span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kast</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sum_av_terninger</span> <span class="o">&gt;=</span> <span class="mi">9</span><span class="p">)</span> 
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 0.2757</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Altså er <span class="math notranslate nohighlight">\(P(X \geq 9) \approx 0.2757\)</span>.</p>
+<p class="sd-card-text">*Merk at siden vi trekker tilfeldige tall her, vil svaret man får variere litt fra gang til gang.</p>
+</div>
+</details></section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Levetiden til en tilfeldig valgt lyspære er normalfordelt med forventning på 400 timer og et standardavvik på 10 timer.
+Skriv en Pythonkode for å regne ut sannsynligheten for at en tilfeldig valgt lyspære har en levetid på mer enn 420 timer.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall ganger vi får en levetid på minst 420 timer.</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett betingelse for når du skal øke antall suksesser</span>
+        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    
+<span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut sannsynligheten</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
+
+<span class="c1"># Trekker ut 100 000 levetider fra normalfordeling med gjennomsnitt 400 timer og standardavvik 10 timer</span>
+<span class="n">levetider</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_forsøk</span><span class="p">)</span> 
+
+<span class="c1"># Sjekker hvor mange av levetidene som er over 420 timer</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">levetider</span> <span class="o">&gt;</span> <span class="mi">420</span><span class="p">)</span>
+
+<span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sannsynlighet_levetid_over_420 = 0.023
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">For-løkke</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en levetid på minst 420 timer.</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">levetid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">levetid</span> <span class="o">&gt;=</span> <span class="mi">420</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Vektorisert med Numpy</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
+
+<span class="c1"># Trekker ut 100 000 levetider fra normalfordeling med gjennomsnitt 400 timer og standardavvik 10 timer</span>
+<span class="n">levetider</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_forsøk</span><span class="p">)</span> 
+
+<span class="c1"># Sjekker hvor mange av levetidene som er over 420 timer</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">levetider</span> <span class="o">&gt;</span> <span class="mi">420</span><span class="p">)</span>
+
+<span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sannsynlighet_levetid_over_420 = 0.022</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som betyr at det <span class="math notranslate nohighlight">\(P(X \geq 420 \ \text{timer}) \approx 0.02 = 2 \%.\)</span></p>
+</div>
+</details></section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>En kjede med pærer er koblet i serie hengt opp rundt et juletre midt i Karl Johan. Hver lyspære har individuelt en levetid som er normalfordelt med en forventning på 900 timer og et standardavvik på 50 timer.</p>
+<p>Dersom én lyspære slutter å lyse, vil alle lyspærene i kjeden slutte å lyse. Oslo Kommune er interessert i å vite hvor lenge det er sannsynlig at juletreet vil lyse. De estimerer at de setter opp juletreet i midten av desember og at de tar det ned i midten av januar. Juletreet består av 2000 lyspærer.</p>
+<p>Målet her er å finne ut av hvor sannsynlig det er at juletreet vil lyse i hele perioden det er satt opp. Vi kan anta at alle lyspærene lyser samtidig.</p>
+<section id="oppgave-3a">
+<h4>Oppgave 3a<a class="headerlink" href="#oppgave-3a" title="Permalink to this heading">#</a></h4>
+<p>Skriv en Pythonkode som regner ut sannsynlighet for at én tilfeldig valgt lyspære vil fungere minst like lenge som juletreet er satt opp.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">minst_levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Perioden vi ønsker at pærene minst skal vare.</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> 
+        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">For-løkke</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">minst_levetid</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">24</span> <span class="c1"># 30 dager * 24 timer per dag </span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">levetid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">levetid</span> <span class="o">&gt;=</span> <span class="n">minst_levetid</span><span class="p">:</span> 
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Vektorisert med Numpy</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">minst_levetid</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">30</span> <span class="c1"># Perioden vi ønsker at pærene minst skal vare.</span>
+
+<span class="c1"># Trekker ut 100 000 levetider fra normalfordeling med gjennomsnitt 900 timer og standardavvik 50 timer</span>
+<span class="n">levetider</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_forsøk</span><span class="p">)</span>
+
+<span class="c1"># Sjekker hvor mange av levetiden som varer minst hele perioden</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">levetider</span> <span class="o">&gt;=</span> <span class="n">minst_levetid</span><span class="p">)</span>
+
+<span class="c1"># Regner ut sannsynligheten </span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 0.99989</span>
+</pre></div>
+</div>
+<p class="sd-card-text">så vi kan være rimelig sikre på at én enkelt pære vil vare hele perioden.</p>
+</div>
+</details></section>
+<section id="oppgave-3b">
+<h4>Oppgave 3b<a class="headerlink" href="#oppgave-3b" title="Permalink to this heading">#</a></h4>
+<p>Bruk Python til å regne ut sannsynligheten for at alle 2000 lyspærer varer minst hele perioden treet er satt opp.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Kodehint<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Du kan trekke 2000 tilfeldige tall fra en normalfordeling ved å bruke</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">levetider</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Hvis du ønsker å sjekke om alle sammen oppfyller en betingelse samtidig, kan du bruke</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">betingelse</span><span class="p">):</span>
+    <span class="c1"># Kodeblokk her.</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><em>Merk at koden som kjører “ren Python” er veldig treg. De to vektoriserte versjonene er omtrent like raske.</em></p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Ren Python</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">antall_pærer</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">n_fail</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">minst_levetid</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">24</span> <span class="c1"># 30 dager * 24 timer per dag</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_pærer</span><span class="p">):</span>
+        <span class="n">levetid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">levetid</span> <span class="o">&lt;</span> <span class="n">minst_levetid</span><span class="p">:</span>
+            <span class="n">n_fail</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">break</span>
+
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="n">n_forsøk</span> <span class="o">-</span> <span class="n">n_fail</span>
+    
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Delvis vektorisert med Numpy</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">antall_pærer</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">minst_levetid</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">24</span> <span class="c1"># 30 dager * 24 timer per dag</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">levetid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">antall_pærer</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">levetid</span> <span class="o">&gt;=</span> <span class="n">minst_levetid</span><span class="p">):</span> 
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--3" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--3">Vektorisert med Numpy</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">antall_pærer</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">minst_levetid</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">24</span> <span class="c1"># antall timer vi ønsker at pærene skal vare</span>
+
+<span class="n">levetider</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">,</span> <span class="n">antall_pærer</span><span class="p">))</span>
+
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">levetider</span> <span class="o">&gt;=</span> <span class="n">minst_levetid</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 0.72904</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som betyr at sannsynligheten for at juletreet vil lyse gjennom hele perioden er ca. 73 %.</p>
+</div>
+</details></section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -505,6 +1261,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Følger og rekker med rekursive funksjoner</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../fysikk/pi_fabrikken.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -514,6 +1288,44 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-vil-det-si-a-simulere-utfall">Hva vil det si å simulere utfall?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oversikt-over-sannsynlighetsfordelinger-i-numpy-random">Oversikt over sannsynlighetsfordelinger i <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler-pa-a-regne-ut-sannsynlighet-med-simulering">Eksempler på å regne ut sannsynlighet med simulering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-terningkast-med-en-terning">Eksempel 1: Terningkast med én terning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-terningkast-med-to-terninger">Eksempel 2: Terningkast med to terninger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-normalfordelte-hoyder-i-en-populasjon">Eksempel 3: Normalfordelte høyder i en populasjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-normalfordelte-hoyder-i-en-populasjon-igjen">Eksempel 4: Normalfordelte høyder i en populasjon (igjen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5-normalfordelte-hoyder-fra-to-populasjoner">Eksempel 5: Normalfordelte høyder fra to populasjoner</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-velge-ut-en-gutt-eller-en-jente-fra-elevene-pa-skolen">Hvordan velge ut en gutt eller en jente fra elevene på skolen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-trekke-en-hoyde-avhengig-av-om-det-er-en-gutt-eller-jente">Hvordan trekke en høyde avhengig av om det er en gutt eller jente</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulering">Simulering</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a">Oppgave 3a</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -158,8 +158,8 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grunnleggende Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/variabler_og_regning/intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/variabler_nb.html">Variabler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/regning_nb.html">Å regne med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/IO/print.html"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
@@ -216,6 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
@@ -563,10 +564,10 @@ f'(x) = 2x + 2 \implies f'(1) = 4.
 \frac{df}{dx} = f'(x).
 \]</div>
 <p>Faktisk kan vi tolke <span class="math notranslate nohighlight">\(df\)</span> som en <em>veldig</em> liten endring i verdien til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(dx\)</span> som en <em>veldig</em> liten endring i verdien til <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>Med dette synspunkt kan vi tolke det som at</p>
+<p>Med dette synspunktet kan vi tolke det som at</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\Delta f}{\Delta x} \to \frac{df}{dx} \quad text{når} \quad h \to 0,
+\frac{\Delta f}{\Delta x} \to \frac{df}{dx} \quad \text{når} \quad h \to 0,
 \]</div>
 <p>der <span class="math notranslate nohighlight">\(\Delta f = f(x+h) - f(x)\)</span> og <span class="math notranslate nohighlight">\(\Delta x = h\)</span>, slik som i likning <a class="reference internal" href="#equation-eq-def-derivative">(11)</a>.</p>
 </div>
@@ -628,6 +629,7 @@ g'(x) = g'(u(x))u'(x) = 2e^{2x} \implies g'(0) = 2,
 <p>Så vi ender opp med en tilnærming som stemmer overens med det eksakte svaret.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="newtons-kvotient-bakover">
 <h2>Newtons kvotient (bakover)<a class="headerlink" href="#newtons-kvotient-bakover" title="Permalink to this heading">#</a></h2>
 <p>Vi kan også tilnærme den deriverte av en funksjon ved å gå bakover i <span class="math notranslate nohighlight">\(x\)</span>-retning, slik at tilnærming til den deriverte blir</p>
@@ -715,6 +717,7 @@ x = 4 ; dpdx(p, x, h) = 83.98
 </div>
 </section>
 </section>
+<hr class="docutils" />
 <section id="definere-en-funksjon-for-den-deriverte-som-proffene">
 <h2>Definere en funksjon for den deriverte som proffene<a class="headerlink" href="#definere-en-funksjon-for-den-deriverte-som-proffene" title="Permalink to this heading">#</a></h2>
 <p>Det er mer naturlig for oss å tenke på den deriverte av en funksjon som en egen matematisk funksjon på lik linje med en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>. Men i funksjonen i eksemplet over definerte vi en funksjon som tok tre argumenter:</p>
@@ -782,6 +785,7 @@ x = 4   ;   dfdx(x) = -0.00805
 </div>
 </section>
 </section>
+<hr class="docutils" />
 <section id="ovingsoppgaver">
 <h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">

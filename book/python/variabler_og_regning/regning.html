@@ -69,6 +69,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/variabler_og_regning/regning';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="print-funksjonen for å skrive ut resultateter" href="../IO/print.html" />
+    <link rel="prev" title="Variabler" href="variabler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,10 +156,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grunnleggende Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Variabler, Datatyper og Regning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="variabler_nb.html">Variabler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regning_nb.html">Å regne med Python</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Variabler, Datatyper og Regning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="variabler.html">Variabler</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Å regne med Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../IO/print.html"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
@@ -214,6 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../matematikk/sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
@@ -263,6 +266,55 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/variabler_og_regning/regning.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -323,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/python/variabler_og_regning/regning.md" target="_blank"
+      <li><a href="../../../_sources/book/python/variabler_og_regning/regning.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -415,11 +467,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelser-regneoperasjoner-i-python">Øvelser: Regneoperasjoner i Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-addisjon-og-subtraksjon">Øvelse 1: Addisjon og subtraksjon</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-2-multiplikasjon-og-divisjon">Øvelse 2: Multiplikasjon og divisjon</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-3-potensregning">Øvelse 3: Potensregning</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolgen-i-python">Regnerekkefølgen i Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-kode-for-alle-regneartene">Eksempel: kode for alle regneartene</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-regne-med-potenser">Eksempel 2: Regne med potenser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -481,7 +550,7 @@ I tabell 1 vises alle regneoperasjonene du kan gjøre med Python og hvilket oper
 </tr>
 <tr class="row-even"><td><p>Potens</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2**3</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Heltallsdivisjon</p></td>
@@ -496,11 +565,66 @@ I tabell 1 vises alle regneoperasjonene du kan gjøre med Python og hvilket oper
 </tr>
 </tbody>
 </table>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Hva betyr heltallsdivisjon og modulo?</p>
 <p><strong>Heltallsdivisjon</strong> er antallet <em>hele</em> ganger et tall går opp i et annet. For eksempel går <code class="docutils literal notranslate"><span class="pre">3</span></code> opp i <code class="docutils literal notranslate"><span class="pre">10</span></code> tre ganger, og derfor er <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">//</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
 <p><strong>Modulo</strong> eller <strong>restdivisjon</strong> er resten av en heltallsdivisjon. For eksempel er <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">3</span> <span class="pre">=</span> <span class="pre">1</span></code> siden <code class="docutils literal notranslate"><span class="pre">3</span></code> går opp i <code class="docutils literal notranslate"><span class="pre">10</span></code> tre ganger med rest <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </div>
+<section id="ovelser-regneoperasjoner-i-python">
+<h3>Øvelser: Regneoperasjoner i Python<a class="headerlink" href="#ovelser-regneoperasjoner-i-python" title="Permalink to this heading">#</a></h3>
+<p>La oss ta se på noen eksempler på kode med de ulike regneartene.</p>
+<section id="ovelse-1-addisjon-og-subtraksjon">
+<h4>Øvelse 1: Addisjon og subtraksjon<a class="headerlink" href="#ovelse-1-addisjon-og-subtraksjon" title="Permalink to this heading">#</a></h4>
+<p>I følgende kode gjøres det addisjon og subtraksjon:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Hva blir tallet som lagres i <code class="docutils literal notranslate"><span class="pre">a</span></code>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Variabelen <code class="docutils literal notranslate"><span class="pre">a</span></code> vil lagre tallet <code class="docutils literal notranslate"><span class="pre">4</span></code> fordi <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code> er <code class="docutils literal notranslate"><span class="pre">5</span></code> og <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">1</span></code> er <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+</div>
+</details></section>
+<section id="ovelse-2-multiplikasjon-og-divisjon">
+<h4>Øvelse 2: Multiplikasjon og divisjon<a class="headerlink" href="#ovelse-2-multiplikasjon-og-divisjon" title="Permalink to this heading">#</a></h4>
+<p>En kode er gitt ved</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span> 
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Hvilken verdi lagres av <code class="docutils literal notranslate"><span class="pre">c</span></code>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Først vil <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">2</span></code>, deretter vil regnes <code class="docutils literal notranslate"><span class="pre">c</span></code> ut ved <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code>.</p>
+</div>
+</details></section>
+<section id="ovelse-3-potensregning">
+<h4>Øvelse 3: Potensregning<a class="headerlink" href="#ovelse-3-potensregning" title="Permalink to this heading">#</a></h4>
+<p>Hva blir verdien til <code class="docutils literal notranslate"><span class="pre">res</span></code> etter følgende kode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">4</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">4**2</span></code> er det samme som <span class="math notranslate nohighlight">\(4^2 = 16\)</span>, dermed er <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">16</span></code>.</p>
+</div>
+</details></section>
+</section>
 </section>
 <section id="regnerekkefolgen-i-python">
 <h2>Regnerekkefølgen i Python<a class="headerlink" href="#regnerekkefolgen-i-python" title="Permalink to this heading">#</a></h2>
@@ -513,7 +637,7 @@ I tabell 1 vises alle regneoperasjonene du kan gjøre med Python og hvilket oper
 <li><p>Addisjon og substraksjon</p></li>
 </ol>
 <p>Dette er omtrent den samme rekkefølgen som man lærer om i matematikken. Den store forskjellen er at divisjon og multiplikasjon <em>ikke</em> stilles på lik linje. Man utfører divisjon <em>før</em> man utfører multiplikasjon.</p>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Eksempel på regnerekkefølge</p>
 <p>Vi skal regne ut <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span></code>.</p>
 <ol class="arabic simple">
@@ -527,24 +651,244 @@ Hadde vi i stedet multiplisert nevneren med <code class="docutils literal notran
 <p>som er et helt annet tall. Én av dem må derfor prioriteres, og det er divisjon som er den prioriterte regnearten.</p>
 </div>
 </section>
-<section id="eksempel-kode-for-alle-regneartene">
-<h2>Eksempel: kode for alle regneartene<a class="headerlink" href="#eksempel-kode-for-alle-regneartene" title="Permalink to this heading">#</a></h2>
-<p>Under ser du et eksempel der alle regneartene er brukt med Python kode. Kjør koden ved å trykke på <em>run</em>.</p>
-<iframe src="https://trinket.io/embed/python/3649cf38ba" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<section id="eksempler">
+<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-1">
+<h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi ønsker regne ut følgende regnestykke med Pythonkode:</p>
+<div class="math notranslate nohighlight">
+\[
+2\cdot 8 - 4\cdot \frac{1}{2} = 
+\]</div>
+<p>Dette kan vi gjøre med følgende kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>res = 14.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi trenger strengt tatt ikke sette en parentes rundt <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">2</span></code> (det er bare gjort for å øke leseligheten), vi kan faktisk også bare skrive koden slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>res = 14.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grunnen til dette var at divisjon uansett var det høyeste prioriterte regnearten her. Å legge til en parentes rundt divisjonen endret ikke på rekkefølgen.</p>
 </section>
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-2-regne-med-potenser">
+<h3>Eksempel 2: Regne med potenser<a class="headerlink" href="#eksempel-2-regne-med-potenser" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi skal regne ut</p>
+<div class="math notranslate nohighlight">
+\[
+3^3 \cdot 4^{-2} = 
+\]</div>
+<p>Bruker vi tabell 1 over regneartene i Python, vet vi at</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(3^3\)</span> = <code class="docutils literal notranslate"><span class="pre">3**3</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(4^{-2}\)</span> = <code class="docutils literal notranslate"><span class="pre">4**(-2)</span></code>  (man må faktisk ikke bruke parentes rundt <code class="docutils literal notranslate"><span class="pre">-2</span></code> for å få det til å fungere, men det er litt lettere å lese med parentesen).</p></li>
+</ul>
+<p>Til slutt ganges de to sammen med <code class="docutils literal notranslate"><span class="pre">*</span></code>-operatoren, som dette:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>res = 1.6875
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eller uten bruk av parentesen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="o">**-</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>res = 1.6875
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksempel-3">
+<h3>Eksempel 3<a class="headerlink" href="#eksempel-3" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi skal regne ut uttrykket</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2^3\cdot 2^5}{2^4} + \frac{2(2^2 + 3)}{7} = 
+\]</div>
+<p>Her får vi to ledd.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2^3 \cdot 2^5 / 2^4 = \)</span>  <code class="docutils literal notranslate"><span class="pre">2**3</span> <span class="pre">*</span> <span class="pre">2**5</span> <span class="pre">/</span> <span class="pre">2**4</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(2(2^2 + 3) / 7 = \)</span> <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">(2**2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">/</span> <span class="pre">7</span></code>.</p></li>
+</ul>
+<p>Til slutt legger vi de to sammen med <code class="docutils literal notranslate"><span class="pre">+</span></code>-operatoren. Vi får de følgende kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">7</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>res = 18.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eller vi kan skrive det over flere linjer slik at hver linje samsvarer med ett ledd i uttrykket:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span>
+    <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">7</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>res = 18.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Velg deg hvilken måte du ønsker å skrive det selv, men det er nyttig å vite at man kan skrive ting i Python over flere linjer dersom man setter på en <em>ytre</em> parentes <code class="docutils literal notranslate"><span class="pre">()</span></code> rundt hele uttrykket, slik som i koden over.</p>
+</section>
+</section>
+<section id="ovingsoppgaver">
+<h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Bruk kodeblokken under til å regne ut følgende regnestykker med Python kode (<em>du finner et løsningsforslag i fanen <code class="docutils literal notranslate"><span class="pre">fasit.py</span></code></em>):</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(a = 3 + 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(b = 4 - 2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c = 5 \cdot 3\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(d = 20 / 4\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(e = 2^3 - 3 \cdot 2 + 5\)</span></p></li>
-</ol>
-<iframe src="https://trinket.io/embed/python/c6fcba1622" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></section>
+<p>Bruk Python til å regne ut</p>
+<div class="math notranslate nohighlight">
+\[
+2 \cdot 3 + 5 = 
+\]</div>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv inn regnestykket her</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut resultatet av regnestykket.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">5</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Bruk Python til å regne ut</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2^3 \cdot 5^2}{4^3} = 
+\]</div>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv inn regnestykket her</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut resultatet av regnestykket.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="o">**</span><span class="mi">3</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</details><section id="oppgave-3">
+<h4>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h4>
+<p>Bruk Python til å regne ut</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2^3\cdot (2^2 + 2^3)^4}{2^6} + \frac{1}{3^{-2}} = 
+\]</div>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Alternativ 1</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Alternativ 2</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">6</span>
+    <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+</section>
 </section>
 </section>
 
@@ -579,6 +923,24 @@ Hadde vi i stedet multiplisert nevneren med <code class="docutils literal notran
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="variabler.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Variabler</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../IO/print.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -597,11 +959,28 @@ Hadde vi i stedet multiplisert nevneren med <code class="docutils literal notran
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelser-regneoperasjoner-i-python">Øvelser: Regneoperasjoner i Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-1-addisjon-og-subtraksjon">Øvelse 1: Addisjon og subtraksjon</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-2-multiplikasjon-og-divisjon">Øvelse 2: Multiplikasjon og divisjon</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ovelse-3-potensregning">Øvelse 3: Potensregning</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolgen-i-python">Regnerekkefølgen i Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-kode-for-alle-regneartene">Eksempel: kode for alle regneartene</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-regne-med-potenser">Eksempel 2: Regne med potenser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
