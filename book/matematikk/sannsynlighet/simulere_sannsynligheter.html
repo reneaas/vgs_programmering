@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2) &#8212; Programmering i Videregående Skole</title>
+    <title>Simulere sannsynligheter &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -69,8 +69,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/sannsynlighet/simulere_sannsynligheter';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Elastiske kollisjoner som en \(\pi\)-fabrikk" href="../../fysikk/pi_fabrikken.html" />
-    <link rel="prev" title="Følger og rekker med rekursive funksjoner" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html" />
+    <link rel="next" title="Forventning, Varians Og Standardavvik med Simuleringer" href="exp_var_std_simulering.html" />
+    <link rel="prev" title="Sannsynlighet (S2)" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -216,7 +216,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Sannsynlighet</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Simulere sannsynligheter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
@@ -457,7 +461,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2)</h1>
+    <h1>Simulere sannsynligheter</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -503,9 +507,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simulere-sannsynligheter-og-sannsynlighetsfordelinger-matematikk-s2">
-<h1>Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2)<a class="headerlink" href="#simulere-sannsynligheter-og-sannsynlighetsfordelinger-matematikk-s2" title="Permalink to this heading">#</a></h1>
-<p>Spesielt relevant kompetansemål:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="simulere-sannsynligheter">
+<h1>Simulere sannsynligheter<a class="headerlink" href="#simulere-sannsynligheter" title="Permalink to this heading">#</a></h1>
+<p><strong>Spesielt relevant kompetansemål</strong>:</p>
 <ul class="simple">
 <li><p>Simulere utfall i, utforske og tolke ulike statistiske fordelinger, og gi eksempler på reelle anvendelser av disse fordelingene.</p></li>
 </ul>
@@ -521,7 +525,36 @@ Som en tilnærming til sannsynligheten til et utfall, tar vi forholdet mellom an
 P(X = A) \approx \frac{n_A}{n}.
 \]</div>
 <p>Da kan vi garantere at når <span class="math notranslate nohighlight">\(n\)</span> blir veldig stor, så vil tilnærmingen bli veldig god.</p>
+<div class="proof algorithm admonition" id="algo-tilnarmet-sannsynlighet">
+<p class="admonition-title"><span class="caption-number">Algorithm 11 </span> (Tilnærme sannsynligheter for utfall)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input</strong>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span>: Antall ganger vi gjennomfører eksperimentet</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(X=x)\)</span> (diskret) eller <span class="math notranslate nohighlight">\(f(x)\)</span> (kontinuerlig): Sannsynlighetsfordeling</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span>: Et utfall</p></li>
+</ul>
+<p><strong>Output</strong>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(X = A)\)</span>: Tilnærmet sannsynlighet for utfall <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ul>
+<p><strong>Metode</strong>:</p>
+<ul class="simple">
+<li><p>Sett <span class="math notranslate nohighlight">\(n_A = 0\)</span></p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i\)</span> fra <span class="math notranslate nohighlight">\(1, 2, 3, \ldots, n\)</span>:</p>
+<ul>
+<li><p>Trekk et tilfeldig tall <span class="math notranslate nohighlight">\(x\)</span> fra sannsynlighetsfordelingen</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(x = A\)</span>:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(n_A = n_A + 1\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Returner <span class="math notranslate nohighlight">\(P(X = A) \approx \frac{n_A}{n}\)</span></p></li>
+</ul>
 </section>
+</div></section>
 <section id="oversikt-over-sannsynlighetsfordelinger-i-numpy-random">
 <h2>Oversikt over sannsynlighetsfordelinger i <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code><a class="headerlink" href="#oversikt-over-sannsynlighetsfordelinger-i-numpy-random" title="Permalink to this heading">#</a></h2>
 <p>Vi skal se på noen av de vanligste sannsynlighetsfordelingene, og hvordan vi kan simulere utfall fra dem.</p>
@@ -617,12 +650,19 @@ P(X = A) \approx \frac{n_A}{n}.
 
 <span class="n">sannsynlighet_sekser</span> <span class="o">=</span> <span class="n">n_seksere</span> <span class="o">/</span> <span class="n">n_forsøk</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få en sekser: </span><span class="si">{</span><span class="n">sannsynlighet_sekser</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. Det eksakte svaret er </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Sannsynlighet for å få en sekser: </span><span class="si">{</span><span class="n">sannsynlighet_sekser</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
+<span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å få en sekser: 0.167. Det eksakte svaret er 0.167 til tre desimaler.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Sannsynlighet for å få en sekser: 0.168. 
+    Det eksakte svaret er 0.167 til tre desimaler.
+    
 </pre></div>
 </div>
 </div>
@@ -681,12 +721,19 @@ P(X = A) \approx \frac{n_A}{n}.
     
 <span class="n">sannsynlighet_7</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få 7 som summen av øyne på to terninger: </span><span class="si">{</span><span class="n">sannsynlighet_7</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. Det eksakte svaret er </span><span class="si">{</span><span class="mi">6</span><span class="o">/</span><span class="mi">36</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Sannsynlighet for å få 7 som summen av øyne på to terninger: </span><span class="si">{</span><span class="n">sannsynlighet_7</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
+<span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="mi">6</span><span class="o">/</span><span class="mi">36</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å få 7 som summen av øyne på to terninger: 0.166. Det eksakte svaret er 0.167 til tre desimaler.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Sannsynlighet for å få 7 som summen av øyne på to terninger: 0.166. 
+    Det eksakte svaret er 0.167 til tre desimaler.
+    
 </pre></div>
 </div>
 </div>
@@ -706,8 +753,11 @@ P(X = A) \approx \frac{n_A}{n}.
 <span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
-    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&gt;=</span> <span class="mi">180</span><span class="p">:</span> <span class="c1"># Hvis høyden er større enn eller lik 180 cm, så legger vi til en suksess</span>
+    <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
+
+    <span class="c1"># Hvis høyden er større enn eller lik 180 cm, så legger vi til en suksess</span>
+    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&gt;=</span> <span class="mi">180</span><span class="p">:</span> 
         <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="n">sannsynlighet_høyde_over_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
@@ -736,23 +786,26 @@ P(X = A) \approx \frac{n_A}{n}.
 <span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
-    <span class="k">if</span> <span class="mi">170</span> <span class="o">&lt;=</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">180</span><span class="p">:</span> <span class="c1"># Hvis høyden ligger mellom 170 og 180 cm, så legger vi til en suksess</span>
+    <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
+
+    <span class="c1"># Hvis høyden ligger mellom 170 og 180 cm, så legger vi til en suksess</span>
+    <span class="k">if</span> <span class="mi">170</span> <span class="o">&lt;=</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">180</span><span class="p">:</span> 
         <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="n">sannsynlighet_høyde_mellom_170_og_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få en høyde mellom 170 og 180 cm: </span><span class="si">{</span><span class="n">sannsynlighet_høyde_mellom_170_og_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(170 cm &lt;= x &lt;= 180 cm) = </span><span class="si">{</span><span class="n">sannsynlighet_høyde_mellom_170_og_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å få en høyde mellom 170 og 180 cm: 0.683.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(170 cm &lt;= x &lt;= 180 cm) = 0.682.
 </pre></div>
 </div>
 </div>
 </div>
-<p>som vi tolker som at <span class="math notranslate nohighlight">\(P(170 \ \text{cm} \leq X \leq 180 \ \text{cm}) \approx 0.683\)</span>.</p>
+<p>som vi tolker som at <span class="math notranslate nohighlight">\(P(170 \ \text{cm} \leq X \leq 180 \ \text{cm}) \approx 0.68\)</span>.</p>
 </section>
 <section id="eksempel-5-normalfordelte-hoyder-fra-to-populasjoner">
 <h3>Eksempel 5: Normalfordelte høyder fra to populasjoner<a class="headerlink" href="#eksempel-5-normalfordelte-hoyder-fra-to-populasjoner" title="Permalink to this heading">#</a></h3>
@@ -785,18 +838,28 @@ Vi kan simulere dette ved å bruke <code class="docutils literal notranslate"><s
 <span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
-    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis vi trekker ut en jente</span>
+    <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> 
+
+    <span class="c1"># Hvis vi trekker ut en jente</span>
+    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
         <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Legg til en suksess</span>
     
 <span class="n">sannsynlighet_jente</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å trekke ut en jente: </span><span class="si">{</span><span class="n">sannsynlighet_jente</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. Det eksakte svaret er </span><span class="si">{</span><span class="n">n_jenter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_elever</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Sannsynlighet for å trekke ut en jente: </span><span class="si">{</span><span class="n">sannsynlighet_jente</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
+<span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="n">n_jenter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_elever</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sannsynlighet for å trekke ut en jente: 0.400. Det eksakte svaret er 0.400 til tre desimaler.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Sannsynlighet for å trekke ut en jente: 0.401. 
+    Det eksakte svaret er 0.400 til tre desimaler.
+    
 </pre></div>
 </div>
 </div>
@@ -842,11 +905,14 @@ P(X \leq 160 \ \text{cm}) \approx \frac{n_\text{suksess}}{n_\text{forsøk}}.
 <span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
+    <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> 
     <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis vi trekker ut en jente</span>
-        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+        <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> 
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 180 cm og standardavvik 6 cm</span>
+        <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 180 cm og standardavvik 6 cm</span>
+        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> 
     
     <span class="k">if</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">160</span><span class="p">:</span> <span class="c1"># Hvis høyden er mindre eller lik 160 cm, så legger vi til en suksess</span>
         <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -1262,20 +1328,20 @@ Løsningsforslag<div class="sd-summary-down docutils">
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Følger og rekker med rekursive funksjoner</p>
+        <p class="prev-next-title">Sannsynlighet (S2)</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../fysikk/pi_fabrikken.html"
+       href="exp_var_std_simulering.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</p>
+        <p class="prev-next-title">Forventning, Varians Og Standardavvik med Simuleringer</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

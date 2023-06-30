@@ -216,7 +216,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter og sannsynlighetsfordelinger (Matematikk S2)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sannsynlighet/intro.html">Sannsynlighet</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
@@ -659,8 +663,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Vi starter fra summen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a14f79f-4cf2-4e0a-9eb4-7cf62a29b79c">
-<span class="eqno">(16)<a class="headerlink" href="#equation-1a14f79f-4cf2-4e0a-9eb4-7cf62a29b79c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-555dd753-a467-437a-ad1c-e9295c9b15c3">
+<span class="eqno">(16)<a class="headerlink" href="#equation-555dd753-a467-437a-ad1c-e9295c9b15c3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\limits_a^b f(x) \, dx &amp; \approx \sum_{i=0}^{n - 1}\frac{f(x_i) + f(x_{i+1})}{2}h \\
 &amp; = \frac{h}{2}\left(f(x_0) + f(x_1) + f(x_1) + f(x_2) + \ldots + f(x_{n-3}) + f(x_{n-2}) + f(x_{n-2}) + f(x_{n-1}) \right) \\
 &amp; = \frac{h}{2}\left(f(x_0) + 2f(x_1) + 2f(x_2) + \ldots + 2f(x_{n-3}) + 2f(x_{n-2}) + f(x_{n-1}) \right) \\
