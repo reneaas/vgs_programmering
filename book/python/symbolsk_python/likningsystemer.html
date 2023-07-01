@@ -184,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IO/lese_filer.html">Lese data fra filer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -504,14 +505,14 @@ document.write(`
 <section id="lineaere-likningsystemer-med-to-likninger-og-to-ukjente">
 <h3>Lineære likningsystemer med to likninger og to ukjente<a class="headerlink" href="#lineaere-likningsystemer-med-to-likninger-og-to-ukjente" title="Permalink to this heading">#</a></h3>
 <p>Et lineært likningsystem med to likninger og to ukjente kan skrives på formen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b9a078ec-7c20-472f-be5b-4f977208c588">
-<span class="eqno">(1)<a class="headerlink" href="#equation-b9a078ec-7c20-472f-be5b-4f977208c588" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-900cbbc8-106b-4458-8bad-1f777b9474dd">
+<span class="eqno">(1)<a class="headerlink" href="#equation-900cbbc8-106b-4458-8bad-1f777b9474dd" title="Permalink to this equation">#</a></span>\[\begin{align}
     ax + by &amp; = r, \\
     cx + dy &amp; = s. \\
 \end{align}\]</div>
 <p>For å løse slike likninger, kan vi benytte oss av <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> akkurat som med vanlig likninger, men da er vi nødt til å omforme begge to slik at vi får 0 på høyre side av likningene, som dette:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f59c492-02fa-4499-a2e8-83d376c5d343">
-<span class="eqno">(2)<a class="headerlink" href="#equation-0f59c492-02fa-4499-a2e8-83d376c5d343" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-561eae70-2bfe-44a8-a80e-b34f0328fc9a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-561eae70-2bfe-44a8-a80e-b34f0328fc9a" title="Permalink to this equation">#</a></span>\[\begin{align}
     ax + by - r &amp; = 0, \\
     cx + dy - s &amp; = 0. \\
 \end{align}\]</div>
@@ -536,14 +537,14 @@ document.write(`
 <section id="eksempel-1-lineaert-likningsystem-med-noyaktig-en-losning">
 <h4>Eksempel 1: Lineært likningsystem med nøyaktig én løsning<a class="headerlink" href="#eksempel-1-lineaert-likningsystem-med-noyaktig-en-losning" title="Permalink to this heading">#</a></h4>
 <p>Vi skal løse likningsystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dfb4b369-0823-4c28-881f-07c9d3701752">
-<span class="eqno">(3)<a class="headerlink" href="#equation-dfb4b369-0823-4c28-881f-07c9d3701752" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2aee98b4-7e2f-4a14-bb74-03c4993ebc68">
+<span class="eqno">(3)<a class="headerlink" href="#equation-2aee98b4-7e2f-4a14-bb74-03c4993ebc68" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y &amp; = 5, \\
     4x + 5y &amp; = 6. \\
 \end{align}\]</div>
 <p>Først må vi omforme likningene slik at vi får 0 på høyre side</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1aa3e92b-a92e-48c4-b881-810bf1356a7c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-1aa3e92b-a92e-48c4-b881-810bf1356a7c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e9a6c1cd-0a8c-418b-a016-6b8bf4c316ba">
+<span class="eqno">(4)<a class="headerlink" href="#equation-e9a6c1cd-0a8c-418b-a016-6b8bf4c316ba" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y - 5 &amp; = 0, \\
     4x + 5y - 6 &amp; = 0. \\
 \end{align}\]</div>
@@ -574,14 +575,14 @@ x = -\frac{7}{2} \wedge y = 4.
 <section id="eksempel-2-lineaert-likningsystem-med-uendelig-mange-losninger">
 <h4>Eksempel 2: Lineært likningsystem med uendelig mange løsninger<a class="headerlink" href="#eksempel-2-lineaert-likningsystem-med-uendelig-mange-losninger" title="Permalink to this heading">#</a></h4>
 <p>Et lineært likningssystem med uendelig mange løsninger med to likninger og to ukjente, vil være likninger der to av dem er et multippel av hverandre. For eksempel</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca1fa187-09f8-49ab-9109-f829f4316a81">
-<span class="eqno">(5)<a class="headerlink" href="#equation-ca1fa187-09f8-49ab-9109-f829f4316a81" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-048e9a5d-18e0-4cdb-ba72-ab62facffa4f">
+<span class="eqno">(5)<a class="headerlink" href="#equation-048e9a5d-18e0-4cdb-ba72-ab62facffa4f" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y &amp; = 5, \\
     4x + 6y &amp; = 10. \\
 \end{align}\]</div>
 <p>Her er likning 2 bare 2 ganget med likning 1. Vi kan omforme likningene slik at vi får 0 på høyre side</p>
-<div class="amsmath math notranslate nohighlight" id="equation-287a5cdb-2e7f-4f49-962e-f9cb118c4b15">
-<span class="eqno">(6)<a class="headerlink" href="#equation-287a5cdb-2e7f-4f49-962e-f9cb118c4b15" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c6d9fa3e-4190-4b4b-962a-ecfbce5dca8e">
+<span class="eqno">(6)<a class="headerlink" href="#equation-c6d9fa3e-4190-4b4b-962a-ecfbce5dca8e" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y - 5 &amp; = 0, \\
     4x + 6y - 10 &amp; = 0. \\
 \end{align}\]</div>
@@ -617,14 +618,14 @@ x = \frac{5}{2} - \frac{3y}{2} \wedge y \in \mathbb{R}.
 <section id="eksempel-3-lineaert-likningsystem-uten-losning">
 <h4>Eksempel 3: Lineært likningsystem uten løsning<a class="headerlink" href="#eksempel-3-lineaert-likningsystem-uten-losning" title="Permalink to this heading">#</a></h4>
 <p>Et eksempel på en likning som ikke har noen løsning er</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed272b66-aee8-4460-9924-f49c5d35b675">
-<span class="eqno">(7)<a class="headerlink" href="#equation-ed272b66-aee8-4460-9924-f49c5d35b675" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e8997a9b-5ee6-4581-a84d-3fc1b2ee3297">
+<span class="eqno">(7)<a class="headerlink" href="#equation-e8997a9b-5ee6-4581-a84d-3fc1b2ee3297" title="Permalink to this equation">#</a></span>\[\begin{align}
     x + y &amp; = 3, \\
     x + y &amp; = 5. \\
 \end{align}\]</div>
 <p>Vi kan omforme likningene slik at vi får 0 på høyre side</p>
-<div class="amsmath math notranslate nohighlight" id="equation-acceb239-959e-448e-b1a0-d5ec68425451">
-<span class="eqno">(8)<a class="headerlink" href="#equation-acceb239-959e-448e-b1a0-d5ec68425451" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-164db921-e692-4159-9203-743c64764c46">
+<span class="eqno">(8)<a class="headerlink" href="#equation-164db921-e692-4159-9203-743c64764c46" title="Permalink to this equation">#</a></span>\[\begin{align}
     x + y - 3 &amp; = 0, \\
     x + y - 5 &amp; = 0. \\
 \end{align}\]</div>
@@ -670,14 +671,14 @@ e^x + \sin(y) = 0.
 <section id="eksempel-1-ikke-lineaert-likningssystem-med-en-av-variablene-opphoyd-i-en-potens">
 <h4>Eksempel 1: Ikke-lineært likningssystem med én av variablene opphøyd i en potens<a class="headerlink" href="#eksempel-1-ikke-lineaert-likningssystem-med-en-av-variablene-opphoyd-i-en-potens" title="Permalink to this heading">#</a></h4>
 <p>Vi skal løse likningsystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4e8e3a1-bd32-4380-bf7f-05ffd282aa8a">
-<span class="eqno">(9)<a class="headerlink" href="#equation-f4e8e3a1-bd32-4380-bf7f-05ffd282aa8a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-832282e6-e995-44a2-894c-efed160d7dee">
+<span class="eqno">(9)<a class="headerlink" href="#equation-832282e6-e995-44a2-894c-efed160d7dee" title="Permalink to this equation">#</a></span>\[\begin{align}
     x^2 - 2y &amp; = -3, \\
     x + y &amp; = 1. \\
 \end{align}\]</div>
 <p>Akkurat som med de lineære likningene, må vi få 0 på høyre side av likningene. Skriver vi om likningene i likningsystemet får vi</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4bbccd74-8d05-410f-b90e-7f326657e04a">
-<span class="eqno">(10)<a class="headerlink" href="#equation-4bbccd74-8d05-410f-b90e-7f326657e04a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2d010a57-3d2e-4bd5-b145-01bd7a36aa89">
+<span class="eqno">(10)<a class="headerlink" href="#equation-2d010a57-3d2e-4bd5-b145-01bd7a36aa89" title="Permalink to this equation">#</a></span>\[\begin{align}
     x^2 - 2y + 3 &amp; = 0, \\
     x + y - 1 &amp; = 0. \\
 \end{align}\]</div>
