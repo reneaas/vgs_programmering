@@ -551,20 +551,20 @@ f(x) = x^2,
 </tbody>
 </table>
 <p>Dette er også slik vi ser for oss at en datafil vil se ut. Vi har en overskrift for hver kolonne, og hver rad representerer en måling.</p>
-<p>Du kan laste ned filen med denne koden:</p>
+<p><strong>Du kan laste ned filen med denne koden:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_data/x_2.txt&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;x_2.txt&quot;</span><span class="p">]))</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_data/x^2.txt&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;x^2.txt&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100    40  100    40    0     0   1765      0 --:--:-- --:--:-- --:--:--  2105
+100    14  100    14    0     0    441      0 --:--:-- --:--:-- --:--:--   518
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
@@ -578,7 +578,7 @@ f(x) = x^2,
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># x-verdier</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Funksjonsverdiene f(x) = x^2</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;x_2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;x^2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="c1"># Vi hopper over første linje fordi det bare er navnet på kolonnene.</span>
     <span class="n">første_linje</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> 
 
@@ -594,8 +594,8 @@ f(x) = x^2,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
-y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = []
+y = []
 </pre></div>
 </div>
 </div>
@@ -603,29 +603,88 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 </section>
 <section id="eksempel-2">
 <h3>Eksempel 2<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at vi har en datafil med posisjonene til en kule over tid etter at vi har kastet den opp i lufta. Vi har målt posisjonen til kula hvert 0.1 sekund, og vi har lagret dataen i en fil som heter <code class="docutils literal notranslate"><span class="pre">posisjon.txt</span></code>. Dataen er gitt ved</p>
+<p>Tenk deg at vi har en datafil med posisjonene til en kule over tid etter at vi har kastet den opp i lufta. Vi har målt posisjonen til kula hvert 0.01 sekund, og vi har lagret dataen i en fil. De første linjene av datafilen ser slik ut:</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(t\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(z\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>2</p></td>
-<td><p>3</p></td>
+<tr class="row-even"><td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>1.00</p></td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>5</p></td>
-<td><p>6</p></td>
+<tr class="row-odd"><td><p>0.01</p></td>
+<td><p>0.05</p></td>
+<td><p>1.15</p></td>
 </tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>8</p></td>
-<td><p>9</p></td>
+<tr class="row-even"><td><p>0.02</p></td>
+<td><p>0.10</p></td>
+<td><p>1.30</p></td>
 </tr>
 </tbody>
 </table>
+<p>Målet vårt er å lese filen og lage en graf av posisjonen til kula.</p>
+<p><strong>Last ned datafilen med følgende kode:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_data/ball.txt&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;ball.txt&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  5289  100  5289    0     0  23869      0 --:--:-- --:--:-- --:--:-- 24261
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan så lese datafilen med følgende kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;ball.txt&quot;</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">første_linje</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Så kan vi visualisere posisjonen til ballen i <span class="math notranslate nohighlight">\(xy\)</span>-planet:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/95579767303ade998ad17484ff177f95fb3df6f9741f55db75c4537b0aa39547.png" src="../../../_images/95579767303ade998ad17484ff177f95fb3df6f9741f55db75c4537b0aa39547.png" />
+</div>
+</div>
 </section>
 </section>
 </section>
