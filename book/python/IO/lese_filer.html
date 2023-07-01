@@ -568,7 +568,7 @@ f(x) = x^2,
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100    40  100    40    0     0    199      0 --:--:-- --:--:-- --:--:--   203
+100    40  100    40    0     0   1261      0 --:--:-- --:--:-- --:--:--  1428
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
@@ -644,7 +644,7 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  5289  100  5289    0     0  23869      0 --:--:-- --:--:-- --:--:-- 24261
+100  5289  100  5289    0     0   221k      0 --:--:-- --:--:-- --:--:--  258k
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
@@ -728,7 +728,125 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 <h3>Oppgave 1: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-målinger i atmosfæren<a class="headerlink" href="#oppgave-1-text-co-2-malinger-i-atmosfaeren" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal du visualisere mengden <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i atmosfæren. Vi skal bruke data fra Mauna Loa-observatoriet på Hawaii. Målingene er gjort hver måned siden 1958.</p>
 <p>Last ned datafilen med denne koden:</p>
-</section>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_data/climate_data/co2_measurements.txt&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;co2_measurements.txt&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Filen har følgende struktur:</p>
+<ol class="arabic simple">
+<li><p>De to første linjene er bare kommentarer, og kan ignoreres.</p></li>
+<li><p>De resterende linjene har kolonner med følgende informasjon:</p>
+<ul class="simple">
+<li><p>Kolonne 1: År (1958-2023)</p></li>
+<li><p>Kolonne 2: Måned (1-12)</p></li>
+<li><p>Kolonne 3: År målt i desimaltall (f.eks er 1958.0417 = januar 1958)</p></li>
+<li><p>Kolonne 4: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-mengde i atmosfæren (i ppm)</p></li>
+<li><p>Kolonne 5: <em>De-seasonalized</em> <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-mengde i atmosfæren (i ppm). Dette handler mest om å trekke fra påvirkninger fra årstidene, og kan ignoreres.</p></li>
+</ul>
+</li>
+</ol>
+<p>De resterende kolonnene er uviktige, så vi kan ignorere deres betydning.</p>
+<p>Under ser du et utdrag av datafilen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat co2_measurements.txt | head -n 8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#            decimal       monthly    de-season  #days  st.dev  unc. of
+#             date         average     alized          of days  mon mean
+ 1958    3   1958.2027      315.70      314.43     -1   -9.99   -0.99
+ 1958    4   1958.2877      317.45      315.16     -1   -9.99   -0.99
+ 1958    5   1958.3699      317.51      314.71     -1   -9.99   -0.99
+ 1958    6   1958.4548      317.24      315.14     -1   -9.99   -0.99
+ 1958    7   1958.5370      315.86      315.18     -1   -9.99   -0.99
+ 1958    8   1958.6219      314.93      316.18     -1   -9.99   -0.99
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Oppgaven</strong>:</p>
+<p>Skriv en pythonkode som leser inn dataen og hender ut følgende:</p>
+<ul class="simple">
+<li><p>Årstallene i en liste <code class="docutils literal notranslate"><span class="pre">år</span></code></p></li>
+<li><p>Månedene i en liste <code class="docutils literal notranslate"><span class="pre">måned</span></code></p></li>
+<li><p>År målt i desimaltall i en liste <code class="docutils literal notranslate"><span class="pre">år_desimal</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-mengden i en liste <code class="docutils literal notranslate"><span class="pre">co2</span></code></p></li>
+</ul>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du må ha lastet ned filen med koden over for at koden under skal fungere.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Importerer plottebiblioteket</span>
+
+<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
+
+<span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">måned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">co2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">år_desimal</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over første linje</span>
+    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over andre linje</span>
+
+    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> 
+        <span class="n">måned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+        <span class="n">år_desimal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+        <span class="n">co2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+
+
+<span class="c1"># Plotter dataene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år_desimal</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$-mengde [ppm]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
+
+<span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">måned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">co2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">år_desimal</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over første linje</span>
+    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over andre linje</span>
+
+    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+        <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> 
+        <span class="n">måned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">år_desimal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="n">co2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
