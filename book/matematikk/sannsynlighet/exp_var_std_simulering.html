@@ -486,6 +486,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-terningspill">Oppgave 3: Terningspill</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-europeisk-rulett">Oppgave 4: Europeisk Rulett</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-levetid-til-lyspaerer">Oppgave 5: Levetid til lyspærer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6-karakter-til-elever-ved-tre-skoler-modifisert-oppgave-fra-eksamen-var-2023-i-s2">Oppgave 6: Karakter til elever ved tre skoler (modifisert oppgave fra Eksamen vår 2023 i S2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6a">Oppgave 6a</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6b">Oppgave 6b</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1268,6 +1273,249 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p class="sd-card-text">Vi kan altså konkludere at den forventede levetiden til systemet synker betraktelig når det er mange pærer koblet i serie.</p>
 </div>
 </details></section>
+<section id="oppgave-6-karakter-til-elever-ved-tre-skoler-modifisert-oppgave-fra-eksamen-var-2023-i-s2">
+<h3>Oppgave 6: Karakter til elever ved tre skoler (modifisert oppgave fra Eksamen vår 2023 i S2)<a class="headerlink" href="#oppgave-6-karakter-til-elever-ved-tre-skoler-modifisert-oppgave-fra-eksamen-var-2023-i-s2" title="Permalink to this heading">#</a></h3>
+<p>Forskere ønsker å undersøke matematikkunnskapene til elever i videregående skole. Elever fra tre store skoler skal være med i undersøkelsen.
+Karakterstatistikk fra de tre skolene viser at karakterene i matematikk er tilnærmet normalfordelt. Tabellen nedenfor viser forventningsverdi og standardavvik for hver av de tre skolene.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Skole</p></th>
+<th class="head"><p>Forventningsverdi</p></th>
+<th class="head"><p>Standardavvik</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>3.8</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>3.4</p></td>
+<td><p>1.4</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>4.1</p></td>
+<td><p>1.1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Forskerne skal trekke ut 20 elever. For hver elev de skal trekke, trekker de først en tilfeldig skole og deretter en tilfeldig elev fra skolen.</p>
+<section id="oppgave-6a">
+<h4>Oppgave 6a<a class="headerlink" href="#oppgave-6a" title="Permalink to this heading">#</a></h4>
+<p>Lag et program som simulerer gjennomsnittskarakteren til 20 elever som er valgt ut på denne måten.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+        <span class="n">skole</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legge til karakteren</span>
+
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Dele på antall elever</span>
+    
+    <span class="c1"># Legge til forventnings av gjennomsnittet</span>
+    <span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventet_gjennomsnitt</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X_forventet_gjennomsnitt = 3.765
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Her kan vi la <span class="math notranslate nohighlight">\(X\)</span> være gjennomsnittskarakteren til 20 tilfeldig utvalgte elever.
+Algoritmisk må vi</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Trekke ut hvilken skole vi ønsker å trekke en elev fra.</p></li>
+<li><p class="sd-card-text">Trekke eleven sin karakter tilfeldig fra normalfordelingen som hører til skolen.</p></li>
+</ol>
+<p class="sd-card-text">Det er to alternativer her.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Vi kjører en dobbel for-løkke der vi looper over antall forsøk i den ytre løkka, og antall elever i den indre. Så regner vi ut gjennomsnittet vi får ved å trekke 20 elever <code class="docutils literal notranslate"><span class="pre">n_forsøk</span></code> ganger.</p></li>
+<li><p class="sd-card-text">Vi kjører en enkel løkke, trekker en skole tilfeldig og deretter en elev sin karakter. Så deler vi på <code class="docutils literal notranslate"><span class="pre">n_forsøk</span> <span class="pre">*</span> <span class="pre">antall_elever</span></code> til slutt.</p></li>
+</ol>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Alternativ 1</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+        <span class="n">skole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">skoler</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">3.8</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">3.4</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">4.1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+
+        <span class="n">x_gjennomsnitt</span> <span class="o">+=</span> <span class="n">x</span>
+
+    <span class="n">x_gjennomsnitt</span> <span class="o">/=</span> <span class="n">antall_elever</span>
+    
+    <span class="n">X_forventet_gjennomsnitt</span> <span class="o">+=</span> <span class="n">x_gjennomsnitt</span>
+
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">/=</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventet_gjennomsnitt</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Alternativ 2</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span> <span class="o">*</span> <span class="n">antall_elever</span><span class="p">):</span>
+    <span class="n">skole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">skoler</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">3.8</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">3.4</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">4.1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+
+    
+    <span class="n">X_forventet_gjennomsnitt</span> <span class="o">+=</span> <span class="n">x</span>
+
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">/=</span> <span class="p">(</span><span class="n">n_forsøk</span> <span class="o">*</span> <span class="n">antall_elever</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventet_gjennomsnitt</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">X_forventet_gjennomsnitt = 3.767</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="oppgave-6b">
+<h4>Oppgave 6b<a class="headerlink" href="#oppgave-6b" title="Permalink to this heading">#</a></h4>
+<p>Bruk simuleringen til å estimere sannsynligheten for at karaktersnittet til de 20 elevene er høyere enn 4.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+        <span class="n">skole</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="c1"># Regn ut gjennomsnittet av karakterene til 20 elever</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="c1"># Legg til betingelse for om gjennomsnitt er større enn karakter 4</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="c1"># Regn ut sannsynligheten for at gjennomsnittskarakter er større enn 4</span>
+<span class="n">sannsynlighet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+        <span class="n">skole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">skoler</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">3.8</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">3.4</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">4.1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+
+        <span class="n">x_gjennomsnitt</span> <span class="o">+=</span> <span class="n">x</span>
+
+    <span class="n">x_gjennomsnitt</span> <span class="o">/=</span> <span class="n">antall_elever</span>
+
+    <span class="c1"># Legg til betingelse for om gjennomsnitt er større enn karakter 4</span>
+    <span class="k">if</span> <span class="n">x_gjennomsnitt</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Regn ut sannsynligheten for at gjennomsnittskarakter er større enn 4</span>
+<span class="n">sannsynlighet</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sannsynlighet = 0.2051</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Med andre ord er <span class="math notranslate nohighlight">\(P(X \geq 4) \approx 0.2\)</span>.</p>
+</div>
+</details></section>
+</section>
 </section>
 </section>
 
@@ -1353,6 +1601,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-terningspill">Oppgave 3: Terningspill</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-europeisk-rulett">Oppgave 4: Europeisk Rulett</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-levetid-til-lyspaerer">Oppgave 5: Levetid til lyspærer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6-karakter-til-elever-ved-tre-skoler-modifisert-oppgave-fra-eksamen-var-2023-i-s2">Oppgave 6: Karakter til elever ved tre skoler (modifisert oppgave fra Eksamen vår 2023 i S2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6a">Oppgave 6a</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6b">Oppgave 6b</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
