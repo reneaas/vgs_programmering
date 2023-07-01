@@ -825,7 +825,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
 
 <span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">måned</span> <span class="o">=</span> <span class="p">[]</span>
@@ -843,6 +845,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
         <span class="n">måned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="n">år_desimal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
         <span class="n">co2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+
+<span class="c1"># Plotter dataene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år_desimal</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$-mengde [ppm]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <figure class="align-default" id="co2-data">
