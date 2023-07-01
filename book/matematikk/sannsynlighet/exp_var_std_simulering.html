@@ -1232,7 +1232,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
     <span class="n">minst_levetid</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="c1"># Sette en høy verdi for å være sikker på at den blir oppdatert</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_lyspærer</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_lyspærer</span><span class="p">):</span>
         <span class="n">levetid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">40_000</span><span class="p">)</span>
         <span class="n">minst_levetid</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">minst_levetid</span><span class="p">,</span> <span class="n">levetid</span><span class="p">)</span>
     
@@ -1315,7 +1315,7 @@ Karakterstatistikk fra de tre skolene viser at karakterene i matematikk er tiln�
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
     <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
         <span class="n">skole</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
         <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
             <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
@@ -1338,7 +1338,14 @@ Karakterstatistikk fra de tre skolene viser at karakterene i matematikk er tiln�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X_forventet_gjennomsnitt = 3.765
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">28</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
+<span class="ne">---&gt; </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventet_gjennomsnitt</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: unsupported format string passed to NotImplementedType.__format__
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1379,7 @@ Algoritmisk må vi</p>
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
     <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
         <span class="n">skole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">skoler</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">3.8</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
