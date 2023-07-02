@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Prosjekt: Simulering av Solsystemet &#8212; Programmering i Videregående Skole</title>
+    <title>Dataanalyse av reelle datasett med Python &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/fysikk/solsystemet';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/data_analyse/intro';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lese data fra filer" href="IO/lese_filer.html" />
+    <link rel="prev" title="Forventning, Varians Og Standardavvik med Simuleringer" href="../matematikk/sannsynlighet/exp_var_std_simulering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../python/funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python/symbolsk_python/likninger.html">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -218,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../matematikk/sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../data_analyse/IO/lese_filer.html">Lese data fra filer</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Dataanalyse av reelle datasett</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="IO/lese_filer.html">Lese data fra filer</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fysikk/pi_fabrikken.html">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biologi med Python</span></p>
 <ul class="nav bd-sidenav">
@@ -276,55 +276,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/fysikk/solsystemet.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -350,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/fysikk/solsystemet.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/data_analyse/intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,7 +331,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/book/fysikk/solsystemet.ipynb" target="_blank"
+      <li><a href="../../_sources/book/data_analyse/intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +341,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -462,7 +413,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Prosjekt: Simulering av Solsystemet</h1>
+    <h1>Dataanalyse av reelle datasett med Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,16 +423,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasettet">Datasettet</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-laste-ned-datasettet">Hvordan laste ned datasettet?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-loade-datasettet">Hvordan loade datasettet?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relevante-kompetansemal">Relevante kompetansemål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oversikt">Oversikt</a></li>
 </ul>
             </nav>
         </div>
@@ -493,63 +436,33 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="prosjekt-simulering-av-solsystemet">
-<h1>Prosjekt: Simulering av Solsystemet<a class="headerlink" href="#prosjekt-simulering-av-solsystemet" title="Permalink to this heading">#</a></h1>
-<p>I dette prosjektet skal du skrive en Pythonkode som regner ut banene til planetene i solsystemet vårt basert på data hentet ut fra <a class="reference external" href="https://ssd.jpl.nasa.gov/horizons/app.html#/">NASA JPL Horizons System</a>.</p>
-<section id="datasettet">
-<h2>Datasettet<a class="headerlink" href="#datasettet" title="Permalink to this heading">#</a></h2>
-<section id="hvordan-laste-ned-datasettet">
-<h3>Hvordan laste ned datasettet?<a class="headerlink" href="#hvordan-laste-ned-datasettet" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/solar_system/solsystem_data.json&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">]))</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="dataanalyse-av-reelle-datasett-med-python">
+<h1>Dataanalyse av reelle datasett med Python<a class="headerlink" href="#dataanalyse-av-reelle-datasett-med-python" title="Permalink to this heading">#</a></h1>
+<section id="relevante-kompetansemal">
+<h2>Relevante kompetansemål<a class="headerlink" href="#relevante-kompetansemal" title="Permalink to this heading">#</a></h2>
+<p><strong>Matematikk R1</strong>:</p>
+<ul class="simple">
+<li><p>planlegge og gjennomføre et selvstendig arbeid med reelle datasett knyttet til naturvitenskapelige temaer og forhold, og analysere og presentere funn</p></li>
+<li><p>anvende derivasjon til å analysere og tolke egne matematiske modeller av reelle datasett</p></li>
+<li><p>modellere og analysere eksponentiell og logistisk vekst i reelle datasett</p></li>
+</ul>
+<p><strong>Matematikk R2</strong>:</p>
+<ul class="simple">
+<li><p>utvikle algoritmer for å beregne integraler numerisk, og bruke programmering til å utføre algoritmene</p></li>
+<li><p>gi eksempler på ulike situasjoner som kan modelleres ved å bruke ulike matematiske funksjoner, og modellere og analysere slike situasjoner ved å bruke reelle datasett</p></li>
+<li><p>anvende derivasjon og integrasjon til å analysere og tolke egne matematiske modeller av reelle datasett</p></li>
+</ul>
+</section>
+<section id="oversikt">
+<h2>Oversikt<a class="headerlink" href="#oversikt" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="IO/lese_filer.html"><span class="doc std std-doc">Lese inn data fra fil</span></a></p></li>
+</ol>
+<!-- 2. [Anvende derivasjon på reelle data (R1)](./IO/deriverte.ipynb)
+3. [Anvende derivasjon og integrasjon på reelle data (R2)](./IO/deriverte_integrasjon.ipynb) -->
+</section>
+<div class="toctree-wrapper compound">
 </div>
-</section>
-<section id="hvordan-loade-datasettet">
-<h3>Hvordan loade datasettet?<a class="headerlink" href="#hvordan-loade-datasettet" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="bakgrunnsteori">
-<h2>Bakgrunnsteori<a class="headerlink" href="#bakgrunnsteori" title="Permalink to this heading">#</a></h2>
-<section id="en-mer-generell-gravitasjonslov">
-<h3>En mer generell gravitasjonslov<a class="headerlink" href="#en-mer-generell-gravitasjonslov" title="Permalink to this heading">#</a></h3>
-<p>I fysikk 2 lærer man at gravitasjonsloven kan skrives som</p>
-<div class="math notranslate nohighlight">
-\[
-F = -\gamma \frac{m_1 m_2}{r^2},
-\]</div>
-<p>der <span class="math notranslate nohighlight">\(r\)</span> er avstanden mellom de to legemene, <span class="math notranslate nohighlight">\(m_1\)</span> og <span class="math notranslate nohighlight">\(m_2\)</span> er massene til objektene og <span class="math notranslate nohighlight">\(\gamma\)</span> er gravitasjonskonstanten. Skal man håndtere solsystemet, må man ta hensyn til at de har interaksjoner mellom hverandre. Da får vi nytte for en mer generell form av gravitasjonsloven:</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{F}_{i} = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}, 
-\]</div>
-<p>der <span class="math notranslate nohighlight">\(\vec{r}_i\)</span> er posisjonen til legeme <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(m_i\)</span> er massen til legeme <span class="math notranslate nohighlight">\(i\)</span> og <span class="math notranslate nohighlight">\(\gamma\)</span> er gravitasjonskonstanten. Tilsvarende er <span class="math notranslate nohighlight">\(\vec{r}_j\)</span> og <span class="math notranslate nohighlight">\(m_j\)</span> posisjonen og massen til legeme <span class="math notranslate nohighlight">\(j\)</span>. Størrelsen <span class="math notranslate nohighlight">\(\vec{F}_i\)</span> er kraften som virker på legeme <span class="math notranslate nohighlight">\(i\)</span> fra alle andre legemer i systemet. I tilfellet her kunne for eksempel <span class="math notranslate nohighlight">\(i\)</span> vært jorden, og da vil <span class="math notranslate nohighlight">\(\vec{F}_i\)</span> være kraften som virker på jorden fra solen og de andre plantene i solsystemet.</p>
-</section>
-<section id="newtons-2-lov">
-<h3>Newtons 2.lov<a class="headerlink" href="#newtons-2-lov" title="Permalink to this heading">#</a></h3>
-<p>Når vi ønsker å finne bevegelsen til et legeme over tid, er Newtons 2.lov vår <em>go-to</em> lov. Kjenner vi alle kreftene på legeme, kan vi finne bevegelsen til legemet over tid. Newtons 2.lov kan oppsummeres som</p>
-<div class="math notranslate nohighlight">
-\[
-\sum_{n} \vec{F}_n = m\vec{a},
-\]</div>
-<p>I dette tilfellet, er summen av kreftene den totale gravitasjonskraften som virker på legemet. For legemet <span class="math notranslate nohighlight">\(i\)</span> kan vi skrive dette som</p>
-<div class="math notranslate nohighlight">
-\[
-m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}, 
-\]</div>
-<p>som gir</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{a}_i = -\gamma \sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}.
-\]</div>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -565,7 +478,7 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/fysikk"
+            path: "./book/data_analyse"
         },
         predefinedOutput: true
     }
@@ -583,6 +496,24 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../matematikk/sannsynlighet/exp_var_std_simulering.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Forventning, Varians Og Standardavvik med Simuleringer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="IO/lese_filer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lese data fra filer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -601,16 +532,8 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasettet">Datasettet</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-laste-ned-datasettet">Hvordan laste ned datasettet?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-loade-datasettet">Hvordan loade datasettet?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relevante-kompetansemal">Relevante kompetansemål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oversikt">Oversikt</a></li>
 </ul>
   </nav></div>
 

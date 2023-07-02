@@ -162,7 +162,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/IO/print.html"><code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen for å skrive ut resultateter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/iterasjon/intro.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
@@ -180,7 +179,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/IO/lese_filer.html">Lese data fra filer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -220,6 +218,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../sannsynlighet/intro.html">Sannsynlighet</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/lese_filer.html">Lese data fra filer</a></li>
 </ul>
 </li>
 </ul>
@@ -494,11 +496,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="newtons-metode">
 <h1>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this heading">#</a></h1>
-<p><strong>Newtons metode</strong> er en effektiv måte å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> dersom vi også kjenner til den deriverte <span class="math notranslate nohighlight">\(f'\)</span>. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f'\)</span>, som vi kjenner til. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_1\)</span>. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x_1\)</span>. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_2\)</span>. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. <a class="reference internal" href="#newtonsmetode-fig"><span class="std std-numref">Fig. 4</span></a> viser en animasjon av prosessen.</p>
+<p><strong>Newtons metode</strong> er en effektiv måte å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> dersom vi også kjenner til den deriverte <span class="math notranslate nohighlight">\(f'\)</span>. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f'\)</span>, som vi kjenner til. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_1\)</span>. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x_1\)</span>. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_2\)</span>. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. <a class="reference internal" href="#newtonsmetode-fig"><span class="std std-numref">Fig. 2</span></a> viser en animasjon av prosessen.</p>
 <figure class="align-default" id="newtonsmetode-fig">
 <img alt="../../../_images/NewtonIteration_Ani.gif" src="../../../_images/NewtonIteration_Ani.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> vist i blå. Animasjonen er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_method#/media/File:NewtonIteration_Ani.gif">Wikimedia Commons</a>.</span><a class="headerlink" href="#newtonsmetode-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> vist i blå. Animasjonen er hentet fra <a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_method#/media/File:NewtonIteration_Ani.gif">Wikimedia Commons</a>.</span><a class="headerlink" href="#newtonsmetode-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Vi kan formelt komme frem til en algoritme som følger. La <span class="math notranslate nohighlight">\(x_0\)</span> være et vilkårlig startpunkt.
