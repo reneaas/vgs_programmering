@@ -563,18 +563,15 @@ f(x) = x^2,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_data/x_kvadrert.txt&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;x_kvadrert.txt&quot;</span><span class="p">]))</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/x_kvadrert.txt&quot;</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;x_kvadrert.txt&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100    40  100    40    0     0   1261      0 --:--:-- --:--:-- --:--:--  1428
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+100    40  100    40    0     0    162      0 --:--:-- --:--:-- --:--:--   165
 </pre></div>
 </div>
 </div>
@@ -639,18 +636,15 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_data/ball.txt&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;ball.txt&quot;</span><span class="p">]))</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/ball.txt&quot;</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;ball.txt&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  5289  100  5289    0     0   221k      0 --:--:-- --:--:-- --:--:--  258k
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+100  5289  100  5289    0     0  23688      0 --:--:-- --:--:-- --:--:-- 24150
 </pre></div>
 </div>
 </div>
@@ -735,8 +729,15 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/co2_measurements.txt&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;co2_measurements.txt&quot;</span><span class="p">]))</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/climate_data/co2_measurements.txt&quot;</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;co2_measurements.txt&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    14  100    14    0     0     70      0 --:--:-- --:--:-- --:--:--    71
 </pre></div>
 </div>
 </div>
@@ -758,22 +759,12 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 <p>Under ser du et utdrag av datafilen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat co2_measurements.txt | head -n 8&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat co2_measurements.txt | head -n 8&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#            decimal       monthly    de-season  #days  st.dev  unc. of
-#             date         average     alized          of days  mon mean
- 1958    3   1958.2027      315.70      314.43     -1   -9.99   -0.99
- 1958    4   1958.2877      317.45      315.16     -1   -9.99   -0.99
- 1958    5   1958.3699      317.51      314.71     -1   -9.99   -0.99
- 1958    6   1958.4548      317.24      315.14     -1   -9.99   -0.99
- 1958    7   1958.5370      315.86      315.18     -1   -9.99   -0.99
- 1958    8   1958.6219      314.93      316.18     -1   -9.99   -0.99
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>404: Not Found
 </pre></div>
 </div>
 </div>
@@ -934,30 +925,28 @@ Year No_Smoothing  Lowess(5)
 
 <span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">n_hopp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor mange linjer skal hoppes over?</span>
+<span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">n_hopp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor mange linjer må du hoppe over?</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_hopp</span><span class="p">):</span>
         <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
     
     <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="n">verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Splitt linjen i verdier</span>
 
         <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
         <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik</span><span class="p">)</span>
+        <span class="n">temperaturavvik_smooth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+    
+<span class="c1"># Visualiserer dataene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Rådata&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik_smooth</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Glattet kurve&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik [°C]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1880&#39;, &#39;-0.17&#39;, &#39;-0.10&#39;]
 </pre></div>
 </div>
 </div>
@@ -1007,45 +996,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </figcaption>
 </figure>
 </div>
-</details><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;global_temperatures.txt&quot;</span>
-
-<span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">n_hopp</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Fem tommer linjer.</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_hopp</span><span class="p">):</span>
-        <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-    
-    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-        <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-        <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-        <span class="n">temperaturavvik_smooth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-    
-<span class="c1"># Visualiserer dataene</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Rådata&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik_smooth</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Glattet kurve&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik [°C]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;figurer/global_temperaturavvik.pdf&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/d27f4c5824442bba3bfe5a5551c46b37805f121382100cf8b386b628e9bbe2c2.png" src="../../../_images/d27f4c5824442bba3bfe5a5551c46b37805f121382100cf8b386b628e9bbe2c2.png" />
-</div>
-</div>
-</section>
+</details></section>
 <section id="oppgave-2b-finn-de-varmeste-arene">
 <h3>Oppgave 2b: Finn de varmeste årene<a class="headerlink" href="#oppgave-2b-finn-de-varmeste-arene" title="Permalink to this heading">#</a></h3>
 <p>Skriv en pythonkode som finner de fem varmeste årene siden 1880.</p>
@@ -1093,66 +1044,19 @@ Kodehint 2<div class="sd-summary-down docutils">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">max_år</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_år</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Hvor mange maksverdier skal vi finne?</span>
-    <span class="n">max_verdi</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Finn maksverdien</span>
-    <span class="n">max_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Finn indeksen til maksverdien</span>
-
-    <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til maksverdien i listen</span>
-    <span class="n">max_år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til årstallet i listen</span>
-
-    <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Slett elementet fra listen</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">max_år</span> <span class="o">=</span> <span class="p">[]</span>
-
 <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_år</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="n">max_index</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">temperaturavvik</span><span class="p">))</span>
+    <span class="n">max_verdi</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">temperaturavvik</span><span class="p">)</span>
+    <span class="n">max_index</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_verdi</span><span class="p">)</span>
 
-    <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperaturavvik</span><span class="p">[</span><span class="n">max_index</span><span class="p">])</span>
+    <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">max_verdi</span><span class="p">)</span>
     <span class="n">max_år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">år</span><span class="p">[</span><span class="n">max_index</span><span class="p">])</span>
+
+    <span class="c1"># Sletter år og temperaturavvik fra listene</span>
+    <span class="n">år</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">max_index</span><span class="p">)</span>
     <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">max_index</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_temperaturavvik</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sd-card-text">som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">max_år = [2016.0, 2019.0, 2018.0, 2016.0, 2015.0]</span>
-<span class="go">max_temperaturavvik = [1.02, 1.02, 0.98, 0.92, 0.9]</span>
-</pre></div>
-</div>
-<p class="sd-card-text">Med andre ord, var årene 2016 og 2019 de varmeste årene noen siden 1880. Da var temperaturen 1.02 °C over gjennomsnittet fra perioden 1951-1980.</p>
-</div>
-</details><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">max_år</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_år</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="n">max_index</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">temperaturavvik</span><span class="p">))</span>
-
-    <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperaturavvik</span><span class="p">[</span><span class="n">max_index</span><span class="p">])</span>
-    <span class="n">max_år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">år</span><span class="p">[</span><span class="n">max_index</span><span class="p">])</span>
-    <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">max_index</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_temperaturavvik</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max_år = [2016.0, 2019.0, 2018.0, 2016.0, 2015.0]
-max_temperaturavvik = [1.02, 1.02, 0.98, 0.92, 0.9]
 </pre></div>
 </div>
 </div>
@@ -1169,13 +1073,48 @@ max_temperaturavvik = [1.02, 1.02, 0.98, 0.92, 0.9]
     <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til maksverdien i listen</span>
     <span class="n">max_år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til årstallet i listen</span>
 
-    <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Slett elementet fra listen</span>
+    <span class="c1"># Slett elementet fra listen, pop tar indeksen som argument</span>
+    <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_temperaturavvik</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>min_liste = [1, 5, 3, 5]</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">max_år</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_år</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">max_verdi</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">temperaturavvik</span><span class="p">)</span>
+    <span class="n">max_index</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_verdi</span><span class="p">)</span>
+
+    <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">max_verdi</span><span class="p">)</span>
+    <span class="n">max_år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">år</span><span class="p">[</span><span class="n">max_index</span><span class="p">])</span>
+
+    <span class="c1"># Sletter år og temperaturavvik fra listene</span>
+    <span class="n">år</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">max_index</span><span class="p">)</span>
+    <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">max_index</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_temperaturavvik</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">max_år = [2016.0, 2019.0, 2018.0, 2016.0, 2015.0]</span>
+<span class="go">max_temperaturavvik = [1.02, 1.02, 0.98, 0.92, 0.9]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Med andre ord, var årene 2016 og 2019 de varmeste årene noen siden 1880. Da var temperaturen 1.02 °C over gjennomsnittet fra perioden 1951-1980.</p>
+</div>
+</details></section>
 </section>
 </section>
 
