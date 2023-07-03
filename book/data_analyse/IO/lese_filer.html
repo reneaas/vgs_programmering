@@ -69,8 +69,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/data_analyse/IO/lese_filer';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Elastiske kollisjoner som en \(\pi\)-fabrikk" href="../../fysikk/pi_fabrikken.html" />
-    <link rel="prev" title="Dataanalyse av reelle datasett med Python" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likninger.html">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -220,8 +218,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../matematikk/sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../intro.html">Dataanalyse av reelle datasett</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lese data fra filer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="read_files.html">Lese inn data fra filer 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../climate_change/climate_change.html">Klimaendringer</a></li>
 </ul>
 </li>
 </ul>
@@ -867,9 +866,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 <figure class="align-default" id="co2-data">
-<img alt="../../../_images/co2_målinger.pdf" src="../../../_images/co2_målinger.pdf" />
+<img alt="book/data_analyse/IO/figurer/co2_målinger.pdf" src="book/data_analyse/IO/figurer/co2_målinger.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Målinger av <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i atmosfæren ved Mauna Loa-observatoriet på Hawaii.</span><a class="headerlink" href="#co2-data" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Målinger av <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i atmosfæren ved Mauna Loa-observatoriet på Hawaii.</span><a class="headerlink" href="#co2-data" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1005,9 +1004,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 <figure class="align-default" id="global-temperaturavvik">
-<img alt="../../../_images/global_temperaturavvik.pdf" src="../../../_images/global_temperaturavvik.pdf" />
+<img alt="book/data_analyse/IO/figurer/global_temperaturavvik.pdf" src="book/data_analyse/IO/figurer/global_temperaturavvik.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Temperaturavvik på jorda siden 1880. Dataen er hentet fra <a class="reference external" href="https://climate.nasa.gov/vital-signs/global-temperature/">NASA</a>.</span><a class="headerlink" href="#global-temperaturavvik" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Temperaturavvik på jorda siden 1880. Dataen er hentet fra <a class="reference external" href="https://climate.nasa.gov/vital-signs/global-temperature/">NASA</a>.</span><a class="headerlink" href="#global-temperaturavvik" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1297,24 +1296,6 @@ Løsningsforslag<div class="sd-summary-down docutils">
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Dataanalyse av reelle datasett med Python</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../../fysikk/pi_fabrikken.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Elastiske kollisjoner som en <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
