@@ -482,11 +482,13 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-text-co-2-malinger-i-atmosfaeren">Oppgave 1: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-målinger i atmosfæren</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2a-les-inn-og-visualiser-dataen">Oppgave 2a: Les inn og visualiser dataen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-fem-varmeste-arene">Oppgave 2b: Finn de fem varmeste årene</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">Oppgave 2c: Gjennomsnittlig temperaturøking per år</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2a-les-inn-og-visualiser-dataen">Oppgave 2a: Les inn og visualiser dataen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-fem-varmeste-arene">Oppgave 2b: Finn de fem varmeste årene</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">Oppgave 2c: Gjennomsnittlig temperaturøking per år</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -924,12 +926,11 @@ Year No_Smoothing  Lowess(5)
 <p>Hva betyr disse kolonnene?</p>
 <ul class="simple">
 <li><p>Kolonne 1: År</p></li>
-<li><p>Kolonne 2: Temperaturavvik fra gjennomsnittet i perioden 1951-1980 (i grader Celsius)</p></li>
-<li><p>Kolonne 3: Temperaturavvik fra gjennomsnittet i perioden 1951-1980 med <em>smoothing</em> (i grader Celsius). Du kan tenke på det som en glattet kurve som passer best med dataen i kolonne 2.</p></li>
+<li><p>Kolonne 2: Temperaturavvik fra gjennomsnittet i perioden 1851-1880 (i grader Celsius)</p></li>
+<li><p>Kolonne 3: Temperaturavvik fra gjennomsnittet i perioden 1851-1880 med <em>smoothing</em> (i grader Celsius). Du kan tenke på det som en glattet kurve som passer best med dataen i kolonne 2.</p></li>
 </ul>
-</section>
 <section id="oppgave-2a-les-inn-og-visualiser-dataen">
-<h3>Oppgave 2a: Les inn og visualiser dataen<a class="headerlink" href="#oppgave-2a-les-inn-og-visualiser-dataen" title="Permalink to this heading">#</a></h3>
+<h4>Oppgave 2a: Les inn og visualiser dataen<a class="headerlink" href="#oppgave-2a-les-inn-og-visualiser-dataen" title="Permalink to this heading">#</a></h4>
 <p>Skriv en pythonkode som leser inn dataen inn i lister og henter ut årene og temperaturavvikene (kolonne 2) i lister.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
@@ -1012,7 +1013,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="oppgave-2b-finn-de-fem-varmeste-arene">
-<h3>Oppgave 2b: Finn de fem varmeste årene<a class="headerlink" href="#oppgave-2b-finn-de-fem-varmeste-arene" title="Permalink to this heading">#</a></h3>
+<h4>Oppgave 2b: Finn de fem varmeste årene<a class="headerlink" href="#oppgave-2b-finn-de-fem-varmeste-arene" title="Permalink to this heading">#</a></h4>
 <p>Skriv en pythonkode som finner de fem varmeste årene siden 1880.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Husk at du må ha lest inn dataen for å kunne kjøre koden.</em></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1110,7 +1111,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">
-<h3>Oppgave 2c: Gjennomsnittlig temperaturøking per år<a class="headerlink" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar" title="Permalink to this heading">#</a></h3>
+<h4>Oppgave 2c: Gjennomsnittlig temperaturøking per år<a class="headerlink" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar" title="Permalink to this heading">#</a></h4>
 <p>Finn den gjennomsnittlige temperaturøkningen per år 1980 og 2019 (vi ønsker ikke ta med de tre siste årene fordi COVID-19 pandemien reduserte energibruket verden over og vil gi en lavere økning enn den faktisk forventede økningen).</p>
 <p>Finn både fra rådataene og fra den glattede kurven.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Husk at du må ha lest inn dataen for å kunne kjøre koden.</em></p>
@@ -1206,7 +1207,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">
-<h3>Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?<a class="headerlink" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880" title="Permalink to this heading">#</a></h3>
+<h4>Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?<a class="headerlink" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880" title="Permalink to this heading">#</a></h4>
 <p>Et av de sentrale klimamålene er at den globale temperaturen skal holdes til under 1.5 °C innen enden av århundret. Basert på verdien du fant for den gjennomsnittlige økningen av temperaturen per år, i hvilket år vil vi passere 1.5 °C?</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du trenger utregningene fra oppgave 2c for å løse oppgaven.</em></p>
 <div class="cell docutils container">
@@ -1261,6 +1262,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p class="sd-card-text">Med temperaturøkningen vi har hatt de siste 40 årene, vil vi altså passere 1.5 °C lenge før århundreskiftet.</p>
 </div>
 </details></section>
+</section>
 </section>
 </section>
 
@@ -1339,11 +1341,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-text-co-2-malinger-i-atmosfaeren">Oppgave 1: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-målinger i atmosfæren</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2a-les-inn-og-visualiser-dataen">Oppgave 2a: Les inn og visualiser dataen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-fem-varmeste-arene">Oppgave 2b: Finn de fem varmeste årene</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">Oppgave 2c: Gjennomsnittlig temperaturøking per år</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2a-les-inn-og-visualiser-dataen">Oppgave 2a: Les inn og visualiser dataen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-fem-varmeste-arene">Oppgave 2b: Finn de fem varmeste årene</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">Oppgave 2c: Gjennomsnittlig temperaturøking per år</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
