@@ -29,6 +29,11 @@ plt.legend()
 plt.show()
 
 
+temperaturavvik = temperaturavvik[-50:]
+temperaturavvik_smooth = temperaturavvik_smooth[-50:]
+år = år[-50:]
+
+
 gjennomsnitt_stigning = 0
 gjennomsnitt_stigning_smooth = 0
  
@@ -67,7 +72,7 @@ plt.show()
 current_temp = temperaturavvik[-1]
 current_temp_smooth = temperaturavvik_smooth[-1]
 current_year = år[-1]
-while current_temp < 2.0:
+while current_temp < 1.5:
     current_temp += gjennomsnitt_stigning
     current_temp_smooth += gjennomsnitt_stigning_smooth
     current_year += 1
