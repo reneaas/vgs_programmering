@@ -588,7 +588,11 @@ f(x) = x^2,
 
     <span class="c1"># Leser inn resten av filen</span>
     <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="c1"># Splitter linjen opp i en liste med verdier</span>
         <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+        <span class="c1"># Legger til x og y-verdiene i hver sin liste</span>
+        <span class="c1"># Vi bruker `float()`-funksjonen for å konvertere fra `str` til `float`</span>
         <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
         <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
@@ -657,7 +661,11 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="n">første_linje</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="c1"># Splitter opp linja i en liste med verdier</span>
         <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+        <span class="c1"># Henter ut verdiene og legger dem til i hver sin liste</span>
+        <span class="c1"># Vi bruker float() for å konvertere fra tekst til tall</span>
         <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
         <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
@@ -713,7 +721,7 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 </div>
 <p class="sd-card-text">Det ser frykelig komplisert ut, men det tar essensielt å plasserer verdiene i mindre lister.</p>
 <p class="sd-card-text"><strong>Men hvorfor ikke bare lære denne metoden fra start av?</strong>
-Den er en del mindre fleksibel enn den innebygde måten å lese filer på med Python. Den innebygde metoden gjør at vi kan håndtere filer som ikke er like strukturerte som den vi har sett på her. Det viser seg at måten vi leser filer på her gir også en del raskere kode.</p>
+Den er en del mindre fleksibel enn den innebygde måten å lese filer på med Python. Den innebygde metoden gjør at vi kan håndtere filer som ikke er like strukturerte som den vi har sett på her.</p>
 </div>
 </details></section>
 </section>
