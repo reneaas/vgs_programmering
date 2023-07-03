@@ -484,8 +484,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-text-co-2-malinger-i-atmosfaeren">Oppgave 1: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-målinger i atmosfæren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2a-les-inn-og-visualiser-dataen">Oppgave 2a: Les inn og visualiser dataen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-varmeste-arene">Oppgave 2b: Finn de varmeste årene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-fem-varmeste-arene">Oppgave 2b: Finn de fem varmeste årene</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">Oppgave 2c: Gjennomsnittlig temperaturøking per år</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
 </ul>
 </li>
 </ul>
@@ -562,8 +563,8 @@ f(x) = x^2,
 </table>
 <p>Dette er også slik vi ser for oss at en datafil vil se ut. Vi har en overskrift for hver kolonne, og hver rad representerer en måling.</p>
 <p><strong>Du kan laste ned filen med denne koden:</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/x_kvadrert.txt&quot;</span>
@@ -571,6 +572,11 @@ f(x) = x^2,
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -578,6 +584,7 @@ f(x) = x^2,
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Når datafilen er lastet ned, kan vi lese den inn i Python med følgende kode:</p>
 <div class="cell docutils container">
@@ -635,8 +642,8 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 </table>
 <p>Målet vårt er å lese filen og lage en graf av posisjonen til kula.</p>
 <p><strong>Last ned datafilen med følgende kode:</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/ball.txt&quot;</span>
@@ -644,6 +651,11 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -651,6 +663,7 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Vi kan så lese datafilen med følgende kode:</p>
 <div class="cell docutils container">
@@ -719,6 +732,8 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 <p class="sd-card-text">Det ser frykelig komplisert ut, men det tar essensielt å plasserer verdiene i mindre lister.</p>
+<p class="sd-card-text"><strong>Men hvorfor ikke bare lære denne metoden fra start av?</strong>
+Den er en del mindre fleksibel enn den innebygde måten å lese filer på med Python. Den innebygde metoden gjør at vi kan håndtere filer som ikke er like strukturerte som den vi har sett på her. Det viser seg at måten vi leser filer på her gir også en del raskere kode.</p>
 </div>
 </details></section>
 </section>
@@ -728,8 +743,8 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 <h3>Oppgave 1: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-målinger i atmosfæren<a class="headerlink" href="#oppgave-1-text-co-2-malinger-i-atmosfaeren" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal du visualisere mengden <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i atmosfæren. Vi skal bruke data fra Mauna Loa-observatoriet på Hawaii. Målingene er gjort hver måned siden 1958.</p>
 <p>Last ned datafilen med denne koden:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/co2_measurements.txt&quot;</span>
@@ -737,6 +752,11 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -744,6 +764,7 @@ Alternativ måte å lese med Numpy<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Filen har følgende struktur:</p>
 <ol class="arabic simple">
@@ -876,15 +897,20 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <h3>Oppgave 2: Globale temperaturavvik siden 1880<a class="headerlink" href="#oppgave-2-globale-temperaturavvik-siden-1880" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal vi se på temperaturavvikene på jorda siden 1880. Dataen er hentet fra <a class="reference external" href="https://climate.nasa.gov/vital-signs/global-temperature/">NASA</a>.</p>
 <p>Last ned datafilen med denne koden:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/global_temperatures.txt&quot;</span>
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;global_temperatures.txt&quot;</span><span class="p">]))</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;global_temperatures.txt&quot;</span><span class="p">]))</span><span class="o">@</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -892,6 +918,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>De første linjene av datafilen ser slik ut:</p>
 <div class="cell tag_hide-input docutils container">
@@ -1000,7 +1027,6 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik [°C]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;figurer/global_temperaturavvik.pdf&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1012,8 +1038,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </figure>
 </div>
 </details></section>
-<section id="oppgave-2b-finn-de-varmeste-arene">
-<h3>Oppgave 2b: Finn de varmeste årene<a class="headerlink" href="#oppgave-2b-finn-de-varmeste-arene" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-2b-finn-de-fem-varmeste-arene">
+<h3>Oppgave 2b: Finn de fem varmeste årene<a class="headerlink" href="#oppgave-2b-finn-de-fem-varmeste-arene" title="Permalink to this heading">#</a></h3>
 <p>Skriv en pythonkode som finner de fem varmeste årene siden 1880.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Husk at du må ha lest inn dataen for å kunne kjøre koden.</em></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1107,14 +1133,161 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="go">max_temperaturavvik = [1.02, 1.02, 0.98, 0.92, 0.9]</span>
 </pre></div>
 </div>
-<p class="sd-card-text">Med andre ord, var årene 2016 og 2020 de varmeste årene siden 1880. Da var temperaturen 1.02 °C over gjennomsnittet fra perioden 1951-1980.</p>
+<p class="sd-card-text">Med andre ord, var årene 2016 og 2020 de varmeste årene siden 1880. Da var temperaturen 1.02 °C over gjennomsnittet fra perioden 1851-1880.</p>
 </div>
 </details></section>
 <section id="oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">
 <h3>Oppgave 2c: Gjennomsnittlig temperaturøking per år<a class="headerlink" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar" title="Permalink to this heading">#</a></h3>
-<p>Finn den gjennomsnittlige temperaturøkning per år siden 1880. Finn både fra rådataene og fra den glattede kurven.</p>
+<p>Finn den gjennomsnittlige temperaturøkningen per år 1980 og 2019 (vi ønsker ikke ta med de tre siste årene fordi COVID-19 pandemien reduserte energibruket verden over og vil gi en lavere økning enn den faktisk forventede økningen).</p>
+<p>Finn både fra rådataene og fra den glattede kurven.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Husk at du må ha lest inn dataen for å kunne kjøre koden.</em></p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Kodehint: Hvordan regne ut stigning<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Hvis du har to punkter <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> og <span class="math notranslate nohighlight">\((x_2, y_2)\)</span>, så kan du regne ut stigningen mellom dem med formelen</p>
+<div class="math notranslate nohighlight">
+\[
+a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}.
+\]</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor skal vi starte?</span>
+<span class="n">slutt_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor skal vi slutte?</span>
+
+<span class="c1"># Henter ut de relevante dataene og sletter resten.</span>
+<span class="n">temperaturavvik</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
+<span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="n">temperaturavvik_smooth</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
+
+<span class="n">gjennomsnittlig_stigning</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Regn ut stigningen mellom to punkter</span>
+    <span class="n">stigning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">stigning_smooth</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="c1"># Legg til bidraget til gjennomsnittlig stigning</span>
+    <span class="n">gjennomsnittlig_stigning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="c1"># Hva må du dele med for å få gjennomsnittet her?</span>
+<span class="n">gjennomsnittlig_stigning</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
+<span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trenger bare dataen for de siste 50 årene her.</span>
+<span class="c1"># Indeksering med liste = liste[-50:] henter ut de siste 50 elementene i lista.</span>
+<span class="n">start_index</span> <span class="o">=</span> <span class="n">år</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1980</span><span class="p">)</span>
+<span class="n">slutt_index</span> <span class="o">=</span> <span class="n">år</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span>
+
+<span class="n">temperaturavvik</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
+<span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="n">temperaturavvik_smooth</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
+
+<span class="n">gjennomsnittlig_stigning</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Regn ut stigningen mellom to punkter</span>
+    <span class="n">stigning</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">temperaturavvik</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">år</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">år</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">stigning_smooth</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">temperaturavvik_smooth</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">temperaturavvik_smooth</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+        <span class="o">/</span> <span class="p">(</span><span class="n">år</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">år</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Legg til bidraget til gjennomsnittlig stigning</span>
+    <span class="n">gjennomsnittlig_stigning</span> <span class="o">+=</span> <span class="n">stigning</span>
+    <span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">+=</span> <span class="n">stigning_smooth</span>
+
+<span class="c1"># Hva må du dele med for å få gjennomsnittet her?</span>
+<span class="n">gjennomsnittlig_stigning</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gjennomsnittlig_stigning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> °C/år.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gjennomsnittlig_stigning_smooth</span><span class="w"> </span><span class="si">= :</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> °C/år.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">gjennomsnittlig_stigning = 0.01846 °C/år.</span>
+<span class="go">gjennomsnittlig_stigning_smooth = 0.01872 °C/år.</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">
+<h3>Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?<a class="headerlink" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880" title="Permalink to this heading">#</a></h3>
+<p>Et av de sentrale klimamålene er at den globale temperaturen skal holdes til under 1.5 °C innen enden av århundret. Basert på verdien du fant for den gjennomsnittlige økningen av temperaturen per år, i hvilket år vil vi passere 1.5 °C?</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du trenger utregningene fra oppgave 2c for å løse oppgaven.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Regn ut hvilket år det er 1.5 grader Celsius varmere enn 1880</span>
+
+<span class="n">nåværende_temp</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Temperaturavviket i 2022</span>
+<span class="n">nåværende_år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Året 2022</span>
+
+
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse på når `while`-løkka må stoppe</span>
+    <span class="n">nåværende_år</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk året med 1</span>
+    <span class="n">nåværende_temp</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># øk temperaturen med den årlige stigningen</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Temperaturen er 1.5 grader varmere enn 1880 i år </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">nåværende_år</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Regn ut hvilket år det er 1.5 grader Celsius varmere enn 1880</span>
+
+<span class="n">nåværende_temp</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Temperaturavviket i 2022</span>
+<span class="n">nåværende_år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Året 2022</span>
+
+
+<span class="k">while</span> <span class="n">nåværende_temp</span> <span class="o">&lt;</span> <span class="mf">1.5</span><span class="p">:</span>
+    <span class="n">nåværende_år</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">nåværende_temp</span> <span class="o">+=</span> <span class="n">gjennomsnittlig_stigning</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Temperaturen er 1.5 grader varmere enn 1880 i år </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">nåværende_år</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Temperaturen er 1.5 grader varmere enn 1880 i år 2048.</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Med temperaturøkningen vi har hatt de siste 40 årene, vil vi altså passere 1.5 °C lenge før århundreskiftet.</p>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -1195,8 +1368,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-text-co-2-malinger-i-atmosfaeren">Oppgave 1: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-målinger i atmosfæren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2a-les-inn-og-visualiser-dataen">Oppgave 2a: Les inn og visualiser dataen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-varmeste-arene">Oppgave 2b: Finn de varmeste årene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-fem-varmeste-arene">Oppgave 2b: Finn de fem varmeste årene</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">Oppgave 2c: Gjennomsnittlig temperaturøking per år</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
 </ul>
 </li>
 </ul>
