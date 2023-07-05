@@ -495,6 +495,11 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-text-co-2-nivaer-i-atmosfaeren-de-siste-400-000-arene">Oppgave 3: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivåer i atmosfæren de siste 400 000 årene</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Last ned datasettet</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a-les-inn-dataene-fra-filen">Oppgave 3a: Les inn dataene fra filen</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1124,6 +1129,133 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 </section>
+<section id="oppgave-3-text-co-2-nivaer-i-atmosfaeren-de-siste-400-000-arene">
+<h3>Oppgave 3: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivåer i atmosfæren de siste 400 000 årene<a class="headerlink" href="#oppgave-3-text-co-2-nivaer-i-atmosfaeren-de-siste-400-000-arene" title="Permalink to this heading">#</a></h3>
+<p>I eksempelet om <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivåer i atmosfæren, så vi at mengden <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> har økt betydelig fra 1958 til i dag. Men hvordan er mengden <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i atmosfæren sammenlignet med de siste 400 000 årene?</p>
+<p>I denne oppgaven skal du se på målinger av <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i atmosfæren gjort ved å hente ut iskjerner fra Antarktis og måle mengden <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> som er fanget i isen. Jo dypere ned man måler, jo eldre er isen. Derfor kan vi få et bilde av atmosfærens sammensetning for flere hundre tusen år siden.</p>
+<section id="id2">
+<h4>Last ned datasettet<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<p>Du kan laste ned datasettet med følgende Pythonkode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/co2_icecore_data.txt&quot;</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;co2_icecore_data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De første linjene av filen ser slik ut:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat co2_icecore_data.txt | head -n 25&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*******************************************************************************
+*** Historical CO2 Record from the Vostok Ice Core                          ***
+***                                                                         ***
+*** Source: J.M. Barnola                                                    ***
+***         D. Raynaud                                                      ***
+***         C. Lorius                                                       ***
+***         Laboratoire de Glaciologie et de Geophysique de l&#39;Environnement ***
+***         38402 Saint Martin d&#39;Heres Cedex, France                        ***
+***                                                                         ***
+***         N. I. Barkov                                                    ***
+***         Arctic and Antarctic Research Institute                         ***
+***         Beringa Street 38                                               ***
+***         St. Petersburg 199226, Russia                                   ***
+***                                                                         ***
+*** January 2003                                                             ***
+*******************************************************************************
+                Mean
+       Age of   age of    CO2
+Depth  the ice  the air concentration
+ (m)   (yr BP)  (yr BP)  (ppmv)
+
+149.1	5679	2342	284.7
+173.1	6828	3634	272.8
+177.4	7043	3833	268.1
+228.6	9523	6220	262.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Her har kolonnene følgende betydning:</p>
+<ul class="simple">
+<li><p>Kolonne 1: Dybden til iskjernen i meter</p></li>
+<li><p>Kolonne 2: Alderen til isen før vår tid. For eksempel er 5679 år = 5679 år siden. År 0 er altså i dag.</p></li>
+<li><p>Kolonne 3: Alderen til luften i isen før vår tid. For eksempel er 2342 år = 2342 år siden.</p></li>
+<li><p>Kolonne 4: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivået i atmosfæren i ppm (parts per million) før vår tid. For eksempel er 284.7 ppm = 284.7 <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-molekyler per million andre molekyler i luften.</p></li>
+</ul>
+</section>
+<section id="oppgave-3a-les-inn-dataene-fra-filen">
+<h4>Oppgave 3a: Les inn dataene fra filen<a class="headerlink" href="#oppgave-3a-les-inn-dataene-fra-filen" title="Permalink to this heading">#</a></h4>
+<p>Les inn dataene fra filen <code class="docutils literal notranslate"><span class="pre">co2_icecore_data.txt</span></code>. Hent ut dybden, alderen til isen, alderen til luften og <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivået i luften.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_icecore_data.txt&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="ne">ValueError</span>: could not convert string to float: &#39;***&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_icecore_data.txt&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/lib/python3.11/site-packages/numpy/lib/npyio.py:1356,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1353</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1354</span>     <span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1356</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_read</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1357</span>             <span class="n">converters</span><span class="o">=</span><span class="n">converters</span><span class="p">,</span> <span class="n">skiplines</span><span class="o">=</span><span class="n">skiprows</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1358</span>             <span class="n">unpack</span><span class="o">=</span><span class="n">unpack</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="n">ndmin</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1359</span>             <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quotechar</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span> <span class="k">return</span> <span class="n">arr</span>
+
+<span class="nn">File /opt/homebrew/lib/python3.11/site-packages/numpy/lib/npyio.py:999,</span> in <span class="ni">_read</span><span class="nt">(fname, delimiter, comment, quote, imaginary_unit, usecols, skiplines, max_rows, converters, ndmin, unpack, dtype, encoding)</span>
+<span class="g g-Whitespace">    </span><span class="mi">996</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">_preprocess_comments</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">comments</span><span class="p">,</span> <span class="n">encoding</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span> <span class="k">if</span> <span class="n">read_dtype_via_object_chunks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">999</span>     <span class="n">arr</span> <span class="o">=</span> <span class="n">_load_from_filelike</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1000</span>         <span class="n">data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quote</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="n">imaginary_unit</span><span class="o">=</span><span class="n">imaginary_unit</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span>         <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span> <span class="n">skiplines</span><span class="o">=</span><span class="n">skiplines</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1003</span>         <span class="n">converters</span><span class="o">=</span><span class="n">converters</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1004</span>         <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">filelike</span><span class="o">=</span><span class="n">filelike</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span>         <span class="n">byte_converters</span><span class="o">=</span><span class="n">byte_converters</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="c1"># This branch reads the file into chunks of object arrays and then</span>
+<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="c1"># casts them to the desired actual dtype.  This ensures correct</span>
+<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="c1"># string-length and datetime-unit discovery (like `arr.astype()`).</span>
+<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="c1"># Due to chunking, certain error reports are less clear, currently.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1012</span>     <span class="k">if</span> <span class="n">filelike</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: could not convert string &#39;***&#39; to float64 at row 0, column 1.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -1212,6 +1344,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b-finn-de-fem-varmeste-arene">Oppgave 2b: Finn de fem varmeste årene</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c-gjennomsnittlig-temperaturoking-per-ar">Oppgave 2c: Gjennomsnittlig temperaturøking per år</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d-nar-er-den-globale-temperaturen-1-5-c-hoyere-enn-i-perioden-1851-1880">Oppgave 2d: Når er den globale temperaturen 1.5 °C høyere enn i perioden 1851-1880?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-text-co-2-nivaer-i-atmosfaeren-de-siste-400-000-arene">Oppgave 3: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivåer i atmosfæren de siste 400 000 årene</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Last ned datasettet</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a-les-inn-dataene-fra-filen">Oppgave 3a: Les inn dataene fra filen</a></li>
 </ul>
 </li>
 </ul>
