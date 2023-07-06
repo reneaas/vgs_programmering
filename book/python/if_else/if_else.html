@@ -478,7 +478,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-2">Underveisoppgave 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mer-sammensatte-if-else-tester">Mer sammensatte <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-3">Underveisoppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-4">Underveisoppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-5">Underveisoppgave 5</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -576,8 +581,120 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 </section>
-<section id="mer-sammensatte-if-else-tester">
-<h2>Mer sammensatte <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester<a class="headerlink" href="#mer-sammensatte-if-else-tester" title="Permalink to this heading">#</a></h2>
+<section id="logiske-operatorer">
+<h2>Logiske operatorer<a class="headerlink" href="#logiske-operatorer" title="Permalink to this heading">#</a></h2>
+<p><strong>Logiske operatorer</strong> er brukt for sammenligning av variabler. Vi kan tenke på dem som <em>sammenlikningsoperasjoner</em> der vi sjekker om en betingelse er oppfylt eller ikke. Resultatet av en slik sammenlikning er alltid enten at betingelsen er sann som gir <code class="docutils literal notranslate"><span class="pre">True</span></code>, eller at den er usann som gir <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>I Python kan vi sette opp betingelser for på flere måter. I tabell 1 vises de vanligste logiske operatorer for to variabler <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p><strong>Tabell 1</strong>: Tabellen viser de vanligste logiske operatorene. Som eksempel har vi satt <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">-2</span></code> for å vise hva resultatet av operasjonen blir.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Eksempel</p></th>
+<th class="head"><p>Betydning</p></th>
+<th class="head"><p>Resultat</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code></p></td>
+<td><p>Er <code class="docutils literal notranslate"><span class="pre">a</span></code> lik <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code></p></td>
+<td><p>Er <code class="docutils literal notranslate"><span class="pre">a</span></code> ulik <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code></p></td>
+<td><p>Er <code class="docutils literal notranslate"><span class="pre">a</span></code> mindre enn <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code></p></td>
+<td><p>Er <code class="docutils literal notranslate"><span class="pre">a</span></code> større enn <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">b</span></code></p></td>
+<td><p>Er <code class="docutils literal notranslate"><span class="pre">a</span></code> mindre enn eller lik <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">b</span></code></p></td>
+<td><p>Er <code class="docutils literal notranslate"><span class="pre">a</span></code> større enn eller lik <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<section id="underveisoppgave-3">
+<h3>Underveisoppgave 3<a class="headerlink" href="#underveisoppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">!=</span> <span class="pre">2</span></code>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Siden <code class="docutils literal notranslate"><span class="pre">1</span></code> er ulik <code class="docutils literal notranslate"><span class="pre">2</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">!=</span> <span class="pre">2</span></code> være <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</div>
+</details></section>
+<section id="underveisoppgave-4">
+<h3>Underveisoppgave 4<a class="headerlink" href="#underveisoppgave-4" title="Permalink to this heading">#</a></h3>
+<p>La <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">-5</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">10</span></code>. Hvilke(n) logisk(e) operator(er) kan settes mellom <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> slik at resultatet blir <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Her er det flere muligheter. Noen eksempler er</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">==</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> har ulik verdi.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;=</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+</ol>
+</div>
+</details></section>
+<section id="underveisoppgave-5">
+<h3>Underveisoppgave 5<a class="headerlink" href="#underveisoppgave-5" title="Permalink to this heading">#</a></h3>
+<p>Lag en variabel med navn <code class="docutils literal notranslate"><span class="pre">res</span></code> med en verdi slik at følgende kodesnutt kjører <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken. Hva er en passende tekst å skrive ut til brukene i <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken?</p>
+<p><em>Ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">I <code class="docutils literal notranslate"><span class="pre">if</span></code>-testen, så sjekker vi om <code class="docutils literal notranslate"><span class="pre">res</span></code> er større enn eller lik <code class="docutils literal notranslate"><span class="pre">-2</span></code>.
+Hvis vi ønsker at <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken skal kjøres, så må <code class="docutils literal notranslate"><span class="pre">res</span></code> være større enn eller lik <code class="docutils literal notranslate"><span class="pre">-2</span></code> fordi vi trenger at betingelsen skal bli <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+Vi kan med andre ord sette <code class="docutils literal notranslate"><span class="pre">res</span></code> til en tilfeldig verdi som er større enn eller lik <code class="docutils literal notranslate"><span class="pre">-2</span></code>.</p>
+<p class="sd-card-text">Det vil si <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">-2</span></code> vil gi <code class="docutils literal notranslate"><span class="pre">True</span></code>, men det vil alle andre verdier som er større enn <code class="docutils literal notranslate"><span class="pre">-2</span></code> også. Så som et eksempel kan koden se slik ut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er større enn eller lik -2.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -653,7 +770,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-2">Underveisoppgave 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mer-sammensatte-if-else-tester">Mer sammensatte <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-3">Underveisoppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-4">Underveisoppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-5">Underveisoppgave 5</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
