@@ -485,6 +485,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-text-ch-4-mengder-metangass-i-atmosfaeren">Oppgave 1: <span class="math notranslate nohighlight">\(\text{CH}_4\)</span>-mengder (Metangass) i atmosfæren</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#last-ned-datasettet">Last ned datasettet</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a-les-inn-og-visualiser-dataene">Oppgave 1a: Les inn og visualiser dataene</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b-hvilket-ar-okte-mengden-text-ch-4-mest">Oppgave 1b: Hvilket år økte mengden <span class="math notranslate nohighlight">\(\text{CH}_4\)</span> mest?</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a><ul class="nav section-nav flex-column">
@@ -497,12 +498,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-text-co-2-nivaer-i-atmosfaeren-de-siste-400-000-arene">Oppgave 3: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivåer i atmosfæren de siste 400 000 årene</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Last ned datasettet</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a-les-inn-dataene-fra-filen">Oppgave 3a: Les inn dataene fra filen</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b-visualiser-dataen">Oppgave 3b: Visualiser dataen</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-en-sammenheng-mellom-temperaturokningen-og-klimagassene">Oppgave 4: En sammenheng mellom temperaturøkningen og klimagassene</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4a-last-inn-dataen">Oppgave 4a: Last inn dataen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a-les-inn-dataene-fra-filen-og-visualiser-dataene">Oppgave 3a: Les inn dataene fra filen og visualiser dataene</a></li>
 </ul>
 </li>
 </ul>
@@ -637,7 +633,7 @@ document.write(`
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1-text-ch-4-mengder-metangass-i-atmosfaeren">
 <h3>Oppgave 1: <span class="math notranslate nohighlight">\(\text{CH}_4\)</span>-mengder (Metangass) i atmosfæren<a class="headerlink" href="#oppgave-1-text-ch-4-mengder-metangass-i-atmosfaeren" title="Permalink to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\text{CH}_4\)</span> (metangass) er en sterkere klimagass enn <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> fordi den absorbere mer energi enn <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i de samme bølgelengdene. Men <span class="math notranslate nohighlight">\(\text{CH}_4\)</span> er også en kortlevd klimagass, som betyr at den brytes ned raskere enn <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>. Typisk vil <span class="math notranslate nohighlight">\(\text{CH}_4\)</span> brytes ned i løpet av 7 år til 12 år. Vi skal anta at metangass brytes ned på 10 år i denne oppgaven. Målet er å finne ut hvor mye <span class="math notranslate nohighlight">\(\text{CH}_4\)</span>-gass som slippes ut i atmosfæren hvert år i gjennomsnitt basert på ekte data hentet fra <a class="reference external" href="https://climate.nasa.gov/vital-signs/methane/">NASA</a>.</p>
+<p><span class="math notranslate nohighlight">\(\text{CH}_4\)</span> (metangass) er en sterkere klimagass enn <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> fordi den absorbere mer energi enn <span class="math notranslate nohighlight">\(\text{CO}_2\)</span> i de samme bølgelengdene. Men <span class="math notranslate nohighlight">\(\text{CH}_4\)</span> er også en kortlevd klimagass, som betyr at den brytes ned raskere enn <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>. Typisk vil <span class="math notranslate nohighlight">\(\text{CH}_4\)</span> brytes ned i løpet av 7 år til 12 år. Dataen er hentet fra <a class="reference external" href="https://climate.nasa.gov/vital-signs/methane/">NASA</a>.</p>
 <section id="last-ned-datasettet">
 <h4>Last ned datasettet<a class="headerlink" href="#last-ned-datasettet" title="Permalink to this heading">#</a></h4>
 <p>Du kan laste ned datasettet med følgende Pythonkode:</p>
@@ -758,6 +754,59 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><span class="caption-number">Fig. 6 </span><span class="caption-text">Årlige metanmålinger målt i antall metanmolekyler per millard molekyler i atmosfæren fra 1983 til 2022.</span><a class="headerlink" href="#methane-measurements" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</div>
+</details></section>
+<section id="oppgave-1b-hvilket-ar-okte-mengden-text-ch-4-mest">
+<h4>Oppgave 1b: Hvilket år økte mengden <span class="math notranslate nohighlight">\(\text{CH}_4\)</span> mest?<a class="headerlink" href="#oppgave-1b-hvilket-ar-okte-mengden-text-ch-4-mest" title="Permalink to this heading">#</a></h4>
+<p>Bruk datasettet til å finne ut i hvilket år <span class="math notranslate nohighlight">\(\text{CH}_4\)</span>-konsentrasjonen økte mest.</p>
+<p><em>Du kan bruke kodeskallet under for å finne ut av dette. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Husk at du må ha lest inn dataen først!</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">størst_økning</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># Setter størst_økning til en negativ verdi</span>
+<span class="n">år_størst_økning</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">økning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="c1"># Hvis økningen er større, sett størst økning til den siste økningen</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="n">størst_økning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="n">år_størst_økning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år_størst_økning</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>år_størst_økning = 2021.0
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;methane_measurements.txt&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn</span><span class="p">)</span>
+
+<span class="n">år</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">metan</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">størst_økning</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># Setter størst_økning til en negativ verdi</span>
+<span class="n">år_størst_økning</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">økning</span> <span class="o">=</span> <span class="p">(</span><span class="n">metan</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">metan</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">økning</span> <span class="o">&gt;</span> <span class="n">størst_økning</span><span class="p">:</span>
+        <span class="n">størst_økning</span> <span class="o">=</span> <span class="n">økning</span>
+        <span class="n">år_størst_økning</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år_størst_økning</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </details></section>
 </section>
@@ -1213,11 +1262,33 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li><p>Kolonne 4: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivået i atmosfæren i ppm (parts per million) før vår tid. For eksempel er 284.7 ppm = 284.7 <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-molekyler per million andre molekyler i luften.</p></li>
 </ul>
 </section>
-<section id="oppgave-3a-les-inn-dataene-fra-filen">
-<h4>Oppgave 3a: Les inn dataene fra filen<a class="headerlink" href="#oppgave-3a-les-inn-dataene-fra-filen" title="Permalink to this heading">#</a></h4>
-<p>Les inn dataene fra filen <code class="docutils literal notranslate"><span class="pre">co2_icecore_data.txt</span></code>. Hent ut dybden, alderen til isen, alderen til luften og <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivået i luften.</p>
+<section id="oppgave-3a-les-inn-dataene-fra-filen-og-visualiser-dataene">
+<h4>Oppgave 3a: Les inn dataene fra filen og visualiser dataene<a class="headerlink" href="#oppgave-3a-les-inn-dataene-fra-filen-og-visualiser-dataene" title="Permalink to this heading">#</a></h4>
+<p>Les inn dataene fra filen <code class="docutils literal notranslate"><span class="pre">co2_icecore_data.txt</span></code>. Problemet er todelt:</p>
+<ol class="arabic simple">
+<li><p>Hent ut dybden, alderen til isen, alderen til luften og <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivået i luften.</p></li>
+<li><p>Lag et plott som viser <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivået i atmosfæren som funksjon av alderen til luften. <em>Du kan skrive koden for plotting selv, eller du kan bruke kodehintet under.</em></p></li>
+</ol>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
-<div class="cell docutils container">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Kodehint: kode som visualiserer dataen<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Alder luft [år før nåtid]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$ [ppm]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CO$_2$-konsentrasjon i atmosfæren&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -1241,6 +1312,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_icecore_data.txt&quot;</span>
 
@@ -1250,38 +1322,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="n">alder_is</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">alder_luft</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="n">co2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</details></section>
-<section id="oppgave-3b-visualiser-dataen">
-<h4>Oppgave 3b: Visualiser dataen<a class="headerlink" href="#oppgave-3b-visualiser-dataen" title="Permalink to this heading">#</a></h4>
-<p>Lag et plott som viser <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivået i atmosfæren som funksjon av alderen til luften.</p>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Alder luft [år før nåtid]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$ [ppm]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CO$_2$-konsentrasjon i atmosfæren&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alder_luft</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Alder luft [år før nåtid]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$ [ppm]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CO$_2$-konsentrasjon i atmosfæren&quot;</span><span class="p">)</span>
@@ -1297,110 +1340,6 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </figure>
 </div>
 </details></section>
-</section>
-<section id="oppgave-4-en-sammenheng-mellom-temperaturokningen-og-klimagassene">
-<h3>Oppgave 4: En sammenheng mellom temperaturøkningen og klimagassene<a class="headerlink" href="#oppgave-4-en-sammenheng-mellom-temperaturokningen-og-klimagassene" title="Permalink to this heading">#</a></h3>
-<p>I denne oppgaven skal vi se om vi kan finne en sammenheng mellom temperaturøkningen og klimagassene.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn_co2</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
-<span class="n">filnavn_temperatur</span> <span class="o">=</span> <span class="s2">&quot;global_temperatures.txt&quot;</span>
-
-<span class="n">data_co2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn_co2</span><span class="p">)</span>
-<span class="n">data_temperatur</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn_temperatur</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-
-<span class="n">år_co2_rådata</span> <span class="o">=</span> <span class="n">data_co2</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">co2_rådata</span> <span class="o">=</span> <span class="n">data_co2</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
-
-<span class="n">år_temperatur</span> <span class="o">=</span> <span class="n">data_temperatur</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">temperatur</span> <span class="o">=</span> <span class="n">data_temperatur</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">år_co2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">år_co2_rådata</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">år_co2_rådata</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">år_co2</span><span class="p">)</span>
-
-<span class="n">co2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år_co2</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år_co2</span><span class="p">)):</span>
-    <span class="n">co2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">co2_rådata</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">12</span><span class="p">])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år_co2</span><span class="p">,</span> <span class="n">co2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år_co2</span><span class="p">,</span> <span class="n">co2</span><span class="p">,</span> <span class="s2">&quot;k.&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CO$_2$-målinger&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$ [ppm]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CO$_2$-konsentrasjon i atmosfæren&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1958. 1959. 1960. 1961. 1962. 1963. 1964. 1965. 1966. 1967. 1968. 1969.
- 1970. 1971. 1972. 1973. 1974. 1975. 1976. 1977. 1978. 1979. 1980. 1981.
- 1982. 1983. 1984. 1985. 1986. 1987. 1988. 1989. 1990. 1991. 1992. 1993.
- 1994. 1995. 1996. 1997. 1998. 1999. 2000. 2001. 2002. 2003. 2004. 2005.
- 2006. 2007. 2008. 2009. 2010. 2011. 2012. 2013. 2014. 2015. 2016. 2017.
- 2018. 2019. 2020. 2021. 2022. 2023.]
-</pre></div>
-</div>
-<img alt="../../../_images/ebdc87fc25bc612a52ea709a10d1edc8dc6de30916b7e94a100e7525fa8dc913.png" src="../../../_images/ebdc87fc25bc612a52ea709a10d1edc8dc6de30916b7e94a100e7525fa8dc913.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">år_temperatur</span> <span class="o">&gt;=</span> <span class="mi">1958</span><span class="p">)</span>
-<span class="n">år</span> <span class="o">=</span> <span class="n">år_temperatur</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-<span class="n">temperatur</span> <span class="o">=</span> <span class="n">temperatur</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperatur</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperatur</span><span class="p">,</span> <span class="s2">&quot;k.&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Temperaturmålinger&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik [°C]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik fra 1951-1980&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/8a2340f1971a961948a9277031031d820d224713a0e72706d07f0edf632ca34b.png" src="../../../_images/8a2340f1971a961948a9277031031d820d224713a0e72706d07f0edf632ca34b.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">co2</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">temperatur</span><span class="p">,</span> <span class="s2">&quot;k.&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">co2</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">temperatur</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$ [ppm]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik [°C]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/ee77875b1f96e0f4ed0bf8dc3b52b008af4b467b852e17e2e9304e4f1da34d37.png" src="../../../_images/ee77875b1f96e0f4ed0bf8dc3b52b008af4b467b852e17e2e9304e4f1da34d37.png" />
-</div>
-</div>
-<section id="oppgave-4a-last-inn-dataen">
-<h4>Oppgave 4a: Last inn dataen<a class="headerlink" href="#oppgave-4a-last-inn-dataen" title="Permalink to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn_co2</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
-<span class="n">filnavn_temperatur</span> <span class="o">=</span> <span class="s2">&quot;global_temperatures.txt&quot;</span>
-
-<span class="n">data_co2</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">data_temperatur</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 </section>
@@ -1482,6 +1421,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-text-ch-4-mengder-metangass-i-atmosfaeren">Oppgave 1: <span class="math notranslate nohighlight">\(\text{CH}_4\)</span>-mengder (Metangass) i atmosfæren</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#last-ned-datasettet">Last ned datasettet</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a-les-inn-og-visualiser-dataene">Oppgave 1a: Les inn og visualiser dataene</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b-hvilket-ar-okte-mengden-text-ch-4-mest">Oppgave 1b: Hvilket år økte mengden <span class="math notranslate nohighlight">\(\text{CH}_4\)</span> mest?</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-globale-temperaturavvik-siden-1880">Oppgave 2: Globale temperaturavvik siden 1880</a><ul class="nav section-nav flex-column">
@@ -1494,12 +1434,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-text-co-2-nivaer-i-atmosfaeren-de-siste-400-000-arene">Oppgave 3: <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-nivåer i atmosfæren de siste 400 000 årene</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Last ned datasettet</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a-les-inn-dataene-fra-filen">Oppgave 3a: Les inn dataene fra filen</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b-visualiser-dataen">Oppgave 3b: Visualiser dataen</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-en-sammenheng-mellom-temperaturokningen-og-klimagassene">Oppgave 4: En sammenheng mellom temperaturøkningen og klimagassene</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4a-last-inn-dataen">Oppgave 4a: Last inn dataen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a-les-inn-dataene-fra-filen-og-visualiser-dataene">Oppgave 3a: Les inn dataene fra filen og visualiser dataene</a></li>
 </ul>
 </li>
 </ul>
