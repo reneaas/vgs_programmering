@@ -18,6 +18,15 @@ def main():
     plt.show()
 
 
+    ch4_remains = np.zeros(ch4.shape)
+    tail = 10
+    for i in range(tail, year.shape[0]):
+        ch4_remains[i] = ch4[i] - ch4[i-tail]
+    
+    print(ch4_remains)
+
+
+
 
 
 
