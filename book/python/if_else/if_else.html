@@ -516,7 +516,17 @@ document.write(`
 </pre></div>
 </div>
 <p>Vi kaller den første delen for <code class="docutils literal notranslate"><span class="pre">if</span></code>-<em>blokken</em> og den andre for <code class="docutils literal notranslate"><span class="pre">else</span></code>-<em>blokken</em>.</p>
-<p>La oss se på et eksempel:</p>
+<p>Vi kan visualisere prosessen med et flytdiagram:</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+    A[Start] --> B[if-else test] --> C(Sjekk om betingelse er sann)
+    C -- Sann --> D[Utfør handling når betingelsen er sann]
+    C -- Usann --> E[Utfør handling når betingelsen er usann]
+    D --> F[Ferdig]
+    E --> F
+    
+</div><p>La oss se på et eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -724,14 +734,13 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
 </ul>
 <p>Flytdiagrammet under vises hvordan en <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-test fungerer.</p>
 <div class="mermaid" align="center">
-flowchart LR
+flowchart TD
 
-    A[Start] --> B[if-test]
-    B -- if-betingelsen er sann --> C(if-blokk kjøres) --> G[Ferdig]
-    B -- if-betingelsen er usann --> D[elif test]
-    D -- elif-betingelsen er sann --> E(elif-blokk kjøres) --> G[Ferdig]
-    D -- elif-betingelsen er usann --> F(else-blokk kjøres) --> G[Ferdig]
-
+    A[Start] --> B[if-elif-else test] --> C[Sjekk om if-betingelsen er sann]
+    C -- Sann --> D(if-blokk kjøres) --> G[Ferdig]
+    C -- Usann --> E[Sjekk om elif-betingelsen er sann]
+    E -- Sann --> F(elif-blokk kjøres) --> G[Ferdig]
+    E -- Usann --> H[else-blokk kjøres] --> G[Ferdig]
 </div><section id="eksempel-moms-pa-varer">
 <h3>Eksempel: moms på varer<a class="headerlink" href="#eksempel-moms-pa-varer" title="Permalink to this heading">#</a></h3>
 <p>Når vi betaler for ulike tjeneser i Norge, er det ulike avgift som betales avhengig av varen.</p>

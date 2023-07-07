@@ -556,9 +556,9 @@ og til standardavviket ved å bruke</p>
 </section>
 <section id="en-algoritme-for-a-beregne-forventning-varians-og-standardavvik">
 <h2>En algoritme for å beregne forventning, varians og standardavvik<a class="headerlink" href="#en-algoritme-for-a-beregne-forventning-varians-og-standardavvik" title="Permalink to this heading">#</a></h2>
-<p>Når vi nå har formlene på plass, kan vi lage en algoritme for å beregne forventning, varians og standardavvik for en tilfeldig variabel <span class="math notranslate nohighlight">\(X\)</span> fra en sannsynlighetsfordeling <span class="math notranslate nohighlight">\(f(X)\)</span>. <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 12</a> viser stegvis hvordan vi kan kode dette.</p>
+<p>Når vi nå har formlene på plass, kan vi lage en algoritme for å beregne forventning, varians og standardavvik for en tilfeldig variabel <span class="math notranslate nohighlight">\(X\)</span> fra en sannsynlighetsfordeling <span class="math notranslate nohighlight">\(f(X)\)</span>. <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 11</a> viser stegvis hvordan vi kan kode dette.</p>
 <div class="proof algorithm admonition" id="algo-forventning-varians-std">
-<p class="admonition-title"><span class="caption-number">Algorithm 12 </span> (Tilnærme forventning, varians og standardavvik til <span class="math notranslate nohighlight">\(X\)</span> med simuleringer)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 11 </span> (Tilnærme forventning, varians og standardavvik til <span class="math notranslate nohighlight">\(X\)</span> med simuleringer)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Sannsynlighetsfordeling <span class="math notranslate nohighlight">\(f(X)\)</span>, antall forsøk <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>Output</strong>: Tilnærming til forventning, varians og standardavvik for <span class="math notranslate nohighlight">\(X\)</span>.</p>
@@ -594,7 +594,7 @@ E(X) = 7/2 = 3.5
 \[
 \text{Var} (X) = 35/12 \approx 2.92 \qquad \text{og} \qquad \sigma = \sqrt{35/12} \approx 1.71.
 \]</div>
-<p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 12</a>.
+<p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 11</a>.
 Følger vi algoritmen stegvis med Pythonkode, kan vi få noe som dette:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,7 +643,7 @@ E(X) = 7,
 \text{Var} (X) = 35/6 \approx 5.83 \qquad \text{og} \qquad \sigma = \sqrt{35/6} \approx 2.42.
 \]</div>
 <p>La <span class="math notranslate nohighlight">\(X_1\)</span> være antall øyne på terning 1 og <span class="math notranslate nohighlight">\(X_2\)</span> være antall øyne på terning 2. Da er <span class="math notranslate nohighlight">\(X = X_1 + X_2\)</span>. I stedet for å trekke tall fra sannsynlighetsfordelingen til <span class="math notranslate nohighlight">\(X\)</span> direkte, trekker vi heller <span class="math notranslate nohighlight">\(X_1\)</span> og <span class="math notranslate nohighlight">\(X_2\)</span> fra sannsynlighetsfordeling for én terning og legger resultatene sammen.</p>
-<p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 12</a>. Følger vi algoritmen stegvis med Pythonkode, kan vi få noe som dette:</p>
+<p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 11</a>. Følger vi algoritmen stegvis med Pythonkode, kan vi få noe som dette:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -702,7 +702,7 @@ X_std = 2.411
 </ul>
 </li>
 </ol>
-<p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 12</a>:</p>
+<p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 11</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -759,7 +759,7 @@ X_std = 14.689
 <h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1-kast-med-tre-terninger">
 <h3>Oppgave 1: Kast med tre terninger<a class="headerlink" href="#oppgave-1-kast-med-tre-terninger" title="Permalink to this heading">#</a></h3>
-<p>La <span class="math notranslate nohighlight">\(X\)</span> være summene av øynene vi får ved å kaste tre terninger. Bruk <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 12</a> til å tilnærme forventningen, variansen og standardavviket til <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>La <span class="math notranslate nohighlight">\(X\)</span> være summene av øynene vi får ved å kaste tre terninger. Bruk <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 11</a> til å tilnærme forventningen, variansen og standardavviket til <span class="math notranslate nohighlight">\(X\)</span>.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,7 +838,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <section id="oppgave-2-hoyde-i-populasjonen">
 <h3>Oppgave 2: Høyde i populasjonen<a class="headerlink" href="#oppgave-2-hoyde-i-populasjonen" title="Permalink to this heading">#</a></h3>
 <p>La <span class="math notranslate nohighlight">\(X\)</span> være høyden til en tilfeldig person i en populasjon. Høydene til jenter i populasjonen er normalfordelt med forventningsverdi <span class="math notranslate nohighlight">\(\mu = 168 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma = 5 \ \text{cm}\)</span>, mens høydene til guttene er normalfordelt med forventningsverdi <span class="math notranslate nohighlight">\(\mu = 180 \ \text{cm}\)</span> og standardavvik <span class="math notranslate nohighlight">\(\sigma = 6 \ \text{cm}\)</span>. Anta at det er like mange jenter som gutter i populasjonen.</p>
-<p>Bruk <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 12</a> til å finne forventningen, variansen og standardavviket til høydene i populasjonen.</p>
+<p>Bruk <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 11</a> til å finne forventningen, variansen og standardavviket til høydene i populasjonen.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan være du må legge til noen linjer med kode for å løse oppgaven</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

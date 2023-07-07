@@ -820,36 +820,25 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="ovingsoppgave-5-annuitetslan">
 <h3>Øvingsoppgave 5: Annuitetslån<a class="headerlink" href="#ovingsoppgave-5-annuitetslan" title="Permalink to this heading">#</a></h3>
-<p>Du har tatt opp et lån på 1 000 000 kr. Lånet skal betales tilbake over 20 år med et fast årlig terminbeløp. Lånet har en rente på 2.5% per år. En algoritme for å finne ut hvor lang tid det tar nå nedbetale lånet for et gitt fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span> er da</p>
-<div class="proof algorithm admonition" id="annuitetslaan">
-<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Nedbetaling av lån)</p>
-<section class="algorithm-content" id="proof-content">
-<p><strong>Input</strong>: Lånebeløp <span class="math notranslate nohighlight">\(L\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall år <span class="math notranslate nohighlight">\(n\)</span> og fast terminbeløp <span class="math notranslate nohighlight">\(T\)</span>.</p>
-<p><strong>Output</strong>: Antall år <span class="math notranslate nohighlight">\(t\)</span> det tar å nedbetale lånet.</p>
-<ul class="simple">
-<li><p>Regn ut vekstfaktoren <span class="math notranslate nohighlight">\(V \gets 1 + r/100\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(t = 0\)</span> <em>(tiden i år)</em></p></li>
-<li><p>While <span class="math notranslate nohighlight">\(L \geq 0\)</span>:</p>
-<ul>
-<li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L \cdot V\)</span> (renter legges til).</p></li>
-<li><p>Gjenstående lån settes til <span class="math notranslate nohighlight">\(L \gets L - T\)</span> (terminbeløp trekkes fra).</p></li>
-<li><p><span class="math notranslate nohighlight">\(t \gets t + 1\)</span> <em>(øker antall år som har gått med 1)</em></p></li>
-</ul>
-</li>
-<li><p>Returner antall år <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
-</ul>
-</section>
-</div><p>Skriv en kode som implementerer algoritmen over og finn ut hvor mange år det tar å nedbetale lånet dersom du setter terminbeløpet til 75 000 kr.</p>
+<p>Du har tatt opp et lån på 1 000 000 kr. Lånet skal betales tilbake over 20 år med et fast årlig terminbeløp. Lånet har en rente på 2.5% per år. En algoritme for nedbetalingen av lånet kan beskrives med følgende flytdiagram:</p>
+<div class="mermaid" align="center">
+flowchart TD 
+
+    A[Start: tatt opp lån] --> B[Så lenge lånet er større enn 0]
+    B -- Sann --> C[Legg til rentebeløp] --> D[Trekk fra terminbeløp] --> E[Øk antall år med 1] -- Gjenta --> B
+    B -- Usann ----> F[Skriver ut antall år]
+
+</div><p>Skriv en kode der du bruker en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke til å bruke algoritmen over til å finne ut hvor mange år det tar å nedbetale lånet dersom du setter terminbeløpet til 75 000 kr.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn delene der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du kan fritt legge til linjer med kode du trenger, og fjerne linjer du ikke trenger.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># startlån</span>
 <span class="linenos"> 2</span><span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># renten på lånet</span>
 <span class="linenos"> 3</span><span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># fast terminbeløp</span>
-<span class="linenos"> 4</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># år 0.</span>
-<span class="linenos"> 7</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># skriv inn riktig betingelse for at løkka skal stoppe.</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># år 0.</span>
+<span class="linenos"> 6</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># skriv inn riktig betingelse for at løkka skal stoppe.</span>
+<span class="linenos"> 7</span>    <span class="n">rentebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regn ut rentebeløpet som skal legges på lånet</span>
 <span class="linenos"> 8</span>    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater gjenværende lån</span>
 <span class="linenos"> 9</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># oppdater tiden</span>
 <span class="linenos">10</span>

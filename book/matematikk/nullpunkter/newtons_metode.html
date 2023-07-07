@@ -527,9 +527,9 @@ x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.
 \[
 x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
 \]</div>
-<p>Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Algoritmen for Newtons metode er vist i <a class="reference internal" href="#algo-newtonsmetode">Algorithm 4</a>.</p>
+<p>Med denne formelen er vi klare til å formalisere algoritmen i en pseudokode. Algoritmen for Newtons metode er vist i <a class="reference internal" href="#algo-newtonsmetode">Algorithm 3</a>.</p>
 <div class="proof algorithm admonition" id="algo-newtonsmetode">
-<p class="admonition-title"><span class="caption-number">Algorithm 4 </span> (Newtons metode)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 3 </span> (Newtons metode)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span>, et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 <p><strong>Output</strong>: Et tilnærmet nullpunkt <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -559,12 +559,12 @@ x_{i + 1} = x_i - \frac{f(x_i)}{f'(x_i)}.
 \[
 f(x) = x^2 - 1. 
 \]</div>
-<p>Etter <a class="reference internal" href="#algo-newtonsmetode">Algorithm 4</a> trenger vi å kunne regne ut den deriverte til <span class="math notranslate nohighlight">\(f\)</span>, samt et stardpunkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan velge <span class="math notranslate nohighlight">\(x_0 = 10\)</span> og regne ut den deriverte til <span class="math notranslate nohighlight">\(f\)</span> ved å bruke regelen for den deriverte av en potensfunksjon. Vi får da at</p>
+<p>Etter <a class="reference internal" href="#algo-newtonsmetode">Algorithm 3</a> trenger vi å kunne regne ut den deriverte til <span class="math notranslate nohighlight">\(f\)</span>, samt et stardpunkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan velge <span class="math notranslate nohighlight">\(x_0 = 10\)</span> og regne ut den deriverte til <span class="math notranslate nohighlight">\(f\)</span> ved å bruke regelen for den deriverte av en potensfunksjon. Vi får da at</p>
 <div class="math notranslate nohighlight">
 \[
 f'(x) = 2x.
 \]</div>
-<p>En Pythonkode som implementerer <a class="reference internal" href="#algo-newtonsmetode">Algorithm 4</a> med denne funksjonen er da</p>
+<p>En Pythonkode som implementerer <a class="reference internal" href="#algo-newtonsmetode">Algorithm 3</a> med denne funksjonen er da</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -608,7 +608,7 @@ f(x) = x^2 - 2x + 1,
 f'(x) \approx \frac{f(x + h) - f(x)}{h},
 \]</div>
 <p>der <span class="math notranslate nohighlight">\(h\)</span> er et lite tall. For å gjøre det konkret, kan vi sette <span class="math notranslate nohighlight">\(h = 10^{-5}\)</span>.</p>
-<p>Følger vi <a class="reference internal" href="#algo-newtonsmetode">Algorithm 4</a> får vi følgende Pythonkode:</p>
+<p>Følger vi <a class="reference internal" href="#algo-newtonsmetode">Algorithm 3</a> får vi følgende Pythonkode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
