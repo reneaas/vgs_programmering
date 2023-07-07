@@ -478,10 +478,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-2">Underveisoppgave 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sammenlikningsoperatorer">Sammenlikningsoperatorer</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-3">Underveisoppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-4">Underveisoppgave 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-5">Underveisoppgave 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-tester"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-moms-pa-varer">Eksempel: moms på varer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-6">Underveisoppgave 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-7">Underveisoppgave 7</a></li>
 </ul>
 </li>
 </ul>
@@ -501,21 +507,21 @@ document.write(`
 <section id="enkle-if-else-tester">
 <h2>Enkle <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester<a class="headerlink" href="#enkle-if-else-tester" title="Permalink to this heading">#</a></h2>
 <p>En <em>enkel</em> <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> test vil har formen</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse</span><span class="p">:</span>
-    <span class="c1"># Kjør denne koden hvis betingelse er True</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># Kjør denne koden hvis betingelse er False</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">if</span> <span class="n">betingelse</span><span class="p">:</span>
+<span class="linenos">2</span>    <span class="c1"># Kjør denne koden hvis betingelse er True</span>
+<span class="linenos">3</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="c1"># Kjør denne koden hvis betingelse er False</span>
 </pre></div>
 </div>
 <p>Vi kaller den første delen for <code class="docutils literal notranslate"><span class="pre">if</span></code>-<em>blokken</em> og den andre for <code class="docutils literal notranslate"><span class="pre">else</span></code>-<em>blokken</em>.</p>
 <p>La oss se på et eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn eller lik null.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er negativ eller null.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn eller lik null.&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er negativ eller null.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -529,7 +535,7 @@ document.write(`
 <p>Vi kan printe ut betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> for å se at den faktisk evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -581,10 +587,10 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 </section>
-<section id="logiske-operatorer">
-<h2>Logiske operatorer<a class="headerlink" href="#logiske-operatorer" title="Permalink to this heading">#</a></h2>
-<p><strong>Logiske operatorer</strong> er brukt for sammenligning av variabler. Vi kan tenke på dem som <em>sammenlikningsoperasjoner</em> der vi sjekker om en betingelse er oppfylt eller ikke. Resultatet av en slik sammenlikning er alltid enten at betingelsen er sann som gir <code class="docutils literal notranslate"><span class="pre">True</span></code>, eller at den er usann som gir <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>I Python kan vi sette opp betingelser for på flere måter. I tabell 1 vises de vanligste logiske operatorer for to variabler <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<section id="sammenlikningsoperatorer">
+<h2>Sammenlikningsoperatorer<a class="headerlink" href="#sammenlikningsoperatorer" title="Permalink to this heading">#</a></h2>
+<p><strong>Sammenlikningsoperatorer</strong> er brukt for sammenlikning av variabler. Vi kan bruke dem til å sjekke om en betingelse er oppfylt eller ikke. Resultatet av en slik sammenlikning er alltid enten at betingelsen er sann som gir <code class="docutils literal notranslate"><span class="pre">True</span></code>, eller at den er usann som gir <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>I Python kan vi sette opp betingelser for på flere måter. I tabell 1 vises de vanligste sammenlikningsoperatorene.</p>
 <p><strong>Tabell 1</strong>: Tabellen viser de vanligste logiske operatorene. Som eksempel har vi satt <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">-2</span></code> for å vise hva resultatet av operasjonen blir.</p>
 <table class="table">
 <thead>
@@ -642,7 +648,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="underveisoppgave-4">
 <h3>Underveisoppgave 4<a class="headerlink" href="#underveisoppgave-4" title="Permalink to this heading">#</a></h3>
-<p>La <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">-5</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">10</span></code>. Hvilke(n) logisk(e) operator(er) kan settes mellom <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> slik at resultatet blir <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
+<p>La <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">-5</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">10</span></code>. Finn en betingelse som kan settes på <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> slik at resultatet blir <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Løsningsforslag<div class="sd-summary-down docutils">
@@ -655,21 +661,22 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">==</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> har ulik verdi.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;=</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">s</span> <span class="pre">!=</span> <span class="pre">5</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> for <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">s</span></code> er lik <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p></li>
 </ol>
 </div>
 </details></section>
 <section id="underveisoppgave-5">
 <h3>Underveisoppgave 5<a class="headerlink" href="#underveisoppgave-5" title="Permalink to this heading">#</a></h3>
-<p>Lag en variabel med navn <code class="docutils literal notranslate"><span class="pre">res</span></code> med en verdi slik at følgende kodesnutt kjører <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken. Hva er en passende tekst å skrive ut til brukene i <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken?</p>
+<p>Lag en variabel med navn <code class="docutils literal notranslate"><span class="pre">res</span></code> med en verdi slik at følgende kodesnutt kjører <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken. Hva er en passende tekst å skrive ut til brukeren i <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken?</p>
 <p><em>Ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">5</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -693,6 +700,139 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</details></section>
+</section>
+<section id="if-elif-else-tester">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester<a class="headerlink" href="#if-elif-else-tester" title="Permalink to this heading">#</a></h2>
+<p>Ofte ønsker vi å skrive kode der hvilken del av koden vi kjører <strong>ikke</strong> bare er to-delt, men det finnes flere betingelser som gjør at andre deler av koden skal kjøres. Da kan vi bruke <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester.</p>
+<p>Den generelle strukturen til en <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-test er</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">if</span> <span class="n">betingelse1</span><span class="p">:</span> <span class="c1"># Sjekk om betingelse 1 er sann</span>
+<span class="linenos">2</span>    <span class="c1"># Kjør kode hvis betingelse1 er sann</span>
+<span class="linenos">3</span><span class="k">elif</span> <span class="n">betingelse2</span><span class="p">:</span> <span class="c1"># Hvis ikke betingelse1 er sann, sjekk om betingelse2 er sann</span>
+<span class="linenos">4</span>    <span class="c1"># Kjøre kode hvis betingelse2 er sann</span>
+<span class="linenos">5</span><span class="k">else</span><span class="p">:</span> <span class="c1"># Hvis ingen av betingelse1 og betingelse2 er sanne</span>
+<span class="linenos">6</span>    <span class="c1"># Kjør koden som står her</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>På linje 1 sjekker vi om <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> er sann. Hvis den er det, så kjører vi koden som står i <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken.</p></li>
+<li><p>På linje 3 sjekker vi om <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er sann hvis <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> ikke var det.</p></li>
+<li><p>På linje 5 kjører vi koden som står i <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken hvis verken <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> eller <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er sanne.</p></li>
+</ul>
+<section id="eksempel-moms-pa-varer">
+<h3>Eksempel: moms på varer<a class="headerlink" href="#eksempel-moms-pa-varer" title="Permalink to this heading">#</a></h3>
+<p>Når vi betaler for ulike tjeneser i Norge, er det ulike avgift som betales avhengig av varen.</p>
+<ul class="simple">
+<li><p>For matvarer er det 15% moms.</p></li>
+<li><p>For reiser er det 12% moms.</p></li>
+<li><p>For generelle varer er det 25% moms.</p></li>
+</ul>
+<p>La oss se på et program som velger ut moms avhengig av hvilken vare det er:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">varetype</span> <span class="o">=</span> <span class="s2">&quot;reise&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">if</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;mat&quot;</span><span class="p">:</span>
+<span class="linenos"> 4</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">15</span> 
+<span class="linenos"> 5</span><span class="k">elif</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;reise&quot;</span><span class="p">:</span>
+<span class="linenos"> 6</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">12</span> 
+<span class="linenos"> 7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">moms</span><span class="w"> </span><span class="si">= }</span><span class="s2"> prosent på varen din av type `</span><span class="si">{</span><span class="n">varetype</span><span class="si">}</span><span class="s2">`.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>moms = 12 prosent på varen din av type `reise`.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Gjennomgang av kodeeksempelet </p>
+<ul class="simple">
+<li><p>På linje <code class="docutils literal notranslate"><span class="pre">1</span></code> setter vi <code class="docutils literal notranslate"><span class="pre">varetype</span> <span class="pre">=</span> <span class="pre">&quot;reise&quot;</span></code>.</p></li>
+<li><p>På linje <code class="docutils literal notranslate"><span class="pre">3</span></code> sjekker programmet om <code class="docutils literal notranslate"><span class="pre">varetype</span></code> er lik <code class="docutils literal notranslate"><span class="pre">&quot;mat&quot;</span></code>. Siden den ikke var det, hopper vi over <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken av koden.</p></li>
+<li><p>På linje <code class="docutils literal notranslate"><span class="pre">5</span></code> sjekker koden om <code class="docutils literal notranslate"><span class="pre">varetype</span></code> er lik <code class="docutils literal notranslate"><span class="pre">&quot;reise&quot;</span></code>. Det er den, så <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken kjøres og vi setter <code class="docutils literal notranslate"><span class="pre">moms</span> <span class="pre">=</span> <span class="pre">12</span></code>.</p></li>
+<li><p>På linje <code class="docutils literal notranslate"><span class="pre">7</span></code> starter <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken. Men siden én av betingelsene var sann, så hopper vi over denne blokken.</p></li>
+</ul>
+</div>
+</section>
+<section id="underveisoppgave-6">
+<h3>Underveisoppgave 6<a class="headerlink" href="#underveisoppgave-6" title="Permalink to this heading">#</a></h3>
+<p>Hva blir verdien til <code class="docutils literal notranslate"><span class="pre">y</span></code> i koden under?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">5</span><span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">8</span>    <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Her er <code class="docutils literal notranslate"><span class="pre">x</span></code> sin verdi <code class="docutils literal notranslate"><span class="pre">2.5</span></code>. Følger vi koden gjennom, så skjer følgende:</p>
+<ul class="simple">
+<li><p class="sd-card-text">På linje 3 sjekker vi om <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">0</span></code>. Det er den ikke, så vi går videre til <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken.</p></li>
+<li><p class="sd-card-text">På linje 5 sjekker vi om <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">1</span></code>. Det er den heller ikke, så vi går videre til <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken.</p></li>
+<li><p class="sd-card-text">Dermed setter vi <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">3</span></code> på linje 7.</p></li>
+</ul>
+<p class="sd-card-text">Verdien til <code class="docutils literal notranslate"><span class="pre">y</span></code> blir derfor <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">terningkast</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Eksmepel på terningkast</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">terningkast</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+<span class="linenos"> 4</span>    <span class="n">gevinst</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 5</span><span class="k">elif</span> <span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">terningkast</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+<span class="linenos"> 6</span>    <span class="n">gevinst</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos"> 7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">gevinst</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gevinst</span><span class="w"> </span><span class="si">= }</span><span class="s2"> kr når terningen viser </span><span class="si">{</span><span class="n">terningkast</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gevinst = 10 kr når terningen viser 5.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="underveisoppgave-7">
+<h3>Underveisoppgave 7<a class="headerlink" href="#underveisoppgave-7" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at du har den uferdige koden</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x er mindre enn eller lik 0.&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x ligger mellom 0 og 1.&quot;</span><span class="p">)</span>
+<span class="linenos">7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x er større enn eller lik 1.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hvilken betingelse må du sette på linje <code class="docutils literal notranslate"><span class="pre">5</span></code> (der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>) for at <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken skal kjøres, og at utskriften stemmer overens med betingelsen?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Vi ønsker at <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken skal kjøres hvis <code class="docutils literal notranslate"><span class="pre">x</span></code> er større enn <code class="docutils literal notranslate"><span class="pre">0</span></code> og mindre enn <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+Derfor er den riktig betingelsen <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> eller <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">1</span></code></p>
 </div>
 </details></section>
 </section>
@@ -770,10 +910,16 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-2">Underveisoppgave 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sammenlikningsoperatorer">Sammenlikningsoperatorer</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-3">Underveisoppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-4">Underveisoppgave 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-5">Underveisoppgave 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-tester"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-moms-pa-varer">Eksempel: moms på varer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-6">Underveisoppgave 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-7">Underveisoppgave 7</a></li>
 </ul>
 </li>
 </ul>

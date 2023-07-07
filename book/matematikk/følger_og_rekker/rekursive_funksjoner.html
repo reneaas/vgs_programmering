@@ -558,13 +558,13 @@ a_{n} = a_{n-1} + 3, \quad n \geq 2,
 <p>Vi kunne funnet ledd nr. 10 første leddene i rekken ved å bruke følgende <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="linenos">5</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -577,13 +577,13 @@ a_{n} = a_{n-1} + 3, \quad n \geq 2,
 <p>En funksjon som bruker rekursjon til å finne det <span class="math notranslate nohighlight">\(n\)</span>-te leddet i en aritmetisk følge ser slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">2</span> <span class="c1"># Det første leddet. Stopper funksjonskall når n = 1.</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">a</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="c1"># a_n = a_{n-1} + 3</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">3</span>        <span class="k">return</span> <span class="mi">2</span> <span class="c1"># Det første leddet. Stopper funksjonskall når n = 1.</span>
+<span class="linenos">4</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>        <span class="k">return</span> <span class="n">a</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="c1"># a_n = a_{n-1} + 3</span>
+<span class="linenos">6</span>    
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -610,13 +610,13 @@ b_n = 3b_{n-1}, \quad n \geq 2,
 <p>Igjen kunne vi funnet ledd nr. 10 ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">b</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">b</span>
+<span class="linenos">5</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -629,13 +629,13 @@ b_n = 3b_{n-1}, \quad n \geq 2,
 <p>Men vi kan også bruke en rekursiv funksjon slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">2</span> <span class="c1"># Det første leddet. Stopper funksjonskall når n = 1.</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">b</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">3</span>        <span class="k">return</span> <span class="mi">2</span> <span class="c1"># Det første leddet. Stopper funksjonskall når n = 1.</span>
+<span class="linenos">4</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>        <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">b</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">6</span>    
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -656,13 +656,13 @@ b_n = 3b_{n-1}, \quad n \geq 2,
 <p><em>Du kan bruke kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Fyll inn betingelse for å stoppe funksjonskall</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd i følgen</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel her</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Fyll inn betingelse for å stoppe funksjonskall</span>
+<span class="linenos">3</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd i følgen</span>
+<span class="linenos">4</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel her</span>
+<span class="linenos">6</span>    
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -697,13 +697,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan bruke kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Fyll inn betingelse for å stoppe funksjonskall</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd i følgen</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel her</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Fyll inn betingelse for å stoppe funksjonskall</span>
+<span class="linenos">3</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd i følgen</span>
+<span class="linenos">4</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel her</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -742,13 +742,13 @@ F_n = F_{n-1} + F_{n-2}, \quad n \geq 3,
 <p><em>Du kan bruke kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Kriterium for å stoppe funksjonskall</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdi ved stopp</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Kriterium for å stoppe funksjonskall</span>
+<span class="linenos">3</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdi ved stopp</span>
+<span class="linenos">4</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel</span>
+<span class="linenos">6</span>    
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -790,13 +790,13 @@ c_n = 2c_{n-1} - 3c_{n-2}, \quad n \geq 3,
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Kriterium for å stoppe funksjonskall</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdi ved stopp</span>
-    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Kriterium for å stoppe funksjonskall</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdi ved stopp</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Kriterium for å stoppe funksjonskall</span>
+<span class="linenos">3</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdi ved stopp</span>
+<span class="linenos">4</span>    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Kriterium for å stoppe funksjonskall</span>
+<span class="linenos">5</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdi ved stopp</span>
+<span class="linenos">6</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">7</span>        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Rekursjonsformel</span>
 </pre></div>
 </div>
 </div>
@@ -828,13 +828,13 @@ S_{10} = \sum_{n=1}^{10} c_n.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">S</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">S</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">S</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">3</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="n">S</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">5</span>    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">S</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

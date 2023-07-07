@@ -566,13 +566,13 @@ f(x) = x^2,
 <p><strong>Du kan laste ned filen med denne koden:</strong></p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/x_kvadrert.txt&quot;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;x_kvadrert.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/x_kvadrert.txt&quot;</span>
+<span class="linenos">4</span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;x_kvadrert.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="linenos">7</span>    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -580,25 +580,25 @@ f(x) = x^2,
 <p>Når datafilen er lastet ned, kan vi lese den inn i Python med følgende kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># x-verdier</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Funksjonsverdiene f(x) = x^2</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;x_kvadrert.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-    <span class="c1"># Vi hopper over første linje fordi det bare er navnet på kolonnene.</span>
-    <span class="n">første_linje</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> 
-
-    <span class="c1"># Leser inn resten av filen</span>
-    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="c1"># Splitter linjen opp i en liste med verdier</span>
-        <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-        <span class="c1"># Legger til x og y-verdiene i hver sin liste</span>
-        <span class="c1"># Vi bruker `float()`-funksjonen for å konvertere fra `str` til `float`</span>
-        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># x-verdier</span>
+<span class="linenos"> 2</span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Funksjonsverdiene f(x) = x^2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;x_kvadrert.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos"> 5</span>    <span class="c1"># Vi hopper over første linje fordi det bare er navnet på kolonnene.</span>
+<span class="linenos"> 6</span>    <span class="n">første_linje</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> 
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>    <span class="c1"># Leser inn resten av filen</span>
+<span class="linenos"> 9</span>    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos">10</span>        <span class="c1"># Splitter linjen opp i en liste med verdier</span>
+<span class="linenos">11</span>        <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>        <span class="c1"># Legger til x og y-verdiene i hver sin liste</span>
+<span class="linenos">14</span>        <span class="c1"># Vi bruker `float()`-funksjonen for å konvertere fra `str` til `float`</span>
+<span class="linenos">15</span>        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="linenos">16</span>        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">19</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -639,13 +639,13 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 <p><strong>Last ned datafilen med følgende kode:</strong></p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/ball.txt&quot;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ball.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/ball.txt&quot;</span>
+<span class="linenos">4</span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ball.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="linenos">7</span>    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -653,23 +653,23 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 <p>Vi kan så lese datafilen med følgende kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;ball.txt&quot;</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-    <span class="n">første_linje</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="c1"># Splitter opp linja i en liste med verdier</span>
-        <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-        <span class="c1"># Henter ut verdiene og legger dem til i hver sin liste</span>
-        <span class="c1"># Vi bruker float() for å konvertere fra tekst til tall</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;ball.txt&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 4</span><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 5</span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">første_linje</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="linenos"> 9</span>    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos">10</span>        <span class="c1"># Splitter opp linja i en liste med verdier</span>
+<span class="linenos">11</span>        <span class="n">verdier</span> <span class="o">=</span> <span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>        <span class="c1"># Henter ut verdiene og legger dem til i hver sin liste</span>
+<span class="linenos">14</span>        <span class="c1"># Vi bruker float() for å konvertere fra tekst til tall</span>
+<span class="linenos">15</span>        <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="linenos">16</span>        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="linenos">17</span>        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">verdier</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -677,13 +677,13 @@ y = [0.0, 1.0, 4.0, 9.0, 16.0, 25.0]
 <p>Så kan vi visualisere posisjonen til ballen i <span class="math notranslate nohighlight">\(xy\)</span>-planet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x [m]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y [m]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x [m]&quot;</span><span class="p">)</span>
+<span class="linenos">6</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y [m]&quot;</span><span class="p">)</span>
+<span class="linenos">7</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -734,13 +734,13 @@ Den er en del mindre fleksibel enn den innebygde måten å lese filer på med Py
 <p>Last ned datafilen med denne koden:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/co2_measurements.txt&quot;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;co2_measurements.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/co2_measurements.txt&quot;</span>
+<span class="linenos">4</span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;co2_measurements.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="linenos">7</span>    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -767,8 +767,8 @@ Den er en del mindre fleksibel enn den innebygde måten å lese filer på med Py
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat co2_measurements.txt | head -n 8&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos">2</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat co2_measurements.txt | head -n 8&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -797,34 +797,34 @@ Den er en del mindre fleksibel enn den innebygde måten å lese filer på med Py
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du må ha lastet ned filen med koden over for at koden under skal fungere.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Importerer plottebiblioteket</span>
-
-<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
-
-<span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">måned</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">co2</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">år_desimal</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over første linje</span>
-    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over andre linje</span>
-
-    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-        <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> 
-        <span class="n">måned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-        <span class="n">år_desimal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-        <span class="n">co2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-
-
-<span class="c1"># Plotter dataene</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år_desimal</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$-mengde [ppm]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Importerer plottebiblioteket</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;co2_measurements.txt&quot;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 6</span><span class="n">måned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 7</span><span class="n">co2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 8</span><span class="n">år_desimal</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over første linje</span>
+<span class="linenos">12</span>    <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopp over andre linje</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos">15</span>        <span class="n">verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>        <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> 
+<span class="linenos">18</span>        <span class="n">måned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="n">år_desimal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">20</span>        <span class="n">co2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="c1"># Plotter dataene</span>
+<span class="linenos">24</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år_desimal</span><span class="p">,</span> <span class="n">co2</span><span class="p">)</span>
+<span class="linenos">25</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="linenos">26</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$CO_2$-mengde [ppm]&quot;</span><span class="p">)</span>
+<span class="linenos">27</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">28</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -879,13 +879,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Last ned datafilen med denne koden:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/global_temperatures.txt&quot;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;global_temperatures.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/climate_data/global_temperatures.txt&quot;</span>
+<span class="linenos">4</span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;global_temperatures.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="linenos">7</span>    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -898,9 +898,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat global_temperatures.txt | head -n 12&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat global_temperatures.txt | head -n 12&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -934,34 +934,34 @@ Year No_Smoothing  Lowess(5)
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;global_temperatures.txt&quot;</span>
-
-<span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">n_hopp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor mange linjer må du hoppe over?</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_hopp</span><span class="p">):</span>
-        <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-    
-    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Splitt linjen i verdier</span>
-
-        <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-        <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-        <span class="n">temperaturavvik_smooth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-    
-<span class="c1"># Visualiserer dataene</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Rådata&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik_smooth</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Glattet kurve&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik [°C]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;global_temperatures.txt&quot;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">år</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 6</span><span class="n">temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 7</span><span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 8</span><span class="n">n_hopp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor mange linjer må du hoppe over?</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_hopp</span><span class="p">):</span>
+<span class="linenos">12</span>        <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="linenos">13</span>    
+<span class="linenos">14</span>    <span class="k">for</span> <span class="n">linje</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+<span class="linenos">15</span>        <span class="n">verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Splitt linjen i verdier</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>        <span class="n">år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">18</span>        <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="n">temperaturavvik_smooth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">20</span>    
+<span class="linenos">21</span><span class="c1"># Visualiserer dataene</span>
+<span class="linenos">22</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Rådata&quot;</span><span class="p">)</span>
+<span class="linenos">23</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">temperaturavvik_smooth</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Glattet kurve&quot;</span><span class="p">)</span>
+<span class="linenos">24</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="linenos">25</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperaturavvik [°C]&quot;</span><span class="p">)</span>
+<span class="linenos">26</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">27</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="linenos">28</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1055,23 +1055,23 @@ Kodehint: Hvordan hente ut den største verdien i en liste<div class="sd-summary
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">max_år</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_år</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Hvor mange maksverdier skal vi finne?</span>
-    <span class="n">max_verdi</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Finn maksverdien</span>
-    <span class="n">max_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Finn indeksen til maksverdien</span>
-
-    <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til maksverdien i listen</span>
-    <span class="n">max_år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til årstallet i listen</span>
-
-    <span class="c1"># Slett elementet fra listene, pop tar indeksen som argument</span>
-    <span class="c1"># Må slettes så vi ikke finner samme år og temperatur flere ganger</span>
-    <span class="n">år</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-    <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> 
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_temperaturavvik</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">max_temperaturavvik</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 2</span><span class="n">max_år</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_år</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Hvor mange maksverdier skal vi finne?</span>
+<span class="linenos"> 5</span>    <span class="n">max_verdi</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Finn maksverdien</span>
+<span class="linenos"> 6</span>    <span class="n">max_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Finn indeksen til maksverdien</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>    <span class="n">max_temperaturavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til maksverdien i listen</span>
+<span class="linenos"> 9</span>    <span class="n">max_år</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Legg til årstallet i listen</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="c1"># Slett elementet fra listene, pop tar indeksen som argument</span>
+<span class="linenos">12</span>    <span class="c1"># Må slettes så vi ikke finner samme år og temperatur flere ganger</span>
+<span class="linenos">13</span>    <span class="n">år</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">14</span>    <span class="n">temperaturavvik</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> 
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">max_temperaturavvik</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1129,29 +1129,29 @@ a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}.
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor skal vi starte?</span>
-<span class="n">slutt_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor skal vi slutte?</span>
-
-<span class="c1"># Henter ut de relevante dataene og sletter resten.</span>
-<span class="n">temperaturavvik</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
-<span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="n">temperaturavvik_smooth</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
-
-<span class="n">gjennomsnittlig_stigning</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="c1"># Regn ut stigningen mellom to punkter</span>
-    <span class="n">stigning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">stigning_smooth</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-    <span class="c1"># Legg til bidraget til gjennomsnittlig stigning</span>
-    <span class="n">gjennomsnittlig_stigning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="c1"># Hva må du dele med for å få gjennomsnittet her?</span>
-<span class="n">gjennomsnittlig_stigning</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
-<span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">start_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor skal vi starte?</span>
+<span class="linenos"> 2</span><span class="n">slutt_index</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor skal vi slutte?</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1"># Henter ut de relevante dataene og sletter resten.</span>
+<span class="linenos"> 5</span><span class="n">temperaturavvik</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
+<span class="linenos"> 6</span><span class="n">temperaturavvik_smooth</span> <span class="o">=</span> <span class="n">temperaturavvik_smooth</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="linenos"> 7</span><span class="n">år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">slutt_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> 
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">gjennomsnittlig_stigning</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">10</span><span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">år</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">13</span>    <span class="c1"># Regn ut stigningen mellom to punkter</span>
+<span class="linenos">14</span>    <span class="n">stigning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">15</span>    <span class="n">stigning_smooth</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>    <span class="c1"># Legg til bidraget til gjennomsnittlig stigning</span>
+<span class="linenos">18</span>    <span class="n">gjennomsnittlig_stigning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">19</span>    <span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="c1"># Hva må du dele med for å få gjennomsnittet her?</span>
+<span class="linenos">22</span><span class="n">gjennomsnittlig_stigning</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">23</span><span class="n">gjennomsnittlig_stigning_smooth</span> <span class="o">/=</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -1211,21 +1211,21 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du trenger utregningene fra oppgave 2c for å løse oppgaven.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Regn ut hvilket år det er 1.5 grader Celsius varmere enn 1880</span>
-
-<span class="n">nåværende_temp</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Temperaturavviket i 2022</span>
-<span class="n">nåværende_år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Året 2022</span>
-
-
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse på når `while`-løkka må stoppe</span>
-    <span class="n">nåværende_år</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk året med 1</span>
-    <span class="n">nåværende_temp</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># øk temperaturen med den årlige stigningen</span>
-
-<span class="nb">print</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    Temperaturen er 1.5 grader varmere enn 1880 i år </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">nåværende_år</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span>
-<span class="s2">    &quot;&quot;&quot;</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">## Regn ut hvilket år det er 1.5 grader Celsius varmere enn 1880</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">nåværende_temp</span> <span class="o">=</span> <span class="n">temperaturavvik</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Temperaturavviket i 2022</span>
+<span class="linenos"> 4</span><span class="n">nåværende_år</span> <span class="o">=</span> <span class="n">år</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Året 2022</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse på når `while`-løkka må stoppe</span>
+<span class="linenos"> 8</span>    <span class="n">nåværende_år</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk året med 1</span>
+<span class="linenos"> 9</span>    <span class="n">nåværende_temp</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># øk temperaturen med den årlige stigningen</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span>
+<span class="linenos">12</span>    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos">13</span><span class="s2">    Temperaturen er 1.5 grader varmere enn 1880 i år </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">nåværende_år</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span>
+<span class="linenos">14</span><span class="s2">    &quot;&quot;&quot;</span>
+<span class="linenos">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

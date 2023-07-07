@@ -573,13 +573,13 @@ V' = \frac{2m}{m + M} v + \frac{M - m}{m + M} V.
 <p><em>Under er et kodeskall for funksjonen. Du må fylle inn alle steder det står</em> <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn hastighetene v og V til to legemer med massene m og M,</span>
-<span class="sd">    og returnerer hastighetene v_neste og V_neste etter kollisjonen.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">v_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">V_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="k">return</span> <span class="n">v_neste</span><span class="p">,</span> <span class="n">V_neste</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">kollisjon</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+<span class="linenos">2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn hastighetene v og V til to legemer med massene m og M,</span>
+<span class="linenos">3</span><span class="sd">    og returnerer hastighetene v_neste og V_neste etter kollisjonen.</span>
+<span class="linenos">4</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">5</span>    <span class="n">v_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">6</span>    <span class="n">V_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">7</span>    <span class="k">return</span> <span class="n">v_neste</span><span class="p">,</span> <span class="n">V_neste</span>
 </pre></div>
 </div>
 </div>
@@ -605,44 +605,44 @@ Løsningsforslag:<div class="sd-summary-down docutils">
 <p><em>Under er et kodeskall for funksjonen. Du må fylle inn alle steder det står</em> <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,</span>
-<span class="sd">    der klossene har hastighetene v og V ved start. </span>
-
-<span class="sd">    Argumenter:</span>
-<span class="sd">        v: Hastighet til liten kloss ved start.</span>
-<span class="sd">        V: Hastighet til stor kloss ved start.</span>
-<span class="sd">        m: Masse til liten kloss.</span>
-<span class="sd">        M: Masse til stor kloss.</span>
-<span class="sd">        dt: Tidssteg for simuleringen. Default: 0.001</span>
-<span class="sd">    </span>
-<span class="sd">    Returnerer:</span>
-<span class="sd">        antall_kollisjoner: Antall kollisjoner som har skjedd i løpet av simuleringen.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># startposisjon til liten kloss</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># startposisjon til stor kloss.</span>
-    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span> <span class="c1"># Kjører helt til vi manuelt bryter ut av løkken med `break`.</span>
-        <span class="c1"># Sjekk om liten kloss treffer veggen og oppdater hastighet hvis den gjør det.</span>
-        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Finn en betingelse for når den lille klossen treffer veggen.</span>
-            <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Klossen reflekterer av veggen!</span>
-            <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-
-        <span class="c1"># Sjekk om liten kloss og stor kloss kolliderer og oppdater hastighetene hvis de gjør det.</span>
-        <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Finn en betingelse for når klossene kolliderer.</span>
-            <span class="n">v</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-            <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Finn en betingelse for når klossene aldri lenger vil kollidere.</span>
-            <span class="k">break</span>
-        
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater posisjon til liten kloss.</span>
-        <span class="n">X</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater posisjon til stor kloss.</span>
-
-
-    <span class="k">return</span> <span class="n">antall_kollisjoner</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">simuler_kollisjoner</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulerer kollisjoner mellom en kloss med masse m og en kloss med masse M,</span>
+<span class="linenos"> 3</span><span class="sd">    der klossene har hastighetene v og V ved start. </span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="sd">    Argumenter:</span>
+<span class="linenos"> 6</span><span class="sd">        v: Hastighet til liten kloss ved start.</span>
+<span class="linenos"> 7</span><span class="sd">        V: Hastighet til stor kloss ved start.</span>
+<span class="linenos"> 8</span><span class="sd">        m: Masse til liten kloss.</span>
+<span class="linenos"> 9</span><span class="sd">        M: Masse til stor kloss.</span>
+<span class="linenos">10</span><span class="sd">        dt: Tidssteg for simuleringen. Default: 0.001</span>
+<span class="linenos">11</span><span class="sd">    </span>
+<span class="linenos">12</span><span class="sd">    Returnerer:</span>
+<span class="linenos">13</span><span class="sd">        antall_kollisjoner: Antall kollisjoner som har skjedd i løpet av simuleringen.</span>
+<span class="linenos">14</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">15</span>    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># startposisjon til liten kloss</span>
+<span class="linenos">16</span>    <span class="n">X</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># startposisjon til stor kloss.</span>
+<span class="linenos">17</span>    <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span> <span class="c1"># Kjører helt til vi manuelt bryter ut av løkken med `break`.</span>
+<span class="linenos">20</span>        <span class="c1"># Sjekk om liten kloss treffer veggen og oppdater hastighet hvis den gjør det.</span>
+<span class="linenos">21</span>        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Finn en betingelse for når den lille klossen treffer veggen.</span>
+<span class="linenos">22</span>            <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Klossen reflekterer av veggen!</span>
+<span class="linenos">23</span>            <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>        <span class="c1"># Sjekk om liten kloss og stor kloss kolliderer og oppdater hastighetene hvis de gjør det.</span>
+<span class="linenos">27</span>        <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Finn en betingelse for når klossene kolliderer.</span>
+<span class="linenos">28</span>            <span class="n">v</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">29</span>            <span class="n">antall_kollisjoner</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span>        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Finn en betingelse for når klossene aldri lenger vil kollidere.</span>
+<span class="linenos">32</span>            <span class="k">break</span>
+<span class="linenos">33</span>        
+<span class="linenos">34</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater posisjon til liten kloss.</span>
+<span class="linenos">35</span>        <span class="n">X</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater posisjon til stor kloss.</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span>    <span class="k">return</span> <span class="n">antall_kollisjoner</span>
 </pre></div>
 </div>
 </div>
