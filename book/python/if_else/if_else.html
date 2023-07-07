@@ -64,6 +64,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/if_else/if_else';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -707,12 +709,12 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
 <h2><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester<a class="headerlink" href="#if-elif-else-tester" title="Permalink to this heading">#</a></h2>
 <p>Ofte ønsker vi å skrive kode der hvilken del av koden vi kjører <strong>ikke</strong> bare er to-delt, men det finnes flere betingelser som gjør at andre deler av koden skal kjøres. Da kan vi bruke <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester.</p>
 <p>Den generelle strukturen til en <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-test er</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">if</span> <span class="n">betingelse1</span><span class="p">:</span> <span class="c1"># Sjekk om betingelse 1 er sann</span>
-<span class="linenos">2</span>    <span class="c1"># Kjør kode hvis betingelse1 er sann</span>
-<span class="linenos">3</span><span class="k">elif</span> <span class="n">betingelse2</span><span class="p">:</span> <span class="c1"># Hvis ikke betingelse1 er sann, sjekk om betingelse2 er sann</span>
-<span class="linenos">4</span>    <span class="c1"># Kjøre kode hvis betingelse2 er sann</span>
-<span class="linenos">5</span><span class="k">else</span><span class="p">:</span> <span class="c1"># Hvis ingen av betingelse1 og betingelse2 er sanne</span>
-<span class="linenos">6</span>    <span class="c1"># Kjør koden som står her</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">if</span> <span class="n">betingelse1</span><span class="p">:</span> <span class="c1"># Sjekk om betingelse 1 er sann</span>
+</span><span class="linenos">2</span>    <span class="c1"># Kjør kode hvis betingelse1 er sann</span>
+<span class="hll"><span class="linenos">3</span><span class="k">elif</span> <span class="n">betingelse2</span><span class="p">:</span> <span class="c1"># Hvis ikke betingelse1 er sann, sjekk om betingelse2 er sann</span>
+</span><span class="linenos">4</span>    <span class="c1"># Kjøre kode hvis betingelse2 er sann</span>
+<span class="hll"><span class="linenos">5</span><span class="k">else</span><span class="p">:</span> <span class="c1"># Hvis ingen av betingelse1 og betingelse2 er sanne</span>
+</span><span class="linenos">6</span>    <span class="c1"># Kjør koden som står her</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -720,7 +722,17 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
 <li><p>På linje 3 sjekker vi om <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er sann hvis <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> ikke var det.</p></li>
 <li><p>På linje 5 kjører vi koden som står i <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken hvis verken <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> eller <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er sanne.</p></li>
 </ul>
-<section id="eksempel-moms-pa-varer">
+<p>Flytdiagrammet under vises hvordan en <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-test fungerer.</p>
+<div class="mermaid" align="center">
+flowchart LR
+
+    A[Start] --> B[if-test]
+    B -- if-betingelsen er sann --> C(if-blokk kjøres) --> G[Ferdig]
+    B -- if-betingelsen er usann --> D[elif test]
+    D -- elif-betingelsen er sann --> E(elif-blokk kjøres) --> G[Ferdig]
+    D -- elif-betingelsen er usann --> F(else-blokk kjøres) --> G[Ferdig]
+
+</div><section id="eksempel-moms-pa-varer">
 <h3>Eksempel: moms på varer<a class="headerlink" href="#eksempel-moms-pa-varer" title="Permalink to this heading">#</a></h3>
 <p>Når vi betaler for ulike tjeneser i Norge, er det ulike avgift som betales avhengig av varen.</p>
 <ul class="simple">

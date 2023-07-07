@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/følger_og_rekker/rekursive_funksjoner';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -517,29 +519,14 @@ document.write(`
         <span class="k">return</span> <span class="o">&lt;</span><span class="n">rekursiv</span> <span class="n">formel</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Hvordan fungerer den rekursive funksjonen stegvis? </p>
-<p>Tenk deg at vi ønsker å regne ut det tredje leddet <span class="math notranslate nohighlight">\(a_3\)</span>. Da vil funksjonskallet gjøre følgende:</p>
-<ol class="arabic simple">
-<li><p>Vi kaller på <code class="docutils literal notranslate"><span class="pre">a(3)</span></code>.</p>
-<ul class="simple">
-<li><p>Siden <code class="docutils literal notranslate"><span class="pre">n</span></code> ikke er lik 1, går vi videre til neste steg. Vi kaller på <code class="docutils literal notranslate"><span class="pre">a(2)</span></code></p>
-<ul>
-<li><p>Siden <code class="docutils literal notranslate"><span class="pre">n</span></code> ikke er lik 1, går vi videre til neste steg. Vi kaller på <code class="docutils literal notranslate"><span class="pre">a(1)</span></code></p>
-<ul>
-<li><p>Siden <code class="docutils literal notranslate"><span class="pre">n</span></code> er lik 1, returnerer vi <span class="math notranslate nohighlight">\(a_1\)</span>.</p></li>
-</ul>
-</li>
-<li><p>Funksjonskallet med <code class="docutils literal notranslate"><span class="pre">a(2)</span></code> får nå tilbake verdien <code class="docutils literal notranslate"><span class="pre">a(1)</span></code> som den bruker til å regne ut <span class="math notranslate nohighlight">\(a_2\)</span>.</p></li>
-</ul>
-</li>
-<li><p>Funksjonskallet med <code class="docutils literal notranslate"><span class="pre">a(3)</span></code> får nå tilbake verdien <code class="docutils literal notranslate"><span class="pre">a(2)</span></code> som den bruker til å regne ut <span class="math notranslate nohighlight">\(a_3\)</span>.</p></li>
-</ul>
-</li>
-</ol>
-<p>Så returneres verdien <code class="docutils literal notranslate"><span class="pre">a(3)</span></code> tilbake til det opprinnelige funksjonskallet, og vi får tilbake <span class="math notranslate nohighlight">\(a_3\)</span>.</p>
-</div>
-</section>
+<p>En rekursiv funksjon har følgende flytdiagram (uten å vise til <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-testen som skjer på hvert steg):</p>
+<div class="mermaid" align="center">
+flowchart LR
+
+    A["Regn ut a(n)"] --> B["Regn ut a(n-1)"] --> C["Regn ut a(n - 2)"] -...-> D["Regn ut a(2)"] --> E["Regn ut a(1)"] 
+    E -- "Returner a(1)" --> D -...-> C -- "Returner a(n-2)" --> B -- "Returner a(n-1)" --> A -- "Returner a(n)" --> F["Ferdig"]
+    
+</div></section>
 <section id="eksempler">
 <h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
 <section id="eksempel-1-en-aritmetisk-folge">

@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/iterasjon/while_loops';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -508,10 +510,19 @@ document.write(`
 <h2>Hva er en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke?<a class="headerlink" href="#hva-er-en-while-lokke" title="Permalink to this heading">#</a></h2>
 <p>En <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke, er en løkke der vi gjentar en handling så lenge en betingelse er sann. Vi kan tenke på det som at vi gjentar en handling <em>så lenge</em> noe er sant. Generisk ser en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke slik ut:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">betingelse</span><span class="p">:</span>
-    <span class="c1"># gjør noe</span>
+    <span class="c1"># gjør en handling med kode</span>
 </pre></div>
 </div>
-</section>
+<p>Vi kan visualisere hvordan en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke fungerer med følgende flytdiagram:</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+A[start] --> B[While-løkke] --> C(Sjekk om betingelse er sann)
+C -- Sann --> D[Utfør handling]
+D -- Gjenta ---> B
+C -- Usann ---> E[ferdig]
+
+</div></section>
 <section id="eksempler">
 <h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
 <section id="eksempel-1-telle-til-5">

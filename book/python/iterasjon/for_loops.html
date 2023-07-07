@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/iterasjon/for_loops';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -475,14 +477,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaks">Syntaks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-telle-til-5">Eksempel 1: Telle til 5</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaks">Syntaks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-summen-av-de-10-forste-heltallene">Eksempel 1: Summen av de 10 første heltallene</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summen-av-alle-partall-under-500">Eksempel 2: Summen av alle partall under 500</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-sparekonto-med-renter">Eksempel 3: Sparekonto med renter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-telle-til-5">Eksempel 1: Telle til 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summen-av-de-10-forste-heltallene">Eksempel 2: Summen av de 10 første heltallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-summen-av-alle-partall-under-500">Eksempel 3: Summen av alle partall under 500</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-sparekonto-med-renter">Eksempel 4: Sparekonto med renter</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -511,16 +511,27 @@ document.write(`
 <h2>Syntaks<a class="headerlink" href="#syntaks" title="Permalink to this heading">#</a></h2>
 <p>Vi skal typisk bruke <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker med <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen til Python. Skrivemåten til en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke er da</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Gjør noe</span>
+    <span class="c1"># Utfør en handling</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkken vil gjenta koden <code class="docutils literal notranslate"><span class="pre">n</span></code> ganger. Samtidig vil den tildele verdiene <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">...,</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> til variabelen <code class="docutils literal notranslate"><span class="pre">i</span></code> for hver gang den gjentar koden. Den første runden er <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>, den andre runden er <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1</span></code>, osv. Den siste runden er <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+<p>Vi kan forstå flyten i en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke bedre med følgende flytdiagram:</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+    A[Start] --> B[For-løkke] --> C[er i < n - 1?]
+    C -- Ja --> D[Utfør handling] -- Øk i med 1 --> B
+    C -- Nei --> E[Ferdig]
+
+</div></section>
+<section id="eksempler">
+<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
 <section id="eksempel-1-telle-til-5">
 <h3>Eksempel 1: Telle til 5<a class="headerlink" href="#eksempel-1-telle-til-5" title="Permalink to this heading">#</a></h3>
 <p>Som et eksempel på hvordan verdiene til <code class="docutils literal notranslate"><span class="pre">i</span></code> endrer seg, kan vi skrive ut verdiene til <code class="docutils literal notranslate"><span class="pre">i</span></code> i hver runde. Vi kan for eksempel skrive ut verdiene til <code class="docutils literal notranslate"><span class="pre">i</span></code> i hver runde ved å skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -531,11 +542,20 @@ document.write(`
 2
 3
 4
-5
 </pre></div>
 </div>
 </div>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Et flytdiagram for eksempel 1</p>
+<p>Vi kan konkretisere eksempelet ved å skrive et flytdiagram for det:</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+    A[Start For-løkke] --> B[Sett i = 0] --> C[er i < 5]
+    C -- Ja --> D[Print ut verdien til i] -- Øk i med 1 --> C
+    C -- Nei --> E[Ferdig]
+</div></div>
 <div class="tip admonition">
 <p class="admonition-title">Verdiene i range.</p>
 <p>Legg spesielt merke til at <code class="docutils literal notranslate"><span class="pre">i</span></code> går fra 0 til 4, og ikke 1 til 5. Dette er fordi <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> gir tallene fra 0 til <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code>.
@@ -586,11 +606,8 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 </ol>
 </div>
 </section>
-</section>
-<section id="eksempler">
-<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
-<section id="eksempel-1-summen-av-de-10-forste-heltallene">
-<h3>Eksempel 1: Summen av de 10 første heltallene<a class="headerlink" href="#eksempel-1-summen-av-de-10-forste-heltallene" title="Permalink to this heading">#</a></h3>
+<section id="eksempel-2-summen-av-de-10-forste-heltallene">
+<h3>Eksempel 2: Summen av de 10 første heltallene<a class="headerlink" href="#eksempel-2-summen-av-de-10-forste-heltallene" title="Permalink to this heading">#</a></h3>
 <p>Vi kan regne ut summen av de 10 første heltallene med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke. Dette kan oppnås med koden</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -608,8 +625,8 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 </div>
 </div>
 </section>
-<section id="eksempel-2-summen-av-alle-partall-under-500">
-<h3>Eksempel 2: Summen av alle partall under 500<a class="headerlink" href="#eksempel-2-summen-av-alle-partall-under-500" title="Permalink to this heading">#</a></h3>
+<section id="eksempel-3-summen-av-alle-partall-under-500">
+<h3>Eksempel 3: Summen av alle partall under 500<a class="headerlink" href="#eksempel-3-summen-av-alle-partall-under-500" title="Permalink to this heading">#</a></h3>
 <p>Vi kan regne ut summen alle partall under 500 med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke. Dette kan oppnås ved å bruke <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen ved å gå i steg på 2. Da må vi bruke <code class="docutils literal notranslate"><span class="pre">range(2,</span> <span class="pre">500,</span> <span class="pre">2)</span></code>. Her har vi satt <code class="docutils literal notranslate"><span class="pre">startverdi</span> <span class="pre">=</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">500</span></code> og <code class="docutils literal notranslate"><span class="pre">steglengde</span> <span class="pre">=</span> <span class="pre">2</span></code>. Da får vi tallene <span class="math notranslate nohighlight">\(2, 4, 6, \ldots, 598\)</span>.</p>
 <p>Pythonkoden kan da se slik ut:</p>
 <div class="cell docutils container">
@@ -629,8 +646,8 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 </div>
 </div>
 </section>
-<section id="eksempel-3-sparekonto-med-renter">
-<h3>Eksempel 3: Sparekonto med renter<a class="headerlink" href="#eksempel-3-sparekonto-med-renter" title="Permalink to this heading">#</a></h3>
+<section id="eksempel-4-sparekonto-med-renter">
+<h3>Eksempel 4: Sparekonto med renter<a class="headerlink" href="#eksempel-4-sparekonto-med-renter" title="Permalink to this heading">#</a></h3>
 <p>Se for deg at du skal spare opp penger over tid, så du oppretter en sparekonto. På denne kontoen setter du inn 1000 kr hver måned og det er 1.5% rente per år. Hvor mye penger har du på kontoen etter 3 år?</p>
 <p>Vi kan løse dette problemet med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke. Men først bør vi formulere en algoritme som løser problemet. Hvert år så skal vi sette inn 12 000 kr på kontoen (fordi deter 1000 kr hver måned). I tillegg skal vi legge til 1.5% rente på kontoen. Vi ser for oss at innskuddet settes inn i sin helhet på slutten av året, og at renten legges til på samme tidspunkt. Algoritmen kan da se slik ut</p>
 <div class="proof algorithm admonition" id="sparing">
@@ -929,14 +946,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaks">Syntaks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-telle-til-5">Eksempel 1: Telle til 5</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaks">Syntaks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-summen-av-de-10-forste-heltallene">Eksempel 1: Summen av de 10 første heltallene</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summen-av-alle-partall-under-500">Eksempel 2: Summen av alle partall under 500</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-sparekonto-med-renter">Eksempel 3: Sparekonto med renter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-telle-til-5">Eksempel 1: Telle til 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summen-av-de-10-forste-heltallene">Eksempel 2: Summen av de 10 første heltallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-summen-av-alle-partall-under-500">Eksempel 3: Summen av alle partall under 500</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-sparekonto-med-renter">Eksempel 4: Sparekonto med renter</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
