@@ -5,6 +5,7 @@ execute:
   execute_notebooks: off
 
 parse:
+  number_source_lines: true
   myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
@@ -31,11 +32,13 @@ launch_buttons:
 html:
   use_issues_button: true
   use_repository_button: true
+  nb_number_source_lines: true
 
 
 sphinx:
-  # config:
-  #   language: nb
+  config:
+    # language: nb
+    nb_number_source_lines: true
   extra_extensions:
     - sphinx_proof
     - sphinx_inline_tabs
