@@ -523,7 +523,18 @@ flowchart TD
     C -- Ja --> D[Utfør handling] -- Øk i med 1 --> B
     C -- Nei --> E[Ferdig]
 
-</div></section>
+</div><div class="tip admonition">
+<p class="admonition-title">while-løkke vs. for-løkke </p>
+<p>Fra flytdiagrammet over kan dette minne en del om en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke av typen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos">2</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+</span><span class="linenos">3</span>    <span class="c1"># Utfør en handling</span>
+<span class="hll"><span class="linenos">4</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></pre></div>
+</div>
+<p>Kodelinjene som er uthevet (1, 2 og 4) gjør akkurat det samme som <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n)</span></code> gjør for oss automatisk!</p>
+</div>
+</section>
 <section id="eksempler">
 <h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
 <section id="eksempel-1-telle-til-5">

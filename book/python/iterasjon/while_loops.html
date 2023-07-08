@@ -528,9 +528,19 @@ C -- Usann ---> E[ferdig]
 <section id="eksempel-1-telle-til-5">
 <h3>Eksempel 1: Telle til 5<a class="headerlink" href="#eksempel-1-telle-til-5" title="Permalink to this heading">#</a></h3>
 <p>La oss se på et enkelt eksempel der vi ønsker å la Python telle til 5 for oss.</p>
-<p>Hvis vi har en variabel <code class="docutils literal notranslate"><span class="pre">n</span></code>, kan vi øke verdien dens med å skrive <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>. Dette kan vi gjøre så mange ganger vi vil.
+<p>Hvis vi har en variabel <code class="docutils literal notranslate"><span class="pre">n</span></code>, kan vi øke verdien dens med <code class="docutils literal notranslate"><span class="pre">1</span></code> ved å skrive <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>. Dette kan vi gjøre så mange ganger vi vil.
 Siden vi skal telle til 5, kan vi bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke som gjentar denne handlingen så lenge <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">5</span></code> (altså så lenge <code class="docutils literal notranslate"><span class="pre">n</span></code> er mindre enn 5).
 Deretter, når <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">5</span></code>, avbrytes <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka. Koden vil da se slik ut:</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Flytskjema for eksempel 1</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+A[start] --> B[Sett n = 0] --> C[Start while-løkke]
+C --> D[Er n < 5?] --> |Ja| E[Øk n med 1] --> D
+D --> |Nei| F[Avslutt while-løkke] --> G[ferdig]
+
+</div></div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Starter med 0</span>
@@ -565,7 +575,18 @@ Deretter, når <code class="docutils literal notranslate"><span class="pre">n</s
 <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">5</span>
 </pre></div>
 </div>
-<p>Dette fungerer så lenge vi skal gjenta en handling få ganger (handlingen her er å plusse på tall). Med <code class="docutils literal notranslate"><span class="pre">while</span></code> løkke kan vi løse det slik:</p>
+<p>Dette fungerer så lenge vi skal gjenta en handling få ganger (handlingen her er å plusse på tall). Men med en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke kan vi løse dette uten å måtte skrive samme kode flere ganger. I stedet kan vi skrive følgende kode (se gjerne flytskjemaet under for å se hvordan koden fungerer visuelt):</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Flytskjema for eksempel 2</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+A[Sett sum lik 0] --> B[Sett n lik 1] --> C[Start while-løkke] --> D[Er n < 5?] 
+D --> |Ja| E[Øk sum med n] --> F[Øk n med 1] --> D
+D --> |Nei| G[Avslutt while-løkke] --> H[Skriv ut summen til skjermen]  --> I[ferdig]
+
+
+</div></div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># summen starter på 0, for vi har ikke lagt til noe enda.</span>
@@ -670,10 +691,12 @@ Fra prosentregningen i matematikken, kan vi regne ut at boligen er verdt etter 1
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som skal lagre summen av heltallene</span>
 <span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som holder lagrer hvilket heltall det er snakk om</span>
-<span class="linenos">3</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Legg inn betingelse på hvor lenge man skal kjøre `while`-løkka</span>
-<span class="linenos">4</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legg til heltallet på summen</span>
-<span class="linenos">5</span>    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk heltallet med 1.</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Legg inn betingelse på hvor lenge man skal kjøre `while`-løkka</span>
+<span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legg til heltallet på summen</span>
+<span class="linenos">6</span>    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk heltallet med 1.</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
