@@ -518,12 +518,12 @@ numerisk derivasjon.</p>
 <h2>Netwons kvotient (fremover)<a class="headerlink" href="#netwons-kvotient-fremover" title="Permalink to this heading">#</a></h2>
 <p><strong>Newtons kvotient</strong> er en metode for numerisk derivasjon som vi kan motivere ut ifra definisjonen av den deriverte</p>
 <div class="math notranslate nohighlight" id="equation-eq-def-derivative">
-<span class="eqno">(11)<a class="headerlink" href="#equation-eq-def-derivative" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq-def-derivative" title="Permalink to this equation">#</a></span>\[
 f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h},
 \]</div>
 <p>ved å redusere kravet om at <span class="math notranslate nohighlight">\(h \to 0\)</span> til at vi i stedet setter <span class="math notranslate nohighlight">\(h\)</span> til et <em>lite tall</em>. Vi kan da tilnærme den deriverte som</p>
 <div class="math notranslate nohighlight" id="equation-eq-newton-forward">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eq-newton-forward" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-newton-forward" title="Permalink to this equation">#</a></span>\[
 f'(x) \approx \frac{f(x+h) - f(x)}{h},
 \]</div>
 <p>der <span class="math notranslate nohighlight">\(h \ll 1\)</span> (symbolet <span class="math notranslate nohighlight">\(\ll\)</span> betyr “mye mindre enn”, forresten).</p>
@@ -579,7 +579,7 @@ f'(x) = 2x + 2 \implies f'(1) = 4.
 \[
 \frac{\Delta f}{\Delta x} \to \frac{df}{dx} \quad \text{når} \quad h \to 0,
 \]</div>
-<p>der <span class="math notranslate nohighlight">\(\Delta f = f(x+h) - f(x)\)</span> og <span class="math notranslate nohighlight">\(\Delta x = h\)</span>, slik som i likning <a class="reference internal" href="#equation-eq-def-derivative">(11)</a>.</p>
+<p>der <span class="math notranslate nohighlight">\(\Delta f = f(x+h) - f(x)\)</span> og <span class="math notranslate nohighlight">\(\Delta x = h\)</span>, slik som i likning <a class="reference internal" href="#equation-eq-def-derivative">(12)</a>.</p>
 </div>
 </section>
 <section id="eksempel-2-deriverte-av-en-eksponentialfunksjon">
@@ -613,7 +613,7 @@ g'(x) = g'(u(x))u'(x) = 2e^{2x} \implies g'(0) = 2,
 \frac{dg}{dx}(0) = 2e^0 = 2.
 \]</div>
 </div>
-<p>Vi kan bruke likning <a class="reference internal" href="#equation-eq-newton-forward">(12)</a> til å finne en tilnærming til den deriverte med følgende kodesnutt:</p>
+<p>Vi kan bruke likning <a class="reference internal" href="#equation-eq-newton-forward">(13)</a> til å finne en tilnærming til den deriverte med følgende kodesnutt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># trengs for eksponentialfunksjonen</span>
@@ -644,7 +644,7 @@ g'(x) = g'(u(x))u'(x) = 2e^{2x} \implies g'(0) = 2,
 <h2>Newtons kvotient (bakover)<a class="headerlink" href="#newtons-kvotient-bakover" title="Permalink to this heading">#</a></h2>
 <p>Vi kan også tilnærme den deriverte av en funksjon ved å gå bakover i <span class="math notranslate nohighlight">\(x\)</span>-retning, slik at tilnærming til den deriverte blir</p>
 <div class="math notranslate nohighlight" id="equation-eq-newton-backward">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eq-newton-backward" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-newton-backward" title="Permalink to this equation">#</a></span>\[
 f'(x) \approx \frac{f(x) - f(x - h)}{h}.
 \]</div>
 <p>La oss se på et eksempel:</p>
@@ -661,7 +661,7 @@ r(x) = 3x^2 - 2x + 5.
 \[
 r'(x) = 6x - 2 \implies r'(3) = 16.
 \]</div>
-<p>Bruker vi tilnærmingen i likning <a class="reference internal" href="#equation-eq-newton-backward">(13)</a>, kan vi finne en tilnæmring med Pythonkode slik:</p>
+<p>Bruker vi tilnærmingen i likning <a class="reference internal" href="#equation-eq-newton-backward">(14)</a>, kan vi finne en tilnæmring med Pythonkode slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">r</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -692,7 +692,7 @@ r'(x) = 6x - 2 \implies r'(3) = 16.
 p(x) = 2x^3 - 3x^2 + 4x - 1,
 \]</div>
 <p>og vi ønsker å finne verdien til den deriverte i flere punkter enn bare ett. Da er det naturlig å definere en funksjon for den deriverte slik at vi kan regne ut den deriverte flere ganger med forskjellige <span class="math notranslate nohighlight">\(x\)</span>-verdier.</p>
-<p>La oss bruke tilnærmingen i likning <a class="reference internal" href="#equation-eq-newton-backward">(13)</a> til å definere en funksjon for den deriverte:</p>
+<p>La oss bruke tilnærmingen i likning <a class="reference internal" href="#equation-eq-newton-backward">(14)</a> til å definere en funksjon for den deriverte:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -800,7 +800,7 @@ x = 4   ;   dfdx(x) = -0.00805
 <h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Bruk tilnærmingen fra likning <a class="reference internal" href="#equation-eq-newton-forward">(12)</a> til å finne en tilnærming til den deriverte av funksjonen</p>
+<p>Bruk tilnærmingen fra likning <a class="reference internal" href="#equation-eq-newton-forward">(13)</a> til å finne en tilnærming til den deriverte av funksjonen</p>
 <div class="math notranslate nohighlight">
 \[
 f(x) = x^3 - 2x,
@@ -851,7 +851,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Bruk tilnærmingen fra likning <a class="reference internal" href="#equation-eq-newton-backward">(13)</a> til å finne en tilnærming til den deriverte av funksjonen</p>
+<p>Bruk tilnærmingen fra likning <a class="reference internal" href="#equation-eq-newton-backward">(14)</a> til å finne en tilnærming til den deriverte av funksjonen</p>
 <div class="math notranslate nohighlight">
 \[
 g(x) = \frac{x - 1}{x^2 + 1},
@@ -902,16 +902,16 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
 <p>En enda bedre tilnærming til den deriverte enn de to vi har sett på så langt er gitt ved</p>
 <div class="math notranslate nohighlight" id="equation-eq-newton-central">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq-newton-central" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-newton-central" title="Permalink to this equation">#</a></span>\[
 f'(x) \approx \frac{f(x + h) - f(x - h)}{2h}. 
 \]</div>
-<p>På sett og vis er dette en kombinasjon av tilnærmingene i likning <a class="reference internal" href="#equation-eq-newton-forward">(12)</a> og <a class="reference internal" href="#equation-eq-newton-backward">(13)</a>, som gir en mer nøyaktig tilnærming. Den kalles gjerne for en <strong>sentraltilnærming</strong>.</p>
+<p>På sett og vis er dette en kombinasjon av tilnærmingene i likning <a class="reference internal" href="#equation-eq-newton-forward">(13)</a> og <a class="reference internal" href="#equation-eq-newton-backward">(14)</a>, som gir en mer nøyaktig tilnærming. Den kalles gjerne for en <strong>sentraltilnærming</strong>.</p>
 <p>Bruk denne tilnærmingen til å finne en tilnærming til den deriverte av funksjonen</p>
 <div class="math notranslate nohighlight">
 \[
 l(x) = \frac{1}{x^2 + 1},
 \]</div>
-<p>i <span class="math notranslate nohighlight">\(x = 2\)</span>. Bruk en steglengde på <span class="math notranslate nohighlight">\(h = 0.1\)</span>. Sammenlign med tilnærmingene du får ved å bruke likning <a class="reference internal" href="#equation-eq-newton-forward">(12)</a> og likning <a class="reference internal" href="#equation-eq-newton-backward">(13)</a>.</p>
+<p>i <span class="math notranslate nohighlight">\(x = 2\)</span>. Bruk en steglengde på <span class="math notranslate nohighlight">\(h = 0.1\)</span>. Sammenlign med tilnærmingene du får ved å bruke likning <a class="reference internal" href="#equation-eq-newton-forward">(13)</a> og likning <a class="reference internal" href="#equation-eq-newton-backward">(14)</a>.</p>
 <p><em>Du kan bruke kodeskallet under som utgangspunkt. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -974,7 +974,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 \[
 k(x) = xe^{-x^2},
 \]</div>
-<p>i <span class="math notranslate nohighlight">\(x = -1\)</span>. Bruk en steglengde på <span class="math notranslate nohighlight">\(h = 10^{-5}\)</span>. Bruk likning <a class="reference internal" href="#equation-eq-newton-central">(14)</a>.</p>
+<p>i <span class="math notranslate nohighlight">\(x = -1\)</span>. Bruk en steglengde på <span class="math notranslate nohighlight">\(h = 10^{-5}\)</span>. Bruk likning <a class="reference internal" href="#equation-eq-newton-central">(15)</a>.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

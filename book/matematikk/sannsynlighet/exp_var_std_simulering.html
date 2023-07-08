@@ -518,7 +518,7 @@ document.write(`
 <p>En intuitiv tolkning av forventning er at det <em>er verdien gjennomsnittet av en tilfeldig variabel vil konvergere mot etterhvert som vi gjentar eksperimentet mange ganger</em>. Med andre ord, hvis vi har en stokastisk variabel <span class="math notranslate nohighlight">\(X\)</span>, og vi gjøre et forsøk <span class="math notranslate nohighlight">\(n\)</span> ganger og får utfall <span class="math notranslate nohighlight">\(x_1, x_2, \ldots, x_n\)</span>, så vil gjennomsnittet av disse utfallene konvergere mot forventningen til <span class="math notranslate nohighlight">\(X\)</span> når <span class="math notranslate nohighlight">\(n\)</span> blir stor nok.</p>
 <p>Basert på dette argumentet, er det rimelig å bruke følgende formel for å beregne forventningen til en tilfeldig variabel <span class="math notranslate nohighlight">\(X\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-forventning-x">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eq-forventning-x" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq-forventning-x" title="Permalink to this equation">#</a></span>\[
 E(X) \approx \frac{1}{n}\sum_{i=1}^n x_i
 \]</div>
 <p>der <span class="math notranslate nohighlight">\(x_i\)</span> er utfallene vi får når vi gjentar eksperimentet <span class="math notranslate nohighlight">\(n\)</span> ganger.</p>
@@ -527,15 +527,15 @@ E(X) \approx \frac{1}{n}\sum_{i=1}^n x_i
 <h2>Varians og Standardavvik<a class="headerlink" href="#varians-og-standardavvik" title="Permalink to this heading">#</a></h2>
 <p>Variansen til en tilfeldig variabel <span class="math notranslate nohighlight">\(X\)</span> kan uttrykkes som</p>
 <div class="math notranslate nohighlight" id="equation-eq-varians-x">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eq-varians-x" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq-varians-x" title="Permalink to this equation">#</a></span>\[
 \text{Var} (X) = E(X^2) - E(X)^2.
 \]</div>
-<p>Argumentet som ledet til likning <a class="reference internal" href="#equation-eq-forventning-x">(18)</a> var at gjennomsnittet av målinger av <span class="math notranslate nohighlight">\(X\)</span> ville gå mot <span class="math notranslate nohighlight">\(E(X)\)</span> når vi gjorde veldig mange målinger. Det samme vil være sant for målinger av <span class="math notranslate nohighlight">\(X^2\)</span>. Vi kan derfor tilnærmet <span class="math notranslate nohighlight">\(E(X^2)\)</span> som</p>
+<p>Argumentet som ledet til likning <a class="reference internal" href="#equation-eq-forventning-x">(19)</a> var at gjennomsnittet av målinger av <span class="math notranslate nohighlight">\(X\)</span> ville gå mot <span class="math notranslate nohighlight">\(E(X)\)</span> når vi gjorde veldig mange målinger. Det samme vil være sant for målinger av <span class="math notranslate nohighlight">\(X^2\)</span>. Vi kan derfor tilnærmet <span class="math notranslate nohighlight">\(E(X^2)\)</span> som</p>
 <div class="math notranslate nohighlight">
 \[
 E(X^2) \approx \frac{1}{n}\sum_{i=1}^n x_i^2. 
 \]</div>
-<p>Ved å regne ut tilnærminger til <span class="math notranslate nohighlight">\(E(X)\)</span> og <span class="math notranslate nohighlight">\(E(X^2)\)</span>, kan vi så tilnærme verdien til variansen til <span class="math notranslate nohighlight">\(X\)</span> ved å bruke <a class="reference internal" href="#equation-eq-varians-x">(19)</a>,
+<p>Ved å regne ut tilnærminger til <span class="math notranslate nohighlight">\(E(X)\)</span> og <span class="math notranslate nohighlight">\(E(X^2)\)</span>, kan vi så tilnærme verdien til variansen til <span class="math notranslate nohighlight">\(X\)</span> ved å bruke <a class="reference internal" href="#equation-eq-varians-x">(20)</a>,
 og til standardavviket ved å bruke</p>
 <div class="math notranslate nohighlight">
 \[
