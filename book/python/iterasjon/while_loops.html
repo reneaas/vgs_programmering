@@ -169,12 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -538,10 +539,10 @@ D --> |Nei| F[Avslutt while-løkke] --> G[ferdig]
 </div></div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Starter med 0</span>
-<span class="linenos">2</span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># øker n med 1</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># printer ut verdien til n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Starter med 0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># øker n med 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># printer ut verdien til n</span>
 </pre></div>
 </div>
 </div>
@@ -584,12 +585,12 @@ D --> |Nei| G[Avslutt while-løkke] --> H[Skriv ut summen til skjermen]  --> I[f
 </div></div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># summen starter på 0, for vi har ikke lagt til noe enda.</span>
-<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Heltall som skal legges på s</span>
-<span class="linenos">3</span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># så lenge heltallet er mindre enn 5</span>
-<span class="linenos">4</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">n</span> <span class="c1"># legg på heltallet på s</span>
-<span class="linenos">5</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># øk heltallet med 1</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># summen starter på 0, for vi har ikke lagt til noe enda.</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Heltall som skal legges på s</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># så lenge heltallet er mindre enn 5</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">n</span> <span class="c1"># legg på heltallet på s</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># øk heltallet med 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -628,15 +629,15 @@ Fra prosentregningen i matematikken, kan vi regne ut at boligen er verdt etter 1
 <p>Med Pythonkode blir dette</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">boligpris</span> <span class="o">=</span> <span class="mi">2_000_000</span> <span class="c1"># Man kan bruke _ for å gjøre store tall mer lesbare det står bare 2 millioner</span>
-<span class="linenos">2</span><span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3% rente</span>
-<span class="linenos">3</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># 1.03</span>
-<span class="linenos">4</span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># starter på 0 år</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="k">while</span> <span class="n">år</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># Så lenge det ikke har gått 10 år enda, gjør følgende:</span>
-<span class="linenos">7</span>    <span class="n">boligpris</span> <span class="o">=</span> <span class="n">boligpris</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Øk boligprisen med veksten fra renten på 1 år.</span>
-<span class="linenos">8</span>    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øk årstallet med 1.</span>
-<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">boligpris</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span> <span class="c1"># .0f skriver ut tallet uten desimaler, rundet av til nærmeste heltall</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boligpris</span> <span class="o">=</span> <span class="mi">2_000_000</span> <span class="c1"># Man kan bruke _ for å gjøre store tall mer lesbare det står bare 2 millioner</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3% rente</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># 1.03</span>
+<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># starter på 0 år</span>
+
+<span class="k">while</span> <span class="n">år</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># Så lenge det ikke har gått 10 år enda, gjør følgende:</span>
+    <span class="n">boligpris</span> <span class="o">=</span> <span class="n">boligpris</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Øk boligprisen med veksten fra renten på 1 år.</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øk årstallet med 1.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">boligpris</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span> <span class="c1"># .0f skriver ut tallet uten desimaler, rundet av til nærmeste heltall</span>
 </pre></div>
 </div>
 </div>
@@ -654,16 +655,16 @@ Fra prosentregningen i matematikken, kan vi regne ut at boligen er verdt etter 1
 <p>En mulig løsning på dette problemet ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke blir da:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi har ikke spart noe enda</span>
-<span class="linenos"> 2</span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Vi setter inn 1000 kr i måneden. Fast innskudd</span>
-<span class="linenos"> 3</span><span class="n">rente</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 0.3% rente</span>
-<span class="linenos"> 4</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
-<span class="linenos"> 5</span><span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi starter på måned 0</span>
-<span class="linenos"> 6</span><span class="k">while</span> <span class="n">måned</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="o">*</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># 12 måneder per år, og vi sparer i 2 år --&gt; 2 år * 12 måneder/år = 24 måneder. </span>
-<span class="linenos"> 7</span>    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Renten løper på sparebeløpet som har vokst siden forrige måned</span>
-<span class="linenos"> 8</span>    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Vi setter inn et nytt innskudd på sparebeløpet</span>
-<span class="linenos"> 9</span>    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Vi øker måneden med 1</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi har ikke spart noe enda</span>
+<span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Vi setter inn 1000 kr i måneden. Fast innskudd</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 0.3% rente</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi starter på måned 0</span>
+<span class="k">while</span> <span class="n">måned</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="o">*</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># 12 måneder per år, og vi sparer i 2 år --&gt; 2 år * 12 måneder/år = 24 måneder. </span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Renten løper på sparebeløpet som har vokst siden forrige måned</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Vi setter inn et nytt innskudd på sparebeløpet</span>
+    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Vi øker måneden med 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -684,14 +685,14 @@ Fra prosentregningen i matematikken, kan vi regne ut at boligen er verdt etter 1
 <p><em>Du kan bruke kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som skal lagre summen av heltallene</span>
-<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som holder lagrer hvilket heltall det er snakk om</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Legg inn betingelse på hvor lenge man skal kjøre `while`-løkka</span>
-<span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legg til heltallet på summen</span>
-<span class="linenos">6</span>    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk heltallet med 1.</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som skal lagre summen av heltallene</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som holder lagrer hvilket heltall det er snakk om</span>
+
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Legg inn betingelse på hvor lenge man skal kjøre `while`-løkka</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legg til heltallet på summen</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk heltallet med 1.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -720,16 +721,16 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan bruke kodeskallet under til å løse oppgaven. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">boligpris</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Boligpris ved år 0 (ved start)</span>
-<span class="linenos"> 2</span><span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Renten boligprisen øker med per år</span>
-<span class="linenos"> 3</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># vekstfaktoren renten gir</span>
-<span class="linenos"> 4</span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett inn betingelse for at `while`-løkka skal stoppe.</span>
-<span class="linenos"> 7</span>    <span class="n">boligpris</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk boligprisen med renten</span>
-<span class="linenos"> 8</span>    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk året med 1</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">boligpris</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boligpris</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Boligpris ved år 0 (ved start)</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Renten boligprisen øker med per år</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># vekstfaktoren renten gir</span>
+<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett inn betingelse for at `while`-løkka skal stoppe.</span>
+    <span class="n">boligpris</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk boligprisen med renten</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk året med 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">boligpris</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -762,16 +763,16 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">verdi</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Den opprinnelige verdien til bilen</span>
-<span class="linenos"> 2</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 3</span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos"> 6</span>    <span class="n">verdi</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 7</span>    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Den opprinnelige verdien til bilen</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">verdi</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -803,15 +804,15 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan tenkes du kan eller må legge til flere linjer med kode</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="n">innskudd</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">3</span><span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">4</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">5</span><span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">6</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">7</span>    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">8</span>    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">innskudd</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -850,17 +851,17 @@ flowchart TD
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn delene der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du kan fritt legge til linjer med kode du trenger, og fjerne linjer du ikke trenger.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># startlån</span>
-<span class="linenos"> 2</span><span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># renten på lånet</span>
-<span class="linenos"> 3</span><span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># fast terminbeløp</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># år 0.</span>
-<span class="linenos"> 6</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># skriv inn riktig betingelse for at løkka skal stoppe.</span>
-<span class="linenos"> 7</span>    <span class="n">rentebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regn ut rentebeløpet som skal legges på lånet</span>
-<span class="linenos"> 8</span>    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater gjenværende lån</span>
-<span class="linenos"> 9</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># oppdater tiden</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="w"> </span><span class="si">= }</span><span class="s2"> år.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># startlån</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># renten på lånet</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># fast terminbeløp</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># år 0.</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># skriv inn riktig betingelse for at løkka skal stoppe.</span>
+    <span class="n">rentebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regn ut rentebeløpet som skal legges på lånet</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater gjenværende lån</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># oppdater tiden</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="w"> </span><span class="si">= }</span><span class="s2"> år.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -169,12 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -527,14 +528,14 @@ a_n = 2n - 1, \quad n = 1, 2, ...,
 <p>En kode som regner ut summen av rekka er derfor</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Initialiserer summen</span>
-<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Initialiserer n</span>
-<span class="linenos">3</span><span class="k">while</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="mi">99</span><span class="p">:</span> <span class="c1"># Så lenge 2*n - 1 er mindre eller lik 99</span>
-<span class="linenos">4</span>    <span class="n">an</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">an</span> <span class="c1"># </span>
-<span class="linenos">6</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øk n med 1</span>
-<span class="linenos">7</span>    
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Initialiserer summen</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Initialiserer n</span>
+<span class="k">while</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="mi">99</span><span class="p">:</span> <span class="c1"># Så lenge 2*n - 1 er mindre eller lik 99</span>
+    <span class="n">an</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">an</span> <span class="c1"># </span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øk n med 1</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -578,15 +579,15 @@ a_n = \frac{1}{2}a_{n-1}, \qquad n = 2, 3, 4, \ldots.
 <p>Vi vet ikke hvor mange ledd det er i rekka er heller, så vi kan benytte oss av en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke og stoppe når <span class="math notranslate nohighlight">\(a_n &lt; 1/2048\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> 
-<span class="linenos">3</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Først ledd i summen</span>
-<span class="linenos">4</span><span class="k">while</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2048</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="n">s</span> <span class="o">+=</span> <span class="n">a</span> <span class="c1"># Samme som s = s + a</span>
-<span class="linenos">6</span>    <span class="n">a</span> <span class="o">/=</span> <span class="mi">2</span> <span class="c1"># Samme som a = a / 2</span>
-<span class="linenos">7</span>    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Samme som n = n + 1</span>
-<span class="linenos">8</span>
-<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Printer ut med 4 desimaler</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Først ledd i summen</span>
+<span class="k">while</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2048</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">a</span> <span class="c1"># Samme som s = s + a</span>
+    <span class="n">a</span> <span class="o">/=</span> <span class="mi">2</span> <span class="c1"># Samme som a = a / 2</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Samme som n = n + 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Printer ut med 4 desimaler</span>
 </pre></div>
 </div>
 </div>
@@ -611,15 +612,15 @@ S = 3 + 9 + 27 + 81 + \ldots + 59049,
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lagrer summen</span>
-<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvilket ledd man er på</span>
-<span class="linenos">3</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdien til første ledd.</span>
-<span class="linenos">4</span><span class="k">while</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">6</span>    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">7</span>    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">8</span>
-<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen av rekka er </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lagrer summen</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvilket ledd man er på</span>
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Verdien til første ledd.</span>
+<span class="k">while</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen av rekka er </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -670,15 +671,15 @@ a_n = 2a_{n-1} - 2n, \qquad n = 2, 3, 4, \ldots.
 <p><em>Du kan ta utgangspunkt i kodeskaller under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lagrer summen</span>
-<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Leddnummer</span>
-<span class="linenos">3</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd</span>
-<span class="linenos">4</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når while-løkka skal stoppe.</span>
-<span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">6</span>    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
-<span class="linenos">7</span>    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">8</span>
-<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen av rekka er </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lagrer summen</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Leddnummer</span>
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når while-løkka skal stoppe.</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen av rekka er </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -718,15 +719,15 @@ S = 16 + 4 + 1 + \frac{1}{4} + \frac{1}{16} + \ldots
 <p><em>Du kan ta utgangspunkt i kodeskaller under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lagrer summen</span>
-<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Leddnummer</span>
-<span class="linenos">3</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd</span>
-<span class="linenos">4</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når while-løkka skal stoppe.</span>
-<span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">6</span>    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">7</span>    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">8</span>
-<span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen av rekka er </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lagrer summen</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Leddnummer</span>
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Første ledd</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når while-løkka skal stoppe.</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen av rekka er </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

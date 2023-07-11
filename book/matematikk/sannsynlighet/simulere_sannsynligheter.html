@@ -169,12 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -640,23 +641,23 @@ P(X = A) \approx \frac{n_A}{n}.
 <p>Vi kan simulere et terningkast ved å trekke ut et tilfeldig tall fra en uniform heltallsfordeling med <code class="docutils literal notranslate"><span class="pre">low=0</span></code> og <code class="docutils literal notranslate"><span class="pre">high=7</span></code>. Da kan vi få tallene 0, 1, 2, 3, 4, 5 eller 6, og vi kan tolke disse som antall øyne på terningen. Vi kan simulere et terningkast med <code class="docutils literal notranslate"><span class="pre">np.random.randint(0,</span> <span class="pre">7)</span></code>, som følger:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># 10 000 terningkast</span>
-<span class="linenos"> 4</span><span class="n">n_seksere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall seksere</span>
-<span class="linenos"> 5</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 6</span>    <span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Kaster en terning</span>
-<span class="linenos"> 7</span>    <span class="k">if</span> <span class="n">kast</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> <span class="c1"># Hvis vi får en sekser</span>
-<span class="linenos"> 8</span>        <span class="n">n_seksere</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Legg til enda en sekser</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">sannsynlighet_sekser</span> <span class="o">=</span> <span class="n">n_seksere</span> <span class="o">/</span> <span class="n">n_forsøk</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span>
-<span class="linenos">13</span>    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="linenos">14</span><span class="s2">    Sannsynlighet for å få en sekser: </span><span class="si">{</span><span class="n">sannsynlighet_sekser</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
-<span class="linenos">15</span><span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
-<span class="linenos">16</span><span class="s2">    &quot;&quot;&quot;</span>
-<span class="linenos">17</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># 10 000 terningkast</span>
+<span class="n">n_seksere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall seksere</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Kaster en terning</span>
+    <span class="k">if</span> <span class="n">kast</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> <span class="c1"># Hvis vi får en sekser</span>
+        <span class="n">n_seksere</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Legg til enda en sekser</span>
+
+<span class="n">sannsynlighet_sekser</span> <span class="o">=</span> <span class="n">n_seksere</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Sannsynlighet for å få en sekser: </span><span class="si">{</span><span class="n">sannsynlighet_sekser</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
+<span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -710,24 +711,24 @@ P(X = A) \approx \frac{n_A}{n}.
 <p>Igjen bruker vi <code class="docutils literal notranslate"><span class="pre">numpy.random.randint(1,</span> <span class="pre">7)</span></code> for å kaste en terning, men nå må vi kaste to ganger per forsøk. En Pythonkode som løser dette er:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># 100 000 terningkast med to terninger</span>
-<span class="linenos"> 4</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får 7 som summen av øyne på terningene</span>
-<span class="linenos"> 5</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 6</span>    <span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Kaster to terninger, derfor `size=2`</span>
-<span class="linenos"> 7</span>    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kast</span><span class="p">)</span> <span class="c1"># Summerer terningene</span>
-<span class="linenos"> 8</span>    <span class="k">if</span> <span class="n">sum_av_terninger</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
-<span class="linenos"> 9</span>        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">10</span>    
-<span class="linenos">11</span><span class="n">sannsynlighet_7</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span>
-<span class="linenos">14</span>    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="linenos">15</span><span class="s2">    Sannsynlighet for å få 7 som summen av øyne på to terninger: </span><span class="si">{</span><span class="n">sannsynlighet_7</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
-<span class="linenos">16</span><span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="mi">6</span><span class="o">/</span><span class="mi">36</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
-<span class="linenos">17</span><span class="s2">    &quot;&quot;&quot;</span>
-<span class="linenos">18</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># 100 000 terningkast med to terninger</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får 7 som summen av øyne på terningene</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">kast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Kaster to terninger, derfor `size=2`</span>
+    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kast</span><span class="p">)</span> <span class="c1"># Summerer terningene</span>
+    <span class="k">if</span> <span class="n">sum_av_terninger</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">sannsynlighet_7</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Sannsynlighet for å få 7 som summen av øyne på to terninger: </span><span class="si">{</span><span class="n">sannsynlighet_7</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
+<span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="mi">6</span><span class="o">/</span><span class="mi">36</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -748,22 +749,22 @@ P(X = A) \approx \frac{n_A}{n}.
 <p>En pythonkode som simulerer dette kan se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Måler 100 000 høyder </span>
-<span class="linenos"> 4</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
-<span class="linenos"> 8</span>    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
-<span class="linenos"> 9</span>
-<span class="linenos">10</span>    <span class="c1"># Hvis høyden er større enn eller lik 180 cm, så legger vi til en suksess</span>
-<span class="linenos">11</span>    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&gt;=</span> <span class="mi">180</span><span class="p">:</span> 
-<span class="linenos">12</span>        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">sannsynlighet_høyde_over_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få en høyde over 180 cm: </span><span class="si">{</span><span class="n">sannsynlighet_høyde_over_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Måler 100 000 høyder </span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
+
+    <span class="c1"># Hvis høyden er større enn eller lik 180 cm, så legger vi til en suksess</span>
+    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&gt;=</span> <span class="mi">180</span><span class="p">:</span> 
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_høyde_over_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sannsynlighet for å få en høyde over 180 cm: </span><span class="si">{</span><span class="n">sannsynlighet_høyde_over_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -781,22 +782,22 @@ P(X = A) \approx \frac{n_A}{n}.
 <p>Vi kan simulere dette ved å trekke ut høyder fra normalfordelingen og telle opp antaller ganger <span class="math notranslate nohighlight">\(170 \ \text{cm} \leq X \leq 180 \ \text{cm}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Måler 100 000 høyder</span>
-<span class="linenos"> 4</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
-<span class="linenos"> 8</span>    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
-<span class="linenos"> 9</span>
-<span class="linenos">10</span>    <span class="c1"># Hvis høyden ligger mellom 170 og 180 cm, så legger vi til en suksess</span>
-<span class="linenos">11</span>    <span class="k">if</span> <span class="mi">170</span> <span class="o">&lt;=</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">180</span><span class="p">:</span> 
-<span class="linenos">12</span>        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">sannsynlighet_høyde_mellom_170_og_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(170 cm &lt;= x &lt;= 180 cm) = </span><span class="si">{</span><span class="n">sannsynlighet_høyde_mellom_170_og_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Måler 100 000 høyder</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde er større enn 180 cm</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
+
+    <span class="c1"># Hvis høyden ligger mellom 170 og 180 cm, så legger vi til en suksess</span>
+    <span class="k">if</span> <span class="mi">170</span> <span class="o">&lt;=</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">180</span><span class="p">:</span> 
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_høyde_mellom_170_og_180</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P(170 cm &lt;= x &lt;= 180 cm) = </span><span class="si">{</span><span class="n">sannsynlighet_høyde_mellom_170_og_180</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -831,29 +832,29 @@ Vi kan simulere dette ved å bruke <code class="docutils literal notranslate"><s
 <p>La oss sjekke at dette gir mening:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall elever vi trekker ut</span>
-<span class="linenos"> 2</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi trekker ut en jente</span>
-<span class="linenos"> 3</span><span class="n">n_jenter</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="linenos"> 4</span><span class="n">n_gutter</span> <span class="o">=</span> <span class="mi">300</span>
-<span class="linenos"> 5</span><span class="n">n_elever</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">+</span> <span class="n">n_gutter</span>
-<span class="linenos"> 6</span><span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 9</span>    <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
-<span class="linenos">10</span>    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> 
-<span class="linenos">11</span>
-<span class="linenos">12</span>    <span class="c1"># Hvis vi trekker ut en jente</span>
-<span class="linenos">13</span>    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
-<span class="linenos">14</span>        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Legg til en suksess</span>
-<span class="linenos">15</span>    
-<span class="linenos">16</span><span class="n">sannsynlighet_jente</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="nb">print</span><span class="p">(</span>
-<span class="linenos">19</span>    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="linenos">20</span><span class="s2">    Sannsynlighet for å trekke ut en jente: </span><span class="si">{</span><span class="n">sannsynlighet_jente</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
-<span class="linenos">21</span><span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="n">n_jenter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_elever</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
-<span class="linenos">22</span><span class="s2">    &quot;&quot;&quot;</span>
-<span class="linenos">23</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall elever vi trekker ut</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi trekker ut en jente</span>
+<span class="n">n_jenter</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">n_gutter</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">n_elever</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">+</span> <span class="n">n_gutter</span>
+<span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> 
+
+    <span class="c1"># Hvis vi trekker ut en jente</span>
+    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Legg til en suksess</span>
+    
+<span class="n">sannsynlighet_jente</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Sannsynlighet for å trekke ut en jente: </span><span class="si">{</span><span class="n">sannsynlighet_jente</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">. </span>
+<span class="s2">    Det eksakte svaret er </span><span class="si">{</span><span class="n">n_jenter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_elever</span><span class="w"> </span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> til tre desimaler.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -896,31 +897,31 @@ P(X \leq 160 \ \text{cm}) \approx \frac{n_\text{suksess}}{n_\text{forsøk}}.
 <p>Pythonkoden kan da se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">1000_000</span> <span class="c1"># Antall elever vi trekker ut</span>
-<span class="linenos"> 4</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde &lt;= 160 cm.</span>
-<span class="linenos"> 5</span><span class="n">n_jenter</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="linenos"> 6</span><span class="n">n_gutter</span> <span class="o">=</span> <span class="mi">300</span>
-<span class="linenos"> 7</span><span class="n">n_elever</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">+</span> <span class="n">n_gutter</span>
-<span class="linenos"> 8</span><span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos">11</span>    <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
-<span class="linenos">12</span>    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> 
-<span class="linenos">13</span>    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis vi trekker ut en jente</span>
-<span class="linenos">14</span>        <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
-<span class="linenos">15</span>        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> 
-<span class="linenos">16</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">17</span>        <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 180 cm og standardavvik 6 cm</span>
-<span class="linenos">18</span>        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> 
-<span class="linenos">19</span>    
-<span class="linenos">20</span>    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">160</span><span class="p">:</span> <span class="c1"># Hvis høyden er mindre eller lik 160 cm, så legger vi til en suksess</span>
-<span class="linenos">21</span>        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span><span class="n">sannsynlighet_høyde_under_160</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_høyde_under_160</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">1000_000</span> <span class="c1"># Antall elever vi trekker ut</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall ganger vi får en høyde &lt;= 160 cm.</span>
+<span class="n">n_jenter</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">n_gutter</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">n_elever</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">+</span> <span class="n">n_gutter</span>
+<span class="n">p_jente</span> <span class="o">=</span> <span class="n">n_jenter</span> <span class="o">/</span> <span class="n">n_elever</span> <span class="c1"># Sannsynlighet for å trekke ut en jente</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="c1"># Trekker en elev, der 1 er jente og 0 er gutt</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_jente</span><span class="p">)</span> 
+    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis vi trekker ut en jente</span>
+        <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 175 cm og standardavvik 5 cm</span>
+        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Trekker en høyde fra normalfordeling med gjennomsnitt 180 cm og standardavvik 6 cm</span>
+        <span class="n">høyde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> 
+    
+    <span class="k">if</span> <span class="n">høyde</span> <span class="o">&lt;=</span> <span class="mi">160</span><span class="p">:</span> <span class="c1"># Hvis høyden er mindre eller lik 160 cm, så legger vi til en suksess</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_høyde_under_160</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_høyde_under_160</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -948,20 +949,20 @@ P(X \leq 160 \ \text{cm}) \approx 0.04 = 4 \%.
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sett antall terningkast</span>
-<span class="linenos"> 4</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="n">kast</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span>    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett betingelse for når du skal øke antall suksesser</span>
-<span class="linenos">10</span>        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut sannsynligheten </span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sett antall terningkast</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">kast</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett betingelse for når du skal øke antall suksesser</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut sannsynligheten </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1022,38 +1023,38 @@ Skriv en Pythonkode for å regne ut sannsynligheten for at en tilfeldig valgt ly
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
-<span class="linenos"> 4</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall ganger vi får en levetid på minst 420 timer.</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="n">levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett betingelse for når du skal øke antall suksesser</span>
-<span class="linenos"> 9</span>        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span>    
-<span class="linenos">11</span><span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut sannsynligheten</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall ganger vi får en levetid på minst 420 timer.</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett betingelse for når du skal øke antall suksesser</span>
+        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    
+<span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut sannsynligheten</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="c1"># Trekker ut 100 000 levetider fra normalfordeling med gjennomsnitt 400 timer og standardavvik 10 timer</span>
-<span class="linenos"> 6</span><span class="n">levetider</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_forsøk</span><span class="p">)</span> 
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="c1"># Sjekker hvor mange av levetidene som er over 420 timer</span>
-<span class="linenos"> 9</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">levetider</span> <span class="o">&gt;</span> <span class="mi">420</span><span class="p">)</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Antall pærer vi sjekker levetiden til</span>
+
+<span class="c1"># Trekker ut 100 000 levetider fra normalfordeling med gjennomsnitt 400 timer og standardavvik 10 timer</span>
+<span class="n">levetider</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_forsøk</span><span class="p">)</span> 
+
+<span class="c1"># Sjekker hvor mange av levetidene som er over 420 timer</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">levetider</span> <span class="o">&gt;</span> <span class="mi">420</span><span class="p">)</span>
+
+<span class="n">sannsynlighet_levetid_over_420</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_levetid_over_420</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1124,20 +1125,20 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
-<span class="linenos"> 4</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span><span class="n">minst_levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Perioden vi ønsker at pærene minst skal vare.</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="n">levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> 
-<span class="linenos">10</span>        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">11</span>    
-<span class="linenos">12</span><span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">minst_levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Perioden vi ønsker at pærene minst skal vare.</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> 
+        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

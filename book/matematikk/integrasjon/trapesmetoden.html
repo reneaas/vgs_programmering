@@ -169,12 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -577,23 +578,23 @@ I = \int\limits_0^2 x^2 \, dx,
 <p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 4</a> slavisk, kan vi skrive en Pythonkode på følgende form:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 2</span>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="linenos"> 6</span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="linenos"> 7</span><span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="linenos"> 8</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="linenos">11</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
-<span class="linenos">12</span>    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="linenos">15</span><span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
+    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -614,23 +615,23 @@ I = \int\limits_0^2 x^2 \, dx,
 <p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 4</a> igjen, kan vi koden slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 2</span>    <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 6</span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="linenos"> 7</span><span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="linenos"> 8</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="linenos">11</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
-<span class="linenos">12</span>    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="linenos">15</span><span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
+    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -664,8 +665,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Vi starter fra summen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea5eac27-cc2a-4057-9312-dec94c1d4b6e">
-<span class="eqno">(17)<a class="headerlink" href="#equation-ea5eac27-cc2a-4057-9312-dec94c1d4b6e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d584bf01-f888-4ca7-9d76-51e30b98d442">
+<span class="eqno">(17)<a class="headerlink" href="#equation-d584bf01-f888-4ca7-9d76-51e30b98d442" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\limits_a^b f(x) \, dx &amp; \approx \sum_{i=0}^{n - 1}\frac{f(x_i) + f(x_{i+1})}{2}h \\
 &amp; = \frac{h}{2}\left(f(x_0) + f(x_1) + f(x_1) + f(x_2) + \ldots + f(x_{n-3}) + f(x_{n-2}) + f(x_{n-2}) + f(x_{n-1}) \right) \\
 &amp; = \frac{h}{2}\left(f(x_0) + 2f(x_1) + 2f(x_2) + \ldots + 2f(x_{n-3}) + 2f(x_{n-2}) + f(x_{n-1}) \right) \\
@@ -685,22 +686,22 @@ I = \int\limits_0^1 e^{-x^2} \, dx.
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan hende du må legge til noen linjer med kode.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Trengs for å bruke eksponentialfunksjonen</span>
-<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 3</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 6</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 7</span><span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span><span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">12</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">13</span>    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">=:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Trengs for å bruke eksponentialfunksjonen</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">=:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

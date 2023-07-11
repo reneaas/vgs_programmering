@@ -169,12 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -537,8 +538,8 @@ flowchart TD
 <p>Som et eksempel på hvordan verdiene til <code class="docutils literal notranslate"><span class="pre">i</span></code> endrer seg, kan vi skrive ut verdiene til <code class="docutils literal notranslate"><span class="pre">i</span></code> i hver runde. Vi kan for eksempel skrive ut verdiene til <code class="docutils literal notranslate"><span class="pre">i</span></code> i hver runde ved å skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -570,8 +571,8 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 <p>Vi kan også velge om vi ønsker å starte på noe annet enn 0. For eksempel kan vi telle fra 1 til 5 med å skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -588,8 +589,8 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 <p>Vi kan til og med spesifisere om vi kan gå i lengre steg enn 1 mellom hvert tall, dersom vi ønsker det. For eksempel kan vi telle fra 1 til 10, men gå i steg på 3 ved å skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -617,10 +618,10 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 <p>Vi kan regne ut summen av de 10 første heltallene med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke. Dette kan oppnås med koden</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Variabel som lagrer summen av alle tallene</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span> <span class="c1"># i = 1, 2, 3, ..., 10</span>
-<span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span> <span class="c1"># Legger til heltallet til summen.</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Variabel som lagrer summen av alle tallene</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span> <span class="c1"># i = 1, 2, 3, ..., 10</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span> <span class="c1"># Legger til heltallet til summen.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -637,11 +638,11 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 <p>Pythonkoden kan da se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-<span class="linenos">3</span>    <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span> <span class="c1"># Samme som s = s + i</span>
-<span class="linenos">4</span>    
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span> <span class="c1"># Samme som s = s + i</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -676,14 +677,14 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 </div><p>Vi kan oversette dette til Pythonkode slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">rente</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1"># Rente i prosent</span>
-<span class="linenos">2</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># Vekstfaktoren</span>
-<span class="linenos">3</span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1_000</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># 1000 kr/mnd * 12 mnd/år = 12 000 kr/år</span>
-<span class="linenos">4</span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span> <span class="c1"># vi starter med ett innskudd på kontoen.</span>
-<span class="linenos">5</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c1"># 10 år </span>
-<span class="linenos">6</span>    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Legger til renten på sparebeløpet som har stått på konto i et år</span>
-<span class="linenos">7</span>    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Legger til et nytt innskudd på kontoen.</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rente</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1"># Rente i prosent</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># Vekstfaktoren</span>
+<span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1_000</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># 1000 kr/mnd * 12 mnd/år = 12 000 kr/år</span>
+<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span> <span class="c1"># vi starter med ett innskudd på kontoen.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c1"># 10 år </span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Legger til renten på sparebeløpet som har stått på konto i et år</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Legger til et nytt innskudd på kontoen.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -703,11 +704,11 @@ Vi er vant til å telle fra 1 til <span class="math notranslate nohighlight">\(n
 <p><em>Du kan bruke kodeskallet under til å løse oppgaven. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -734,11 +735,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan bruke kodeskallet under til å løse oppgaven. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -771,11 +772,11 @@ n! = 1 \cdot 2 \cdot 3 \cdot \ldots \cdot (n - 1) \cdot n.
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n_fakultet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="n">n_fakultet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_fakultet</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_fakultet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">n_fakultet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_fakultet</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -803,11 +804,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -851,14 +852,14 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn delene der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startlånet</span>
-<span class="linenos">2</span><span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Renten som løper på låned</span>
-<span class="linenos">3</span><span class="n">nedbetalingstid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor mange år du skal betale ned lånet på.</span>
-<span class="linenos">4</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">5</span><span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Beløpet du betaler fast hvert år.</span>
-<span class="linenos">6</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">):</span>
-<span class="linenos">7</span>    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater gjenværende lån.</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startlånet</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Renten som løper på låned</span>
+<span class="n">nedbetalingstid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Hvor mange år du skal betale ned lånet på.</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Beløpet du betaler fast hvert år.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">):</span>
+    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater gjenværende lån.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

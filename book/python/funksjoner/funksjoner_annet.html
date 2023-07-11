@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Beholdere (containers) &#8212; Programmering i Videregående Skole</title>
+    <title>Pythonfunksjoner: mer enn matematiske funksjoner &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -64,9 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/containers/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/funksjoner/funksjoner_annet';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -160,22 +162,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lists.html">Lister</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../containers/lists.html">Lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
 <ul class="nav bd-sidenav">
@@ -273,6 +275,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/funksjoner/funksjoner_annet.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -298,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/containers/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/funksjoner/funksjoner_annet.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -328,7 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/python/containers/intro.md" target="_blank"
+      <li><a href="../../../_sources/book/python/funksjoner/funksjoner_annet.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +389,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -397,7 +448,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -408,11 +461,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Beholdere (containers)</h1>
+    <h1>Pythonfunksjoner: mer enn matematiske funksjoner</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-regne-ut-en-sum-av-de-n-forste-heltallene">Eksempel 1: Regne ut en sum av de <span class="math notranslate nohighlight">\(n\)</span> første heltallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-er-n-et-primtall">Eksempel 2: Er <span class="math notranslate nohighlight">\(n\)</span> et primtall?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -422,15 +489,127 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="beholdere-containers">
-<h1>Beholdere (containers)<a class="headerlink" href="#beholdere-containers" title="Permalink to this heading">#</a></h1>
-<p><strong>Beholdere</strong> er datatyper som kan lagre flere andre objekter samtidig. For eksempel kan den lagre flere tall på en gang, eller flere tekststrenger. Eller den kan lagre både tekststreker og tall samtidig. Objektene i en beholder kalles gjerne for <strong>elementer</strong>.
-Vi skal se på tre beholdere:</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="lists.html"><span class="doc std std-doc">Lister</span></a>. Lister er fleksible beholdere som lar oss legge til elementer som lagres i listen eller slette elementer, hente ut spesifikke elementer osv. Denne beholderen brukes når vi ikke er opptatt av navnet på elementene. Det er vanlig at vi har samme type elementer i listen (for eksempel <em>bare</em> tall eller <em>bare</em> tekststrenger), men vi kan også bruke den med blandede datatyper.</p></li>
-</ol>
-<!-- 2. [Dictionaries](dictionaries.ipynb). Dictionaries ("oppslagsverk" eller "ordbok") er en beholder der man har navnsatt hva elementet heter med nøkkelord og kan hente ut elementene basert på nøkkelordet. Det gjør det lettvint å lese og bruke koden, men dictionaries er ikke nødvendigvis spesielt raske. Men de er meget fleksible og nyttige for å løse mange problemer i programmering.
-3. [Numpy arrays](numpy_arrays.ipynb). Numpy arrays er som lister, men de er mindre fleksible i den forstand at de har en statisk størrelse gjennom koden. Vi må bestemme hvor mange elementer den skal romme helt fra start. Fordelen med denne datatypen er at den er enormt mye raskere enn lister og dictionaries for å gjøre beregninger på mange elementer av gangen. Ofte ønsker vi å regne på flere tusen tall samtidig, og Numpy kan gjøre dette, mens med de to andre får vi bare brukt ett element av gangen.   --></section>
+  <section class="tex2jax_ignore mathjax_ignore" id="pythonfunksjoner-mer-enn-matematiske-funksjoner">
+<h1>Pythonfunksjoner: mer enn matematiske funksjoner<a class="headerlink" href="#pythonfunksjoner-mer-enn-matematiske-funksjoner" title="Permalink to this heading">#</a></h1>
+<p>Så langt har vi sett at vi kan definere funksjoner i Python som likner veldig på funksjonene vi møter i matematikken.
+Her skal vi se at Pythonfunksjoner er et langt mer fleksibelt beist enn matematiske funksjoner, og brukes til å gjøre koder mer oversiktlige og gjenbrukbare.</p>
+<p>Det er vanlig å bryte opp et program i mange mindre funksjoner for å gjøre det mer oversiktlig, samt å lettere ha kontroll over hva som skjer. Hvis en større kode er delt opp i mindre biter, kan vi enklere finne feil også!</p>
+<section id="laeringsmal">
+<h2>Læringsmål<a class="headerlink" href="#laeringsmal" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kunne definere og bruke funksjoner som løser oppgaver som er mer sammensatte enn matematiske funksjoner.</p></li>
+</ul>
+</section>
+<section id="eksempler">
+<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-1-regne-ut-en-sum-av-de-n-forste-heltallene">
+<h3>Eksempel 1: Regne ut en sum av de <span class="math notranslate nohighlight">\(n\)</span> første heltallene<a class="headerlink" href="#eksempel-1-regne-ut-en-sum-av-de-n-forste-heltallene" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi har koden</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Koden regner ut summen av de 10 første heltallene. Men hva om vi ønsket å regne ut summen av de første heltallene for noe annet. Vel da måtte vi gått inn å endres på betingelsen <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">10</span></code> og satt den til noe annet, for eksempel <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">20</span></code>, så vi kunne regnet ut summen av de 20 første heltallene. Her viser det seg at vi kan jo plassere hele denne kodeblokken inn i en funksjon, og sette <code class="docutils literal notranslate"><span class="pre">n</span></code> være argumentet til funksjonen, der vi lar <code class="docutils literal notranslate"><span class="pre">n</span></code> spille rollen som største heltall. Som følger:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_av_heltall</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sum_av_heltall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sum_av_heltall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sum_av_heltall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sum_av_heltall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum_av_heltall(n=10) = 55
+sum_av_heltall(n=100) = 5050
+sum_av_heltall(n=1000) = 500500
+sum_av_heltall(n=10000) = 50005000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksempel-2-er-n-et-primtall">
+<h3>Eksempel 2: Er <span class="math notranslate nohighlight">\(n\)</span> et primtall?<a class="headerlink" href="#eksempel-2-er-n-et-primtall" title="Permalink to this heading">#</a></h3>
+<p>Dersom <span class="math notranslate nohighlight">\(n\)</span> er et primtall, er det kun delelig med seg selv og tallet 1. Vi kan sjekke om det tall <span class="math notranslate nohighlight">\(n\)</span> er delelig med et tall <span class="math notranslate nohighlight">\(p\)</span> ved å gjøre restdivisjon <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">p</span></code>. Dersom resten er 0, er <span class="math notranslate nohighlight">\(n\)</span> delelig med <span class="math notranslate nohighlight">\(p\)</span>. Vi kan sjekke om <span class="math notranslate nohighlight">\(n\)</span> er et primtall ved å sjekke om det er delelig med alle tallene fra 2 til <span class="math notranslate nohighlight">\(n-1\)</span>. Dersom det er delelig med et av disse tallene, er det ikke et primtall. Vi må også passe på at tallet er minst lik 2. Hvis ikke er det ikke et primtall.
+Et flytskjema for algoritmen er som følger:</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+    A[Velg n] --> B[Sjekk n] 
+    B -- n < 2 --> C[Ikke primtall: returner `False`]
+    B -- n >= 2 --> D
+    D[Sett p = 2] --> E[while p < n]
+    E -- p < n --> F[Regn ut n % p]
+    F -- n % p == 0 --> C
+    F -- n % p != 0 --> G[Øk p med 1]
+    G --> E
+    E -- p >= n --> H[Primtall: returner `True`]
+
+
+
+</div><p>Vi kan fylle inn en funksjon <code class="docutils literal notranslate"><span class="pre">er_primtall</span></code> basert på flytskjemaet:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    
+    <span class="c1"># Trenger ikke ha en `else`-blokk her siden den returnerer `False`</span>
+    <span class="c1"># dersom if-betingelsen er sann uansett og vil hoppe over resten av koden i funksjonen</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>er_primtall(n=2) = True
+er_primtall(n=3) = True
+er_primtall(n=4) = False
+er_primtall(n=5) = True
+er_primtall(n=6) = False
+er_primtall(n=7) = True
+er_primtall(n=8) = False
+er_primtall(n=9) = False
+</pre></div>
+</div>
+</div>
+</div>
+<p>ser ut til å fungere som den skal!</p>
+</section>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -445,7 +624,7 @@ Vi skal se på tre beholdere:</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/python/containers"
+            path: "./book/python/funksjoner"
         },
         predefinedOutput: true
     }
@@ -472,6 +651,26 @@ Vi skal se på tre beholdere:</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-regne-ut-en-sum-av-de-n-forste-heltallene">Eksempel 1: Regne ut en sum av de <span class="math notranslate nohighlight">\(n\)</span> første heltallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-er-n-et-primtall">Eksempel 2: Er <span class="math notranslate nohighlight">\(n\)</span> et primtall?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -169,12 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -538,13 +539,13 @@ og vi vil bare få at <code class="docutils literal notranslate"><span class="pr
 <p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> må vi identifisere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er for noe, og i dette tilfellet er det <span class="math notranslate nohighlight">\(f(x) = 2x - 1\)</span>. Vi kan derfor skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="c1"># Lager en symbolsk variabel for x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Lager en symbolsk funksjon f(x) = 2*x - 1</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen 2*x - 1 = 0.</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="c1"># Lager en symbolsk variabel for x</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Lager en symbolsk funksjon f(x) = 2*x - 1</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen 2*x - 1 = 0.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -576,13 +577,13 @@ x^2 + x - 2 = 0,
 <p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>, må vi identifiere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er her, og det er <span class="math notranslate nohighlight">\(f(x) = x^2 + x - 2\)</span>. Vi kan derfor skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**2 + x - 2</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 + x - 2 = 0.</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**2 + x - 2</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 + x - 2 = 0.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -609,13 +610,13 @@ x^3 - 2x^2 - x + 2 = 0,
 <p>så vi kan sette <span class="math notranslate nohighlight">\(f(x) = x^3 - 2x^2 - x + 2\)</span> i tråd med det vi har gjort tidligere. For å løse likningen skriver vi derfor koden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Importerer symbolet for `x`</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**3 - 2*x**2 - x + 2</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen x**3 - 2*x**2 - x + 2 = 0.</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Importerer symbolet for `x`</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**3 - 2*x**2 - x + 2</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen x**3 - 2*x**2 - x + 2 = 0.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -636,13 +637,13 @@ x^3 - 2x^2 - x + 2 = 0,
 <p>Vi kan løse likningen med <code class="docutils literal notranslate"><span class="pre">sympy</span></code> slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen (x**2 - x - 6) / (x + 2) = 0</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen (x**2 - x - 6) / (x + 2) = 0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -670,12 +671,12 @@ e^x + 2x = 0.
 <p>Her finnes det ingen analytisk løsning. Noen ganger uttrykkes svaret ved hjelp av spesielle funksjoner som vi ikke kjenner til i videregående skole. Som eksempel under:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0.</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -688,12 +689,12 @@ e^x + 2x = 0.
 <p>Dette er riktig svar, men forteller oss ikke stort. Vi kan få en numerisk verdi ved å bytte ut <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> med <code class="docutils literal notranslate"><span class="pre">sympy.nsolve</span></code>, men da må oppgi en startverdi som vi tror er i nærheten av nullpunktet. Vi kan for eksempel prøve med <span class="math notranslate nohighlight">\(x_0 = -1\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0. Starter fra -1 som utgangspunkt.</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0. Starter fra -1 som utgangspunkt.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -719,13 +720,13 @@ e^x + 2x = 0.
 <p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen med sympy.solve</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen med sympy.solve</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -763,26 +764,26 @@ x^2 - 3x + 2 = 0.
 <p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen med sympy.solve</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen med sympy.solve</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> 
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> 
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -825,14 +826,14 @@ x^3 - 13x^2 + 52x - 60 = 0.
 <p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du importere symbolet for <code class="docutils literal notranslate"><span class="pre">x</span></code> selv.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="c1"># Her mangler importering av symbolet for `x`. Lag et symbol for `x` og løs likningen.</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
-<span class="linenos">6</span><span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="c1"># Her mangler importering av symbolet for `x`. Lag et symbol for `x` og løs likningen.</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -870,12 +871,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du importere alt du trenger selv!</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Importerer det du trenger her</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sett inn funksjonen her</span>
-<span class="linenos">4</span><span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen her</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importerer det du trenger her</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sett inn funksjonen her</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen her</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

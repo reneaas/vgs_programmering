@@ -167,12 +167,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -540,11 +541,11 @@ document.write(`
 <p>I Python kan vi gi variabler verdi med <code class="docutils literal notranslate"><span class="pre">=</span></code>-tegnet. Dette kalles en <em>tilordning</em>. Tar vi utgangspunkt i variablene i tabell 1, kan vi gi dem verdiene deres slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">2</span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="linenos">3</span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
-<span class="linenos">4</span><span class="n">res1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.0</span>
-<span class="linenos">5</span><span class="n">melding</span> <span class="o">=</span> <span class="s2">&quot;Dette er en liten melding&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.0</span>
+<span class="n">melding</span> <span class="o">=</span> <span class="s2">&quot;Dette er en liten melding&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -555,11 +556,11 @@ document.write(`
 <p>Vi kan sjekke verdien til en variabel ved å bruke <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen. Dette gjør vi ved å skrive <code class="docutils literal notranslate"><span class="pre">print(variabel)</span></code>. Da vil verdien til <code class="docutils literal notranslate"><span class="pre">variabel</span></code> skrives ut til skjerm. Vi kan gjøre dette med alle variablene i tabell 1, siden vi har definert dem og tilordnet dem verdier allerede.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -576,11 +577,11 @@ Dette er en liten melding
 <p>En penere måte å bruke <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen på er som følger</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res1</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">melding</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res1</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">melding</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -601,11 +602,11 @@ melding = &#39;Dette er en liten melding&#39;
 <p>Vi kan også hente ut datatypen med <code class="docutils literal notranslate"><span class="pre">type</span></code>-funksjonen. Typisk bruker vi den i kombinasjon med <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen så vi kan se hva datatypen er. Vi kan gjøre dette med variablene fra tabell 1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">res1</span><span class="p">))</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">melding</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">res1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">melding</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -622,11 +623,11 @@ melding = &#39;Dette er en liten melding&#39;
 <p>Eller igjen, med litt penere format på utskriften:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -648,9 +649,9 @@ type(melding) = &lt;class &#39;str&#39;&gt;
 <p>Under er et lite program der noen variabler er definert. Bruk <code class="docutils literal notranslate"><span class="pre">print</span></code>-funksjonen og <code class="docutils literal notranslate"><span class="pre">type</span></code>-funksjonen til å skrive ut verdiene og datatypene til variabelene:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="linenos">2</span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.25</span>
-<span class="linenos">3</span><span class="n">beskjed</span> <span class="o">=</span> <span class="s2">&quot;En kort melding uten noen meningsfull beskjed. Vær så god. Bare hyggelig.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.25</span>
+<span class="n">beskjed</span> <span class="o">=</span> <span class="s2">&quot;En kort melding uten noen meningsfull beskjed. Vær så god. Bare hyggelig.&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -658,14 +659,14 @@ type(melding) = &lt;class &#39;str&#39;&gt;
 <p><em>Du kan ta utgangspunkt i kodesnutten under. Her må du fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `b`</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `b`</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `c`</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `c`</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `beskjed`</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `beskjed`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `b`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `b`</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `c`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `c`</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Skriv ut verdien til `beskjed`</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">))</span> <span class="c1"># Skriv ut datatypen til `beskjed`</span>
 </pre></div>
 </div>
 </div>
@@ -699,13 +700,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du må fullføre koden under. Fyll inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> og sjekk at du får riktig resultat.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `a`</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `a`</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `r`</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `r`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `a`</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `a`</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien til `r`</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="bp">NotImplemented</span><span class="w"> </span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut datatypen til `r`</span>
 </pre></div>
 </div>
 </div>

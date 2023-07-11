@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Pythonfunksjoner &#8212; Programmering i Videregående Skole</title>
+    <title>Pythonfunksjoner som matematisk funksjoner &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/funksjoner/funksjoner';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Elementære Funksjoner i Python" href="element%C3%A6re_funksjoner.html" />
+    <link rel="next" title="Elementære (Matematiske) Funksjoner i Python" href="element%C3%A6re_funksjoner.html" />
     <link rel="prev" title="Funksjoner i Python" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,12 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Funksjoner i Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -462,7 +463,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pythonfunksjoner</h1>
+    <h1>Pythonfunksjoner som matematisk funksjoner</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,7 +473,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon-python-funksjoner-for-matematiske-funksjoner">Introduksjon: Python funksjoner for matematiske funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-definere-funksjonsuttrykket">Hvordan definere funksjonsuttrykket?</a></li>
@@ -499,11 +501,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pythonfunksjoner">
-<h1>Pythonfunksjoner<a class="headerlink" href="#pythonfunksjoner" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pythonfunksjoner-som-matematisk-funksjoner">
+<h1>Pythonfunksjoner som matematisk funksjoner<a class="headerlink" href="#pythonfunksjoner-som-matematisk-funksjoner" title="Permalink to this heading">#</a></h1>
 <p>Funksjoner i Python er en langt mer generell sak enn funksjoner i matematikken. Men likevel har de også mange likheter. En funksjon i Python er en oppskrift med instruksjoner, på samme måte som en funksjon i matematikken er et oppskrift på hvordan man regner ut en funksjonsverdi, gitt er verdi for argumentet <span class="math notranslate nohighlight">\(x\)</span>. Forskjellen er at funksjoner i Python kan inneholde instruksjoner som ikke har noe med matematikk å gjøre. Vi skal likevel starte med å tenke på Pythonfunksjoner som matematiske funksjoner, og så utvide dette til mer generelle funksjoner etterhvert.</p>
-<section id="introduksjon-python-funksjoner-for-matematiske-funksjoner">
-<h2>Introduksjon: Python funksjoner for matematiske funksjoner<a class="headerlink" href="#introduksjon-python-funksjoner-for-matematiske-funksjoner" title="Permalink to this heading">#</a></h2>
+<section id="laeringsmal">
+<h2>Læringsmål<a class="headerlink" href="#laeringsmal" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kunne definere og bruke funksjoner i Python for matematiske funksjoner.</p></li>
+</ul>
+</section>
+<section id="introduksjon">
+<h2>Introduksjon<a class="headerlink" href="#introduksjon" title="Permalink to this heading">#</a></h2>
 <p>Den generelle måten vi kan skrive en Pythonfunksjon for en matematisk funksjon <span class="math notranslate nohighlight">\(f\)</span> i Python er:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">funksjonsuttrykk</span>
@@ -536,8 +544,8 @@ f(x) = x^2 - 1.
 <p>Dette kan vi oppnå ved å skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -549,8 +557,9 @@ f(x) = x^2 - 1.
 <p>Når vi først har definert funksjonen, kan vi bruke den til å regne ut funksjonsverdier. Som eksempel, skal vi regne ut funksjonsverdien i <span class="math notranslate nohighlight">\(x = 2\)</span>. Dette kan vi gjøre på flere forskjellige måter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Sender inn verdien til x uten å referere til navnet x</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Sender inn verdien til x uten å referere til navnet x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -562,8 +571,9 @@ f(x) = x^2 - 1.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Sender inn verdien til x ved å referere til navnet x</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Sender inn verdien til x ved å referere til navnet x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -575,9 +585,10 @@ f(x) = x^2 - 1.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Definerer verdien til x</span>
-<span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Sender så x inn i funksjonen, men den har nå verdien 2.</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Definerer verdien til x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Sender så x inn i funksjonen, men den har nå verdien 2.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -589,16 +600,16 @@ f(x) = x^2 - 1.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Enda penere formattering av utskriften (f-string-formattering, derfor `f` på starten), </span>
-<span class="linenos">2</span><span class="c1"># Vi trenger ikke lagre verdien i en variabel `y` først hvis vi bare skal skrive ut resultatet.</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enda penere formattering av utskriften (f-string-formattering, derfor `f` på starten), </span>
+<span class="c1"># Vi trenger ikke lagre verdien i en variabel `y` først hvis vi bare skal skrive ut resultatet.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> f(2) = 3
- f(x=2) = 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(2) = 3
+f(x=2) = 3
 </pre></div>
 </div>
 </div>
@@ -619,10 +630,10 @@ g(x) = x^3 - 2x^2 + 4x - 1,
 <p><em>Du kan ta utgangspunkt i kodeskallet under og fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -655,12 +666,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 h(x) = \frac{1}{x^2 + 1},
 \]</div>
 <p>og regn ut funksjonsverdien til <span class="math notranslate nohighlight">\(h\)</span> i <span class="math notranslate nohighlight">\(x = -1\)</span>.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under og fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">h</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NotImplemented</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">h</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -697,10 +709,10 @@ r(x) = \sqrt{x^2 + 19},
 <p><em>Du kan ta utgangspunkt i kodeskallet under og fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">r</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="bp">NotImplemented</span> <span class="n">r</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -746,10 +758,10 @@ v(x) = 2\cdot 1.25^x,
 <p><em>Du kan ta utgangspunkt i kodeskallet under og fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NotImplemented</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">):</span>
+    <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -822,7 +834,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Elementære Funksjoner i Python</p>
+        <p class="prev-next-title">Elementære (Matematiske) Funksjoner i Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -844,7 +856,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon-python-funksjoner-for-matematiske-funksjoner">Introduksjon: Python funksjoner for matematiske funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">Introduksjon</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-definere-funksjonsuttrykket">Hvordan definere funksjonsuttrykket?</a></li>

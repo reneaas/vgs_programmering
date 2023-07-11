@@ -165,12 +165,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -468,7 +469,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-numpy-array">Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fra-en-liste">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fylt-med-nuller">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -485,13 +493,49 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> er et bibliotek for <strong>num</strong>erisk <strong>py</strong>thon. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> sitt bidrag til oss proggere er</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrayet, som er en effektiv datatype for å lagre og manipulere store mengder data samtidig.</p></li>
-<li><p>Innebygde funksjoner for alle de <a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html"><span class="doc std std-doc">elementære matematiske funksjonene</span></a></p></li>
+<li><p>Innebygde funksjoner for alle de <a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html"><span class="doc std std-doc">elementære matematiske funksjonene</span></a>.</p></li>
 <li><p>Innebygde funksjoner for å trekke tilfeldig tall fra mange sannsynlighetsfordelinger.</p></li>
+<li><p>Funksjonalitet for å regne på mange tall samtidig, uten å bruke <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker.</p></li>
 </ul>
 <section id="numpy-array">
 <h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array<a class="headerlink" href="#numpy-array" title="Permalink to this heading">#</a></h2>
 <p>Det grunnleggende objektet i <code class="docutils literal notranslate"><span class="pre">numpy</span></code> er <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrayet. Dette er en datatype som er spesiallaget for å lagre og manipulere store mengder data samtidig.
 Du kan tenke på et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array som en <a class="reference internal" href="../containers/lists.html"><span class="doc std std-doc">liste</span></a>, men i motsetning til lister, så kan vi gjøre en operasjon på flere av elementene i et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array samtidig. Dette gjør at <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays er mye raskere enn lister når vi skal gjøre operasjoner på mange elementer samtidig. Denne formen for programmering kalles for øvrig for <strong>vektorisering</strong>.</p>
+<section id="lage-numpy-array">
+<h3>Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array<a class="headerlink" href="#lage-numpy-array" title="Permalink to this heading">#</a></h3>
+<p>Det er flere måter å lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays på.</p>
+<section id="lage-et-numpy-array-fra-en-liste">
+<h4>Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste<a class="headerlink" href="#lage-et-numpy-array-fra-en-liste" title="Permalink to this heading">#</a></h4>
+<p>Vi kan lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste ved å bruke funksjonen <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">min_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">mitt_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">min_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lage-et-numpy-array-fylt-med-nuller">
+<h4>Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller<a class="headerlink" href="#lage-et-numpy-array-fylt-med-nuller" title="Permalink to this heading">#</a></h4>
+<p>Ofte ønsker vi å lage et tomt array med en bestemt lengde som vi har tenkt til å fylle opp med verdier. Da kan vi bruke funksjonen <code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># lager et array med lengde 10 fylt med tallet 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -544,7 +588,14 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-numpy-array">Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fra-en-liste">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fylt-med-nuller">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
