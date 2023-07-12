@@ -486,6 +486,12 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulering">Simulering</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-6-hypotesetesting">Eksempel 6: Hypotesetesting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steg-1-nullhypotese-og-alternativ-hypotese">Steg 1: nullhypotese og alternativ hypotese</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steg-2-regne-ut-p-verdi">Steg 2: Regne ut P-verdi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steg-3-sammenlign-med-signifikansniva">Steg 3: Sammenlign med signifikansnivå</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -496,6 +502,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 </ul>
 </li>
 </ul>
@@ -938,6 +945,113 @@ P(X \leq 160 \ \text{cm}) \approx 0.04 = 4 \%.
 \]</div>
 </section>
 </section>
+<section id="eksempel-6-hypotesetesting">
+<h3>Eksempel 6: Hypotesetesting<a class="headerlink" href="#eksempel-6-hypotesetesting" title="Permalink to this heading">#</a></h3>
+<p>I et kasino spill kastes en terning 1000 ganger i løpet av en kveld. Av de kastene, ble 200 seksere. Har vi grunn til å tro at terningen ikke er rettferdig eller at det har skjedd noe juks?</p>
+<p>Hypotesetesting kan deles opp i tre steg:</p>
+<ol class="arabic simple">
+<li><p>Formulere <strong>nullhypotese</strong> og <strong>alternativ hypotese</strong>.</p></li>
+<li><p>Regne ut <strong><span class="math notranslate nohighlight">\(P\)</span>-verdi</strong>.</p></li>
+<li><p>Sammenligne med <strong>signifikansnivå</strong>. Vi setter vårt til 5% i dette eksemplet.</p></li>
+</ol>
+<section id="steg-1-nullhypotese-og-alternativ-hypotese">
+<h4>Steg 1: nullhypotese og alternativ hypotese<a class="headerlink" href="#steg-1-nullhypotese-og-alternativ-hypotese" title="Permalink to this heading">#</a></h4>
+<p>Vi skal formulere nullhypotesten ved hjelp av forventningsverdien til utfallet. Dette er en binomisk fordeling med <span class="math notranslate nohighlight">\(n = 1000\)</span> forsøk og sannsynlighet <span class="math notranslate nohighlight">\(p = 1/6\)</span> for å få en sekser. Forventningen, som vår nullhypotese, blir da <span class="math notranslate nohighlight">\(\mu_0 = np = 1000 \cdot \frac{1}{6} \approx 166.67\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+H_0: &amp; \quad \mu_0 \approx 166.67, \\
+H_1: &amp; \quad \mu &gt; \mu_0.
+\end{align*}\]</div>
+</section>
+<section id="steg-2-regne-ut-p-verdi">
+<h4>Steg 2: Regne ut P-verdi<a class="headerlink" href="#steg-2-regne-ut-p-verdi" title="Permalink to this heading">#</a></h4>
+<p>Når vi regner ut P-verdi, ønsker vi å regne ut sannsynligheten for få et resultat som er minst like motsigende mot nullhypotesen som observasjonen vi har gjort. Lar vi <span class="math notranslate nohighlight">\(X\)</span> være antall seksere vi får, er observasjonen vår <span class="math notranslate nohighlight">\(X_\text{obs} = 200\)</span>. Får vi flere seksere enn dette, vil det også motsi nullhypotesen <em>minst</em> like mye som vår observasjon. P-verdien vi skal regne ut er derfor</p>
+<div class="math notranslate nohighlight">
+\[
+P(X\geq X_\text{obs} \mid H_0).
+\]</div>
+<p>Det er her kodingen kommer inn i bildet. For å estimere denne sannsynligheten, kan vi simulere <span class="math notranslate nohighlight">\(n_\text{forsøk}\)</span> der vi kaster 1000 terninger og teller opp antall ganger vi får mer enn eller lik 200 seksere. Vi kan så regne ut sannsynligheten ved å dele på <span class="math notranslate nohighlight">\(n_\text{forsøk}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">trange</span> <span class="c1"># gir progresjonsbar</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># Antall forsøk</span>
+<span class="n">antall_terninger</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">n_seksere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall seksere</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_terninger</span><span class="p">):</span>
+        <span class="n">terningkast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">terningkast</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="n">n_seksere</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">n_seksere</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_200_seksere</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_200_seksere</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 10000/10000 [00:10&lt;00:00, 922.95it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sannsynlighet_200_seksere = 0.0036
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Koden over er fryktelig treig. Vi kan speede up det hele ved å bytte ut den indre <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkka med en vektorisert kode med <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<p>Vi er erstatter <code class="docutils literal notranslate"><span class="pre">np.random.randin(1,</span> <span class="pre">7)</span></code> med <code class="docutils literal notranslate"><span class="pre">np.random.randint(1,</span> <span class="pre">7,</span> <span class="pre">size=antall_terninger)</span></code> for å trekke 1000 terningkast på én gang i stedet for å trekke én terning 1000 ganger. Vi bruker også <code class="docutils literal notranslate"><span class="pre">np.sum(terningkast</span> <span class="pre">==</span> <span class="pre">6)</span></code> for å summere opp antall seksere vi får i hvert forsøk.
+Da kan vi øke verdien til <code class="docutils literal notranslate"><span class="pre">n_forsøk</span></code> så vi får et mer pålitelig estimat på sannsynligheten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">trange</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">1000_000</span> <span class="c1"># Antall forsøk</span>
+<span class="n">antall_terninger</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">n_seksere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Antall seksere</span>
+    <span class="n">terningkast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">antall_terninger</span><span class="p">)</span>
+    <span class="n">n_seksere</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">terningkast</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span>    
+    <span class="k">if</span> <span class="n">n_seksere</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sannsynlighet_200_seksere</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet_200_seksere</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1000000/1000000 [00:12&lt;00:00, 81334.63it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sannsynlighet_200_seksere = 0.003183
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi får altså at P-verdien er <span class="math notranslate nohighlight">\(P(X \geq 200 \mid H_0) \approx 0.003\)</span>. Dette tilsvarer ca. <span class="math notranslate nohighlight">\(0.3 \%\)</span></p>
+</section>
+<section id="steg-3-sammenlign-med-signifikansniva">
+<h4>Steg 3: Sammenlign med signifikansnivå<a class="headerlink" href="#steg-3-sammenlign-med-signifikansniva" title="Permalink to this heading">#</a></h4>
+<p>Her har vi fått at P-verdien er lavere enn signifikansnivået vårt på 5%. Vi forkaster derfor nullhypotesen og konkluderer med at terningen ikke er rettferdig eller at det har skjedd juks.</p>
+</section>
+</section>
 </section>
 <hr class="docutils" />
 <section id="ovingsoppgaver">
@@ -1295,6 +1409,87 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </details></section>
 </section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>En kasinokveld arrangeres på skolen din. I et terningspill kastes det to terninger. I løpet av kvelden ble det til sammen gjort 500 kast. Her ble det observert at summen av øynene på terningene var 7 i 95 av kastene. Gjør hypotesetesting for å undersøke om terningene er rettferdige. Bruk signifikansnivå 5 %.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under for å regne ut P-verdi. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">antall_terningkast</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">terningkast</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># trekk antall terningkast vektorisert</span>
+    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regn ut summen av terningkastene vektorisert</span>
+    <span class="n">n_sju</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regn ut antall ganger det er 7 øyne</span>
+
+    <span class="c1"># Sett en betingelse for når du skal øke antall suksesser</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut sannsynligheten</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text"><strong>Nullhypotese og alternativ hypotese</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+    H_0 &amp;: \quad \mu_0 = 500 \cdot \frac{1}{6} \approx 83.33, \\
+    H_A &amp;: \mu &gt; \mu_0.
+    \end{aligned}
+    \end{split}\]</div>
+</li>
+<li><p class="sd-card-text"><strong>P-verdi</strong>:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">antall_terningkast</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">terningkast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">antall_terningkast</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">sum_av_terninger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">terningkast</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">n_sju</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sum_av_terninger</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n_sju</span> <span class="o">&gt;=</span> <span class="mi">95</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">n_suksess</span> <span class="o">/</span> <span class="n">n_forsøk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 0.09118</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som betyr at <span class="math notranslate nohighlight">\(P(X \geq 95)\)</span> er ca. 9.1 %.</p>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text"><strong>Sammenligning med signifikansnivå</strong>:</p></li>
+</ol>
+<p class="sd-card-text">Siden P-verdien er større enn signifikansnivået på 5 %, kan vi ikke forkaste nullhypotesen om at terningene er rettferdige. Vi har derfor ikke grunnlag for å konkludere at det kan ha skjedd noe juks eller at det er noe galt med terningene.</p>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -1378,6 +1573,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulering">Simulering</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-6-hypotesetesting">Eksempel 6: Hypotesetesting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steg-1-nullhypotese-og-alternativ-hypotese">Steg 1: nullhypotese og alternativ hypotese</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steg-2-regne-ut-p-verdi">Steg 2: Regne ut P-verdi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steg-3-sammenlign-med-signifikansniva">Steg 3: Sammenlign med signifikansnivå</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -1388,6 +1589,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 </ul>
 </li>
 </ul>

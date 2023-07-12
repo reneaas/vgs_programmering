@@ -497,6 +497,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zip-funksjonen-for-a-skrive-ut-en-verditabell"><code class="docutils literal notranslate"><span class="pre">zip</span></code>-funksjonen for å skrive ut en verditabell</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-8-regne-gjennomsnitt-med-frekvenser">Eksempel 8: regne gjennomsnitt med frekvenser</a></li>
 </ul>
 </li>
 </ul>
@@ -835,6 +836,69 @@ x = 5 ; y = 16
 </div>
 </section>
 </section>
+<section id="eksempel-8-regne-gjennomsnitt-med-frekvenser">
+<h3>Eksempel 8: regne gjennomsnitt med frekvenser<a class="headerlink" href="#eksempel-8-regne-gjennomsnitt-med-frekvenser" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi har frekvenstabellen for en tilfeldig variabel <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p>Relativ frekvens</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0.4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>0.3</p></td>
+</tr>
+</tbody>
+</table>
+<p>Vi ønsker å regne ut gjennomsnittet av <span class="math notranslate nohighlight">\(x\)</span> ved å bruke frekvensene. Dette kan vi gjøre ved å lage to lister, en for <code class="docutils literal notranslate"><span class="pre">x</span></code> og en for <code class="docutils literal notranslate"><span class="pre">frekvens</span></code>, så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zip</span></code>-funksjonen der vi regner ut produktet av <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">relativ_frekvens</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+
+<span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">relativ_frekvens</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">r</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x_gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x_gjennomsnitt = 2.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan også løse dette med list comprehension, <code class="docutils literal notranslate"><span class="pre">zip</span></code> og <code class="docutils literal notranslate"><span class="pre">sum</span></code>-funksjonen til Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">relativ_frekvens</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+
+<span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="n">r</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">relativ_frekvens</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x_gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x_gjennomsnitt = 2.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -929,6 +993,7 @@ x = 5 ; y = 16
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zip-funksjonen-for-a-skrive-ut-en-verditabell"><code class="docutils literal notranslate"><span class="pre">zip</span></code>-funksjonen for å skrive ut en verditabell</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-8-regne-gjennomsnitt-med-frekvenser">Eksempel 8: regne gjennomsnitt med frekvenser</a></li>
 </ul>
 </li>
 </ul>
