@@ -647,9 +647,9 @@ Da vil vi ha <strong>fem soner</strong> med økende grad av antibiotikakonsentas
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.25</span>
     <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">NotImplemented</span>
@@ -669,13 +669,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.25</span>
-    <span class="k">elif</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.5</span>
-    <span class="k">elif</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">nx</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.75</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.99</span>
@@ -766,12 +766,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
     <span class="p">{</span>
         <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> 
         <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> 
-        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="p">{</span>
         <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mf">0.1</span>
+        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
@@ -838,12 +838,13 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.01</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$n$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$p(n, b=0.01)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/244fbd22ddc04431549688b1ad0e5a0a878b270f7132222ab38e258780cc6c38.png" src="../../_images/244fbd22ddc04431549688b1ad0e5a0a878b270f7132222ab38e258780cc6c38.png" />
+<img alt="../../_images/b794654770579724a7b43b402e4078d16af92a98148caf0a8cdc29fbffad6fc6.png" src="../../_images/b794654770579724a7b43b402e4078d16af92a98148caf0a8cdc29fbffad6fc6.png" />
 </div>
 </div>
 <section id="hvordan-sjekke-om-en-bakterie-kan-reprodusere">
