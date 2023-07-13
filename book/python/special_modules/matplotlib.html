@@ -64,11 +64,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/special_modules/matplotlib';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Pythonfunksjoner slik proffene gjør det" href="../funksjoner/funksjoner_avansert.html" />
+    <link rel="prev" title="Løkker med lister" href="../iterasjon/list_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../containers/lists.html">Lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
@@ -172,6 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
@@ -446,7 +451,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -462,6 +469,27 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4">Eksempel 4</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -473,6 +501,439 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tegne-grafer-med-matplotlib">
 <h1>Tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#tegne-grafer-med-matplotlib" title="Permalink to this heading">#</a></h1>
+<p>Her skal vi ta en titt på hvordan vi kan tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Vi trenger:</p>
+<ol class="arabic simple">
+<li><p>Importere <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code></p></li>
+<li><p>En liste med <code class="docutils literal notranslate"><span class="pre">x</span></code>-verdier og en liste med <code class="docutils literal notranslate"><span class="pre">y</span></code>-verdier (typisk er <code class="docutils literal notranslate"><span class="pre">y</span></code>-verdiene funksjonsverdier).</p></li>
+<li><p>Bruke <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y)</span></code> for å tegne grafen.</p></li>
+</ol>
+<section id="eksempler">
+<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
+<section id="eksempel-1">
+<h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi ønsker å tegne grafen til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2, \qquad x \in [-2 , 2].
+\]</div>
+<p>Dette kan vi gjøre slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># bibliotek for tegne grafer</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># mattebibliotek</span>
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> <span class="c1"># lager x-verdier mellom -2 og 2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># lager y-verdier</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># tegner grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Viser grafen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/7f8a3eb23205ff88746b630d2e3fa00669af4430e78f16e2ff0b1bb757417369.png" src="../../../_images/7f8a3eb23205ff88746b630d2e3fa00669af4430e78f16e2ff0b1bb757417369.png" />
+</div>
+</div>
+</section>
+<section id="eksempel-2">
+<h3>Eksempel 2<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi ønsker å tegne grafen til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^3 - 2x + 1, \qquad x \in [-1 , 1].
+\]</div>
+<p>Denne gangen ønsker vi å pynte litt mer på grafen. Vi ønsker å:</p>
+<ul class="simple">
+<li><p>Sette navn på aksene. Dette gjøres med</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel(&quot;tekst&quot;)</span></code> for å sette navn på <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel(&quot;tekst&quot;)</span></code> for å sette navn på <span class="math notranslate nohighlight">\(y\)</span>-aksen.</p></li>
+</ul>
+</li>
+<li><p>Legge til rutenett. Dette gjøres med <code class="docutils literal notranslate"><span class="pre">plt.grid(True)</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Lage funksjonsverdiene</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># lager x-verdiene</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># regner ut y-verdiene</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># tegner grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/6719920feb5d36a79df0853bfcd7fc1fb074f4fae1147230bcff17e48b8985ad.png" src="../../../_images/6719920feb5d36a79df0853bfcd7fc1fb074f4fae1147230bcff17e48b8985ad.png" />
+</div>
+</div>
+</section>
+<section id="eksempel-3">
+<h3>Eksempel 3<a class="headerlink" href="#eksempel-3" title="Permalink to this heading">#</a></h3>
+<p>La oss tegne grafen til</p>
+<div class="math notranslate nohighlight">
+\[
+g(x) = x^2 e^{-x}, \qquad x \in [0 , 4].
+\]</div>
+<p>Denne gangen ønsker vi å:</p>
+<ul class="simple">
+<li><p>Tegne grafen i rødt. Dette gjøres med <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">color=&quot;red&quot;)</span></code>.</p></li>
+<li><p>Legge til en tittel. Dette gjøres med <code class="docutils literal notranslate"><span class="pre">plt.title(&quot;tekst&quot;)</span></code>.</p></li>
+</ul>
+<p>I tillegg tar vi med navn på aksene og rutenett som i eksempel 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Lage funksjonsverdiene</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># lager x-verdiene. 1000 punkter mellom 0 og 4</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="c1"># regner ut funksjonsverdiene til x^2 * e^{-x}</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># tegner grafen i rødt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span> <span class="c1"># navn på x-akse. `$x$` gir mattenotasjon</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$g(x)$&quot;</span><span class="p">)</span> <span class="c1"># navn på y-akse. `$g(x)$` tegner det med mattenotasjon</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;En tittel på grafen&quot;</span><span class="p">)</span> <span class="c1"># tittel på grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/e9059dd9c88c34e59794353985cbf597c4d60baa55984b9a03e53a3ef17b16b5.png" src="../../../_images/e9059dd9c88c34e59794353985cbf597c4d60baa55984b9a03e53a3ef17b16b5.png" />
+</div>
+</div>
+</section>
+<section id="eksempel-4">
+<h3>Eksempel 4<a class="headerlink" href="#eksempel-4" title="Permalink to this heading">#</a></h3>
+<p>La oss tegne grafene til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2, \qquad x \in [-1 , 1], \qquad \text{og} \qquad g(x) = x^3 - 2x + 1, \qquad x \in [-1 , 1],
+\]</div>
+<p>i samme figur.</p>
+<p>Her ønsker vi å legge til navn på grafene så vi vet hvilke av de som er hvilke. Dette gjøres med å legge til <code class="docutils literal notranslate"><span class="pre">label=&quot;navn&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">label=&quot;navn&quot;)</span></code>. Deretter må vi legge til <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> for å få med navnene på grafene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># bibliotek for tegne grafer</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># mattebibliotek</span>
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> <span class="c1"># lager x-verdier mellom -1 og 1</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$f(x)=x^2$&quot;</span><span class="p">)</span> <span class="c1"># tegner grafen til f</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$g(x)=x^3-2x+1$&quot;</span><span class="p">)</span> <span class="c1"># tegner grafen til g</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$&quot;</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># viser navnene på grafene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/3336585252507acd2020af7770e7609c774886b781e211923e152ed01077ca8f.png" src="../../../_images/3336585252507acd2020af7770e7609c774886b781e211923e152ed01077ca8f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Tegn grafen til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 - 2x + 1, \qquad x \in [-1 , 3].
+\]</div>
+<p>Her trenger ikke pynte noe på grafen.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Lage funksjonsverdiene</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Lage funksjonsverdiene</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir figuren</p>
+<figure class="align-default" id="matplotlib-1">
+<img alt="../../../_images/matplotlib_1.pdf" src="../../../_images/matplotlib_1.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Grafen til <span class="math notranslate nohighlight">\(f(x) = x^2 - 2x + 1\)</span>.</span><a class="headerlink" href="#matplotlib-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details></section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Tegn grafen til</p>
+<div class="math notranslate nohighlight">
+\[
+g(x) = x^3 - x^2 + 1, \qquad x \in [-2 , 2].
+\]</div>
+<p>Her skal du pynte litt på grafen. Du skal:</p>
+<ul class="simple">
+<li><p>Sette navn på aksene.</p>
+<ul>
+<li><p>Kall <span class="math notranslate nohighlight">\(x\)</span>-aksen for <span class="math notranslate nohighlight">\(x\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$x$&quot;</span></code> for å få mattenotasjon.</p></li>
+<li><p>Kall <span class="math notranslate nohighlight">\(y\)</span> aksen for <span class="math notranslate nohighlight">\(g(x)\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$g(x)$&quot;</span></code> for å få mattenotasjon.</p></li>
+</ul>
+</li>
+<li><p>Legge til rutenett.</p></li>
+</ul>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$g(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir figuren</p>
+<figure class="align-default" id="matplotlib-2">
+<img alt="../../../_images/matplotlib_2.pdf" src="../../../_images/matplotlib_2.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Grafen til <span class="math notranslate nohighlight">\(g(x) = x^3 - x^2 + 1\)</span>.</span><a class="headerlink" href="#matplotlib-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details></section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Tegn grafen til</p>
+<div class="math notranslate nohighlight">
+\[
+h(x) = \frac{1}{x^2 + 1}, \qquad x \in [-1 , 3].
+\]</div>
+<p>Her skal du pynte litt på grafen. Du skal:</p>
+<ul class="simple">
+<li><p>Tegne grafen i lilla. Bruk <code class="docutils literal notranslate"><span class="pre">color=purple</span></code>.</p></li>
+<li><p>Legge til en tittel. Kall den <code class="docutils literal notranslate"><span class="pre">Grafen</span> <span class="pre">til</span> <span class="pre">$h(x)</span> <span class="pre">=</span> <span class="pre">\\frac{1}{x^2</span> <span class="pre">+</span> <span class="pre">1}$</span></code>.</p></li>
+<li><p>Legge til navn på akser.</p>
+<ul>
+<li><p>Kall <span class="math notranslate nohighlight">\(x\)</span>-aksen for <span class="math notranslate nohighlight">\(x\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$x$&quot;</span></code> for å få mattenotasjon.</p></li>
+<li><p>Kall <span class="math notranslate nohighlight">\(y\)</span> aksen for <span class="math notranslate nohighlight">\(h(x)\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$h(x)$&quot;</span></code> for å få mattenotasjon.</p></li>
+</ul>
+</li>
+<li><p>Legge til rutenett.</p></li>
+</ul>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du importere bibliotekene selv!</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="bp">NotImplemented</span> <span class="c1"># Importer plottebiblioteket</span>
+<span class="bp">NotImplemented</span> <span class="c1"># Importerer mattebiblioteket</span>
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lager x-verdier mellom -1 og 3</span>
+<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regner ut funksjonsverdiene til h</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># tegn grafen til h i lilla</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># tittel på grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> 
+<span class="n">h</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Tegne grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span> <span class="c1"># tegn grafen til h i lilla</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$h(x)$&quot;</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Grafen til $h(x) = 1 / (x^2 + 1)$ for $x \in [-1, 3]$ &quot;</span><span class="p">)</span> <span class="c1"># tittel på grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir figuren</p>
+<figure class="align-default" id="matplotlib-3">
+<img alt="../../../_images/matplotlib_3.pdf" src="../../../_images/matplotlib_3.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Grafen til <span class="math notranslate nohighlight">\(h(x) = \frac{1}{x^2 + 1}\)</span>.</span><a class="headerlink" href="#matplotlib-3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details></section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Tegn grafene til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^3e^{-x}, \qquad x \in [-1 , 1], \qquad \text{og} \qquad g(x) = x^5 - 2x^2 + 1, \qquad x \in [-1 , 1].
+\]</div>
+<p>Her skal du pynte litt på grafen. Du skal:</p>
+<ul class="simple">
+<li><p>Tegne grafen til <span class="math notranslate nohighlight">\(f\)</span> i rødt og grafen til <span class="math notranslate nohighlight">\(g\)</span> i svart.</p>
+<ul>
+<li><p>Du får rød med <code class="docutils literal notranslate"><span class="pre">color=&quot;red&quot;</span></code></p></li>
+<li><p>Du får blå med <code class="docutils literal notranslate"><span class="pre">color=&quot;black&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p>Legge til en tittel. Kall den <code class="docutils literal notranslate"><span class="pre">Grafene</span> <span class="pre">til</span> <span class="pre">$f(x)</span> <span class="pre">=</span> <span class="pre">x^3e^{-x}$</span> <span class="pre">og</span> <span class="pre">$g(x)</span> <span class="pre">=</span> <span class="pre">x^5</span> <span class="pre">-</span> <span class="pre">2x^2</span> <span class="pre">+</span> <span class="pre">1$</span></code>.</p></li>
+<li><p>Legge til navn på akser.</p>
+<ul>
+<li><p>Kall <span class="math notranslate nohighlight">\(x\)</span>-aksen for <span class="math notranslate nohighlight">\(x\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$x$&quot;</span></code> for å få mattenotasjon.</p></li>
+<li><p>Kall <span class="math notranslate nohighlight">\(y\)</span> aksen for <span class="math notranslate nohighlight">\(y\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$y$&quot;</span></code> for å få mattenotasjon.</p></li>
+</ul>
+</li>
+<li><p>Legge til rutenett.</p></li>
+<li><p>Legge til navn på grafene.</p>
+<ul>
+<li><p>Kall grafen til <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(f(x) = x^3e^{-x}\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">label=&quot;$f(x)</span> <span class="pre">=</span> <span class="pre">x^3e^{-x}$&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> for å få mattenotasjon.</p></li>
+<li><p>Kall grafen til <span class="math notranslate nohighlight">\(g\)</span> for <span class="math notranslate nohighlight">\(g(x) = x^5 - 2x^2 + 1\)</span>. Du kan gjøre det tilsvarende her som for <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du importere bibliotekene selv!</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="bp">NotImplemented</span> <span class="c1"># Importer plottebiblioteket</span>
+<span class="bp">NotImplemented</span> <span class="c1"># Importerer mattebiblioteket</span>
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lager x-verdier mellom -1 og 1</span>
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regner ut funksjonsverdiene til f</span>
+<span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regner ut funksjonsverdiene til g</span>
+
+<span class="c1"># Tegne grafene</span>
+<span class="c1"># Tegn grafen til f</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+
+<span class="c1"># Tegn grafen til g</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span> 
+
+<span class="c1">#Pynt på grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># viser navnene på grafene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> <span class="c1"># lager x-verdier mellom -1 og 1</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># Tegner grafene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$f(x) = x^3e^{-x}$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># tegner grafen til f</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$g(x) = x^5 - 2x^2 + 1$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span> <span class="c1"># tegner grafen til g</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$&quot;</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># viser navnene på grafene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir figuren</p>
+<figure class="align-default" id="matplotlib-4">
+<img alt="../../../_images/matplotlib_4.pdf" src="../../../_images/matplotlib_4.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Grafene til <span class="math notranslate nohighlight">\(f(x) = x^3e^{-x}\)</span> og <span class="math notranslate nohighlight">\(g(x) = x^5 - 2x^2 + 1\)</span>.</span><a class="headerlink" href="#matplotlib-4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -506,6 +967,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../iterasjon/list_loops.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Løkker med lister</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../funksjoner/funksjoner_avansert.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pythonfunksjoner slik proffene gjør det</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -515,6 +994,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4">Eksempel 4</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

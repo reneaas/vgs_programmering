@@ -1,3 +1,4 @@
+
 # Funksjoner i Python
 
 Funksjoner i Python er en viktig del av programmering. En funksjon i Python har mange likheter med en funksjon i matematikken. 
