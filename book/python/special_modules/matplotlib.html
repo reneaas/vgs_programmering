@@ -486,6 +486,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
 </ul>
@@ -853,7 +854,7 @@ f(x) = x^3e^{-x}, \qquad x \in [-1 , 1], \qquad \text{og} \qquad g(x) = x^5 - 2x
 <li><p>Tegne grafen til <span class="math notranslate nohighlight">\(f\)</span> i rødt og grafen til <span class="math notranslate nohighlight">\(g\)</span> i svart.</p>
 <ul>
 <li><p>Du får rød med <code class="docutils literal notranslate"><span class="pre">color=&quot;red&quot;</span></code></p></li>
-<li><p>Du får blå med <code class="docutils literal notranslate"><span class="pre">color=&quot;black&quot;</span></code></p></li>
+<li><p>Du får svart med <code class="docutils literal notranslate"><span class="pre">color=&quot;black&quot;</span></code></p></li>
 </ul>
 </li>
 <li><p>Legge til en tittel. Kall den <code class="docutils literal notranslate"><span class="pre">Grafene</span> <span class="pre">til</span> <span class="pre">$f(x)</span> <span class="pre">=</span> <span class="pre">x^3e^{-x}$</span> <span class="pre">og</span> <span class="pre">$g(x)</span> <span class="pre">=</span> <span class="pre">x^5</span> <span class="pre">-</span> <span class="pre">2x^2</span> <span class="pre">+</span> <span class="pre">1$</span></code>.</p></li>
@@ -933,6 +934,179 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </figure>
 </div>
 </details></section>
+<section id="oppgave-5">
+<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
+<p>Tegn grafene til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2e^{-x^2}, \qquad x \in [-1, 2],
+\]</div>
+<p>og tangenten til grafen i punktet <span class="math notranslate nohighlight">\(x = 1\)</span> på samme intervall.</p>
+<p>Her skal du pynte på grafen:</p>
+<ul class="simple">
+<li><p>Tegne grafen til <span class="math notranslate nohighlight">\(f\)</span> i rødt og tangenten i blått.</p>
+<ul>
+<li><p>Du får rød med <code class="docutils literal notranslate"><span class="pre">color=&quot;red&quot;</span></code></p></li>
+<li><p>Du får blått med <code class="docutils literal notranslate"><span class="pre">color=&quot;blue&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p>Legge til en tittel. Kall den <code class="docutils literal notranslate"><span class="pre">Grafen</span> <span class="pre">til</span> <span class="pre">$f(x)</span> <span class="pre">=</span> <span class="pre">xe^{-x}$</span> <span class="pre">og</span> <span class="pre">tangenten</span> <span class="pre">i</span> <span class="pre">$x</span> <span class="pre">=</span> <span class="pre">1$</span></code>.</p></li>
+<li><p>Legge til navn på akser.</p>
+<ul>
+<li><p>Kall <span class="math notranslate nohighlight">\(x\)</span>-aksen for <span class="math notranslate nohighlight">\(x\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$x$&quot;</span></code> for å få mattenotasjon.</p></li>
+<li><p>Kall <span class="math notranslate nohighlight">\(y\)</span> aksen for <span class="math notranslate nohighlight">\(y\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;$y$&quot;</span></code> for å få mattenotasjon.</p></li>
+</ul>
+</li>
+<li><p>Legge til rutenett.</p></li>
+<li><p>Legge til navn på grafene.</p>
+<ul>
+<li><p>Kall grafen til <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(f(x) = xe^{-x}\)</span>. Du kan bruke <code class="docutils literal notranslate"><span class="pre">label=&quot;$f(x)</span> <span class="pre">=</span> <span class="pre">xe^{-x}$&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> for å få mattenotasjon.</p></li>
+<li><p>Kall tangenten for <span class="math notranslate nohighlight">\(T(x)\)</span>. Du kan gjøre det tilsvarende her som for <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du importere bibliotekene selv!</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Påminnelse om tangenter<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Vi kan finne tangenten til <span class="math notranslate nohighlight">\(f\)</span> i punktet <span class="math notranslate nohighlight">\(x = a\)</span> ved å bruke formelen</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = f'(a)(x - a) + f(a).
+\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Påminnelse: produktregelen for derivasjon<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Når vi har en funksjon <span class="math notranslate nohighlight">\(f(x) = g(x)h(x)\)</span>, så er den deriverte</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = g'(x)h(x) + g(x)h'(x).
+\]</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importere bibliotekene her!</span>
+<span class="bp">NotImplemented</span>
+<span class="bp">NotImplemented</span>
+
+
+<span class="c1"># Lag funksjoner for f(x) og dfdx = f&#39;(x) her!</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lager x-verdier mellom -1 og 2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut funksjonsverdiene til f(x)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut funksjonsverdiene til tangenten T(x) til f(x) i x=1</span>
+
+<span class="c1"># Tegne grafene</span>
+
+<span class="c1"># Tegn grafen til f(x)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span> 
+
+<span class="c1"># Tegn grafen til tangenten T(x)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+
+<span class="c1">#Pynt på grafen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># viser navnene på grafene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> <span class="c1"># lager x-verdier mellom -1 og 2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">dfdx</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$f(x)=xe^{-x}$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># tegner grafen til f</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tangent&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span> <span class="c1"># tegner tangenten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$&quot;</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># viser navnene på grafene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/5359b62fac773dae024a8552ea6fae7ced90791c9227bdee53a9c81302c82b7a.png" src="../../../_images/5359b62fac773dae024a8552ea6fae7ced90791c9227bdee53a9c81302c82b7a.png" />
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+
+
+<span class="c1"># Lage funksjonsverdier</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> <span class="c1"># lager x-verdier mellom -1 og 2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">dfdx</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$f(x)=xe^{-x}$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># tegner grafen til f</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tangent&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span> <span class="c1"># tegner tangenten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span> <span class="c1"># navn på x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$&quot;</span><span class="p">)</span> <span class="c1"># navn på y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># lager rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># viser navnene på grafene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># viser grafen</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir figuren</p>
+<figure class="align-default" id="matplotlib-5">
+<img alt="../../../_images/matplotlib_5.pdf" src="../../../_images/matplotlib_5.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Grafen til <span class="math notranslate nohighlight">\(f(x) = x^2e^{-x^2}\)</span> og tangenten i <span class="math notranslate nohighlight">\(x = 1\)</span>.</span><a class="headerlink" href="#matplotlib-5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details><div class="math notranslate nohighlight">
+\[
+f'(x) = e^{-x} - xe^{-x} = (1 - x)e^{-x}
+\]</div>
+</section>
 </section>
 </section>
 
@@ -1015,6 +1189,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
 </ul>
