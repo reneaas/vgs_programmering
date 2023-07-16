@@ -573,7 +573,7 @@ Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gang
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 2, &#39;y&#39;: 3}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 3, &#39;y&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -590,8 +590,8 @@ Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gang
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 2
-y = 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 3
+y = 2
 </pre></div>
 </div>
 </div>
@@ -801,7 +801,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="n">nx</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># Antall celler i x-retning</span>
 <span class="n">ny</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Antall celler i y-retning</span>
 <span class="n">bakterier</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">nx</span><span class="p">),</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ny</span><span class="p">),</span> <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_bakterier</span><span class="p">)</span>
+    <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span><span class="p">),</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ny</span><span class="p">),</span> <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_bakterier</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">bakterier</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -858,42 +858,28 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 </section>
 <section id="en-algoritme-for-tidsutviklingen-av-bakteriene">
 <h3>En algoritme for tidsutviklingen av bakteriene<a class="headerlink" href="#en-algoritme-for-tidsutviklingen-av-bakteriene" title="Permalink to this heading">#</a></h3>
-<p>Nå har vi satt sammen modellen som gir oss grunnlaget for å lage en algoritme for tidsutviklingen til bakteriene. Tidsutviklingen av bakteriepopulasjonen kan simuleres med <a class="reference internal" href="#algo-bakteriepopulasjon">Algorithm 13</a>. Den inneholder alle de grunnleggende stegene vi må gjennom. Hvert tidssteg <span class="math notranslate nohighlight">\(t\)</span> kan tenkes på som hvilken generasjon vi er på i bakteriepopulasjonen.</p>
-<div class="proof algorithm admonition" id="algo-bakteriepopulasjon">
-<p class="admonition-title"><span class="caption-number">Algorithm 13 </span> (Tidsutvikling av bakteriepopulasjon)</p>
-<section class="algorithm-content" id="proof-content">
-<p><strong>Input</strong>: Antall bakterier <span class="math notranslate nohighlight">\(N\)</span>, antall tidssteg <span class="math notranslate nohighlight">\(T\)</span>.</p>
-<ol class="arabic simple">
-<li><p>Lag <span class="math notranslate nohighlight">\(N\)</span> bakterier.</p></li>
-<li><p>for <span class="math notranslate nohighlight">\(t = 0, 1, 2, ..., T\)</span>:</p>
-<ul class="simple">
-<li><p>for hver bakterie <span class="math notranslate nohighlight">\(b\)</span>:</p>
-<ul>
-<li><p>Flytt <span class="math notranslate nohighlight">\(b\)</span> én plass i en tilfeldig retning.</p></li>
-<li><p>Oppdater posisjonen til alle bakteriene.</p></li>
-<li><p>Hvis <span class="math notranslate nohighlight">\(b\)</span> kan reprodusere:</p>
-<ul>
-<li><p>Lag en ny bakterie <span class="math notranslate nohighlight">\(b'\)</span> med samme posisjon som <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
-<li><p>Legg <span class="math notranslate nohighlight">\(b'\)</span> til i bakteriepopulasjonen.</p></li>
-</ul>
-</li>
-<li><p>Hvis <span class="math notranslate nohighlight">\(b\)</span> skal dø:</p>
-<ul>
-<li><p>Fjern <span class="math notranslate nohighlight">\(b\)</span> fra bakteriepopulasjonen.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</section>
+<p>Nå har vi satt sammen modellen som gir oss grunnlaget for å lage en algoritme for tidsutviklingen til bakteriene. Tidsutviklingen av bakteriepopulasjonen kan simuleres med en algoritme som er representert med et flytdiagram under:</p>
+<div class="mermaid" align="center">
+flowchart TD
+
+    A[Lag N bakterier] --> B{For t = 0, 1, 2, ..., T}
+    B --> C[[For hver bakterie b]]
+    C --> D[Sjekk om bakterien overlever]
+    D -- Ja --> E[Sjekk om bakterien kan reprodusere]
+    D -- Nei --> F[Fjern b fra bakteriepopulasjonen] -- Hvis flere bakterier --> C
+    E -- Ja --> G[Lag en ny bakterie b' med samme posisjon som b]
+    E -- Nei --> H[Flytt b én plass i en tilfeldig retning]
+    G --> H
+    H --> B 
+    
+    
+
 </div></section>
 </section>
 <section id="prosjektmal">
 <h2>Prosjektmål<a class="headerlink" href="#prosjektmal" title="Permalink to this heading">#</a></h2>
 <p>Når man skriver en kode for større prosjekter, er det god kodepraksis å skrive funksjoner som gjør én spesifikk bit av algoritmen. Deretter vil hovedkoden bestå av kall til funksjonene i riktig rekkefølge for å gjennomføre algoritmen. En fordel med dette er at du kan teste hver funksjon for seg, og du kan gjenbruke funksjonene i andre prosjekter. Hvis noe går galt i koden, er det også lettere å finne ut hvor feilen ligger.</p>
-<p>Fra <a class="reference internal" href="#algo-bakteriepopulasjon">Algorithm 13</a> kan vi se at vi trenger funksjoner for å:</p>
+<p>Fra <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">algo-bakteriepopulasjon</span></code> kan vi se at vi trenger funksjoner for å:</p>
 <ol class="arabic simple">
 <li><p>Lage <span class="math notranslate nohighlight">\(N\)</span> bakterier til å starte med.</p>
 <ul class="simple">
@@ -944,6 +930,35 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <span class="sd">    ----------</span>
 <span class="sd">    list</span>
 <span class="sd">        Liste med bakterier.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># nødvendig python bibliotek for å trekke tilfeldige tall. Plasseres på toppen av koden din</span>
+
+<span class="k">def</span> <span class="nf">flytt</span><span class="p">(</span><span class="n">bakterie</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">nx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ny</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flytter en bakterie til en tilfeldig celle i nærheten.</span>
+<span class="sd">    </span>
+<span class="sd">    Parametere</span>
+<span class="sd">    ----------</span>
+<span class="sd">    bakterie : dict</span>
+<span class="sd">        Bakterien som skal flyttes.</span>
+<span class="sd">    </span>
+<span class="sd">    nx : int</span>
+<span class="sd">        Antall celler i x-retning.</span>
+
+<span class="sd">    ny : int</span>
+<span class="sd">        Antall celler i y-retning.</span>
+<span class="sd">    </span>
+<span class="sd">    Returverdi</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Bakterien som er flyttet.</span>
+<span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>

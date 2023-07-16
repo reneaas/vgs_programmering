@@ -480,6 +480,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verlet-algoritmen">Verlet algoritmen</a></li>
 </ul>
 </li>
 </ul>
@@ -549,6 +550,24 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
 \vec{a}_i = -\gamma \sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}.
 \]</div>
 </section>
+<section id="verlet-algoritmen">
+<h3>Verlet algoritmen<a class="headerlink" href="#verlet-algoritmen" title="Permalink to this heading">#</a></h3>
+<p>Solsystemet er notorisk ustabilt å simulere med en numerisk metode som <em>ikke</em> er symplektisk av høyere orden, så Euler-Cromer holder ikke (men kan fungere med utrolig liten steglengde, men da tar simuleringen veldig lang tid!)</p>
+<p>I stedet skal vi benytte oss av en annen symplektisk metode som kallet for <em>Verlet</em>-algoritmen. Anta at</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_i(t) = \vec{f}(\vec{r}_1(t), \vec{r}_2(t), \ldots, \vec{r}_{n}(t)),
+\]</div>
+<p>gir oss akselerasjon ved tidspunkt <span class="math notranslate nohighlight">\(t\)</span>, og <span class="math notranslate nohighlight">\(\vec{r}_1(t), \vec{r}_2(t), \ldots, \vec{r}_n(t)\)</span> er posisjonene til planetene ved tidspunkt <span class="math notranslate nohighlight">\(t\)</span>. Da kan vi regne ut neste posisjon og hastighet til planet <span class="math notranslate nohighlight">\(i\)</span> (med en steglengde <span class="math notranslate nohighlight">\(h\)</span> tid):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\vec{r}_i(t + h) &amp; \approx \vec{r}_i(t) + \vec{r}_i(t) h + \frac{1}{2}\vec{a}_i(t) h^2, \\
+\vec{v}_i(t + h) &amp; \approx \vec{v}_i(t) + \frac{1}{2}\left[\vec{a}_i(t) + \vec{a}_i(t + h)\right]h
+\end{align*}
+\end{split}\]</div>
+<p>Denne algoritmen bevarer energi (i gjennomsnitt), noe du skal sjekke som en del av oppgavene! Dette er en måte å verifisere at koden gjør det den skal også.</p>
+</section>
 </section>
 </section>
 
@@ -609,6 +628,7 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verlet-algoritmen">Verlet algoritmen</a></li>
 </ul>
 </li>
 </ul>
