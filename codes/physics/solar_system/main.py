@@ -3,73 +3,125 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import trange
 from animate import create_animation
-
-fname = "../../../datasets/solar_system/solsystem_data.json"
-with open(fname, "r") as infile:
-    solsystem_data = json.load(infile)
-# print(solsystem_data)
-
-n_timesteps = 100_000  
-positions = np.zeros(shape=(n_timesteps, len(solsystem_data), 3))
-velocities = np.zeros(shape=(n_timesteps, len(solsystem_data), 3))
-G = 4 * np.pi**2
-
-r = np.zeros(shape=(len(solsystem_data), 3))
-v = np.zeros(shape=(len(solsystem_data), 3))
-m = np.zeros(len(solsystem_data))
-
-for i, name in enumerate(solsystem_data):
-    r[i, 0] = solsystem_data.get(name).get("x")
-    r[i, 1] = solsystem_data.get(name).get("y")
-    r[i, 2] = solsystem_data.get(name).get("z")
-    v[i, 0] = solsystem_data.get(name).get("vx")
-    v[i, 1] = solsystem_data.get(name).get("vy")
-    v[i, 2] = solsystem_data.get(name).get("vz")
-    m[i] = solsystem_data.get(name).get("mass")
+import numba
 
 
-def get_acceleration(r, m, i):
-    a = np.zeros(3)
-    for j in range(r.shape[0]):
-        if i != j:
-            a -= G * m[j] * (r[i] - r[j]) / np.linalg.norm(r[i] - r[j])**3
-    return a
+def make_acceleration_fn(G: float = 4 * np.pi**2) -> callable:
+    def get_acceleration_fn(r, m, i) -> np.ndarray:
+        a = np.zeros(3)
+        for j in range(r.shape[0]):
+            if i != j:
+                dr = r[i] - r[j]
+                dr_norm = np.linalg.norm(dr)
+                a -= m[j] * dr / dr_norm**3
+
+        a *= G
+        return a
+    return get_acceleration_fn
+
+
+def make_potential_energy_fn(m: np.ndarray, G: float = 4 * np.pi**2) -> callable:
+    def get_potential_energy_fn(r) -> float:
+        potential_energy = 0
+        for i in range(len(r)):
+            for j in range(len(r)):
+                if i != j:
+                    dr = r[i] - r[j]
+                    dr_norm = np.linalg.norm(dr)
+                    potential_energy -= m[i] * m[j] / dr_norm
+        
+        potential_energy *= G
+        return potential_energy
+
+    return get_potential_energy_fn
+    
+def make_kinetic_energy_fn(m: np.ndarray) -> callable:
+    def get_kinetic_energy_fn(v) -> float:
+        v_norm = np.linalg.norm(v**2, axis=1)
+        kinetic_energy = 0.5 * np.linalg.norm(m * v_norm)
+        
+        return kinetic_energy
+    
+    return get_kinetic_energy_fn
 
 
 
-def make_euler_cromer_fn(dt):
-    def forward(r, v, a):
-        v = v + a * dt
-        r = r + v * dt
+def make_verlet_fn(acceleration_fn: callable, dt: int) -> callable:
+    def forward(r, v, m) -> tuple[np.ndarray]:
+
+        # First step in velocity Verlet.
+        a_old = np.zeros(shape=r.shape)
+        for i in range(len(r)):
+            a_old[i] = acceleration_fn(r=r, m=m, i=i)
+        
+        r = r + v * dt + 0.5 * a_old * dt**2
+
+        # Second setop in velocity Verlet
+        a_new = np.zeros(shape=r.shape)
+        for i in range(len(r)):
+            a_new[i] = acceleration_fn(r=r, m=m, i=i)
+        
+        v = v + 0.5 * (a_old + a_new) * dt
+
         return r, v
-
+    
     return forward
 
 
-def make_verlet_fn(dt):
-    def forward(r, v, a, j):
-        r = r + v * dt + 0.5 * a * dt**2
-        a_new = get_acceleration(r, m, i)
-        v = v + 0.5 * (a + a_new) * dt
-        return r, v
+def get_data() -> tuple[np.ndarray]:
+    fname = "../../../datasets/solar_system/solsystem_data.json"
+    with open(fname, "r") as infile:
+        solsystem_data = json.load(infile)
+    # print(solsystem_data)
 
-    return forward
+    num_timesteps = 1000_0
+    positions = np.zeros(shape=(num_timesteps, len(solsystem_data), 3))
+    velocities = np.zeros(shape=(num_timesteps, len(solsystem_data), 3))
+    G = 4 * np.pi**2
+
+    r = np.zeros(shape=(len(solsystem_data), 3))
+    v = np.zeros(shape=(len(solsystem_data), 3))
+    m = np.zeros(shape=len(solsystem_data))
+
+    for i, name in enumerate(solsystem_data):
+        r[i, 0] = solsystem_data.get(name).get("x")
+        r[i, 1] = solsystem_data.get(name).get("y")
+        r[i, 2] = solsystem_data.get(name).get("z")
+        v[i, 0] = solsystem_data.get(name).get("vx")
+        v[i, 1] = solsystem_data.get(name).get("vy")
+        v[i, 2] = solsystem_data.get(name).get("vz")
+        m[i] = solsystem_data.get(name).get("mass")
+    
+    return r, v, m
 
 
-forward = make_euler_cromer_fn(dt=0.00001)
-# forward = make_verlet_fn(dt=0.001)
 
 num_timesteps = 100_000
 
-for i in trange(num_timesteps - 1):
-    for j in range(r.shape[0]):
-        a = get_acceleration(r, m, j)
-        positions[i + 1, j], velocities[i + 1, j] = forward(r[j], v[j], a)
-    
+r, v, m = get_data()
+positions = np.zeros(shape=(num_timesteps, len(r), 3))
+velocities = np.zeros_like(positions)
 
-    for j in range(r.shape[0]):
-        r[j] = positions[i + 1, j]
-        v[j] = velocities[i + 1, j]
+# Make necessary functions
+get_acceleration_fn = make_acceleration_fn(G=4 * np.pi**2)
+forward = make_verlet_fn(acceleration_fn=get_acceleration_fn, dt=1e-7)
+get_potential_energy_fn = make_potential_energy_fn(m=m, G=4 * np.pi**2)
+get_kinetic_energy_fn = make_kinetic_energy_fn(m=m)
+
+energies = np.zeros(shape=num_timesteps)
+for t in trange(num_timesteps - 1):
+
+    # Calculate energy at current timestep
+    energies[t] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
+    print(energies[t])
+
+    # Calculate next positions
+    r, v = forward(r=r, v=v, m=m)
+
+    # Store positions
+    positions[t + 1, ...][:] = r[:]
+    velocities[t + 1, ...][:] = v[:]
+
     
 
 
@@ -77,7 +129,7 @@ for i in trange(num_timesteps - 1):
 # print(positions.shape)
 # print(positions[::50, ..., :2].shape)
 
-create_animation(positions[::50, :4, :2], tail_length=10)
+create_animation(positions[::50, :6, :2], tail_length=10)
 
 
 

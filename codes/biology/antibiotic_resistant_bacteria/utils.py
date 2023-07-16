@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 import numpy as np
 
 
-def create_images(x, y, x_cells, y_cells):
+def create_images(x, y, x_cells, y_cells, skip):
     fig, ax = plt.subplots()
     plt.axis("off")
     imgs = []
