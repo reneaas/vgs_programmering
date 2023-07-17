@@ -483,6 +483,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verlet-algoritmen">Verlet algoritmen</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-last-inn-datasettet">Oppgave 1: Last inn datasettet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Hvordan loade datasettet?</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -552,8 +557,8 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
 </section>
 <section id="verlet-algoritmen">
 <h3>Verlet algoritmen<a class="headerlink" href="#verlet-algoritmen" title="Permalink to this heading">#</a></h3>
-<p>Solsystemet er notorisk ustabilt å simulere med en numerisk metode som <em>ikke</em> er symplektisk av høyere orden, så Euler-Cromer holder ikke (men kan fungere med utrolig liten steglengde, men da tar simuleringen veldig lang tid!)</p>
-<p>I stedet skal vi benytte oss av en annen symplektisk metode som kallet for <em>Verlet</em>-algoritmen. Anta at</p>
+<p>Solsystemet er et system der energien er bevart. Du har kanskje sett Euler-Comer før, men her skal vi bruke en annen numerisk metode som også bevarer energi, en såkalt <em>symplektisk</em> integrator. En slik metode vil holde energien konstant i gjennomsnitt over tid. I praksis vil vi observere at verdien til energien svinger frem og tilbake om startverdien. Euler-Cromer svinger i mye større grad enn den metoden vi skal bruke.</p>
+<p>Vi skal benytte oss av en annen symplektisk metode som kallet for <em>velocity Verlet</em>-algoritmen. Anta at</p>
 <div class="math notranslate nohighlight">
 \[
 \vec{a}_i(t) = \vec{f}(\vec{r}_1(t), \vec{r}_2(t), \ldots, \vec{r}_{n}(t)),
@@ -566,7 +571,46 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
 \vec{v}_i(t + h) &amp; \approx \vec{v}_i(t) + \frac{1}{2}\left[\vec{a}_i(t) + \vec{a}_i(t + h)\right]h
 \end{align*}
 \end{split}\]</div>
-<p>Denne algoritmen bevarer energi (i gjennomsnitt), noe du skal sjekke som en del av oppgavene! Dette er en måte å verifisere at koden gjør det den skal også.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Typisk fallgruve</p>
+<p>En typisk fallgruve her er at man bruke algoritmen direkte på én planet av gangen, men siden akselerasjonen til hver planet er avhengig av posisjonen til alle de andre, må bare gjøre <em>steg 1</em> av algoritmen på <strong>alle</strong> planetene før man gjøre steg to på <strong>alle</strong> planetene. Med andre ord</p>
+<ol class="arabic simple">
+<li><p>Oppdater posisjonen til <strong>alle</strong> planetene først (inkludert solen).</p></li>
+<li><p>Deretter oppdater hastigheten til <strong>alle</strong> planetene (inkludert solen).</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1-last-inn-datasettet">
+<h3>Oppgave 1: Last inn datasettet<a class="headerlink" href="#oppgave-1-last-inn-datasettet" title="Permalink to this heading">#</a></h3>
+<p>Last inn datasettet med følgende kode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/solar_system/solsystem_data.json&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">solsystem_data</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/solar_system/solsystem_data.json&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">]))</span>
+
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">solsystem_data</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Hvordan loade datasettet?<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -629,6 +673,11 @@ m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verlet-algoritmen">Verlet algoritmen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-last-inn-datasettet">Oppgave 1: Last inn datasettet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Hvordan loade datasettet?</a></li>
 </ul>
 </li>
 </ul>
