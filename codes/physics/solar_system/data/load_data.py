@@ -105,9 +105,13 @@ for planet in data:
     data[planet]["y"] /= km_per_au
     data[planet]["z"] /= km_per_au
 
-    data[planet]["vx"] /= (km_per_au * seconds_per_year)
-    data[planet]["vy"] /= (km_per_au * seconds_per_year)
-    data[planet]["vz"] /= (km_per_au * seconds_per_year)
+    data[planet]["vx"] /= km_per_au
+    data[planet]["vy"] /= km_per_au * seconds_per_year
+    data[planet]["vz"] /= km_per_au * seconds_per_year
+
+    data[planet]["vx"] *= seconds_per_year
+    data[planet]["vy"] *= seconds_per_year
+    data[planet]["vz"] *= seconds_per_year
 
     data[planet]["mass"] /= solar_mass
 
@@ -143,6 +147,7 @@ with open(fname, "w") as outfile:
         vy = data.get(planet).get("vy")
         vz = data.get(planet).get("vz")
         outfile.write(f"{planet} {vx} {vy} {vz}")
+        outfile.write("\n")
 
         
 

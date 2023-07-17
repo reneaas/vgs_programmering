@@ -90,37 +90,45 @@ def get_data() -> tuple[np.ndarray]:
         v[i, 0] = solsystem_data.get(name).get("vx")
         v[i, 1] = solsystem_data.get(name).get("vy")
         v[i, 2] = solsystem_data.get(name).get("vz")
-        m[i] = solsystem_data.get(name).get("mass")
+        m[i] = solsystem_data.get(name).get("masse")
     
     return r, v, m
 
 
 
 num_timesteps = 100_000
+dt = 1e-4
 
 r, v, m = get_data()
+print(r)
+
 positions = np.zeros(shape=(num_timesteps, len(r), 3))
 velocities = np.zeros_like(positions)
 
+positions[0, ...] = r[:]
+velocities[0, ...] = v[:]
+
 # Make necessary functions
 get_acceleration_fn = make_acceleration_fn(G=4 * np.pi**2)
-forward = make_verlet_fn(acceleration_fn=get_acceleration_fn, dt=1e-7)
+forward = make_verlet_fn(acceleration_fn=get_acceleration_fn, dt=dt)
 get_potential_energy_fn = make_potential_energy_fn(m=m, G=4 * np.pi**2)
 get_kinetic_energy_fn = make_kinetic_energy_fn(m=m)
 
 energies = np.zeros(shape=num_timesteps)
+
+energies[0] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
 for t in trange(num_timesteps - 1):
 
     # Calculate energy at current timestep
     energies[t] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
-    print(energies[t])
 
     # Calculate next positions
     r, v = forward(r=r, v=v, m=m)
 
     # Store positions
-    positions[t + 1, ...][:] = r[:]
-    velocities[t + 1, ...][:] = v[:]
+    positions[t + 1, ...] = r[:]
+    velocities[t + 1, ...] = v[:]
+
 
     
 
@@ -129,7 +137,10 @@ for t in trange(num_timesteps - 1):
 # print(positions.shape)
 # print(positions[::50, ..., :2].shape)
 
-create_animation(positions[::50, :6, :2], tail_length=10)
+plt.plot([t * dt for t in range(len(positions))], energies)
+plt.show()
+
+create_animation(positions[::100, :6, :2], tail_length=30)
 
 
 
