@@ -2,8 +2,9 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import trange
-from animate import create_animation
+from animate import create_animation_2d, create_animation_3d
 import numba
+import matplotlib.animation as animation
 
 
 def make_acceleration_fn(G: float = 4 * np.pi**2) -> callable:
@@ -91,16 +92,31 @@ def get_data() -> tuple[np.ndarray]:
         v[i, 1] = solsystem_data.get(name).get("vy")
         v[i, 2] = solsystem_data.get(name).get("vz")
         m[i] = solsystem_data.get(name).get("masse")
-    
-    return r, v, m
+    names = list(solsystem_data.keys())
+    return r, v, m, names
 
 
+def get_data_three_body():
+    solar_mass = 2e30
+    mars_mass = 0.6e24
+    earth_mass = 6e24
+    names = ["planet", "lett stjerne", "tung stjerne"]
 
-num_timesteps = 100_000
+    m = np.array([earth_mass, solar_mass, 4 * solar_mass]) / solar_mass
+    r = np.array([[-1.5, 0, 0], [0, 0, 0], [3, 0, 0]])
+    v = np.array([[0, -1, 0], [0, 30, 0], [0, -7.5, 0]])
+
+    au_per_km = 6.68459e-9
+    seconds_per_year = 365.25 * 24 * 60 * 60
+    v *= au_per_km * seconds_per_year
+
+    return r, v, m, names
+
+num_timesteps = int(1e5)
 dt = 1e-4
 
-r, v, m = get_data()
-print(r)
+# r, v, m, names = get_data()
+r, v, m, names = get_data_three_body()
 
 positions = np.zeros(shape=(num_timesteps, len(r), 3))
 velocities = np.zeros_like(positions)
@@ -110,9 +126,13 @@ velocities[0, ...] = v[:]
 
 # Make necessary functions
 get_acceleration_fn = make_acceleration_fn(G=4 * np.pi**2)
+get_acceleration_fn = numba.njit(get_acceleration_fn)
 forward = make_verlet_fn(acceleration_fn=get_acceleration_fn, dt=dt)
+forward = numba.njit(forward)
 get_potential_energy_fn = make_potential_energy_fn(m=m, G=4 * np.pi**2)
+get_potential_energy_fn = numba.njit(get_potential_energy_fn)
 get_kinetic_energy_fn = make_kinetic_energy_fn(m=m)
+
 
 energies = np.zeros(shape=num_timesteps)
 
@@ -129,18 +149,37 @@ for t in trange(num_timesteps - 1):
     positions[t + 1, ...] = r[:]
     velocities[t + 1, ...] = v[:]
 
-
+energies[-1] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
     
 
 
 
 # print(positions.shape)
 # print(positions[::50, ..., :2].shape)
-
+plt.figure(figsize=(8, 5))
 plt.plot([t * dt for t in range(len(positions))], energies)
+plt.xlabel("tid [jordår]")
+plt.ylabel(r"energi [$M_{\odot}$ AU$^2$ / år$^2$]")
+plt.grid(True)
+# plt.savefig("./figures/solar_system.pdf")
+plt.savefig("./figures/energi_three_body.pdf")
 plt.show()
 
-create_animation(positions[::100, :6, :2], tail_length=30)
+
+ani = create_animation_2d(positions[::500, :, :2], names=names, tail_length=30)
+ani.save("./animations/three_body_system_2d.gif", fps=60)
+
+# ani = create_animation_2d(positions[::100, :-4, :2], names=names[:-4], tail_length=30)
+# ani.save("./animations/solsystemet_2d.gif", fps=60)
+# plt.close()
+
+ani = create_animation_3d(positions[::500, :, :], names=names, tail_length=30)
+ani.save("./animations/three_body_system_3d.gif", fps=60)
+
+# ani = create_animation_3d(positions[::100, :-4, :], names=names[:-4], tail_length=30)
+# ani.save("./animations/solsystemet_3d.gif", fps=60)
+# plt.close()
+
 
 
 
