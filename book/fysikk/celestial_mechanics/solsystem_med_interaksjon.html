@@ -1,0 +1,1521 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Simulering av Solsystemet med Interaksjoner &#8212; Programmering i Videregående Skole</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/fysikk/celestial_mechanics/solsystem_med_interaksjon';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Trelegemeproblemet" href="three_body_problem.html" />
+    <link rel="prev" title="Simulere planetbaner (Celestmekanikk)" href="planetbaner.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering i Videregående Skole</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Programmering i Videregående Skole
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grunnleggende Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/containers/lists.html">Lister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/list_loops.html">Løkker med lister</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/special_modules/matplotlib.html">Tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likninger.html">Løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/ulikheter.html">Løse Ulikheter med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/derivasjon.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/nullpunkter/intro.html">Finne Nullpunkter Numerisk</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/nullpunkter/newtons_metode.html">Newtons metode</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/derivasjon/intro.html">Numerisk Derivasjon</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/derivasjon/first_derivative.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/derivasjon/andrederiverte.html">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (Matematikk S2)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/intro.html">Følger og Rekker</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/sequences.html">Intro til følger og rekker med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/praktiske_anvendelser_av_rekker.html">Praktiske Anvendelser av Rekker med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/sannsynlighet/intro.html">Sannsynlighet</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk/sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="planetbaner.html">Simulere planetbaner</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Simulering av Solsystemet med Interaksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="three_body_problem.html">Trelegemeproblemet</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biologi med Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../biologi/antibiotika_resistente_bakterier.html">Prosjekt: Simulering av Antibiotikaresistente Bakterier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/fysikk/celestial_mechanics/solsystem_med_interaksjon.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/reneaas/vgs_programmering" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/fysikk/celestial_mechanics/solsystem_med_interaksjon.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/book/fysikk/celestial_mechanics/solsystem_med_interaksjon.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Simulering av Solsystemet med Interaksjoner</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitasjonsloven-fra-ett-legeme-pa-et-annet">Gravitasjonsloven fra ett legeme på et annet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet-algoritmen">Velocity Verlet-algoritmen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomiske-enheter">Astronomiske enheter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-last-inn-datasettet">Oppgave 1: Last inn datasettet</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-laste-ned-datasettet">Hvordan laste ned datasettet</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-regn-ut-akselerasjonen">Oppgave 2: regn ut akselerasjonen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-regne-ut-energien-til-systemet">Oppgave 3: regne ut energien til systemet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-regn-ut-neste-posisjon-og-hastighet">Oppgave 4: regn ut neste posisjon og hastighet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-sett-alt-sammen-og-kjor-simuleringen">Oppgave 5: Sett alt sammen og kjør simuleringen</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="simulering-av-solsystemet-med-interaksjoner">
+<h1>Simulering av Solsystemet med Interaksjoner<a class="headerlink" href="#simulering-av-solsystemet-med-interaksjoner" title="Permalink to this heading">#</a></h1>
+<p>Målet her er at skal du skrive en Pythonkode som regner ut banene til planetene i solsystemet vårt basert på data hentet ut fra <a class="reference external" href="https://ssd.jpl.nasa.gov/horizons/app.html#/">NASA JPL Horizons System</a>. Her skal du ta med kraften fra alle planetene på hverandre (inkludert solen), ikke bare kraften fra solen på planetene.</p>
+<p>Til slutt skal du produsere en animasjon som viser planetbanene. I figuren under ser du et eksempel på sluttproduktet.</p>
+<figure class="align-default" id="solsystemet-2d">
+<img alt="../../../_images/solsystemet_2d.gif" src="../../../_images/solsystemet_2d.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Animasjonen viser planetbanene til de fem innerste planetene inkludert solen i 2d.</span><a class="headerlink" href="#solsystemet-2d" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="bakgrunnsteori">
+<h2>Bakgrunnsteori<a class="headerlink" href="#bakgrunnsteori" title="Permalink to this heading">#</a></h2>
+<section id="gravitasjonsloven-fra-ett-legeme-pa-et-annet">
+<h3>Gravitasjonsloven fra ett legeme på et annet<a class="headerlink" href="#gravitasjonsloven-fra-ett-legeme-pa-et-annet" title="Permalink to this heading">#</a></h3>
+<p>I fysikken i videregående skole lærer man at gravitasjonsloven kan skrives som</p>
+<div class="math notranslate nohighlight">
+\[
+F = -\gamma \frac{m_1 m_2}{r^2},
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(r\)</span> er avstanden mellom de to legemene, <span class="math notranslate nohighlight">\(m_1\)</span> og <span class="math notranslate nohighlight">\(m_2\)</span> er massene til objektene og <span class="math notranslate nohighlight">\(\gamma\)</span> er gravitasjonskonstanten.</p>
+<p>Svakheten med denne loven er at kraften er en vektorstørrelse og har retning, mens vi med loven over kun regner ut størrelsen. I tillegg antar den at kilden til gravitasjonskraften er i origo i koordinatsystemet vi bruker. I stedet kan vi skrive loven slik:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{F}_1 = -\gamma m_1 m_2 \frac{\vec{r}_1 - \vec{r}_2}{|\vec{r}_1 - \vec{r}_2|^3},
+\]</div>
+<p>der kraften virker på masse <span class="math notranslate nohighlight">\(m_1\)</span> i posisjon <span class="math notranslate nohighlight">\(\vec{r}_1\)</span> fra legeme med masse <span class="math notranslate nohighlight">\(m_2\)</span> i posisjon <span class="math notranslate nohighlight">\(\vec{r}_2\)</span>. Tanken her er at legeme 2 er solen, og legeme 1 er alle de andre planetene. Fordelen med denne formuleringen er at vi får med retningsvektoren også!</p>
+</section>
+<section id="en-mer-generell-gravitasjonslov">
+<h3>En mer generell gravitasjonslov<a class="headerlink" href="#en-mer-generell-gravitasjonslov" title="Permalink to this heading">#</a></h3>
+<p>Skal man håndtere solsystemet fullstendig, må man ta hensyn til at de har interaksjoner mellom hverandre. Hvert eneste legeme tiltrekker hverandre. Da får vi nytte for en mer generell form av gravitasjonsloven:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{F}_{i} = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}, 
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(\vec{r}_i\)</span> er posisjonen til legeme <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(m_i\)</span> er massen til legeme <span class="math notranslate nohighlight">\(i\)</span> og <span class="math notranslate nohighlight">\(\gamma\)</span> er gravitasjonskonstanten. Tilsvarende er <span class="math notranslate nohighlight">\(\vec{r}_j\)</span> og <span class="math notranslate nohighlight">\(m_j\)</span> posisjonen og massen til legeme <span class="math notranslate nohighlight">\(j\)</span>. Størrelsen <span class="math notranslate nohighlight">\(\vec{F}_i\)</span> er kraften som virker på legeme <span class="math notranslate nohighlight">\(i\)</span> fra alle andre legemer i systemet. I tilfellet her kunne for eksempel <span class="math notranslate nohighlight">\(i\)</span> vært jorden, og da vil <span class="math notranslate nohighlight">\(\vec{F}_i\)</span> være kraften som virker på jorden fra solen og de andre plantene i solsystemet.</p>
+</section>
+<section id="newtons-2-lov">
+<h3>Newtons 2.lov<a class="headerlink" href="#newtons-2-lov" title="Permalink to this heading">#</a></h3>
+<p>Når vi ønsker å finne bevegelsen til et legeme over tid, er Newtons 2.lov vår <em>go-to</em> lov. Kjenner vi alle kreftene på legeme, kan vi finne bevegelsen til legemet over tid. Newtons 2.lov kan oppsummeres som</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n} \vec{F}_n = m_i\vec{a}_i,
+\]</div>
+<p>I dette tilfellet, er summen av kreftene den totale gravitasjonskraften som virker på legemet. For legemet <span class="math notranslate nohighlight">\(i\)</span> kan vi skrive dette som</p>
+<div class="math notranslate nohighlight">
+\[
+m_i\vec{a}_i = -\gamma m_i\sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}, 
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_i = -\gamma \sum_{j \neq i} m_j \frac{\vec{r}_i - \vec{r}_j}{|\vec{r}_i - \vec{r}_j|^3}.
+\]</div>
+</section>
+<section id="velocity-verlet-algoritmen">
+<h3>Velocity Verlet-algoritmen<a class="headerlink" href="#velocity-verlet-algoritmen" title="Permalink to this heading">#</a></h3>
+<p>Solsystemet er et system der energien er bevart. Du har kanskje sett Euler-Comer før, men her skal vi bruke en annen numerisk metode som også bevarer energi, en såkalt <em>symplektisk</em> integrator. En slik metode vil holde energien konstant i gjennomsnitt over tid. I praksis vil vi observere at verdien til energien svinger frem og tilbake om startverdien. Euler-Cromer svinger i mye større grad enn den metoden vi skal bruke.</p>
+<p>Vi skal benytte oss av en annen symplektisk metode som kallet for <em>velocity Verlet</em>-algoritmen. Anta at</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}_i(t) = \vec{f}(\vec{r}_1(t), \vec{r}_2(t), \ldots, \vec{r}_{n}(t)),
+\]</div>
+<p>gir oss akselerasjon ved tidspunkt <span class="math notranslate nohighlight">\(t\)</span>, og <span class="math notranslate nohighlight">\(\vec{r}_1(t), \vec{r}_2(t), \ldots, \vec{r}_n(t)\)</span> er posisjonene til planetene ved tidspunkt <span class="math notranslate nohighlight">\(t\)</span>. Da kan vi regne ut neste posisjon og hastighet til planet <span class="math notranslate nohighlight">\(i\)</span> (med en steglengde <span class="math notranslate nohighlight">\(\Delta t\)</span> tid):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\vec{r}_i(t + \Delta t) &amp; \approx \vec{r}_i(t) + \vec{v}_i(t) \Delta t + \frac{1}{2}\vec{a}_i(t) \Delta t^2, \\
+\vec{v}_i(t + \Delta t) &amp; \approx \vec{v}_i(t) + \frac{1}{2}\left[\vec{a}_i(t) + \vec{a}_i(t + \Delta t)\right]\Delta t.
+\end{align*}
+\end{split}\]</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Typisk fallgruve</p>
+<p>En typisk fallgruve her er at man bruke algoritmen direkte på én planet av gangen, men siden akselerasjonen til hver planet er avhengig av posisjonen til alle de andre, må bare gjøre <em>steg 1</em> av algoritmen på <strong>alle</strong> planetene før man gjøre steg to på <strong>alle</strong> planetene. Med andre ord</p>
+<ol class="arabic simple">
+<li><p>Oppdater posisjonen til <strong>alle</strong> planetene først (inkludert solen).</p></li>
+<li><p>Deretter oppdater hastigheten til <strong>alle</strong> planetene (inkludert solen).</p></li>
+</ol>
+</div>
+</section>
+<section id="astronomiske-enheter">
+<h3>Astronomiske enheter<a class="headerlink" href="#astronomiske-enheter" title="Permalink to this heading">#</a></h3>
+<p>Når man regner på planetbaner, er det nyttig å jobbe med andre enheter fordi størrelsene vi jobber med er såpass store. Avstandene spenner flere millioner kilometer og tiden spenner flere jordår. Derfor velger vi å:</p>
+<ul class="simple">
+<li><p>Måle avstander i astronomiske enheter, AU. (1 AU er gjennomsnittsavstanden mellom jorden og solen. Ca. 150 millioner km.)</p></li>
+<li><p>Mål hastigheter i AU/år (AU/jordår).</p></li>
+<li><p>Måle tid i år (jordår).</p></li>
+<li><p>Masse måles i antall <em>solmasser</em> <span class="math notranslate nohighlight">\(M_\odot = 2\cdot 10^{30} \ \text{kg}\)</span>. (1 solmasse er massen til sola vår). <em>Hint: for å omgjøre en masse til solmasser, deler man massen med solmassen. Da får du hvor mange solmasser den massen utgjør</em>.</p></li>
+<li><p>Gravitasjonskonstanten <span class="math notranslate nohighlight">\(\gamma\)</span> er tilnærmet gitt ved <span class="math notranslate nohighlight">\(\gamma = 4\pi^2 \ \text{AU}^3/(\text{år}^2 M_\odot)\)</span> i astronomiske enheter. Det er en konsekvens som følger fra Keplers 3.lov. Hvis du tenker over enhetene, så gir de mening fordi vi har satt <span class="math notranslate nohighlight">\(\text{m} \to \text{AU}\)</span>, og <span class="math notranslate nohighlight">\(\text{s} \to \text{år}\)</span>, og <span class="math notranslate nohighlight">\(\text{kg} \to M_\odot\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1-last-inn-datasettet">
+<h3>Oppgave 1: Last inn datasettet<a class="headerlink" href="#oppgave-1-last-inn-datasettet" title="Permalink to this heading">#</a></h3>
+<section id="hvordan-laste-ned-datasettet">
+<h4>Hvordan laste ned datasettet<a class="headerlink" href="#hvordan-laste-ned-datasettet" title="Permalink to this heading">#</a></h4>
+<p>Last ned datasettet med følgende kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/solar_system/solsystem_data.json&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For de to første legemene i datasettet, ser det slik ut (alle de andre legemene har lik struktur):</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;head -n 19 solsystem_data.json &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+    &quot;sun&quot;: {
+        &quot;masse&quot;: 1.0,
+        &quot;x&quot;: -0.008647947560257333,
+        &quot;y&quot;: -0.0016038052487075002,
+        &quot;z&quot;: 0.00021473113169279278,
+        &quot;vx&quot;: 0.0011252958108073426,
+        &quot;vy&quot;: -0.0030146325639545677,
+        &quot;vz&quot;: -2.240028321888302e-07
+    },
+    &quot;mercury&quot;: {
+        &quot;masse&quot;: 1.6605481518732714e-07,
+        &quot;x&quot;: -0.39470478678463916,
+        &quot;y&quot;: -0.001499234445048278,
+        &quot;z&quot;: 0.03563417054707482,
+        &quot;vx&quot;: -2.1393659644147514,
+        &quot;vy&quot;: -9.837653083758232,
+        &quot;vz&quot;: -0.6073567665826703
+    },
+</pre></div>
+</div>
+</div>
+</div>
+<p>Skriv en funksjon som leser inn dataen. Den skal gjøre følgende:</p>
+<ol class="arabic simple">
+<li><p>Plassere posisjonene i et array <code class="docutils literal notranslate"><span class="pre">r</span></code> med dimensjonen (<code class="docutils literal notranslate"><span class="pre">shape</span></code>) <code class="docutils literal notranslate"><span class="pre">(antall_planeter,</span> <span class="pre">3)</span></code>.</p></li>
+<li><p>Plassere hastighetene i et array <code class="docutils literal notranslate"><span class="pre">v</span></code> med dimensjonen (<code class="docutils literal notranslate"><span class="pre">shape</span></code>) <code class="docutils literal notranslate"><span class="pre">(antall_planeter,</span> <span class="pre">3)</span></code>.</p></li>
+<li><p>Plassere massene i et array <code class="docutils literal notranslate"><span class="pre">m</span></code> med dimensjonen (<code class="docutils literal notranslate"><span class="pre">shape</span></code>) <code class="docutils literal notranslate"><span class="pre">(antall_planeter,)</span></code>.</p></li>
+</ol>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Kodehint: lage et array med riktig dimensjon<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Du kan lage et “tomt” array (fylt med nuller) med</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">dim1</span><span class="p">,</span> <span class="n">dim2</span><span class="p">))</span>
+
+</pre></div>
+</div>
+<p class="sd-card-text">der <code class="docutils literal notranslate"><span class="pre">dim1</span></code> er den første dimensjonen og <code class="docutils literal notranslate"><span class="pre">dim2</span></code> er en den andre dimensjonen.</p>
+<p class="sd-card-text">Har du bare én dimensjon, som for massene, kan du bruke</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">dim1</span><span class="p">,))</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">les_data</span><span class="p">(</span><span class="n">filnavn</span><span class="p">):</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+
+    <span class="n">antall_planeter</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">planet</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">vx</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vx&quot;</span><span class="p">)</span>
+        <span class="n">vy</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="n">vz</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">masse</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;masse&quot;</span><span class="p">)</span>
+
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vx</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">navn</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">navn</span>
+
+<span class="c1"># Eksempel på funksjonskall for å hente ut dataen    </span>
+<span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">navn</span> <span class="o">=</span> <span class="n">les_data</span><span class="p">(</span><span class="n">filnavn</span><span class="o">=</span><span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">les_data</span><span class="p">(</span><span class="n">filnavn</span><span class="p">):</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+
+    <span class="n">antall_planeter</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">antall_planeter</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">antall_planeter</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">antall_planeter</span><span class="p">,))</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">planet</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+
+        <span class="n">vx</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vx&quot;</span><span class="p">)</span>
+        <span class="n">vy</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vy&quot;</span><span class="p">)</span>
+        <span class="n">vz</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vz&quot;</span><span class="p">)</span>
+
+        <span class="n">masse</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;masse&quot;</span><span class="p">)</span>
+
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+        
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vx</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">vz</span>
+
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">masse</span>
+
+    <span class="n">navn</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">navn</span>
+
+<span class="c1"># Eksempel på funksjonskall for å hente ut dataen    </span>
+<span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">navn</span> <span class="o">=</span> <span class="n">les_data</span><span class="p">(</span><span class="n">filnavn</span><span class="o">=</span><span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="oppgave-2-regn-ut-akselerasjonen">
+<h3>Oppgave 2: regn ut akselerasjonen<a class="headerlink" href="#oppgave-2-regn-ut-akselerasjonen" title="Permalink to this heading">#</a></h3>
+<p>Skriv en funksjon <code class="docutils literal notranslate"><span class="pre">get_akselerasjon(r,</span> <span class="pre">m,</span> <span class="pre">i)</span></code> som regner ut akselerasjon til legeme <code class="docutils literal notranslate"><span class="pre">i</span></code>. Her er <code class="docutils literal notranslate"><span class="pre">r</span></code> alle posisjonene til legemene på et spesifikt tidspunkt og <code class="docutils literal notranslate"><span class="pre">m</span></code> er massen til legemene.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">get_akselerasjon</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+    <span class="c1"># Hvor mange dimensjoner er det for akselerasjonen til én planet?</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span> 
+    
+    <span class="c1"># regn ut akselerasjonen pga alle de andre planetene</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="c1"># bare regn ut når vi ser på et annet legeme enn legeme i</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+
+            <span class="c1"># regn ut differansevektoren r_i - r_j</span>
+            <span class="n">dr</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+            
+            <span class="c1"># Regn ut lengden av differansevektoren r_i - r_j</span>
+            <span class="n">dr_norm</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+            <span class="c1"># Regn ut akselerasjonen. `-=` fordi gravitasjonskraften er tiltrekkende.</span>
+            <span class="n">a</span> <span class="o">-=</span> <span class="bp">NotImplemented</span>
+    
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">get_akselerasjon</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+    <span class="c1"># Hvor mange dimensjoner er det for akselerasjonen til én planet?</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span> 
+    
+    <span class="c1"># regn ut akselerasjonen pga alle de andre planetene</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="c1"># bare regn ut når vi ser på et annet legeme enn legeme i</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+
+            <span class="c1"># regn ut differansevektoren r_i - r_j</span>
+            <span class="n">dr</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            
+            <span class="c1"># Regn ut lengden av differansevektoren r_i - r_j</span>
+            <span class="n">dr_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dr</span><span class="p">)</span>
+
+            <span class="c1"># Regn ut akselerasjonen</span>
+            <span class="n">a</span> <span class="o">-=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">dr</span> <span class="o">/</span> <span class="n">dr_norm</span><span class="o">**</span><span class="mi">3</span>
+    
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="oppgave-3-regne-ut-energien-til-systemet">
+<h3>Oppgave 3: regne ut energien til systemet<a class="headerlink" href="#oppgave-3-regne-ut-energien-til-systemet" title="Permalink to this heading">#</a></h3>
+<p>Her skal du skrive to funksjoner som regner ut energien til systemet. Den første funksjonen skal regne ut kinetisk energi, og den andre skal regne ut potensiell energi. Deretter skal du bringe de sammen til en tredje funksjon som regner ut den totale energien.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Påminnelse: Kinetisk energi<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Den kinetiske energien til en masse <span class="math notranslate nohighlight">\(m\)</span> med en hastigheten <span class="math notranslate nohighlight">\(\vec{v}\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2}m \vec{v}^2,
+\]</div>
+<p class="sd-card-text">der du kan tolke <span class="math notranslate nohighlight">\(\vec{v}^2\)</span> som prikk-produktet <span class="math notranslate nohighlight">\(\vec{v}\cdot \vec{v}\)</span>, eller bare som lengden av vektoren i andre!</p>
+<p class="sd-card-text">Når vi har <span class="math notranslate nohighlight">\(n\)</span> masser <span class="math notranslate nohighlight">\(m_1, m_2, \ldots m_n\)</span> med hastighetsvektorer <span class="math notranslate nohighlight">\(\vec{v}_1, \vec{v}_2, \ldots \vec{v}_n\)</span>, blir den totale kinetiske energien summen av den kinetiske energien til hvert legeme, som dette:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2}m_1 \vec{v}_1^2 + \frac{1}{2}m_2 \vec{v}_2^2 + \ldots + \frac{1}{2}m_n \vec{v}_n^2 = \frac{1}{2}\sum_{i=1}^n m_i \vec{v}_i^2.
+\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Påminnelse: Potensiell energi<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Den potensielle energien til et legeme <span class="math notranslate nohighlight">\(i\)</span> i et system med ett annet legeme <span class="math notranslate nohighlight">\(j\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+V_i = -\gamma \frac{m_i m_j}{|\vec{r}_i - \vec{r}_j|}.
+\]</div>
+<p class="sd-card-text">Når legemet <span class="math notranslate nohighlight">\(i\)</span> har <span class="math notranslate nohighlight">\(n-1\)</span> andre legemer som virker på det, kan vi generalisere utregningen slik:</p>
+<div class="math notranslate nohighlight">
+\[
+V_i = - \sum_{j=1, j\neq i}^n \gamma\frac{m_i m_j}{|\vec{r}_i - \vec{r}_j|}.
+\]</div>
+<p class="sd-card-text">Den generelle formelen vi kan bruke for å regne ut den potensielle energien til systemet er</p>
+<div class="math notranslate nohighlight">
+\[
+V = -\sum_{i=1}^n\sum_{j=i + 1}^n \gamma \frac{m_i m_j}{|\vec{r}_i - \vec{r}_j|}.
+\]</div>
+<p class="sd-card-text">En alternativ formel, dersom du syns den over ser vanskelig ut å skrive kode for, er</p>
+<div class="math notranslate nohighlight">
+\[
+V = -\frac{1}{2}\sum_{i=1}^n\sum_{j=1, j\neq i}^n \gamma \frac{m_i m_j}{|\vec{r}_i - \vec{r}_j|}.
+\]</div>
+<p class="sd-card-text">I den siste formelen deler vi på 2 fordi vi regner ut samme potensielle energi fra hvert legeme dobbelt opp, så hvis vi halverer bidraget får vi samme resultat. Ulempen er at vi gjør flere utregninger enn nødvendig, så det går litt tregere med denne formelen.</p>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_kinetisk_energi</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+        <span class="c1"># regn ut farten til legeme i</span>
+        <span class="n">vi</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="n">vi_norm</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># regn ut kinetisk energi til legeme i</span>
+        <span class="n">K</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">return</span> <span class="n">K</span>
+
+
+<span class="k">def</span> <span class="nf">get_potensiell_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+                <span class="c1"># regn ut differansevektoren r_i - r_j</span>
+                <span class="n">dr</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+                
+                <span class="c1"># Regn ut lengden av differansevektoren r_i - r_j</span>
+                <span class="n">dr_norm</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+                <span class="c1"># Regn ut potensiell energi. Husk at det er negativt fortegn. Derfor `-=`.</span>
+                <span class="n">V</span> <span class="o">-=</span> <span class="bp">NotImplemented</span>
+    
+    <span class="k">return</span> <span class="n">V</span>
+
+
+<span class="k">def</span> <span class="nf">get_total_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">return</span> <span class="n">E</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Funksjonen for kinetisk energi:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_kinetisk_energi</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+        <span class="c1"># regn ut farten til legeme i</span>
+        <span class="n">vi</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">vi_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vi</span><span class="p">)</span>
+
+        <span class="c1"># regn ut kinetisk energi til legeme i</span>
+        <span class="n">K</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">vi_norm</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">K</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Funksjonen for potensiell energi:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_potensiell_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+                <span class="c1"># regn ut differansevektoren r_i - r_j</span>
+                <span class="n">dr</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                
+                <span class="c1"># Regn ut lengden av differansevektoren r_i - r_j</span>
+                <span class="n">dr_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dr</span><span class="p">)</span>
+
+                <span class="c1"># Regn ut potensiell energi</span>
+                <span class="n">V</span> <span class="o">-=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">dr_norm</span>
+    
+    <span class="k">return</span> <span class="n">V</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Funksjonen for totalenergi:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_total_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">get_kinetisk_energi</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">get_potensiell_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">K</span> <span class="o">+</span> <span class="n">V</span>
+    
+    <span class="k">return</span> <span class="n">E</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="oppgave-4-regn-ut-neste-posisjon-og-hastighet">
+<h3>Oppgave 4: regn ut neste posisjon og hastighet<a class="headerlink" href="#oppgave-4-regn-ut-neste-posisjon-og-hastighet" title="Permalink to this heading">#</a></h3>
+<p>Skriv en funksjon som regner ut neste posisjon og hastighet gitt en steglengde <span class="math notranslate nohighlight">\(h\)</span> i tid.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">velocity_verlet</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">akselerasjon_fn</span><span class="p">):</span>
+
+    <span class="c1"># Første steg av velocity Verlet algoritmen:</span>
+    <span class="n">a_gammel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="c1"># Regn ut akselerasjon av legeme i med nåværende (&quot;gamle&quot;) posisjoner</span>
+        <span class="n">a_gammel</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">akselerasjon_fn</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    
+    <span class="c1"># Oppdater posisjonenene</span>
+    <span class="n">r</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+
+    <span class="c1"># Andre steg av velocity Verlet algoritmen:</span>
+    <span class="c1"># Regn ut akselerasjon med nye posisjoner</span>
+    <span class="n">a_ny</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="c1"># regn ut akselerasjonen på legeme i</span>
+        <span class="n">a_ny</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">akselerasjon_fn</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="c1"># Oppdater hastighetene</span>
+    <span class="n">v</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span>
+
+
+<span class="c1"># Eksempel på funksjonskall for å regne ut nye posisjoner og hastigheter</span>
+<span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">velocity_verlet</span><span class="p">(</span>
+    <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+    <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span>
+    <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span>
+    <span class="n">dt</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+    <span class="n">akselerasjon_fn</span><span class="o">=</span><span class="n">get_akselerasjon</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">velocity_verlet</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">akselerasjon_fn</span><span class="p">):</span>
+    <span class="n">a_gammel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="n">a_gammel</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">akselerasjon_fn</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="c1"># oppdater posisjonen</span>
+    <span class="n">r</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">a_gammel</span> <span class="o">*</span> <span class="n">dt</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="c1"># Regn ut akselerasjon med nye posisjoner</span>
+    <span class="n">a_ny</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="c1"># regn ut akselerasjonen</span>
+        <span class="n">a_ny</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">akselerasjon_fn</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+    <span class="c1"># Oppdater hastighetene</span>
+    <span class="n">v</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a_gammel</span> <span class="o">+</span> <span class="n">a_ny</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="c1"># Eksempel på funksjonskall for å regne ut nye posisjoner og hastigheter</span>
+<span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">velocity_verlet</span><span class="p">(</span>
+    <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+    <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span>
+    <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span>
+    <span class="n">dt</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+    <span class="n">akselerasjon_fn</span><span class="o">=</span><span class="n">get_akselerasjon</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="oppgave-5-sett-alt-sammen-og-kjor-simuleringen">
+<h3>Oppgave 5: Sett alt sammen og kjør simuleringen<a class="headerlink" href="#oppgave-5-sett-alt-sammen-og-kjor-simuleringen" title="Permalink to this heading">#</a></h3>
+<p>Nå har du alle funksjonene du trenger for å kjøre simuleringen. Det er på tide å regne ut banene til planetene i solsystemet vårt! Du får gitt ut kode for å lage en animasjon av planetbanene i <span class="math notranslate nohighlight">\(xy\)</span>-planet under.</p>
+<p>Koden din skal gjøre følgende:</p>
+<ul class="simple">
+<li><p>Regne ut posisjonene til planetene over <code class="docutils literal notranslate"><span class="pre">n_tidssteg</span></code> tidssteg med en steglengde <code class="docutils literal notranslate"><span class="pre">dt</span></code> i tid.</p></li>
+<li><p>Regner ut energien til systemet for hvert tidssteg og lagrer den i et array <code class="docutils literal notranslate"><span class="pre">energi</span></code>.</p></li>
+<li><p>Plotter energien til systemet over tid.</p></li>
+<li><p>Lage en animasjon i 2d av planetbanene av de 5 innerste legemene (innerste legeme er solen).</p></li>
+</ul>
+<p><em>Du kan ta utgangspunkt i kodeskallet under for å løse oppgaven. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Kode for animasjon i 2d<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+
+<span class="k">def</span> <span class="nf">create_animation</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">tail_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">xlim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]))</span>
+    <span class="n">ylim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">xlim</span><span class="p">,</span> <span class="n">xlim</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ylim</span><span class="p">,</span> <span class="n">ylim</span><span class="p">))</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+        <span class="n">dot</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">line</span><span class="p">,</span> <span class="n">dot</span><span class="p">))</span>
+
+    <span class="c1"># Initialize tail data</span>
+    <span class="n">tail_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">positions</span><span class="p">[</span><span class="n">frame</span><span class="p">,</span> <span class="n">i</span><span class="p">]))</span>
+
+            <span class="c1"># Update line data with tail</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="n">tail_length</span><span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="n">tail_length</span><span class="p">:,</span> <span class="mi">1</span><span class="p">])</span>
+
+            <span class="c1"># Update dot data with current position</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">frame</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">positions</span><span class="p">[</span><span class="n">frame</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">animation</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</pre></div>
+</div>
+<p class="sd-card-text">Eksempel på funksjonskall når du har simulert systemet over tid er</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ani</span> <span class="o">=</span> <span class="n">create_animation</span><span class="p">(</span><span class="n">positions</span><span class="o">=</span><span class="n">posisjoner</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span> <span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span> 
+</pre></div>
+</div>
+<p class="sd-card-text">Det vil vise animasjoner av de 5 innerste legemene i solsystemet.</p>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+
+<span class="k">def</span> <span class="nf">create_animation</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">tail_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">xlim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]))</span>
+    <span class="n">ylim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">positions</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">xlim</span><span class="p">,</span> <span class="n">xlim</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ylim</span><span class="p">,</span> <span class="n">ylim</span><span class="p">))</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+        <span class="n">dot</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">line</span><span class="p">,</span> <span class="n">dot</span><span class="p">))</span>
+
+    <span class="c1"># Initialize tail data</span>
+    <span class="n">tail_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">positions</span><span class="p">[</span><span class="n">frame</span><span class="p">,</span> <span class="n">i</span><span class="p">]))</span>
+
+            <span class="c1"># Update line data with tail</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="n">tail_length</span><span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">tail_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="n">tail_length</span><span class="p">:,</span> <span class="mi">1</span><span class="p">])</span>
+
+            <span class="c1"># Update dot data with current position</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">frame</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">positions</span><span class="p">[</span><span class="n">frame</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">animation</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">animation</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;planetbaner.gif&quot;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="s2">&quot;imagemagick&quot;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">trange</span> <span class="c1"># gir progresjonsbar</span>
+
+<span class="n">n_tidssteg</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="n">n_planeter</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">posisjoner</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_tidssteg</span><span class="p">,</span> <span class="n">n_planeter</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">hastigheter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_tidssteg</span><span class="p">,</span> <span class="n">n_planeter</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">energi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_tidssteg</span><span class="p">,))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="n">n_tidssteg</span><span class="p">):</span>
+    <span class="n">energi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_total_energi</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+    <span class="c1"># Lagre nåværende posisjoner og hastigheter</span>
+    <span class="n">posisjoner</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="n">hastigheter</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="c1"># Regn ut neste posisjon og hastighet</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">velocity_verlet</span><span class="p">(</span>
+        <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+        <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span>
+        <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span>
+        <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span>
+        <span class="n">akselerasjon_fn</span><span class="o">=</span><span class="n">get_akselerasjon</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="o">*</span> <span class="n">dt</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_tidssteg</span><span class="p">)],</span> <span class="n">energi</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tid [år]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energi [AU$^2$/år$^2$ $M_{\odot}$]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+
+
+<span class="c1"># create_animation(posisjoner[::500, :6, :2], tail_length=30)</span>
+<span class="c1"># plt.close()</span>
+<span class="c1"># from IPython.display import HTML</span>
+<span class="c1"># HTML(animation.to_html5_video())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/10000 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 10000/10000 [00:06&lt;00:00, 1525.72it/s]
+</pre></div>
+</div>
+<img alt="../../../_images/b3c72821bcf73c344c8cddcea7e285fa9e7e6969eab754cf953077b9e62f2e8f.png" src="../../../_images/b3c72821bcf73c344c8cddcea7e285fa9e7e6969eab754cf953077b9e62f2e8f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">les_data</span><span class="p">(</span><span class="n">filnavn</span><span class="p">):</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+
+    <span class="n">antall_planeter</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">antall_planeter</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">antall_planeter</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">antall_planeter</span><span class="p">,))</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">planet</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+
+        <span class="n">vx</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vx&quot;</span><span class="p">)</span>
+        <span class="n">vy</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vy&quot;</span><span class="p">)</span>
+        <span class="n">vz</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vz&quot;</span><span class="p">)</span>
+
+        <span class="n">masse</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;masse&quot;</span><span class="p">)</span>
+
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+        
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vx</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">vz</span>
+
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">masse</span>
+
+    <span class="n">navn</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">navn</span>
+
+    
+<span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">navn</span> <span class="o">=</span> <span class="n">les_data</span><span class="p">(</span><span class="n">filnavn</span><span class="o">=</span><span class="s2">&quot;solsystem_data.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">get_akselerasjon</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+    <span class="c1"># Hvor mange dimensjoner er det for akselerasjonen til én planet?</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span> 
+    
+    <span class="c1"># regn ut akselerasjonen pga alle de andre planetene</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="c1"># bare regn ut når vi ser på et annet legeme enn legeme i</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+
+            <span class="c1"># regn ut differansevektoren r_i - r_j</span>
+            <span class="n">dr</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            
+            <span class="c1"># Regn ut lengden av differansevektoren r_i - r_j</span>
+            <span class="n">dr_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dr</span><span class="p">)</span>
+
+            <span class="c1"># Regn ut akselerasjonen</span>
+            <span class="n">a</span> <span class="o">-=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">dr</span> <span class="o">/</span> <span class="n">dr_norm</span><span class="o">**</span><span class="mi">3</span>
+    
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_kinetisk_energi</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+        <span class="c1"># regn ut farten til legeme i</span>
+        <span class="n">vi</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">vi_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vi</span><span class="p">)</span>
+
+        <span class="c1"># regn ut kinetisk energi til legeme i</span>
+        <span class="n">K</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">vi_norm</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">K</span>
+
+
+<span class="k">def</span> <span class="nf">get_potensiell_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+                <span class="c1"># regn ut differansevektoren r_i - r_j</span>
+                <span class="n">dr</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                
+                <span class="c1"># Regn ut lengden av differansevektoren r_i - r_j</span>
+                <span class="n">dr_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dr</span><span class="p">)</span>
+
+                <span class="c1"># Regn ut potensiell energi</span>
+                <span class="n">V</span> <span class="o">-=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">dr_norm</span>
+    
+    <span class="k">return</span> <span class="n">V</span>
+
+
+<span class="k">def</span> <span class="nf">get_total_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">get_kinetisk_energi</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">get_potensiell_energi</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">K</span> <span class="o">+</span> <span class="n">V</span>
+    
+    <span class="k">return</span> <span class="n">E</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">velocity_verlet</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">akselerasjon_fn</span><span class="p">):</span>
+    <span class="n">a_gammel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="n">a_gammel</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">akselerasjon_fn</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+        <span class="c1"># oppdater posisjonen</span>
+    <span class="n">r</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">a_gammel</span> <span class="o">*</span> <span class="n">dt</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="c1"># Regn ut akselerasjon med nye posisjoner</span>
+    <span class="n">a_ny</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)):</span>
+        <span class="c1"># regn ut akselerasjonen</span>
+        <span class="n">a_ny</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">akselerasjon_fn</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="c1"># Oppdater hastighetene</span>
+    <span class="n">v</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a_gammel</span> <span class="o">+</span> <span class="n">a_ny</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="c1"># Eksempel på funksjonskall for å regne ut nye posisjoner og hastigheter</span>
+<span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">velocity_verlet</span><span class="p">(</span>
+    <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+    <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span>
+    <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span>
+    <span class="n">dt</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+    <span class="n">akselerasjon_fn</span><span class="o">=</span><span class="n">get_akselerasjon</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "reneaas/vgs_programmering",
+            ref: "main/",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/fysikk/celestial_mechanics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="planetbaner.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Simulere planetbaner (Celestmekanikk)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="three_body_problem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Trelegemeproblemet</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitasjonsloven-fra-ett-legeme-pa-et-annet">Gravitasjonsloven fra ett legeme på et annet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-mer-generell-gravitasjonslov">En mer generell gravitasjonslov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-2-lov">Newtons 2.lov</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet-algoritmen">Velocity Verlet-algoritmen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astronomiske-enheter">Astronomiske enheter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-last-inn-datasettet">Oppgave 1: Last inn datasettet</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-laste-ned-datasettet">Hvordan laste ned datasettet</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-regn-ut-akselerasjonen">Oppgave 2: regn ut akselerasjonen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-regne-ut-energien-til-systemet">Oppgave 3: regne ut energien til systemet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-regn-ut-neste-posisjon-og-hastighet">Oppgave 4: regn ut neste posisjon og hastighet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-sett-alt-sammen-og-kjor-simuleringen">Oppgave 5: Sett alt sammen og kjør simuleringen</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By René Ask
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
