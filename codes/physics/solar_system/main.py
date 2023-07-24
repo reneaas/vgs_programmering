@@ -46,8 +46,20 @@ def make_kinetic_energy_fn(m: np.ndarray) -> callable:
     return get_kinetic_energy_fn
 
 
+def make_euler_cromer_fn(acceleration_fn: callable, dt: float) -> callable:
+    def forward(r, v, m) -> tuple[np.ndarray]:
+        a = np.zeros(shape=r.shape)
+        for i in range(len(r)):
+            a[i] = acceleration_fn(r=r, m=m, i=i)
 
-def make_verlet_fn(acceleration_fn: callable, dt: int) -> callable:
+        v = v + a * dt
+        r = r + v * dt
+
+        return r, v
+
+    return forward
+
+def make_verlet_fn(acceleration_fn: callable, dt: float) -> callable:
     def forward(r, v, m) -> tuple[np.ndarray]:
 
         # First step in velocity Verlet.
@@ -73,12 +85,6 @@ def get_data() -> tuple[np.ndarray]:
     fname = "../../../datasets/solar_system/solsystem_data.json"
     with open(fname, "r") as infile:
         solsystem_data = json.load(infile)
-    # print(solsystem_data)
-
-    num_timesteps = 1000_0
-    positions = np.zeros(shape=(num_timesteps, len(solsystem_data), 3))
-    velocities = np.zeros(shape=(num_timesteps, len(solsystem_data), 3))
-    G = 4 * np.pi**2
 
     r = np.zeros(shape=(len(solsystem_data), 3))
     v = np.zeros(shape=(len(solsystem_data), 3))
@@ -92,11 +98,12 @@ def get_data() -> tuple[np.ndarray]:
         v[i, 1] = solsystem_data.get(name).get("vy")
         v[i, 2] = solsystem_data.get(name).get("vz")
         m[i] = solsystem_data.get(name).get("masse")
+
     names = list(solsystem_data.keys())
     return r, v, m, names
 
 
-def get_data_three_body():
+def get_data_three_body() -> tuple[np.ndarray]:
     solar_mass = 2e30
     mars_mass = 0.6e24
     earth_mass = 6e24
@@ -112,74 +119,86 @@ def get_data_three_body():
 
     return r, v, m, names
 
-num_timesteps = int(1e5)
-dt = 1e-4
+def main(num_timesteps: int, dt: float):
 
-# r, v, m, names = get_data()
-r, v, m, names = get_data_three_body()
+    r, v, m, names = get_data()
+    # r, v, m, names = get_data_three_body()
 
-positions = np.zeros(shape=(num_timesteps, len(r), 3))
-velocities = np.zeros_like(positions)
+    positions = np.zeros(shape=(num_timesteps, len(r), 3))
+    velocities = np.zeros_like(positions)
 
-positions[0, ...] = r[:]
-velocities[0, ...] = v[:]
+    positions[0, ...] = r[:]
+    velocities[0, ...] = v[:]
 
-# Make necessary functions
-get_acceleration_fn = make_acceleration_fn(G=4 * np.pi**2)
-get_acceleration_fn = numba.njit(get_acceleration_fn)
-forward = make_verlet_fn(acceleration_fn=get_acceleration_fn, dt=dt)
-forward = numba.njit(forward)
-get_potential_energy_fn = make_potential_energy_fn(m=m, G=4 * np.pi**2)
-get_potential_energy_fn = numba.njit(get_potential_energy_fn)
-get_kinetic_energy_fn = make_kinetic_energy_fn(m=m)
+    # Make necessary functions
+    # Acceleration function
+    get_acceleration_fn = make_acceleration_fn(G=4 * np.pi**2)
+    get_acceleration_fn = numba.njit(get_acceleration_fn)
 
+    # Forward function
+    # forward = make_verlet_fn(acceleration_fn=get_acceleration_fn, dt=dt)
+    forward = make_euler_cromer_fn(acceleration_fn=get_acceleration_fn, dt=dt)
+    forward = numba.njit(forward)
 
-energies = np.zeros(shape=num_timesteps)
-
-energies[0] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
-for t in trange(num_timesteps - 1):
-
-    # Calculate energy at current timestep
-    energies[t] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
-
-    # Calculate next positions
-    r, v = forward(r=r, v=v, m=m)
-
-    # Store positions
-    positions[t + 1, ...] = r[:]
-    velocities[t + 1, ...] = v[:]
-
-energies[-1] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
-    
+    # Energy functions
+    get_potential_energy_fn = make_potential_energy_fn(m=m, G=4 * np.pi**2)
+    get_potential_energy_fn = numba.njit(get_potential_energy_fn)
+    get_kinetic_energy_fn = make_kinetic_energy_fn(m=m)
 
 
+    # Create energy array and set initial energy
+    energies = np.zeros(shape=num_timesteps)
+    energies[0] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
 
-# print(positions.shape)
-# print(positions[::50, ..., :2].shape)
-plt.figure(figsize=(8, 5))
-plt.plot([t * dt for t in range(len(positions))], energies)
-plt.xlabel("tid [jordår]")
-plt.ylabel(r"energi [$M_{\odot}$ AU$^2$ / år$^2$]")
-plt.grid(True)
-# plt.savefig("./figures/solar_system.pdf")
-plt.savefig("./figures/energi_three_body.pdf")
-plt.show()
+    # Simulate trajectories
+    for t in trange(1, num_timesteps):
 
+        # Calculate next position and velocity
+        r, v = forward(r=r, v=v, m=m)
 
-ani = create_animation_2d(positions[::500, :, :2], names=names, tail_length=30)
-ani.save("./animations/three_body_system_2d.gif", fps=60)
+        # Calculate energy of the new state
+        energies[t] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
 
-# ani = create_animation_2d(positions[::100, :-4, :2], names=names[:-4], tail_length=30)
-# ani.save("./animations/solsystemet_2d.gif", fps=60)
-# plt.close()
+        # Store new state
+        positions[t, ...] = r[:]
+        velocities[t, ...] = v[:]
 
-ani = create_animation_3d(positions[::500, :, :], names=names, tail_length=30)
-ani.save("./animations/three_body_system_3d.gif", fps=60)
-
-# ani = create_animation_3d(positions[::100, :-4, :], names=names[:-4], tail_length=30)
-# ani.save("./animations/solsystemet_3d.gif", fps=60)
-# plt.close()
+        
 
 
 
+    # print(positions.shape)
+    # print(positions[::50, ..., :2].shape)
+    plt.figure(figsize=(10, 5))
+    plt.plot([t * dt for t in range(len(positions))], energies)
+    plt.xlabel("tid [jordår]")
+    plt.ylabel(r"energi [$M_{\odot}$ AU$^2$ / år$^2$]")
+    plt.grid(True)
+    plt.savefig("./figures/solar_system_euler_cromer.pdf")
+    # plt.savefig("./figures/energi_three_body.pdf")
+    plt.show()
+
+
+    # ani = create_animation_2d(positions[::500, :, :2], names=names, tail_length=30)
+    # ani.save("./animations/three_body_system_2d.gif", fps=60)
+    # plt.close()
+    # ani = create_animation_3d(positions[::500, :, :], names=names, tail_length=30)
+    # ani.save("./animations/three_body_system_3d.gif", fps=60)
+    # plt.close()
+
+    ani = create_animation_2d(positions=positions[::100, :6, :2], names=names[:6], tail_length=30)
+    progress_callback = lambda current_frame, total_frames: print(f"Lager 2d-animasjon: {current_frame / total_frames * 100:.1f}%", end="\r")
+    ani.save("./animations/solsystemet_2d_euler_cromer.gif", fps=60, progress_callback=progress_callback)
+    plt.close()
+    print("2d-animasjon ferdig: ")
+
+    ani = create_animation_3d(positions=positions[::100, :6, :], names=names[:6], tail_length=30)
+    progress_callback = lambda current_frame, total_frames: print(f"Lager 3d-animasjon: {current_frame / total_frames * 100:.1f}%", end="\r")
+    ani.save("./animations/solsystemet_3d_euler_cromer.gif", fps=60, progress_callback=progress_callback)
+    plt.close()
+    print("3d-animasjon ferdig: ")
+
+
+if __name__ == "__main__":
+    main(num_timesteps=int(1e6), dt=1e-4)
 

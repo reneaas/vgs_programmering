@@ -59,7 +59,14 @@ def create_animation_2d(positions, names, tail_length=10, interval=50):
     ax.legend(dots, names, loc='upper right', facecolor='black', fontsize=10, framealpha=0.8)
     plt.setp(plt.gca().get_legend().get_texts(), color='w')  # Set legend text color to white
 
-    animation = FuncAnimation(fig, update, frames=T, init_func=init, interval=interval, blit=False)
+    animation = FuncAnimation(
+        fig, 
+        update, 
+        frames=T, 
+        init_func=init, 
+        interval=interval, 
+        blit=False,
+    )
 
     # plt.show()
 
@@ -128,7 +135,19 @@ def create_animation_3d(positions, names, tail_length=10, interval=50):
     ax.legend(dots, names, loc='upper right', facecolor='black', fontsize=10, framealpha=0.8)
     plt.setp(plt.gca().get_legend().get_texts(), color='w')  # Set legend text color to white
 
-    animation = FuncAnimation(fig, update, frames=T, init_func=init, interval=interval, blit=False, repeat=True, repeat_delay=8)
+    progress_callback = lambda current_frame, total_frames: print(f"Progress: {current_frame / total_frames * 100:.2f}%")
+    animation = FuncAnimation(
+        fig, 
+        update, 
+        frames=T, 
+        init_func=init, 
+        interval=interval, 
+        blit=False,
+        repeat=True,
+        repeat_delay=8,
+    )
+
+    # animation = FuncAnimation(fig, update, frames=T, init_func=init, interval=interval, blit=False, repeat=True, repeat_delay=8)
 
     # plt.show()
 
