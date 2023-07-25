@@ -503,6 +503,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
 </ul>
 </li>
 </ul>
@@ -1204,7 +1205,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-6">
 <h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
-<p>Et <em>skuddår</em> har én dag lenger enn et vanlig år som skyldes at et jordår (et omløp rundt sola) i virkeligheten er ca. 365.25 dager. Hvert fjerde år, ligger vi derfor ca. én dag etter og må tar igjen dette ved å legge til en ekstra dag i februar.</p>
+<p>Den Gregorianske kalenderen (vår kalender) ble innført i 1582 av pave Gregor XIII. I denne kalenderen dukker det opp <em>skuddår</em> som har én dag lenger enn et vanlig år som skyldes at et jordår (et omløp rundt sola) i virkeligheten er ca. 365.25 dager. Hvert fjerde år, ligger vi derfor ca. én dag etter og må tar igjen dette ved å legge til en ekstra dag i februar.</p>
 <p>For å sjekke om et år er et skuddår, kan vi sjekke følgende:</p>
 <ul class="simple">
 <li><p>Hvis året er delelig med 4, men <em>ikke</em> med 100, er det et skuddår.</p></li>
@@ -1342,6 +1343,152 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </ul>
 </div>
 </details></section>
+<section id="oppgave-8">
+<h3>Oppgave 8<a class="headerlink" href="#oppgave-8" title="Permalink to this heading">#</a></h3>
+<p>Matematisk institutt ved Universitet i Oslo bruker følgende veiledende grenser når de setter karakterer ved eksamener i matematiske fag:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Poeng</p></th>
+<th class="head"><p>Karakter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>92 - 100</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>77 - 91</p></td>
+<td><p>B</p></td>
+</tr>
+<tr class="row-even"><td><p>58 - 76</p></td>
+<td><p>C</p></td>
+</tr>
+<tr class="row-odd"><td><p>46 - 57</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>40 - 45</p></td>
+<td><p>E</p></td>
+</tr>
+<tr class="row-odd"><td><p>0 - 39</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>Skriv et program som tar inn antall poeng fra brukeren med <code class="docutils literal notranslate"><span class="pre">input</span></code>-funksjonen og skriver ut hvilken karakter det tilsvarer.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn poengsummen din: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="mi">92</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="k">elif</span> <span class="mi">77</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">91</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+<span class="k">elif</span> <span class="mi">58</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">76</span><span class="p">:</span> 
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+<span class="k">elif</span> <span class="mi">46</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">57</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
+<span class="k">elif</span> <span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">45</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;E&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn poengsummen din: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">92</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">77</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">58</span><span class="p">:</span> 
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">46</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">40</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;E&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
+
+<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> 
+    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Den enkleste løsningen her blir:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn poengsummen din: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">92</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">77</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">58</span><span class="p">:</span> 
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">46</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
+<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">40</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;E&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Vi kunne også skrevet en kode som mer tydelig viser hva karaktergrensene er med:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn poengsummen din: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="mi">92</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="k">elif</span> <span class="mi">77</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">91</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+<span class="k">elif</span> <span class="mi">58</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">76</span><span class="p">:</span> 
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+<span class="k">elif</span> <span class="mi">46</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">57</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
+<span class="k">elif</span> <span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">45</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;E&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Men dette er ikke nødvendig siden vi bruker <code class="docutils literal notranslate"><span class="pre">elif</span></code>-tester. De sjekker <em>kun</em> dersom testen før den ikke ble oppfylt. Derfor, dersom <code class="docutils literal notranslate"><span class="pre">poeng</span> <span class="pre">&gt;=</span> <span class="pre">92</span></code> er oppfylt, sjekker man ikke om <code class="docutils literal notranslate"><span class="pre">poeng</span> <span class="pre">&gt;=</span> <span class="pre">77</span></code> er oppfylt fordi <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken ble kjørt.</p>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -1436,6 +1583,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
 </ul>
 </li>
 </ul>
