@@ -489,10 +489,18 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-4">Underveisoppgave 4</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-tester"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-moms-pa-varer">Eksempel: moms på varer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekke-flere-betingelser">Sjekke flere betingelser</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-5">Underveisoppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-6">Underveisoppgave 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-7">Underveisoppgave 7</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-tester"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-moms-pa-varer">Eksempel: moms på varer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-8">Underveisoppgave 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-9">Underveisoppgave 9</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
@@ -701,6 +709,79 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
 </div>
 </details></section>
 </section>
+<section id="sjekke-flere-betingelser">
+<h2>Sjekke flere betingelser<a class="headerlink" href="#sjekke-flere-betingelser" title="Permalink to this heading">#</a></h2>
+<p>Når vi har flere betingelser vi ønsker å sjekke, gir Python følgende muligheter:</p>
+<ul class="simple">
+<li><p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">and</span></code> for å sjekke om flere betingelser er oppfylt <strong>samtidig</strong>.</p></li>
+<li><p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">or</span></code> for å sjekke om <strong>minst én</strong> av flere betingelser er oppfylt.</p></li>
+<li><p>Vi kan sette sammen betingelser av typen <span class="math notranslate nohighlight">\(a \leq b &lt; c\)</span>.</p></li>
+</ul>
+<p>Vi kan kjede sammen flere betingelser i kombinasjon med enten <code class="docutils literal notranslate"><span class="pre">and</span></code> eller <code class="docutils literal notranslate"><span class="pre">or</span></code>.</p>
+<section id="eksempel-1">
+<h3>Eksempel 1:<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi skal sjekke om <span class="math notranslate nohighlight">\(a\)</span> både er større enn <span class="math notranslate nohighlight">\(b\)</span> og mindre enn <span class="math notranslate nohighlight">\(c\)</span>. Matematisk betyr dette at <span class="math notranslate nohighlight">\(b &lt; a &lt; c\)</span> eller at <span class="math notranslate nohighlight">\(b &lt; a\)</span> og <span class="math notranslate nohighlight">\(a &lt; c\)</span>. I Python kan vi skrive dette som</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">c</span> <span class="c1"># Alternativ 1</span>
+
+<span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">c</span> <span class="c1"># Alternativ 2</span>
+</pre></div>
+</div>
+<p>Alternativ 1 gjør akkurat det samme som alternativ 2, men <code class="docutils literal notranslate"><span class="pre">and</span></code> er gjemt bort ved at Python sjekker betingelsene <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> parvis og gir <code class="docutils literal notranslate"><span class="pre">True</span></code> bare hvis begge er oppfylt samtidig.</p>
+</section>
+<section id="eksempel-2">
+<h3>Eksempel 2:<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
+<p>Tenk deg at vi ønsker å sjekke om <span class="math notranslate nohighlight">\(a\)</span> er mindre enn <span class="math notranslate nohighlight">\(b\)</span> eller <span class="math notranslate nohighlight">\(c\)</span>. Dette er effektivt det samme som å si at <span class="math notranslate nohighlight">\(a &lt; b\)</span> eller <span class="math notranslate nohighlight">\(a &lt; c\)</span>. Vi kan skrive en samlet betingelse for de to med <code class="docutils literal notranslate"><span class="pre">or</span></code> mellom dem:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">c</span>
+</pre></div>
+</div>
+</section>
+<section id="underveisoppgave-5">
+<h3>Underveisoppgave 5<a class="headerlink" href="#underveisoppgave-5" title="Permalink to this heading">#</a></h3>
+<p>Dersom vi har at <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">-3</span></code> og <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">3</span></code>, hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">False</span></code> og <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> være <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi begge betingelser ikke er oppfylt samtidig.</p>
+</div>
+</details></section>
+<section id="underveisoppgave-6">
+<h3>Underveisoppgave 6<a class="headerlink" href="#underveisoppgave-6" title="Permalink to this heading">#</a></h3>
+<p>Dersom vi har <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code> og <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">-1</span></code>, hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code> vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> være <code class="docutils literal notranslate"><span class="pre">True</span></code> siden én av de to betingelsene er sanne.</p>
+</div>
+</details></section>
+<section id="underveisoppgave-7">
+<h3>Underveisoppgave 7<a class="headerlink" href="#underveisoppgave-7" title="Permalink to this heading">#</a></h3>
+<p>Dersom vi har <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code> og <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">-1</span></code>,</p>
+<ol class="arabic simple">
+<li><p>Hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>?</p></li>
+<li><p>Kan du skrive om betingelsen til to betingelser ved å bruke <code class="docutils literal notranslate"><span class="pre">and</span></code> eller <code class="docutils literal notranslate"><span class="pre">or</span></code>?</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> blir <code class="docutils literal notranslate"><span class="pre">False</span></code> siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> er <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p class="sd-card-text">Vi kan skrive om <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> til <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> siden vi må sjekke begge betingelser samtidig.</p></li>
+</ol>
+</div>
+</details></section>
+</section>
 <section id="if-elif-else-tester">
 <h2><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester<a class="headerlink" href="#if-elif-else-tester" title="Permalink to this heading">#</a></h2>
 <p>Ofte ønsker vi å skrive kode der hvilken del av koden vi kjører <strong>ikke</strong> bare er to-delt, men det finnes flere betingelser som gjør at andre deler av koden skal kjøres. Da kan vi bruke <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester.</p>
@@ -781,8 +862,8 @@ flowchart TD
     H --> I[Ferdig]
 </div></div>
 </section>
-<section id="underveisoppgave-5">
-<h3>Underveisoppgave 5<a class="headerlink" href="#underveisoppgave-5" title="Permalink to this heading">#</a></h3>
+<section id="underveisoppgave-8">
+<h3>Underveisoppgave 8<a class="headerlink" href="#underveisoppgave-8" title="Permalink to this heading">#</a></h3>
 <p>Hva blir verdien til <code class="docutils literal notranslate"><span class="pre">y</span></code> i koden under?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.5</span>
 <span class="linenos">2</span>
@@ -831,8 +912,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </section>
-<section id="underveisoppgave-6">
-<h3>Underveisoppgave 6<a class="headerlink" href="#underveisoppgave-6" title="Permalink to this heading">#</a></h3>
+<section id="underveisoppgave-9">
+<h3>Underveisoppgave 9<a class="headerlink" href="#underveisoppgave-9" title="Permalink to this heading">#</a></h3>
 <p>Tenk deg at du har den uferdige koden</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="linenos">2</span>
@@ -1525,10 +1606,18 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-4">Underveisoppgave 4</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-tester"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-moms-pa-varer">Eksempel: moms på varer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekke-flere-betingelser">Sjekke flere betingelser</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-5">Underveisoppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-6">Underveisoppgave 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-7">Underveisoppgave 7</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-tester"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-moms-pa-varer">Eksempel: moms på varer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-8">Underveisoppgave 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underveisoppgave-9">Underveisoppgave 9</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
