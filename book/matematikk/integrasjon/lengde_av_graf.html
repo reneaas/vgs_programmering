@@ -485,17 +485,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-en-graf-med-den-deriverte">Lengden av en graf med den deriverte</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-en-parametrisert-kurve">Lengden av en parametrisert kurve</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-1-linjeelementer-delta-s">Metode 1: Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritme-summere-linjeelementer-delta-s">Algoritme: Summere Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4">Eksempel 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5">Eksempel 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-2-formel-for-lengde-av-graf">Metode 2: Formel for lengde av graf</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-6">Eksempel 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-7-sykloide">Eksempel 7: Sykloide</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
@@ -506,6 +499,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
 </ul>
 </li>
 </ul>
@@ -622,75 +616,6 @@ g(x) = \sqrt{1 + \cos^2(x)}, \quad x \in [0, 2\pi].
 </div>
 </section>
 </section>
-<section id="lengden-av-en-graf-med-den-deriverte">
-<h2>Lengden av en graf med den deriverte<a class="headerlink" href="#lengden-av-en-graf-med-den-deriverte" title="Permalink to this heading">#</a></h2>
-<p>Dersom vi kan kjenner den deriverte <span class="math notranslate nohighlight">\(f'(x)\)</span> eller kan estimere verdien til den, kan vi regne ut lengden av en graf på en annet måte. La oss anta vi har en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> på et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> og ønsker å regne ut lengden til grafen over intervallet. Da kan man i prinsippet regne ut lengden eksakt med formelen</p>
-<div class="math notranslate nohighlight">
-\[
-L = \int\limits_a^b \sqrt{1 + f'(x)^2} \, dx.
-\]</div>
-<p>Med denne formelen har vi en funksjon <span class="math notranslate nohighlight">\(g(x) = \sqrt{1 + f'(x)^2}\)</span> som vi kan integrere med numerisk integrasjon slik vi har så i tidligere seksjoner.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Utledning av formelen for lengden av en graf<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Utledningen av formelen går som følger. Et infinitesimalt linjeelement i kartesiske koordinater er gitt ved <span class="math notranslate nohighlight">\(ds = \sqrt{dx^2 + dy^2}\)</span> (i praksis Pytagoras’ setning). Lengden av grafen er definert som integralet av <span class="math notranslate nohighlight">\(ds\)</span> parametrisert med <span class="math notranslate nohighlight">\(x\)</span> over intervallet <span class="math notranslate nohighlight">\([a,b]\)</span>, altså</p>
-<div class="math notranslate nohighlight">
-\[
-L = \int_a^b  ds(x) = \int_a^b \sqrt{dx + dy(x)^2} = \int_a^b \sqrt{(1 + (dy/dx)^2) dx^2} = \int_a^b \sqrt{1 + (dy/dx)^2} \, dx,
-\]</div>
-<p class="sd-card-text">men siden <span class="math notranslate nohighlight">\(dy/dx = f'(x)\)</span>, så gir dette oss</p>
-<div class="math notranslate nohighlight">
-\[
-L = \int_a^b \sqrt{1 + f'(x)^2} \, dx.
-\]</div>
-</div>
-</details><section id="eksempel-3">
-<h3>Eksempel 3<a class="headerlink" href="#eksempel-3" title="Permalink to this heading">#</a></h3>
-<p>La oss integrere</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^2, \qquad x \in [1, 4],
-\]</div>
-<p>ved å bruke den nye formelen med midtpunktsmetoden med <span class="math notranslate nohighlight">\(n = 100\)</span> intervaller.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> 
-
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
-
-<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">h</span>
-    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">lengde</span> <span class="o">*=</span> <span class="n">h</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 15.34
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 <section id="lengden-av-en-parametrisert-kurve">
 <h2>Lengden av en parametrisert kurve<a class="headerlink" href="#lengden-av-en-parametrisert-kurve" title="Permalink to this heading">#</a></h2>
 <p>Vi skal se på hvordan vi kan regne ut lengden til parametriserte kurver i både to- og tre dimensjoner. Det viser seg at teorien er akkurat den samme for de to tilfellene, men at det i tre dimensjoner dukker opp ett ekstra ledd for <span class="math notranslate nohighlight">\(z\)</span>-retningen noen av likningene.
@@ -701,8 +626,8 @@ Uansett skal vi tenke oss at vi har parametriserte vektorer på formen</p>
 \\
 \vec{r}(t) &amp; = \left[x(t), y(t), z(t)\right] \quad \text{(3 dimensjoner)}. \\
 \end{align*}\]</div>
-<section id="metode-1-linjeelementer-delta-s">
-<h3>Metode 1: Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span><a class="headerlink" href="#metode-1-linjeelementer-delta-s" title="Permalink to this heading">#</a></h3>
+<section id="algoritme-summere-linjeelementer-delta-s">
+<h3>Algoritme: Summere Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span><a class="headerlink" href="#algoritme-summere-linjeelementer-delta-s" title="Permalink to this heading">#</a></h3>
 <p>Denne metoden er i stor grad uendret. Den store forskjellen er vi nå ikke direkte setter verdiene til <span class="math notranslate nohighlight">\(x\)</span>, men lar heller parameteren <span class="math notranslate nohighlight">\(t\)</span> bestemme hva verdien til <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> er. I tillegg vil den bestemme hva verdien til <span class="math notranslate nohighlight">\(z\)</span> er når vi jobber i tre dimensjoner. Vi har følgende formler for å løse problemet:</p>
 <ol class="arabic simple">
 <li><p>I to dimensjoner er linjeelementet <span class="math notranslate nohighlight">\(\Delta s\)</span> gitt ved <span class="math notranslate nohighlight">\(\Delta s_i = \sqrt{\Delta x_i^2 + \Delta y_i^2}.\)</span>
@@ -717,8 +642,8 @@ L = \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n,
 \]</div>
 <p>akkurat som før.</p>
 </section>
-<section id="eksempel-4">
-<h3>Eksempel 4<a class="headerlink" href="#eksempel-4" title="Permalink to this heading">#</a></h3>
+<section id="eksempel-3">
+<h3>Eksempel 3<a class="headerlink" href="#eksempel-3" title="Permalink to this heading">#</a></h3>
 <p>En arkimedisk spiral (oppkalt etter den greske matematikeren Arkimedes fra antikkens Hellas) er en kurve som er vist i <a class="reference internal" href="#archimedean-spiral"><span class="std std-numref">Fig. 11</span></a>.</p>
 <figure class="align-default" id="archimedean-spiral">
 <img alt="../../../_images/archimedean_spiral.pdf" src="../../../_images/archimedean_spiral.pdf" />
@@ -770,8 +695,8 @@ L = \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n,
 </div>
 </div>
 </section>
-<section id="eksempel-5">
-<h3>Eksempel 5<a class="headerlink" href="#eksempel-5" title="Permalink to this heading">#</a></h3>
+<section id="eksempel-4">
+<h3>Eksempel 4<a class="headerlink" href="#eksempel-4" title="Permalink to this heading">#</a></h3>
 <p>En heliks er en kurve som beveger seg langs randen av en sylinder. Et eksempel på der denne kurven dukker opp i naturen er når ladde partikler fra solstormer følger jordens magnetfelt inn mot polene! I <a class="reference internal" href="#helix"><span class="std std-numref">Fig. 12</span></a> ser vi en skisse av en heliks.</p>
 <figure class="align-default" id="helix">
 <img alt="../../../_images/helix.pdf" src="../../../_images/helix.pdf" />
@@ -827,112 +752,6 @@ L = \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 44.43
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="metode-2-formel-for-lengde-av-graf">
-<h3>Metode 2: Formel for lengde av graf<a class="headerlink" href="#metode-2-formel-for-lengde-av-graf" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at vi har en parametrisert kurve <span class="math notranslate nohighlight">\(\vec{r}(t)\)</span> i to eller tre dimensjoner. For enkelthets skyld kan vi tenke på <span class="math notranslate nohighlight">\(\vec{r}(t)\)</span> som posisjonen til en partikkel over tid (men formelen gjelder uansett hva slags tolkning vi gir <span class="math notranslate nohighlight">\(\vec{r}(t)\)</span>). Anta vi ønsker å finne avstanden partikkelen har tilbakelagt mellom to tidspunkter <span class="math notranslate nohighlight">\(t = a\)</span> og <span class="math notranslate nohighlight">\(t = b\)</span>. Lengden av kurven mellom disse to tidspunktene er gitt ved integralet</p>
-<div class="math notranslate nohighlight">
-\[
-L = \int\limits_a^b \left|\vec{r}\ '(t) \right| dt = \int\limits_a^b \left| \vec{v}(t) \right| dt,
-\]</div>
-<p>der <span class="math notranslate nohighlight">\(\vec{v}(t) = \vec{r} \ '(t)\)</span> er hastighetsvektoren til partikkelen over tid. Du kan tenke på <span class="math notranslate nohighlight">\(|\vec{v}(t)| \, dt\)</span> som en liten lengde vi får vi å gange farten til partikkelen med et lite tidsintervall <span class="math notranslate nohighlight">\(dt\)</span>. Vi summerer opp alle disse små lengdene for å finne den totale lengden av kurven.</p>
-</section>
-<section id="eksempel-6">
-<h3>Eksempel 6<a class="headerlink" href="#eksempel-6" title="Permalink to this heading">#</a></h3>
-<p>La oss finne lengden av kurven parametrisert med</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{r}(t) = \left[ t, \frac{1}{2}t^2 \right], \quad t \in [0, 1].
-\]</div>
-<p>Hastighetsvektoren er</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{v}'(t) = \left[1, t\right],
-\]</div>
-<p>som gir farten</p>
-<div class="math notranslate nohighlight">
-\[
-v(t) = |\vec{v}(t)| = \sqrt{1 + t^2}.
-\]</div>
-<p>Vi kan integrere farten over tid med midtpunktsmetoden for å finne lengden av kurven:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
-
-<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 1.15
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="eksempel-7-sykloide">
-<h3>Eksempel 7: Sykloide<a class="headerlink" href="#eksempel-7-sykloide" title="Permalink to this heading">#</a></h3>
-<p>En sykloide er kurven vi får dersom vi fester en penn til et hjul som ruller langs en rett linje.</p>
-<figure class="align-default" id="cycloid">
-<img alt="../../../_images/Cycloid.gif" src="../../../_images/Cycloid.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Animasjon av hvordan kurven til en sykloide dannes. Den rød kurven er sykloiden. Laget av Zorgit, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=4552689">Wikimedia Commons</a>.</span><a class="headerlink" href="#cycloid" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Kurven med et hjul som har radius lik 1, og som ruller langs den positive <span class="math notranslate nohighlight">\(x\)</span>-aksen, kan beskrives med parametriseringen</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{r}(t) = \left[(t - \sin(t)), (1 - \cos(t))\right],  \qquad t \in [0, 6\pi],
-\]</div>
-<p>der hjulet gjør tre fulle rotasjoner (én rotasjon per <span class="math notranslate nohighlight">\(2\pi\)</span>). Hastighetsvektoren til kurven er gitt ved</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{v}(t) = \left[1 - \cos(t), \sin(t)\right], \qquad t \in [0, 6\pi].
-\]</div>
-<p>Farten til langs kurven er da</p>
-<div class="math notranslate nohighlight">
-\[
-v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
-\]</div>
-<p>Vi kan finne lengden av denne kurven ved å bruke formelen for lengden av en kurve med midtpunktsmetoden slik:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># steglengde dt = Δt</span>
-
-<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 24.00
 </pre></div>
 </div>
 </div>
@@ -1053,11 +872,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 \[
 f(x) = 2.5x^3 - 34.7x^2 + 120x + 530, \quad x \in [0, 10],
 \]</div>
-<p>der <span class="math notranslate nohighlight">\(x\)</span> er målt i antall kilometer i luftlinje og <span class="math notranslate nohighlight">\(f\)</span> beskriver høyden i meter over havet. I <a class="reference internal" href="#ski-race"><span class="std std-numref">Fig. 14</span></a>` ser du en skisse av høydeprofilen.</p>
+<p>der <span class="math notranslate nohighlight">\(x\)</span> er målt i antall kilometer i luftlinje og <span class="math notranslate nohighlight">\(f\)</span> beskriver høyden i meter over havet. I <a class="reference internal" href="#ski-race"><span class="std std-numref">Fig. 13</span></a>` ser du en skisse av høydeprofilen.</p>
 <figure class="align-default" id="ski-race">
 <img alt="../../../_images/ski_race.pdf" src="../../../_images/ski_race.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Skisse av høydeprofilen til en VM-løypa. Løypa er 10 km lang i luftlinje. <span class="math notranslate nohighlight">\(x\)</span>-aksen er målt i kilometer og <span class="math notranslate nohighlight">\(y\)</span>-aksen er målt i meter over havet.</span><a class="headerlink" href="#ski-race" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Skisse av høydeprofilen til en VM-løypa. Løypa er 10 km lang i luftlinje. <span class="math notranslate nohighlight">\(x\)</span>-aksen er målt i kilometer og <span class="math notranslate nohighlight">\(y\)</span>-aksen er målt i meter over havet.</span><a class="headerlink" href="#ski-race" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Bruk en valgfri metode til å estimere lengden av løypa i meter.</p>
@@ -1164,6 +983,63 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-4">
 <h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>En <em>sykloide</em> er kurven vi får dersom vi fester en penn til et hjul som ruller langs en rett linje.</p>
+<figure class="align-default" id="cycloid">
+<img alt="../../../_images/Cycloid.gif" src="../../../_images/Cycloid.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Animasjon av hvordan kurven til en sykloide dannes. Den rød kurven er sykloiden. Laget av Zorgit, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=4552689">Wikimedia Commons</a>.</span><a class="headerlink" href="#cycloid" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Kurven med et hjul som har radius lik 1, og som ruller langs den positive <span class="math notranslate nohighlight">\(x\)</span>-aksen, kan beskrives med parametriseringen</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{r}(t) = \left[(t - \sin(t)), (1 - \cos(t))\right],  \qquad t \in [0, 6\pi],
+\]</div>
+<p>der hjulet gjør tre fulle rotasjoner (én rotasjon per <span class="math notranslate nohighlight">\(2\pi\)</span>). Hastighetsvektoren til kurven er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}(t) = \left[1 - \cos(t), \sin(t)\right], \qquad t \in [0, 6\pi].
+\]</div>
+<p>Farten til langs kurven er da</p>
+<div class="math notranslate nohighlight">
+\[
+v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
+\]</div>
+<p>Vi kan finne lengden av denne kurven ved å bruke formelen for lengden av en kurve med midtpunktsmetoden slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
 <p>En logaritmisk spiral er vist i <a class="reference internal" href="#logarithmic-spiral"><span class="std std-numref">Fig. 15</span></a></p>
 <figure class="align-default" id="logarithmic-spiral">
 <img alt="../../../_images/logarithmic_spiral.pdf" src="../../../_images/logarithmic_spiral.pdf" />
@@ -1202,8 +1078,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </section>
-<section id="oppgave-5">
-<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-6">
+<h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
 <p><em>Bernoullis Lemniskate</em> er en lukket sløyfe som kan sies å likne på et liggende åttetall eller på et <span class="math notranslate nohighlight">\(\infty\)</span>-symbol. Kurven vises i <a class="reference internal" href="#lemniscate-of-bernoulli"><span class="std std-numref">Fig. 16</span></a></p>
 <figure class="align-center" id="lemniscate-of-bernoulli">
 <img alt="../../../_images/lemniscate_of_bernoulli.pdf" src="../../../_images/lemniscate_of_bernoulli.pdf" />
@@ -1330,8 +1206,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
-<section id="oppgave-6">
-<h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-7">
+<h3>Oppgave 7<a class="headerlink" href="#oppgave-7" title="Permalink to this heading">#</a></h3>
 <p>En <em>astroide</em> i matematikken er en kurve som genereres ved at en sirkel ruller på innsiden av en annen sirkel og gjennomfører en full rotasjon per kvadrant. I <a class="reference internal" href="#astroid"><span class="std std-numref">Fig. 17</span></a> kan du se hvordan kurven lages og ser ut.</p>
 <figure class="align-default" id="astroid">
 <img alt="../../../_images/astroid.gif" src="../../../_images/astroid.gif" />
@@ -1417,8 +1293,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
-<section id="oppgave-7">
-<h3>Oppgave 7<a class="headerlink" href="#oppgave-7" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-8">
+<h3>Oppgave 8<a class="headerlink" href="#oppgave-8" title="Permalink to this heading">#</a></h3>
 <p>En <em>deltoide</em> er i matematikken en kurve som genererer ved at en sirkel ruller langs innsiden av en annen sirkel.</p>
 <figure class="align-default" id="deltoide">
 <img alt="../../../_images/deltoid.gif" src="../../../_images/deltoid.gif" />
@@ -1540,17 +1416,10 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-en-graf-med-den-deriverte">Lengden av en graf med den deriverte</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-en-parametrisert-kurve">Lengden av en parametrisert kurve</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-1-linjeelementer-delta-s">Metode 1: Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritme-summere-linjeelementer-delta-s">Algoritme: Summere Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3">Eksempel 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4">Eksempel 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5">Eksempel 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-2-formel-for-lengde-av-graf">Metode 2: Formel for lengde av graf</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-6">Eksempel 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-7-sykloide">Eksempel 7: Sykloide</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
@@ -1561,6 +1430,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
 </ul>
 </li>
 </ul>
