@@ -981,20 +981,57 @@ f(x) = 2.5x^3 - 34.7x^2 + 120x + 530, \quad x \in [0, 10],
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">34.7</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">530</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10_000</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span> <span class="c1"># x_i</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dx</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 10020 meter.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
+<span class="c1"># Definer intervallet, antall punkter og steglengden.</span>
 <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
 <span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
 <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
 
-<span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Gjør nødvengige utregninger her</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># x_i</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
 
-    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+    <span class="c1"># Husk at dx er målt i kilometer</span>
+    <span class="c1"># Mens dy er målt i meter</span>
+    <span class="c1"># Du må konvertere dx til meter! </span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1006,68 +1043,26 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Det er helt klart enklest å bruke linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span> for å løse denne oppgaven siden <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> har forskjellige enheter. Men vi har med løsningsforslag for begge metoder likevel:</p>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Metode: linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span></label><div class="tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">34.7</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">530</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># 10 km --&gt; 10 000 meter</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">10_000</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx: Avstanden mellom to punkter på `x`-aksen</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c1"># 1 km = 1000 meter</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Gjør nødvengige utregninger her</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">h</span> <span class="c1"># Regn ut neste `x`-verdi</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span> <span class="c1"># x_i</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dx</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
 
     <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Metode: <span class="math notranslate nohighlight">\(L = \int_a^b \sqrt{1 + f'(x)^2} \, dx\)</span></label><div class="tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">deriver</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">34.7</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">530</span>
-
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># 10 km --&gt; 10 000 meter</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10_000</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx: Avstanden mellom to punkter på `x`-aksen</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c1"># 1 km = 1000 meter</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
-<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Gjør nødvengige utregninger her</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">h</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="c1"># Må dele med dydx med 1000 fordi den har enheten m/km</span>
-    <span class="c1"># Gjør om enhetene fra m/km --&gt; m/m </span>
-    <span class="n">dydx</span> <span class="o">=</span> <span class="n">deriver</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span> 
-
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dydx</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span> <span class="c1"># Lengden av et lite stykke av grafen</span>
-
-    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p class="sd-card-text">som gir utskriften</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lengde = 10020 meter.</span>
