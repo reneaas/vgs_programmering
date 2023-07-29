@@ -542,7 +542,8 @@ document.write(`
 L \approx \sum_{i=0}^{n - 1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \Delta s_{n - 1},
 \]</div>
 </section>
-</div><p>I <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 10</span></a> ser du en visualisering av algoritmen.</p>
+</div><p>Størrelsen <span class="math notranslate nohighlight">\(\Delta s\)</span> kalles for et <strong>linjeelement</strong> og er et konsept som dukker opp i fysikken i mange sammenhenger.</p>
+<p>I <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 10</span></a> ser du en visualisering av algoritmen.</p>
 <figure class="align-default" id="lengde-graf">
 <img alt="../../../_images/arc_length_illustration.pdf" src="../../../_images/arc_length_illustration.pdf" />
 <figcaption>
@@ -729,10 +730,10 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Δt</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δt</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># går til n - 1 fordi vi trenger t + dt til å være siste tidspunkt</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># går til n - 1 fordi vi trenger t + dt til å være siste tidspunkt</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
     <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δx</span>
     <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δy</span>
@@ -741,13 +742,14 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
     <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
 
 
-
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 73.87
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t + dt = 12.566370614359172
+b = 12.566370614359172
+lengde = 75.16
 </pre></div>
 </div>
 </div>
@@ -755,7 +757,7 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 </section>
 <section id="eksempel-4">
 <h3>Eksempel 4<a class="headerlink" href="#eksempel-4" title="Permalink to this heading">#</a></h3>
-<p>En heliks er en kurve som beveger seg langs randen av en sylinder. Et eksempel på der denne kurven dukker opp i naturen er når ladde partikler fra solstormer følger jordens magnetfelt inn mot polene! I <a class="reference internal" href="#helix"><span class="std std-numref">Fig. 12</span></a> ser vi en skisse av en heliks.</p>
+<p>En <em>heliks</em> er en kurve som beveger seg langs randen av en sylinder. Et eksempel på der denne kurven dukker opp i naturen er når ladde partikler fra solstormer følger jordens magnetfelt inn mot polene! I <a class="reference internal" href="#helix"><span class="std std-numref">Fig. 12</span></a> ser vi en skisse av en heliks.</p>
 <figure class="align-default" id="helix">
 <img alt="../../../_images/helix.pdf" src="../../../_images/helix.pdf" />
 <figcaption>
@@ -787,10 +789,10 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Startverdien til t</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># Sluttverdien til t</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># antall linjeelementer</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Δt</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δt</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span> <span class="c1"># Regn ut t-verdien</span>
 
     <span class="c1"># Regn ut katetene i 3-dimensjonal trekant</span>
@@ -826,7 +828,7 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 \[
 f(x) = e^{-x}x^2 \quad \text{for} \quad x \in [0, 2],
 \]</div>
-<p>ved å bruke den første tilnærmingen med linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span>. Bruk <span class="math notranslate nohighlight">\(n = 1001\)</span> punkter (1000 intervaller).</p>
+<p>Bruk <span class="math notranslate nohighlight">\(n = 1000\)</span> punkter.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -835,15 +837,15 @@ f(x) = e^{-x}x^2 \quad \text{for} \quad x \in [0, 2],
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
-
+<span class="c1"># Definer intervallet, antall punkter og steglengde</span>
 <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
 <span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
 <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># x_i</span>
     <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
     <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
 
@@ -854,15 +856,49 @@ f(x) = e^{-x}x^2 \quad \text{for} \quad x \in [0, 2],
 </div>
 </div>
 </div>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lengde = 2.09</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Bruk metoden med linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span> for å finne en tilnærming til verdien til <span class="math notranslate nohighlight">\(\pi\)</span> ved å beregne lengden til grafen til funksjonen</p>
+<p>Bruk metoden med linjeelementer <span class="math notranslate nohighlight">\(\Delta s_i\)</span> for å finne en tilnærming til verdien til <span class="math notranslate nohighlight">\(\pi\)</span> ved å beregne lengden til grafen til funksjonen</p>
 <div class="math notranslate nohighlight">
 \[
 g(x) = \sqrt{1 - x^2}, \quad x \in [-1, 1].
 \]</div>
-<p>Funksjonen beskriver øvre halvdel av enhetssirkelen. Bruk 1 million linjeelementer.</p>
+<p>Funksjonen beskriver øvre halvdel av enhetssirkelen. Bruk 1 million punkter.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
