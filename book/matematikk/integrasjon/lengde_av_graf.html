@@ -519,22 +519,30 @@ document.write(`
 <p>Teorien om integrasjon kan også brukes til å finne lengden av en graf eller parametrisert kurve, noe som kalles for <em>buelengde</em>.</p>
 <section id="lengden-av-en-graf">
 <h2>Lengden av en graf<a class="headerlink" href="#lengden-av-en-graf" title="Permalink to this heading">#</a></h2>
-<p>Tenk deg at vi har en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> og vi ønsker å regne ut lengden til grafen over et intervall <span class="math notranslate nohighlight">\([a, b]\)</span>. Måten vi kan tilnærme lengden dens på, er å dele opp intervallet i <span class="math notranslate nohighlight">\(n\)</span> delintervaller slik at at vi <span class="math notranslate nohighlight">\(n + 1\)</span> punkter <span class="math notranslate nohighlight">\(x_0, x_1, \ldots x_n\)</span> som er jevnt fordelt i intervallet. For hvert punkt <span class="math notranslate nohighlight">\(x_i\)</span>, kan vi regne ut tilsvarende funksjonsverdier <span class="math notranslate nohighlight">\(y_i = f(x_i)\)</span> slik at vi får <span class="math notranslate nohighlight">\(n + 1\)</span> <span class="math notranslate nohighlight">\(y\)</span>-verdier <span class="math notranslate nohighlight">\(y_0, y_1, \ldots y_n\)</span>. En tilnærming til lengden av grafen kan vi da finne ved å lage oss små trekanter med kateter</p>
+<p>Tenk deg at vi har en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> og vi ønsker å regne ut lengden til grafen over et intervall <span class="math notranslate nohighlight">\([a, b]\)</span>. Måten vi kan tilnærme lengden dens på, er å dele opp intervallet i <span class="math notranslate nohighlight">\(n\)</span> delintervaller slik at vi får <span class="math notranslate nohighlight">\(n + 1\)</span> punkter <span class="math notranslate nohighlight">\(x_0, x_1, \ldots, x_{n-1}\)</span> som er jevnt fordelt i intervallet. For hvert punkt <span class="math notranslate nohighlight">\(x_i\)</span>, kan vi regne ut tilsvarende funksjonsverdier <span class="math notranslate nohighlight">\(y_i = f(x_i)\)</span> slik at vi får <span class="math notranslate nohighlight">\(n + 1\)</span> <span class="math notranslate nohighlight">\(y\)</span>-verdier <span class="math notranslate nohighlight">\(y_0, y_1, \ldots, y_n\)</span>. Med denne oppbygningen kan vi skrive ned resultatet som vi baserer oss på:</p>
+<div class="proof theorem admonition" id="lengde_av_graf">
+<p class="admonition-title"><span class="caption-number">Theorem 3 </span> (Lengde av graf)</p>
+<section class="theorem-content" id="proof-content">
+<p>La <span class="math notranslate nohighlight">\(f(x)\)</span> være en funksjon definert på et intervall <span class="math notranslate nohighlight">\([a, b]\)</span>. La <span class="math notranslate nohighlight">\(x_0, x_1, \ldots, x_n\)</span> være <span class="math notranslate nohighlight">\(n + 1\)</span> punkter som er jevnt fordelt i intervallet. Da kan vi lage oss <span class="math notranslate nohighlight">\(n\)</span> rettvinklede trekanter med kateter</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta x &amp; = (b - a) / n, \\
+\\
+\Delta y_i &amp; = f(x_i + \Delta x) - f(x_i),
+\end{align*}\]</div>
+<p>der <span class="math notranslate nohighlight">\(x_i = a + i\Delta x\)</span> for <span class="math notranslate nohighlight">\(i = 0, 1, 2, \ldots, n\)</span>.</p>
+<p>Trekantene har da hypotenuser med lengde</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta x_i = x_{i + 1} - x_i \quad \text{og} \quad \Delta y_i = y_{i + 1} - y_i.
+\Delta s_i = \sqrt{\Delta x^2 + \Delta y_i^2},
 \]</div>
-<p>En tilnærming til lengden av grafen mellom <span class="math notranslate nohighlight">\(x_i\)</span> og <span class="math notranslate nohighlight">\(x_{i + 1}\)</span> er da lengden av hypotenusen som vi finner ved Pytagoras’ setning:</p>
+<p>Lengden av grafen til <span class="math notranslate nohighlight">\(f(x)\)</span> over intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> blir da tilnærmet gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta s_i = \sqrt{(\Delta x_i)^2 + (\Delta y_i)^2}.
+L \approx \sum_{i=0}^{n - 1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \Delta s_{n - 1},
 \]</div>
-<p>For å finne et estimat på den totale lengden til grafen over hele intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>, summerer vi opp lengden av alle disse hypotenusene:</p>
-<div class="math notranslate nohighlight">
-\[
-L = \sum_{i = 1}^{n} \Delta s_i = \Delta s_1 + \Delta s_2 + \cdots + \Delta s_n.
-\]</div>
-<p>I <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 10</span></a> ser du en visualisering av algoritmen.</p>
+</section>
+</div><p>I <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 10</span></a> ser du en visualisering av algoritmen.</p>
 <figure class="align-default" id="lengde-graf">
 <img alt="../../../_images/arc_length_illustration.pdf" src="../../../_images/arc_length_illustration.pdf" />
 <figcaption>
@@ -557,13 +565,17 @@ f(x) = x^2
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># Definerer intervallet [a, b] og antall punkter n</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Steglengde Δx</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Δx</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Δy</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
+    
     <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
 
     <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span> <span class="c1"># Legger til Δs til den totale lengden</span>
@@ -594,13 +606,16 @@ g(x) = \sqrt{1 + \cos^2(x)}, \quad x \in [0, 2\pi].
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1001</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># Definerer intervallet [a, b] og antall punkter n</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Δx</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Δy</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
     <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
 
     <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
@@ -629,11 +644,11 @@ Uansett skal vi tenke oss at vi har parametriserte vektorer på formen</p>
 \end{align*}\]</div>
 <section id="algoritme-summere-linjeelementer-delta-s">
 <h3>Algoritme: Summere Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span><a class="headerlink" href="#algoritme-summere-linjeelementer-delta-s" title="Permalink to this heading">#</a></h3>
-<p>Denne metoden er i stor grad uendret. Den store forskjellen er vi nå ikke direkte setter verdiene til <span class="math notranslate nohighlight">\(x\)</span>, men lar heller parameteren <span class="math notranslate nohighlight">\(t\)</span> bestemme hva verdien til <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> er. I tillegg vil den bestemme hva verdien til <span class="math notranslate nohighlight">\(z\)</span> er når vi jobber i tre dimensjoner. Følgende resultater gir oss verktøyene vi trenger for å regne ut lengden av en parametrisert kurve:</p>
-<div class="proof theorem admonition" id="theorem-midtpunktsmetoden">
+<p>Denne metoden er i stor grad uendret. Vi regner fortsatt ut lengden av hypotenusen i <span class="math notranslate nohighlight">\(n\)</span> trekanter. Den store forskjellen er vi nå ikke direkte setter verdiene til <span class="math notranslate nohighlight">\(x\)</span>, men lar heller parameteren <span class="math notranslate nohighlight">\(t\)</span> bestemme hva verdien til <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> er. I tillegg vil den bestemme hva verdien til <span class="math notranslate nohighlight">\(z\)</span> er når vi jobber i tre dimensjoner. Følgende resultater gir oss verktøyene vi trenger for å regne ut lengden av en parametrisert kurve:</p>
+<div class="proof theorem admonition" id="lengde_kurve_2d">
 <p class="admonition-title"><span class="caption-number">Theorem 4 </span> (Lengde av kurve (2 dimensjoner))</p>
 <section class="theorem-content" id="proof-content">
-<p>La <span class="math notranslate nohighlight">\(\vec{r}(t) = \left[x(t), y(t)\right]\)</span> være en parametrisert kurve i to dimensjoner og <span class="math notranslate nohighlight">\(t \in [a, b]\)</span> er en parameter. Da er linjeelementene <span class="math notranslate nohighlight">\(\Delta s_i\)</span> gitt ved</p>
+<p>La <span class="math notranslate nohighlight">\(\vec{r}(t) = \left[x(t), y(t)\right]\)</span> være en parametrisert kurve i to dimensjoner og <span class="math notranslate nohighlight">\(t \in [a, b]\)</span> er en parameter. Vi introduserer <span class="math notranslate nohighlight">\(n + 1\)</span> jevnt fordelte punkter i parameterrommet <span class="math notranslate nohighlight">\(t_0, t_1, t_2, \ldots, t_n\)</span>. Da er linjeelementene <span class="math notranslate nohighlight">\(\Delta s_i\)</span> gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
 \Delta s_i = \sqrt{\Delta x_i^2 + \Delta y_i^2},
@@ -644,16 +659,18 @@ Uansett skal vi tenke oss at vi har parametriserte vektorer på formen</p>
 \Delta x_i &amp; = x(t_i + \Delta t) - x(t_i), \\
 \Delta y_i &amp; = y(t_i + \Delta t) - y(t_i),
 \end{align*}\]</div>
-<p>der <span class="math notranslate nohighlight">\(t_i = a + i\Delta t\)</span> for <span class="math notranslate nohighlight">\(i = 1, 2, 3, \ldots, n\)</span>, og <span class="math notranslate nohighlight">\(\Delta t = (b - a) / n\)</span>. Lengden av kurven er da gitt ved</p>
+<p>der <span class="math notranslate nohighlight">\(t_i = a + i\Delta t\)</span> for <span class="math notranslate nohighlight">\(i = 0, 1, 2, \ldots, n\)</span>, og <span class="math notranslate nohighlight">\(\Delta t = (b - a) / n\)</span>. Lengden av kurven er da tilnærmet gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
 L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n.
 \]</div>
 </section>
-</div><div class="proof theorem admonition" id="theorem-midtpunktsmetoden">
-<p class="admonition-title"><span class="caption-number">Theorem 4 </span> (Lengde av kurve (3 dimensjoner))</p>
+</div><div class="proof theorem admonition" id="lengde_kurve_3d">
+<p class="admonition-title"><span class="caption-number">Theorem 5 </span> (Lengde av kurve (3 dimensjoner))</p>
 <section class="theorem-content" id="proof-content">
-<p>La <span class="math notranslate nohighlight">\(\vec{r}(t) = \left[x(t), y(t), z(t)\right]\)</span> være en parametrisert kurve i tre dimensjoner og <span class="math notranslate nohighlight">\(t \in [a, b]\)</span> er en parameter. Da er linjeelementene <span class="math notranslate nohighlight">\(\Delta s_i\)</span> gitt ved</p>
+<p>La <span class="math notranslate nohighlight">\(\vec{r}(t) = \left[x(t), y(t), z(t)\right]\)</span> være en parametrisert kurve i tre dimensjoner og <span class="math notranslate nohighlight">\(t \in [a, b]\)</span> er en parameter.
+La <span class="math notranslate nohighlight">\(t_0, t_1, \ldots, t_n\)</span> være <span class="math notranslate nohighlight">\(n + 1\)</span> punkter i parameterrommet som er jevnt fordelt.
+Da er linjeelementene <span class="math notranslate nohighlight">\(\Delta s_i\)</span> gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
 \Delta s_i = \sqrt{\Delta x_i^2 + \Delta y_i^2},
@@ -665,7 +682,7 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 \Delta y_i &amp; = y(t_i + \Delta t) - y(t_i), \\
 \Delta z_i &amp; = z(t_i + \Delta t) - z(t_i),
 \end{align*}\]</div>
-<p>der <span class="math notranslate nohighlight">\(t_i = a + i\Delta t\)</span> for <span class="math notranslate nohighlight">\(i = 1, 2, 3, \ldots, n\)</span> og <span class="math notranslate nohighlight">\(\Delta t = (b - a) / n\)</span>. Lengden av kurven er da gitt ved</p>
+<p>der <span class="math notranslate nohighlight">\(t_i = a + i\Delta t\)</span> for <span class="math notranslate nohighlight">\(i = 0, 1, 2, \ldots, n\)</span> og <span class="math notranslate nohighlight">\(\Delta t = (b - a) / n\)</span>. Lengden av kurven er da tilnærmet gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
 L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n.
@@ -711,8 +728,8 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10_000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Δt</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># går til n - 1 fordi vi trenger t + dt til å være siste tidspunkt</span>
@@ -723,12 +740,14 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 
     <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
 
+
+
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 80.82
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lengde = 73.87
 </pre></div>
 </div>
 </div>
@@ -768,7 +787,7 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Startverdien til t</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># Sluttverdien til t</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># antall linjeelementer</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δt</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Δt</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
@@ -784,6 +803,7 @@ L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_
 
     <span class="c1"># Legg til bidraget til lengden</span>
     <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
