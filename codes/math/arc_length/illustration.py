@@ -59,7 +59,7 @@ for i in range(len(x_points) - 1):
     plt.text(
         (x_points[i] + x_points[i + 1]) / 2,
         y_points[i] - 0.5,
-        f"$\Delta x_{i + 1}$",
+        f"$\Delta x_{i}$",
         ha="center",
         color=dx_color,
         fontsize=18,
@@ -67,7 +67,7 @@ for i in range(len(x_points) - 1):
     plt.text(
         x_points[i + 1] + 0.1,
         (y_points[i] + y_points[i + 1]) / 2,
-        f"$\Delta y_{i + 1}$",
+        f"$\Delta y_{i}$",
         va="center",
         color=dy_color,
         fontsize=18,
@@ -75,7 +75,7 @@ for i in range(len(x_points) - 1):
     plt.text(
         (x_points[i] + x_points[i + 1]) / 2,
         (y_points[i] + y_points[i + 1]) / 2 + 1,
-        f"$\Delta s_{i + 1}$",
+        f"$\Delta s_{i}$",
         ha="center",
         color=ds_color,
         fontsize=18,
