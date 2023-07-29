@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lengden til en graf eller kurve &#8212; Programmering i Videregående Skole</title>
+    <title>Buelengde &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -206,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="trapesmetoden.html">Trapesmetoden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mc_integrasjon.html">Monte Carlo Integrasjon (Matematikk S2)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lengden til en graf eller kurve</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Buelengde</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../f%C3%B8lger_og_rekker/intro.html">Følger og Rekker</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -470,7 +470,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lengden til en graf eller kurve</h1>
+    <h1>Buelengde</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -500,6 +500,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
 </ul>
 </li>
 </ul>
@@ -513,9 +514,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lengden-til-en-graf-eller-kurve">
-<h1>Lengden til en graf eller kurve<a class="headerlink" href="#lengden-til-en-graf-eller-kurve" title="Permalink to this heading">#</a></h1>
-<p>Teorien om integrasjon kan også brukes til å finne lengden av en graf eller parametrisert kurve.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="buelengde">
+<h1>Buelengde<a class="headerlink" href="#buelengde" title="Permalink to this heading">#</a></h1>
+<p>Teorien om integrasjon kan også brukes til å finne lengden av en graf eller parametrisert kurve, noe som kalles for <em>buelengde</em>.</p>
 <section id="lengden-av-en-graf">
 <h2>Lengden av en graf<a class="headerlink" href="#lengden-av-en-graf" title="Permalink to this heading">#</a></h2>
 <p>Tenk deg at vi har en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> og vi ønsker å regne ut lengden til grafen over et intervall <span class="math notranslate nohighlight">\([a, b]\)</span>. Måten vi kan tilnærme lengden dens på, er å dele opp intervallet i <span class="math notranslate nohighlight">\(n\)</span> delintervaller slik at at vi <span class="math notranslate nohighlight">\(n + 1\)</span> punkter <span class="math notranslate nohighlight">\(x_0, x_1, \ldots x_n\)</span> som er jevnt fordelt i intervallet. For hvert punkt <span class="math notranslate nohighlight">\(x_i\)</span>, kan vi regne ut tilsvarende funksjonsverdier <span class="math notranslate nohighlight">\(y_i = f(x_i)\)</span> slik at vi får <span class="math notranslate nohighlight">\(n + 1\)</span> <span class="math notranslate nohighlight">\(y\)</span>-verdier <span class="math notranslate nohighlight">\(y_0, y_1, \ldots y_n\)</span>. En tilnærming til lengden av grafen kan vi da finne ved å lage oss små trekanter med kateter</p>
@@ -628,19 +629,57 @@ Uansett skal vi tenke oss at vi har parametriserte vektorer på formen</p>
 \end{align*}\]</div>
 <section id="algoritme-summere-linjeelementer-delta-s">
 <h3>Algoritme: Summere Linjeelementer <span class="math notranslate nohighlight">\(\Delta s\)</span><a class="headerlink" href="#algoritme-summere-linjeelementer-delta-s" title="Permalink to this heading">#</a></h3>
-<p>Denne metoden er i stor grad uendret. Den store forskjellen er vi nå ikke direkte setter verdiene til <span class="math notranslate nohighlight">\(x\)</span>, men lar heller parameteren <span class="math notranslate nohighlight">\(t\)</span> bestemme hva verdien til <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> er. I tillegg vil den bestemme hva verdien til <span class="math notranslate nohighlight">\(z\)</span> er når vi jobber i tre dimensjoner. Vi har følgende formler for å løse problemet:</p>
-<ol class="arabic simple">
-<li><p>I to dimensjoner er linjeelementet <span class="math notranslate nohighlight">\(\Delta s\)</span> gitt ved <span class="math notranslate nohighlight">\(\Delta s_i = \sqrt{\Delta x_i^2 + \Delta y_i^2}.\)</span>
-der <span class="math notranslate nohighlight">\(\Delta x_i = x(t_{i+1}) - x(t_i)\)</span> og <span class="math notranslate nohighlight">\(\Delta y_i = y(t_{i+1}) - y(t_i)\)</span>.</p></li>
-<li><p>I tre dimensjoner er linjeelementet utvidet med ett ekstra ledd på på grunn av <span class="math notranslate nohighlight">\(z\)</span>-aksen. Vi får da <span class="math notranslate nohighlight">\(\Delta s_i = \sqrt{\Delta x_i^2 + \Delta y_i^2 + \Delta z_i^2},\)</span>
-der <span class="math notranslate nohighlight">\(\Delta x_i\)</span> og <span class="math notranslate nohighlight">\(\Delta y_i\)</span> regnes ut som før, og <span class="math notranslate nohighlight">\(\Delta z_i = z(t_{i+1}) - z(t_i)\)</span>.</p></li>
-</ol>
-<p>Uansett om det er to- eller tre dimensjoner, vil tilnærmingen til lengden av grafen være</p>
+<p>Denne metoden er i stor grad uendret. Den store forskjellen er vi nå ikke direkte setter verdiene til <span class="math notranslate nohighlight">\(x\)</span>, men lar heller parameteren <span class="math notranslate nohighlight">\(t\)</span> bestemme hva verdien til <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> er. I tillegg vil den bestemme hva verdien til <span class="math notranslate nohighlight">\(z\)</span> er når vi jobber i tre dimensjoner. Følgende resultater gir oss verktøyene vi trenger for å regne ut lengden av en parametrisert kurve:</p>
+<div class="proof theorem admonition" id="theorem-midtpunktsmetoden">
+<p class="admonition-title"><span class="caption-number">Theorem 4 </span> (Lengde av kurve (2 dimensjoner))</p>
+<section class="theorem-content" id="proof-content">
+<p>La <span class="math notranslate nohighlight">\(\vec{r}(t) = \left[x(t), y(t)\right]\)</span> være en parametrisert kurve i to dimensjoner og <span class="math notranslate nohighlight">\(t \in [a, b]\)</span> er en parameter. Da er linjeelementene <span class="math notranslate nohighlight">\(\Delta s_i\)</span> gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
-L = \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n, 
+\Delta s_i = \sqrt{\Delta x_i^2 + \Delta y_i^2},
 \]</div>
-<p>akkurat som før.</p>
+<p>der</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta x_i &amp; = x(t_i + \Delta t) - x(t_i), \\
+\Delta y_i &amp; = y(t_i + \Delta t) - y(t_i),
+\end{align*}\]</div>
+<p>der <span class="math notranslate nohighlight">\(t_i = a + i\Delta t\)</span> for <span class="math notranslate nohighlight">\(i = 1, 2, 3, \ldots, n\)</span>, og <span class="math notranslate nohighlight">\(\Delta t = (b - a) / n\)</span>. Lengden av kurven er da gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n.
+\]</div>
+</section>
+</div><div class="proof theorem admonition" id="theorem-midtpunktsmetoden">
+<p class="admonition-title"><span class="caption-number">Theorem 4 </span> (Lengde av kurve (3 dimensjoner))</p>
+<section class="theorem-content" id="proof-content">
+<p>La <span class="math notranslate nohighlight">\(\vec{r}(t) = \left[x(t), y(t), z(t)\right]\)</span> være en parametrisert kurve i tre dimensjoner og <span class="math notranslate nohighlight">\(t \in [a, b]\)</span> er en parameter. Da er linjeelementene <span class="math notranslate nohighlight">\(\Delta s_i\)</span> gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta s_i = \sqrt{\Delta x_i^2 + \Delta y_i^2},
+\]</div>
+<p>der</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta x_i &amp; = x(t_i + \Delta t) - x(t_i), \\
+\Delta y_i &amp; = y(t_i + \Delta t) - y(t_i), \\
+\Delta z_i &amp; = z(t_i + \Delta t) - z(t_i),
+\end{align*}\]</div>
+<p>der <span class="math notranslate nohighlight">\(t_i = a + i\Delta t\)</span> for <span class="math notranslate nohighlight">\(i = 1, 2, 3, \ldots, n\)</span> og <span class="math notranslate nohighlight">\(\Delta t = (b - a) / n\)</span>. Lengden av kurven er da gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+L \approx \sum_{i=1}^n \Delta s_i = \Delta s_1 + \Delta s_2 + \ldots + \Delta s_n.
+\]</div>
+</section>
+</div><div class="tip dropdown admonition">
+<p class="admonition-title">Sammenheng mellom lengde av graf og lengde av kurve</p>
+<p>Det viser seg at vi i starten bare så på et spesialtilfelle av resultatet i to dimensjoner. Vi kan faktisk bruke samme metode for å regne ut lengden av en graf ved å tenke på funksjonen vår som en parametrisering på formen</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{r}(x) = \left[x, f(x)\right],
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(x \in [a, b]\)</span> er parameteren.</p>
+</div>
 </section>
 <section id="eksempel-3">
 <h3>Eksempel 3<a class="headerlink" href="#eksempel-3" title="Permalink to this heading">#</a></h3>
@@ -995,17 +1034,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 \[
 \vec{r}(t) = \left[(t - \sin(t)), (1 - \cos(t))\right],  \qquad t \in [0, 6\pi],
 \]</div>
-<p>der hjulet gjør tre fulle rotasjoner (én rotasjon per <span class="math notranslate nohighlight">\(2\pi\)</span>). Hastighetsvektoren til kurven er gitt ved</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{v}(t) = \left[1 - \cos(t), \sin(t)\right], \qquad t \in [0, 6\pi].
-\]</div>
-<p>Farten til langs kurven er da</p>
-<div class="math notranslate nohighlight">
-\[
-v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
-\]</div>
-<p>Vi kan finne lengden av denne kurven ved å bruke formelen for lengden av en kurve med midtpunktsmetoden slik:</p>
+<p>der hjulet gjør tre fulle rotasjoner (én rotasjon per <span class="math notranslate nohighlight">\(2\pi\)</span>).</p>
+<p>Estimer lengden til sykloiden.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1016,14 +1047,14 @@ v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
 <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi på intervallet</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sluttverdi på intervallet</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall intervaller</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δt</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># t-verdien</span>
 
     <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
     <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
@@ -1037,7 +1068,46 @@ v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
 </div>
 </div>
 </div>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span> 
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δy</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lengde = 24.00</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 <section id="oppgave-5">
 <h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
 <p>En logaritmisk spiral er vist i <a class="reference internal" href="#logarithmic-spiral"><span class="std std-numref">Fig. 15</span></a></p>
@@ -1052,16 +1122,16 @@ v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
 \[
 \vec{r}(t) = \left[e^t\cos(4t), e^t\sin(4t) \right], \quad t \in [0, 2\pi].
 \]</div>
-<p>Finn et estimat av lengden av kurven numerisk med midtpunktsmetoden og formelen <span class="math notranslate nohighlight">\(L = \int_a^b |\vec{v}(t)| \, dt\)</span>. Bruk 1000 intervaller.</p>
+<p>Finn et estimat av lengden av kurven.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">dxdt</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
-<span class="k">def</span> <span class="nf">dydt</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
@@ -1072,12 +1142,59 @@ v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> 
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lengde = 2203.77</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 <section id="oppgave-6">
 <h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
 <p><em>Bernoullis Lemniskate</em> er en lukket sløyfe som kan sies å likne på et liggende åttetall eller på et <span class="math notranslate nohighlight">\(\infty\)</span>-symbol. Kurven vises i <a class="reference internal" href="#lemniscate-of-bernoulli"><span class="std std-numref">Fig. 16</span></a></p>
@@ -1092,51 +1209,20 @@ v = |\vec{v}(t)| = \sqrt{(1 - \cos(t))^2 + \sin^2(t)}.
 \[
 \vec{r}(t) = \left[\frac{\cos(t)}{1 + \sin^2(t)}, \frac{\cos(t)\sin(t)}{1 + \sin^2(t)}\right], \qquad t \in [0, 2\pi].
 \]</div>
-<p>Regn ut lengden av kurven ved å bruke midtpunktsmetoden og formelen <span class="math notranslate nohighlight">\(L = \int_a^b |\vec{v}(t)| \, dt\)</span>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Kodehint<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For å spare deg selv for fryktelig mye arbeid for hånd, kan du regne ut den deriverte av <span class="math notranslate nohighlight">\(\vec{r}(t)\)</span> <em>numerisk</em>!
-Du kan anvende tilnærmingen til den deriverte med</p>
-<div class="math notranslate nohighlight">
-\[
-f'(x) = \frac{f(x + h) - f(x)}{h},
-\]</div>
-<p class="sd-card-text">komponentvis for å regne ut <span class="math notranslate nohighlight">\(x'(t)\)</span> og <span class="math notranslate nohighlight">\(y'(t)\)</span>.</p>
-</div>
-</details><p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<p>Regn ut en tilnærming lengden av kurven.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Regner ut f&#39;(x)</span>
-<span class="k">def</span> <span class="nf">deriver</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
 
 <span class="c1"># x-komponenten til parametriseringen</span>
 <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 
-<span class="c1"># x&#39;(t)</span>
-<span class="k">def</span> <span class="nf">dxdt</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">deriver</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 
 <span class="c1"># y-komponenten til parametriseringen</span>
 <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-<span class="c1"># y&#39;(t)</span>
-<span class="k">def</span> <span class="nf">dydt</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-<span class="c1"># v(t) = sqrt(dx/dt**2 + dy/dt**2)</span>
-<span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
-
 
 <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>  <span class="c1"># Startverdi for t</span>
 <span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># sluttverdi for t</span>
@@ -1145,7 +1231,12 @@ f'(x) = \frac{f(x + h) - f(x)}{h},
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># t_{i + 1/2}</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut t-verdien</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δs</span>
+    
     <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># legg til bidraget </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1162,40 +1253,29 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Regner ut f&#39;(x)</span>
-<span class="k">def</span> <span class="nf">deriver</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
-
 <span class="c1"># x-komponenten til parametriseringen</span>
 <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># x&#39;(t)</span>
-<span class="k">def</span> <span class="nf">dxdt</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">deriver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 
 <span class="c1"># y-komponenten til parametriseringen</span>
 <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># y&#39;(t)</span>
-<span class="k">def</span> <span class="nf">dydt</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">deriver</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-
-<span class="c1"># v(t) = sqrt(dx/dt**2 + dy/dt**2)</span>
-<span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dxdt</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dydt</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> 
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
 
 <span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">v</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1341,6 +1421,124 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </section>
+<section id="oppgave-9">
+<h3>Oppgave 9<a class="headerlink" href="#oppgave-9" title="Permalink to this heading">#</a></h3>
+<p>Den internasjonale romstasjonen (ISS) går i bane rundt jorda med en fart på ca. 7.7 km/s. En tilnærming til banen dens er gitt ved kurven som er vist i</p>
+<figure class="align-default" id="trefoil-knot">
+<img alt="../../../_images/trefoil_knot.pdf" src="../../../_images/trefoil_knot.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">En tilnærming til den interasjonale romstasjonens bane rundt jorden. Kurven er en <em>perturbert trekløverknute</em> (hvis en matematiker leser denne påstanden, <em>please forgive this transgression</em>).</span><a class="headerlink" href="#trefoil-knot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Banen representer to fulle omløp rundt jorden.</p>
+<p>Parametriseringen til kurven er gitt ved</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x(t) &amp; = (R + r\cos(3t) + d\sin(t)) \cos(2t), \\
+y(t) &amp; = (R + r\cos(3t) + d\sin(t)) \sin(2t), \\
+z(t) &amp; = r\sin(3t) + d\cos(t),
+\end{align*}\]</div>
+<p>der <span class="math notranslate nohighlight">\(t \in [0, 2\pi]\)</span> er en parameter (som <em>ikke</em> representerer tid!). Her er <span class="math notranslate nohighlight">\(R = 6371\)</span> km jordas radius, <span class="math notranslate nohighlight">\(r = 400\)</span> km er gjennomsnittsavstanden fra bakken opp til ISS, og <span class="math notranslate nohighlight">\(d = 50\)</span> km er avstanden ISS svinger rundt gjennomsnittshøyden.</p>
+<p>Avgjør omtrent hvor lang tid det tar for ISS å gå en rundt rundt jorda. <em>Hint: du må vite hvor lang banen er.</em></p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">R</span> <span class="o">=</span> <span class="mi">6371</span> <span class="c1"># Jordens radius i km</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># Banens radius i km</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># Fluktuasjon i km</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi for parameteren t</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sluttverdi for parameteren t</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall linjeelementer</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δt</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut parameteren</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δy</span>
+    <span class="n">dz</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δz</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δs</span>
+
+    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">fart</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Farten i km/s</span>
+
+<span class="n">periode</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Tiden i sekunder</span>
+<span class="n">periode</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Tiden i minutter</span>
+<span class="n">periode</span> <span class="o">/=</span> <span class="mi">2</span> <span class="c1"># Del på 2 fordi det er to omløp</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">periode</span><span class="w"> </span><span class="si">= }</span><span class="s2"> minutter.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Først må vi regne ut lengden av banen. Deretter antar vi at vi kan bruke en konstant hastighet for å regne ut tiden det tar å gå ett omløp med <span class="math notranslate nohighlight">\(t = L / v\)</span> der <span class="math notranslate nohighlight">\(L\)</span> er lengden, <span class="math notranslate nohighlight">\(v\)</span> er banefarten og <span class="math notranslate nohighlight">\(t\)</span> er perioden. Vi må dele denne verdien på to fordi banen vi ser på representer to omløp rundt jorda.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">R</span> <span class="o">=</span> <span class="mi">6371</span> <span class="c1"># Jordens radius i km</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># Banens radius i km</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># Fluktuasjon i km</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">R</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">R</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">dz</span> <span class="o">=</span> <span class="n">z</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">z</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+<span class="n">fart</span> <span class="o">=</span> <span class="mf">7.7</span> <span class="c1"># km/s</span>
+
+<span class="n">periode</span> <span class="o">=</span> <span class="n">lengde</span> <span class="o">/</span> <span class="n">fart</span> <span class="c1"># tiden i sekunder</span>
+<span class="n">periode</span> <span class="o">/=</span> <span class="mi">60</span> <span class="c1"># tider i minutter</span>
+<span class="n">periode</span> <span class="o">/=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">periode</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> minutter.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">periode = 87.03 minutter.</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som er ca. 5 minutter kortere enn den sanne omløpstiden til ISS.</p>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -1431,6 +1629,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
 </ul>
 </li>
 </ul>
