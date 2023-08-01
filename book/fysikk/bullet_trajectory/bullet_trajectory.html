@@ -493,6 +493,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 </ul>
 </li>
 </ul>
@@ -886,6 +887,120 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
+<section id="oppgave-6">
+<h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
+<p>Bruk kodene du har skrevet til å finne den endelige kinetiske energien <span class="math notranslate nohighlight">\(E_k\)</span> som en funksjon av utgangsvinkelen <span class="math notranslate nohighlight">\(\theta\)</span>. Plot <span class="math notranslate nohighlight">\(E_k\)</span> som funksjon av <span class="math notranslate nohighlight">\(\theta\)</span> for <span class="math notranslate nohighlight">\(\theta\)</span> fra <span class="math notranslate nohighlight">\(0^\circ\)</span> til <span class="math notranslate nohighlight">\(90^\circ\)</span> og analyser for hvilke utgangsvinkler kulen gir en fare for å gi fraktur i hodeskallen dersom den treffer en person på bakken. Anta at energier over 30 J gir frakturer.</p>
+<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented.</span></code></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definer parametere</span>
+<span class="n">m</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># masse i kg</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># luftmotstandskoeffisient (dimensjonsløs)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># radius til kula i m. Halvparten av diameteren</span>
+<span class="n">A</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tverrsnittsareal pi * radius^2 i m^2</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lufttetthet i kg/m^3</span>
+<span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tyngdeakselerasjon m/s^2</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="c1"># steglengden i tid</span>
+
+<span class="n">utgangsvinkler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># utgangsvinkler i grader mellom 0 og 90</span>
+<span class="n">kinetiske_energier</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">)</span> <span class="c1"># tomt array for å lagre kinetiske energier</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">theta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">):</span>
+    <span class="c1"># Definer initialbetingelser</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># posisjon i m</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># utgangsvinkel i radianer</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># hastighet i m/s</span>
+
+    <span class="c1"># Simuler bevegelsen</span>
+    <span class="k">while</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge kula er over bakken</span>
+        <span class="c1"># Regn ut summen av kreftene i Newton</span>
+        <span class="n">netto_kraft</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># netto kraft på kula i N.</span>
+
+        <span class="c1"># Regn ut akselerasjon</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># akselerasjon i m/s^2</span>
+
+        <span class="c1"># Regn ut ny hastighet og posisjon</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># ny posisjon og hastighet i m og m/s</span>
+
+    
+    <span class="c1"># Regn ut kinetisk energi</span>
+    <span class="n">kinetiske_energier</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># kinetisk energi i J</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">,</span> <span class="n">kinetiske_energier</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$ [grader]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E_k$ [J]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;30 J&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsningsforslag<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;ggplot&quot;</span><span class="p">)</span>
+
+<span class="c1"># Definer parametere</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">7.5e-3</span> <span class="c1"># masse i kg</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># luftmotstandskoeffisient (dimensjonsløs)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mf">9e-3</span> <span class="c1"># radius til kula i m. Halvparten av diameteren</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># tverrsnittsareal pi * radius^2 i m^2</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.293</span> <span class="c1"># lufttetthet i kg/m^3</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.82</span> <span class="c1"># tyngdeakselerasjon m/s^2</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-3</span> <span class="c1"># steglengden i tid</span>
+
+<span class="n">utgangsvinkler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># utgangsvinkler i grader mellom 0 og 90</span>
+<span class="n">kinetiske_energier</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">)</span> <span class="c1"># tomt array for å lagre kinetiske energier</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">theta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">):</span>
+    <span class="c1"># Definer initialbetingelser</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># posisjon i m</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># utgangsvinkel i radianer</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="mi">450</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)])</span> <span class="c1"># hastighet i m/s</span>
+
+    <span class="c1"># Simuler bevegelsen</span>
+    <span class="k">while</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge kula er over bakken</span>
+        <span class="c1"># Regn ut summen av kreftene i Newton</span>
+        <span class="n">netto_kraft</span> <span class="o">=</span> <span class="n">luftmotstand</span><span class="p">(</span><span class="n">Cd</span><span class="o">=</span><span class="n">Cd</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="n">gravitasjon</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">)</span> <span class="c1"># netto kraft på kula i N.</span>
+
+        <span class="c1"># Regn ut akselerasjon</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">netto_kraft</span> <span class="o">/</span> <span class="n">m</span> <span class="c1"># akselerasjon i m/s^2</span>
+
+        <span class="c1"># Regn ut ny hastighet og posisjon</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">euler_cromer_step</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span> <span class="c1"># ny posisjon og hastighet i m og m/s</span>
+
+    
+    <span class="c1"># Regn ut kinetisk energi</span>
+    <span class="n">kinetiske_energier</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># kinetisk energi i J</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">,</span> <span class="n">kinetiske_energier</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$ [grader]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E_k$ [J]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;30 J&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sd-card-text">som gir resultatet i <a class="reference internal" href="#energi-vs-utgangsvinkel"><span class="std std-numref">Fig. 36</span></a>.</p>
+<figure class="align-default" id="energi-vs-utgangsvinkel">
+<img alt="../../../_images/energi_vs_utgangsvinkel.pdf" src="../../../_images/energi_vs_utgangsvinkel.pdf" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Den kinetiske energien til kula når den treffer bakkenivå som funksjon av utgangsvinkel.</span><a class="headerlink" href="#energi-vs-utgangsvinkel" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -968,6 +1083,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 </ul>
 </li>
 </ul>
