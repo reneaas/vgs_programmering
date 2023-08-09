@@ -915,7 +915,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="n">posisjoner_fase2</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
 <span class="n">hastigheter_fase2</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
 
-<span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">l</span><span class="p">):</span> <span class="c1"># Så lenge </span>
+<span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">r</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">l</span><span class="p">):</span> <span class="c1"># Så lenge minst én ikke har truffet bakken enda</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_stjerner</span><span class="p">):</span>
         <span class="c1"># Regn ut akselerasjonen på stjerne j</span>
         <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
@@ -1055,7 +1055,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
     <span class="k">return</span> <span class="n">animation</span>
 
 <span class="c1"># For å lage og se animasjonen:</span>
-<span class="n">ani</span> <span class="o">=</span> <span class="n">create_animation_2d</span><span class="p">(</span><span class="n">posisjoner</span><span class="p">[::</span><span class="mi">50</span><span class="p">],</span> <span class="n">tail_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">create_animation_2d</span><span class="p">(</span><span class="n">posisjoner</span><span class="p">[::</span><span class="mi">250</span><span class="p">],</span> <span class="n">tail_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># For å lagre animasjonen, må du ha med følgende kodelinjer også:</span>
