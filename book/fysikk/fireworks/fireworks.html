@@ -519,15 +519,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simulere-fyrverkeri">
 <h1>Simulere fyrverkeri<a class="headerlink" href="#simulere-fyrverkeri" title="Permalink to this heading">#</a></h1>
-<p>Når fyrverkeri fyres opp på himmelen, er små <em>stjerner</em> plassert spesifikke mønstre i et lite skall som ved eksplosjonen gir et mønster på himmelen der stjernene brenner opp sakte men sikkert mens de beveger seg vekk fra eksplosjonspunktet.</p>
+<p>Når fyrverkeri fyres opp på himmelen, er små <em>stjerner</em> plassert i spesifikke mønstre i et lite skall som ved eksplosjonen gir et mønster på himmelen der stjernene brenner opp sakte men sikkert mens de beveger seg vekk fra eksplosjonspunktet.</p>
 <p>Her skal du bruke Newtons lover til å regne ut banene til <span class="math notranslate nohighlight">\(N\)</span> stjerner som skytes ut fra et punkt. I tillegg skal vi anta at vi skyter opp raketten fra jordoverflaten først, slik at vi kan få en animasjon av hele prosessen. Planen er å følge hver enkelt stjerne sin bane gjennom hele prosessen og lage en animasjon til slutt som viser banene deres.</p>
 <p>Under kan du se animasjoner som viser resultatet av hva du skal skrive kode for.</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">5 stjerner</label><div class="tab-content docutils">
 <figure class="align-default" id="fireworks">
-<img alt="../../../_images/fireworks_5.gif" src="../../../_images/fireworks_5.gif" />
+<img alt="../../../_images/fireworks_6.gif" src="../../../_images/fireworks_6.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Animasjon av fyrverkeri med 5 stjerner i skallet.</span><a class="headerlink" href="#fireworks" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Animasjon av fyrverkeri med 6 stjerner i skallet.</span><a class="headerlink" href="#fireworks" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -552,14 +552,6 @@ document.write(`
 <img alt="../../../_images/fireworks_100.gif" src="../../../_images/fireworks_100.gif" />
 <figcaption>
 <p><span class="caption-number">Fig. 40 </span><span class="caption-text">Animasjon av fyrverkeri med 100 stjerner i skallet.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</div>
-<input class="tab-input" id="tab-set--0-input--5" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--5">250 stjerner</label><div class="tab-content docutils">
-<figure class="align-default" id="id4">
-<img alt="codes/physics/fireworks/animations/fireworks_250.gif" src="codes/physics/fireworks/animations/fireworks_250.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Animasjon av fyrverkeri med 250 stjerner i skallet.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -765,8 +757,15 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler_cromer_steg</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
     <span class="n">v_neste</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="n">r_neste</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">r_neste</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">v_neste</span> <span class="o">*</span> <span class="n">dt</span>
     <span class="k">return</span> <span class="n">r_neste</span><span class="p">,</span> <span class="n">v_neste</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Vi kan også bare skrive over de gamle verdiene til <code class="docutils literal notranslate"><span class="pre">v</span></code> og <code class="docutils literal notranslate"><span class="pre">r</span></code> direkte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">euler_cromer_steg</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span>
 </pre></div>
 </div>
 </div>
