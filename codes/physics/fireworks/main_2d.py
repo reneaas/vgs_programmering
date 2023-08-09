@@ -17,9 +17,9 @@ def make_drag_fn(C, rho_air, A):
 
 def make_euler_cromer_fn(dt):
     def euler_cromer_step(r, v, a):
-        v_new = v + a * dt
-        r_new = r + v_new * dt
-        return r_new, v_new
+        v += a * dt
+        r += v * dt
+        return r, v
 
     return euler_cromer_step
 
@@ -74,16 +74,9 @@ def main(n_stars):
             r[j], v[j] = euler_cromer_step(r[j], v[j], a)
         positions.append(np.copy(r))
         velocities.append(np.copy(v))
+
     positions = np.array(positions)
 
-    # for j in range(n_stars):
-    #     plt.plot(positions[:, j, 0], positions[:, j, 1], label=f"Star {j+1}")
-
-    # plt.xlabel("x [m]") 
-    # plt.ylabel("y [m]")
-    # plt.legend()
-    # plt.grid()
-    # plt.show()
 
     for j in range(positions.shape[1]):
         for i in range(positions.shape[0]):
@@ -106,10 +99,17 @@ def main(n_stars):
 
 
 if __name__ == "__main__":
-    num_stars = [5, 10, 25, 50, 100]
-    for i in num_stars:
-        print(f"{i = }")
-        main(n_stars=i)
+    # num_stars_even = [4, 6, 12, 24, 48, 96]
+    # for n in num_stars_even:
+    #     main(n_stars=n)
+
+    num_stars_odd = [(2 * i + 1)**2 for i in range(1, 10)]
+    for n in num_stars_odd:
+        main(n_stars=n)
+    # num_stars = [6, 10, 25, 50, 100]
+    # for i in num_stars:
+    #     print(f"{i = }")
+    #     main(n_stars=i)
 
 
 
