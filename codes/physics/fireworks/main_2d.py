@@ -30,6 +30,7 @@ def main(n_stars):
 
     # n_stars = 100 # Number of stars in the fireworks 
     m = 0.1 # mass of each star 
+    g = 9.82
 
     angles = np.linspace(0, 2 * np.pi, n_stars + 1) # angle of initial positions
     angles = angles[:-1]
@@ -41,7 +42,7 @@ def main(n_stars):
 
 
     v0 = 300 # inital speed of each star
-    v1 = 1000 # initial speed after explosion of each star
+    v1 = 300 # initial speed after explosion of each star
     star_velocity = np.zeros(shape=(n_stars, 2)) # initial velocity of each star
     star_velocity = v1 * r / np.linalg.norm(r)
 
@@ -49,7 +50,7 @@ def main(n_stars):
     radius = 20e-3 # radius of each star i meters
     area = np.pi * radius**2 
     rho_air = 1.293 # density of air in kg/m^3 
-    gravitation = make_gravitation_fn(m=1, g=9.82)
+    gravitation = make_gravitation_fn(m=m, g=g)
     drag = make_drag_fn(C=0.47, rho_air=rho_air, A=area)
     euler_cromer_step = make_euler_cromer_fn(dt=1e-3)
 
@@ -93,22 +94,22 @@ def main(n_stars):
                 break
 
     ani = create_animation_2d(
-        positions=positions[::25, :, :], tail_length=30, interval=1
+        positions=positions[::100, :, :], tail_length=30, interval=1
     )
 
-    plt.show()
+    # plt.show()
 
-    # progress_callback = lambda current_frame, total_frames: print(f"Lager animasjon: {current_frame / total_frames * 100:.1f}%", end="\r")
-    # ani.save(f"./animations/fireworks_{n_stars}.gif", fps=60, progress_callback=progress_callback)
+    progress_callback = lambda current_frame, total_frames: print(f"Lager animasjon for {n_stars = }: {current_frame / total_frames * 100:.1f}%", end="\r")
+    ani.save(f"./animations/fireworks_{n_stars}.gif", fps=60, progress_callback=progress_callback)
 
-    # plt.close()
+    plt.close()
 
 
 if __name__ == "__main__":
-    # num_stars = [5, 10, 25, 50, 100, 250, 500]
-    # for i in num_stars:
-    #     main(n_stars=i)
-    main(n_stars=50)
+    num_stars = [5, 10, 25, 50, 100]
+    for i in num_stars:
+        print(f"{i = }")
+        main(n_stars=i)
 
 
 

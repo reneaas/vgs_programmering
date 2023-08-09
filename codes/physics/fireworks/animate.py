@@ -12,7 +12,7 @@ def create_animation_2d(positions, tail_length=10, interval=1):
     
     xlim = np.max(np.abs(positions[:, :, 0]))
     ylim = np.max(np.abs(positions[:, :, 1]))
-    ax.set_xlim([-xlim, xlim])
+    ax.set_xlim([-1.1 * xlim, 1.1 * xlim])
     ax.set_ylim([-0.1 * ylim, 1.1 * ylim])
 
     # Colors
