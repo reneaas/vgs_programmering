@@ -10,7 +10,7 @@ def get_bacterium(
     x_cells: int = None,
     y_cells: int = None,
     resistance: float = 0,
-):
+) -> dict:
     if x is None and y is None:
         properties = {
             "x": np.random.randint(0, x_cells),
@@ -26,7 +26,7 @@ def get_bacterium(
     return properties
 
 
-def get_init_colony(n_bacteria: int, x_cells: int, y_cells: int):
+def get_init_colony(n_bacteria: int, x_cells: int, y_cells: int) -> list[dict]:
     bacteria = []
     for _ in range(n_bacteria):
         bacteria.append(
@@ -39,8 +39,8 @@ def get_init_colony(n_bacteria: int, x_cells: int, y_cells: int):
     return bacteria
 
 
-def make_antibiotic_concentration_fn(x_cells: int):
-    def get_antibiotic_concentration_fn(x: int):
+def make_antibiotic_concentration_fn(x_cells: int) -> callable:
+    def get_antibiotic_concentration_fn(x: int) -> float:
         if 0 <= x < 0.2 * x_cells:
             return 0
         elif 0.2 * x_cells <= x < 0.4 * x_cells:
@@ -55,8 +55,8 @@ def make_antibiotic_concentration_fn(x_cells: int):
     return get_antibiotic_concentration_fn
 
 
-def make_move_bacterium_fn(x_cells: int, y_cells: int):
-    def move_bacterium_fn(bacterium: dict):
+def make_move_bacterium_fn(x_cells: int, y_cells: int) -> callable:
+    def move_bacterium_fn(bacterium: dict) -> dict:
         x = bacterium.get("x")
         y = bacterium.get("y")
         dx = np.random.randint(-1, 2)
@@ -83,8 +83,8 @@ def make_move_bacterium_fn(x_cells: int, y_cells: int):
     return move_bacterium_fn
 
 
-def make_section_fn(x_cells: int):
-    def get_section_fn(x: int):
+def make_section_fn(x_cells: int) -> callable:
+    def get_section_fn(x: int) -> int:
         if 0 <= x < 0.2 * x_cells:
             return 0
         elif 0.2 * x_cells <= x < 0.4 * x_cells:
@@ -99,14 +99,14 @@ def make_section_fn(x_cells: int):
     return get_section_fn
 
 
-def make_probability_of_reproduction_fn(b: float):
-    def get_probability_of_reproduction_fn(n: int):
+def make_probability_of_reproduction_fn(b: float) -> callable:
+    def get_probability_of_reproduction_fn(n: int) -> float:
         return 2 * (1 - 1 / (1 + np.exp(-b * n)))
 
     return get_probability_of_reproduction_fn
 
 
-def main():
+def main() -> None:
     x_cells = 500
     y_cells = 250
     n_bacteria = 100
@@ -160,9 +160,9 @@ def main():
                         x=b.get("x"), y=b.get("y"), resistance=b.get("resistance")
                     )
                 )
-            
+
             # Check if the bacteria mutates.
-            
+
             # Kill all bacteria that cannot survive the antibiotic concentration.
             if (
                 get_antibiotic_concentration_fn(b.get("x")) - b.get("resistance")
@@ -170,14 +170,13 @@ def main():
             ):
                 n_dead_bacteria += 1
                 bacteria.remove(b)
-            
+
             # Check if the bacteria mutates.
             if np.random.uniform() < probability_of_mutation:
                 b["resistance"] += np.random.uniform(0, 0.01)
-            
+
         # Finally, add the new bacteria to the population.
         bacteria.extend(new_bacteria)
-
 
     create_animation(
         f"animations/animation_grid_{x_cells}X{y_cells}_iterations_{num_iter}.gif",

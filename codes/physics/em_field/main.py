@@ -3,24 +3,29 @@ import matplotlib.pyplot as plt
 from tqdm import trange
 import numba
 
-epsilon0 = 8.8541878128e-12 # F/m
-def make_electric_field_fn(boltzmann_const: float = 1/(4 * np.pi * epsilon0)) -> callable:
+epsilon0 = 8.8541878128e-12  # F/m
+
+
+def make_electric_field_fn(
+    boltzmann_const: float = 1 / (4 * np.pi * epsilon0),
+) -> callable:
     def get_electric_field(dr: np.ndarray, q) -> np.ndarray:
         dr_norm = np.linalg.norm(dr)
         return boltzmann_const * q * dr / dr_norm**3
-    
+
     return get_electric_field
 
 
-
-def main():
+def main() -> None:
     charges = [1, -1, -1, 1]
     positions = np.array(
         [
-            [-1, 0, 0], [1, 0, 0], [0, -1, 0], [0, 1, 0],
+            [-1, 0, 0],
+            [1, 0, 0],
+            [0, -1, 0],
+            [0, 1, 0],
         ]
     )
-
 
     electric_field_fn = make_electric_field_fn()
 
@@ -43,12 +48,14 @@ def main():
             electric_field = electric_field_fn(dr=dr, q=charge)
             electric_field_x[i] += electric_field[0]
             electric_field_y[i] += electric_field[1]
-        
-    
-    
-    
+
     # plt.quiver(X.reshape(nx, ny), Y.reshape(nx, ny), electric_field_x.reshape(nx, ny), electric_field_y.reshape(nx, ny))
-    plt.streamplot(X.reshape(nx, ny), Y.reshape(nx, ny), electric_field_x.reshape(nx, ny), electric_field_y.reshape(nx, ny))
+    plt.streamplot(
+        X.reshape(nx, ny),
+        Y.reshape(nx, ny),
+        electric_field_x.reshape(nx, ny),
+        electric_field_y.reshape(nx, ny),
+    )
     plt.show()
 
 

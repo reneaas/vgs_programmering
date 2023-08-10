@@ -8,7 +8,7 @@ import matplotlib.animation as animation
 
 
 def make_acceleration_fn(G: float = 4 * np.pi**2) -> callable:
-    def get_acceleration_fn(r, m, i) -> np.ndarray:
+    def get_acceleration_fn(r: np.ndarray, m: np.ndarray, i: int) -> np.ndarray:
         a = np.zeros(3)
         for j in range(r.shape[0]):
             if i != j:
@@ -18,11 +18,12 @@ def make_acceleration_fn(G: float = 4 * np.pi**2) -> callable:
 
         a *= G
         return a
+
     return get_acceleration_fn
 
 
 def make_potential_energy_fn(m: np.ndarray, G: float = 4 * np.pi**2) -> callable:
-    def get_potential_energy_fn(r) -> float:
+    def get_potential_energy_fn(r: np.ndarray) -> float:
         potential_energy = 0
         for i in range(len(r)):
             for j in range(len(r)):
@@ -30,24 +31,25 @@ def make_potential_energy_fn(m: np.ndarray, G: float = 4 * np.pi**2) -> callable
                     dr = r[i] - r[j]
                     dr_norm = np.linalg.norm(dr)
                     potential_energy -= m[i] * m[j] / dr_norm
-        
+
         potential_energy *= G
         return potential_energy
 
     return get_potential_energy_fn
-    
+
+
 def make_kinetic_energy_fn(m: np.ndarray) -> callable:
-    def get_kinetic_energy_fn(v) -> float:
+    def get_kinetic_energy_fn(v: np.ndarray) -> float:
         v_norm = np.linalg.norm(v**2, axis=1)
         kinetic_energy = 0.5 * np.linalg.norm(m * v_norm)
-        
+
         return kinetic_energy
-    
+
     return get_kinetic_energy_fn
 
 
 def make_euler_cromer_fn(acceleration_fn: callable, dt: float) -> callable:
-    def forward(r, v, m) -> tuple[np.ndarray]:
+    def forward(r: np.ndarray, v: np.ndarray, m: np.ndarray) -> tuple[np.ndarray]:
         a = np.zeros(shape=r.shape)
         for i in range(len(r)):
             a[i] = acceleration_fn(r=r, m=m, i=i)
@@ -59,25 +61,25 @@ def make_euler_cromer_fn(acceleration_fn: callable, dt: float) -> callable:
 
     return forward
 
-def make_verlet_fn(acceleration_fn: callable, dt: float) -> callable:
-    def forward(r, v, m) -> tuple[np.ndarray]:
 
+def make_verlet_fn(acceleration_fn: callable, dt: float) -> callable:
+    def forward(r: np.ndarray, v: np.ndarray, m: np.ndarray) -> tuple[np.ndarray]:
         # First step in velocity Verlet.
         a_old = np.zeros(shape=r.shape)
         for i in range(len(r)):
             a_old[i] = acceleration_fn(r=r, m=m, i=i)
-        
+
         r = r + v * dt + 0.5 * a_old * dt**2
 
         # Second setop in velocity Verlet
         a_new = np.zeros(shape=r.shape)
         for i in range(len(r)):
             a_new[i] = acceleration_fn(r=r, m=m, i=i)
-        
+
         v = v + 0.5 * (a_old + a_new) * dt
 
         return r, v
-    
+
     return forward
 
 
@@ -119,8 +121,8 @@ def get_data_three_body() -> tuple[np.ndarray]:
 
     return r, v, m, names
 
-def main(num_timesteps: int, dt: float):
 
+def main(num_timesteps: int, dt: float) -> None:
     r, v, m, names = get_data()
     # r, v, m, names = get_data_three_body()
 
@@ -145,14 +147,12 @@ def main(num_timesteps: int, dt: float):
     get_potential_energy_fn = numba.njit(get_potential_energy_fn)
     get_kinetic_energy_fn = make_kinetic_energy_fn(m=m)
 
-
     # Create energy array and set initial energy
     energies = np.zeros(shape=num_timesteps)
     energies[0] = get_kinetic_energy_fn(v=v) + get_potential_energy_fn(r=r)
 
     # Simulate trajectories
     for t in trange(1, num_timesteps):
-
         # Calculate next position and velocity
         r, v = forward(r=r, v=v, m=m)
 
@@ -162,10 +162,6 @@ def main(num_timesteps: int, dt: float):
         # Store new state
         positions[t, ...] = r[:]
         velocities[t, ...] = v[:]
-
-        
-
-
 
     # print(positions.shape)
     # print(positions[::50, ..., :2].shape)
@@ -178,7 +174,6 @@ def main(num_timesteps: int, dt: float):
     # plt.savefig("./figures/energi_three_body.pdf")
     plt.show()
 
-
     # ani = create_animation_2d(positions[::500, :, :2], names=names, tail_length=30)
     # ani.save("./animations/three_body_system_2d.gif", fps=60)
     # plt.close()
@@ -186,19 +181,34 @@ def main(num_timesteps: int, dt: float):
     # ani.save("./animations/three_body_system_3d.gif", fps=60)
     # plt.close()
 
-    ani = create_animation_2d(positions=positions[::100, :6, :2], names=names[:6], tail_length=30)
-    progress_callback = lambda current_frame, total_frames: print(f"Lager 2d-animasjon: {current_frame / total_frames * 100:.1f}%", end="\r")
-    ani.save("./animations/solsystemet_2d_euler_cromer.gif", fps=60, progress_callback=progress_callback)
+    ani = create_animation_2d(
+        positions=positions[::100, :6, :2], names=names[:6], tail_length=30
+    )
+    progress_callback = lambda current_frame, total_frames: print(
+        f"Lager 2d-animasjon: {current_frame / total_frames * 100:.1f}%", end="\r"
+    )
+    ani.save(
+        "./animations/solsystemet_2d_euler_cromer.gif",
+        fps=60,
+        progress_callback=progress_callback,
+    )
     plt.close()
     print("2d-animasjon ferdig: ")
 
-    ani = create_animation_3d(positions=positions[::100, :6, :], names=names[:6], tail_length=30)
-    progress_callback = lambda current_frame, total_frames: print(f"Lager 3d-animasjon: {current_frame / total_frames * 100:.1f}%", end="\r")
-    ani.save("./animations/solsystemet_3d_euler_cromer.gif", fps=60, progress_callback=progress_callback)
+    ani = create_animation_3d(
+        positions=positions[::100, :6, :], names=names[:6], tail_length=30
+    )
+    progress_callback = lambda current_frame, total_frames: print(
+        f"Lager 3d-animasjon: {current_frame / total_frames * 100:.1f}%", end="\r"
+    )
+    ani.save(
+        "./animations/solsystemet_3d_euler_cromer.gif",
+        fps=60,
+        progress_callback=progress_callback,
+    )
     plt.close()
     print("3d-animasjon ferdig: ")
 
 
 if __name__ == "__main__":
     main(num_timesteps=int(1e6), dt=1e-4)
-
