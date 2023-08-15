@@ -568,7 +568,7 @@ document.write(`
 <td class="text-left"><p>En liste med to lister. Kalles for <em>nøstede</em> lister.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[0.8567,</span> <span class="pre">0.4299,</span> <span class="pre">0.2697,</span> <span class="pre">0.0037,</span> <span class="pre">0.3074]</span></code></p></td>
-<td class="text-left"><p>Liste med seks desimaltall</p></td>
+<td class="text-left"><p>Liste med fem desimaltall</p></td>
 </tr>
 </tbody>
 </table>
@@ -621,7 +621,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Men vi kan også printe ut listen på en mer oversiktlig måte ved å <em>pakke ut</em> lista med <code class="docutils literal notranslate"><span class="pre">*</span></code>-operatoren foran listen <code class="docutils literal notranslate"><span class="pre">*planter</span></code> og separere elementene med ny linje ved å bruke <code class="docutils literal notranslate"><span class="pre">\n</span></code> i print:</p>
+<p>Men vi kan også printe ut listen på en mer oversiktlig måte ved å <em>pakke ut</em> lista med <code class="docutils literal notranslate"><span class="pre">*</span></code>-operatoren foran listen <code class="docutils literal notranslate"><span class="pre">*planeter</span></code> og separere elementene med ny linje ved å bruke <code class="docutils literal notranslate"><span class="pre">\n</span></code> i print:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">planeter</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># stjerna (*) pakker ut lista og sep=&quot;\n&quot; setter linjeskift mellom hvert element</span>
@@ -840,7 +840,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>element_0 = 1
 element_1 = 2
-element_2 = 9
+element_2 = 3
 </pre></div>
 </div>
 </div>
@@ -1029,6 +1029,7 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 </div>
 </div>
 </div>
+<p>Det kan se litt forvirrende ut at det er to <code class="docutils literal notranslate"><span class="pre">:</span></code> plassert i lista, men du kan tenke på det som at <code class="docutils literal notranslate"><span class="pre">startindeks</span></code> og <code class="docutils literal notranslate"><span class="pre">sluttindeks</span></code> er satt slik at <code class="docutils literal notranslate"><span class="pre">startindeks</span> <span class="pre">=</span> <span class="pre">0</span></code> og <code class="docutils literal notranslate"><span class="pre">sluttindeks</span> <span class="pre">=</span> <span class="pre">len(l)</span> <span class="pre">-</span> <span class="pre">1</span></code>. Det kunne derfor i prinsippet stått <code class="docutils literal notranslate"><span class="pre">l[0:len(l)</span> <span class="pre">-</span> <span class="pre">1:2]</span></code> i stedet for <code class="docutils literal notranslate"><span class="pre">l[::2]</span></code>, men det er litt vanskeligere å tyde.</p>
 </section>
 <section id="underveisoppgave-4">
 <h4>Underveisoppgave 4<a class="headerlink" href="#underveisoppgave-4" title="Permalink to this heading">#</a></h4>
