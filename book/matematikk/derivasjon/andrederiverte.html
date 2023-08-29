@@ -505,7 +505,7 @@ document.write(`
 <h2>Formel for å estimere den andrederiverte<a class="headerlink" href="#formel-for-a-estimere-den-andrederiverte" title="Permalink to this heading">#</a></h2>
 <p>En tilnærmingsformel for den andrederiverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span> er</p>
 <div class="math notranslate nohighlight" id="equation-andrederivert">
-<span class="eqno">(18)<a class="headerlink" href="#equation-andrederivert" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21)<a class="headerlink" href="#equation-andrederivert" title="Permalink to this equation">#</a></span>\[
 f''(x) \approx \frac{f(x + h) - 2f(x) + f(x - h)}{h^2}.
 \]</div>
 <p>Her er <span class="math notranslate nohighlight">\(h\)</span> et lite tall, og vi kan få en bedre tilnærming jo mindre <span class="math notranslate nohighlight">\(h\)</span> er. Vi kan også bruke denne formelen til å finne vendepunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> ved å løse likningen <span class="math notranslate nohighlight">\(f''(x) = 0\)</span> numerisk, ved å bruke for eksempel <a class="reference internal" href="../nullpunkter/halveringsmetoden.html"><span class="doc std std-doc">halveringsmetoden</span></a> eller <a class="reference internal" href="../nullpunkter/newtons_metode.html"><span class="doc std std-doc">Newton’s metode</span></a>.</p>
@@ -516,7 +516,7 @@ f''(x) \approx \frac{f(x + h) - 2f(x) + f(x - h)}{h^2}.
 \[
 f(x) = x^3 + 2x^2 - 5x + 1,
 \]</div>
-<p>og ønsker å finne verdien til den andrederiverte til funksjonen i <span class="math notranslate nohighlight">\(x = 1\)</span> uten å måtte finne selve formelen. Da kan vi benytte oss av formelen i likning <a class="reference internal" href="#equation-andrederivert">(18)</a> til å finne en tilnærming. Vi kan for eksempel bruke <span class="math notranslate nohighlight">\(h = 0.001\)</span> med følgende kode for å finne en tilnærming:</p>
+<p>og ønsker å finne verdien til den andrederiverte til funksjonen i <span class="math notranslate nohighlight">\(x = 1\)</span> uten å måtte finne selve formelen. Da kan vi benytte oss av formelen i likning <a class="reference internal" href="#equation-andrederivert">(21)</a> til å finne en tilnærming. Vi kan for eksempel bruke <span class="math notranslate nohighlight">\(h = 0.001\)</span> med følgende kode for å finne en tilnærming:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -559,7 +559,7 @@ f(x) = x^3 + 2x^2 - 5x + 1,
 \[
 g(x) = 2x^4 - 3x^3 + 4x^2 - 5x + 1,
 \]</div>
-<p>ved å bruke formelen i likning <a class="reference internal" href="#equation-andrederivert">(18)</a> med <span class="math notranslate nohighlight">\(h = 0.001\)</span> i punktet <span class="math notranslate nohighlight">\(x = -1\)</span>. Sammenlign med den eksakte verdien.</p>
+<p>ved å bruke formelen i likning <a class="reference internal" href="#equation-andrederivert">(21)</a> med <span class="math notranslate nohighlight">\(h = 0.001\)</span> i punktet <span class="math notranslate nohighlight">\(x = -1\)</span>. Sammenlign med den eksakte verdien.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må bare fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
