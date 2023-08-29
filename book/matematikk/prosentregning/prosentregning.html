@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Numerisk derivasjon av andre orden (andrederiverte) &#8212; Programmering i Videregående Skole</title>
+    <title>Prosentregning &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -68,11 +68,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/derivasjon/andrederiverte';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/prosentregning/prosentregning';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Numerisk Interasjon" href="../integrasjon/intro.html" />
-    <link rel="prev" title="Numerisk derivasjon av første orden (førstederiverte)" href="first_derivative.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likninger.html">Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -197,9 +195,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Numerisk Derivasjon</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="first_derivative.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../derivasjon/intro.html">Numerisk Derivasjon</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../derivasjon/first_derivative.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivasjon/andrederiverte.html">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -294,7 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/matematikk/derivasjon/andrederiverte.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/matematikk/prosentregning/prosentregning.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +358,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/matematikk/derivasjon/andrederiverte.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/matematikk/prosentregning/prosentregning.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +388,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/matematikk/derivasjon/andrederiverte.ipynb" target="_blank"
+      <li><a href="../../../_sources/book/matematikk/prosentregning/prosentregning.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -472,7 +470,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Numerisk derivasjon av andre orden (andrederiverte)</h1>
+    <h1>Prosentregning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -482,9 +480,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formel-for-a-estimere-den-andrederiverte">Formel for å estimere den andrederiverte</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-andrederiverte-av-et-polynom">Eksempel: Andrederiverte av et polynom</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-andrederiverte-av-et-polynom">Øvingsoppgave: Andrederiverte av et polynom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prosent">Prosent</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-1">Metode 1:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -498,98 +498,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numerisk-derivasjon-av-andre-orden-andrederiverte">
-<h1>Numerisk derivasjon av andre orden (andrederiverte)<a class="headerlink" href="#numerisk-derivasjon-av-andre-orden-andrederiverte" title="Permalink to this heading">#</a></h1>
-<p>I denne seksjonen skal vi se på hvordan vi kan tilnærme den andrederiverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x\)</span> ved å bruke Newtons kvotient for den deriverte. Vi skal også se på hvordan vi kan bruke dette til å finne vendepunkter til en funksjon.</p>
-<section id="formel-for-a-estimere-den-andrederiverte">
-<h2>Formel for å estimere den andrederiverte<a class="headerlink" href="#formel-for-a-estimere-den-andrederiverte" title="Permalink to this heading">#</a></h2>
-<p>En tilnærmingsformel for den andrederiverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span> er</p>
-<div class="math notranslate nohighlight" id="equation-andrederivert">
-<span class="eqno">(18)<a class="headerlink" href="#equation-andrederivert" title="Permalink to this equation">#</a></span>\[
-f''(x) \approx \frac{f(x + h) - 2f(x) + f(x - h)}{h^2}.
-\]</div>
-<p>Her er <span class="math notranslate nohighlight">\(h\)</span> et lite tall, og vi kan få en bedre tilnærming jo mindre <span class="math notranslate nohighlight">\(h\)</span> er. Vi kan også bruke denne formelen til å finne vendepunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> ved å løse likningen <span class="math notranslate nohighlight">\(f''(x) = 0\)</span> numerisk, ved å bruke for eksempel <a class="reference internal" href="../nullpunkter/halveringsmetoden.html"><span class="doc std std-doc">halveringsmetoden</span></a> eller <a class="reference internal" href="../nullpunkter/newtons_metode.html"><span class="doc std std-doc">Newton’s metode</span></a>.</p>
-<section id="eksempel-andrederiverte-av-et-polynom">
-<h3>Eksempel: Andrederiverte av et polynom<a class="headerlink" href="#eksempel-andrederiverte-av-et-polynom" title="Permalink to this heading">#</a></h3>
-<p>Anta vi har polynomet</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="prosentregning">
+<h1>Prosentregning<a class="headerlink" href="#prosentregning" title="Permalink to this heading">#</a></h1>
+<section id="bakgrunnsteori">
+<h2>Bakgrunnsteori<a class="headerlink" href="#bakgrunnsteori" title="Permalink to this heading">#</a></h2>
+<section id="prosent">
+<h3>Prosent<a class="headerlink" href="#prosent" title="Permalink to this heading">#</a></h3>
+<p>Prosent er en måte å uttrykke hvor mye en størrelse er målt i hundredeler. Prosent skrives med symbolet <span class="math notranslate nohighlight">\(\%\)</span> og betyr <span class="math notranslate nohighlight">\(1 / 100\)</span>. I praksis kan vi si at</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = x^3 + 2x^2 - 5x + 1,
+\% = \frac{1}{100} = 0.01
 \]</div>
-<p>og ønsker å finne verdien til den andrederiverte til funksjonen i <span class="math notranslate nohighlight">\(x = 1\)</span> uten å måtte finne selve formelen. Da kan vi benytte oss av formelen i likning <a class="reference internal" href="#equation-andrederivert">(18)</a> til å finne en tilnærming. Vi kan for eksempel bruke <span class="math notranslate nohighlight">\(h = 0.001\)</span> med følgende kode for å finne en tilnærming:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="n">h</span> <span class="o">=</span> <span class="mf">0.001</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">d2f_dx2</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f´´(1) = </span><span class="si">{</span><span class="n">d2f_dx2</span><span class="w"> </span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f&#39;&#39;(1) = 10.00
-</pre></div>
-</div>
-</div>
-</div>
-<p>Men vi ønsker ofte å finne den deriverte i mer enn ett punkt. Da kan det være fornuftig å lage en funksjon som regner ut den deriverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span>, for å så bruke denne funksjonen flere ganger. Vi kan for eksempel lage en funksjon som tar inn en funksjon <span class="math notranslate nohighlight">\(f\)</span>, et punkt <span class="math notranslate nohighlight">\(x\)</span> og et tall <span class="math notranslate nohighlight">\(h\)</span>, og returnerer en tilnærming til den deriverte til <span class="math notranslate nohighlight">\(f\)</span> i punktet <span class="math notranslate nohighlight">\(x\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">df2_dx2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f´´(1) = </span><span class="si">{</span><span class="n">df2_dx2</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span><span class="w"> </span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f&#39;&#39;(1) = 10.00
-</pre></div>
-</div>
-</div>
-</div>
+<section id="metode-1">
+<h4>Metode 1:<a class="headerlink" href="#metode-1" title="Permalink to this heading">#</a></h4>
 </section>
-<section id="ovingsoppgave-andrederiverte-av-et-polynom">
-<h3>Øvingsoppgave: Andrederiverte av et polynom<a class="headerlink" href="#ovingsoppgave-andrederiverte-av-et-polynom" title="Permalink to this heading">#</a></h3>
-<p>Finn en tilnærming til den andrederiverte til polynomet</p>
-<div class="math notranslate nohighlight">
-\[
-g(x) = 2x^4 - 3x^3 + 4x^2 - 5x + 1,
-\]</div>
-<p>ved å bruke formelen i likning <a class="reference internal" href="#equation-andrederivert">(18)</a> med <span class="math notranslate nohighlight">\(h = 0.001\)</span> i punktet <span class="math notranslate nohighlight">\(x = -1\)</span>. Sammenlign med den eksakte verdien.</p>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må bare fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-<span class="k">def</span> <span class="nf">d2f_dx2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f´´(-1) = </span><span class="si">{</span><span class="n">d2f_dx2</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span><span class="w"> </span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="k">def</span> <span class="nf">d2f_dx2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-</details></section>
+</section>
 </section>
 </section>
 
@@ -606,7 +529,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/matematikk/derivasjon"
+            path: "./book/matematikk/prosentregning"
         },
         predefinedOutput: true
     }
@@ -624,24 +547,6 @@ Løsningsforslag<div class="sd-summary-down docutils">
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="first_derivative.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Numerisk derivasjon av første orden (førstederiverte)</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../integrasjon/intro.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numerisk Interasjon</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -660,9 +565,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formel-for-a-estimere-den-andrederiverte">Formel for å estimere den andrederiverte</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-andrederiverte-av-et-polynom">Eksempel: Andrederiverte av et polynom</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgave-andrederiverte-av-et-polynom">Øvingsoppgave: Andrederiverte av et polynom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bakgrunnsteori">Bakgrunnsteori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prosent">Prosent</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-1">Metode 1:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
