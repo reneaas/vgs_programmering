@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -440,10 +450,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -451,7 +461,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -479,9 +489,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-numpy-array">Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lage-numpy-arrays">Hvordan Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fra-en-liste">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fylt-med-nuller">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array med jevnt fordelte tall mellom to verdier</a></li>
 </ul>
 </li>
 </ul>
@@ -510,8 +521,8 @@ document.write(`
 <h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array<a class="headerlink" href="#numpy-array" title="Permalink to this heading">#</a></h2>
 <p>Det grunnleggende objektet i <code class="docutils literal notranslate"><span class="pre">numpy</span></code> er <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrayet. Dette er en datatype som er spesiallaget for å lagre og manipulere store mengder data samtidig.
 Du kan tenke på et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array som en <a class="reference internal" href="../containers/lists.html"><span class="doc std std-doc">liste</span></a>, men i motsetning til lister, så kan vi gjøre en operasjon på flere av elementene i et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array samtidig. Dette gjør at <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays er mye raskere enn lister når vi skal gjøre operasjoner på mange elementer samtidig. Denne formen for programmering kalles for øvrig for <strong>vektorisering</strong>.</p>
-<section id="lage-numpy-array">
-<h3>Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array<a class="headerlink" href="#lage-numpy-array" title="Permalink to this heading">#</a></h3>
+<section id="hvordan-lage-numpy-arrays">
+<h3>Hvordan Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays<a class="headerlink" href="#hvordan-lage-numpy-arrays" title="Permalink to this heading">#</a></h3>
 <p>Det er flere måter å lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays på.</p>
 <section id="lage-et-numpy-array-fra-en-liste">
 <h4>Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste<a class="headerlink" href="#lage-et-numpy-array-fra-en-liste" title="Permalink to this heading">#</a></h4>
@@ -522,6 +533,13 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
 
 <span class="n">min_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">mitt_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">min_liste</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mitt_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
 </pre></div>
 </div>
 </div>
@@ -539,6 +557,60 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier">
+<h4>Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array med jevnt fordelte tall mellom to verdier<a class="headerlink" href="#lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier" title="Permalink to this heading">#</a></h4>
+<p>I noen anvendelser, ønsker vi å lage et array der elementene er jevnt fordelt mellom to verdier. Da kan vi bruke funksjonen <code class="docutils literal notranslate"><span class="pre">numpy.linspace</span></code>. Denne funksjonen tar tre argumenter:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: startverdien på intervallet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: sluttverdien på intervallet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span></code>: antall elementer i arrayet.</p></li>
+</ul>
+<p>For eksempel kan vi lage et array med 10 jevnt fordelte tall mellom 0 og 1 slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556
+ 0.66666667 0.77777778 0.88888889 1.        ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strengt tatt, kan vi også bare skrive slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556
+ 0.66666667 0.77777778 0.88888889 1.        ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi trenger altså ikke å bruke nøkkelordene <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code> og <code class="docutils literal notranslate"><span class="pre">num</span></code> direkte, men hvis vi ikke gjør det må vi sende inn tallene i riktig rekkefølge. Fordelen med å bruke nøkkelordene, er at vi kan skrive dem i hvilken som helst rekkefølge. For eksempel gir dette akkurat samme resultat:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556
+ 0.66666667 0.77777778 0.88888889 1.        ]
 </pre></div>
 </div>
 </div>
@@ -573,16 +645,12 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -598,9 +666,10 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-numpy-array">Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lage-numpy-arrays">Hvordan Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fra-en-liste">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fylt-med-nuller">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array med jevnt fordelte tall mellom to verdier</a></li>
 </ul>
 </li>
 </ul>
@@ -652,8 +721,8 @@ By René Ask
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>
