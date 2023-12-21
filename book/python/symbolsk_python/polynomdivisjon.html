@@ -502,6 +502,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
 </ul>
@@ -537,9 +539,7 @@ p(x) = k(x)q(x) + r(x)
 <h2>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h2>
 <p>La oss utføre polynomdivisjonen</p>
 <div class="math notranslate nohighlight">
-\[
-(x^3 - 4x^2 + 2) : (x - 6)
-\]</div>
+\[(x^3 - 4x^2 + 2) : (x - 6)\]</div>
 <p>med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Vi starter med å importere <code class="docutils literal notranslate"><span class="pre">sympy</span></code> og definere polynomene <span class="math notranslate nohighlight">\(p(x)\)</span> og <span class="math notranslate nohighlight">\(q(x)\)</span>, deretter bruker vi <code class="docutils literal notranslate"><span class="pre">sympy.div</span></code> til å utføre polynomdivisjonen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,6 +724,103 @@ Løsning<div class="sd-summary-down docutils">
 \]</div>
 </div>
 </details></section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å regne ut</p>
+<div class="math notranslate nohighlight">
+\[
+(x^4 - x^2 - 6) : (x^2 + 1)
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeksallet under. Du må endre alle steder det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> 
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">q</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">6</span> <span class="c1"># p(x) = x^4 - x^2 - 6</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># q(x) = x^2 + 1</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="c1"># k = k(x) og r = r(x)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">k = x**2 - 1</span>
+<span class="go">r = -4</span>
+</pre></div>
+</div>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+(x^4 - x^2 - 6) : (x^2 + 1) = x^2 - 1 + \frac{-4}{x^2 + 1}
+\]</div>
+</div>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å regne ut</p>
+<div class="math notranslate nohighlight">
+\[
+(x^3 - 3x^2 - 4x + 12) : (x^2 + 2x - 1)
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeksallet under. Du må endre alle steder det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> 
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">q</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">12</span> <span class="c1"># p(x) = x^3 - 3x^2 - 4x + 12</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="c1"># k = k(x) og r = r(x)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">k = x - 5</span>
+<span class="go">r = 7*x + 7</span>
+</pre></div>
+</div>
+<p>som betyr at
+$<span class="math notranslate nohighlight">\(
+(x^3 - 3x^2 - 4x + 12) : (x^2 + 2x - 1) = x - 5 + \frac{7x + 7}{x^2 + 2x - 1}
+\)</span>$</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -795,6 +892,8 @@ Løsning<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
 </ul>
