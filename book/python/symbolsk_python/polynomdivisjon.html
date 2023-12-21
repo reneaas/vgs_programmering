@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Fast asf kode med numpy &#8212; Programmering i Videregående Skole</title>
+    <title>Polynomdivisjon med sympy &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -65,11 +65,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/special_modules/numpy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/symbolsk_python/polynomdivisjon';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Løse Likningssystemer med sympy" href="likningsystemer.html" />
+    <link rel="prev" title="Løse Likninger med sympy" href="likninger.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,21 +188,21 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matplotlib.html">Tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_modules/matplotlib.html">Tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/likninger.html">Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/polynomdivisjon.html">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/ulikheter.html">Løse Ulikheter med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/derivasjon.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Symbolsk Programmering med Python (CAS)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="likninger.html">Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ulikheter.html">Løse Ulikheter med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivasjon.html">Symbolsk Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/nullpunkter/intro.html">Finne Nullpunkter Numerisk</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -303,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/special_modules/numpy.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/python/symbolsk_python/polynomdivisjon.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/special_modules/numpy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/python/symbolsk_python/polynomdivisjon.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/python/special_modules/numpy.ipynb" target="_blank"
+      <li><a href="../../../_sources/book/python/symbolsk_python/polynomdivisjon.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -483,7 +487,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fast asf kode med numpy</h1>
+    <h1>Polynomdivisjon med sympy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -493,13 +497,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lage-numpy-arrays">Hvordan Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fra-en-liste">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fylt-med-nuller">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array med jevnt fordelte tall mellom to verdier</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
@@ -513,115 +515,215 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="fast-asf-kode-med-numpy">
-<h1>Fast asf kode med <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#fast-asf-kode-med-numpy" title="Permalink to this heading">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> er et bibliotek for <strong>num</strong>erisk <strong>py</strong>thon. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> sitt bidrag til oss proggere er</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrayet, som er en effektiv datatype for å lagre og manipulere store mengder data samtidig.</p></li>
-<li><p>Innebygde funksjoner for alle de <a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html"><span class="doc std std-doc">elementære matematiske funksjonene</span></a>.</p></li>
-<li><p>Innebygde funksjoner for å trekke tilfeldig tall fra mange sannsynlighetsfordelinger.</p></li>
-<li><p>Funksjonalitet for å regne på mange tall samtidig, uten å bruke <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker.</p></li>
-</ul>
-<section id="numpy-array">
-<h2><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array<a class="headerlink" href="#numpy-array" title="Permalink to this heading">#</a></h2>
-<p>Det grunnleggende objektet i <code class="docutils literal notranslate"><span class="pre">numpy</span></code> er <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrayet. Dette er en datatype som er spesiallaget for å lagre og manipulere store mengder data samtidig.
-Du kan tenke på et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array som en <a class="reference internal" href="../containers/lists.html"><span class="doc std std-doc">liste</span></a>, men i motsetning til lister, så kan vi gjøre en operasjon på flere av elementene i et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array samtidig. Dette gjør at <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays er mye raskere enn lister når vi skal gjøre operasjoner på mange elementer samtidig. Denne formen for programmering kalles for øvrig for <strong>vektorisering</strong>.</p>
-<section id="hvordan-lage-numpy-arrays">
-<h3>Hvordan Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays<a class="headerlink" href="#hvordan-lage-numpy-arrays" title="Permalink to this heading">#</a></h3>
-<p>Det er flere måter å lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays på.</p>
-<section id="lage-et-numpy-array-fra-en-liste">
-<h4>Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste<a class="headerlink" href="#lage-et-numpy-array-fra-en-liste" title="Permalink to this heading">#</a></h4>
-<p>Vi kan lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste ved å bruke funksjonen <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="polynomdivisjon-med-sympy">
+<h1>Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#polynomdivisjon-med-sympy" title="Permalink to this heading">#</a></h1>
+<p>Her skal du lære hvordan man kan bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å utføre polynomdivisjon.</p>
+<div class="tip admonition">
+<p class="admonition-title">Polynomdivisjon</p>
+<p>Polynomdivisjon er en metode for å dele to polynomer. Gitt et polynom <span class="math notranslate nohighlight">\(p(x)\)</span> av grad <span class="math notranslate nohighlight">\(n\)</span> et polynom <span class="math notranslate nohighlight">\(q(x)\)</span> av grad <span class="math notranslate nohighlight">\(m\)</span>, der <span class="math notranslate nohighlight">\(m\leq n\)</span>, kan vi finne et polynom <span class="math notranslate nohighlight">\(k(x)\)</span> kalt <em>kvotienten</em> og et polynom <span class="math notranslate nohighlight">\(r(x)\)</span> kalt <em>resten</em> slik at</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
+\]</div>
+<p>eller sagt på en annen måte, polynomet <span class="math notranslate nohighlight">\(p(x)\)</span> kan skrives som</p>
+<div class="math notranslate nohighlight">
+\[
+p(x) = k(x)q(x) + r(x)
+\]</div>
+<p>Den siste varianten er ofte den som står i lærebøker, og kalles for <em>Euklidisk polynomdivisjon</em>.</p>
+</div>
+<p>Polynomdivisjon kan utføres i <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med funksjonen <code class="docutils literal notranslate"><span class="pre">div</span></code> fra <code class="docutils literal notranslate"><span class="pre">sympy.polys</span></code>. Denne funksjonen tar to polynom som argumenter, og returnerer en <code class="docutils literal notranslate"><span class="pre">tuple</span></code> med to elementer. Det første elementet er kvotienten, og det andre elementet er resten.</p>
+<section id="eksempel-1">
+<h2>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h2>
+<p>La oss utføre polynomdivisjonen</p>
+<div class="math notranslate nohighlight">
+\[
+(x^3 - 4x^2 + 2) : (x - 6)
+\]</div>
+<p>med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Vi starter med å importere <code class="docutils literal notranslate"><span class="pre">sympy</span></code> og definere polynomene <span class="math notranslate nohighlight">\(p(x)\)</span> og <span class="math notranslate nohighlight">\(q(x)\)</span>, deretter bruker vi <code class="docutils literal notranslate"><span class="pre">sympy.div</span></code> til å utføre polynomdivisjonen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">min_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">mitt_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">min_liste</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># p(x) = x^3 - 4x^2 + 2</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span> <span class="c1"># q(x) = x - 6</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">mitt_array</span><span class="p">)</span>
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="c1"># k = k(x) og r = r(x)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kvotienten: </span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;resten: </span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kvotienten: k = x**2 + 2*x + 12
+resten: r = 74
 </pre></div>
 </div>
 </div>
+</div>
+<p>Vi får altså at <span class="math notranslate nohighlight">\(k(x) = x^2 + 2x + 12\)</span> og <span class="math notranslate nohighlight">\(r(x) = 74\)</span>. Det betyr da at</p>
+<div class="math notranslate nohighlight">
+\[
+(x^3 - 4x^2 + 2) : (x - 6) = k(x) + \frac{r(x)}{x - 6} = x^2 + 2x + 12 + \frac{74}{x - 6}
+\]</div>
+</section>
+<section id="ovingsoppgaver">
+<h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
+<p>Her skal du bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å utføre polynomdivisjon. Du vil finne frivillige <em>kodeskall</em> du kan ta utgangspunkt i om det er vanskelig å sette i gang, men det er lurt å prøve å skrive all koden selv. Det ligger også løsningsforslag, men bruk disse først når du har prøvd selv.</p>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy.div</span></code> til å utføre polynomdivisjonen</p>
+<div class="math notranslate nohighlight">
+\[
+(x^2 - 2x + 1) : (x - 1)
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeksallet under. Du må endre alle steder det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">q</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">q</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">k = x - 1</span>
+<span class="go">r = 0</span>
+</pre></div>
+</div>
+<p>Altså er resultatet</p>
+<div class="math notranslate nohighlight">
+\[
+(x^2 - 2x + 1) : (x - 1) = x - 1
+\]</div>
 </div>
 </section>
-<section id="lage-et-numpy-array-fylt-med-nuller">
-<h4>Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller<a class="headerlink" href="#lage-et-numpy-array-fylt-med-nuller" title="Permalink to this heading">#</a></h4>
-<p>Ofte ønsker vi å lage et tomt array med en bestemt lengde som vi har tenkt til å fylle opp med verdier. Da kan vi bruke funksjonen <code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># lager et array med lengde 10 fylt med tallet 0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å utføre polynomdivisjonen</p>
+<div class="math notranslate nohighlight">
+\[
+(x^2 - x - 6) : (x + 4)
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeksallet under. Du må endre alle steder det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> 
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">q</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>som gir</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">k = x - 5</span>
+<span class="go">r = 14</span>
+</pre></div>
 </div>
+<p>Altså er resultatet</p>
+<div class="math notranslate nohighlight">
+\[
+(x^2 - x - 6) : (x + 4) = x - 5 + \frac{14}{x + 4}
+\]</div>
 </div>
 </section>
-<section id="lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier">
-<h4>Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array med jevnt fordelte tall mellom to verdier<a class="headerlink" href="#lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier" title="Permalink to this heading">#</a></h4>
-<p>I noen anvendelser, ønsker vi å lage et array der elementene er jevnt fordelt mellom to verdier. Da kan vi bruke funksjonen <code class="docutils literal notranslate"><span class="pre">numpy.linspace</span></code>. Denne funksjonen tar tre argumenter:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: startverdien på intervallet</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: sluttverdien på intervallet</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num</span></code>: antall elementer i arrayet.</p></li>
-</ul>
-<p>For eksempel kan vi lage et array med 10 jevnt fordelte tall mellom 0 og 1 slik:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å utføre polynomdivisjonen</p>
+<div class="math notranslate nohighlight">
+\[
+(x^3 - 2x^2 + 3x - 6) : (x - 3)
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeksallet under. Du må endre alle steder det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> 
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">q</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556
- 0.66666667 0.77777778 0.88888889 1.        ]
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Løsning<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span>
+
+<span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>Strengt tatt, kan vi også bare skrive slik:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<p class="sd-card-text">som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">k = x**2 + x + 6</span>
+<span class="go">r = 12</span>
 </pre></div>
 </div>
+<p class="sd-card-text">som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+(x^3 - 2x^2 + 3x - 6) : (x - 3) = x^2 + x + 6 + \frac{12}{x - 3}
+\]</div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556
- 0.66666667 0.77777778 0.88888889 1.        ]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Vi trenger altså ikke å bruke nøkkelordene <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stop</span></code> og <code class="docutils literal notranslate"><span class="pre">num</span></code> direkte, men hvis vi ikke gjør det må vi sende inn tallene i riktig rekkefølge. Fordelen med å bruke nøkkelordene, er at vi kan skrive dem i hvilken som helst rekkefølge. For eksempel gir dette akkurat samme resultat:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556
- 0.66666667 0.77777778 0.88888889 1.        ]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
+</details></section>
 </section>
 </section>
 
@@ -638,7 +740,7 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/python/special_modules"
+            path: "./book/python/symbolsk_python"
         },
         predefinedOutput: true
     }
@@ -655,6 +757,24 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="likninger.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="likningsystemer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -670,13 +790,11 @@ Du kan tenke på et <code class="docutils literal notranslate"><span class="pre"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array"><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lage-numpy-arrays">Hvordan Lage <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-arrays</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fra-en-liste">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fra en liste</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-fylt-med-nuller">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array fylt med nuller</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-et-numpy-array-med-jevnt-fordelte-tall-mellom-to-verdier">Lage et <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-array med jevnt fordelte tall mellom to verdier</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
