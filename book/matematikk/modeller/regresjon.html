@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lese inn data fra filer 101 &#8212; Programmering i Videregående Skole</title>
+    <title>Regresjon i Python &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -69,9 +69,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/data_analyse/IO/read_files';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/modeller/regresjon';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Elastiske kollisjoner: en uventet \(\pi\)-fabrikk" href="../../fysikk/pi_factory/pi_fabrikken.html" />
+    <link rel="prev" title="Forventning, Varians Og Standardavvik med Simuleringer" href="../sannsynlighet/exp_var_std_simulering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likninger.html">Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/polynomdivisjon.html">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -203,35 +205,35 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/nullpunkter/intro.html">Finne Nullpunkter Numerisk</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/nullpunkter/newtons_metode.html">Newtons metode</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nullpunkter/intro.html">Finne Nullpunkter Numerisk</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nullpunkter/halveringsmetoden.html">Halveringsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nullpunkter/newtons_metode.html">Newtons metode</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/derivasjon/intro.html">Numerisk Derivasjon</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/derivasjon/first_derivative.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/derivasjon/andrederiverte.html">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../derivasjon/intro.html">Numerisk Derivasjon</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../derivasjon/first_derivative.html">Numerisk derivasjon av første orden (førstederiverte)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivasjon/andrederiverte.html">Numerisk derivasjon av andre orden (andrederiverte)</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (Matematikk S2)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/integrasjon/lengde_av_graf.html">Buelengde</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrasjon/trapesmetoden.html">Trapesmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrasjon/midtpunktsmetoden.html">Midtpunktsmetoden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrasjon/mc_integrasjon.html">Monte Carlo Integrasjon (Matematikk S2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrasjon/lengde_av_graf.html">Buelengde</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/intro.html">Følger og Rekker</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/sequences.html">Intro til følger og rekker med Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/praktiske_anvendelser_av_rekker.html">Praktiske Anvendelser av Rekker med Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../f%C3%B8lger_og_rekker/intro.html">Følger og Rekker</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/sequences.html">Intro til følger og rekker med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/praktiske_anvendelser_av_rekker.html">Praktiske Anvendelser av Rekker med Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f%C3%B8lger_og_rekker/rekursive_funksjoner.html">Følger og rekker med rekursive funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/sannsynlighet/intro.html">Sannsynlighet</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sannsynlighet/intro.html">Sannsynlighet</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sannsynlighet/simulere_sannsynligheter.html">Simulere sannsynligheter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Regresjon i Python</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
@@ -302,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/data_analyse/IO/read_files.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/reneaas/vgs_programmering/main/?urlpath=lab/tree/book/book/matematikk/modeller/regresjon.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +370,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/data_analyse/IO/read_files.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/reneaas/vgs_programmering/issues/new?title=Issue%20on%20page%20%2Fbook/matematikk/modeller/regresjon.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +400,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/book/data_analyse/IO/read_files.ipynb" target="_blank"
+      <li><a href="../../../_sources/book/matematikk/modeller/regresjon.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -482,7 +484,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lese inn data fra filer 101</h1>
+    <h1>Regresjon i Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -492,13 +494,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lese-data-fra-en-fil">Hvordan lese data fra en fil?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Regresjon i Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-regresjon-av-en-rett-linje">Eksempel: Regresjon av en rett linje</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-regresjon-med-en-andregradsfunksjon">Eksempel 2: Regresjon med en andregradsfunksjon</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -509,283 +511,142 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lese-inn-data-fra-filer-101">
-<h1>Lese inn data fra filer 101<a class="headerlink" href="#lese-inn-data-fra-filer-101" title="Permalink to this heading">#</a></h1>
-<p>Programmering med Python er et viktig verktøy når det kommer til å analysere datasett. Dette medfører at vi må være i stand til å lese data fra filer slik at vi kan bruke dataen til å lage grafer eller regne på dataen for å hente ut mer informasjon.</p>
-<section id="hvordan-lese-data-fra-en-fil">
-<h2>Hvordan lese data fra en fil?<a class="headerlink" href="#hvordan-lese-data-fra-en-fil" title="Permalink to this heading">#</a></h2>
-<p>Det er vanskelig å gi en <em>helt</em> generell beskrivelse av hvordan man skal lese inn datafiler. Men typisk vil en datafil lagres på en måte slik at den likner en tabell. Dette betyr at vi har en overskrift for hver kolonne, og at hver rad representerer en ny måling.</p>
-<p>Vi kan bruke en funksjon fra <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-biblioteket kalt <code class="docutils literal notranslate"><span class="pre">loadtxt</span></code>, som har følgende syntaks:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="n">antall_rader_som_skal_hoppes_over</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>deretter kan vi hente ut dataen fra kolonne <span class="math notranslate nohighlight">\(i\)</span> med</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_fra_kolonne_i</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Begrensing med lesemetoden vår</p>
-<p>Måten vi leser datafilen på forventer at alle verdiene i filen er plassert i hver sin kolonne på følgende type form:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>variabel 1</p></th>
-<th class="head"><p>variabel 2</p></th>
-<th class="head"><p>variabel 2</p></th>
-<th class="head"><p>…</p></th>
-<th class="head"><p>variabel n</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>verdi 1</p></td>
-<td><p>verdi 1</p></td>
-<td><p>verdi 1</p></td>
-<td><p>…</p></td>
-<td><p>verdi 1</p></td>
-</tr>
-<tr class="row-odd"><td><p>verdi 2</p></td>
-<td><p>verdi 2</p></td>
-<td><p>verdi 2</p></td>
-<td><p>…</p></td>
-<td><p>verdi 2</p></td>
-</tr>
-<tr class="row-even"><td><p>verdi 3</p></td>
-<td><p>verdi 3</p></td>
-<td><p>verdi 3</p></td>
-<td><p>…</p></td>
-<td><p>verdi 3</p></td>
-</tr>
-<tr class="row-odd"><td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-</tr>
-<tr class="row-even"><td><p>verdi m</p></td>
-<td><p>verdi m</p></td>
-<td><p>verdi m</p></td>
-<td><p>…</p></td>
-<td><p>verdi m</p></td>
-</tr>
-</tbody>
-</table>
-<p>Samtidig tilatter vi at det er noe støy på de øverste radene som vi bare kan hoppe over med å sette <code class="docutils literal notranslate"><span class="pre">skiprows</span></code>-parameteren til <code class="docutils literal notranslate"><span class="pre">loadtxt</span></code>-funksjonen til å være lik antall rader som skal hoppes over <em>før</em> vi begynner å lese inn dataen.</p>
-</div>
-</section>
-<section id="eksempler">
-<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
-<section id="eksempel-1">
-<h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at vi har en verditabell for funksjonen</p>
+  <section id="regresjon-i-python">
+<h1>Regresjon i Python<a class="headerlink" href="#regresjon-i-python" title="Permalink to this heading">#</a></h1>
+<p>Her skal du lære hvordan man kan gjøre regresjon i Python ved å bruke biblioteket funksjonen <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> fra <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>.</p>
+<p>For å gjøre regresjon i Python, må vi</p>
+<ol class="arabic simple">
+<li><p>Definere datapunktene våre som lister eller numpy-arrays.</p></li>
+<li><p>Definere en funksjon for modellen vår med frie parametere som skal bestemmes med regresjon.</p></li>
+</ol>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Teori: Regresjon</p>
+<p>Regresjon er et systematisk måte å bestemme en funksjonsmodell som passer til datapunkter vi kjenner til.
+Vi har gjerne <span class="math notranslate nohighlight">\(N\)</span> datapunkter <span class="math notranslate nohighlight">\((x_1, y_1), \)</span>(x_2, y_2), \ldots, (x_N, y_N)<span class="math notranslate nohighlight">\( som vi ønsker å finne en funksjon \)</span>f(x)$ som passer til.
+Vi antar at det finnes en funksjon slik at</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = x^2,
+y_i = f(x_i) + \epsilon_i,
 \]</div>
-<p>som er gitt ved</p>
+<p>der <span class="math notranslate nohighlight">\(\epsilon_i\)</span> er en tilfeldig feil som vi ikke kan forutsi. Målet vårt å bestemme <span class="math notranslate nohighlight">\(f(x)\)</span>. For å oppnå dette, velger vi oss gjerne en funksjonsmodell med frie parametere, og så bruker vi regresjon som en teknikk for å bestemme hva de frie parameterne må være for at funksjonsmodellen vår skal passe <em>best mulig</em>.</p>
+</div>
+<section id="eksempel-regresjon-av-en-rett-linje">
+<h2>Eksempel: Regresjon av en rett linje<a class="headerlink" href="#eksempel-regresjon-av-en-rett-linje" title="Permalink to this heading">#</a></h2>
+<p>La oss se på et eksempel der vi har <span class="math notranslate nohighlight">\(N = 5\)</span> datapunkter og skal tilpasse en rett linje <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span> til disse datapunktene. Vi starter med å importere bibliotekene vi trenger:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span> 
+
+<span class="c1"># Definer modellen vår</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Definerer dataene våre</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+
+<span class="c1"># Finner parametrene som passer best</span>
+<span class="n">parametere</span><span class="p">,</span> <span class="n">usikkerheter</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># henter ut parameterne fra lista og gir dem navn</span>
+<span class="c1"># Rekkefølgen til parameterne er den samme som i funksjonsdefinisjonen f(x, a, b)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">parametere</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2.0
+b = 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å bruke funksjonsmodellen, kan vi nå sende inn parameterne slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">parametere</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="eksempel-2-regresjon-med-en-andregradsfunksjon">
+<h1>Eksempel 2: Regresjon med en andregradsfunksjon<a class="headerlink" href="#eksempel-2-regresjon-med-en-andregradsfunksjon" title="Permalink to this heading">#</a></h1>
+<p>Noen ganger kan vi bruke regresjon til å bestemme parametere til en funksjon som skal beskrive en følge av tall (for eksempel figurtall). La oss se på et eksempel der vi skal bruke regresjon til å finne en formel for summen av de <span class="math notranslate nohighlight">\(N\)</span> første heltallene</p>
+<div class="math notranslate nohighlight">
+\[
+S_N = 1 + 2 + \ldots + N
+\]</div>
+<p>Vi kan ta lage oss en tabell med datapunkter først:</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(N\)</span></p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S_N\)</span></p></td>
 <td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>9</p></td>
-</tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p>25</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>10</p></td>
+<td><p>15</p></td>
 </tr>
 </tbody>
 </table>
-<p>Dette er også slik vi ser for oss at en datafil vil se ut. Vi har en overskrift for hver kolonne, og hver rad representerer en måling.</p>
-<p><strong>Du kan laste ned filen med denne koden:</strong></p>
+<p>Vi lar <span class="math notranslate nohighlight">\(N\)</span> være den uavhengige variabelen, og <span class="math notranslate nohighlight">\(S_N\)</span> være den avhengige variabelen, slik at <span class="math notranslate nohighlight">\(x = N\)</span> og <span class="math notranslate nohighlight">\(y = S_N\)</span>. Vi kan prøve oss med en andregradsfunksjon, som gir modellklassen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = ax^2 + bx + c
+\]</div>
+<p>og vi kan bruke Python til å bestemme hva <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span> må være for at modellen skal passe <em>best mulig</em> til datapunktene.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/x_kvadrert.txt&quot;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;x_kvadrert.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Innholdet i filen er følgende:</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
 
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat x_kvadrert.txt&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x f(x) 
-0 0 
-1 1 
-2 4 
-3 9 
-4 16 
-5 25 
-</pre></div>
-</div>
-</div>
-</div>
-<p>Så vi kan observere at verdiene starter først på andre rad! Dette betyr at vi må hoppe over den første raden når vi leser inn dataen. Vi kan gjøre dette med <code class="docutils literal notranslate"><span class="pre">skiprows</span></code>-parameteren til <code class="docutils literal notranslate"><span class="pre">loadtxt</span></code>-funksjonen.</p>
-<p>Når datafilen er lastet ned, kan vi lese den inn i Python med følgende kode:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">parametere</span><span class="p">,</span> <span class="n">usikkerheter</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;x_kvadrert.txt&quot;</span>
-<span class="c1"># Hopp over første rad med text og les inn resten av dataene</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">parametere</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Først kolonne</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Andre kolonne</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = array([0., 1., 2., 3., 4., 5.])
-y = array([ 0.,  1.,  4.,  9., 16., 25.])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 0.5000
+b = 0.5000
+c = -0.0000
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="eksempel-2">
-<h3>Eksempel 2<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at vi har en datafil med posisjonene til en ball over tid etter at vi har kastet den opp i lufta. Vi har målt posisjonen til kula hvert 0.01 sekund, og vi har lagret dataen i en fil. De første linjene av datafilen ser slik ut:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(t\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0.00</p></td>
-<td><p>0.00</p></td>
-<td><p>1.00</p></td>
-</tr>
-<tr class="row-odd"><td><p>0.01</p></td>
-<td><p>0.05</p></td>
-<td><p>1.15</p></td>
-</tr>
-<tr class="row-even"><td><p>0.02</p></td>
-<td><p>0.10</p></td>
-<td><p>1.30</p></td>
-</tr>
-</tbody>
-</table>
-<p>Målet vårt er å lese filen og lage en graf av posisjonen til kula.</p>
-<p><strong>Last ned datafilen med følgende kode:</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/reneaas/vgs_programmering/main/datasets/IO_tutorial/ball.txt&quot;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ball.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Starten på filen ser slik ut:</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cat ball.txt |head -n 10&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># Datasett for en ball som kastes fra 1 meter over bakken
-# Dette er kommentarer til datasettet
-# ------------
-# t x y
-# ------------ 
-
-0.00 0.00 1.00 
-0.01 0.05 1.15 
-0.02 0.10 1.30 
-0.03 0.15 1.45 
-</pre></div>
-</div>
-</div>
-</div>
-<p>Her er det lagt inn kommentarer i koden med <code class="docutils literal notranslate"><span class="pre">#</span></code>. Disse linjene vil <code class="docutils literal notranslate"><span class="pre">numpy.loadtxt</span></code> ignorere. Den ignorerer også blanke linjer.</p>
-<ol class="arabic simple">
-<li><p>kolonne: tiden <span class="math notranslate nohighlight">\(t\)</span></p></li>
-<li><p>kolonne: posisjonen <span class="math notranslate nohighlight">\(x\)</span></p></li>
-<li><p>kolonne: posisjonen <span class="math notranslate nohighlight">\(y\)</span></p></li>
-</ol>
-<p>Her er det lagt inn kommentarer i datafilen der linjene starter med <code class="docutils literal notranslate"><span class="pre">#</span></code>. Disse linjene vil <code class="docutils literal notranslate"><span class="pre">numpy.loadtxt</span></code> ignorere. Den ignorerer også blanke linjer. Når datafilen ser slik ut, slipper vi sette <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> til noe som helst. Da kan vi lese inn dataen med følgende kode:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;ball.txt&quot;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filnavn</span><span class="p">)</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Så kan vi visualisere posisjonen til ballen med følgende kode:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x [m]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y [m]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/95579767303ade998ad17484ff177f95fb3df6f9741f55db75c4537b0aa39547.png" src="../../../_images/95579767303ade998ad17484ff177f95fb3df6f9741f55db75c4537b0aa39547.png" />
-</div>
-</div>
-</section>
-</section>
+<p>Som betyr at <span class="math notranslate nohighlight">\(a = 1/2\)</span>, <span class="math notranslate nohighlight">\(b = 1/2\)</span> og <span class="math notranslate nohighlight">\(c = 0\)</span>, som gir funksjonsmodellen</p>
+<div class="math notranslate nohighlight">
+\[
+f(N) = \frac{1}{2}N^2 + \frac{1}{2}N = \frac{N(N+1)}{2},
+\]</div>
+<p>som viser seg å være den eksakte formelen for summen av de <span class="math notranslate nohighlight">\(N\)</span> første heltallene.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -801,7 +662,7 @@ y = array([ 0.,  1.,  4.,  9., 16., 25.])
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/data_analyse/IO"
+            path: "./book/matematikk/modeller"
         },
         predefinedOutput: true
     }
@@ -818,6 +679,24 @@ y = array([ 0.,  1.,  4.,  9., 16., 25.])
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../sannsynlighet/exp_var_std_simulering.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Forventning, Varians Og Standardavvik med Simuleringer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../fysikk/pi_factory/pi_fabrikken.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -833,13 +712,13 @@ y = array([ 0.,  1.,  4.,  9., 16., 25.])
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-lese-data-fra-en-fil">Hvordan lese data fra en fil?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Regresjon i Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-regresjon-av-en-rett-linje">Eksempel: Regresjon av en rett linje</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-regresjon-med-en-andregradsfunksjon">Eksempel 2: Regresjon med en andregradsfunksjon</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>

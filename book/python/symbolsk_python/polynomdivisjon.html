@@ -233,16 +233,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../matematikk/sannsynlighet/exp_var_std_simulering.html">Forventning, Varians Og Standardavvik med Simuleringer</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -534,7 +531,12 @@ p(x) = k(x)q(x) + r(x)
 \]</div>
 <p>Den siste varianten er ofte den som står i lærebøker, og kalles for <em>Euklidisk polynomdivisjon</em>.</p>
 </div>
-<p>Polynomdivisjon kan utføres i <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med funksjonen <code class="docutils literal notranslate"><span class="pre">sympy.div</span></code>. Denne funksjonen tar to polynom som argumenter, og returnerer en <code class="docutils literal notranslate"><span class="pre">tuple</span></code> med to elementer. Det første elementet er kvotienten, og det andre elementet er resten.</p>
+<p>Polynomdivisjon kan utføres i <code class="docutils literal notranslate"><span class="pre">sympy</span></code> med funksjonen <code class="docutils literal notranslate"><span class="pre">sympy.div</span></code>. Denne funksjonen tar to polynom som argumenter, og returnerer kvotienten <code class="docutils literal notranslate"><span class="pre">k</span></code> og resten <code class="docutils literal notranslate"><span class="pre">r</span></code> som en <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. Det betyr at den returnerer en slags liste på formen <code class="docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">r)</span></code>. <br>
+Den generelle skrivemåten for å bruke funksjonen er</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>der <code class="docutils literal notranslate"><span class="pre">p</span></code> er polynomet som deles med polynomet <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 <section id="eksempel-1">
 <h2>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h2>
 <p>La oss utføre polynomdivisjonen</p>
@@ -764,7 +766,7 @@ resten: r = 74
 <p>som betyr at</p>
 <div class="math notranslate nohighlight">
 \[
-(x^4 - x^2 - 6) : (x^2 + 1) = x^2 - 1 + \frac{-4}{x^2 + 1}
+(x^4 - x^2 - 6) : (x^2 + 1) = x^2 - 1 - \frac{4}{x^2 + 1}
 \]</div>
 </div>
 </section>
