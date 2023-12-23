@@ -786,25 +786,42 @@ k'(x) = 4x^4 - 3x^3 + 2x^2 - x + 1
 \[
 f(x) = \frac{x - 2}{x + 3}
 \]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Under finner du et kodeskall der du må endre alle steder det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">f_derivert</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="n">f_derivert</span> <span class="o">=</span> <span class="n">f_derivert</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># skriv inn funksjonsuttrykket til k(x)</span>
+<span class="n">f_derivert</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regn ut den k&#39;(x) med sympy.diff</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f_derivert</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f_derivert = 5/(x + 3)**2
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">f_derivert</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Skriver uttrykket så enkelt som mulig</span>
+<span class="n">f_derivert</span> <span class="o">=</span> <span class="n">f_derivert</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f_derivert</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f_derivert = 5/(x + 3)**2</span>
+</pre></div>
 </div>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = \frac{5}{(x + 3)^2}
+\]</div>
 </div>
 </section>
 </section>
