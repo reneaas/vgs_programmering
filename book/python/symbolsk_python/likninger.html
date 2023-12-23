@@ -501,7 +501,6 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-brok">Eksempel 4: Likning med brøk</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5-likning-med-transcendentale-funksjoner">Eksempel 5: Likning med transcendentale funksjoner</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -614,7 +613,7 @@ x^2 + x - 2 = 0,
 </div>
 </div>
 </div>
-<p>som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -2\)</span> eller <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
+<p>som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -2 \, \vee \,  x = 1\)</span>.</p>
 </section>
 <section id="eksempel-3-lose-en-tredjegradslikning">
 <h3>Eksempel 3: Løse en tredjegradslikning<a class="headerlink" href="#eksempel-3-lose-en-tredjegradslikning" title="Permalink to this heading">#</a></h3>
@@ -647,7 +646,7 @@ x^3 - 2x^2 - x + 2 = 0,
 </div>
 </div>
 </div>
-<p>som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -1\)</span> eller <span class="math notranslate nohighlight">\(x = 1\)</span> eller <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<p>som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -1 \, \vee \, x = 1 \, \vee \, x = 2\)</span>.</p>
 <section id="eksempel-4-likning-med-brok">
 <h4>Eksempel 4: Likning med brøk<a class="headerlink" href="#eksempel-4-likning-med-brok" title="Permalink to this heading">#</a></h4>
 <p>La oss se på et eksempel der vi skal løse en likning med brøk. Vi skal løse likningen</p>
@@ -682,57 +681,10 @@ x^3 - 2x^2 - x + 2 = 0,
 </div>
 </section>
 </section>
-<section id="eksempel-5-likning-med-transcendentale-funksjoner">
-<h3>Eksempel 5: Likning med transcendentale funksjoner<a class="headerlink" href="#eksempel-5-likning-med-transcendentale-funksjoner" title="Permalink to this heading">#</a></h3>
-<p>La oss se på et eksempel der vi ønsker å finne nullpunktet til likningen</p>
-<div class="math notranslate nohighlight">
-\[
-e^x + 2x = 0.
-\]</div>
-<p>Her finnes det ingen analytisk løsning. Noen ganger uttrykkes svaret ved hjelp av spesielle funksjoner som vi ikke kjenner til i videregående skole. Som eksempel under:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-LambertW(1/2)]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dette er riktig svar, men forteller oss ikke stort. Vi kan få en numerisk verdi ved å bytte ut <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> med <code class="docutils literal notranslate"><span class="pre">sympy.nsolve</span></code>, men da må oppgi en startverdi som vi tror er i nærheten av nullpunktet. Vi kan for eksempel prøve med <span class="math notranslate nohighlight">\(x_0 = -1\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> 
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Løser likningen exp(x) + 2*x = 0. Starter fra -1 som utgangspunkt.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.351733711249196
-</pre></div>
-</div>
-</div>
-</div>
-<p>Altså er løsningen av likningen <span class="math notranslate nohighlight">\(x \approx -0.352\)</span> med tre desimalers presisjon.</p>
-<p>Nå fikk vi et tallsvar vi kan tolke!</p>
-</section>
 </section>
 <section id="ovingsoppgaver">
 <h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
+<p>Det er på tide å prøve seg på egenhånd. Det ligger <em>kodeskall</em> til hjelp som du kan ta utgangspunkt i, men det er lurt å prøve å skrive all koden selv. I tillegg er det løsningsforslag til alle som oppgavene som du kan ta en titt på etter du har prøvd deg på oppgavene.</p>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
@@ -740,10 +692,10 @@ e^x + 2x = 0.
 \[
 3x - 2 = 0.
 \]</div>
-<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
@@ -753,14 +705,8 @@ e^x + 2x = 0.
 </pre></div>
 </div>
 </div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
@@ -770,13 +716,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som gir utskriften</p>
+<p>som gir utskriften</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2/3]</span>
 </pre></div>
 </div>
-<p class="sd-card-text">Løsningen av likningen er altså <span class="math notranslate nohighlight">\(x = 2/3\)</span></p>
+<p>Det betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = 2/3\)</span></p>
 </div>
-</details></section>
+</section>
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
@@ -784,10 +730,10 @@ Løsningsforslag<div class="sd-summary-down docutils">
 \[
 x^2 - 3x + 2 = 0.
 \]</div>
-<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
@@ -797,14 +743,8 @@ x^2 - 3x + 2 = 0.
 </pre></div>
 </div>
 </div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
@@ -814,13 +754,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som gir utskriften</p>
+<p>som gir utskriften</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1, 2]</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 1\)</span> eller <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<p>som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 1 \, \vee \, x = 2\)</span>.</p>
 </div>
-</details></section>
+</section>
 <section id="oppgave-3">
 <h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
@@ -828,28 +768,21 @@ Løsningsforslag<div class="sd-summary-down docutils">
 \[
 x^3 - 13x^2 + 52x - 60 = 0.
 \]</div>
-<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du importere symbolet for <code class="docutils literal notranslate"><span class="pre">x</span></code> selv.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-
-<span class="c1"># Her mangler importering av symbolet for `x`. Lag et symbol for `x` og løs likningen.</span>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen med sympy.solve</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
@@ -859,13 +792,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som gir utskriften</p>
+<p>som gir utskriften</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2, 5, 6]</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 2\)</span> eller <span class="math notranslate nohighlight">\(x = 5\)</span> eller <span class="math notranslate nohighlight">\(x = 6\)</span>.</p>
+<p>som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 2 \, \vee \, x = 5 \, \vee \, x = 6\)</span>.</p>
 </div>
-</details></section>
+</section>
 <section id="oppgave-4">
 <h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningen</p>
@@ -873,26 +806,21 @@ Løsningsforslag<div class="sd-summary-down docutils">
 \[
 \frac{x^2 + 2x - 3}{x - 1} = 0.
 \]</div>
-<p><em>Under ligger et kodeskall du kan ta utgangspunkt i. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du importere alt du trenger selv!</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importerer det du trenger her</span>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodeskall</p>
+<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sett inn funksjonen her</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen her</span>
+<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen med sympy.solve</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Løsning</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
@@ -902,13 +830,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som gir utskriften</p>
+<p>som gir utskriften</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[-3]</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -3\)</span>. Her er <span class="math notranslate nohighlight">\(x = 1\)</span> en rot i telleren og nevneren, som gjør at det ikke er en gyldig del av løsningen fordi vi ikke kan dele på null. <code class="docutils literal notranslate"><span class="pre">sympy</span></code> passer på å sjekke dette for oss slik at vi ikke trenger å tenke oss om!</p>
+<p>som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -3\)</span>. Her er <span class="math notranslate nohighlight">\(x = 1\)</span> en rot i telleren og nevneren, som gjør at det ikke er en gyldig del av løsningen fordi vi ikke kan dele på null. <code class="docutils literal notranslate"><span class="pre">sympy</span></code> passer på å sjekke dette for oss slik at vi ikke trenger å tenke oss om!</p>
 </div>
-</details></section>
+</section>
 </section>
 </section>
 
@@ -982,7 +910,6 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-brok">Eksempel 4: Likning med brøk</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-5-likning-med-transcendentale-funksjoner">Eksempel 5: Likning med transcendentale funksjoner</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
