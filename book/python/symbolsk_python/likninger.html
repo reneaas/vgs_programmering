@@ -494,13 +494,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-med-en-ukjent">Likninger med én ukjent</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-brok">Eksempel 4: Likning med brøk</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-brok">Eksempel 4: Likning med brøk</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -523,33 +520,29 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lose-likninger-med-sympy">
 <h1>Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#lose-likninger-med-sympy" title="Permalink to this heading">#</a></h1>
-<p>Å løse likninger er en viktig del av matematikken. I dette notatet skal vi se på hvordan vi kan løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
-<section id="likninger-med-en-ukjent">
-<h2>Likninger med én ukjent<a class="headerlink" href="#likninger-med-en-ukjent" title="Permalink to this heading">#</a></h2>
-<p>For å løse likninger, bruker vi funksjonen <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>. Denne funksjonen tar to argumenter,</p>
-<ol class="arabic simple">
-<li><p>Venstesiden av likningen som skal løses. Det er antatt at likningen er på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, så vi skal bare sende inn hva <span class="math notranslate nohighlight">\(f(x)\)</span> er.</p></li>
-<li><p>Den ukjente variabelen som skal løses for.</p></li>
-</ol>
-<p>Den generelle skrivemåten blir derfor</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="c1"># Må importere biblioteket</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Importerer en symbolsk variabel for `x`</span>
+<p>Her skal du lære hvordan man kan løse likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Da bruker man en funksjon som kalles for <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">sympy.solve</p>
+<p>Denne funksjonen antar at likningen er på formen</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 0
+\]</div>
+<p>som betyr at vi må omforme likningen slik at høyresiden av likningen er null når vi bruker <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>. <br></p>
+<p>Den generelle skrivemåten er</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">)</span> <span class="c1"># Løser likningen f(x) = 0 for x.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
 </pre></div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Andre måter å lage en symbolsk variabel på </p>
-<p>Legg merke til at vi må importere både <code class="docutils literal notranslate"><span class="pre">sympy</span></code> som et bibliotek, samt <code class="docutils literal notranslate"><span class="pre">x</span></code> som en symbolsk variabel fra <code class="docutils literal notranslate"><span class="pre">sympy.abc</span></code>.
-Python vil ikke forstå hva vi prøver å løse hvis vi ikke importerer <code class="docutils literal notranslate"><span class="pre">x</span></code> som en symbolsk variabel fra <code class="docutils literal notranslate"><span class="pre">sympy.abc</span></code>,
-og vi vil bare få at <code class="docutils literal notranslate"><span class="pre">x</span></code> ikke er definert.</p>
-<p>Alternativt kan <code class="docutils literal notranslate"><span class="pre">x</span></code> hentes ut som en symbolsk variabel fra <code class="docutils literal notranslate"><span class="pre">sympy</span></code> på følgende måte:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">x</span>
+<p>Når det bare er én ukjent i funksjonsuttrykket, for eksempel bare <span class="math notranslate nohighlight">\(x\)</span>, så trenger vi ikke fortelle <code class="docutils literal notranslate"><span class="pre">sympy</span></code> hvilken variabel vi skal løse likningen med hensyn på, og da holder å skrive</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <section id="eksempel-1-lose-en-lineaer-likning">
-<h3>Eksempel 1: Løse en lineær likning<a class="headerlink" href="#eksempel-1-lose-en-lineaer-likning" title="Permalink to this heading">#</a></h3>
+<h2>Eksempel 1: Løse en lineær likning<a class="headerlink" href="#eksempel-1-lose-en-lineaer-likning" title="Permalink to this heading">#</a></h2>
 <p>La oss se på hvordan vi kan løse likningen</p>
 <div class="math notranslate nohighlight">
 \[
@@ -563,7 +556,7 @@ og vi vil bare få at <code class="docutils literal notranslate"><span class="pr
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Lager en symbolsk variabel for x</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Lager en symbolsk funksjon f(x) = 2*x - 1</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen 2*x - 1 = 0.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen 2*x - 1 = 0.</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -587,7 +580,7 @@ Man trenger strengt tatt ikke å gjøre dette, men kan i stedet bare skrive vens
 </div>
 </section>
 <section id="eksempel-2-lose-en-andregradslikning">
-<h3>Eksempel 2: Løse en andregradslikning<a class="headerlink" href="#eksempel-2-lose-en-andregradslikning" title="Permalink to this heading">#</a></h3>
+<h2>Eksempel 2: Løse en andregradslikning<a class="headerlink" href="#eksempel-2-lose-en-andregradslikning" title="Permalink to this heading">#</a></h2>
 <p>La oss se på hvordan vi kan løse likningen</p>
 <div class="math notranslate nohighlight">
 \[
@@ -601,7 +594,7 @@ x^2 + x - 2 = 0,
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**2 + x - 2</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 + x - 2 = 0.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**2 + x - 2 = 0.</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -616,7 +609,7 @@ x^2 + x - 2 = 0,
 <p>som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -2 \, \vee \,  x = 1\)</span>.</p>
 </section>
 <section id="eksempel-3-lose-en-tredjegradslikning">
-<h3>Eksempel 3: Løse en tredjegradslikning<a class="headerlink" href="#eksempel-3-lose-en-tredjegradslikning" title="Permalink to this heading">#</a></h3>
+<h2>Eksempel 3: Løse en tredjegradslikning<a class="headerlink" href="#eksempel-3-lose-en-tredjegradslikning" title="Permalink to this heading">#</a></h2>
 <p>La oss se på et eksempel der vi skal løse en tredjegradslikning. Vi skal løse likningen</p>
 <div class="math notranslate nohighlight">
 \[
@@ -634,7 +627,7 @@ x^3 - 2x^2 - x + 2 = 0,
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Importerer symbolet for `x`</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**3 - 2*x**2 - x + 2</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen x**3 - 2*x**2 - x + 2 = 0.</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen x**3 - 2*x**2 - x + 2 = 0.</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -648,7 +641,7 @@ x^3 - 2x^2 - x + 2 = 0,
 </div>
 <p>som betyr at løsningen av likningen er <span class="math notranslate nohighlight">\(x = -1 \, \vee \, x = 1 \, \vee \, x = 2\)</span>.</p>
 <section id="eksempel-4-likning-med-brok">
-<h4>Eksempel 4: Likning med brøk<a class="headerlink" href="#eksempel-4-likning-med-brok" title="Permalink to this heading">#</a></h4>
+<h3>Eksempel 4: Likning med brøk<a class="headerlink" href="#eksempel-4-likning-med-brok" title="Permalink to this heading">#</a></h3>
 <p>La oss se på et eksempel der vi skal løse en likning med brøk. Vi skal løse likningen</p>
 <div class="math notranslate nohighlight">
 \[
@@ -661,7 +654,7 @@ x^3 - 2x^2 - x + 2 = 0,
 <span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># Løser likningen (x**2 - x - 6) / (x + 2) = 0</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen (x**2 - x - 6) / (x + 2) = 0</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -679,7 +672,6 @@ x^3 - 2x^2 - x + 2 = 0,
 <p>Her viser det seg at <span class="math notranslate nohighlight">\(x^2 - x - 6 = (x - 3)(x + 2)\)</span>, som betyr at <span class="math notranslate nohighlight">\(x = -2\)</span> er en rot i uttrykket i telleren. Men dette er også en rot i nevneren. Dette er derfor ikke en gyldig løsning av likningen, fordi vi da deler på null.</p>
 <p>Heldigvis, trenger vi ikke bekymre oss for dette. <code class="docutils literal notranslate"><span class="pre">sympy</span></code> sjekker løsningene for oss og fjerner alle som leder til at vi deler på 0.</p>
 </div>
-</section>
 </section>
 </section>
 <section id="ovingsoppgaver">
@@ -903,13 +895,10 @@ x^3 - 13x^2 + 52x - 60 = 0.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-med-en-ukjent">Likninger med én ukjent</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-brok">Eksempel 4: Likning med brøk</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-likning">Eksempel 1: Løse en lineær likning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradslikning">Eksempel 2: Løse en andregradslikning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradslikning">Eksempel 3: Løse en tredjegradslikning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-likning-med-brok">Eksempel 4: Likning med brøk</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
