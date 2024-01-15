@@ -169,14 +169,14 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grunnleggende Python</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/intro.html">Introduksjon til verktøykassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/loops.html">Løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/containers/lists.html">Lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
@@ -235,11 +235,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../modeller/regresjon.html">Regresjon i Python</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -686,8 +691,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Vi starter fra summen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-871682ec-9f4b-4413-af12-05733a1cefa5">
-<span class="eqno">(22)<a class="headerlink" href="#equation-871682ec-9f4b-4413-af12-05733a1cefa5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-99d76aa4-1233-4548-9cc4-e01ff248dc75">
+<span class="eqno">(22)<a class="headerlink" href="#equation-99d76aa4-1233-4548-9cc4-e01ff248dc75" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\limits_a^b f(x) \, dx &amp; \approx \sum_{i=0}^{n - 1}\frac{f(x_i) + f(x_{i+1})}{2}h \\
 &amp; = \frac{h}{2}\left(f(x_0) + f(x_1) + f(x_1) + f(x_2) + \ldots + f(x_{n-3}) + f(x_{n-2}) + f(x_{n-2}) + f(x_{n-1}) \right) \\
 &amp; = \frac{h}{2}\left(f(x_0) + 2f(x_1) + 2f(x_2) + \ldots + 2f(x_{n-3}) + 2f(x_{n-2}) + f(x_{n-1}) \right) \\

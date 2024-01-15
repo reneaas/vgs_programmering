@@ -73,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Simulere planetbaner (Celestmekanikk)" href="../celestial_mechanics/planetbaner.html" />
-    <link rel="prev" title="Regresjon i Python" href="../../matematikk/modeller/regresjon.html" />
+    <link rel="prev" title="Klimaendringer" href="../../data_analyse/climate_change/climate_change.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,14 +169,14 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grunnleggende Python</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/intro.html">Introduksjon til verktøykassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/loops.html">Løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/containers/lists.html">Lister</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
@@ -235,11 +235,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -523,7 +528,7 @@ document.write(`
 <figure class="align-default" id="pi-factory-0">
 <img alt="../../../_images/pi_factory_0.gif" src="../../../_images/pi_factory_0.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 0\)</span> som produserer det første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-0" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 0\)</span> som produserer det første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-0" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -531,7 +536,7 @@ document.write(`
 <figure class="align-default" id="pi-factory-1">
 <img alt="../../../_images/pi_factory_1.gif" src="../../../_images/pi_factory_1.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 1\)</span> som produserer de 2 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 1\)</span> som produserer de 2 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -539,7 +544,7 @@ document.write(`
 <figure class="align-default" id="pi-factory-2">
 <img alt="../../../_images/pi_factory_2.gif" src="../../../_images/pi_factory_2.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 2\)</span> som produserer de 3 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 2\)</span> som produserer de 3 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -547,7 +552,7 @@ document.write(`
 <figure class="align-default" id="pi-factory-3">
 <img alt="../../../_images/pi_factory_3.gif" src="../../../_images/pi_factory_3.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 3\)</span> som produserer de 4 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 3\)</span> som produserer de 4 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -555,7 +560,7 @@ document.write(`
 <figure class="align-default" id="pi-factory-4">
 <img alt="../../../_images/pi_factory_4.gif" src="../../../_images/pi_factory_4.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 4\)</span> som produserer de 5 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 4\)</span> som produserer de 5 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -563,7 +568,7 @@ document.write(`
 <figure class="align-default" id="pi-factory-5">
 <img alt="../../../_images/pi_factory_5.gif" src="../../../_images/pi_factory_5.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 5\)</span> som produserer de 6 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Animasjon av klossene som kolliderer med <span class="math notranslate nohighlight">\(p = 5\)</span> som produserer de 6 første sifrene i <span class="math notranslate nohighlight">\(\pi\)</span>.</span><a class="headerlink" href="#pi-factory-5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -820,12 +825,12 @@ Løsningsforlag:<div class="sd-summary-down docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../matematikk/modeller/regresjon.html"
+       href="../../data_analyse/climate_change/climate_change.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Regresjon i Python</p>
+        <p class="prev-next-title">Klimaendringer</p>
       </div>
     </a>
     <a class="right-next"
