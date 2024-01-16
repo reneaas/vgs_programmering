@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/intro.html">Introduksjon til verktøykassa</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/loops.html">Løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
 </ul>
@@ -538,9 +537,9 @@ document.write(`
 <section id="eksempel-1">
 <h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
 <p>Tenk deg at du tar en dose <span class="math notranslate nohighlight">\(M_0 = 400 \ \text{mg}\)</span> med Paracet én gang i døgnet. Per time brytes det ned 29 % av virkestoffet i blodplasma. Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
-<p>Virkestoffet brytes ned med 29 % per time, som gir en vekstfaktor <span class="math notranslate nohighlight">\(V = 1 - 0.29 = 0.71\)</span> per time. En dose vil da ha en vekstfaktor på <span class="math notranslate nohighlight">\(V^24\)</span> per døgn (fordi det 24 timer i døgnet). En strategi for å regne ut virkestoffet i kroppen over tid vises i <a class="reference internal" href="#algo-paracet-daglig-dose">Algorithm 6</a>.</p>
+<p>Virkestoffet brytes ned med 29 % per time, som gir en vekstfaktor <span class="math notranslate nohighlight">\(V = 1 - 0.29 = 0.71\)</span> per time. En dose vil da ha en vekstfaktor på <span class="math notranslate nohighlight">\(V^24\)</span> per døgn (fordi det 24 timer i døgnet). En strategi for å regne ut virkestoffet i kroppen over tid vises i <a class="reference internal" href="#algo-paracet-daglig-dose">Algorithm 5</a>.</p>
 <div class="proof algorithm admonition" id="algo-paracet-daglig-dose">
-<p class="admonition-title"><span class="caption-number">Algorithm 6 </span> (Nedbrytning av virkestoff per døgn)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 5 </span> (Nedbrytning av virkestoff per døgn)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Daglig dose <span class="math notranslate nohighlight">\(M_0\)</span>, nedbrytning i prosent per time <span class="math notranslate nohighlight">\(r\)</span>, antall døgn <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>Output</strong>: Mengde virkestoff i kroppen <span class="math notranslate nohighlight">\(M\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> døgn.</p>
@@ -586,9 +585,9 @@ document.write(`
 <h3>Eksempel 2: En dose av paracet hver 6.time<a class="headerlink" href="#eksempel-2-en-dose-av-paracet-hver-6-time" title="Permalink to this heading">#</a></h3>
 <p>Et mer realistisk eksempel er at man tar to tabletter med paracet hver 6.time som tilsvarer 1000 mg. Nedbrytningen per time er på 29% av dosen.
 Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
-<p>Vi kan modifisere algoritmen litt for å løse dette problemet, som vises i <a class="reference internal" href="#algo-paracet-two">Algorithm 7</a>.</p>
+<p>Vi kan modifisere algoritmen litt for å løse dette problemet, som vises i <a class="reference internal" href="#algo-paracet-two">Algorithm 6</a>.</p>
 <div class="proof algorithm admonition" id="algo-paracet-two">
-<p class="admonition-title"><span class="caption-number">Algorithm 7 </span> (Nedbrytning av Paracet ved inntak hver 6.time.)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 6 </span> (Nedbrytning av Paracet ved inntak hver 6.time.)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Dose <span class="math notranslate nohighlight">\(M_0\)</span> hver 6.time, nedbrytning i prosent per time <span class="math notranslate nohighlight">\(r\)</span>, antall døgn <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>Output</strong>: Mengde virkestoff i kroppen <span class="math notranslate nohighlight">\(M\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> døgn.</p>
@@ -642,9 +641,9 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 </section>
 <section id="nedbetaling-av-lan">
 <h2>Nedbetaling av lån<a class="headerlink" href="#nedbetaling-av-lan" title="Permalink to this heading">#</a></h2>
-<p>En annen typisk anvendelse av rekker er nedbetaling av lån. Vi kan formulere en algoritme for dette som vises i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 8</a>.</p>
+<p>En annen typisk anvendelse av rekker er nedbetaling av lån. Vi kan formulere en algoritme for dette som vises i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 7</a>.</p>
 <div class="proof algorithm admonition" id="algo-annuitetslaan">
-<p class="admonition-title"><span class="caption-number">Algorithm 8 </span> (Nedbetaling av lån)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 7 </span> (Nedbetaling av lån)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Lånebeløp <span class="math notranslate nohighlight">\(L_0\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall terminer <span class="math notranslate nohighlight">\(n\)</span>, terminbeløp <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p><strong>Output</strong>: Gjenstående lån <span class="math notranslate nohighlight">\(L_0\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> terminer.</p>
@@ -660,7 +659,7 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> <span class="math notranslate nohighlight">\(L\)</span> <em>(Gjenstående lån)</em></p></li>
 </ul>
 </section>
-</div><p>Målet vårt er å se på hvordan vi kan bestemme hvilket terminbeløp vi skal betale ved å bruke <a class="reference internal" href="#algo-annuitetslaan">Algorithm 8</a>. Vi kan gjøre dette ved å løse likningen <span class="math notranslate nohighlight">\(L = 0\)</span> for <span class="math notranslate nohighlight">\(x\)</span>. Og selv om vi har sett på effektive metoder for å gjøre dette i <a class="reference internal" href="../nullpunkter/intro.html"><span class="doc std std-doc">Finne nullpunkter numerisk</span></a>, så skal vi først se på et eksempel der vi har en <em>naiv</em> implementasjon av algoritmen.</p>
+</div><p>Målet vårt er å se på hvordan vi kan bestemme hvilket terminbeløp vi skal betale ved å bruke <a class="reference internal" href="#algo-annuitetslaan">Algorithm 7</a>. Vi kan gjøre dette ved å løse likningen <span class="math notranslate nohighlight">\(L = 0\)</span> for <span class="math notranslate nohighlight">\(x\)</span>. Og selv om vi har sett på effektive metoder for å gjøre dette i <a class="reference internal" href="../nullpunkter/intro.html"><span class="doc std std-doc">Finne nullpunkter numerisk</span></a>, så skal vi først se på et eksempel der vi har en <em>naiv</em> implementasjon av algoritmen.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">En naiv algoritme, hva er det?</p>
 <p>En <em>naiv</em> algoritme er en løser problemet med <em>brute force</em>, og vil løse problemet, men er ikke spesielt effektiv og vil ofte være ganske treig.</p>
@@ -692,19 +691,19 @@ x + xV + xV^2 + \ldots + xV^{n-2} + xV^{n-1} = L_0V^n.
 \frac{x}{V} + \frac{x}{V^2} + \frac{x}{V^3} + \ldots + \frac{x}{V^{n-1}} + \frac{x}{V^n} = L_0,
 \]</div>
 <p>som er da vi bruker <em>nåverdier</em>.</p>
-<p>Konklusjonen er at algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 8</a> er mer generell og gir oss restlån etter <span class="math notranslate nohighlight">\(n\)</span> terminer med et vilkårlig terminbeløp <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Konklusjonen er at algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 7</a> er mer generell og gir oss restlån etter <span class="math notranslate nohighlight">\(n\)</span> terminer med et vilkårlig terminbeløp <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </div>
 <section id="eksempel-1-finne-restlan-etter-n-terminer">
 <h3>Eksempel 1: Finne restlån etter <span class="math notranslate nohighlight">\(n\)</span> terminer<a class="headerlink" href="#eksempel-1-finne-restlan-etter-n-terminer" title="Permalink to this heading">#</a></h3>
 <p>Anta vi tar et lån på 1 million kroner med en rente på 3% per år. Vi velger å betale ned lånet med et terminbeløp på 70 000 kr over 10 år. Hva er da restlånet etter 10 år?</p>
-<p>Først kan vi systematisere informasjonen litt, sånn at det er i tråd med notasjonen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 8</a>. Vi har</p>
+<p>Først kan vi systematisere informasjonen litt, sånn at det er i tråd med notasjonen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 7</a>. Vi har</p>
 <ul class="simple">
 <li><p>Lånetbeløpet <span class="math notranslate nohighlight">\(L_0 = 1 000 000 \text{ kr}\)</span>.</p></li>
 <li><p>Renten <span class="math notranslate nohighlight">\(r = 3\%\)</span>.</p></li>
 <li><p>Antall terminer <span class="math notranslate nohighlight">\(n = 10\)</span>.</p></li>
 <li><p>Terminbeløp <span class="math notranslate nohighlight">\(x = 70 000 \text{ kr}\)</span>.</p></li>
 </ul>
-<p>Vi kan da bruke algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 8</a> til å finne restlånet etter 10 år:</p>
+<p>Vi kan da bruke algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 7</a> til å finne restlånet etter 10 år:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mi">1_000_000</span> <span class="c1"># kroner</span>
@@ -731,10 +730,10 @@ x + xV + xV^2 + \ldots + xV^{n-2} + xV^{n-1} = L_0V^n.
 </section>
 <section id="eksempel-2-finne-terminbelop-for-a-betale-ned-lanet-pa-10-ar">
 <h3>Eksempel 2: Finne terminbeløp for å betale ned lånet på 10 år<a class="headerlink" href="#eksempel-2-finne-terminbelop-for-a-betale-ned-lanet-pa-10-ar" title="Permalink to this heading">#</a></h3>
-<p>La oss ta utgangspunkt i samme lånesituasjon, men nå skal vi finne hvilket terminbeløp <span class="math notranslate nohighlight">\(x\)</span> vi må betale for å betale ned lånet på 10 år. Vi kan da bruke algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 8</a> til å finne terminbeløpet.</p>
+<p>La oss ta utgangspunkt i samme lånesituasjon, men nå skal vi finne hvilket terminbeløp <span class="math notranslate nohighlight">\(x\)</span> vi må betale for å betale ned lånet på 10 år. Vi kan da bruke algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 7</a> til å finne terminbeløpet.</p>
 <p>Men denne gangen, så justerer vi algoritmen litt for å finne terminbeløpet <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="proof algorithm admonition" id="algo-annuitetslaan-belop">
-<p class="admonition-title"><span class="caption-number">Algorithm 9 </span> (Finne terminbeløp for å betale ned lånet på <span class="math notranslate nohighlight">\(n\)</span> terminer)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 8 </span> (Finne terminbeløp for å betale ned lånet på <span class="math notranslate nohighlight">\(n\)</span> terminer)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: Lånebeløp <span class="math notranslate nohighlight">\(L_0\)</span>, rente <span class="math notranslate nohighlight">\(r\)</span>, antall terminer <span class="math notranslate nohighlight">\(n\)</span>, endring av terminbeløp <span class="math notranslate nohighlight">\(\Delta x\)</span> mellom forsøk.</p>
 <p><strong>Output</strong>: Terminbeløpet <span class="math notranslate nohighlight">\(x\)</span> som gjør at lånet er nedbetalt etter <span class="math notranslate nohighlight">\(n\)</span> terminer.</p>
@@ -757,7 +756,7 @@ x + xV + xV^2 + \ldots + xV^{n-2} + xV^{n-1} = L_0V^n.
 <li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> <span class="math notranslate nohighlight">\(x\)</span> <em>(Returnerer terminbeløpet som betaler ned hele lånet)</em></p></li>
 </ul>
 </section>
-</div><p>Følger vi <a class="reference internal" href="#algo-annuitetslaan-belop">Algorithm 9</a>, kan vi skrive koden slik:</p>
+</div><p>Følger vi <a class="reference internal" href="#algo-annuitetslaan-belop">Algorithm 8</a>, kan vi skrive koden slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="c1"># 1 000 000 kroner</span>

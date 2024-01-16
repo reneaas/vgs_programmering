@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/intro.html">Introduksjon til verktøykassa</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/loops.html">Løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
 </ul>
@@ -530,7 +529,7 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math no
 <li><p>Hvis <span class="math notranslate nohighlight">\(f(a) \cdot f(c) &lt; 0\)</span>, sett <span class="math notranslate nohighlight">\(b = c\)</span>. Midtpunktet blir da høyre endepunkt på det nye intervallet.</p></li>
 <li><p>Hvis ikke, sett <span class="math notranslate nohighlight">\(a = c\)</span>. Midtpunktet blir da venstre endepunkt på det nye intervallet.</p></li>
 </ol>
-<p>Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når <span class="math notranslate nohighlight">\(|f(c)| &lt; \epsilon\)</span>, der <span class="math notranslate nohighlight">\(\epsilon\)</span> er en toleranseverdi som ofte settes til <span class="math notranslate nohighlight">\(\epsilon \approx 10^{-8}\)</span>. <a class="reference internal" href="#algo-halveringsmetoden">Algorithm 2</a> viser pseudokode for algoritmen.</p>
+<p>Dette repeteres til en har en tilstrekkelig god tilnærming til nullpunktet. Det vil si at vi stopper når <span class="math notranslate nohighlight">\(|f(c)| &lt; \epsilon\)</span>, der <span class="math notranslate nohighlight">\(\epsilon\)</span> er en toleranseverdi som ofte settes til <span class="math notranslate nohighlight">\(\epsilon \approx 10^{-8}\)</span>. <a class="reference internal" href="#algo-halveringsmetoden">Algorithm 1</a> viser pseudokode for algoritmen.</p>
 <p><a class="reference internal" href="#bisection"><span class="std std-numref">Fig. 6</span></a> viser en animasjon av halveringsmetoden.</p>
 <figure class="align-default" id="bisection">
 <img alt="../../../_images/Bisection_ani.gif" src="../../../_images/Bisection_ani.gif" />
@@ -539,7 +538,7 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math no
 </figcaption>
 </figure>
 <div class="proof algorithm admonition" id="algo-halveringsmetoden">
-<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Halveringsmetoden)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Halveringsmetoden)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: En funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>, et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der vi vet at nullpunktet ligger, og en toleranse <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 <p><strong>Output</strong>: Et tilnærming til et nullpunkt til <span class="math notranslate nohighlight">\(f\)</span>.</p>
@@ -565,7 +564,7 @@ Algoritmen tar utgangspunkt i at vi velger oss et intervall <span class="math no
 \[
 f(x) = x^2 - 1.
 \]</div>
-<p>Nullpunktene til denne funksjonen er <span class="math notranslate nohighlight">\(x = \pm 1\)</span>, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge <a class="reference internal" href="#algo-halveringsmetoden">Algorithm 2</a> velge oss ut:</p>
+<p>Nullpunktene til denne funksjonen er <span class="math notranslate nohighlight">\(x = \pm 1\)</span>, så vi vet at vi må ende opp der. For å finne ett av de numerisk med halveringsmetoden, må vi i følge <a class="reference internal" href="#algo-halveringsmetoden">Algorithm 1</a> velge oss ut:</p>
 <ol class="arabic simple">
 <li><p>En funksjon <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
 <li><p>Et intervall <span class="math notranslate nohighlight">\([a,b]\)</span> der vi vet at <span class="math notranslate nohighlight">\(f\)</span> har et nullpunkt, så <span class="math notranslate nohighlight">\(f\)</span> <em>må</em> endre fortegn på intervallet.</p></li>
@@ -573,7 +572,7 @@ f(x) = x^2 - 1.
 </ol>
 <p>Vi kan for eksempel velge oss ut intervallet <span class="math notranslate nohighlight">\([a, b] = [-2, 0]\)</span>. Da har vi <span class="math notranslate nohighlight">\(f(-2) = 3\)</span> og <span class="math notranslate nohighlight">\(f(0) = -1\)</span>, så <span class="math notranslate nohighlight">\(f\)</span> endrer fortegn på intervallet.
 Toleransen kan vi bare sette til <span class="math notranslate nohighlight">\(\epsilon = 10^{-8}\)</span>.</p>
-<p>Følger vi <a class="reference internal" href="#algo-halveringsmetoden">Algorithm 2</a> får vi følgende kode:</p>
+<p>Følger vi <a class="reference internal" href="#algo-halveringsmetoden">Algorithm 1</a> får vi følgende kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>

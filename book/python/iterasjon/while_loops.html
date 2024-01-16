@@ -73,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="for-løkker" href="for_loops.html" />
-    <link rel="prev" title="Løkker" href="loops.html" />
+    <link rel="prev" title="Å regne med Python" href="../variabler_og_regning/regning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduksjon til verktøykassa</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loops.html">Løkker</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
 </ul>
@@ -499,20 +498,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-en-while-lokke">Hva er en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-telle-til-5">Eksempel 1: Telle til 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summere-alle-heltall-fra-1-til-5">Eksempel 2: Summere alle heltall fra 1 til 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-regne-ut-boligpris-etter-10-ar">Eksempel 3: Regne ut boligpris etter 10 år</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-sparing-med-fast-innskudd">Eksempel 4: Sparing med fast innskudd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-lokker">Hva er løkker?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flytskjema-for-while-lokker">Flytskjema for <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-while-lokke-for-a-printe-ut-de-fem-forste-heltallene">Eksempel 1: <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke for å printe ut de fem første heltallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-legenden-om-gauss-og-summen-av-de-forste-100-heltallene">Oppgave 1: Legenden om Gauss og summen av de første 100 heltallene</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-regne-ut-boligpris-etter-20-ar">Oppgave 2: Regne ut boligpris etter 20 år</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">Oppgave 3: Finne ut når verdien til en bil er halvert</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-sparing-med-fast-innskudd">Oppgave 4: Sparing med fast innskudd</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-annuitetslan">Oppgave 5: Annuitetslån</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
 </ul>
@@ -528,13 +527,69 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="while-lokker">
 <h1><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker<a class="headerlink" href="#while-lokker" title="Permalink to this heading">#</a></h1>
-<section id="hva-er-en-while-lokke">
-<h2>Hva er en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke?<a class="headerlink" href="#hva-er-en-while-lokke" title="Permalink to this heading">#</a></h2>
-<p>En <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke, er en løkke der vi gjentar en handling så lenge en betingelse er sann. Vi kan tenke på det som at vi gjentar en handling <em>så lenge</em> noe er sant. Generisk ser en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke slik ut:</p>
+<section id="laeringsmal">
+<h2>Læringsmål<a class="headerlink" href="#laeringsmal" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kunne lese (tolke) og skrive <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker som løser matematiske problemer.</p></li>
+<li><p>Forstå hva som menes med en <em>betingelse</em> og hvilke typiske betingelser vi bruker i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker.</p></li>
+</ul>
+</section>
+<section id="hva-er-lokker">
+<h2>Hva er løkker?<a class="headerlink" href="#hva-er-lokker" title="Permalink to this heading">#</a></h2>
+<p><strong>Løkker</strong> er det noe vi bruker når vi ønsker å gjenta en liten del av koden vår flere ganger. <br>
+Det er to forskjellige type løkker vi kan bruke:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</strong>. Denne typen løkke er godt egnet både for når vi på forhånd vet hvor mange ganger vi skal kjøre en kodesnutt, og når vi ønsker å kjøre en kode så lenge en betingelse er oppfylt.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</strong>. Dette er en type løkke som er best egnet når vi vet på forhånd hvor mange ganger vi skal kjøre en kodesnutt.</p></li>
+</ol>
+<p>Vi skal først se på <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker, da <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker er et spesialtilfelle av en helt spesiell <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke.</p>
+</section>
+<section id="id1">
+<h2><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>En <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke, er en løkke der vi gjentar en handling så lenge en betingelse er sann. Vi kan tenke på det som at vi gjentar en handling <em>så lenge</em> noe er sant. <br></p>
+<p>En <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke ser slik ut:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">betingelse</span><span class="p">:</span>
-    <span class="c1"># gjør en handling med kode</span>
+    <span class="c1"># Kode som skal gjentas kommer her!</span>
+    <span class="c1"># gjør en eller flere handlinger -- Minner om at dette er slik en kommentar ser ut!</span>
+    <span class="c1"># Eller en eller flere utregninger</span>
 </pre></div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title"><em>Hol’ up a minute!</em> Hva er en betingelse? Og hvordan lager jeg en??</p>
+<p>Når vi skriver kode for matematiske problemer, setter vi betingelser som typisk er <em>ulikheter</em>. <br>
+For eksempel kan det være vi skal øke en variabel <code class="docutils literal notranslate"><span class="pre">x</span></code> med en så lenge <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn 100. Da hadde betingelsen være <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code>. <br>
+Med en gang <code class="docutils literal notranslate"><span class="pre">x</span></code> er større eller lik 100, vil betingelsen være usann, og vi vil ikke lenger kjøre koden i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkken dersom <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code> var betingelsen vår. <br></p>
+<p>Under følger en liste med de vanligste måtene å skrive betingelser når vi programmerer <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker.</p>
+<p><strong>Tabell 1</strong>: Vanlige betingelser for <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Betingelse</p></th>
+<th class="head"><p>Hva betyr det?</p></th>
+<th class="head"><p>Eksempel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> er større enn <code class="docutils literal notranslate"><span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">100</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn eller lik <code class="docutils literal notranslate"><span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">100</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> er større enn eller lik <code class="docutils literal notranslate"><span class="pre">a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">100</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="flytskjema-for-while-lokker">
+<h3>Flytskjema for <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker<a class="headerlink" href="#flytskjema-for-while-lokker" title="Permalink to this heading">#</a></h3>
 <p>Vi kan visualisere hvordan en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke fungerer med følgende flytdiagram:</p>
 <div class="mermaid" align="center">
 flowchart TD
@@ -544,31 +599,21 @@ C -- Sann --> D[Utfør handling]
 D -- Gjenta ---> B
 C -- Usann ---> E[ferdig]
 
-</div></section>
-<section id="eksempler">
-<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
-<section id="eksempel-1-telle-til-5">
-<h3>Eksempel 1: Telle til 5<a class="headerlink" href="#eksempel-1-telle-til-5" title="Permalink to this heading">#</a></h3>
-<p>La oss se på et enkelt eksempel der vi ønsker å la Python telle til 5 for oss.</p>
-<p>Hvis vi har en variabel <code class="docutils literal notranslate"><span class="pre">n</span></code>, kan vi øke verdien dens med <code class="docutils literal notranslate"><span class="pre">1</span></code> ved å skrive <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code>. Dette kan vi gjøre så mange ganger vi vil.
-Siden vi skal telle til 5, kan vi bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke som gjentar denne handlingen så lenge <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">5</span></code> (altså så lenge <code class="docutils literal notranslate"><span class="pre">n</span></code> er mindre enn 5).
-Deretter, når <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">5</span></code>, avbrytes <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka. Koden vil da se slik ut:</p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Flytskjema for eksempel 1</p>
-<div class="mermaid" align="center">
-flowchart TD
-
-A[start] --> B[Sett n = 0] --> C[Start while-løkke]
-C --> D[Er n < 5?] --> |Ja| E[Øk n med 1] --> D
-D --> |Nei| F[Avslutt while-løkke] --> G[ferdig]
-
-</div></div>
+</div><p>Dette er fortsatt litt abstrakt, så la oss se på et helt konkret eksempel. <br></p>
+</section>
+<section id="eksempel-1-while-lokke-for-a-printe-ut-de-fem-forste-heltallene">
+<h3>Eksempel 1: <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke for å printe ut de fem første heltallene<a class="headerlink" href="#eksempel-1-while-lokke-for-a-printe-ut-de-fem-forste-heltallene" title="Permalink to this heading">#</a></h3>
+<p>La oss se på et enkelt eksempel som illustrer ideen. <br>
+Vi ønsker å skrive ut de fem første heltallene, fra og med 1 til 5. <br></p>
+<p>Dette kan vi gjøre med en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Starter med 0</span>
-<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># øker n med 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># printer ut verdien til n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heltall</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># starter med det først heltallet</span>
+
+<span class="c1"># Så lenge heltallet er mindre enn eller lik 5 (samme som mindre enn 6), så gjør vi:</span>
+<span class="k">while</span> <span class="n">heltall</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span> <span class="c1"># Denne linja skriver ut verdien til `heltall`</span>
+    <span class="n">heltall</span> <span class="o">=</span> <span class="n">heltall</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Denne linja øker verdien til `heltall` med 1 </span>
 </pre></div>
 </div>
 </div>
@@ -582,335 +627,277 @@ D --> |Nei| F[Avslutt while-løkke] --> G[ferdig]
 </div>
 </div>
 </div>
+<p>Som vi ser, så får vi skrevet ut de fem første heltallene. Med en gang <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">=</span> <span class="pre">6</span></code>, så er ikke lenger <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">&lt;</span> <span class="pre">6</span></code> en sann betingelse, så <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkken stopper! Den siste runden i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka blir derfor når <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">=</span> <span class="pre">5</span></code>!</p>
+<div class="tip admonition">
+<p class="admonition-title">Overskriving av variabler</p>
+<p>Når vi jobber med løkker, så er det veldig vanlig å skrive over en variabel med en ny verdi ettersom vi ikke lenger trenger den gamle verdien. <br>
+I eksempel 1, har vi en variabel <code class="docutils literal notranslate"><span class="pre">heltall</span></code> som starter med verdien <code class="docutils literal notranslate"><span class="pre">1</span></code>. <br>
+I løkken har vi skrevet kodelinjen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">heltall</span> <span class="o">=</span> <span class="n">heltall</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>som betyr at vi overskriver verdien til <code class="docutils literal notranslate"><span class="pre">heltall</span></code> med hva verdien <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">+</span> <span class="pre">1</span></code>. <br>
+Etter én runde i løkka, vil da verdien til <code class="docutils literal notranslate"><span class="pre">heltall</span></code> bli <code class="docutils literal notranslate"><span class="pre">2</span></code> siden <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">2</span></code>. <br>
+Husk at <code class="docutils literal notranslate"><span class="pre">=</span></code>-tegnet i Python betyr å <strong>tilordne</strong> og er ikke et matematisk likhetstegn. Det sier bare at vi skal tilordne <strong>verdien</strong> av det som står på høyre siden av <code class="docutils literal notranslate"><span class="pre">=</span></code> til variabelen som står på venstre side av <code class="docutils literal notranslate"><span class="pre">=</span></code>. <br></p>
+<p>En <em>naiv</em> måte å løse det samme på ville vært å skrive</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">heltall</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span>
+<span class="n">heltall</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">heltall</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dette er på sett og vis det vi gjør i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka, men vi løser det ved å automatisere hvordan variabelen skrives over. <br></p>
+</div>
+<p>La oss se på et mer reelt eksempel. <br></p>
 </section>
-<section id="eksempel-2-summere-alle-heltall-fra-1-til-5">
-<h3>Eksempel 2: Summere alle heltall fra 1 til 5<a class="headerlink" href="#eksempel-2-summere-alle-heltall-fra-1-til-5" title="Permalink to this heading">#</a></h3>
-<p>La oss si vi skal summe opp alle heltall fra 1 til 5. Litt naivt kunne vi gjort dette ved å skrive ut alle tallene i summen</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span>
+<section id="eksempel-2">
+<h3>Eksempel 2<a class="headerlink" href="#eksempel-2" title="Permalink to this heading">#</a></h3>
+<p>La oss si vi ønsker å regne ut summen av de 100 første heltallene ved å skrive et program i Python. <br>
+Det meste opplagte eksempelet er å skrive alle tallene inn</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="o">...</span> <span class="c1"># + 7 + 8 + 9 + 10 osv osv osv </span>
 </pre></div>
 </div>
-<p>Eller vi kunne skrevet de linje for linje</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">3</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">4</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">5</span>
+<p>men dette ville vært veldig tungvint og ville ledet til en kodelinje som sikkert kunne blitt målt til å bli et par meter lang. <br>
+Men vi har jo også sett av vi kan skrive over verdien til en variabel, én etter én. Så vi kunne jo skrevet noe som</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="n">sum_av_heltall</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">#  = 0 + 1</span>
+<span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="n">sum_av_heltall</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">#  = 0 + 1 + 2</span>
+<span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="n">sum_av_heltall</span> <span class="o">+</span> <span class="mi">3</span> <span class="c1">#  = 0 + 1 + 2 + 3</span>
+<span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="n">sum_av_heltall</span> <span class="o">+</span> <span class="mi">4</span> <span class="c1">#  = 0 + 1 + 2 + 3 + 4</span>
+<span class="o">...</span>             <span class="o">...</span>             <span class="o">...</span>             <span class="o">...</span>             
+<span class="o">...</span>             <span class="o">...</span>             <span class="o">...</span>             <span class="o">...</span>
+<span class="o">...</span>             <span class="o">...</span>             <span class="o">...</span>             <span class="o">...</span>
 </pre></div>
 </div>
-<p>Dette fungerer så lenge vi skal gjenta en handling få ganger (handlingen her er å plusse på tall). Men med en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke kan vi løse dette uten å måtte skrive samme kode flere ganger. I stedet kan vi skrive følgende kode (se gjerne flytskjemaet under for å se hvordan koden fungerer visuelt):</p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Flytskjema for eksempel 2</p>
-<div class="mermaid" align="center">
-flowchart TD
-
-A[Sett sum lik 0] --> B[Sett n lik 1] --> C[Start while-løkke] --> D[Er n < 5?] 
-D --> |Ja| E[Øk sum med n] --> F[Øk n med 1] --> D
-D --> |Nei| G[Avslutt while-løkke] --> H[Skriv ut summen til skjermen]  --> I[ferdig]
-
-
-</div></div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># summen starter på 0, for vi har ikke lagt til noe enda.</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Heltall som skal legges på s</span>
-<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># så lenge heltallet er mindre enn 5</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">n</span> <span class="c1"># legg på heltallet på s</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># øk heltallet med 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s = 15
-</pre></div>
-</div>
-</div>
-</div>
-<p>Her lar vi betingelsen være at så lenge <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code> (heltallet er mindre enn eller lik 5), så skal vi gjenta handlingene:</p>
+<p>Og slik kunne vi fortsatt, men det hadde krevd 101 linjer med kode! <br></p>
+<p>Det er her en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke blir nyttig. For alt vi ønsker å gjøre er egentlig følgende: <br></p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">n</span></code> (legge til <code class="docutils literal notranslate"><span class="pre">n</span></code> i summen)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> (øke heltallet med 1)</p></li>
-</ol>
-<p>Når vi er ferdig, så skriver vi ut hva verdien til summen <code class="docutils literal notranslate"><span class="pre">s</span></code> er.</p>
-</section>
-<section id="eksempel-3-regne-ut-boligpris-etter-10-ar">
-<h3>Eksempel 3: Regne ut boligpris etter 10 år<a class="headerlink" href="#eksempel-3-regne-ut-boligpris-etter-10-ar" title="Permalink to this heading">#</a></h3>
-<p>La oss si at du har kjøpt en bolig til 2 millioner kroner. Hvert år øker boligprisene med 3%. Hvor mye er boligen verdt etter 10 år?
-Fra prosentregningen i matematikken, kan vi regne ut at boligen er verdt etter 10 år ved å bruke vekstfaktoren 1,03 (fordi 3% er det samme som 0,03) slik:</p>
-<div class="math notranslate nohighlight">
-\[
-2000000 \cdot 1.03^{10} \approx 2687833 \, \text{kr}
-\]</div>
-<p>Men dette problemet kan også løses algoritmisk ved at vi øker boligpris vært år med 3% i 10 år. Algoritmen blir da</p>
-<ol class="arabic simple">
-<li><p>Sett <code class="docutils literal notranslate"><span class="pre">boligpris</span> <span class="pre">=</span> <span class="pre">2000000</span></code></p></li>
-<li><p>Sett <code class="docutils literal notranslate"><span class="pre">år</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
-<li><p>Så lenge <code class="docutils literal notranslate"><span class="pre">år</span></code> er mindre enn 10:</p>
+<li><p>Vi starter med å sette <code class="docutils literal notranslate"><span class="pre">sum_av_heltall</span> <span class="pre">=</span> <span class="pre">0</span></code>. I tillegg har vi et variabel <code class="docutils literal notranslate"><span class="pre">heltall</span></code> som holder styr på hvilket heltall vi er på. <br></p></li>
+<li><p>Vi ønsker å øke <code class="docutils literal notranslate"><span class="pre">sum_av_heltall</span></code> med <code class="docutils literal notranslate"><span class="pre">heltall</span></code> så lenge <code class="docutils literal notranslate"><span class="pre">heltall</span></code> er mindre enn eller lik <code class="docutils literal notranslate"><span class="pre">100</span></code>. Vi må passe på å øke verdien til <code class="docutils literal notranslate"><span class="pre">heltall</span></code> med <code class="docutils literal notranslate"><span class="pre">1</span></code> for hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka. Altså</p>
 <ul class="simple">
-<li><p>Øk boligprisen med 3 %</p></li>
-<li><p>Øk året med 1.</p></li>
+<li><p>Øk <code class="docutils literal notranslate"><span class="pre">sum_av_heltall</span></code> med <code class="docutils literal notranslate"><span class="pre">heltall</span></code>.</p></li>
+<li><p>Øk <code class="docutils literal notranslate"><span class="pre">heltall</span></code> med <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
 </ul>
 </li>
+<li><p>Gjenta til <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">&lt;=</span> <span class="pre">100</span></code> ikke lenger er sant.</p></li>
 </ol>
-<p>Med Pythonkode blir dette</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boligpris</span> <span class="o">=</span> <span class="mi">2_000_000</span> <span class="c1"># Man kan bruke _ for å gjøre store tall mer lesbare det står bare 2 millioner</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3% rente</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># 1.03</span>
-<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># starter på 0 år</span>
+<p><strong>Prøv å tenke deg til hvordan en sånn kode kan se ut før du ser på koden under! Prøv så godt du kan å skrive den før du ser på hvordan det kan gjøres!</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Kode for summen av de 100 første heltallene</p>
+<p>Les koden linje for linje og prøv å forstå hva som skjer. <br>
+Det kan være en god idé å prøve og forstå koden, og deretter prøve å skrive den selv <strong>uten å se på koden</strong>. <br></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Settes lik 0 siden å plusse på 0 endrer ikke svaret.</span>
+<span class="n">heltall</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Første heltall</span>
 
-<span class="k">while</span> <span class="n">år</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># Så lenge det ikke har gått 10 år enda, gjør følgende:</span>
-    <span class="n">boligpris</span> <span class="o">=</span> <span class="n">boligpris</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Øk boligprisen med veksten fra renten på 1 år.</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øk årstallet med 1.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">boligpris</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span> <span class="c1"># .0f skriver ut tallet uten desimaler, rundet av til nærmeste heltall</span>
+
+<span class="k">while</span> <span class="n">heltall</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span> <span class="c1"># Frem til vi har gått gjennom de 100 første heltallene:</span>
+    <span class="c1"># Først øker vi summen av heltallene med det nåværende heltallet</span>
+    <span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="n">sum_av_heltall</span> <span class="o">+</span> <span class="n">heltall</span> 
+
+    <span class="c1"># Deretter øker vi heltallet med 1</span>
+    <span class="n">heltall</span> <span class="o">=</span> <span class="n">heltall</span> <span class="o">+</span> <span class="mi">1</span> 
+
+<span class="c1"># Til slutt skriver vi ut verdien til summen av alle heltallene.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_av_heltall</span><span class="p">)</span> 
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>boligpris = 2687833 kr
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">5050</span>
 </pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="eksempel-4-sparing-med-fast-innskudd">
-<h3>Eksempel 4: Sparing med fast innskudd<a class="headerlink" href="#eksempel-4-sparing-med-fast-innskudd" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at du sparer hver måned og du setter inn 1000 kr hver måned med en månedlig rente på 0.3%. Hvor mye har vi da spart etter 2 år?</p>
-<p>Vi kan tenke oss at vi på slutten av hver legger på renten på det vi har spart. Deretter setter vi inn et nytt innskudd på 1000 kr.</p>
-<p>En mulig løsning på dette problemet ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke blir da:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi har ikke spart noe enda</span>
-<span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Vi setter inn 1000 kr i måneden. Fast innskudd</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 0.3% rente</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
-<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Vi starter på måned 0</span>
-<span class="k">while</span> <span class="n">måned</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="o">*</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># 12 måneder per år, og vi sparer i 2 år --&gt; 2 år * 12 måneder/år = 24 måneder. </span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="c1"># Renten løper på sparebeløpet som har vokst siden forrige måned</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Vi setter inn et nytt innskudd på sparebeløpet</span>
-    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Vi øker måneden med 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparebeløp = 24847 kr
-</pre></div>
-</div>
-</div>
+<p>som betyr at summen av de 100 første heltallene er 5050.</p>
 </div>
 </section>
 </section>
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
-<section id="oppgave-1-legenden-om-gauss-og-summen-av-de-forste-100-heltallene">
-<h3>Oppgave 1: Legenden om Gauss og summen av de første 100 heltallene<a class="headerlink" href="#oppgave-1-legenden-om-gauss-og-summen-av-de-forste-100-heltallene" title="Permalink to this heading">#</a></h3>
-<p>Carl Friedrich Gauss gikk i en klasse der en lærer ga i en oppgave der de måtte summere alle heltall fra 1 til 100. Læreren håpte på å få litt ro og stillhet i klasserommet, men Gauss løste denne oppgaven overraskende raskt for hånd. Du kan på en annen side løse det enda raskere enn Gauss i dag ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke.</p>
-<p>Skriv en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke der du regner summen av de 100 første heltallene.</p>
-<p><em>Du kan bruke kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som skal lagre summen av heltallene</span>
-<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Variabel som holder lagrer hvilket heltall det er snakk om</span>
-
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Legg inn betingelse på hvor lenge man skal kjøre `while`-løkka</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legg til heltallet på summen</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk heltallet med 1.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<p>Nå er det på tide å prøve seg litt fram og skrive litt kode!</p>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Skriv en program som printer ut alle partallene <span class="math notranslate nohighlight">\(2, 4, ..., 16, 18, 20\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodehint</p>
+<p>Du kan starte med <code class="docutils literal notranslate"><span class="pre">partall</span> <span class="pre">=</span> <span class="pre">2</span></code> og øke partallet med <code class="docutils literal notranslate"><span class="pre">2</span></code> for hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka. I eksemplene over økte vi <code class="docutils literal notranslate"><span class="pre">heltall</span></code> med <code class="docutils literal notranslate"><span class="pre">1</span></code> hver runde i løkka ved å skrive <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">=</span> <span class="pre">heltall</span> <span class="pre">+</span> <span class="pre">1</span></code>.<br> Kan du tenke deg hvordan man da kan øke med <code class="docutils literal notranslate"><span class="pre">2</span></code> hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka?</p>
+</div>
+<p><strong>Prøv godt før du ser på løsningen!</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Sikker på at du har prøvd nok…? Løsningen er her:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">partall</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="n">partall</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">partall</span><span class="p">)</span>
+    <span class="n">partall</span> <span class="o">=</span> <span class="n">partall</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2</span>
+<span class="go">4</span>
+<span class="go">6</span>
+<span class="go">8</span>
+<span class="go">10</span>
+<span class="go">12</span>
+<span class="go">14</span>
+<span class="go">16</span>
+<span class="go">18</span>
+<span class="go">20</span>
 </pre></div>
 </div>
 </div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Summen starter på 0</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Det første heltallet som skal legges på s</span>
-<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">n</span> <span class="c1"># Øke summen med n</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øker heltallet med 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut verdien av s</span>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Skriv et program som regner ut summen av alle oddetallene fra <span class="math notranslate nohighlight">\(1\)</span> opp til og med <span class="math notranslate nohighlight">\(99\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodehint</p>
+<p>Du kan starte med å sette <code class="docutils literal notranslate"><span class="pre">oddetall</span> <span class="pre">=</span> <span class="pre">1</span></code>. Deretter kan du øke <code class="docutils literal notranslate"><span class="pre">oddetall</span></code> med <code class="docutils literal notranslate"><span class="pre">2</span></code> for hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka. <br></p>
+</div>
+<p><strong>Prøv godt før du ser på løsningen!</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">oddetall</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Starter med det første oddetallet</span>
+
+<span class="c1"># Så lenge vi har et oddetall som er mindre enn eller lik 99, så gjør vi:</span>
+<span class="k">while</span> <span class="n">oddetall</span> <span class="o">&lt;=</span> <span class="mi">99</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">oddetall</span> <span class="c1"># Øke summen med det nåværende oddetallet</span>
+    <span class="n">oddetall</span> <span class="o">=</span> <span class="n">oddetall</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># Finn neste oddetall</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2500</span>
+</pre></div>
+</div>
+<p>Altså er summen av alle oddetallene under 100 lik 2500.</p>
+</div>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Isak har tenkt at han skrive et program for å løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+2x - 5 = 0
+\]</div>
+<p>ved å starte med en <span class="math notranslate nohighlight">\(x\)</span>-verdi slik at <span class="math notranslate nohighlight">\(2x - 5 &lt; 0\)</span>. Dette fant han ut stemmer når <span class="math notranslate nohighlight">\(x = -1\)</span>. <br>
+Han har så tenkt at dersom han øker <span class="math notranslate nohighlight">\(x\)</span>-verdien med <em>små</em> endringer, så vil han før eller siden få en <span class="math notranslate nohighlight">\(x\)</span>-verdi slik at <span class="math notranslate nohighlight">\(2x - 5 \geq 0\)</span>. <br>
+Jo mindre steg han bruker, jo bedre tilnærming til løsningen av likningen vil han få (men prisen han må betale er at han må sitte å vente lenger …) <br></p>
+<p>Skriv et program som gjør løser likningen på denne måten ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke. <br></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodehint</p>
+<ul class="simple">
+<li><p>Du kan for eksempel øke verdien til <code class="docutils literal notranslate"><span class="pre">x</span></code> med <code class="docutils literal notranslate"><span class="pre">0.25</span></code> for hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka.</p></li>
+<li><p>Tenk over hvilken betingelse du bør sette i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka.</p></li>
+</ul>
+</div>
+<p><strong>Prøv godt før du ser på løsningen!</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># Startverdi der hvor 2 * x - 5 &lt; 0</span>
+<span class="k">while</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge 2 * x - 5 er mindre enn 0, så gjør vi:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span> <span class="c1"># øker verdien til `x` med 0.25 frem til 2 * x - 5 &gt;= 0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2.5</span>
+</pre></div>
+</div>
+<p>som er den eksakte løsningen til likningen!</p>
+</div>
+</section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Fakultet er en regneoperasjon som er definert for positive heltall. <br>
+Vi skriver <span class="math notranslate nohighlight">\(n\)</span>-fakultet som <span class="math notranslate nohighlight">\(n!\)</span> og definerer regneoperasjonen som</p>
+<div class="math notranslate nohighlight">
+\[
+n! = 1 \cdot 2 \cdot 3 \cdot 4 \cdot \ldots \cdot (n - 1) \cdot n
+\]</div>
+<p>For eksempel er</p>
+<div class="math notranslate nohighlight">
+\[
+5! = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120
+\]</div>
+<p>Skriv et program som regner ut <span class="math notranslate nohighlight">\(15!\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke. <br></p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Kodehint 1</p>
+<p>Når vi regnet ut summen av de 100 første heltallene brukte satt vi startverdien til</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Dette var fordi å plusse på 0 ikke endrer verdien til summen. <br>
+Hva bør du sette startverdien til når du skal regne ut et produkt av mange tall i stedet?</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Kodehint 2</p>
+<p>Når vi regnet ut summen, så oppdaterte vi verdien til <code class="docutils literal notranslate"><span class="pre">sum_av_heltall</span></code> med</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="n">sum_av_heltall</span> <span class="o">+</span> <span class="n">heltall</span>
+</pre></div>
+</div>
+<p>Hvordan bør du oppdatere verdien dersom du i stedet skal regne ut et produkt av mange tall?</p>
+</div>
+<p><strong>Prøv godt før du ser på løsningen!</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_fakultet</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Setter startverdi til 1 siden å gange med 1 endrer ikke verdien</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># første heltall som skal ganges med i n_fakultet</span>
+ 
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">:</span> <span class="c1"># Så lenge n er mindre enn eller lik 15, så gjør vi:</span>
+    <span class="n">n_fakultet</span> <span class="o">=</span> <span class="n">n_fakultet</span> <span class="o">*</span> <span class="n">n</span> <span class="c1"># Ganger med nåværende verdi av `n`</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øker verdien til `n` med 1 for å hente ut neste heltall</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">n_fakultet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1307674368000</span>
+</pre></div>
+</div>
+<p>Med andre ord er</p>
+<div class="math notranslate nohighlight">
+\[
+15! = 1307674368000
+\]</div>
+</div>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
+<p>Når du leste om regneartene som finnes i Python, så du at vi kan bruke <code class="docutils literal notranslate"><span class="pre">**</span></code> for å regne ut potenser. <br>
+Vi skal nå late som at denne regnearten ikke finnes.</p>
+<p>Skriv et program som regner ut <span class="math notranslate nohighlight">\(2^{12}\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke. Sjekk svaret ditt med å bruke den innebygde måten å regne ut potenser i Python på. <br></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Kodehint</p>
+<p>Samme kodehint som på forrige oppgave vil være til hjelp i denne oppgaven!</p>
+</div>
+<p><strong>Prøv godt før du ser på løsningen!</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">potens</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># starter med 1 siden det ikke endrer verdien til et produkt</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># `n` brukes nå bare til å telle antall ganger vi har multiplisert med 2</span>
+
+<span class="c1"># Så lenge vi ikke har multiplisert 12 ganger, så gjør vi:</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="n">potens</span> <span class="o">=</span> <span class="n">potens</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># Ganger med 2</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Øker antall ganger vi har multiplisert med 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">potens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">4096</span>
+<span class="go">4096</span>
 </pre></div>
 </div>
 </div>
-</details></section>
-<section id="oppgave-2-regne-ut-boligpris-etter-20-ar">
-<h3>Oppgave 2: Regne ut boligpris etter 20 år<a class="headerlink" href="#oppgave-2-regne-ut-boligpris-etter-20-ar" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at du skal kjøpe en bolig til 4 millioner kroner. Hvert år øker boligprisene med 2%.</p>
-<p>Skriv en kode som finner ut hvor mye boligen er verdt etter 20 år.</p>
-<p><em>Du kan bruke kodeskallet under til å løse oppgaven. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boligpris</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Boligpris ved år 0 (ved start)</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Renten boligprisen øker med per år</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># vekstfaktoren renten gir</span>
-<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett inn betingelse for at `while`-løkka skal stoppe.</span>
-    <span class="n">boligpris</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk boligprisen med renten</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Øk året med 1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">boligpris</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">boligpris</span> <span class="o">=</span> <span class="mi">4_000_000</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
-<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">år</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="n">boligpris</span> <span class="o">=</span> <span class="n">boligpris</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">boligpris</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details></section>
-<section id="oppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">
-<h3>Oppgave 3: Finne ut når verdien til en bil er halvert<a class="headerlink" href="#oppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at du kjøper en bil til 100 000 kr, og at verdien til bilen synker med 10% hvert år.</p>
-<p>Skriv en Pythonkode og regn ut hvor mange år det tar før verdien til bilen er halvert.</p>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Den opprinnelige verdien til bilen</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">verdi</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">verdi</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># Den opprinnelige verdien til bilen</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">10</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># 10 % nedgang hvert år.</span>
-<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">verdi</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mi">100_000</span><span class="p">:</span> <span class="c1"># Så lenge verdien er større enn halvparten av den opprinnelige verdien</span>
-    <span class="n">verdi</span> <span class="o">=</span> <span class="n">verdi</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details></section>
-<section id="oppgave-4-sparing-med-fast-innskudd">
-<h3>Oppgave 4: Sparing med fast innskudd<a class="headerlink" href="#oppgave-4-sparing-med-fast-innskudd" title="Permalink to this heading">#</a></h3>
-<p>Tenk deg at du skal spare 1000 kr hver måned med en årlig rente på 3% (så renten løper bare hvert år i dette tilfellet).</p>
-<p>Skriv en Pythonkode til å regne ut hvor mye du har spart etter 10 år.</p>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle ut der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan tenkes du kan eller må legge til flere linjer med kode</em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">innskudd</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">innskudd</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># 1000 kr * 12 måneder per år = 12 000 kr per år</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3% rente</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span><span class="o">/</span><span class="mi">100</span>
-<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">år</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># Sparer i 10 år</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="o">+</span> <span class="n">innskudd</span> <span class="c1"># Legger på rente på sparebeløpet og setter inn innskuddet</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details></section>
-<section id="oppgave-5-annuitetslan">
-<h3>Oppgave 5: Annuitetslån<a class="headerlink" href="#oppgave-5-annuitetslan" title="Permalink to this heading">#</a></h3>
-<p>Du har tatt opp et lån på 1 000 000 kr. Lånet skal betales tilbake over 20 år med et fast årlig terminbeløp. Lånet har en rente på 2.5% per år. En algoritme for nedbetalingen av lånet kan beskrives med følgende flytdiagram:</p>
-<div class="mermaid" align="center">
-flowchart TD 
-
-    A[Start: tatt opp lån] --> B[Så lenge lånet er større enn 0]
-    B -- Sann --> C[Legg til rentebeløp] --> D[Trekk fra terminbeløp] --> E[Øk antall år med 1] -- Gjenta --> B
-    B -- Usann ----> F[Skriv ut antall år]
-
-</div><p>Skriv en kode der du bruker en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke til å bruke algoritmen over til å finne ut hvor mange år det tar å nedbetale lånet dersom du setter terminbeløpet til 75 000 kr.</p>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn delene der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Du kan fritt legge til linjer med kode du trenger, og fjerne linjer du ikke trenger.</em></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Kodehint: rentebeløpet<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Dersom lånet et år er <span class="math notranslate nohighlight">\(L\)</span> i kroner, og renten er <span class="math notranslate nohighlight">\(r\)</span> (i prosent), vil rentebeløpet som samles opp det året være <span class="math notranslate nohighlight">\(L\cdot r\)</span>.</p>
-</div>
-</details><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># startlån</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># renten på lånet</span>
-<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># fast terminbeløp</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># år 0.</span>
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># skriv inn riktig betingelse for at løkka skal stoppe.</span>
-    <span class="n">rentebeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># regn ut rentebeløpet som skal legges på lånet</span>
-    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Oppdater gjenværende lån</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># oppdater tiden</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="w"> </span><span class="si">= }</span><span class="s2"> år.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Fasit<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Det vil ta 17 år før lånet er betalt ned.</p>
-</div>
-</details></section>
+</section>
 </section>
 </section>
 
@@ -945,12 +932,12 @@ Fasit<div class="sd-summary-down docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="loops.html"
+       href="../variabler_og_regning/regning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Løkker</p>
+        <p class="prev-next-title">Å regne med Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -977,20 +964,20 @@ Fasit<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-en-while-lokke">Hva er en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-telle-til-5">Eksempel 1: Telle til 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-summere-alle-heltall-fra-1-til-5">Eksempel 2: Summere alle heltall fra 1 til 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-regne-ut-boligpris-etter-10-ar">Eksempel 3: Regne ut boligpris etter 10 år</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-sparing-med-fast-innskudd">Eksempel 4: Sparing med fast innskudd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-lokker">Hva er løkker?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flytskjema-for-while-lokker">Flytskjema for <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-while-lokke-for-a-printe-ut-de-fem-forste-heltallene">Eksempel 1: <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke for å printe ut de fem første heltallene</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2">Eksempel 2</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-legenden-om-gauss-og-summen-av-de-forste-100-heltallene">Oppgave 1: Legenden om Gauss og summen av de første 100 heltallene</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-regne-ut-boligpris-etter-20-ar">Oppgave 2: Regne ut boligpris etter 20 år</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-finne-ut-nar-verdien-til-en-bil-er-halvert">Oppgave 3: Finne ut når verdien til en bil er halvert</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-sparing-med-fast-innskudd">Oppgave 4: Sparing med fast innskudd</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5-annuitetslan">Oppgave 5: Annuitetslån</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
 </ul>

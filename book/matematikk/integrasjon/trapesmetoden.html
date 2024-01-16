@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/intro.html">Introduksjon til verktøykassa</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/loops.html">Løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
 </ul>
@@ -557,7 +556,7 @@ I = \int\limits_a^b f(x) \, dx.
 </section>
 </div><p>Vi kan oppsummere med en algoritme:</p>
 <div class="proof algorithm admonition" id="trapesmetoden">
-<p class="admonition-title"><span class="caption-number">Algorithm 4 </span> (Trapesmetoden)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 3 </span> (Trapesmetoden)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Input</strong>: <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(n\)</span></p>
 <p><strong>Output</strong>: Tilnærming til integralet <span class="math notranslate nohighlight">\(\int\limits_a^b f(x) \, dx\)</span></p>
@@ -601,7 +600,7 @@ der <span class="math notranslate nohighlight">\(h\)</span> er høyden til trape
 \[
 I = \int\limits_0^2 x^2 \, dx,
 \]</div>
-<p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 4</a> slavisk, kan vi skrive en Pythonkode på følgende form:</p>
+<p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 3</a> slavisk, kan vi skrive en Pythonkode på følgende form:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -638,7 +637,7 @@ I = \int\limits_0^2 x^2 \, dx,
 \[
 \int_0^1 \frac{4}{1 + x^2} \, dx,
 \]</div>
-<p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 4</a> igjen, kan vi koden slik:</p>
+<p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 3</a> igjen, kan vi koden slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -691,8 +690,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Vi starter fra summen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99d76aa4-1233-4548-9cc4-e01ff248dc75">
-<span class="eqno">(22)<a class="headerlink" href="#equation-99d76aa4-1233-4548-9cc4-e01ff248dc75" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6d38de2c-7fed-4d29-908a-ba12e1ddffb1">
+<span class="eqno">(22)<a class="headerlink" href="#equation-6d38de2c-7fed-4d29-908a-ba12e1ddffb1" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\limits_a^b f(x) \, dx &amp; \approx \sum_{i=0}^{n - 1}\frac{f(x_i) + f(x_{i+1})}{2}h \\
 &amp; = \frac{h}{2}\left(f(x_0) + f(x_1) + f(x_1) + f(x_2) + \ldots + f(x_{n-3}) + f(x_{n-2}) + f(x_{n-2}) + f(x_{n-1}) \right) \\
 &amp; = \frac{h}{2}\left(f(x_0) + 2f(x_1) + 2f(x_2) + \ldots + 2f(x_{n-3}) + 2f(x_{n-2}) + f(x_{n-1}) \right) \\
@@ -704,7 +703,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Bruk <a class="reference internal" href="#trapesmetoden">Algorithm 4</a> til å tilnærme integralet</p>
+<p>Bruk <a class="reference internal" href="#trapesmetoden">Algorithm 3</a> til å tilnærme integralet</p>
 <div class="math notranslate nohighlight">
 \[
 I = \int\limits_0^1 e^{-x^2} \, dx.
