@@ -72,6 +72,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/if_else/if_else';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Feilmeldinger i Python" href="../errors/errors.html" />
+    <link rel="prev" title="for-løkker" href="../iterasjon/for_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,17 +170,19 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduksjon til verktøykassa</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -528,9 +532,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
 </ul>
 </li>
 </ul>
@@ -582,11 +583,11 @@ flowchart TD
 </div><p>La oss se på et eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn eller lik null.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er negativ eller null.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn eller lik null.&quot;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er negativ eller null.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -600,7 +601,7 @@ flowchart TD
 <p>Vi kan printe ut betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> for å se at den faktisk evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -613,16 +614,7 @@ flowchart TD
 <section id="underveisoppgave-1">
 <h3>Underveisoppgave 1<a class="headerlink" href="#underveisoppgave-1" title="Permalink to this heading">#</a></h3>
 <p>La oss si vi setter <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-1</span></code>. Hva blir da utskriften? Hvorfor?</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Når <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-1</span></code>, vil betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> være <code class="docutils literal notranslate"><span class="pre">False</span></code>. Dermed vil <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken av koden kjøres, og vi får utskriften <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">er</span> <span class="pre">mindre</span> <span class="pre">enn</span> <span class="pre">null</span></code>.</p>
-</div>
-</details></section>
+</section>
 </section>
 <section id="betingelser-i-python">
 <h2>Betingelser i Python<a class="headerlink" href="#betingelser-i-python" title="Permalink to this heading">#</a></h2>
@@ -673,62 +665,47 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <section id="underveisoppgave-2">
 <h3>Underveisoppgave 2<a class="headerlink" href="#underveisoppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">!=</span> <span class="pre">2</span></code>?</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Siden <code class="docutils literal notranslate"><span class="pre">1</span></code> er ulik <code class="docutils literal notranslate"><span class="pre">2</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">!=</span> <span class="pre">2</span></code> være <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Siden <code class="docutils literal notranslate"><span class="pre">1</span></code> er ulik <code class="docutils literal notranslate"><span class="pre">2</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">!=</span> <span class="pre">2</span></code> være <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </div>
-</details></section>
+</section>
 <section id="underveisoppgave-3">
 <h3>Underveisoppgave 3<a class="headerlink" href="#underveisoppgave-3" title="Permalink to this heading">#</a></h3>
 <p>La <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">-5</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">10</span></code>. Finn en betingelse som kan settes på <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> slik at resultatet blir <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Her er det flere muligheter. Noen eksempler er</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Her er det flere muligheter. Noen eksempler er</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">==</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> har ulik verdi.</p></li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;=</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">s</span> <span class="pre">!=</span> <span class="pre">5</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> for <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">s</span></code> er lik <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">==</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> og <code class="docutils literal notranslate"><span class="pre">s</span></code> har ulik verdi.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&gt;=</span> <span class="pre">s</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi <code class="docutils literal notranslate"><span class="pre">r</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">s</span> <span class="pre">!=</span> <span class="pre">5</span></code> gir <code class="docutils literal notranslate"><span class="pre">False</span></code> for <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">s</span></code> er lik <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p></li>
 </ol>
 </div>
-</details></section>
+</section>
 <section id="underveisoppgave-4">
 <h3>Underveisoppgave 4<a class="headerlink" href="#underveisoppgave-4" title="Permalink to this heading">#</a></h3>
 <p>Lag en variabel med navn <code class="docutils literal notranslate"><span class="pre">res</span></code> med en verdi slik at følgende kodesnutt kjører <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken. Hva er en passende tekst å skrive ut til brukeren i <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken?</p>
 <p><em>Ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{res}</span><span class="s2"> er større enn eller lik -2&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">I <code class="docutils literal notranslate"><span class="pre">if</span></code>-testen, så sjekker vi om <code class="docutils literal notranslate"><span class="pre">res</span></code> er større enn eller lik <code class="docutils literal notranslate"><span class="pre">-2</span></code>.
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>I <code class="docutils literal notranslate"><span class="pre">if</span></code>-testen, så sjekker vi om <code class="docutils literal notranslate"><span class="pre">res</span></code> er større enn eller lik <code class="docutils literal notranslate"><span class="pre">-2</span></code>.
 Hvis vi ønsker at <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken skal kjøres, så må <code class="docutils literal notranslate"><span class="pre">res</span></code> være større enn eller lik <code class="docutils literal notranslate"><span class="pre">-2</span></code> fordi vi trenger at betingelsen skal bli <code class="docutils literal notranslate"><span class="pre">True</span></code>.
 Vi kan med andre ord sette <code class="docutils literal notranslate"><span class="pre">res</span></code> til en tilfeldig verdi som er større enn eller lik <code class="docutils literal notranslate"><span class="pre">-2</span></code>.</p>
-<p class="sd-card-text">Det vil si <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">-2</span></code> vil gi <code class="docutils literal notranslate"><span class="pre">True</span></code>, men det vil alle andre verdier som er større enn <code class="docutils literal notranslate"><span class="pre">-2</span></code> også. Så som et eksempel kan koden se slik ut:</p>
+<p>Det vil si <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">-2</span></code> vil gi <code class="docutils literal notranslate"><span class="pre">True</span></code>, men det vil alle andre verdier som er større enn <code class="docutils literal notranslate"><span class="pre">-2</span></code> også. Så som et eksempel kan koden se slik ut:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
@@ -738,7 +715,7 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 </div>
-</details></section>
+</section>
 </section>
 <section id="sjekke-flere-betingelser">
 <h2>Sjekke flere betingelser<a class="headerlink" href="#sjekke-flere-betingelser" title="Permalink to this heading">#</a></h2>
@@ -769,29 +746,19 @@ Vi kan med andre ord sette <code class="docutils literal notranslate"><span clas
 <section id="underveisoppgave-5">
 <h3>Underveisoppgave 5<a class="headerlink" href="#underveisoppgave-5" title="Permalink to this heading">#</a></h3>
 <p>Dersom vi har at <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">-3</span></code> og <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">3</span></code>, hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>?</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">False</span></code> og <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> være <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi begge betingelser ikke er oppfylt samtidig.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">False</span></code> og <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code>, så vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> være <code class="docutils literal notranslate"><span class="pre">False</span></code> fordi begge betingelser ikke er oppfylt samtidig.</p>
 </div>
-</details></section>
+</section>
 <section id="underveisoppgave-6">
 <h3>Underveisoppgave 6<a class="headerlink" href="#underveisoppgave-6" title="Permalink to this heading">#</a></h3>
 <p>Dersom vi har <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code> og <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">-1</span></code>, hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>?</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code> vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> være <code class="docutils literal notranslate"><span class="pre">True</span></code> siden én av de to betingelsene er sanne.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code> vil <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> være <code class="docutils literal notranslate"><span class="pre">True</span></code> siden én av de to betingelsene er sanne.</p>
 </div>
-</details></section>
+</section>
 <section id="underveisoppgave-7">
 <h3>Underveisoppgave 7<a class="headerlink" href="#underveisoppgave-7" title="Permalink to this heading">#</a></h3>
 <p>Dersom vi har <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code> og <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">-1</span></code>,</p>
@@ -799,19 +766,14 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li><p>Hva blir resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code>?</p></li>
 <li><p>Kan du skrive om betingelsen til to betingelser ved å bruke <code class="docutils literal notranslate"><span class="pre">and</span></code> eller <code class="docutils literal notranslate"><span class="pre">or</span></code>?</p></li>
 </ol>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> blir <code class="docutils literal notranslate"><span class="pre">False</span></code> siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> er <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
-<li><p class="sd-card-text">Vi kan skrive om <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> til <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> siden vi må sjekke begge betingelser samtidig.</p></li>
+<li><p>Resultatet av <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> blir <code class="docutils literal notranslate"><span class="pre">False</span></code> siden <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> er <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>Vi kan skrive om <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> til <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c</span></code> siden vi må sjekke begge betingelser samtidig.</p></li>
 </ol>
 </div>
-</details></section>
+</section>
 </section>
 <section id="if-elif-else-tester">
 <h2><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester<a class="headerlink" href="#if-elif-else-tester" title="Permalink to this heading">#</a></h2>
@@ -850,16 +812,16 @@ flowchart TD
 <p>La oss se på et program som velger ut moms avhengig av hvilken vare det er:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">varetype</span> <span class="o">=</span> <span class="s2">&quot;reise&quot;</span>
-
-<span class="k">if</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;mat&quot;</span><span class="p">:</span>
-    <span class="n">moms</span> <span class="o">=</span> <span class="mi">15</span> 
-<span class="k">elif</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;reise&quot;</span><span class="p">:</span>
-    <span class="n">moms</span> <span class="o">=</span> <span class="mi">12</span> 
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">moms</span> <span class="o">=</span> <span class="mi">25</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">moms</span><span class="w"> </span><span class="si">= }</span><span class="s2"> prosent på varen din av type `</span><span class="si">{</span><span class="n">varetype</span><span class="si">}</span><span class="s2">`.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">varetype</span> <span class="o">=</span> <span class="s2">&quot;reise&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">if</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;mat&quot;</span><span class="p">:</span>
+<span class="linenos"> 4</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">15</span> 
+<span class="linenos"> 5</span><span class="k">elif</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;reise&quot;</span><span class="p">:</span>
+<span class="linenos"> 6</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">12</span> 
+<span class="linenos"> 7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">moms</span><span class="w"> </span><span class="si">= }</span><span class="s2"> prosent på varen din av type `</span><span class="si">{</span><span class="n">varetype</span><span class="si">}</span><span class="s2">`.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -906,41 +868,15 @@ flowchart TD
 <span class="linenos">8</span>    <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Her er <code class="docutils literal notranslate"><span class="pre">x</span></code> sin verdi <code class="docutils literal notranslate"><span class="pre">2.5</span></code>. Følger vi koden gjennom, så skjer følgende:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Her er <code class="docutils literal notranslate"><span class="pre">x</span></code> sin verdi <code class="docutils literal notranslate"><span class="pre">2.5</span></code>. Følger vi koden gjennom, så skjer følgende:</p>
 <ul class="simple">
-<li><p class="sd-card-text">På linje 3 sjekker vi om <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">0</span></code>. Det er den ikke, så vi går videre til <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken.</p></li>
-<li><p class="sd-card-text">På linje 5 sjekker vi om <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">1</span></code>. Det er den heller ikke, så vi går videre til <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken.</p></li>
-<li><p class="sd-card-text">Dermed setter vi <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">3</span></code> på linje 7.</p></li>
+<li><p>På linje 3 sjekker vi om <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">0</span></code>. Det er den ikke, så vi går videre til <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken.</p></li>
+<li><p>På linje 5 sjekker vi om <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">1</span></code>. Det er den heller ikke, så vi går videre til <code class="docutils literal notranslate"><span class="pre">else</span></code>-blokken.</p></li>
+<li><p>Dermed setter vi <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">3</span></code> på linje 7.</p></li>
 </ul>
-<p class="sd-card-text">Verdien til <code class="docutils literal notranslate"><span class="pre">y</span></code> blir derfor <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
-</div>
-</details><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terningkast</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Eksmepel på terningkast</span>
-
-<span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">terningkast</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="n">gevinst</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">elif</span> <span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">terningkast</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="n">gevinst</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">gevinst</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gevinst</span><span class="w"> </span><span class="si">= }</span><span class="s2"> kr når terningen viser </span><span class="si">{</span><span class="n">terningkast</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gevinst = 10 kr når terningen viser 5.
-</pre></div>
-</div>
-</div>
+<p>Verdien til <code class="docutils literal notranslate"><span class="pre">y</span></code> blir derfor <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
 </div>
 </section>
 <section id="underveisoppgave-9">
@@ -957,17 +893,12 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 <p>Hvilken betingelse må du sette på linje <code class="docutils literal notranslate"><span class="pre">5</span></code> (der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>) for at <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken skal kjøres, og at utskriften stemmer overens med betingelsen?</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Vi ønsker at <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken skal kjøres hvis <code class="docutils literal notranslate"><span class="pre">x</span></code> er større enn <code class="docutils literal notranslate"><span class="pre">0</span></code> og mindre enn <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi ønsker at <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokken skal kjøres hvis <code class="docutils literal notranslate"><span class="pre">x</span></code> er større enn <code class="docutils literal notranslate"><span class="pre">0</span></code> og mindre enn <code class="docutils literal notranslate"><span class="pre">1</span></code>.
 Derfor er den riktig betingelsen <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> eller <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">1</span></code></p>
 </div>
-</details><div class="tip dropdown admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Kan man legge til flere elif-blokker?</p>
 <p>Man kan legge til så mange <code class="docutils literal notranslate"><span class="pre">elif</span></code>-blokker man måtte ønske!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse1</span><span class="p">:</span>
@@ -999,24 +930,19 @@ Derfor er den riktig betingelsen <code class="docutils literal notranslate"><spa
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alder</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hvor gammel er du? &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">alder</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hvor gammel er du? &quot;</span><span class="p">))</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">5</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">To måter å løse dette på:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>To måter å løse dette på:</p>
 <ol class="arabic simple">
 <li></li>
 </ol>
@@ -1040,22 +966,22 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
-</details></section>
+</section>
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Lag et program som sammenlikner to <em>heltall</em> og skriver ut hvilket som er størst, og hvilken verdi det har. Det ene tallet skal skrives inn av brukeren med <code class="docutils literal notranslate"><span class="pre">input</span></code>-funksjonen.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn et tall: &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tallene har samme verdi&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn et tall: &quot;</span><span class="p">))</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="linenos">6</span><span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tallene har samme verdi&quot;</span><span class="p">)</span>
+<span class="linenos">8</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">9</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1087,28 +1013,23 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="linenos"> 4</span>    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+<span class="linenos"> 5</span><span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos"> 6</span>    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 8</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">En mulig løsning er:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>En mulig løsning er:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
@@ -1121,13 +1042,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som gir utskriften</p>
+<p>som gir utskriften</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">y = 2.</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som var det vi ønsket.</p>
+<p>som var det vi ønsket.</p>
 </div>
-</details></section>
+</section>
 <section id="oppgave-4">
 <h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
 <p>La <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span> være lengdene til sidene i en trekant. Lag et program som</p>
@@ -1142,55 +1063,28 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </ul>
 </li>
 </ul>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Hint<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For å sjekke om en trekant er rettvinklet, kan du bruke Pytagoras’ setning. Sidene i seg selv har ingen spesiell rekkefølge her, så du må sjekke alle kombinasjoner:</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a^2 = b^2 + c^2\)</span></p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(b^2 = a^2 + c^2\)</span></p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(c^2 = a^2 + b^2\)</span></p></li>
-</ol>
-<p class="sd-card-text">Hvis én av disse likningene er oppfylt, er trekanten rettvinklet. Hvis ingen av dem er oppfylt, er trekanten ikke rettvinklet.</p>
-</div>
-</details><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 1 i trekanten: &quot;</span><span class="p">))</span>
+<p>Hvis trekanten er rettvinklet, skal programmet printe ut en melding som sier at den er rettvinklet. Hvis ikke skal den printe ut en melding der den sier at trekanten <em>ikke</em> er rettvinklet.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Kodehint 1 - input-funksjonen</p>
+<p>Du kan bruke følgende linjer på toppen av programmet ditt hvis du er usikker på hvordan <code class="docutils literal notranslate"><span class="pre">input</span></code>-funksjonen fungerer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 1 i trekanten: &quot;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 2 i trekanten: &quot;</span><span class="p">))</span>
 <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 3 i trekanten: &quot;</span><span class="p">))</span>
-
-<span class="c1"># Sjekk a^2 = b^2 + c^2</span>
-<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trekanten er rettvinklet&quot;</span><span class="p">)</span>
-
-<span class="c1"># Sjekk b^2 = a^2 + c^2</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-
-<span class="c1"># Sjekk c^2 = a^2 + b^2    </span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-
-<span class="c1"># Hva skal skrives ut hvis ingen av testene er sanne?</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Kodehint 2</p>
+<p>For å sjekke om en trekant er rettvinklet, kan du bruke Pytagoras’ setning. Sidene i seg selv har ingen spesiell rekkefølge her, så du må sjekke alle kombinasjoner:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(a^2 = b^2 + c^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b^2 = a^2 + c^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c^2 = a^2 + b^2\)</span></p></li>
+</ol>
+<p>Hvis én av disse likningene er oppfylt, er trekanten rettvinklet. Hvis ingen av dem er oppfylt, er ikke trekanten rettvinklet.</p>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">En løsning er:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 1 i trekanten: &quot;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 2 i trekanten: &quot;</span><span class="p">))</span>
 <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 3 i trekanten: &quot;</span><span class="p">))</span>
@@ -1212,14 +1106,14 @@ Løsningsforslag<div class="sd-summary-down docutils">
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trekanten er ikke rettvinklet&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">For de tre tilfellene skal du få:</p>
+<p>For de tre tilfellene skal du få:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = 4\)</span> og <span class="math notranslate nohighlight">\(c = 5\)</span> skal gi “rettvinklet”.</p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 4\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span> og <span class="math notranslate nohighlight">\(c = 5\)</span> skal gi “rettvinklet”.</p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “ikke rettvinklet”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = 4\)</span> og <span class="math notranslate nohighlight">\(c = 5\)</span> skal gi “rettvinklet”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 4\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span> og <span class="math notranslate nohighlight">\(c = 5\)</span> skal gi “rettvinklet”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “ikke rettvinklet”.</p></li>
 </ul>
 </div>
-</details></section>
+</section>
 <section id="oppgave-5">
 <h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
 <p>La <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span> være sidene i en trekant. Lag et program som</p>
@@ -1234,62 +1128,26 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </ul>
 </li>
 </ul>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Hint: hva er en likebeint og en likesidet trekant?<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p>Programmet skal skrive ut en melding som sier om trekanten er likesidet, likebeint eller ingen av delene.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Hva er en likebeint og en likesidet trekant?</p>
 <ul class="simple">
-<li><p class="sd-card-text">En likebeint trekant er en trekant der <strong>to</strong> av sidene er like lange. Du må derfor sjekke om minst to av sidene er like.</p></li>
-<li><p class="sd-card-text">Dersom <strong>alle</strong> sidene er like lange, er trekanten likesidet.</p></li>
+<li><p>En likebeint trekant er en trekant der <strong>to</strong> av sidene er like lange. Du må derfor sjekke om minst to av sidene er like.</p></li>
+<li><p>Dersom <strong>alle</strong> sidene er like lange, er trekanten likesidet.</p></li>
 </ul>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Hint: Hvordan sjekke flere betingelser samtidig<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Her kommer du til å få nytte av å kunne sjekke flere betingelser samtidig. Hvis vi har en <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> og en <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code>,
+<div class="dropdown tip admonition">
+<p class="admonition-title">Kodehint: Hvordan sjekke flere betingelser samtidig</p>
+<p>Her kommer du til å få nytte av å kunne sjekke flere betingelser samtidig. Hvis vi har en <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> og en <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code>,
 så kan vi:</p>
 <ul class="simple">
-<li><p class="sd-card-text">Sjekke om begge er oppfylt samtidig ved å skrive <code class="docutils literal notranslate"><span class="pre">betingelse1</span> <span class="pre">and</span> <span class="pre">betingelse2</span></code>. Man plasserer altså en <code class="docutils literal notranslate"><span class="pre">and</span></code> mellom dem for å sjekke om både <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> <em>og</em> <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er oppfylt <strong>samtidig</strong>.</p></li>
-<li><p class="sd-card-text">Sjekke om <em>minst</em> én av betingelsene er oppfylt ved å skrive <code class="docutils literal notranslate"><span class="pre">betingelse1</span> <span class="pre">or</span> <span class="pre">betingelse2</span></code>. Man plasserer altså <code class="docutils literal notranslate"><span class="pre">or</span></code> mellom dem for å sjekke om enten <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> <em>eller</em> <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er oppfylt, <strong>men ikke nødvendigvis begge to samtidig</strong>.</p></li>
+<li><p>Sjekke om begge er oppfylt samtidig ved å skrive <code class="docutils literal notranslate"><span class="pre">betingelse1</span> <span class="pre">and</span> <span class="pre">betingelse2</span></code>. Man plasserer altså en <code class="docutils literal notranslate"><span class="pre">and</span></code> mellom dem for å sjekke om både <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> <em>og</em> <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er oppfylt <strong>samtidig</strong>.</p></li>
+<li><p>Sjekke om <em>minst</em> én av betingelsene er oppfylt ved å skrive <code class="docutils literal notranslate"><span class="pre">betingelse1</span> <span class="pre">or</span> <span class="pre">betingelse2</span></code>. Man plasserer altså <code class="docutils literal notranslate"><span class="pre">or</span></code> mellom dem for å sjekke om enten <code class="docutils literal notranslate"><span class="pre">betingelse1</span></code> <em>eller</em> <code class="docutils literal notranslate"><span class="pre">betingelse2</span></code> er oppfylt, <strong>men ikke nødvendigvis begge to samtidig</strong>.</p></li>
 </ul>
 </div>
-</details><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-
-<span class="c1"># Sjekk om trekanten er likesidet</span>
-<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trekanten er likesidet.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Sjekk om trekanten er likebeint</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trekanten er likebeint.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Hva bør du skrive ut dersom ingen av testene er sanne?</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Det er flere løsninger, men her er en effektiv løsning:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Det er flere løsninger, men her er én mulighet:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 1 i trekanten: &quot;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 2 i trekanten: &quot;</span><span class="p">))</span>
 <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fyll inn lengden til side 3 i trekanten: &quot;</span><span class="p">))</span>
@@ -1307,256 +1165,14 @@ Løsningsforslag<div class="sd-summary-down docutils">
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trekanten er hverken likesidet eller likebeint.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sd-card-text">For de tre tilfelle skal du få:</p>
+<p>For de tre tilfelle skal du få:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “hverken likesidet eller likebeint”.</p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 2\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “likebeint”.</p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “likesidet”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “hverken likesidet eller likebeint”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 2\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “likebeint”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span> og <span class="math notranslate nohighlight">\(c = 3\)</span> skal gi “likesidet”.</p></li>
 </ul>
 </div>
-</details></section>
-<section id="oppgave-6">
-<h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
-<p>Den Gregorianske kalenderen (vår kalender) ble innført i 1582 av pave Gregor XIII. I denne kalenderen dukker det opp <em>skuddår</em> som har én dag lenger enn et vanlig år som skyldes at et jordår (et omløp rundt sola) i virkeligheten er ca. 365.25 dager. Hvert fjerde år, ligger vi derfor ca. én dag etter og må tar igjen dette ved å legge til en ekstra dag i februar.</p>
-<p>For å sjekke om et år er et skuddår, kan vi sjekke følgende:</p>
-<ul class="simple">
-<li><p>Hvis året er delelig med 4, men <em>ikke</em> med 100, er det et skuddår.</p></li>
-<li><p>Dersom året er delelig med både 100 og 400, er det et skuddår.</p></li>
-<li><p>Hvis ikke er det <em>ikke</em> et skuddår.</p></li>
-</ul>
-<p>Skriv et program som tar inn et årstall fra brukeren med <code class="docutils literal notranslate"><span class="pre">input</span></code>-funksjonen og skriver ut om det er et skuddår eller ikke.
-Test ut programmet ditt med følgende årstall:</p>
-<ul class="simple">
-<li><p>1992 (skuddår)</p></li>
-<li><p>2000 (skuddår)</p></li>
-<li><p>1900 (ikke skuddår)</p></li>
-</ul>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Påminnelse: sjekke om et tall er delelig med et annet<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Dersom et tall <code class="docutils literal notranslate"><span class="pre">a</span></code> er delelig <code class="docutils literal notranslate"><span class="pre">b</span></code>, sjekker vi det med <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span> <span class="pre">==</span> <span class="pre">0</span></code>. Dersom <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> blir <code class="docutils literal notranslate"><span class="pre">0</span></code>, er <code class="docutils literal notranslate"><span class="pre">a</span></code> delelig med <code class="docutils literal notranslate"><span class="pre">b</span></code>. Hvis ikke er ikke <code class="docutils literal notranslate"><span class="pre">a</span></code> delelig med <code class="docutils literal notranslate"><span class="pre">b</span></code>. For å sjekke om <code class="docutils literal notranslate"><span class="pre">a</span></code> <em>ikke</em> er delelig med <code class="docutils literal notranslate"><span class="pre">b</span></code>, kan man skrive <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span> <span class="pre">!=</span> <span class="pre">0</span></code>.</p>
-</div>
-</details><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">år</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn årstall: &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="si">}</span><span class="s2"> er et skuddår.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="si">}</span><span class="s2"> er et skuddår.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="si">}</span><span class="s2"> er ikke et skuddår.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">En løsning er:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">år</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn årstall: &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="n">år</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">år</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="si">}</span><span class="s2"> er et skuddår.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">år</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="si">}</span><span class="s2"> er et skuddår.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="si">}</span><span class="s2"> er ikke et skuddår.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details></section>
-<section id="oppgave-7">
-<h3>Oppgave 7<a class="headerlink" href="#oppgave-7" title="Permalink to this heading">#</a></h3>
-<p>Den generelle løsningen av likningssystemet</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-    ax + by &amp;= c, \\
-    dx + ey &amp;= f,
-\end{align*}\]</div>
-<p>er gitt ved</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-    x &amp;= \frac{ce - bf}{ae - bd}, \\ \\
-    y &amp;= \frac{af - cd}{ae - bd}.
-\end{align*}\]</div>
-<p>så lengde <span class="math notranslate nohighlight">\(ae - bd \neq 0\)</span> (altså, så lengde <span class="math notranslate nohighlight">\(ae - bd\)</span> ikke blir null, siden vi ikke kan dele på null).</p>
-<p>Lag et program som</p>
-<ul class="simple">
-<li><p>Tar inn <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(e\)</span> og <span class="math notranslate nohighlight">\(f\)</span> fra brukeren med <code class="docutils literal notranslate"><span class="pre">input</span></code>-funksjonen.</p></li>
-<li><p>Sjekker om <span class="math notranslate nohighlight">\(ae - bd \neq 0\)</span>.</p></li>
-<li><p>Regner ut <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> med likningene over dersom <span class="math notranslate nohighlight">\(ae - bd \neq 0\)</span>.</p></li>
-<li><p>dersom <span class="math notranslate nohighlight">\(ae - bd = 0\)</span>, skal koden printe ut <code class="docutils literal notranslate"><span class="pre">&quot;Ligningssystemet</span> <span class="pre">har</span> <span class="pre">ingen</span> <span class="pre">løsning&quot;</span></code>.</p></li>
-</ul>
-<p>Test ut programmet med:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span>, <span class="math notranslate nohighlight">\(c = 3\)</span>, <span class="math notranslate nohighlight">\(d = 4\)</span>, <span class="math notranslate nohighlight">\(e = 5\)</span> og <span class="math notranslate nohighlight">\(f = 6\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span>, <span class="math notranslate nohighlight">\(c = 3\)</span>, <span class="math notranslate nohighlight">\(d = 2\)</span>, <span class="math notranslate nohighlight">\(e = 4\)</span> og <span class="math notranslate nohighlight">\(f = 6\)</span>.</p></li>
-</ul>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn verdien til a: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-<span class="n">d</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-<span class="n">e</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-
-<span class="c1"># Sjekk om likningsystemet har en løsning</span>
-<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="c1"># Regn ut verdien til `x` og `y` og skriv ut resultatet</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> og </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn verdien til a: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn verdien til b: &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn verdien til c: &quot;</span><span class="p">))</span>
-<span class="n">d</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn verdien til d: &quot;</span><span class="p">))</span>
-<span class="n">e</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn verdien til e: &quot;</span><span class="p">))</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn verdien til f: &quot;</span><span class="p">))</span>
-
-<span class="c1"># Sjekk om likningsystemet har en løsning</span>
-<span class="k">if</span> <span class="n">a</span> <span class="o">*</span> <span class="n">e</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">d</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="c1"># Regn ut verdien til `x` og `y` og skriv ut resultatet</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">e</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">e</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">f</span> <span class="o">-</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">e</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> og </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Likningssystemet har ingen løsning&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sd-card-text">For de to tilfellene skal du få:</p>
-<ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span>, <span class="math notranslate nohighlight">\(c = 3\)</span>, <span class="math notranslate nohighlight">\(d = 4\)</span>, <span class="math notranslate nohighlight">\(e = 5\)</span> og <span class="math notranslate nohighlight">\(f = 6\)</span> skal gi <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">-1.0</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">2.0</span></code>.</p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(a = 1\)</span>, <span class="math notranslate nohighlight">\(b = 2\)</span>, <span class="math notranslate nohighlight">\(c = 3\)</span>, <span class="math notranslate nohighlight">\(d = 2\)</span>, <span class="math notranslate nohighlight">\(e = 4\)</span> og <span class="math notranslate nohighlight">\(f = 6\)</span> skal gi “Likningssystemet har ingen løsning”.</p></li>
-</ul>
-</div>
-</details></section>
-<section id="oppgave-8">
-<h3>Oppgave 8<a class="headerlink" href="#oppgave-8" title="Permalink to this heading">#</a></h3>
-<p>Matematisk institutt ved Universitetet i Oslo bruker følgende veiledende grenser når de setter karakterer ved eksamener i matematiske fag:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Poeng</p></th>
-<th class="head"><p>Karakter</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>92 - 100</p></td>
-<td><p>A</p></td>
-</tr>
-<tr class="row-odd"><td><p>77 - 91</p></td>
-<td><p>B</p></td>
-</tr>
-<tr class="row-even"><td><p>58 - 76</p></td>
-<td><p>C</p></td>
-</tr>
-<tr class="row-odd"><td><p>46 - 57</p></td>
-<td><p>D</p></td>
-</tr>
-<tr class="row-even"><td><p>40 - 45</p></td>
-<td><p>E</p></td>
-</tr>
-<tr class="row-odd"><td><p>0 - 39</p></td>
-<td><p>F</p></td>
-</tr>
-</tbody>
-</table>
-<p>Skriv et program som tar inn antall poeng fra brukeren med <code class="docutils literal notranslate"><span class="pre">input</span></code>-funksjonen og skriver ut hvilken karakter det tilsvarer.</p>
-<p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Ta inn verdi fra brukeren med float(input(...))</span>
-
-<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> 
-    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Løsningsforslag<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Den enkleste løsningen her blir:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn poengsummen din: &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">92</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
-<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">77</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
-<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">58</span><span class="p">:</span> 
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
-<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">46</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
-<span class="k">elif</span> <span class="n">poeng</span> <span class="o">&gt;=</span> <span class="mi">40</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;E&quot;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sd-card-text">Vi kunne også skrevet en kode som mer tydelig viser hva karaktergrensene er med:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poeng</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn poengsummen din: &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="mi">92</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
-<span class="k">elif</span> <span class="mi">77</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">91</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
-<span class="k">elif</span> <span class="mi">58</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">76</span><span class="p">:</span> 
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
-<span class="k">elif</span> <span class="mi">46</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">57</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
-<span class="k">elif</span> <span class="mi">40</span> <span class="o">&lt;=</span> <span class="n">poeng</span> <span class="o">&lt;=</span> <span class="mi">45</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;E&quot;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">karakter</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du fikk karakteren </span><span class="si">{</span><span class="n">karakter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sd-card-text">Men dette er ikke nødvendig siden vi bruker <code class="docutils literal notranslate"><span class="pre">elif</span></code>-tester. De sjekker <em>kun</em> dersom testen før den ikke ble oppfylt. Derfor, dersom <code class="docutils literal notranslate"><span class="pre">poeng</span> <span class="pre">&gt;=</span> <span class="pre">92</span></code> er oppfylt, sjekker man ikke om <code class="docutils literal notranslate"><span class="pre">poeng</span> <span class="pre">&gt;=</span> <span class="pre">77</span></code> er oppfylt fordi <code class="docutils literal notranslate"><span class="pre">if</span></code>-blokken ble kjørt.</p>
-</div>
-</details></section>
+</section>
 </section>
 </section>
 
@@ -1590,6 +1206,24 @@ Løsningsforslag<div class="sd-summary-down docutils">
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../iterasjon/for_loops.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../errors/errors.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Feilmeldinger i Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1637,9 +1271,6 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
 </ul>
 </li>
 </ul>
@@ -1666,7 +1297,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

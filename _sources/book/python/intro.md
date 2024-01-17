@@ -19,7 +19,8 @@ Gå gjennom lista under i rekkefølgen den er listet opp. Er du komfortabel med 
 
 1. [Variabler](./variabler_og_regning/variabler.ipynb)
 2. [Regning med Python](./variabler_og_regning/regning.ipynb)
-3. [Løkker](./iterasjon/loops.ipynb)
-4. [if-else-tester](./if_else/if_else.ipynb)
-5. [Feilmeldinger](./errors/errors.ipynb)
-6. [Pythonfunksjoner](./funksjoner/funksjoner.ipynb)
+3. [`while`-løkker](./iterasjon/while_loops.ipynb)
+4. [`for`-løkker](./iterasjon/for_loops.ipynb)
+5. [`if`-`else`-tester](./if_else/if_else.ipynb)
+6. [Vanlige feilmeldinger](./errors/errors.ipynb)
+7. [Pythonfunksjoner](./funksjoner/funksjoner.ipynb)

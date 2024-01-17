@@ -176,11 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Å regne med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -626,10 +628,11 @@ I tabell 1 vises alle regneoperasjoner du kan gjøre med Python og hvilket opera
 <p><em>Når du har tenkt ut et svar, kan du kjøre kodelinjen og printe ut verdien til <code class="docutils literal notranslate"><span class="pre">a</span></code> for å sjekke om du har rett!</em></p>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<p>Regnestykket som gjøres er
-$<span class="math notranslate nohighlight">\(
+<p>Regnestykket som gjøres er</p>
+<div class="math notranslate nohighlight">
+\[
 a = 3 + 2 - 1 = 5 - 1 = 4
-\)</span>$</p>
+\]</div>
 </div>
 </section>
 <section id="ovelse-2-multiplikasjon-og-divisjon">
@@ -650,15 +653,15 @@ a = 3 + 2 - 1 = 5 - 1 = 4
 <p>Hint: Python regner først ut verdien til <code class="docutils literal notranslate"><span class="pre">b</span></code>, deretter brukes den verdien når <code class="docutils literal notranslate"><span class="pre">c</span></code> regnes ut.</p>
 <div class="warning dropdown admonition">
 <p class="admonition-title">Men hvis du absolutt ønsker å se en løsning…</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
+<div class="math notranslate nohighlight">
+\[
 b = 4 / 2 = 2
-$$
-Så brukes denne verdien til å regne ut `c` som gir 
-$$
+\]</div>
+<p>Så brukes denne verdien til å regne ut <code class="docutils literal notranslate"><span class="pre">c</span></code> som gir</p>
+<div class="math notranslate nohighlight">
+\[
 c = 2\cdot b = 2 \cdot 2 = 4
-$$
-</pre></div>
-</div>
+\]</div>
 </div>
 </div>
 </div>
@@ -714,9 +717,9 @@ Hadde vi i stedet multiplisert nevneren med <code class="docutils literal notran
 <p>Dette kan vi gjøre med følgende kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -729,9 +732,9 @@ Hadde vi i stedet multiplisert nevneren med <code class="docutils literal notran
 <p>Vi trenger strengt tatt ikke sette en parentes rundt <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">2</span></code> (det er bare gjort for å øke leseligheten), vi kan faktisk også bare skrive koden slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">4</span> 
-
-<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">4</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -758,10 +761,10 @@ Hadde vi i stedet multiplisert nevneren med <code class="docutils literal notran
 <p>Til slutt ganges de to sammen med <code class="docutils literal notranslate"><span class="pre">*</span></code>, som dette:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> 
-
-<span class="c1"># Ny fancy måte å printe på som tar med navnet på variabelen når vi skriver ut</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="c1"># Ny fancy måte å printe på som tar med navnet på variabelen når vi skriver ut</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -774,9 +777,9 @@ Hadde vi i stedet multiplisert nevneren med <code class="docutils literal notran
 <p>Eller uten bruk av parentesen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="o">**-</span><span class="mi">2</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="o">**-</span><span class="mi">2</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -808,9 +811,9 @@ Kommentaren er ment for <em>deg</em> som leser koden så <em>du</em> skal forst�
 <p>Til slutt legger vi de to sammen med <code class="docutils literal notranslate"><span class="pre">+</span></code>-operatoren. Vi får de følgende kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">7</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">7</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1023,7 +1026,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

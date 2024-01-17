@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/iterasjon/for_loops';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Funksjoner i Python" href="../funksjoner/intro.html" />
+    <link rel="next" title="if-else tester" href="../if_else/if_else.html" />
     <link rel="prev" title="while-løkker" href="while_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,11 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -540,14 +542,15 @@ En <code class="docutils literal notranslate"><span class="pre">for</span></code
 <p class="admonition-title">Hvordan skrives for-løkker?</p>
 <p>Den generelle måten å skrive en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke er slik:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">,</span> <span class="n">steglengde</span><span class="p">):</span>
-    <span class="c1"># kode som skal gjentas</span>
+    <span class="c1"># kode som skal gjentas kommer her</span>
 </pre></div>
 </div>
-<p>Det Python gjør for oss at å <em>lage</em> en midlertidig variabel <code class="docutils literal notranslate"><span class="pre">i</span></code> som starter med verdien <code class="docutils literal notranslate"><span class="pre">start</span></code>. Deretter så økes verdien til <code class="docutils literal notranslate"><span class="pre">i</span></code> med <code class="docutils literal notranslate"><span class="pre">steglengde</span></code> for hver runde i løkka. Det viser seg at løkka fortsetter så lenge <code class="docutils literal notranslate"><span class="pre">i</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">stopp</span></code>. <br></p>
+<p>Det Python gjør for oss at å <em>lage</em> en midlertidig variabel <code class="docutils literal notranslate"><span class="pre">i</span></code> som starter med verdien <code class="docutils literal notranslate"><span class="pre">start</span></code>. Deretter så økes verdien til <code class="docutils literal notranslate"><span class="pre">i</span></code> med <code class="docutils literal notranslate"><span class="pre">steglengde</span></code> for hver runde i løkka. Det viser seg at løkka fortsetter så lenge <code class="docutils literal notranslate"><span class="pre">i</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">stopp</span></code>. <br>
+<strong>Merk:</strong> at Python lager en variabel <code class="docutils literal notranslate"><span class="pre">i</span></code> for oss som vi ikke trenger å definere selv. Du kan også kalle denne noe helt annet. <br></p>
 <p>Siden du har lært om <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker per nå, så kan du forstå <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkka over som å være det samme som følgende <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">stopp</span><span class="p">:</span>
-    <span class="c1"># kode som skal gjentas</span>
+    <span class="c1"># kode som skal gjentas kommer her</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">steglengde</span>
 </pre></div>
 </div>
@@ -569,17 +572,23 @@ Da skrev vi koden</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Ser du sammenhengen? Vi starter på <code class="docutils literal notranslate"><span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">øker</span></code> med <code class="docutils literal notranslate"><span class="pre">1</span></code> så lenge <code class="docutils literal notranslate"><span class="pre">heltall</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">6</span></code>, men <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(1,</span> <span class="pre">6,</span> <span class="pre">1)</span></code> gjør dette for oss automatisk.</p>
+<p>Ser du sammenhengen? Vi starter på <code class="docutils literal notranslate"><span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">øker</span></code> med <code class="docutils literal notranslate"><span class="pre">1</span></code> så lenge <code class="docutils literal notranslate"><span class="pre">heltall</span></code> er mindre enn <code class="docutils literal notranslate"><span class="pre">6</span></code>, men</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">heltall</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>gjør dette for oss automatisk.</p>
 </section>
 <section id="eksempel-2-summen-av-de-100-forste-heltallene">
 <h3>Eksempel 2: summen av de 100 første heltallene<a class="headerlink" href="#eksempel-2-summen-av-de-100-forste-heltallene" title="Permalink to this heading">#</a></h3>
 <p>La oss ta for oss det neste eksempelet vi så på med <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker.
 Vi regnet da ut summen av de 100 første heltallene med koden:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Settes lik 0 siden å plusse på 0 endrer ikke svaret.</span>
-<span class="n">heltall</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Første heltall</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="mi">0</span>      <span class="c1"># Settes lik 0 siden å plusse på 0 endrer ikke svaret.</span>
+<span class="n">heltall</span> <span class="o">=</span> <span class="mi">1</span>             <span class="c1"># Første heltall</span>
 
 
-<span class="k">while</span> <span class="n">heltall</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span> <span class="c1"># Frem til vi har gått gjennom de 100 første heltallene:</span>
+<span class="k">while</span> <span class="n">heltall</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>   <span class="c1"># Frem til vi har gått gjennom de 100 første heltallene:</span>
+    
     <span class="c1"># Først øker vi summen av heltallene med det nåværende heltallet</span>
     <span class="n">sum_av_heltall</span> <span class="o">=</span> <span class="n">sum_av_heltall</span> <span class="o">+</span> <span class="n">heltall</span> 
 
@@ -632,11 +641,11 @@ Derfor får vi</p>
 </ul>
 <p><strong>Eksempel:</strong> <br>
 La oss si vi skal regne ut potensen <span class="math notranslate nohighlight">\(2^5\)</span> uten å bruke <code class="docutils literal notranslate"><span class="pre">**</span></code>-operatoren til Python. Da kan vi bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke som bare gjentar en å gange med <code class="docutils literal notranslate"><span class="pre">2</span></code> fem ganger! Formen av <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkka er egnet for dette:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">potens</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># starter med 1 siden dette ikke endrer verdien når vi ganger</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="n">vi</span> <span class="n">gjentar</span> <span class="mi">5</span> <span class="n">ganger</span> <span class="k">for</span> <span class="n">å</span> <span class="n">regne</span> <span class="n">ut</span> <span class="mi">2</span><span class="o">**</span><span class="mi">5</span>
-    <span class="n">potens</span> <span class="o">=</span> <span class="n">potens</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># ganger med 2 for hver runde i løkka</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">potens</span> <span class="o">=</span> <span class="mi">1</span>                      <span class="c1"># starter med 1 siden dette ikke endrer verdien når vi ganger</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>              <span class="c1"># vi gjentar 5 ganger for å regne ut 2**5</span>
+    <span class="n">potens</span> <span class="o">=</span> <span class="n">potens</span> <span class="o">*</span> <span class="mi">2</span>         <span class="c1"># ganger med 2 for hver runde i løkka</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">potens</span><span class="p">)</span> <span class="c1"># skriver ut 2**5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">potens</span><span class="p">)</span>                   <span class="c1"># skriver ut 2**5</span>
 </pre></div>
 </div>
 </div>
@@ -646,7 +655,7 @@ La oss si vi skal regne ut potensen <span class="math notranslate nohighlight">\
 <p>Nå er det på tide å prøve seg litt fram og skrive kode!</p>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Skriv et program som skriver ut partallene opp til og med <span class="math notranslate nohighlight">\(2, 4, 6, ..., 16, 18, 20\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke.</p>
+<p>Skriv et program som skriver ut partallene <span class="math notranslate nohighlight">\(2, 4, 6, ..., 16, 18, 20\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Kodehint</p>
 <p>Du må tenke deg frem til hvilken verdi må sette for <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">stopp</span></code> og <code class="docutils literal notranslate"><span class="pre">steglengde</span></code> i <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen!</p>
@@ -673,7 +682,7 @@ La oss si vi skal regne ut potensen <span class="math notranslate nohighlight">\
 <p><strong>Prøv godt før du ser på løsningen!</strong></p>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_oddetall</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># settes lik 0 fordi 0 ikke endrer verdien av en sum</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sum_av_oddetall</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># settes lik 0 fordi 0 ikke endrer verdien av en sum</span>
 <span class="k">for</span> <span class="n">oddetall</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
     <span class="n">sum_av_oddetall</span> <span class="o">=</span> <span class="n">sum_av_oddetall</span> <span class="o">+</span> <span class="n">oddetall</span>
 
@@ -720,9 +729,9 @@ Hva bør du sette startverdien til når du skal regne ut et produkt av mange tal
 <p><strong>Prøv godt før du ser på løsningen!</strong></p>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_fakultet</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># settes lik 1 siden å gange med 1 ikke endrer verdien</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># gir i = 1, 2, 3, ..., 11, 12</span>
-    <span class="n">n_fakultet</span> <span class="o">=</span> <span class="n">n_fakultet</span> <span class="o">*</span> <span class="n">i</span> <span class="c1"># ganger med i for hver runde i løkka</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_fakultet</span> <span class="o">=</span> <span class="mi">1</span>                      <span class="c1"># settes lik 1 siden å gange med 1 ikke endrer verdien</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>           <span class="c1"># gir i = 1, 2, 3, ..., 11, 12</span>
+    <span class="n">n_fakultet</span> <span class="o">=</span> <span class="n">n_fakultet</span> <span class="o">*</span> <span class="n">i</span>     <span class="c1"># ganger med i for hver runde i løkka</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">n_fakultet</span><span class="p">)</span>
 </pre></div>
@@ -777,11 +786,11 @@ Hva bør du sette startverdien til når du skal regne ut et produkt av mange tal
       </div>
     </a>
     <a class="right-next"
-       href="../funksjoner/intro.html"
+       href="../if_else/if_else.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Funksjoner i Python</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -837,7 +846,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

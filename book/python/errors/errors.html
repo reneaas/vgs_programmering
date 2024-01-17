@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Feilmeldinger i Python 101 &#8212; Programmering i Videregående Skole</title>
+    <title>Feilmeldinger i Python &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -65,13 +65,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/errors/errors';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Funksjoner i Python" href="../funksjoner/funksjoner.html" />
+    <link rel="prev" title="if-else tester" href="../if_else/if_else.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,17 +168,19 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduksjon til verktøykassa</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler_new.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -486,7 +488,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Feilmeldinger i Python 101</h1>
+    <h1>Feilmeldinger i Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -496,18 +498,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feilmeldingstyper">Feilmeldingstyper</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror"><code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror"><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-manglende-kolon">Eksempel 1: Manglende kolon</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-manglende-parenteser">Eksempel 2: Manglende parenteser</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror"><code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-range-funksjonen">Eksempel 1: <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror"><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-negative-tall-i-sqrt">Eksempel 1: Negative tall i <code class="docutils literal notranslate"><span class="pre">sqrt</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror"><code class="docutils literal notranslate"><span class="pre">NameError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror"><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-manglende-kolon">Eksempel 1: Manglende kolon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-apne-parenteser">Eksempel 2: Åpne parenteser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-glemt-gangetegn">Eksempel 3: Glemt gangetegn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentationerror"><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-manglende-innrykk-i-en-while-lokke">Eksempel: Manglende innrykk i en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-forskjellig-innrykk">Eksempel 2: forskjellig innrykk</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 </ul>
 </li>
 </ul>
@@ -521,60 +532,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="feilmeldinger-i-python-101">
-<h1>Feilmeldinger i Python 101<a class="headerlink" href="#feilmeldinger-i-python-101" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="feilmeldinger-i-python">
+<h1>Feilmeldinger i Python<a class="headerlink" href="#feilmeldinger-i-python" title="Permalink to this heading">#</a></h1>
+<p>Å kunne lese og rette opp feilmeldinger en viktig ferdighet fordi det gjør deg i stand til å rette opp feil på egen hånd og å forstå hva som er galt med koden din.</p>
 <section id="laeringsmal">
-<h2>Læringsmål:<a class="headerlink" href="#laeringsmal" title="Permalink to this heading">#</a></h2>
+<h2>Læringsmål<a class="headerlink" href="#laeringsmal" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p>Lære å lese og rette opp feilmeldinger av typene</p>
 <ul class="simple">
-<li><p>Lære å gjenkjenne de typiske feilmeldingene i Python og rette opp i feilen.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NameError</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code></p></li>
+</ul>
+  <!-- - `TypeError`
+  - `ValueError` -->
+</li>
 </ul>
 </section>
-<section id="feilmeldingstyper">
-<h2>Feilmeldingstyper<a class="headerlink" href="#feilmeldingstyper" title="Permalink to this heading">#</a></h2>
 <section id="nameerror">
-<h3><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this heading">#</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this heading">#</a></h2>
 <p>Noen ganger kan vi skrive kode, og så får vi får vi en feilmelding som dette:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">NameError: name &#39;a&#39; is not defined</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;a&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
 </pre></div>
 </div>
-<p>Denne feilmeldingen skyldes rett og slett bare at variabelen ikke har blitt definert av oss som brukere. For en variabel med navn <code class="docutils literal notranslate"><span class="pre">a</span></code> er dette en veldig opplagt feil å møte og fikse. Men dersom vi i stedet har noe sånt som dette</p>
+<p>Denne feilmeldingen skyldes rett og slett bare at variabelen ikke har blitt definert av oss. <br>
+I eksemplet over får vi at en variabel med navn <code class="docutils literal notranslate"><span class="pre">a</span></code> finnes ikke. <br></p>
+<p>Men la oss se på noen praktiske eksempler så vi får en idé om hva vi skal gjøre når det går galt.</p>
+<section id="eksempel-1">
+<h3>Eksempel 1<a class="headerlink" href="#eksempel-1" title="Permalink to this heading">#</a></h3>
+<p>Under vises en kort kode med en feil.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antall_meldinger</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">antall_melddinger</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">antall_meldinger</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">antall_melddinger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">antall_meldinger</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">antall_melddinger</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">antall_melddinger</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;antall_melddinger&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p>så skyldes det oftest bare en skrivefeil fra vår side. Her har vi skrevet <code class="docutils literal notranslate"><span class="pre">antall_melddinger</span></code> i stedet for <code class="docutils literal notranslate"><span class="pre">antall_meldinger</span></code> som er grunnen til at Python kaster ut en <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p>
-</section>
-<section id="syntaxerror">
-<h3><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code><a class="headerlink" href="#syntaxerror" title="Permalink to this heading">#</a></h3>
-<p>En <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> er en feil der vi bryter reglene til Python med tanke på skrivemåte, eller da <em>syntaksen</em> som Python tillatter. La oss se på noen eksempler:</p>
-</section>
-<section id="eksempel-1-manglende-kolon">
-<h3>Eksempel 1: Manglende kolon<a class="headerlink" href="#eksempel-1-manglende-kolon" title="Permalink to this heading">#</a></h3>
+<p>Når koden ble kjørt ga den feilmeldingen over. <br>
+Den forteller oss at det er en <code class="docutils literal notranslate"><span class="pre">NameError</span></code> som har oppstått. <br>
+Den forteller oss også at det er variabelnavnet <code class="docutils literal notranslate"><span class="pre">antall_melddinger</span></code> som er problemet, for en variabel med dette navnet er ikke definert. <br>
+For å fikse koden, må vi rett og slett skrive det riktige variabelnavnet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">antall_meldinger</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">antall_meldinger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da var alt good!</p>
+</section>
+</section>
+<section id="syntaxerror">
+<h2><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code><a class="headerlink" href="#syntaxerror" title="Permalink to this heading">#</a></h2>
+<p>En <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> er en feil der vi bryter reglene til Python med tanke på skrivemåte, eller da <em>syntaksen</em> som Python tillater. Her kommer noen eksempler.</p>
+<section id="eksempel-1-manglende-kolon">
+<h3>Eksempel 1: Manglende kolon<a class="headerlink" href="#eksempel-1-manglende-kolon" title="Permalink to this heading">#</a></h3>
+<p>Under vises en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke der vi har glemt å ta med et kolon på slutten av linja.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="nn">    for i</span> in <span class="ni">range</span><span class="nt">(3)</span>
                      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: expected &#39;:&#39;
@@ -582,11 +624,12 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Her kaster Python ut en <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> og forteller oss at den forventet en <code class="docutils literal notranslate"><span class="pre">:</span></code> og peker på hvor den skal stå. Alt vi trenger å gjøre, er å slenge inn en <code class="docutils literal notranslate"><span class="pre">:</span></code>, så er det fikset.</p>
+<p>Feilmeldingen forteller oss at det er en <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, og at vi mangler et kolon på slutten av linja. <br>
+Slenger vi på det, er alt fikset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -599,106 +642,326 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="eksempel-2-manglende-parenteser">
-<h3>Eksempel 2: Manglende parenteser<a class="headerlink" href="#eksempel-2-manglende-parenteser" title="Permalink to this heading">#</a></h3>
+<section id="eksempel-2-apne-parenteser">
+<h3>Eksempel 2: Åpne parenteser<a class="headerlink" href="#eksempel-2-apne-parenteser" title="Permalink to this heading">#</a></h3>
 <p>Noen ganger mangler vi parenteser i koden vår. Da kan vi møte på noe sånt som dette:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span>
-                            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: incomplete input
+                  <span class="o">^</span>
+<span class="ne">SyntaxError</span>: &#39;(&#39; was never closed
 </pre></div>
 </div>
 </div>
 </div>
-<p>Her får vi igjen en <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, og vi blir fortalt at vi mangler noe i koden vi har skrevet. Her må vi selv forstå at det er en <code class="docutils literal notranslate"><span class="pre">)</span></code> som mangler, men vi får i det minste vite akkurat hvor feil er. La oss sette på en <code class="docutils literal notranslate"><span class="pre">)</span></code> der pila peker, så er alt i orden:</p>
+<p>Her får vi igjen en <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, og vi blir fortalt at den ene parentesen ikke er lukket, som betyr at vi mangler en <code class="docutils literal notranslate"><span class="pre">)</span></code> i koden. <br>
+Setter vi inn en parentes der er alt i orden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="typeerror">
-<h3><code class="docutils literal notranslate"><span class="pre">TypeError</span></code><a class="headerlink" href="#typeerror" title="Permalink to this heading">#</a></h3>
-<p>Noen ganger får vi <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> i fleisen, og dette betyr bare at vi har brukt en funksjon som ikke godtar den datatypen vi har gitt den.</p>
-</section>
-<section id="eksempel-1-range-funksjonen">
-<h3>Eksempel 1: <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen<a class="headerlink" href="#eksempel-1-range-funksjonen" title="Permalink to this heading">#</a></h3>
-<p>La oss se på et eksempel med <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen som vi ofte bruker i en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mf">3.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">n</span> <span class="o">=</span> <span class="mf">3.0</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: &#39;float&#39; object cannot be interpreted as an integer
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2631578947368421
 </pre></div>
 </div>
 </div>
 </div>
-<p>Her får vi <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> og blir fortalt at vi har sendt inn et <code class="docutils literal notranslate"><span class="pre">float</span></code>-objekt til <code class="docutils literal notranslate"><span class="pre">range</span></code>. I tillegg står det at den ikke kan tolkes som en integer (heltall, <code class="docutils literal notranslate"><span class="pre">int</span></code>). Vi må altså bare endre <code class="docutils literal notranslate"><span class="pre">n</span></code> til en <code class="docutils literal notranslate"><span class="pre">int</span></code>, så er alt i orden:</p>
+</section>
+<section id="eksempel-3-glemt-gangetegn">
+<h3>Eksempel 3: Glemt gangetegn<a class="headerlink" href="#eksempel-3-glemt-gangetegn" title="Permalink to this heading">#</a></h3>
+<p>Du skal typisk skrive kode for å regne, som betyr at du sannsynligvis kommer til å møte på denne feilen et par ganger: <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+               <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid decimal literal
+</pre></div>
+</div>
+</div>
+</div>
+<p>Her kaster Python ut en <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> og peker på leddet <code class="docutils literal notranslate"><span class="pre">2x</span></code>. Selve beskjeden <code class="docutils literal notranslate"><span class="pre">invalid</span> <span class="pre">decimal</span> <span class="pre">literal</span></code> betyr at Python ikke forstår hva vi mener med <code class="docutils literal notranslate"><span class="pre">2x</span></code>. <br>
+Her må vi selv forstå at vi mangler et gangetegn og at det egentlig burde stått <code class="docutils literal notranslate"><span class="pre">2*x</span></code>. Fikser vi dette, så er alt i orden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Det finnes naturligvis flere feil som kan gjøres, men poenget du bør ta med deg er at <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> handler om at du ikke følger reglene for hvordan kode skal skrives i Python. Da vet du i det minste <em>hva</em> du skal lete etter når du ser en slik feilmelding, selv om du kan ikke vet helt <em>hva</em> du har gjort feil. Feilmeldingen forteller heldigvis ofte <em>hva</em> du har gjort galt.</p>
+</section>
+</section>
+<section id="indentationerror">
+<h2><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code><a class="headerlink" href="#indentationerror" title="Permalink to this heading">#</a></h2>
+<p>En annen vanlig feilmelding er kalt for <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> og handler om at man ikke har riktig innrykk i koden sin der Python forventer det. <br>
+Vi må for eksempel har innrykk når vi skriver <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker, <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker og <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-tester.</p>
+<section id="eksempel-manglende-innrykk-i-en-while-lokke">
+<h3>Eksempel: Manglende innrykk i en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke<a class="headerlink" href="#eksempel-manglende-innrykk-i-en-while-lokke" title="Permalink to this heading">#</a></h3>
+<p>Under vises et program der man har skrevet en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke uten innrykk</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">2</span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="linenos">3</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block after &#39;while&#39; statement on line 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Feilmeldingen blir da en <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> der vi får vite at Python forventet minst ett innrykk etter <code class="docutils literal notranslate"><span class="pre">while</span></code>-nøkkelordet. <br>
+Vi kan fikse dette ved å legge til et innrykk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">2</span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="linenos">3</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da var alt i orden.</p>
+</section>
+<section id="eksempel-2-forskjellig-innrykk">
+<h3>Eksempel 2: forskjellig innrykk<a class="headerlink" href="#eksempel-2-forskjellig-innrykk" title="Permalink to this heading">#</a></h3>
+<p>Vanligvis bruker vi “tab”-tasten ⇥ når vi lage innrykk. Det viser seg at Python ikke bryr seg om det, men heller at innrykkene må være konsekvente. <br></p>
+<p>La oss se på en kode hvor vi ikke har samme innrykk i alle linjene i en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos">3</span>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: unexpected indent
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å fikse det, trenger vi bare å ha samme innrykk på begge linjer. <br>
+Ved å lage innrykk med å trykke på “tab”-tasten ⇥ kun én gang på begge linjer, er det i orden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+1
 1
 2
+4
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="valueerror">
-<h3><code class="docutils literal notranslate"><span class="pre">ValueError</span></code><a class="headerlink" href="#valueerror" title="Permalink to this heading">#</a></h3>
-<p>En <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> får vi ofte når vi bruker matematiske funksjoner der vi sender inn argumenter som ikke gir mening. La oss se på et eksempel:</p>
-<section id="eksempel-1-negative-tall-i-sqrt">
-<h4>Eksempel 1: Negative tall i <code class="docutils literal notranslate"><span class="pre">sqrt</span></code><a class="headerlink" href="#eksempel-1-negative-tall-i-sqrt" title="Permalink to this heading">#</a></h4>
+<p>Men vi kunne også ha laget innrykk med å trykke på “tab”-tasten ⇥ to ganger på begge linjer, eller fire ganger, eller seks ganger, eller åtte ganger, osv. <br>
+For eksempel er dette også en gyldig løsning:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-
-<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">2</span>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos">3</span>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: math domain error
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+1
+1
+2
+4
 </pre></div>
 </div>
 </div>
 </div>
-<p>Her får vi <code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">math</span> <span class="pre">domain</span> <span class="pre">error</span></code>, som forteller oss at vi har sendt inn en verdi av <span class="math notranslate nohighlight">\(x\)</span>, der rotfunksjonen ikke er definert (“domain” betyr det samme som definisjonsmengde).</p>
 </section>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Kopier koden under og kjør den. Finn feilen og rett den opp.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Her er det nøkkelordet <code class="docutils literal notranslate"><span class="pre">for</span></code> som er skrevet med stor forbokstav, <code class="docutils literal notranslate"><span class="pre">For</span></code>. Dette er ikke tillat. Den riktige koden ville vært</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Kopier koden under og kjør den. Finn feilen og rett den opp.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x er positiv&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x er negativ&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Kjører man koden, får man en feilkode som gir <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">  Cell In[8], line 2</span>
+<span class="go">    if x &gt; 0</span>
+<span class="go">            ^</span>
+<span class="go">SyntaxError: expected &#39;:&#39;</span>
+</pre></div>
+</div>
+<p>Vi mangler et kolon <code class="docutils literal notranslate"><span class="pre">:</span></code> etter <code class="docutils literal notranslate"><span class="pre">if</span></code>-påstanden. Setter vi inn et <code class="docutils literal notranslate"><span class="pre">:</span></code> etter <code class="docutils literal notranslate"><span class="pre">if</span></code>-påstanden er alt i orden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x er positiv&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x er negativ&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>og vi får utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x er positiv</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Noen ganger kan du ha en kode som har flere feil. Da vil Python typisk gi deg beskjed om den første feilen den finner. <br>
+Når du har rettet opp den, vil den gi deg neste feilmelding. <br></p>
+<p>Kopier koden under og kjør den. Finn feilene og rett dem opp.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Når vi kjører koden, får vi først en <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> fordi vi mangler gangetegn mellom <code class="docutils literal notranslate"><span class="pre">2</span></code> og <code class="docutils literal notranslate"><span class="pre">x</span></code>. <br>
+Feilmeldingen kan se slik ut:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">  Cell In[10], line 4</span>
+<span class="go">    s = s + 2x</span>
+<span class="go">            ^</span>
+<span class="go">SyntaxError: invalid decimal literal</span>
+</pre></div>
+</div>
+<p>Retter vi opp dette ved å erstatte <code class="docutils literal notranslate"><span class="pre">2x</span></code> med <code class="docutils literal notranslate"><span class="pre">2*x</span></code>, for å så kjøre koden igjen får vi en ny feilmelding. <br>
+Denne ganger er det en <code class="docutils literal notranslate"><span class="pre">NameError</span></code> fordi <code class="docutils literal notranslate"><span class="pre">X</span></code> ikke definert (stor bokstav). Kun <code class="docutils literal notranslate"><span class="pre">x</span></code> er definert (med liten bokstav). <br></p>
+<p>Feilmeldingen kan se slik ut:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">---------------------------------------------------------------------------</span>
+<span class="go">NameError                                 Traceback (most recent call last)</span>
+<span class="go">Cell In[1], line 5</span>
+<span class="go">      3 while x &lt; 5:</span>
+<span class="go">      4     s = s + 2*x</span>
+<span class="go">----&gt; 5     x = X + 1</span>
+
+<span class="go">NameError: name &#39;X&#39; is not defined</span>
+</pre></div>
+</div>
+<p>Her må vi bare erstatte <code class="docutils literal notranslate"><span class="pre">X</span></code> med <code class="docutils literal notranslate"><span class="pre">x</span></code>, så er koden fikset.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Kopier koden under og kjør den. Finn feilen(e) og rett de(n) opp.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Def</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">s</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Feilene i koden er</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Def</span></code> skal skrives med liten forbokstav, <code class="docutils literal notranslate"><span class="pre">def</span></code>. Dette gir en <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.</p></li>
+<li><p>Vi mangler et i funksjonsuttrykket <code class="docutils literal notranslate"><span class="pre">0.5x</span> <span class="pre">+</span> <span class="pre">1</span></code> mellom <code class="docutils literal notranslate"><span class="pre">0.5</span></code> og <code class="docutils literal notranslate"><span class="pre">x</span></code>. Dette gir <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>. Det bør stå <code class="docutils literal notranslate"><span class="pre">0.5*x</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p>Vi har forskjellig innrykk i <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkka. Dette gir <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>. Det må være samme innrykk på alle linjene inne i <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkka.</p></li>
+</ul>
+<p>Koden når disse feilene er fikset er:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">s</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -733,6 +996,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../if_else/if_else.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../funksjoner/funksjoner.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funksjoner i Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -748,18 +1029,27 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feilmeldingstyper">Feilmeldingstyper</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror"><code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror"><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-manglende-kolon">Eksempel 1: Manglende kolon</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-manglende-parenteser">Eksempel 2: Manglende parenteser</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror"><code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-range-funksjonen">Eksempel 1: <code class="docutils literal notranslate"><span class="pre">range</span></code>-funksjonen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror"><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-negative-tall-i-sqrt">Eksempel 1: Negative tall i <code class="docutils literal notranslate"><span class="pre">sqrt</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nameerror"><code class="docutils literal notranslate"><span class="pre">NameError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1">Eksempel 1</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror"><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-manglende-kolon">Eksempel 1: Manglende kolon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-apne-parenteser">Eksempel 2: Åpne parenteser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-glemt-gangetegn">Eksempel 3: Glemt gangetegn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentationerror"><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-manglende-innrykk-i-en-while-lokke">Eksempel: Manglende innrykk i en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-forskjellig-innrykk">Eksempel 2: forskjellig innrykk</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 </ul>
 </li>
 </ul>
@@ -786,7 +1076,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

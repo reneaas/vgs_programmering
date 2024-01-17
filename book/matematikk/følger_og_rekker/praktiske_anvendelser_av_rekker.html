@@ -176,11 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/errors/errors.html">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -559,18 +561,18 @@ document.write(`
 </div><p>Vi kan implementere algoritmen med en Pythonkode slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M_0</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># daglig dose i mg.</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mi">29</span> <span class="c1"># Nedbrytning i prosent per time.</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># vekstfaktor per time</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">vekstfaktor</span><span class="o">**</span><span class="mi">24</span> <span class="c1"># vekstfaktor per døgn</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Antall døgn</span>
-
-<span class="n">M</span> <span class="o">=</span> <span class="n">M_0</span> <span class="c1"># startdose ved første døgn</span>
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">k</span> <span class="c1"># nedbrytning av stoffet over ett døgn</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">+</span> <span class="n">M_0</span> <span class="c1"># Ny dose legges til virkestoffet i kroppen</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">M</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mg.&quot;</span><span class="p">)</span> <span class="c1"># skriver ut med 2 desimaler</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">M_0</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># daglig dose i mg.</span>
+<span class="linenos"> 2</span><span class="n">r</span> <span class="o">=</span> <span class="mi">29</span> <span class="c1"># Nedbrytning i prosent per time.</span>
+<span class="linenos"> 3</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># vekstfaktor per time</span>
+<span class="linenos"> 4</span><span class="n">k</span> <span class="o">=</span> <span class="n">vekstfaktor</span><span class="o">**</span><span class="mi">24</span> <span class="c1"># vekstfaktor per døgn</span>
+<span class="linenos"> 5</span><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Antall døgn</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">M</span> <span class="o">=</span> <span class="n">M_0</span> <span class="c1"># startdose ved første døgn</span>
+<span class="linenos"> 8</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos"> 9</span>    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">k</span> <span class="c1"># nedbrytning av stoffet over ett døgn</span>
+<span class="linenos">10</span>    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">+</span> <span class="n">M_0</span> <span class="c1"># Ny dose legges til virkestoffet i kroppen</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">M</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mg.&quot;</span><span class="p">)</span> <span class="c1"># skriver ut med 2 desimaler</span>
 </pre></div>
 </div>
 </div>
@@ -614,20 +616,20 @@ Hva er den største mengden virkestoff du har i kroppen over lang tid?</p>
 </div><p>Vi kan regne ut dette med følgende kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M0</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># mg dose per 6.time</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mi">29</span> <span class="c1"># Nedbrytning i prosent per time.</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># vekstfaktor per time</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">vekstfaktor</span><span class="o">**</span><span class="mi">6</span> <span class="c1"># vekstfaktor per 6.time</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Antall 6.timer</span>
-
-<span class="n">M</span> <span class="o">=</span> <span class="n">M0</span> <span class="c1"># startdose ved første 6.time</span>
-<span class="n">M_max</span> <span class="o">=</span> <span class="n">M</span> 
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">k</span> <span class="c1"># nedbrytning av stoffet over ett 6.time</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">+</span> <span class="n">M0</span> <span class="c1"># Ny dose legges til virkestoffet i kroppen</span>
-    <span class="n">M_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">M_max</span><span class="p">)</span> <span class="c1"># henter ut den største verdien av `M` og `M_max`.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">M_max</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mg.&quot;</span><span class="p">)</span> <span class="c1"># skriver ut med 2 desimaler</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">M0</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># mg dose per 6.time</span>
+<span class="linenos"> 2</span><span class="n">r</span> <span class="o">=</span> <span class="mi">29</span> <span class="c1"># Nedbrytning i prosent per time.</span>
+<span class="linenos"> 3</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># vekstfaktor per time</span>
+<span class="linenos"> 4</span><span class="n">k</span> <span class="o">=</span> <span class="n">vekstfaktor</span><span class="o">**</span><span class="mi">6</span> <span class="c1"># vekstfaktor per 6.time</span>
+<span class="linenos"> 5</span><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Antall 6.timer</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">M</span> <span class="o">=</span> <span class="n">M0</span> <span class="c1"># startdose ved første 6.time</span>
+<span class="linenos"> 8</span><span class="n">M_max</span> <span class="o">=</span> <span class="n">M</span> 
+<span class="linenos"> 9</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">10</span>    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">k</span> <span class="c1"># nedbrytning av stoffet over ett 6.time</span>
+<span class="linenos">11</span>    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">+</span> <span class="n">M0</span> <span class="c1"># Ny dose legges til virkestoffet i kroppen</span>
+<span class="linenos">12</span>    <span class="n">M_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">M_max</span><span class="p">)</span> <span class="c1"># henter ut den største verdien av `M` og `M_max`.</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">M_max</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mg.&quot;</span><span class="p">)</span> <span class="c1"># skriver ut med 2 desimaler</span>
 </pre></div>
 </div>
 </div>
@@ -706,17 +708,17 @@ x + xV + xV^2 + \ldots + xV^{n-2} + xV^{n-1} = L_0V^n.
 <p>Vi kan da bruke algoritmen i <a class="reference internal" href="#algo-annuitetslaan">Algorithm 7</a> til å finne restlånet etter 10 år:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mi">1_000_000</span> <span class="c1"># kroner</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3 prosent rente per år</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1"># vekstfaktor per år</span>
-<span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">70_000</span> <span class="c1"># Terminbeløp per år</span>
-<span class="n">n_terminer</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># antall terminer (her: antall år)</span>
-
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_terminer</span><span class="p">):</span>
-    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
-    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">-</span> <span class="n">terminbeløp</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr gjenstår etter </span><span class="si">{</span><span class="n">n_terminer</span><span class="si">}</span><span class="s2"> år.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">lån</span> <span class="o">=</span> <span class="mi">1_000_000</span> <span class="c1"># kroner</span>
+<span class="linenos"> 2</span><span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3 prosent rente per år</span>
+<span class="linenos"> 3</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1"># vekstfaktor per år</span>
+<span class="linenos"> 4</span><span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">70_000</span> <span class="c1"># Terminbeløp per år</span>
+<span class="linenos"> 5</span><span class="n">n_terminer</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># antall terminer (her: antall år)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_terminer</span><span class="p">):</span>
+<span class="linenos"> 8</span>    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+<span class="linenos"> 9</span>    <span class="n">lån</span> <span class="o">=</span> <span class="n">lån</span> <span class="o">-</span> <span class="n">terminbeløp</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lån</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr gjenstår etter </span><span class="si">{</span><span class="n">n_terminer</span><span class="si">}</span><span class="s2"> år.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -759,23 +761,23 @@ x + xV + xV^2 + \ldots + xV^{n-2} + xV^{n-1} = L_0V^n.
 </div><p>Følger vi <a class="reference internal" href="#algo-annuitetslaan-belop">Algorithm 8</a>, kan vi skrive koden slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="c1"># 1 000 000 kroner</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3 prosent rente per år</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1"># vekstfaktor per år</span>
-
-<span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># 100 kroner økning i terminbeløp per år</span>
-<span class="n">n_terminer</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">restlån</span> <span class="o">=</span> <span class="n">lån</span>
-
-<span class="k">while</span> <span class="n">restlån</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">terminbeløp</span> <span class="o">+=</span> <span class="n">dx</span>
-    <span class="n">restlån</span> <span class="o">=</span> <span class="n">lån</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_terminer</span><span class="p">):</span>
-        <span class="n">restlån</span> <span class="o">=</span> <span class="n">restlån</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
-        <span class="n">restlån</span> <span class="o">=</span> <span class="n">restlån</span> <span class="o">-</span> <span class="n">terminbeløp</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">terminbeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr per år.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">lån</span> <span class="o">=</span> <span class="mf">1e6</span> <span class="c1"># 1 000 000 kroner</span>
+<span class="linenos"> 2</span><span class="n">rente</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 3 prosent rente per år</span>
+<span class="linenos"> 3</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span> <span class="o">/</span> <span class="mi">100</span> <span class="c1"># vekstfaktor per år</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">terminbeløp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 6</span><span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># 100 kroner økning i terminbeløp per år</span>
+<span class="linenos"> 7</span><span class="n">n_terminer</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos"> 8</span><span class="n">restlån</span> <span class="o">=</span> <span class="n">lån</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">while</span> <span class="n">restlån</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="n">terminbeløp</span> <span class="o">+=</span> <span class="n">dx</span>
+<span class="linenos">12</span>    <span class="n">restlån</span> <span class="o">=</span> <span class="n">lån</span>
+<span class="linenos">13</span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_terminer</span><span class="p">):</span>
+<span class="linenos">14</span>        <span class="n">restlån</span> <span class="o">=</span> <span class="n">restlån</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+<span class="linenos">15</span>        <span class="n">restlån</span> <span class="o">=</span> <span class="n">restlån</span> <span class="o">-</span> <span class="n">terminbeløp</span>
+<span class="linenos">16</span>    
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">terminbeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr per år.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -796,17 +798,17 @@ x + xV + xV^2 + \ldots + xV^{n-2} + xV^{n-1} = L_0V^n.
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe</span>
-    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 2</span><span class="n">rente</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 3</span><span class="n">vekstfaktor</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 4</span><span class="n">terminbeløp</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 7</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe</span>
+<span class="linenos"> 8</span>    <span class="n">lån</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 9</span>    <span class="n">år</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">år</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -943,7 +945,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

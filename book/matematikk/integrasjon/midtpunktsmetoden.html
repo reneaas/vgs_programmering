@@ -176,11 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/errors/errors.html">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -587,21 +589,21 @@ I = \int\limits_0^1 x^3 \, dx
 <p>med midtpunktsmetoden. Følger vi <a class="reference internal" href="#algo-midtpunktsmetoden">Algorithm 4</a>, kan vi skrive koden slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span> <span class="c1"># antall delintervaller</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span> <span class="c1"># steglengde</span>
-<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># integral</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">h</span> <span class="c1"># midtpunktet i delintervallet</span>
-    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># legger til bidraget fra delintervallet, men venter med å gange inn h</span>
-
-<span class="n">I</span> <span class="o">*=</span> <span class="n">h</span> <span class="c1"># ganger med steglengden på hvert intervall for å få arealer</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 5</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 6</span><span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span> <span class="c1"># antall delintervaller</span>
+<span class="linenos"> 7</span><span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span> <span class="c1"># steglengde</span>
+<span class="linenos"> 8</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># integral</span>
+<span class="linenos"> 9</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="linenos">10</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">h</span> <span class="c1"># midtpunktet i delintervallet</span>
+<span class="linenos">11</span>    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># legger til bidraget fra delintervallet, men venter med å gange inn h</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">I</span> <span class="o">*=</span> <span class="n">h</span> <span class="c1"># ganger med steglengden på hvert intervall for å få arealer</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -622,22 +624,22 @@ I = \int\limits_{-1}^1 e^{-x^2} \, dx
 <p>ved å bruke midtpunktsmetoden. Her også følger vi bare <a class="reference internal" href="#algo-midtpunktsmetoden">Algorithm 4</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span> <span class="c1"># antall delintervaller</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span> <span class="c1"># steglengde</span>
-<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># integral</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">h</span> <span class="c1"># midtpunktet i delintervallet</span>
-    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">I</span> <span class="o">*=</span> <span class="n">h</span> <span class="c1"># ganger med steglengden på hvert intervall for å få arealer</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">math</span>
+<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 3</span>    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="linenos"> 6</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 7</span><span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span> <span class="c1"># antall delintervaller</span>
+<span class="linenos"> 8</span><span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span> <span class="c1"># steglengde</span>
+<span class="linenos"> 9</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># integral</span>
+<span class="linenos">10</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="linenos">11</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">h</span> <span class="c1"># midtpunktet i delintervallet</span>
+<span class="linenos">12</span>    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="n">I</span> <span class="o">*=</span> <span class="n">h</span> <span class="c1"># ganger med steglengden på hvert intervall for å få arealer</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -661,23 +663,23 @@ I = \int\limits_0^1 x^2 e^{-x} \, dx.
 <p><em>Du kan bruke kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Trengs for eksponentialfunksjonen!</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Venstre endepunkt på [a, b]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Høyre endepunkt på [a, b]</span>
-<span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall delintervaller</span>
-<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Steglengde</span>
-
-<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Integral</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Midtpunktet i delintervallet</span>
-    <span class="n">I</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
-
-<span class="n">I</span> <span class="o">*=</span> <span class="bp">NotImplemented</span> <span class="c1"># Gange steglengden med summen av bidragene fra delintervallene</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Trengs for eksponentialfunksjonen!</span>
+<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 3</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Venstre endepunkt på [a, b]</span>
+<span class="linenos"> 6</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Høyre endepunkt på [a, b]</span>
+<span class="linenos"> 7</span><span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall delintervaller</span>
+<span class="linenos"> 8</span><span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Steglengde</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Integral</span>
+<span class="linenos">11</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">12</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Midtpunktet i delintervallet</span>
+<span class="linenos">13</span>    <span class="n">I</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="n">I</span> <span class="o">*=</span> <span class="bp">NotImplemented</span> <span class="c1"># Gange steglengden med summen av bidragene fra delintervallene</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -725,18 +727,18 @@ I = \int_0^1 \frac{4}{1 + x^2} \, dx.
 <p><em>Du kan bruke kodeskallet under til å løse oppgaven. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan være du må legge til linjer med kode også.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Venstre endepunkt på [a, b]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Høyre endepunkt på [a, b]</span>
-<span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall delintervaller</span>
-<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Steglengde</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Midtpunktet i delintervallet</span>
-    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Venstre endepunkt på [a, b]</span>
+<span class="linenos"> 5</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Høyre endepunkt på [a, b]</span>
+<span class="linenos"> 6</span><span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall delintervaller</span>
+<span class="linenos"> 7</span><span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Steglengde</span>
+<span class="linenos"> 8</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos"> 9</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Midtpunktet i delintervallet</span>
+<span class="linenos">10</span>    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -871,7 +873,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

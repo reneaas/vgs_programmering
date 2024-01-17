@@ -176,11 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -557,7 +559,7 @@ Det er to forskjellige type løkker vi kan bruke:</p>
 <div class="tip admonition">
 <p class="admonition-title"><em>Hol’ up a minute!</em> Hva er en betingelse? Og hvordan lager jeg en??</p>
 <p>Når vi skriver kode for matematiske problemer, setter vi betingelser som typisk er <em>ulikheter</em>. <br>
-For eksempel kan det være vi skal øke en variabel <code class="docutils literal notranslate"><span class="pre">x</span></code> med en så lenge <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn 100. Da hadde betingelsen være <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code>. <br>
+For eksempel kan det være vi skal øke en variabel <code class="docutils literal notranslate"><span class="pre">x</span></code> med en så lenge <code class="docutils literal notranslate"><span class="pre">x</span></code> er mindre enn 100. Da hadde betingelsen vært <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code>. <br>
 Med en gang <code class="docutils literal notranslate"><span class="pre">x</span></code> er større eller lik 100, vil betingelsen være usann, og vi vil ikke lenger kjøre koden i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkken dersom <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">100</span></code> var betingelsen vår. <br></p>
 <p>Under følger en liste med de vanligste måtene å skrive betingelser når vi programmerer <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker.</p>
 <p><strong>Tabell 1</strong>: Vanlige betingelser for <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</p>
@@ -594,10 +596,10 @@ Med en gang <code class="docutils literal notranslate"><span class="pre">x</span
 <div class="mermaid" align="center">
 flowchart TD
 
-A[start] --> B[While-løkke] --> C(Sjekk om betingelse er sann)
-C -- Sann --> D[Utfør handling]
-D -- Gjenta ---> B
-C -- Usann ---> E[ferdig]
+A[start] --> B(Sjekk om betingelse er sann)
+B -- Sann --> C[Utfør handling]
+C -- Gjenta ---> B
+B -- Usann ---> D[ferdig]
 
 </div><p>Dette er fortsatt litt abstrakt, så la oss se på et helt konkret eksempel. <br></p>
 </section>
@@ -608,12 +610,12 @@ Vi ønsker å skrive ut de fem første heltallene, fra og med 1 til 5. <br></p>
 <p>Dette kan vi gjøre med en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heltall</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># starter med det først heltallet</span>
-
-<span class="c1"># Så lenge heltallet er mindre enn eller lik 5 (samme som mindre enn 6), så gjør vi:</span>
-<span class="k">while</span> <span class="n">heltall</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span> <span class="c1"># Denne linja skriver ut verdien til `heltall`</span>
-    <span class="n">heltall</span> <span class="o">=</span> <span class="n">heltall</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Denne linja øker verdien til `heltall` med 1 </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">heltall</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># starter med det først heltallet</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="c1"># Så lenge heltallet er mindre enn eller lik 5 (samme som mindre enn 6), så gjør vi:</span>
+<span class="linenos">4</span><span class="k">while</span> <span class="n">heltall</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span> <span class="c1"># Denne linja skriver ut verdien til `heltall`</span>
+<span class="linenos">6</span>    <span class="n">heltall</span> <span class="o">=</span> <span class="n">heltall</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Denne linja øker verdien til `heltall` med 1 </span>
 </pre></div>
 </div>
 </div>
@@ -718,7 +720,7 @@ Det kan være en god idé å prøve og forstå koden, og deretter prøve å skri
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>Skriv en program som printer ut alle partallene <span class="math notranslate nohighlight">\(2, 4, ..., 16, 18, 20\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke.</p>
-<div class="dropdown admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">Kodehint</p>
 <p>Du kan starte med <code class="docutils literal notranslate"><span class="pre">partall</span> <span class="pre">=</span> <span class="pre">2</span></code> og øke partallet med <code class="docutils literal notranslate"><span class="pre">2</span></code> for hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka. I eksemplene over økte vi <code class="docutils literal notranslate"><span class="pre">heltall</span></code> med <code class="docutils literal notranslate"><span class="pre">1</span></code> hver runde i løkka ved å skrive <code class="docutils literal notranslate"><span class="pre">heltall</span> <span class="pre">=</span> <span class="pre">heltall</span> <span class="pre">+</span> <span class="pre">1</span></code>.<br> Kan du tenke deg hvordan man da kan øke med <code class="docutils literal notranslate"><span class="pre">2</span></code> hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka?</p>
 </div>
@@ -752,7 +754,7 @@ Det kan være en god idé å prøve og forstå koden, og deretter prøve å skri
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Skriv et program som regner ut summen av alle oddetallene fra <span class="math notranslate nohighlight">\(1\)</span> opp til og med <span class="math notranslate nohighlight">\(99\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke.</p>
-<div class="dropdown admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">Kodehint</p>
 <p>Du kan starte med å sette <code class="docutils literal notranslate"><span class="pre">oddetall</span> <span class="pre">=</span> <span class="pre">1</span></code>. Deretter kan du øke <code class="docutils literal notranslate"><span class="pre">oddetall</span></code> med <code class="docutils literal notranslate"><span class="pre">2</span></code> for hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka. <br></p>
 </div>
@@ -788,7 +790,7 @@ Det kan være en god idé å prøve og forstå koden, og deretter prøve å skri
 Han har så tenkt at dersom han øker <span class="math notranslate nohighlight">\(x\)</span>-verdien med <em>små</em> endringer, så vil han før eller siden få en <span class="math notranslate nohighlight">\(x\)</span>-verdi slik at <span class="math notranslate nohighlight">\(2x - 5 \geq 0\)</span>. <br>
 Jo mindre steg han bruker, jo bedre tilnærming til løsningen av likningen vil han få (men prisen han må betale er at han må sitte å vente lenger …) <br></p>
 <p>Skriv et program som gjør løser likningen på denne måten ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke. <br></p>
-<div class="dropdown admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">Kodehint</p>
 <ul class="simple">
 <li><p>Du kan for eksempel øke verdien til <code class="docutils literal notranslate"><span class="pre">x</span></code> med <code class="docutils literal notranslate"><span class="pre">0.25</span></code> for hver runde i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka.</p></li>
@@ -872,7 +874,7 @@ Hva bør du sette startverdien til når du skal regne ut et produkt av mange tal
 <p>Når du leste om regneartene som finnes i Python, så du at vi kan bruke <code class="docutils literal notranslate"><span class="pre">**</span></code> for å regne ut potenser. <br>
 Vi skal nå late som at denne regnearten ikke finnes.</p>
 <p>Skriv et program som regner ut <span class="math notranslate nohighlight">\(2^{12}\)</span> ved å bruke en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke. Sjekk svaret ditt med å bruke den innebygde måten å regne ut potenser i Python på. <br></p>
-<div class="dropdown admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">Kodehint</p>
 <p>Samme kodehint som på forrige oppgave vil være til hjelp i denne oppgaven!</p>
 </div>
@@ -1004,7 +1006,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

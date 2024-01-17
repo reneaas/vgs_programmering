@@ -175,11 +175,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../python/variabler_og_regning/regning.html">Å regne med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/errors/errors.html">Feilmeldinger i Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../python/funksjoner/funksjoner.html">Pythonfunksjoner som matematisk funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -577,10 +579,10 @@ y = 0, 1, 2, 3, \ldots, n_y - 1.
 <p>Det er naturlig å benytte seg av et objekt i Python som heter <em>dictionary</em>, med datatype <code class="docutils literal notranslate"><span class="pre">dict</span></code>, som kan lagre denne informasjonen på følgende måte:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterie</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">bakterie</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="linenos">3</span>    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="linenos">4</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -589,10 +591,10 @@ y = 0, 1, 2, 3, \ldots, n_y - 1.
 Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gangen i <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-retning, vil vi kunne flytte bakterien på følgende måte:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># bibliotek for numerisk matte</span>
-<span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Trekker tilfeldig en av tallene -1, 0 eller 1.</span>
-<span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">bakterie</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># bibliotek for numerisk matte</span>
+<span class="linenos">2</span><span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Trekker tilfeldig en av tallene -1, 0 eller 1.</span>
+<span class="linenos">3</span><span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">bakterie</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -605,11 +607,11 @@ Hvis vi antar at bakterien <strong>kun</strong> kan flytte seg én plass av gang
 <p>Vi kan også hente ut dataen som er lagret i <code class="docutils literal notranslate"><span class="pre">bakterie</span></code> slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -626,11 +628,11 @@ y = 2
 <p>Vi kan derfor utvide måten vi lagrer informasjon om bakterien. En bakterie med ingen antibiotikaresistens kan for eksempel lages slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterie</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">bakterie</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="linenos">3</span>    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="linenos">4</span>    <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="linenos">5</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -638,9 +640,9 @@ y = 2
 <p>På samme måte som før, kan vi både endre og hente ut antibiotikaresistensen fra <code class="docutils literal notranslate"><span class="pre">bakterie</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;resistens&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="c1"># Øker antibiotikaresistens med 0.1</span>
-<span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span> <span class="c1"># Henter ut antibiotikaresistens fra bakterien </span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">resistens</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">bakterie</span><span class="p">[</span><span class="s2">&quot;resistens&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="c1"># Øker antibiotikaresistens med 0.1</span>
+<span class="linenos">2</span><span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span> <span class="c1"># Henter ut antibiotikaresistens fra bakterien </span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">resistens</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -670,17 +672,17 @@ Da vil vi ha <strong>fem soner</strong> med økende grad av antibiotikakonsentas
 <p><em>For å lage en slik funksjon, kan du ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mf">0.25</span>
-    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span>
-    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
+<span class="linenos"> 3</span>        <span class="k">return</span> <span class="mi">0</span>
+<span class="linenos"> 4</span>    <span class="k">elif</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">nx</span><span class="p">:</span>
+<span class="linenos"> 5</span>        <span class="k">return</span> <span class="mf">0.25</span>
+<span class="linenos"> 6</span>    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="linenos"> 8</span>    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos"> 9</span>        <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="linenos">10</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">11</span>        <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -735,21 +737,21 @@ La <span class="math notranslate nohighlight">\(r\)</span> være antibiotikaresi
 </div><p><em>Du ta utgangspunkt i kodeskallet for en funksjon <code class="docutils literal notranslate"><span class="pre">bakteriedrap</span></code> som implementerer denne algoritmen. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># må importeres for å kunne bruke funksjonen.</span>
-<span class="k">def</span> <span class="nf">bakteriedrap</span><span class="p">(</span><span class="n">bakterie</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn en bakterie sjekker om den skal dø. </span>
-<span class="sd">    Returnerer `False` hvis bakterien skal overleve, og `True` hvis den skal dø.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resistens</span> <span class="o">&gt;=</span> <span class="n">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">False</span> <span class="c1"># Returner false, ikke drep bakterien!</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="c1"># tilfeldig tall mellom 0 og 1.</span>
-        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">NotImplemented</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># må importeres for å kunne bruke funksjonen.</span>
+<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">bakteriedrap</span><span class="p">(</span><span class="n">bakterie</span><span class="p">):</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn en bakterie sjekker om den skal dø. </span>
+<span class="linenos"> 4</span><span class="sd">    Returnerer `False` hvis bakterien skal overleve, og `True` hvis den skal dø.</span>
+<span class="linenos"> 5</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 6</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="k">if</span> <span class="n">resistens</span> <span class="o">&gt;=</span> <span class="n">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 9</span>        <span class="k">return</span> <span class="kc">False</span> <span class="c1"># Returner false, ikke drep bakterien!</span>
+<span class="linenos">10</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">11</span>        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="c1"># tilfeldig tall mellom 0 og 1.</span>
+<span class="linenos">12</span>        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">13</span>            <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="linenos">14</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">15</span>            <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -786,18 +788,18 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>For eksempel kan vi lagre to bakterier slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bakterier</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> 
-        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> 
-        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">bakterier</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 2</span>    <span class="p">{</span>
+<span class="linenos"> 3</span>        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> 
+<span class="linenos"> 4</span>        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> 
+<span class="linenos"> 5</span>        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="linenos"> 6</span>    <span class="p">},</span>
+<span class="linenos"> 7</span>    <span class="p">{</span>
+<span class="linenos"> 8</span>        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="linenos"> 9</span>        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="linenos">10</span>        <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+<span class="linenos">11</span>    <span class="p">}</span>
+<span class="linenos">12</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -805,7 +807,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Vi kan da printe ut alle informasjonen om bakteriene slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">bakterier</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">bakterier</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -820,14 +822,14 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Under ser du et eksempel på hvordan dette kan gjøres ved å sette inn 5 bakterier på tilfeldig posisjoner i sone 0 (<span class="math notranslate nohighlight">\(0 \leq x &lt; 0.2n_x\)</span>), der <span class="math notranslate nohighlight">\(n_x = 200\)</span> og <span class="math notranslate nohighlight">\(n_y = 100\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># nødvendig python bibliotek for å trekke tilfeldige tall. Plasseres på toppen av koden din</span>
-<span class="n">antall_bakterier</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">nx</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># Antall celler i x-retning</span>
-<span class="n">ny</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Antall celler i y-retning</span>
-<span class="n">bakterier</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span><span class="p">),</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ny</span><span class="p">),</span> <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_bakterier</span><span class="p">)</span>
-<span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">bakterier</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># nødvendig python bibliotek for å trekke tilfeldige tall. Plasseres på toppen av koden din</span>
+<span class="linenos">2</span><span class="n">antall_bakterier</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">3</span><span class="n">nx</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># Antall celler i x-retning</span>
+<span class="linenos">4</span><span class="n">ny</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Antall celler i y-retning</span>
+<span class="linenos">5</span><span class="n">bakterier</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">6</span>    <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">nx</span><span class="p">),</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ny</span><span class="p">),</span> <span class="s2">&quot;resistens&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_bakterier</span><span class="p">)</span>
+<span class="linenos">7</span><span class="p">]</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">bakterier</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -853,17 +855,17 @@ p(n) = 2\left( 1 - \frac{1}{1 + e^{-b\cdot n}} \right), \qquad n \geq 0,
 <p>Vi kan ta en titt på hvordan denne fordelingen ser ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.01</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$n$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$p(n, b=0.01)$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="linenos"> 4</span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">n</span><span class="p">)))</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.01</span><span class="p">))</span>
+<span class="linenos"> 8</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$n$&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$p(n, b=0.01)$&quot;</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">11</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -918,150 +920,150 @@ flowchart TD
 <p><em>Under finner du et kodeskall for å løse prosjektet. Du kan bruke det som utgangspunkt for å løse prosjektet, eller du kan lage din egen kode fra bunnen av. I kodeskallet må du fylle inn alle plasser det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> eller <code class="docutils literal notranslate"><span class="pre">pass</span></code></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_bakterie</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">resistens</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lager en bakterie med gitt x- og y-koordinat og resistens.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        x (int): x-koordinatet til bakterien</span>
-<span class="sd">        y (int): y-koordinatet til bakterien</span>
-<span class="sd">        resistens (float): antibiotikaresistens til bakterien</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        dict: En bakterie</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">lag_bakterie</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">resistens</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Lager en bakterie med gitt x- og y-koordinat og resistens.</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="sd">    Args:</span>
+<span class="linenos"> 5</span><span class="sd">        x (int): x-koordinatet til bakterien</span>
+<span class="linenos"> 6</span><span class="sd">        y (int): y-koordinatet til bakterien</span>
+<span class="linenos"> 7</span><span class="sd">        resistens (float): antibiotikaresistens til bakterien</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="sd">    Returns:</span>
+<span class="linenos">10</span><span class="sd">        dict: En bakterie</span>
+<span class="linenos">11</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">12</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lag_populasjon</span><span class="p">(</span><span class="n">antall_bakterier</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ny</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lager en liste med bakterier med tilfeldige x- og y-koordinater og resistens.</span>
-<span class="sd">    </span>
-<span class="sd">    Parametere</span>
-<span class="sd">    ----------</span>
-<span class="sd">    antall_bakterier : int</span>
-<span class="sd">        Antall bakterier som skal lages.</span>
-
-<span class="sd">    nx : int</span>
-<span class="sd">        Antall celler i x-retning.</span>
-
-<span class="sd">    ny : int</span>
-<span class="sd">        Antall celler i y-retning.</span>
-
-<span class="sd">    Returverdi</span>
-<span class="sd">    ----------</span>
-<span class="sd">    list</span>
-<span class="sd">        Liste med bakterier.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">lag_populasjon</span><span class="p">(</span><span class="n">antall_bakterier</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ny</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Lager en liste med bakterier med tilfeldige x- og y-koordinater og resistens.</span>
+<span class="linenos"> 3</span><span class="sd">    </span>
+<span class="linenos"> 4</span><span class="sd">    Parametere</span>
+<span class="linenos"> 5</span><span class="sd">    ----------</span>
+<span class="linenos"> 6</span><span class="sd">    antall_bakterier : int</span>
+<span class="linenos"> 7</span><span class="sd">        Antall bakterier som skal lages.</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="sd">    nx : int</span>
+<span class="linenos">10</span><span class="sd">        Antall celler i x-retning.</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="sd">    ny : int</span>
+<span class="linenos">13</span><span class="sd">        Antall celler i y-retning.</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="sd">    Returverdi</span>
+<span class="linenos">16</span><span class="sd">    ----------</span>
+<span class="linenos">17</span><span class="sd">    list</span>
+<span class="linenos">18</span><span class="sd">        Liste med bakterier.</span>
+<span class="linenos">19</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">20</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># nødvendig python bibliotek for å trekke tilfeldige tall. Plasseres på toppen av koden din</span>
-
-<span class="k">def</span> <span class="nf">flytt</span><span class="p">(</span><span class="n">bakterie</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">nx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ny</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flytter en bakterie til en tilfeldig celle i nærheten.</span>
-<span class="sd">    </span>
-<span class="sd">    Parametere</span>
-<span class="sd">    ----------</span>
-<span class="sd">    bakterie : dict</span>
-<span class="sd">        Bakterien som skal flyttes.</span>
-<span class="sd">    </span>
-<span class="sd">    nx : int</span>
-<span class="sd">        Antall celler i x-retning.</span>
-
-<span class="sd">    ny : int</span>
-<span class="sd">        Antall celler i y-retning.</span>
-<span class="sd">    </span>
-<span class="sd">    Returverdi</span>
-<span class="sd">    ----------</span>
-<span class="sd">    dict</span>
-<span class="sd">        Bakterien som er flyttet.</span>
-<span class="sd">    </span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># nødvendig python bibliotek for å trekke tilfeldige tall. Plasseres på toppen av koden din</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">flytt</span><span class="p">(</span><span class="n">bakterie</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">nx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ny</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Flytter en bakterie til en tilfeldig celle i nærheten.</span>
+<span class="linenos"> 5</span><span class="sd">    </span>
+<span class="linenos"> 6</span><span class="sd">    Parametere</span>
+<span class="linenos"> 7</span><span class="sd">    ----------</span>
+<span class="linenos"> 8</span><span class="sd">    bakterie : dict</span>
+<span class="linenos"> 9</span><span class="sd">        Bakterien som skal flyttes.</span>
+<span class="linenos">10</span><span class="sd">    </span>
+<span class="linenos">11</span><span class="sd">    nx : int</span>
+<span class="linenos">12</span><span class="sd">        Antall celler i x-retning.</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="sd">    ny : int</span>
+<span class="linenos">15</span><span class="sd">        Antall celler i y-retning.</span>
+<span class="linenos">16</span><span class="sd">    </span>
+<span class="linenos">17</span><span class="sd">    Returverdi</span>
+<span class="linenos">18</span><span class="sd">    ----------</span>
+<span class="linenos">19</span><span class="sd">    dict</span>
+<span class="linenos">20</span><span class="sd">        Bakterien som er flyttet.</span>
+<span class="linenos">21</span><span class="sd">    </span>
+<span class="linenos">22</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">23</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># nødvendig python bibliotek for å trekke tilfeldige tall. Plasseres på toppen av koden din</span>
-
-<span class="k">def</span> <span class="nf">flytt</span><span class="p">(</span><span class="n">bakterie</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">nx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ny</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flytter en bakterie til en tilfeldig celle i nærheten.</span>
-<span class="sd">    </span>
-<span class="sd">    Parametere</span>
-<span class="sd">    ----------</span>
-<span class="sd">    bakterie : dict</span>
-<span class="sd">        Bakterien som skal flyttes.</span>
-<span class="sd">    </span>
-<span class="sd">    nx : int</span>
-<span class="sd">        Antall celler i x-retning.</span>
-
-<span class="sd">    ny : int</span>
-<span class="sd">        Antall celler i y-retning.</span>
-<span class="sd">    </span>
-<span class="sd">    Returverdi</span>
-<span class="sd">    ----------</span>
-<span class="sd">    dict</span>
-<span class="sd">        Bakterien som er flyttet.</span>
-<span class="sd">    </span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># nødvendig python bibliotek for å trekke tilfeldige tall. Plasseres på toppen av koden din</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">flytt</span><span class="p">(</span><span class="n">bakterie</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">nx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ny</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Flytter en bakterie til en tilfeldig celle i nærheten.</span>
+<span class="linenos"> 5</span><span class="sd">    </span>
+<span class="linenos"> 6</span><span class="sd">    Parametere</span>
+<span class="linenos"> 7</span><span class="sd">    ----------</span>
+<span class="linenos"> 8</span><span class="sd">    bakterie : dict</span>
+<span class="linenos"> 9</span><span class="sd">        Bakterien som skal flyttes.</span>
+<span class="linenos">10</span><span class="sd">    </span>
+<span class="linenos">11</span><span class="sd">    nx : int</span>
+<span class="linenos">12</span><span class="sd">        Antall celler i x-retning.</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="sd">    ny : int</span>
+<span class="linenos">15</span><span class="sd">        Antall celler i y-retning.</span>
+<span class="linenos">16</span><span class="sd">    </span>
+<span class="linenos">17</span><span class="sd">    Returverdi</span>
+<span class="linenos">18</span><span class="sd">    ----------</span>
+<span class="linenos">19</span><span class="sd">    dict</span>
+<span class="linenos">20</span><span class="sd">        Bakterien som er flyttet.</span>
+<span class="linenos">21</span><span class="sd">    </span>
+<span class="linenos">22</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">23</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># må importeres for å kunne bruke funksjonen. Plasseres på toppen av koden din.</span>
-
-<span class="k">def</span> <span class="nf">bakteriedrap</span><span class="p">(</span><span class="n">bakterie</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn en bakterie sjekker om den skal dø. </span>
-<span class="sd">    Returnerer `False` hvis bakterien skal overleve, og `True` hvis den skal dø.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        bakterie (dict): Bakterien som skal sjekkes.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        bool: `False` hvis bakterien skal overleve, og `True` hvis den skal dø.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resistens</span> <span class="o">&gt;=</span> <span class="n">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">False</span> <span class="c1"># Returner false, ikke drep bakterien!</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="c1"># tilfeldig tall mellom 0 og 1.</span>
-        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">NotImplemented</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># må importeres for å kunne bruke funksjonen. Plasseres på toppen av koden din.</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">bakteriedrap</span><span class="p">(</span><span class="n">bakterie</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tar inn en bakterie sjekker om den skal dø. </span>
+<span class="linenos"> 5</span><span class="sd">    Returnerer `False` hvis bakterien skal overleve, og `True` hvis den skal dø.</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="sd">    Args:</span>
+<span class="linenos"> 8</span><span class="sd">        bakterie (dict): Bakterien som skal sjekkes.</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="sd">    Returns:</span>
+<span class="linenos">11</span><span class="sd">        bool: `False` hvis bakterien skal overleve, og `True` hvis den skal dø.</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">14</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="n">resistens</span> <span class="o">=</span> <span class="n">bakterie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resistens&quot;</span><span class="p">)</span>
+<span class="linenos">16</span>    <span class="k">if</span> <span class="n">resistens</span> <span class="o">&gt;=</span> <span class="n">antibiotika_konsentrasjon</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">17</span>        <span class="k">return</span> <span class="kc">False</span> <span class="c1"># Returner false, ikke drep bakterien!</span>
+<span class="linenos">18</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">19</span>        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="c1"># tilfeldig tall mellom 0 og 1.</span>
+<span class="linenos">20</span>        <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+<span class="linenos">21</span>            <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="linenos">22</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">23</span>            <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># Plasser import statement på toppen av koden din.</span>
-
-<span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sannsynligheten for at en bakterie kan reprodusere.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        n (int): Antall bakterier i populasjonen.</span>
-<span class="sd">        b (float): Bakterienes bæreevne.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        float: Sannsynligheten for at en bakterie kan reprodusere.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># Plasser import statement på toppen av koden din.</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Sannsynligheten for at en bakterie kan reprodusere.</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="sd">    Args:</span>
+<span class="linenos"> 7</span><span class="sd">        n (int): Antall bakterier i populasjonen.</span>
+<span class="linenos"> 8</span><span class="sd">        b (float): Bakterienes bæreevne.</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="sd">    Returns:</span>
+<span class="linenos">11</span><span class="sd">        float: Sannsynligheten for at en bakterie kan reprodusere.</span>
+<span class="linenos">12</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">13</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -1165,7 +1167,7 @@ By René Ask
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
