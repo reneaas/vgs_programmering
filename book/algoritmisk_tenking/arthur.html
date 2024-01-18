@@ -540,7 +540,7 @@ For at Arthur skal kunne hjelpe oss med å løse et problem, må vi spesifisere<
     2x - y &amp; = 8
 \end{align*}\]</div>
 <figure class="align-default" id="ligningssystem1">
-<a class="reference internal image-reference" href="../../_images/ligningssystem1.pdf"><img alt="../../_images/ligningssystem1.pdf" src="../../_images/ligningssystem1.pdf" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/ligningssystem1.png"><img alt="../../_images/ligningssystem1.png" src="../../_images/ligningssystem1.png" style="width: 600px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Figuren viser hvordan ligningssystemet kan tolkes grafisk som skjæringspunktet mellom linjene <span class="math notranslate nohighlight">\(x + y = 10\)</span> og <span class="math notranslate nohighlight">\(2x - y = 8\)</span>.</span><a class="headerlink" href="#ligningssystem1" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -556,7 +556,7 @@ A[Start] --> B[Sett startbetingelser:
 x =-100 og y=-100]
 B --> C{Er y < 101?}
 C --> |Ja| D{Er x < 101?}
-C --> |Nei| J[Slutt]
+C --> |Nei| I[Slutt]
 D --> |Ja| E{Er 
 x + y = 10 
 og 
@@ -564,7 +564,7 @@ og
 D --> |Nei| H[Øk y med 1]
 H --> C
 E --> |Ja| F[Skriv ut verdiene til x og y]
-F --> J
+F --> I
 E --> |Nei| G[Øk x med 1]
 G --> D
 
@@ -582,7 +582,7 @@ G --> D
 <span class="linenos"> 9</span><span class="c1"># Velger å teste ut alle heltall y fra og med -100 til og med 100</span>
 <span class="linenos">10</span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y_start</span><span class="p">,</span> <span class="n">y_slutt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 <span class="linenos">11</span>
-<span class="linenos">12</span>    <span class="c1"># For hver y-verdi, tester vi alle heltallige x-verdier fra og med -100 til og med 100</span>
+<span class="linenos">12</span>    <span class="c1"># For hver y-verdi, tester vi alle heltall x fra og med -100 til og med 100</span>
 <span class="linenos">13</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x_start</span><span class="p">,</span> <span class="n">x_slutt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 <span class="linenos">14</span>
 <span class="linenos">15</span>        <span class="c1"># Dersom begge ligninger er oppfylt:</span>
@@ -592,7 +592,7 @@ G --> D
 <span class="linenos">19</span>            <span class="k">break</span> <span class="c1"># `break` avslutter for-løkka over `x`-verdiene.</span>
 <span class="linenos">20</span>    
 <span class="linenos">21</span>    <span class="c1"># Hvis løsningen er funnet, så er `funnet_løsning = True`</span>
-<span class="linenos">22</span>    <span class="c1"># Da vil den avbryte programmet her.</span>
+<span class="linenos">22</span>    <span class="c1"># Da vil den avbryte programmet her:</span>
 <span class="linenos">23</span>    <span class="k">if</span> <span class="n">funnet_løsning</span><span class="p">:</span>
 <span class="linenos">24</span>        <span class="k">break</span>
 </pre></div>
@@ -604,6 +604,7 @@ G --> D
 </div>
 </div>
 </div>
+<p>Resultatet svarer til det vi kan se fra den grafiske framstillingen av ligningssystemet.</p>
 <div class="tip admonition">
 <p class="admonition-title">Svakheter med programmet</p>
 <p>Programmet har flere svakheter.</p>
@@ -621,7 +622,7 @@ G --> D
 <section id="utfordring-2">
 <h2>Utfordring 2<a class="headerlink" href="#utfordring-2" title="Permalink to this heading">#</a></h2>
 <p>Ta for deg problemet under.</p>
-<div class="warning admonition">
+<div class="tip admonition">
 <p class="admonition-title">Problemet</p>
 <p>Løs ligningssystemet</p>
 <div class="amsmath math notranslate nohighlight">
@@ -630,7 +631,7 @@ G --> D
     2y + x &amp; = 8
 \end{align*}\]</div>
 <figure class="align-default" id="ligningssystem2">
-<a class="reference internal image-reference" href="../../_images/ligningssystem2.pdf"><img alt="../../_images/ligningssystem2.pdf" src="../../_images/ligningssystem2.pdf" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/ligningssystem2.png"><img alt="../../_images/ligningssystem2.png" src="../../_images/ligningssystem2.png" style="width: 600px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Figuren viser hvordan ligningssystemet kan tolkes grafisk som skjæringspunktet mellom kurvene <span class="math notranslate nohighlight">\(y = x^2 - 4x + 4\)</span> og <span class="math notranslate nohighlight">\(2y + x = 8\)</span>.</span><a class="headerlink" href="#ligningssystem2" title="Permalink to this image">#</a></p>
 </figcaption>
