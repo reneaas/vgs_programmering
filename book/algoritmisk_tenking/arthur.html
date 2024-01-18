@@ -552,22 +552,21 @@ For at Arthur skal kunne hjelpe oss med å løse et problem, må vi spesifisere<
 <div class="mermaid" align="center">
 flowchart LR
 
-A[Start] --> B[Sett startbetingelser x =-100 og y=-100]
-B --> C{Er ligningene oppfylt?}
-C --> |Ja| D[Skriv ut verdiene til x og y] --> J
-C --> |Nei| E{Er y < 101?}
-E --> |Nei| J[Slutt]
-
-
-E --> |Ja| F[Øk y med 1]
-F --> G{Er x < 101?}
-G --> |Ja| H[Øk x med 1]
-G --> |Nei| E
-H --> I{Er ligningene oppfylt?}
-I --> |Ja| D
-I --> |Nei| G
-
-
+A[Start] --> B[Sett startbetingelser: 
+x =-100 og y=-100]
+B --> C{Er y < 101?}
+C --> |Ja| D{Er x < 101?}
+C --> |Nei| J[Slutt]
+D --> |Ja| E{Er 
+x + y = 10 
+og 
+2x - y = 8?}
+D --> |Nei| H[Øk y med 1]
+H --> C
+E --> |Ja| F[Skriv ut verdiene til x og y]
+F --> J
+E --> |Nei| G[Øk x med 1]
+G --> D
 
 </div><p>Et program som skriver den koden akkurat om den står ser slik ut:</p>
 <div class="cell docutils container">
