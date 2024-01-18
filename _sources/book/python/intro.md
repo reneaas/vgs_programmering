@@ -17,7 +17,7 @@ Når du har gått gjennom denne introduksjonen har du bygget opp en verktøykass
 ## Innhold
 Gå gjennom lista under i rekkefølgen den er listet opp. Er du komfortabel med et tema, kan du hoppe over det. <br>
 
-1. [Variabler](./variabler_og_regning/variabler.ipynb)
+1. [Variabler](./variabler_og_regning/variabler_new.ipynb)
 2. [Regning med Python](./variabler_og_regning/regning.ipynb)
 3. [`while`-løkker](./iterasjon/while_loops.ipynb)
 4. [`for`-løkker](./iterasjon/for_loops.ipynb)
