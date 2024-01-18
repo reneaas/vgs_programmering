@@ -527,6 +527,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver-generelle-funksjoner">Oppgaver: Generelle funksjoner</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Oppgave 2</a></li>
 </ul>
 </li>
 </ul>
@@ -908,6 +909,59 @@ Hva bør du sette startverdien til når du skal regne ut et produkt av mange tal
 \]</div>
 </div>
 </section>
+<section id="id2">
+<h3>Oppgave 2<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>En andregradsligning</p>
+<div class="math notranslate nohighlight">
+\[
+ax^2 + bx + c = 0
+\]</div>
+<p>har løsninger som kan regnes ut ved hjelp av <span class="math notranslate nohighlight">\(abc\)</span>-formelen:</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]</div>
+<p>Skriv en funksjon som tar inn koeffisientene <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span> som argumenter, og regner ut løsningene til andregradsligningen. <br></p>
+<p>Funksjonen skal også gjøre følgende:</p>
+<ul class="simple">
+<li><p>Hvis <span class="math notranslate nohighlight">\(b^2 - 4ac\)</span> er positiv, skal funksjonen returnere begge løsninger. Hvis <code class="docutils literal notranslate"><span class="pre">x1</span></code> og <code class="docutils literal notranslate"><span class="pre">x2</span></code> er løsningen, kan du returnere dem med linja <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">x1,</span> <span class="pre">x2</span></code>.</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(b^2 - 4ac\)</span> er null, skal funksjonen bare returnere én løsning (siden ligningen da bare har én løsning).</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(b^2 - 4ac\)</span> er negativ, skal funksjonen returnere en melding som sier at andregradsligningen ikke har noen løsninger.</p></li>
+</ul>
+<p>Prøv ut funksjonen din på andregradsligningene</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x^2 - x - 6 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2 - 4x + 4 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2 + 1 = 0 \)</span></p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">abc_formelen</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span>
+    <span class="k">elif</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Andregradsligningen har ingen løsninger&quot;</span>
+</pre></div>
+</div>
+<p>Så prøver vi funksjonen på de tre tilfellene:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">abc_formelen</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="o">=-</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 1. x**2 - x - 6 = 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">abc_formelen</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 2. x**2 - 4*x + 4 = 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">abc_formelen</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 3. x**2 + 1 = 0</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">abc_formelen(a=1, b=-1, c=-6) = (3.0, -2.0)</span>
+<span class="go">abc_formelen(a=1, b=-4, c=4) = 2.0</span>
+<span class="go">abc_formelen(a=1, b=0, c=1) = &#39;Andregradsligningen har ingen løsninger&#39;</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -997,6 +1051,7 @@ Hva bør du sette startverdien til når du skal regne ut et produkt av mange tal
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver-generelle-funksjoner">Oppgaver: Generelle funksjoner</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Oppgave 2</a></li>
 </ul>
 </li>
 </ul>
