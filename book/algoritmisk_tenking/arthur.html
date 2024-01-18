@@ -572,40 +572,67 @@ E --> |Nei| G[Øk x med 1]
 G --> D
 
 </div><p>Et program som skriver den koden akkurat om den står ser slik ut:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">x_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-<span class="linenos"> 2</span><span class="n">x_slutt</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">y_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-<span class="linenos"> 5</span><span class="n">y_slutt</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="n">funnet_løsning</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Holder styr på om vi har funnet en løsning </span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="c1"># Velger å teste ut alle heltall y fra og med -100 til og med 100</span>
-<span class="linenos">10</span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y_start</span><span class="p">,</span> <span class="n">y_slutt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span>    <span class="c1"># For hver y-verdi, tester vi alle heltall x fra og med -100 til og med 100</span>
-<span class="linenos">13</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x_start</span><span class="p">,</span> <span class="n">x_slutt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span>        <span class="c1"># Dersom begge ligninger er oppfylt:</span>
-<span class="linenos">16</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
-<span class="linenos">17</span>            <span class="n">funnet_løsning</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="linenos">18</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ligningssystemet er oppfylt når </span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> og </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">19</span>            <span class="k">break</span> <span class="c1"># `break` avslutter for-løkka over `x`-verdiene.</span>
-<span class="linenos">20</span>    
-<span class="linenos">21</span>    <span class="c1"># Hvis løsningen er funnet, så er `funnet_løsning = True`</span>
-<span class="linenos">22</span>    <span class="c1"># Da vil den avbryte programmet her:</span>
-<span class="linenos">23</span>    <span class="k">if</span> <span class="n">funnet_løsning</span><span class="p">:</span>
-<span class="linenos">24</span>        <span class="k">break</span>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Med for-løkker</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+<span class="n">x_slutt</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">y_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+<span class="n">y_slutt</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">funnet_løsning</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Holder styr på om vi har funnet en løsning </span>
+
+<span class="c1"># Velger å teste ut alle heltall y fra og med -100 til og med 100</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y_start</span><span class="p">,</span> <span class="n">y_slutt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+
+    <span class="c1"># For hver y-verdi, tester vi alle heltall x fra og med -100 til og med 100</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x_start</span><span class="p">,</span> <span class="n">x_slutt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+
+        <span class="c1"># Dersom begge ligninger er oppfylt:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="n">funnet_løsning</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ligningssystemet er oppfylt når </span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> og </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">break</span> <span class="c1"># `break` avslutter for-løkka over `x`-verdiene.</span>
+    
+    <span class="c1"># Hvis løsningen er funnet, så er `funnet_løsning = True`</span>
+    <span class="c1"># Da vil den avbryte programmet her:</span>
+    <span class="k">if</span> <span class="n">funnet_løsning</span><span class="p">:</span>
+        <span class="k">break</span>
+
+
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ligningssystemet er oppfylt når x = 6 og y = 4
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Med while-løkker</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span> 
+<span class="n">x_slutt</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">y_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+<span class="n">y_slutt</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">funnet_løsning</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y_start</span>
+<span class="k">while</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">y_slutt</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_start</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_slutt</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="n">funnet_løsning</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ligningssystemet er oppfylt når </span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> og </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">break</span> <span class="c1"># `break` avslutter for-løkka over `x`-verdiene.</span>
+        
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> 
+    
+    <span class="k">if</span> <span class="n">funnet_løsning</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Ligningssystemet er oppfylt når x = 6 og y = 4</span>
+</pre></div>
 </div>
 <p>Resultatet svarer til det vi kan se fra den grafiske framstillingen av ligningssystemet.</p>
 <div class="tip admonition">
