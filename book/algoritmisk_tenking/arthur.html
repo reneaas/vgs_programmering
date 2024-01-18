@@ -555,7 +555,10 @@ flowchart LR
 A[Start] --> B[Sett startbetingelser: 
 x =-100 og y=-100]
 B --> C{Er y < 101?}
-C --> |Ja| D{Er x < 101?}
+
+
+C --> |Ja| K[Sett x = -100]
+K --> D{Er x < 101?}
 C --> |Nei| I[Slutt]
 D --> |Ja| E{Er 
 x + y = 10 
