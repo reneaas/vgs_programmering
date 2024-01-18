@@ -550,7 +550,7 @@ For at Arthur skal kunne hjelpe oss med å løse et problem, må vi spesifisere<
 <p>En brute-force-løsningsmetode her kan være å prøve alle mulige verdier for <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>, og undersøke hvilke verdier som oppfyller de to ligningene samtidig.</p>
 <p>En algoritme for denne tilnærmingen kan da se slik ut:</p>
 <div class="mermaid" align="center">
-flowchart LR
+flowchart TD
 
 A[Start] --> B[Sett startbetingelser x =-100 og y=-100]
 B --> C{Er ligningene oppfylt?}
@@ -590,7 +590,7 @@ I --> |Nei| G
 <span class="linenos">16</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
 <span class="linenos">17</span>            <span class="n">funnet_løsning</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="linenos">18</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ligningssystemet er oppfylt når </span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> og </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">19</span>            <span class="k">break</span>
+<span class="linenos">19</span>            <span class="k">break</span> <span class="c1"># `break` avslutter for-løkka over `x`-verdiene.</span>
 <span class="linenos">20</span>    
 <span class="linenos">21</span>    <span class="c1"># Hvis løsningen er funnet, så er `funnet_løsning = True`</span>
 <span class="linenos">22</span>    <span class="c1"># Da vil den avbryte programmet her.</span>
