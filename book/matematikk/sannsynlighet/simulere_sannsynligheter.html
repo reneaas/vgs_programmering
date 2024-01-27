@@ -202,10 +202,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../python/symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likninger.html">Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likninger.html">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/polynomdivisjon.html">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/derivasjon_1T.html">Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/ligningssystemer.html">Løse ligningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/ulikheter.html">Løse Ulikheter med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/symbolsk_python/integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
@@ -561,7 +561,7 @@ document.write(`
 Som en tilnærming til sannsynligheten til et utfall, tar vi forholdet mellom antall ganger utfallet inntreffer og antall ganger vi gjennomfører eksperimentet.</p>
 <p>Mer formelt, la <span class="math notranslate nohighlight">\(X\)</span> være en <em>stokastisk</em> variabel (tilfeldig variabel), la <span class="math notranslate nohighlight">\(n_A\)</span> være antall ganger et utfall <span class="math notranslate nohighlight">\(A\)</span> skjedde, og <span class="math notranslate nohighlight">\(n\)</span> være antall ganger vi gjennomførte eksperimentet. Da kan vi tilnærme sannsynligheten for at utfall <span class="math notranslate nohighlight">\(A\)</span> skjer med</p>
 <div class="math notranslate nohighlight" id="equation-eq-tilnarmet-sannsynlighet">
-<span class="eqno">(23)<a class="headerlink" href="#equation-eq-tilnarmet-sannsynlighet" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-tilnarmet-sannsynlighet" title="Permalink to this equation">#</a></span>\[
 P(X = A) \approx \frac{n_A}{n}.
 \]</div>
 <p>Da kan vi garantere at når <span class="math notranslate nohighlight">\(n\)</span> blir veldig stor, så vil tilnærmingen bli veldig god.</p>
@@ -652,7 +652,7 @@ P(X = A) \approx \frac{n_A}{n}.
 <h2>Eksempler på å regne ut sannsynlighet med simulering<a class="headerlink" href="#eksempler-pa-a-regne-ut-sannsynlighet-med-simulering" title="Permalink to this heading">#</a></h2>
 <section id="eksempel-1-terningkast-med-en-terning">
 <h3>Eksempel 1: Terningkast med én terning<a class="headerlink" href="#eksempel-1-terningkast-med-en-terning" title="Permalink to this heading">#</a></h3>
-<p>Se for deg at vi ønsker å finne sannsynligheten for å få en sekser når vi kaster en terning. Vi kan simulere dette ved å gjennomføre mange terningkast, og telle opp hvor mange ganger vi får en sekser. Så bruker vi likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(23)</a> til å regne ut en tilnærmet verdi for terningkastet.</p>
+<p>Se for deg at vi ønsker å finne sannsynligheten for å få en sekser når vi kaster en terning. Vi kan simulere dette ved å gjennomføre mange terningkast, og telle opp hvor mange ganger vi får en sekser. Så bruker vi likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(9)</a> til å regne ut en tilnærmet verdi for terningkastet.</p>
 <p>I et terningkast er det 6 mulige utfall, og alle er like sannsynlige. Dermed er sannsynligheten for å få en sekser <span class="math notranslate nohighlight">\(1/6\)</span>. Lar vi <span class="math notranslate nohighlight">\(X\)</span> være antall øyne på en terning i et tilfeldig terningkast, så er <span class="math notranslate nohighlight">\(X\)</span> en stokastisk variabel med sannsynlighetsfordeling</p>
 <table class="table">
 <thead>
@@ -745,7 +745,7 @@ P(X = A) \approx \frac{n_A}{n}.
 </tr>
 </tbody>
 </table>
-<p>Tenk deg at vi ønsker å finne sannsynligheten for å få 7 øyne. Vi kan simulere dette ved å gjennomføre mange terningkast, og telle opp hvor mange ganger vi får 7 øyne. Så bruker vi likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(23)</a> til å regne ut en tilnærmet verdi for terningkastet.</p>
+<p>Tenk deg at vi ønsker å finne sannsynligheten for å få 7 øyne. Vi kan simulere dette ved å gjennomføre mange terningkast, og telle opp hvor mange ganger vi får 7 øyne. Så bruker vi likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(9)</a> til å regne ut en tilnærmet verdi for terningkastet.</p>
 <p>Igjen bruker vi <code class="docutils literal notranslate"><span class="pre">numpy.random.randint(1,</span> <span class="pre">7)</span></code> for å kaste en terning, men nå må vi kaste to ganger per forsøk. En Pythonkode som løser dette er:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,7 +927,7 @@ Vi kan simulere dette ved å bruke <code class="docutils literal notranslate"><s
 <li><p>Dersom høyden er under 160 cm, legger vi til 1 på <span class="math notranslate nohighlight">\(n_\text{suksess}\)</span>.</p></li>
 <li><p>Gjenta 1 og 2 <span class="math notranslate nohighlight">\(n_\text{forsøk}\)</span> ganger.</p></li>
 </ol>
-<p>Til slutt regner vi ut sannsynligheten med likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(23)</a> som</p>
+<p>Til slutt regner vi ut sannsynligheten med likning <a class="reference internal" href="#equation-eq-tilnarmet-sannsynlighet">(9)</a> som</p>
 <div class="math notranslate nohighlight">
 \[
 P(X \leq 160 \ \text{cm}) \approx \frac{n_\text{suksess}}{n_\text{forsøk}}.

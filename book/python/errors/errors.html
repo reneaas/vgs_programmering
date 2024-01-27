@@ -200,10 +200,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../symbolsk_python/intro.html">Symbolsk Programmering med Python (CAS)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/likninger.html">Løse Likninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/likninger.html">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/polynomdivisjon.html">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/derivasjon_1T.html">Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/likningsystemer.html">Løse Likningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/ligningssystemer.html">Løse ligningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/ulikheter.html">Løse Ulikheter med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../symbolsk_python/integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
@@ -518,6 +518,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-forskjellig-innrykk">Eksempel 2: forskjellig innrykk</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror"><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-ulovlige-matteoperasjoner">Eksempel: “ulovlige” matteoperasjoner</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -547,6 +551,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">NameError</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></p></li>
 </ul>
   <!-- - `TypeError`
   - `ValueError` -->
@@ -835,6 +840,36 @@ For eksempel er dette også en gyldig løsning:</p>
 </div>
 </section>
 </section>
+<section id="valueerror">
+<h2><code class="docutils literal notranslate"><span class="pre">ValueError</span></code><a class="headerlink" href="#valueerror" title="Permalink to this heading">#</a></h2>
+<p>En nokså vanlig feilmelding som kan oppstå kalles for en <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>. Denne feilmeldingen oppstår når vi gir en funksjon en variabel med en verdi eller datatypen den ikke kan håndtere eller gjøre noe med. <br></p>
+<section id="eksempel-ulovlige-matteoperasjoner">
+<h3>Eksempel: “ulovlige” matteoperasjoner<a class="headerlink" href="#eksempel-ulovlige-matteoperasjoner" title="Permalink to this heading">#</a></h3>
+<p>Under vises et program der vi prøver å regne ut kvadratroten av et negativt tall. <br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Henter mattebiblioteket i Python</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Prøver å regne ut kvadratroten av -2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Henter mattebiblioteket i Python</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Prøver å regne ut kvadratroten av -2</span>
+
+<span class="ne">ValueError</span>: math domain error
+</pre></div>
+</div>
+</div>
+</div>
+<p>Som vi ser, får vi en <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> med konteksten “math domain error”. <br>
+<em>Domain</em> er engelsk for <em>definisjonsmengde</em> for en funksjon. Beskjeden betyr at vi prøver å bruke en verdi som <em>ikke</em> er i definisjonsmengden til funksjonen vi bruker.</p>
+</section>
+</section>
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
@@ -1047,6 +1082,10 @@ Denne ganger er det en <code class="docutils literal notranslate"><span class="p
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentationerror"><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-manglende-innrykk-i-en-while-lokke">Eksempel: Manglende innrykk i en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-forskjellig-innrykk">Eksempel 2: forskjellig innrykk</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror"><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-ulovlige-matteoperasjoner">Eksempel: “ulovlige” matteoperasjoner</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
