@@ -184,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python med `sympy` (symbolsk programmering)</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="polynomdivisjon.html">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -504,10 +504,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-ligning">Eksempel 1: Løse en lineær ligning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradsligning">Eksempel 2: Løse en andregradsligning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradsligning">Eksempel 3: Løse en tredjegradsligning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-en-rasjonal-ligning">Eksempel 4: En rasjonal ligning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generell-skrivemate">Generell skrivemåte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-ligning">Eksempel 1: Løse en lineær ligning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradsligning">Eksempel 2: Løse en andregradsligning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradsligning">Eksempel 3: Løse en tredjegradsligning</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-en-rasjonal-ligning">Eksempel 4: En rasjonal ligning</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
@@ -530,43 +535,72 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lose-ligninger-med-sympy">
 <h1>Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#lose-ligninger-med-sympy" title="Permalink to this heading">#</a></h1>
-<p>Her skal du lære hvordan man kan løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Da bruker man en funksjon som kalles for <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>.</p>
+<section id="laeringsmal">
+<h2>Læringsmål<a class="headerlink" href="#laeringsmal" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kunne lage ligninger med <code class="docutils literal notranslate"><span class="pre">sympy.Eq</span></code> og løse disse med <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code></p></li>
+</ul>
+</section>
+<section id="generell-skrivemate">
+<h2>Generell skrivemåte<a class="headerlink" href="#generell-skrivemate" title="Permalink to this heading">#</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">sympy.solve</p>
-<p>Denne funksjonen antar at ligningen er på formen</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = 0
-\]</div>
-<p>som betyr at vi må omforme ligningen slik at høyresiden av ligningen er null når vi bruker <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>. <br></p>
-<p>Den generelle skrivemåten er</p>
+<p>Vi trenger to ting fra <code class="docutils literal notranslate"><span class="pre">sympy</span></code> for å løse en ligning.</p>
+<ol class="arabic simple">
+<li><p>Vi må bruke <code class="docutils literal notranslate"><span class="pre">sympy.Eq(venstre_side,</span> <span class="pre">høyre_side)</span></code> for å lage en ligning.</p></li>
+<li><p>Vi må bruke <code class="docutils literal notranslate"><span class="pre">sympy.solve(ligning,</span> <span class="pre">ukjent)</span></code> for å løse ligningen.</p></li>
+</ol>
+<p><strong>Eksempel på <code class="docutils literal notranslate"><span class="pre">sympy</span></code>-kode for å løse en ligning</strong>:
+Vi kan løse ligningen <span class="math notranslate nohighlight">\(x^2 = 4\)</span> ved å skrive</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>              <span class="c1"># Vi må definere `x` som et sympy-symbol</span>
 
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+<span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># Vi lager en ligning for x^2 = 4</span>
+<span class="n">løsning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>   <span class="c1"># Vi løser ligningen for x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span> <span class="c1"># Skriver ut svaret</span>
 </pre></div>
 </div>
-<p>Når det bare er én ukjent i funksjonsuttrykket, for eksempel bare <span class="math notranslate nohighlight">\(x\)</span>, så trenger vi ikke fortelle <code class="docutils literal notranslate"><span class="pre">sympy</span></code> hvilken variabel vi skal løse ligningen med hensyn på, og da holder å skrive</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">funksjonsuttrykk</span><span class="p">)</span>
+<p>som gir utskriften</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>som betyr at løsningene av ligningen er <span class="math notranslate nohighlight">\(x = \pm 2\)</span>.</p>
+<p>Her er <code class="docutils literal notranslate"><span class="pre">venstre_side</span> <span class="pre">=</span> <span class="pre">x**2</span></code> og <code class="docutils literal notranslate"><span class="pre">høyre_side</span> <span class="pre">=</span> <span class="pre">4</span></code>. Vi løser ligningen for <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Vi kunne faktisk definert variabler for <code class="docutils literal notranslate"><span class="pre">venstre_side</span></code> og <code class="docutils literal notranslate"><span class="pre">høyre_side</span></code> og brukke disse:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>              <span class="c1"># Vi må definere `x` som et sympy-symbol</span>
+<span class="n">venstre_side</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">høyre_side</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">venstre_side</span><span class="p">,</span> <span class="n">høyre_side</span><span class="p">)</span>         <span class="c1"># Vi lager en ligning for x^2 = 4</span>
+<span class="n">løsning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>   <span class="c1"># Vi løser ligningen for x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>som ville gitt det samme resultatet.</p>
+</div>
+<p>La oss angripe noe flere eksempler.</p>
+</section>
+<section id="eksempler">
+<h2>Eksempler<a class="headerlink" href="#eksempler" title="Permalink to this heading">#</a></h2>
 <section id="eksempel-1-lose-en-lineaer-ligning">
-<h2>Eksempel 1: Løse en lineær ligning<a class="headerlink" href="#eksempel-1-lose-en-lineaer-ligning" title="Permalink to this heading">#</a></h2>
+<h3>Eksempel 1: Løse en lineær ligning<a class="headerlink" href="#eksempel-1-lose-en-lineaer-ligning" title="Permalink to this heading">#</a></h3>
 <p>La oss se på hvordan vi kan løse ligningen</p>
 <div class="math notranslate nohighlight">
 \[
 2x - 1 = 0.
 \]</div>
 <p>Dette kan vi selvfølgelig gjøre for hånd, og da finner vi at <span class="math notranslate nohighlight">\(x = 1/2\)</span>.</p>
-<p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> må vi identifisere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er for noe, og i dette tilfellet er det <span class="math notranslate nohighlight">\(f(x) = 2x - 1\)</span>. Vi kan derfor skrive</p>
+<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse ligningen for oss.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Lager en symbolsk variabel for x</span>
+<span class="linenos">2</span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Lager en symbolsk funksjon f(x) = 2*x - 1</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen 2*x - 1 = 0.</span>
+<span class="linenos">4</span><span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>          <span class="c1"># lager likningen 2*x - 1 = 0</span>
+<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>     <span class="c1"># løser likningen for `x`</span>
 <span class="linenos">6</span>
 <span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -581,8 +615,8 @@ f(x) = 0
 <p>som betyr at løsningen av ligningen er <span class="math notranslate nohighlight">\(x = 1/2\)</span>.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Kommentar til koden</p>
-<p>I eksempelet her, og i de neste eksemplene som følger, har definert en symbolsk uttrykk for funksjonen <code class="docutils literal notranslate"><span class="pre">f</span></code> i likningen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.
-Man trenger strengt tatt ikke å gjøre dette, men kan i stedet bare skrive venstresiden av ligningen direkte inn i <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>:</p>
+<p>I eksemplene vi ser på her lager vi ligninger men en venstre side og høyre side med <code class="docutils literal notranslate"><span class="pre">sympy.Eq</span></code>.
+Men hvis høyresiden er null, kan man også bruke <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> direkte på venstresiden:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -590,21 +624,21 @@ Man trenger strengt tatt ikke å gjøre dette, men kan i stedet bare skrive vens
 </div>
 </section>
 <section id="eksempel-2-lose-en-andregradsligning">
-<h2>Eksempel 2: Løse en andregradsligning<a class="headerlink" href="#eksempel-2-lose-en-andregradsligning" title="Permalink to this heading">#</a></h2>
+<h3>Eksempel 2: Løse en andregradsligning<a class="headerlink" href="#eksempel-2-lose-en-andregradsligning" title="Permalink to this heading">#</a></h3>
 <p>La oss se på hvordan vi kan løse ligningen</p>
 <div class="math notranslate nohighlight">
 \[
-x^2 + x - 2 = 0,
+x^2 - x + 1 = -2x + 3
 \]</div>
-<p>ved å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Vi kan løse denne ligningen for hånd ved å faktorisere venstresiden av ligningen, og da finner vi at <span class="math notranslate nohighlight">\(x = -2\)</span> eller <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
-<p>For å bruke <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>, må vi identifiere hva <span class="math notranslate nohighlight">\(f(x)\)</span> er her, og det er <span class="math notranslate nohighlight">\(f(x) = x^2 + x - 2\)</span>. Vi kan derfor skrive</p>
+<p>ved å bruke <code class="docutils literal notranslate"><span class="pre">sympy</span></code>.</p>
+<p>En kode for dette kan se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="linenos">2</span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**2 + x - 2</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser ligningen x**2 + x - 2 = 0.</span>
+<span class="linenos">4</span><span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>      <span class="c1"># lager ligningen x**2 - x + 1 = -2*x + 3</span>
+<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>             <span class="c1"># løser ligningen for `x`</span>
 <span class="linenos">6</span>
 <span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -619,25 +653,20 @@ x^2 + x - 2 = 0,
 <p>som betyr at løsningen av ligningen er <span class="math notranslate nohighlight">\(x = -2 \, \vee \,  x = 1\)</span>.</p>
 </section>
 <section id="eksempel-3-lose-en-tredjegradsligning">
-<h2>Eksempel 3: Løse en tredjegradsligning<a class="headerlink" href="#eksempel-3-lose-en-tredjegradsligning" title="Permalink to this heading">#</a></h2>
+<h3>Eksempel 3: Løse en tredjegradsligning<a class="headerlink" href="#eksempel-3-lose-en-tredjegradsligning" title="Permalink to this heading">#</a></h3>
 <p>La oss se på et eksempel der vi skal løse en tredjegradsligning. Vi skal løse ligningen</p>
 <div class="math notranslate nohighlight">
 \[
-x^3 + 2x^2 = x - 2.
+x^3 - 2x^2 = x - 2.
 \]</div>
-<p>Første steg er å flytte alt over på venstresiden, slik at vi får en ligning på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>. Da får vi</p>
-<div class="math notranslate nohighlight">
-\[
-x^3 - 2x^2 - x + 2 = 0,
-\]</div>
-<p>så vi kan sette <span class="math notranslate nohighlight">\(f(x) = x^3 - 2x^2 - x + 2\)</span> i tråd med det vi har gjort tidligere. For å løse ligningen skriver vi derfor koden:</p>
+<p>Med <code class="docutils literal notranslate"><span class="pre">sympy</span></code> kan dette se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Importerer symbolet for `x`</span>
+<span class="linenos">2</span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># Lager en symbolsk funksjon f(x) = x**3 - 2*x**2 - x + 2</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser ligningen x**3 - 2*x**2 - x + 2 = 0.</span>
+<span class="linenos">4</span><span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># lager ligningen x**3 - 2 * x**2 = x - 2</span>
+<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>           <span class="c1"># løser ligningen for `x`</span>
 <span class="linenos">6</span>
 <span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -651,7 +680,7 @@ x^3 - 2x^2 - x + 2 = 0,
 </div>
 <p>som betyr at løsningen av ligningen er <span class="math notranslate nohighlight">\(x = -1 \, \vee \, x = 1 \, \vee \, x = 2\)</span>.</p>
 <section id="eksempel-4-en-rasjonal-ligning">
-<h3>Eksempel 4: En rasjonal ligning<a class="headerlink" href="#eksempel-4-en-rasjonal-ligning" title="Permalink to this heading">#</a></h3>
+<h4>Eksempel 4: En rasjonal ligning<a class="headerlink" href="#eksempel-4-en-rasjonal-ligning" title="Permalink to this heading">#</a></h4>
 <p>La oss se på et eksempel der vi skal løse en likning med brøk. Vi skal løse likningen</p>
 <div class="math notranslate nohighlight">
 \[
@@ -661,12 +690,13 @@ x^3 - 2x^2 - x + 2 = 0,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="linenos">2</span><span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># Løser likningen (x**2 - x - 6) / (x + 2) = 0</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>         <span class="c1"># lager likningen (x**2 - x - 6) / (x + 2) = 0 </span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>                     <span class="c1"># løser likningen for `x`</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -684,6 +714,7 @@ x^3 - 2x^2 - x + 2 = 0,
 </div>
 </section>
 </section>
+</section>
 <section id="ovingsoppgaver">
 <h2>Øvingsoppgaver<a class="headerlink" href="#ovingsoppgaver" title="Permalink to this heading">#</a></h2>
 <p>Det er på tide å prøve seg på egenhånd. Det ligger <em>kodeskall</em> til hjelp som du kan ta utgangspunkt i, men det er lurt å prøve å skrive all koden selv. I tillegg er det løsningsforslag til alle som oppgavene som du kan ta en titt på etter du har prøvd deg på oppgavene.</p>
@@ -695,34 +726,21 @@ x^3 - 2x^2 - x + 2 = 0,
 3x - 2 = 0.
 \]</div>
 <div class="dropdown admonition">
-<p class="admonition-title">Kodeskall</p>
-<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ligningen med sympy.solve</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>            <span class="c1"># 3x - 2 = 0</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">)</span>            <span class="c1"># Løser ligningen</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">løsninger</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2/3]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">løsninger = [2/3]</span>
 </pre></div>
 </div>
-<p>Det betyr at løsningen av ligningen er <span class="math notranslate nohighlight">\(x = 2/3\)</span></p>
+<p>som betyr at løsningen av ligningen er <span class="math notranslate nohighlight">\(x = 3/2\)</span>.</p>
 </div>
 </section>
 <section id="oppgave-2">
@@ -733,25 +751,12 @@ x^3 - 2x^2 - x + 2 = 0,
 x^2 - 3x + 2 = 0.
 \]</div>
 <div class="dropdown admonition">
-<p class="admonition-title">Kodeskall</p>
-<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av ligningen f(x) = 0</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ligningen med sympy.solve</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> 
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>            <span class="c1"># lager likningen x**2 - 3*x + 2 = 0</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>              <span class="c1"># løser likningen for `x`</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -760,7 +765,7 @@ x^2 - 3x + 2 = 0.
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1, 2]</span>
 </pre></div>
 </div>
-<p>som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 1 \, \vee \, x = 2\)</span>.</p>
+<p>som betyr at løsningene av ligningen er <span class="math notranslate nohighlight">\(x = 1 \, \vee \, x = 2\)</span>.</p>
 </div>
 </section>
 <section id="oppgave-3">
@@ -768,28 +773,20 @@ x^2 - 3x + 2 = 0.
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse ligningen</p>
 <div class="math notranslate nohighlight">
 \[
-x^3 - 13x^2 + 52x - 60 = 0.
+x^3 - 5x^2 + 8x - 4 = 8x^2 - 44x + 56
 \]</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Kodeskall</p>
-<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="admonition-losningsforslag admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>:class: dropdown</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av likningen f(x) = 0</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs likningen med sympy.solve</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="c1"># lager likningen x**3 - 5 * x**2 + 8*x - 4 = 8 * x**2 - 44*x + 56</span>
+<span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">44</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">56</span><span class="p">)</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">52</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">60</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="c1"># løser likningen for `x`</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>                     
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -798,7 +795,7 @@ x^3 - 13x^2 + 52x - 60 = 0.
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2, 5, 6]</span>
 </pre></div>
 </div>
-<p>som betyr at løsningene er <span class="math notranslate nohighlight">\(x = 2 \, \vee \, x = 5 \, \vee \, x = 6\)</span>.</p>
+<p>som betyr at løsningene av ligningen er <span class="math notranslate nohighlight">\(x = 2 \, \vee \, x = 5 \, \vee \, x = 6\)</span>.</p>
 </div>
 </section>
 <section id="oppgave-4">
@@ -808,26 +805,20 @@ x^3 - 13x^2 + 52x - 60 = 0.
 \[
 \frac{x^2 + 2x - 3}{x - 1} = 0.
 \]</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Kodeskall</p>
-<p>Du kan ta utgangspunkt i kodeskallet under. Du må endre der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+<div class="admonition-losningsforslag admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>:class: dropdown</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv venstre side av ligningen f(x) = 0</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ligningen med sympy.solve</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="n">teller</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="n">nevner</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">venstre_side</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">/</span> <span class="n">nevner</span>
+<span class="n">høyre_side</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ligning</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">venstre_side</span><span class="p">,</span> <span class="n">høyre_side</span><span class="p">)</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ligning</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
@@ -836,7 +827,7 @@ x^3 - 13x^2 + 52x - 60 = 0.
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[-3]</span>
 </pre></div>
 </div>
-<p>som betyr at løsningen av ligningen er <span class="math notranslate nohighlight">\(x = -3\)</span>. Her er <span class="math notranslate nohighlight">\(x = 1\)</span> en rot i telleren og nevneren, som gjør at det ikke er en gyldig del av løsningen fordi vi ikke kan dele på null. <code class="docutils literal notranslate"><span class="pre">sympy</span></code> passer på å sjekke dette for oss slik at vi ikke trenger å tenke oss om!</p>
+<p>som betyr at løsningen av ligningen er <span class="math notranslate nohighlight">\(x = -3\)</span>.</p>
 </div>
 </section>
 </section>
@@ -905,10 +896,15 @@ x^3 - 13x^2 + 52x - 60 = 0.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-ligning">Eksempel 1: Løse en lineær ligning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradsligning">Eksempel 2: Løse en andregradsligning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradsligning">Eksempel 3: Løse en tredjegradsligning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-en-rasjonal-ligning">Eksempel 4: En rasjonal ligning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laeringsmal">Læringsmål</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generell-skrivemate">Generell skrivemåte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempler">Eksempler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-1-lose-en-lineaer-ligning">Eksempel 1: Løse en lineær ligning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-2-lose-en-andregradsligning">Eksempel 2: Løse en andregradsligning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-3-lose-en-tredjegradsligning">Eksempel 3: Løse en tredjegradsligning</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-4-en-rasjonal-ligning">Eksempel 4: En rasjonal ligning</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ovingsoppgaver">Øvingsoppgaver</a><ul class="nav section-nav flex-column">
