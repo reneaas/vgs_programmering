@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matematikk/ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -577,10 +572,10 @@ document.write(`
 <p>La oss se på et litt grunnleggende eksempel for å forstå gangen i det hele. Vi har en liste med navn på måneder, og vi ønsker å skrive ut alle navnene i listen. Vi kan gjøre dette med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">måneder</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;januar&quot;</span><span class="p">,</span> <span class="s2">&quot;februar&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> <span class="s2">&quot;april&quot;</span><span class="p">,</span> <span class="s2">&quot;mai&quot;</span><span class="p">,</span> <span class="s2">&quot;juni&quot;</span><span class="p">]</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="k">for</span> <span class="n">måned</span> <span class="ow">in</span> <span class="n">måneder</span><span class="p">:</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="n">måned</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">måneder</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;januar&quot;</span><span class="p">,</span> <span class="s2">&quot;februar&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> <span class="s2">&quot;april&quot;</span><span class="p">,</span> <span class="s2">&quot;mai&quot;</span><span class="p">,</span> <span class="s2">&quot;juni&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">måned</span> <span class="ow">in</span> <span class="n">måneder</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">måned</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -608,14 +603,14 @@ C = \frac{5}{9}(F - 32).
 <p>La oss se på hvordan vi kan bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke til å konvertere en liste med temperaturer fra Fahrenheit til Celsius:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">temperatur_fahrenheit</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">122</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">212</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">temperatur_celsius</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="k">for</span> <span class="n">F</span> <span class="ow">in</span> <span class="n">temperatur_fahrenheit</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span>
-<span class="linenos">6</span>    <span class="n">temperatur_celsius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">temperatur_celsius</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatur_fahrenheit</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">122</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">212</span><span class="p">]</span>
+<span class="n">temperatur_celsius</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">F</span> <span class="ow">in</span> <span class="n">temperatur_fahrenheit</span><span class="p">:</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span>
+    <span class="n">temperatur_celsius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">temperatur_celsius</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -642,14 +637,14 @@ f(x) = x^2,
 <p>i flere punkter <span class="math notranslate nohighlight">\(x\)</span>. Vi kan lage en liste med <span class="math notranslate nohighlight">\(x\)</span>-verdier, og så bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke til å regne ut funksjonsverdiene i hvert punkt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x_verdier</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">y_verdier</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_verdier</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> 
-<span class="linenos">6</span>    <span class="n">y_verdier</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y_verdier</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_verdier</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y_verdier</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_verdier</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> 
+    <span class="n">y_verdier</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y_verdier</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -672,14 +667,14 @@ f(x) = x^2,
 <h3>Eksempel 4: Skrive ut indeks og element<a class="headerlink" href="#eksempel-4-skrive-ut-indeks-og-element" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">2</span>    <span class="s2">&quot;Merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;Venus&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorda&quot;</span><span class="p">,</span>
-<span class="linenos">3</span>    <span class="s2">&quot;Mars&quot;</span><span class="p">,</span> <span class="s2">&quot;Jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;Saturn&quot;</span><span class="p">,</span>
-<span class="linenos">4</span>    <span class="s2">&quot;Uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;Neptun&quot;</span><span class="p">,</span> <span class="s2">&quot;Pluto&quot;</span>
-<span class="linenos">5</span><span class="p">]</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">planet</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">planeter</span><span class="p">):</span>
-<span class="linenos">8</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">planet</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;Venus&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorda&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mars&quot;</span><span class="p">,</span> <span class="s2">&quot;Jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;Saturn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;Neptun&quot;</span><span class="p">,</span> <span class="s2">&quot;Pluto&quot;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">planet</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">planeter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">planet</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -715,11 +710,11 @@ f(x) = x^2,
 <p>Vi tar opp eksemplet om å konvertere en liste med temperaturer fra Fahrenheit til Celsius. Vi kan gjøre dette med <em>list comprehension</em> på følgende vis:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">temperatur_fahrenheit</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">122</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">212</span><span class="p">]</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="n">temperatur_celsius</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="k">for</span> <span class="n">F</span> <span class="ow">in</span> <span class="n">temperatur_fahrenheit</span><span class="p">]</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">temperatur_celsius</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatur_fahrenheit</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">122</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">212</span><span class="p">]</span>
+
+<span class="n">temperatur_celsius</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="k">for</span> <span class="n">F</span> <span class="ow">in</span> <span class="n">temperatur_fahrenheit</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">temperatur_celsius</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -742,11 +737,11 @@ f(x) = x^2,
 <p>La oss se på eksemplet der vi ønsker å regne ut funksjonsverdiene til <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> en gang til. Vi kan gjøre dette med <em>list comprehension</em> på følgende vis:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x_verdier</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="n">y_verdier</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_verdier</span><span class="p">]</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y_verdier</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_verdier</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="n">y_verdier</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_verdier</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y_verdier</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -763,11 +758,11 @@ f(x) = x^2,
 <p>Med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke hadde vi gjort det slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">tall</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-<span class="linenos">3</span>    <span class="n">tall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tall</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tall</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">tall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tall</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -780,9 +775,9 @@ f(x) = x^2,
 <p>Mens med list comprehension, kan vi gjøre det på én linje slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">tall</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tall</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tall</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tall</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -799,8 +794,8 @@ f(x) = x^2,
 <p>Tenk deg at vi ønsker å lage en liste med kvadrattallene fra 1 til 10. Vi kan gjøre det slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">kvadrattall</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kvadrattall</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kvadrattall</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kvadrattall</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -839,11 +834,11 @@ f(x) = x^2 - 2x + 1.
 <p><em>Ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x_verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="n">funksjonsverdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-<span class="linenos">5</span>    <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">funksjonsverdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -873,8 +868,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x_verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="n">funksjonsverdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_verdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">funksjonsverdier</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -897,8 +892,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Nå som vi har laget listene kan vi bruke <code class="docutils literal notranslate"><span class="pre">zip</span></code>-funksjonen til å hente ut verdiene i listene <em>parvis</em>. Her skal vi bare skrive dem ut for å illustrere hvordan <code class="docutils literal notranslate"><span class="pre">zip</span></code>-funksjonen fungerer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_verdier</span><span class="p">,</span> <span class="n">funksjonsverdier</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_verdier</span><span class="p">,</span> <span class="n">funksjonsverdier</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> ; </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -941,14 +936,14 @@ x = 5 ; y = 16
 <p>Vi ønsker å regne ut gjennomsnittet av <span class="math notranslate nohighlight">\(x\)</span> ved å bruke frekvensene. Dette kan vi gjøre ved å lage to lister, en for <code class="docutils literal notranslate"><span class="pre">x</span></code> og en for <code class="docutils literal notranslate"><span class="pre">frekvens</span></code>, så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zip</span></code>-funksjonen der vi regner ut produktet av <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(f\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">relativ_frekvens</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">5</span><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">relativ_frekvens</span><span class="p">):</span>
-<span class="linenos">6</span>    <span class="n">x_gjennomsnitt</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">r</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x_gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">relativ_frekvens</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+
+<span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">relativ_frekvens</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">r</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x_gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -961,12 +956,12 @@ x = 5 ; y = 16
 <p>Vi kan også løse dette med list comprehension, <code class="docutils literal notranslate"><span class="pre">zip</span></code> og <code class="docutils literal notranslate"><span class="pre">sum</span></code>-funksjonen til Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">relativ_frekvens</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="n">r</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">relativ_frekvens</span><span class="p">)])</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x_gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">relativ_frekvens</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+
+<span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="n">r</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">relativ_frekvens</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x_gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1018,13 +1013,13 @@ x = 5 ; y = 16
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">prosent</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="n">gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">4</span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prosent</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="n">gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prosent</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prosent</span><span class="p">:</span>
+    <span class="n">gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gjennomsnitt</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1095,13 +1090,13 @@ Kodetips for å sjekke om et tall er et primtall<div class="sd-summary-down docu
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">tall</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">2</span>    <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> 
-<span class="linenos">3</span>    <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> 
-<span class="linenos">4</span>    <span class="mi">61</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">92</span>
-<span class="linenos">5</span><span class="p">]</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">primtall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tall</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> 
+    <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> 
+    <span class="mi">61</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">92</span>
+<span class="p">]</span>
+
+<span class="n">primtall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>

@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -538,7 +533,7 @@ I = \int\limits_a^b f(x) \, dx.
 <li><p>Vi kaller lengden til hvert delintervall for <span class="math notranslate nohighlight">\(h\)</span>. Da er <span class="math notranslate nohighlight">\(h = \frac{b - a}{n}\)</span>. Vi kaller også <span class="math notranslate nohighlight">\(x_0 = a\)</span> og <span class="math notranslate nohighlight">\(x_n = b\)</span>.</p></li>
 <li><p>Vi regner ut arealet av trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Vi kaller disse arealene for <span class="math notranslate nohighlight">\(S_i\)</span>.</p></li>
 </ol>
-<p>Se <a class="reference internal" href="#fig-trapesmetoden"><span class="std std-numref">Fig. 10</span></a> for en illustrasjon av trapesmetoden. Her spiller <span class="math notranslate nohighlight">\(h = x_{i+1} - x_i\)</span> rollen som “høyden” i hvert trapes, mens <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> spiller rollen som “sidelengdene”.</p>
+<p>Se <a class="reference internal" href="#fig-trapesmetoden"><span class="std std-numref">Fig. 8</span></a> for en illustrasjon av trapesmetoden. Her spiller <span class="math notranslate nohighlight">\(h = x_{i+1} - x_i\)</span> rollen som “høyden” i hvert trapes, mens <span class="math notranslate nohighlight">\(f(x_i)\)</span> og <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> spiller rollen som “sidelengdene”.</p>
 <p>Tilnærmingen til integralet blir da</p>
 <div class="math notranslate nohighlight">
 \[
@@ -581,7 +576,7 @@ I = \int\limits_a^b f(x) \, dx.
 </section>
 </div><figure class="align-default" id="fig-trapesmetoden">
 <img alt="../../../_images/Integration_num_trapezes_notation.svg" src="../../../_images/Integration_num_trapezes_notation.svg" /><figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Figuren viser en graf av en funksjon <span class="math notranslate nohighlight">\(f\)</span> og trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Laget av Intégration_num_trapèzes.svg: Scalerderivative work: Cdang (talk) - Intégration_num_trapèzes.svg, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=8541370">Wikimedia Commons</a></span><a class="headerlink" href="#fig-trapesmetoden" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Figuren viser en graf av en funksjon <span class="math notranslate nohighlight">\(f\)</span> og trapesene som er avgrenset av grafen til <span class="math notranslate nohighlight">\(f\)</span> og de to linjene <span class="math notranslate nohighlight">\(x = x_i\)</span> og <span class="math notranslate nohighlight">\(x = x_{i+1}\)</span> for hvert delintervall. Laget av Intégration_num_trapèzes.svg: Scalerderivative work: Cdang (talk) - Intégration_num_trapèzes.svg, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=8541370">Wikimedia Commons</a></span><a class="headerlink" href="#fig-trapesmetoden" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip dropdown admonition">
@@ -590,10 +585,10 @@ I = \int\limits_a^b f(x) \, dx.
 <span class="math notranslate nohighlight">\(
 A = \frac{a + b}{2}h
 \)</span>
-der <span class="math notranslate nohighlight">\(h\)</span> er høyden til trapeset, og <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> er sidelengdene. I <a class="reference internal" href="#trapes-areal"><span class="std std-numref">Fig. 11</span></a> ser du et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> for referanse.</p>
+der <span class="math notranslate nohighlight">\(h\)</span> er høyden til trapeset, og <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> er sidelengdene. I <a class="reference internal" href="#trapes-areal"><span class="std std-numref">Fig. 9</span></a> ser du et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> for referanse.</p>
 <figure class="align-default" id="trapes-areal">
 <img alt="../../../_images/Trapezoid.svg" src="../../../_images/Trapezoid.svg" /><figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Figuren viser et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span>. Laget av WikedKentaur - Own work based on: Trapezoid.svg, Public Domain, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=708515">Wikimedia Commons</a></span><a class="headerlink" href="#trapes-areal" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Figuren viser et trapes med høyde <span class="math notranslate nohighlight">\(h\)</span> og sidelengder <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span>. Laget av WikedKentaur - Own work based on: Trapezoid.svg, Public Domain, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=708515">Wikimedia Commons</a></span><a class="headerlink" href="#trapes-areal" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -609,23 +604,23 @@ I = \int\limits_0^2 x^2 \, dx,
 <p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 3</a> slavisk, kan vi skrive en Pythonkode på følgende form:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 2</span>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="linenos"> 6</span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="linenos"> 7</span><span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="linenos"> 8</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="linenos">11</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
-<span class="linenos">12</span>    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="linenos">15</span><span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
+    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -646,23 +641,23 @@ I = \int\limits_0^2 x^2 \, dx,
 <p>ved å bruke trapesmetoden. Følger vi <a class="reference internal" href="#trapesmetoden">Algorithm 3</a> igjen, kan vi koden slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 2</span>    <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 6</span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="linenos"> 7</span><span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="linenos"> 8</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="linenos">11</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
-<span class="linenos">12</span>    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="linenos">15</span><span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span>
+    <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="n">I</span> <span class="o">*=</span> <span class="n">h</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -696,8 +691,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Vi starter fra summen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16a8c8ee-565c-4658-ad83-26048fb03273">
-<span class="eqno">(8)<a class="headerlink" href="#equation-16a8c8ee-565c-4658-ad83-26048fb03273" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a29181dd-47d8-4938-9fb6-437f522aeb10">
+<span class="eqno">(8)<a class="headerlink" href="#equation-a29181dd-47d8-4938-9fb6-437f522aeb10" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\limits_a^b f(x) \, dx &amp; \approx \sum_{i=0}^{n - 1}\frac{f(x_i) + f(x_{i+1})}{2}h \\
 &amp; = \frac{h}{2}\left(f(x_0) + f(x_1) + f(x_1) + f(x_2) + \ldots + f(x_{n-3}) + f(x_{n-2}) + f(x_{n-2}) + f(x_{n-1}) \right) \\
 &amp; = \frac{h}{2}\left(f(x_0) + 2f(x_1) + 2f(x_2) + \ldots + 2f(x_{n-3}) + 2f(x_{n-2}) + f(x_{n-1}) \right) \\
@@ -717,22 +712,22 @@ I = \int\limits_0^1 e^{-x^2} \, dx.
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan hende du må legge til noen linjer med kode.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Trengs for å bruke eksponentialfunksjonen</span>
-<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 3</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 6</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 7</span><span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span><span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span><span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">12</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">13</span>    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">=:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Trengs for å bruke eksponentialfunksjonen</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">N</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">I</span><span class="w"> </span><span class="si">=:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

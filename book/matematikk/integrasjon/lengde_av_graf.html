@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -567,11 +562,11 @@ L \approx \sum_{i=0}^{n - 1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \De
 \]</div>
 </section>
 </div><p>Størrelsen <span class="math notranslate nohighlight">\(\Delta s\)</span> kalles for et <strong>linjeelement</strong> og er et konsept som dukker opp i fysikken i mange sammenhenger.</p>
-<p>I <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 12</span></a> ser du en visualisering av algoritmen.</p>
+<p>I <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 10</span></a> ser du en visualisering av algoritmen.</p>
 <figure class="align-default" id="lengde-graf">
 <img alt="../../../_images/arc_length_illustration.pdf" src="../../../_images/arc_length_illustration.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Visualisering av hvordan man kan estimere lengden til grafen til <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> mellom <span class="math notranslate nohighlight">\(x = 1\)</span> og <span class="math notranslate nohighlight">\(x = 4\)</span> med lengden av hypotenusen til trekantene spent ut av <span class="math notranslate nohighlight">\(\Delta x_i\)</span> og <span class="math notranslate nohighlight">\(\Delta y_i\)</span> som kateter. Her har vi brukt 3 segmenter.</span><a class="headerlink" href="#lengde-graf" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Visualisering av hvordan man kan estimere lengden til grafen til <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> mellom <span class="math notranslate nohighlight">\(x = 1\)</span> og <span class="math notranslate nohighlight">\(x = 4\)</span> med lengden av hypotenusen til trekantene spent ut av <span class="math notranslate nohighlight">\(\Delta x_i\)</span> og <span class="math notranslate nohighlight">\(\Delta y_i\)</span> som kateter. Her har vi brukt 3 segmenter.</span><a class="headerlink" href="#lengde-graf" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="eksempel-1">
@@ -581,31 +576,31 @@ L \approx \sum_{i=0}^{n - 1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \De
 \[
 f(x) = x^2
 \]</div>
-<p>på intervallet <span class="math notranslate nohighlight">\([1, 4]\)</span> slik som i <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 12</span></a>. Vi skal bruke <span class="math notranslate nohighlight">\(n = 100\)</span> punkter i stedet for <span class="math notranslate nohighlight">\(n = 4\)</span> som i figuren.</p>
+<p>på intervallet <span class="math notranslate nohighlight">\([1, 4]\)</span> slik som i <a class="reference internal" href="#lengde-graf"><span class="std std-numref">Fig. 10</span></a>. Vi skal bruke <span class="math notranslate nohighlight">\(n = 100\)</span> punkter i stedet for <span class="math notranslate nohighlight">\(n = 4\)</span> som i figuren.</p>
 <p>Vi kan kode dette slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="c1"># Definerer intervallet [a, b] og antall punkter n</span>
-<span class="linenos"> 7</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 8</span><span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="linenos"> 9</span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="linenos">10</span><span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Steglengde Δx</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">13</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">14</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span>
-<span class="linenos">15</span>    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
-<span class="linenos">16</span>    
-<span class="linenos">17</span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span> <span class="c1"># Legger til Δs til den totale lengden</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Definerer intervallet [a, b] og antall punkter n</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Steglengde Δx</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span> <span class="c1"># Legger til Δs til den totale lengden</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -626,26 +621,26 @@ g(x) = \sqrt{1 + \cos^2(x)}, \quad x \in [0, 2\pi].
 <p>La oss bruke <span class="math notranslate nohighlight">\(n = 1001\)</span> punkter (1000 delintervaller). En kode som løser dette kan se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="c1"># Definerer intervallet [a, b] og antall punkter n</span>
-<span class="linenos"> 7</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 8</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="linenos"> 9</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="linenos">10</span><span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">13</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">14</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span>
-<span class="linenos">15</span>    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
-<span class="linenos">16</span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Definerer intervallet [a, b] og antall punkter n</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δx</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -725,14 +720,14 @@ L \approx \sum_{i=0}^{n-1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \Delt
 </section>
 <section id="eksempel-3">
 <h3>Eksempel 3<a class="headerlink" href="#eksempel-3" title="Permalink to this heading">#</a></h3>
-<p>En arkimedisk spiral (oppkalt etter den greske matematikeren Arkimedes fra antikkens Hellas) er en kurve som er vist i <a class="reference internal" href="#archimedean-spiral"><span class="std std-numref">Fig. 13</span></a>.</p>
+<p>En arkimedisk spiral (oppkalt etter den greske matematikeren Arkimedes fra antikkens Hellas) er en kurve som er vist i <a class="reference internal" href="#archimedean-spiral"><span class="std std-numref">Fig. 11</span></a>.</p>
 <figure class="align-default" id="archimedean-spiral">
 <img alt="../../../_images/archimedean_spiral.pdf" src="../../../_images/archimedean_spiral.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">En arkimedisk spiral.</span><a class="headerlink" href="#archimedean-spiral" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">En arkimedisk spiral.</span><a class="headerlink" href="#archimedean-spiral" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Den arkimediske spiralen i <a class="reference internal" href="#archimedean-spiral"><span class="std std-numref">Fig. 13</span></a> er gitt ved parametriseringen</p>
+<p>Den arkimediske spiralen i <a class="reference internal" href="#archimedean-spiral"><span class="std std-numref">Fig. 11</span></a> er gitt ved parametriseringen</p>
 <div class="math notranslate nohighlight">
 \[
 \vec{r}(t) = \left[t\cos(t), t\sin(t)\right], \quad t \in [0, 4\pi].
@@ -741,32 +736,32 @@ L \approx \sum_{i=0}^{n-1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \Delt
 <p>En kode som løser dette kan se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">t</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="k">return</span> <span class="n">t</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">12</span><span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> 
-<span class="linenos">13</span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="linenos">14</span><span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δt</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">17</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># går til n - 1 fordi vi trenger t + dt til å være siste tidspunkt</span>
-<span class="linenos">18</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
-<span class="linenos">19</span>    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δx</span>
-<span class="linenos">20</span>    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δy</span>
-<span class="linenos">21</span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> 
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δt</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># går til n - 1 fordi vi trenger t + dt til å være siste tidspunkt</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -779,14 +774,14 @@ L \approx \sum_{i=0}^{n-1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \Delt
 </section>
 <section id="eksempel-4">
 <h3>Eksempel 4<a class="headerlink" href="#eksempel-4" title="Permalink to this heading">#</a></h3>
-<p>En <em>heliks</em> er en kurve som beveger seg langs randen av en sylinder. Et eksempel på der denne kurven dukker opp i naturen er når ladde partikler fra solstormer følger jordens magnetfelt inn mot polene! I <a class="reference internal" href="#helix"><span class="std std-numref">Fig. 14</span></a> ser vi en skisse av en heliks.</p>
+<p>En <em>heliks</em> er en kurve som beveger seg langs randen av en sylinder. Et eksempel på der denne kurven dukker opp i naturen er når ladde partikler fra solstormer følger jordens magnetfelt inn mot polene! I <a class="reference internal" href="#helix"><span class="std std-numref">Fig. 12</span></a> ser vi en skisse av en heliks.</p>
 <figure class="align-default" id="helix">
 <img alt="../../../_images/helix.pdf" src="../../../_images/helix.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">En tre-dimensjonal heliks. Pilhoder er tegnet inn for å indikere retningen til heliksen i rommet.</span><a class="headerlink" href="#helix" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">En tre-dimensjonal heliks. Pilhoder er tegnet inn for å indikere retningen til heliksen i rommet.</span><a class="headerlink" href="#helix" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Heliksen i <a class="reference internal" href="#helix"><span class="std std-numref">Fig. 14</span></a> er beskrevet av parametriseringen</p>
+<p>Heliksen i <a class="reference internal" href="#helix"><span class="std std-numref">Fig. 12</span></a> er beskrevet av parametriseringen</p>
 <div class="math notranslate nohighlight">
 \[
 \vec{r}(t) = \left[\cos(t), \sin(t), t\right], \quad t \in [0, 10\pi].
@@ -794,42 +789,42 @@ L \approx \sum_{i=0}^{n-1} \Delta s_i = \Delta s_0 + \Delta s_1 + \ldots + \Delt
 <p>Vi kan bruke metoden med linjeelementer til å finne lengden av heliksen på følgende måte:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos">12</span>    <span class="k">return</span> <span class="n">t</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Startverdien til t</span>
-<span class="linenos">16</span><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># Sluttverdien til t</span>
-<span class="linenos">17</span><span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># antall linjeelementer</span>
-<span class="linenos">18</span><span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δt</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">21</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">22</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span> <span class="c1"># Regn ut t-verdien</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span>    <span class="c1"># Regn ut katetene i 3-dimensjonal trekant</span>
-<span class="linenos">25</span>    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δx</span>
-<span class="linenos">26</span>    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δy</span>
-<span class="linenos">27</span>    <span class="n">dz</span> <span class="o">=</span> <span class="n">z</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">z</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δz</span>
-<span class="linenos">28</span>
-<span class="linenos">29</span>    <span class="c1"># Regn ut hypotenusen</span>
-<span class="linenos">30</span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
-<span class="linenos">31</span>
-<span class="linenos">32</span>    <span class="c1"># Legg til bidraget til lengden</span>
-<span class="linenos">33</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
-<span class="linenos">34</span>
-<span class="linenos">35</span>
-<span class="linenos">36</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Startverdien til t</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># Sluttverdien til t</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># antall linjeelementer</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span> <span class="c1"># Δt</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span> <span class="c1"># Regn ut t-verdien</span>
+
+    <span class="c1"># Regn ut katetene i 3-dimensjonal trekant</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δy</span>
+    <span class="n">dz</span> <span class="o">=</span> <span class="n">z</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span> <span class="o">-</span> <span class="n">z</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Δz</span>
+
+    <span class="c1"># Regn ut hypotenusen</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Δs</span>
+
+    <span class="c1"># Legg til bidraget til lengden</span>
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="n">ds</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -854,26 +849,26 @@ f(x) = e^{-x}x^2 \quad \text{for} \quad x \in [0, 2],
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="c1"># Definer intervallet, antall punkter og steglengde</span>
-<span class="linenos"> 7</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span><span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">13</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">14</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># x_i</span>
-<span class="linenos">15</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
-<span class="linenos">16</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="c1"># Definer intervallet, antall punkter og steglengde</span>
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># x_i</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -924,25 +919,25 @@ g(x) = \sqrt{1 - x^2}, \quad x \in [-1, 1].
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 7</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span><span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="n">pi</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">12</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">13</span>    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
-<span class="linenos">14</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
-<span class="linenos">15</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>    <span class="n">pi</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pi</span><span class="w"> </span><span class="si">= :</span><span class="s2">.7f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">h</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">pi</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pi</span><span class="w"> </span><span class="si">= :</span><span class="s2">.7f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -989,41 +984,41 @@ Løsningsforslag<div class="sd-summary-down docutils">
 \[
 f(x) = 2.5x^3 - 34.7x^2 + 120x + 530, \quad x \in [0, 10],
 \]</div>
-<p>der <span class="math notranslate nohighlight">\(x\)</span> er målt i antall kilometer i luftlinje og <span class="math notranslate nohighlight">\(f\)</span> beskriver høyden i meter over havet. I <a class="reference internal" href="#ski-race"><span class="std std-numref">Fig. 15</span></a>` ser du en skisse av høydeprofilen.</p>
+<p>der <span class="math notranslate nohighlight">\(x\)</span> er målt i antall kilometer i luftlinje og <span class="math notranslate nohighlight">\(f\)</span> beskriver høyden i meter over havet. I <a class="reference internal" href="#ski-race"><span class="std std-numref">Fig. 13</span></a>` ser du en skisse av høydeprofilen.</p>
 <figure class="align-default" id="ski-race">
 <img alt="../../../_images/ski_race.pdf" src="../../../_images/ski_race.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Skisse av høydeprofilen til en VM-løypa. Løypa er 10 km lang i luftlinje. <span class="math notranslate nohighlight">\(x\)</span>-aksen er målt i kilometer og <span class="math notranslate nohighlight">\(y\)</span>-aksen er målt i meter over havet.</span><a class="headerlink" href="#ski-race" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Skisse av høydeprofilen til en VM-løypa. Løypa er 10 km lang i luftlinje. <span class="math notranslate nohighlight">\(x\)</span>-aksen er målt i kilometer og <span class="math notranslate nohighlight">\(y\)</span>-aksen er målt i meter over havet.</span><a class="headerlink" href="#ski-race" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Estimer hvor lang løypa er med metodene beskrevet i <a class="reference internal" href="#lengde_av_graf">Theorem 3</a>.</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Husk at <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(f(x)\)</span> har forskjellige enheter når du regner ut lengden.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="c1"># Definer intervallet, antall punkter og steglengden.</span>
-<span class="linenos"> 7</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span><span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">13</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">14</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># x_i</span>
-<span class="linenos">15</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>    <span class="c1"># Husk at dx er målt i kilometer</span>
-<span class="linenos">18</span>    <span class="c1"># Mens dy er målt i meter</span>
-<span class="linenos">19</span>    <span class="c1"># Du må konvertere dx til meter! </span>
-<span class="linenos">20</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span>    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="c1"># Definer intervallet, antall punkter og steglengden.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># x_i</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+
+    <span class="c1"># Husk at dx er målt i kilometer</span>
+    <span class="c1"># Mens dy er målt i meter</span>
+    <span class="c1"># Du må konvertere dx til meter! </span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1069,7 +1064,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <figure class="align-default" id="cycloid">
 <img alt="../../../_images/Cycloid.gif" src="../../../_images/Cycloid.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Animasjon av hvordan kurven til en sykloide dannes. Den rød kurven er sykloiden. Laget av Zorgit, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=4552689">Wikimedia Commons</a>.</span><a class="headerlink" href="#cycloid" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Animasjon av hvordan kurven til en sykloide dannes. Den rød kurven er sykloiden. Laget av Zorgit, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=4552689">Wikimedia Commons</a>.</span><a class="headerlink" href="#cycloid" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Kurven med et hjul som har radius lik 1, og som ruller langs den positive <span class="math notranslate nohighlight">\(x\)</span>-aksen, kan beskrives med parametriseringen</p>
@@ -1082,31 +1077,31 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi på intervallet</span>
-<span class="linenos">10</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sluttverdi på intervallet</span>
-<span class="linenos">11</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall intervaller</span>
-<span class="linenos">12</span><span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δt</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="linenos">15</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">16</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># t-verdien</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
-<span class="linenos">19</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
-<span class="linenos">20</span>    
-<span class="linenos">21</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi på intervallet</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sluttverdi på intervallet</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall intervaller</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δt</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># t-verdien</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1153,11 +1148,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-5">
 <h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
-<p>En logaritmisk spiral er vist i <a class="reference internal" href="#logarithmic-spiral"><span class="std std-numref">Fig. 17</span></a>.</p>
+<p>En logaritmisk spiral er vist i <a class="reference internal" href="#logarithmic-spiral"><span class="std std-numref">Fig. 15</span></a>.</p>
 <figure class="align-default" id="logarithmic-spiral">
 <img alt="../../../_images/logarithmic_spiral.pdf" src="../../../_images/logarithmic_spiral.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">En logaritmisk spiral.</span><a class="headerlink" href="#logarithmic-spiral" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">En logaritmisk spiral.</span><a class="headerlink" href="#logarithmic-spiral" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>En parametrisering av denne kurven er gitt ved</p>
@@ -1169,31 +1164,31 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">11</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span><span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># steglengde Δt</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">15</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">16</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
-<span class="linenos">19</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># steglengde Δt</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1240,11 +1235,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-6">
 <h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
-<p><em>Bernoullis Lemniskate</em> er en lukket sløyfe som kan sies å likne på et liggende åttetall eller på et <span class="math notranslate nohighlight">\(\infty\)</span>-symbol. Kurven vises i <a class="reference internal" href="#lemniscate-of-bernoulli"><span class="std std-numref">Fig. 18</span></a></p>
+<p><em>Bernoullis Lemniskate</em> er en lukket sløyfe som kan sies å likne på et liggende åttetall eller på et <span class="math notranslate nohighlight">\(\infty\)</span>-symbol. Kurven vises i <a class="reference internal" href="#lemniscate-of-bernoulli"><span class="std std-numref">Fig. 16</span></a></p>
 <figure class="align-center" id="lemniscate-of-bernoulli">
 <img alt="../../../_images/lemniscate_of_bernoulli.pdf" src="../../../_images/lemniscate_of_bernoulli.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Figuren viser Bernoullis lemniskate.</span><a class="headerlink" href="#lemniscate-of-bernoulli" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Figuren viser Bernoullis lemniskate.</span><a class="headerlink" href="#lemniscate-of-bernoulli" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Kurven kan parametriseres med</p>
@@ -1256,33 +1251,33 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="c1"># x-komponenten til parametriseringen</span>
-<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 5</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="c1"># y-komponenten til parametriseringen</span>
-<span class="linenos"> 9</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos">10</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>  <span class="c1"># Startverdi for t</span>
-<span class="linenos">13</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># sluttverdi for t</span>
-<span class="linenos">14</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># antall intervaller</span>
-<span class="linenos">15</span><span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># steglengde Δt</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">18</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">19</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut t-verdien</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span>    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δx</span>
-<span class="linenos">22</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δy</span>
-<span class="linenos">23</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δs</span>
-<span class="linenos">24</span>    
-<span class="linenos">25</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># legg til bidraget </span>
-<span class="linenos">26</span>
-<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># x-komponenten til parametriseringen</span>
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="c1"># y-komponenten til parametriseringen</span>
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>  <span class="c1"># Startverdi for t</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># sluttverdi for t</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># antall intervaller</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># steglengde Δt</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut t-verdien</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δy</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δs</span>
+    
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span> <span class="c1"># legg til bidraget </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1331,14 +1326,14 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-7">
 <h3>Oppgave 7<a class="headerlink" href="#oppgave-7" title="Permalink to this heading">#</a></h3>
-<p>En <em>astroide</em> i matematikken er en kurve som genereres ved at en sirkel ruller på innsiden av en annen sirkel og gjennomfører en full rotasjon per kvadrant. I <a class="reference internal" href="#astroid"><span class="std std-numref">Fig. 19</span></a> kan du se hvordan kurven lages og ser ut.</p>
+<p>En <em>astroide</em> i matematikken er en kurve som genereres ved at en sirkel ruller på innsiden av en annen sirkel og gjennomfører en full rotasjon per kvadrant. I <a class="reference internal" href="#astroid"><span class="std std-numref">Fig. 17</span></a> kan du se hvordan kurven lages og ser ut.</p>
 <figure class="align-default" id="astroid">
 <img alt="../../../_images/astroid.gif" src="../../../_images/astroid.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">En astroide. Den røde kurven er astroiden. Laget av Sam Derbyshire - English Wikipedia, Public Domain, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=4361393">Wikimedia Commons</a></span><a class="headerlink" href="#astroid" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">En astroide. Den røde kurven er astroiden. Laget av Sam Derbyshire - English Wikipedia, Public Domain, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=4361393">Wikimedia Commons</a></span><a class="headerlink" href="#astroid" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Parametriseringen av kurven i <a class="reference internal" href="#astroid"><span class="std std-numref">Fig. 19</span></a> er gitt ved</p>
+<p>Parametriseringen av kurven i <a class="reference internal" href="#astroid"><span class="std std-numref">Fig. 17</span></a> er gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
 \vec{r}(t) = \left[\cos^3(t), \sin^3(t)\right], \qquad t \in [0, 2\pi].
@@ -1347,31 +1342,31 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">11</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span><span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="linenos">15</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">16</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
-<span class="linenos">19</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
-<span class="linenos">20</span>    
-<span class="linenos">21</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1422,7 +1417,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <figure class="align-default" id="deltoide">
 <img alt="../../../_images/deltoid.gif" src="../../../_images/deltoid.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Animasjon som viser hvordan en deltoide genereres. Den røde kurven er <em>deltoiden</em>. Av Sam Derbyshiret ved English Wikipedia, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=10784089">Wikimedia Commons</a></span><a class="headerlink" href="#deltoide" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Animasjon som viser hvordan en deltoide genereres. Den røde kurven er <em>deltoiden</em>. Av Sam Derbyshiret ved English Wikipedia, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=10784089">Wikimedia Commons</a></span><a class="headerlink" href="#deltoide" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>En deltoide er beskrevet av parametriseringen</p>
@@ -1434,31 +1429,31 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 7</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">11</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span><span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="linenos">15</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">16</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span>    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
-<span class="linenos">19</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
-<span class="linenos">20</span>    
-<span class="linenos">21</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δy</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δs</span>
+
+    <span class="n">lengde</span> <span class="o">+=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1466,11 +1461,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </section>
 <section id="oppgave-9">
 <h3>Oppgave 9<a class="headerlink" href="#oppgave-9" title="Permalink to this heading">#</a></h3>
-<p>Den internasjonale romstasjonen (ISS) går i bane rundt jorda med en fart på ca. 7.7 km/s. En tilnærming til banen dens er gitt ved kurven som er vist i <a class="reference internal" href="#trefoil-knot"><span class="std std-numref">Fig. 21</span></a>.</p>
+<p>Den internasjonale romstasjonen (ISS) går i bane rundt jorda med en fart på ca. 7.7 km/s. En tilnærming til banen dens er gitt ved kurven som er vist i <a class="reference internal" href="#trefoil-knot"><span class="std std-numref">Fig. 19</span></a>.</p>
 <figure class="align-default" id="trefoil-knot">
 <img alt="../../../_images/trefoil_knot.pdf" src="../../../_images/trefoil_knot.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">En tilnærming til den interasjonale romstasjonens bane rundt jorden. Kurven er en <em>perturbert trekløverknute</em> (hvis en matematiker leser denne påstanden, <em>please forgive this transgression</em> 🙃).</span><a class="headerlink" href="#trefoil-knot" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">En tilnærming til den interasjonale romstasjonens bane rundt jorden. Kurven er en <em>perturbert trekløverknute</em> (hvis en matematiker leser denne påstanden, <em>please forgive this transgression</em> 🙃).</span><a class="headerlink" href="#trefoil-knot" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Banen representer to fulle omløp rundt jorden.</p>
@@ -1486,44 +1481,44 @@ z(t) &amp; = r\sin(3t) + d\cos(t),
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">R</span> <span class="o">=</span> <span class="mi">6371</span> <span class="c1"># Jordens radius i km</span>
-<span class="linenos"> 4</span><span class="n">r</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># Banens radius i km</span>
-<span class="linenos"> 5</span><span class="n">d</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># Fluktuasjon i km</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos">11</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="linenos">14</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi for parameteren t</span>
-<span class="linenos">17</span><span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sluttverdi for parameteren t</span>
-<span class="linenos">18</span><span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall linjeelementer</span>
-<span class="linenos">19</span><span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δt</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">22</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos">23</span>    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut parameteren</span>
-<span class="linenos">24</span>    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δx</span>
-<span class="linenos">25</span>    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δy</span>
-<span class="linenos">26</span>    <span class="n">dz</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δz</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span>    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δs</span>
-<span class="linenos">29</span>
-<span class="linenos">30</span>    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">31</span>
-<span class="linenos">32</span><span class="n">fart</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Farten i km/s</span>
-<span class="linenos">33</span>
-<span class="linenos">34</span><span class="n">periode</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Tiden i sekunder</span>
-<span class="linenos">35</span><span class="n">periode</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Tiden i minutter</span>
-<span class="linenos">36</span><span class="n">periode</span> <span class="o">/=</span> <span class="mi">2</span> <span class="c1"># Del på 2 fordi det er to omløp</span>
-<span class="linenos">37</span>
-<span class="linenos">38</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">periode</span><span class="w"> </span><span class="si">= }</span><span class="s2"> minutter.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">R</span> <span class="o">=</span> <span class="mi">6371</span> <span class="c1"># Jordens radius i km</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># Banens radius i km</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># Fluktuasjon i km</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi for parameteren t</span>
+<span class="n">b</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Sluttverdi for parameteren t</span>
+<span class="n">n</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Antall linjeelementer</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Δt</span>
+
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut parameteren</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δx</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δy</span>
+    <span class="n">dz</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δz</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut Δs</span>
+
+    <span class="n">lengde</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">fart</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Farten i km/s</span>
+
+<span class="n">periode</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Tiden i sekunder</span>
+<span class="n">periode</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Tiden i minutter</span>
+<span class="n">periode</span> <span class="o">/=</span> <span class="mi">2</span> <span class="c1"># Del på 2 fordi det er to omløp</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">periode</span><span class="w"> </span><span class="si">= }</span><span class="s2"> minutter.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

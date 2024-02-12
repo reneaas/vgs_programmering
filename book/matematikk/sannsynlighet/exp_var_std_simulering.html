@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -625,26 +620,26 @@ E(X) = 7/2 = 3.5
 Følger vi algoritmen stegvis med Pythonkode, kan vi få noe som dette:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="linenos"> 4</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X)</span>
-<span class="linenos"> 5</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X^2)</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Et terningkast x</span>
-<span class="linenos"> 9</span>    <span class="n">X_forventning</span> <span class="o">+=</span> <span class="n">x</span> <span class="c1"># E(X) = E(X) + x</span>
-<span class="linenos">10</span>    <span class="n">X_kvadrat_forventning</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># E(X^2) = E(X^2) + x^2</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">X_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
-<span class="linenos">13</span><span class="n">X_kvadrat_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X^2) --&gt; E(X^2) / n</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="n">X_varians</span> <span class="o">=</span> <span class="n">X_kvadrat_forventning</span> <span class="o">-</span> <span class="n">X_forventning</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Var(X)</span>
-<span class="linenos">16</span><span class="n">X_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X_varians</span><span class="p">)</span> <span class="c1"># Standardavvik SD(X) = sqrt(Var(X))</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">19</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X)</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X^2)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Et terningkast x</span>
+    <span class="n">X_forventning</span> <span class="o">+=</span> <span class="n">x</span> <span class="c1"># E(X) = E(X) + x</span>
+    <span class="n">X_kvadrat_forventning</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># E(X^2) = E(X^2) + x^2</span>
+
+<span class="n">X_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X^2) --&gt; E(X^2) / n</span>
+
+<span class="n">X_varians</span> <span class="o">=</span> <span class="n">X_kvadrat_forventning</span> <span class="o">-</span> <span class="n">X_forventning</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Var(X)</span>
+<span class="n">X_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X_varians</span><span class="p">)</span> <span class="c1"># Standardavvik SD(X) = sqrt(Var(X))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -673,28 +668,28 @@ E(X) = 7,
 <p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 10</a>. Følger vi algoritmen stegvis med Pythonkode, kan vi få noe som dette:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="linenos"> 4</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X)</span>
-<span class="linenos"> 5</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X^2)</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Terning 1</span>
-<span class="linenos"> 9</span>    <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Terning 2</span>
-<span class="linenos">10</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="c1"># Summen av terningkastene</span>
-<span class="linenos">11</span>    <span class="n">X_forventning</span> <span class="o">+=</span> <span class="n">x</span> <span class="c1"># E(X) = E(X) + x</span>
-<span class="linenos">12</span>    <span class="n">X_kvadrat_forventning</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># E(X^2) = E(X^2) + x^2</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">X_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
-<span class="linenos">15</span><span class="n">X_kvadrat_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X^2) --&gt; E(X^2) / n</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="n">X_varians</span> <span class="o">=</span> <span class="n">X_kvadrat_forventning</span> <span class="o">-</span> <span class="n">X_forventning</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Var(X)</span>
-<span class="linenos">18</span><span class="n">X_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X_varians</span><span class="p">)</span> <span class="c1"># Standardavvik SD(X) = sqrt(Var(X))</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">21</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">22</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X)</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X^2)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Terning 1</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Terning 2</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="c1"># Summen av terningkastene</span>
+    <span class="n">X_forventning</span> <span class="o">+=</span> <span class="n">x</span> <span class="c1"># E(X) = E(X) + x</span>
+    <span class="n">X_kvadrat_forventning</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># E(X^2) = E(X^2) + x^2</span>
+
+<span class="n">X_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X^2) --&gt; E(X^2) / n</span>
+
+<span class="n">X_varians</span> <span class="o">=</span> <span class="n">X_kvadrat_forventning</span> <span class="o">-</span> <span class="n">X_forventning</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Var(X)</span>
+<span class="n">X_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X_varians</span><span class="p">)</span> <span class="c1"># Standardavvik SD(X) = sqrt(Var(X))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -732,42 +727,42 @@ X_std = 2.411
 <p>Vi kan tilnærme disse verdiene gjennom simulering med <a class="reference internal" href="#algo-forventning-varians-std">Algorithm 10</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="linenos"> 4</span><span class="n">p_gutt</span> <span class="o">=</span> <span class="mf">0.2</span> 
-<span class="linenos"> 5</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X)</span>
-<span class="linenos"> 6</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X^2)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">gutt_forventning</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="linenos"> 9</span><span class="n">gutt_standardavvik</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="linenos">10</span><span class="n">jente_forventning</span> <span class="o">=</span> <span class="mi">70</span>
-<span class="linenos">11</span><span class="n">jente_standardavvik</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos">14</span>    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_gutt</span><span class="p">)</span> <span class="c1"># 1 = gutt, 0 = jente</span>
-<span class="linenos">15</span>    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis det er gutt</span>
-<span class="linenos">16</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
-<span class="linenos">17</span>            <span class="n">loc</span><span class="o">=</span><span class="n">gutt_forventning</span><span class="p">,</span> 
-<span class="linenos">18</span>            <span class="n">scale</span><span class="o">=</span><span class="n">gutt_standardavvik</span><span class="p">,</span>
-<span class="linenos">19</span>        <span class="p">)</span>
-<span class="linenos">20</span>    <span class="k">else</span><span class="p">:</span> <span class="c1"># Hvis det er jente</span>
-<span class="linenos">21</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
-<span class="linenos">22</span>            <span class="n">loc</span><span class="o">=</span><span class="n">jente_forventning</span><span class="p">,</span>
-<span class="linenos">23</span>            <span class="n">scale</span><span class="o">=</span><span class="n">jente_standardavvik</span><span class="p">,</span>
-<span class="linenos">24</span>        <span class="p">)</span>
-<span class="linenos">25</span>    <span class="n">X_forventning</span> <span class="o">+=</span> <span class="n">x</span> <span class="c1"># E(X) = E(X) + x</span>
-<span class="linenos">26</span>    <span class="n">X_kvadrat_forventning</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># E(X^2) = E(X^2) + x^2</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span><span class="n">X_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
-<span class="linenos">29</span><span class="n">X_kvadrat_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X^2) --&gt; E(X^2) / n</span>
-<span class="linenos">30</span>
-<span class="linenos">31</span><span class="n">X_varians</span> <span class="o">=</span> <span class="n">X_kvadrat_forventning</span> <span class="o">-</span> <span class="n">X_forventning</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Var(X)</span>
-<span class="linenos">32</span><span class="n">X_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X_varians</span><span class="p">)</span> <span class="c1"># Standardavvik SD(X) = sqrt(Var(X))</span>
-<span class="linenos">33</span>
-<span class="linenos">34</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">35</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">36</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">p_gutt</span> <span class="o">=</span> <span class="mf">0.2</span> 
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X)</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># E(X^2)</span>
+
+<span class="n">gutt_forventning</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">gutt_standardavvik</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">jente_forventning</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">jente_standardavvik</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_gutt</span><span class="p">)</span> <span class="c1"># 1 = gutt, 0 = jente</span>
+    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Hvis det er gutt</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+            <span class="n">loc</span><span class="o">=</span><span class="n">gutt_forventning</span><span class="p">,</span> 
+            <span class="n">scale</span><span class="o">=</span><span class="n">gutt_standardavvik</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># Hvis det er jente</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+            <span class="n">loc</span><span class="o">=</span><span class="n">jente_forventning</span><span class="p">,</span>
+            <span class="n">scale</span><span class="o">=</span><span class="n">jente_standardavvik</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">X_forventning</span> <span class="o">+=</span> <span class="n">x</span> <span class="c1"># E(X) = E(X) + x</span>
+    <span class="n">X_kvadrat_forventning</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># E(X^2) = E(X^2) + x^2</span>
+
+<span class="n">X_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">/=</span> <span class="n">n_forsøk</span> <span class="c1"># E(X^2) --&gt; E(X^2) / n</span>
+
+<span class="n">X_varians</span> <span class="o">=</span> <span class="n">X_kvadrat_forventning</span> <span class="o">-</span> <span class="n">X_forventning</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Var(X)</span>
+<span class="n">X_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X_varians</span><span class="p">)</span> <span class="c1"># Standardavvik SD(X) = sqrt(Var(X))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -790,31 +785,31 @@ X_std = 14.689
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="linenos"> 4</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 5</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="n">x1</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 9</span>    <span class="n">x2</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span>    <span class="n">x3</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span>    <span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">15</span>    <span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="n">X_varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">21</span><span class="n">X_std</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">24</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">25</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">x3</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">X_varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_std</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -869,34 +864,34 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan være du må legge til noen linjer med kode for å løse oppgaven</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 4</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="c1"># Sjekk om en tilfeldig person er gutt eller jente</span>
-<span class="linenos"> 9</span>    <span class="n">elev</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span>    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">11</span>        <span class="c1"># Hvis det er gutt</span>
-<span class="linenos">12</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">13</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">14</span>        <span class="c1"># Hvis det er jente</span>
-<span class="linenos">15</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span>    
-<span class="linenos">17</span>    <span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span>    <span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">21</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span><span class="n">X_varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">24</span><span class="n">X_std</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">28</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="c1"># Sjekk om en tilfeldig person er gutt eller jente</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="n">elev</span> <span class="o">==</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="c1"># Hvis det er gutt</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Hvis det er jente</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    
+    <span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">X_varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_std</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -964,34 +959,34 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må minst fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 4</span><span class="n">forventet_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span><span class="n">forventet_kvadrert_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 6</span><span class="n">innsats</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 9</span>    <span class="n">terningkast</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span>    <span class="k">if</span> <span class="n">terningkast</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-<span class="linenos">11</span>        <span class="n">gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span>    <span class="k">elif</span> <span class="n">terningkast</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">terningkast</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-<span class="linenos">13</span>        <span class="n">gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">14</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">15</span>        <span class="n">gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>    <span class="n">forventet_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span>    <span class="n">forventet_kvadrert_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="n">forventet_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">21</span><span class="n">forventet_kvadrert_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span><span class="n">varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">24</span><span class="n">standardavvik</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">forventet_gevinst</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">27</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">28</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">standardavvik</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">forventet_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">forventet_kvadrert_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">innsats</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">terningkast</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">if</span> <span class="n">terningkast</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">elif</span> <span class="n">terningkast</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">terningkast</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">forventet_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">forventet_kvadrert_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">forventet_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">forventet_kvadrert_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">standardavvik</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">forventet_gevinst</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">standardavvik</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1073,10 +1068,10 @@ Løsningsforslag<div class="sd-summary-down docutils">
 </details></section>
 <section id="oppgave-4-europeisk-rulett">
 <h3>Oppgave 4: Europeisk Rulett<a class="headerlink" href="#oppgave-4-europeisk-rulett" title="Permalink to this heading">#</a></h3>
-<p>Europeisk rulett er et spill der en kule droppes ut på et roterende hjul og lander på én av 37 mulige posisjoner. Hjulet er delt inn i 37 like store sektorer, nummerert fra 0 til 36. Sektor 0 er grønn, og de andre sektorene er enten røde eller svarte. Hvis du satser på en farge og kula lander på en sektor med den fargen, så får du tilbake dobbelt så mye som du satset. Hvis du satser på et tall og kula lander på den sektoren, så får du tilbake 36 ganger så mye som du satset. Hvis du satser på noe annet, så taper du innsatsen din. <a class="reference internal" href="#european-roulette"><span class="std std-numref">Fig. 22</span></a> viser et eksempel på et europeisk ruletthjul.</p>
+<p>Europeisk rulett er et spill der en kule droppes ut på et roterende hjul og lander på én av 37 mulige posisjoner. Hjulet er delt inn i 37 like store sektorer, nummerert fra 0 til 36. Sektor 0 er grønn, og de andre sektorene er enten røde eller svarte. Hvis du satser på en farge og kula lander på en sektor med den fargen, så får du tilbake dobbelt så mye som du satset. Hvis du satser på et tall og kula lander på den sektoren, så får du tilbake 36 ganger så mye som du satset. Hvis du satser på noe annet, så taper du innsatsen din. <a class="reference internal" href="#european-roulette"><span class="std std-numref">Fig. 20</span></a> viser et eksempel på et europeisk ruletthjul.</p>
 <figure class="align-default" id="european-roulette">
 <img alt="../../../_images/European_roulette.svg" src="../../../_images/European_roulette.svg" /><figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Europeisk rulett med nummererte sektorer. Hentet fra <a class="reference external" href="https://no.wikipedia.org/wiki/Rulett#/media/Fil:European_roulette.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#european-roulette" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Europeisk rulett med nummererte sektorer. Hentet fra <a class="reference external" href="https://no.wikipedia.org/wiki/Rulett#/media/Fil:European_roulette.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#european-roulette" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Anta at du spiller europeisk rulett med en innsats på 10 kr. Anta du kun satser på røde sektorer. Skriv en Pythonkode der du regner ut en tilnærming til forventet nettogevinst samt variansen og standardavviket til nettogevinsten.</p>
@@ -1092,27 +1087,27 @@ Kodehint<div class="sd-summary-down docutils">
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 4</span><span class="n">forventet_netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span><span class="n">innsats</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># kroner</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 8</span>    <span class="n">sektor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">38</span><span class="p">)</span> <span class="c1"># tall mellom 0 og 37</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Hvis sektoren er 0´</span>
-<span class="linenos">11</span>        <span class="n">netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span>    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Hvis det er en rød sektor</span>
-<span class="linenos">13</span>        <span class="n">netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">14</span>    <span class="k">else</span><span class="p">:</span> <span class="c1"># Hvis det er en svart sektor</span>
-<span class="linenos">15</span>        <span class="n">netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>    <span class="n">forventet_netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span><span class="n">forventet_netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">forventet_netto_gevinst</span><span class="w"> </span><span class="si">= :</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">forventet_netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">innsats</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># kroner</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">sektor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">38</span><span class="p">)</span> <span class="c1"># tall mellom 0 og 37</span>
+
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Hvis sektoren er 0´</span>
+        <span class="n">netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Hvis det er en rød sektor</span>
+        <span class="n">netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># Hvis det er en svart sektor</span>
+        <span class="n">netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="n">forventet_netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">forventet_netto_gevinst</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">forventet_netto_gevinst</span><span class="w"> </span><span class="si">= :</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1183,30 +1178,30 @@ Kodehint<div class="sd-summary-down docutils">
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 4</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 5</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="n">n_lyspærer</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># antall lyspærer i systemet</span>
-<span class="linenos"> 8</span><span class="n">n_feilet</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># teller opp antall ganger systemet feiler.</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos">11</span>    <span class="n">minst_levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># finn den lyspæren med minst levetid</span>
-<span class="linenos">12</span>    
-<span class="linenos">13</span>    <span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">14</span>    <span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">17</span><span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span><span class="n">X_varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">20</span><span class="n">X_std</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">23</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">24</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">n_lyspærer</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># antall lyspærer i systemet</span>
+<span class="n">n_feilet</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># teller opp antall ganger systemet feiler.</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">minst_levetid</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># finn den lyspæren med minst levetid</span>
+    
+    <span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">X_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_kvadrat_forventning</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">X_varians</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">X_std</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventning</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_varians</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_std</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1351,34 +1346,34 @@ Kodehint<div class="sd-summary-down docutils">
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="linenos"> 4</span><span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="linenos"> 5</span><span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
-<span class="linenos"> 6</span><span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 9</span>    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">10</span>    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
-<span class="linenos">11</span>        <span class="n">skole</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span>        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
-<span class="linenos">13</span>            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">14</span>        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
-<span class="linenos">15</span>            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">17</span>            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span>        <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legge til karakteren</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span>    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Dele på antall elever</span>
-<span class="linenos">22</span>    
-<span class="linenos">23</span>    <span class="c1"># Legge til forventnings av gjennomsnittet</span>
-<span class="linenos">24</span>    <span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventet_gjennomsnitt</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+        <span class="n">skole</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Legge til karakteren</span>
+
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Dele på antall elever</span>
+    
+    <span class="c1"># Legge til forventnings av gjennomsnittet</span>
+    <span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> 
+
+<span class="n">X_forventet_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># E(X) --&gt; E(X) / n</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_forventet_gjennomsnitt</span><span class="w"> </span><span class="si">= :</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1472,38 +1467,38 @@ Algoritmisk må vi</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
-<span class="linenos"> 4</span><span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="linenos"> 5</span><span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
-<span class="linenos"> 6</span><span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
-<span class="linenos"> 9</span>    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">10</span>    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
-<span class="linenos">11</span>        <span class="n">skole</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">12</span>        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
-<span class="linenos">13</span>            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">14</span>        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
-<span class="linenos">15</span>            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">16</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">17</span>            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span>        <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span>    <span class="c1"># Regn ut gjennomsnittet av karakterene til 20 elever</span>
-<span class="linenos">22</span>    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span>    <span class="c1"># Legg til betingelse for om gjennomsnitt er større enn karakter 4</span>
-<span class="linenos">25</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">26</span>        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span><span class="c1"># Regn ut sannsynligheten for at gjennomsnittskarakter er større enn 4</span>
-<span class="linenos">29</span><span class="n">sannsynlighet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">30</span>
-<span class="linenos">31</span>
-<span class="linenos">32</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_forsøk</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">antall_elever</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">skoler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">n_suksess</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_forsøk</span><span class="p">):</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_elever</span><span class="p">):</span>
+        <span class="n">skole</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">if</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">elif</span> <span class="n">skole</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+        <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="c1"># Regn ut gjennomsnittet av karakterene til 20 elever</span>
+    <span class="n">x_gjennomsnitt</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="c1"># Legg til betingelse for om gjennomsnitt er større enn karakter 4</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="n">n_suksess</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="c1"># Regn ut sannsynligheten for at gjennomsnittskarakter er større enn 4</span>
+<span class="n">sannsynlighet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sannsynlighet</span><span class="w"> </span><span class="si">= :</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

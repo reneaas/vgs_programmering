@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matematikk/ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -555,13 +550,13 @@ document.write(`
 <p>Det kan vi gjøre slik med <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -583,14 +578,14 @@ x^2 - 2x + 1 &gt; 4.
 <p>Det kan vi gjøre slik med <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -616,18 +611,18 @@ x^2 - 2x + 1 &gt; 4, \quad x &gt; -10,  \qquad x \leq 10.
 <p>Et sånt sett med ulikheter kan vi også håndtere med <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code>, ved å legge de inn i en liste (<em>egentlig</em> en <code class="docutils literal notranslate"><span class="pre">tuple</span></code> som er en slags liste som ikke kan endres etter den er laget) med ulikheter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">ulikheter</span> <span class="o">=</span> <span class="p">(</span>
-<span class="linenos"> 5</span>    <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">,</span>
-<span class="linenos"> 6</span>    <span class="n">x</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span>
-<span class="linenos"> 7</span>    <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">,</span>
-<span class="linenos"> 8</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ulikheter</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+
+<span class="n">ulikheter</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">x</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">løsninger</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">ulikheter</span><span class="p">)</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -665,14 +660,14 @@ f(x) = x^2 - 2x + 1, \quad x \in (-10, 10],
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="bp">NotImplemented</span> <span class="c1"># Hva henter vi fra `sympy.abc` igjen?</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikheten med sympy.solve</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span> <span class="c1"># Skriver ut løsningen med pen formattering. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="bp">NotImplemented</span> <span class="c1"># Hva henter vi fra `sympy.abc` igjen?</span>
+
+<span class="n">ulikhet</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikheten med sympy.solve</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span> <span class="c1"># Skriver ut løsningen med pen formattering. </span>
 </pre></div>
 </div>
 </div>
@@ -715,13 +710,13 @@ x^2 + 3x - 4 &lt; 0.
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sympy</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">NotImplemented</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Hva het biblioteket man importerer `x` fra?</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv inn ulikheten</span>
-<span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikheten. Hva brukte man igjen da?</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">NotImplemented</span> <span class="kn">import</span> <span class="n">x</span> <span class="c1"># Hva het biblioteket man importerer `x` fra?</span>
+
+<span class="n">ulikhet</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Skriv inn ulikheten</span>
+<span class="n">løsning</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikheten. Hva brukte man igjen da?</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -768,20 +763,20 @@ x^3 - 2x^2 + 3x - 6 &gt; 0, \quad x &gt; 0, \quad x &lt; 10.
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Det kan også være noen mindre feil i koden.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">NotImplemented</span> <span class="c1"># Hvilket bibliotek trenger vi?</span>
-<span class="linenos"> 2</span><span class="n">totally</span> <span class="kn">import</span> <span class="nn">x</span> <span class="c1"># Hmm, dette ser ikke helt riktig ut, gjør det vel?</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="n">ulikheter</span> <span class="o">=</span> <span class="p">(</span>
-<span class="linenos"> 7</span>    <span class="bp">NotImplemented</span><span class="p">,</span> <span class="c1"># Skriv inn ulikhet 1</span>
-<span class="linenos"> 8</span>    <span class="bp">NotImplemented</span><span class="p">,</span> <span class="c1"># Skriv inn ulikhet 2</span>
-<span class="linenos"> 9</span>    <span class="bp">NotImplemented</span><span class="p">,</span> <span class="c1"># Skriv inn ulikhet 3</span>
-<span class="linenos">10</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikhetene</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">NotImplemented</span> <span class="c1"># Hvilket bibliotek trenger vi?</span>
+<span class="n">totally</span> <span class="kn">import</span> <span class="nn">x</span> <span class="c1"># Hmm, dette ser ikke helt riktig ut, gjør det vel?</span>
+
+
+
+<span class="n">ulikheter</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="bp">NotImplemented</span><span class="p">,</span> <span class="c1"># Skriv inn ulikhet 1</span>
+    <span class="bp">NotImplemented</span><span class="p">,</span> <span class="c1"># Skriv inn ulikhet 2</span>
+    <span class="bp">NotImplemented</span><span class="p">,</span> <span class="c1"># Skriv inn ulikhet 3</span>
+<span class="p">)</span>
+
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikhetene</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -829,16 +824,16 @@ f(x) = x^2 - x - 6, \quad x \in [-10, 10].
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Her må du også fikse <code class="docutils literal notranslate"><span class="pre">import</span></code> selv.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Importerer det du trenger her </span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="c1"># Hvor mange ulikheter trenger du?</span>
-<span class="linenos"> 4</span><span class="n">ulikheter</span> <span class="o">=</span> <span class="p">(</span>
-<span class="linenos"> 5</span>    <span class="bp">NotImplemented</span><span class="p">,</span>
-<span class="linenos"> 6</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikhetene</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importerer det du trenger her </span>
+
+<span class="c1"># Hvor mange ulikheter trenger du?</span>
+<span class="n">ulikheter</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="bp">NotImplemented</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">løsninger</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Løs ulikhetene</span>
+
+<span class="n">sympy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsninger</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

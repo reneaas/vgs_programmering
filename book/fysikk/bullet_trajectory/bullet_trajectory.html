@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matematikk/ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -573,11 +568,11 @@ document.write(`
 \[
 \vec{G} = \left[0, -mg\right],
 \]</div>
-<p>der <span class="math notranslate nohighlight">\(g = 9.82 \ \text{m}/\text{s}^2\)</span> er gravitasjonsakselerasjonen på bakkenivå i Oslo. I <a class="reference internal" href="#bullet-fbd"><span class="std std-numref">Fig. 35</span></a> ser vi kreftene som virker på kulen.</p>
+<p>der <span class="math notranslate nohighlight">\(g = 9.82 \ \text{m}/\text{s}^2\)</span> er gravitasjonsakselerasjonen på bakkenivå i Oslo. I <a class="reference internal" href="#bullet-fbd"><span class="std std-numref">Fig. 30</span></a> ser vi kreftene som virker på kulen.</p>
 <figure class="align-default" id="bullet-fbd">
 <a class="reference internal image-reference" href="../../../_images/free_body_diagram.pdf"><img alt="../../../_images/free_body_diagram.pdf" src="../../../_images/free_body_diagram.pdf" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Figuren viser kreftene som virker på kulen. Her er <span class="math notranslate nohighlight">\(\vec{G}\)</span> gravitasjonskraften, <span class="math notranslate nohighlight">\(\vec{F}_\text{d}\)</span> er luftmotstanden. I tillegg er retningen til hastighetsvektoren <span class="math notranslate nohighlight">\(\vec{v}\)</span> vist for å indikere at luftmotstanden virker i motsatt retning av hastighetsvektoren.</span><a class="headerlink" href="#bullet-fbd" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Figuren viser kreftene som virker på kulen. Her er <span class="math notranslate nohighlight">\(\vec{G}\)</span> gravitasjonskraften, <span class="math notranslate nohighlight">\(\vec{F}_\text{d}\)</span> er luftmotstanden. I tillegg er retningen til hastighetsvektoren <span class="math notranslate nohighlight">\(\vec{v}\)</span> vist for å indikere at luftmotstanden virker i motsatt retning av hastighetsvektoren.</span><a class="headerlink" href="#bullet-fbd" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -630,10 +625,10 @@ Kodehint: Regne ut lengden av hastighetsvektoren<div class="sd-summary-down docu
 </details><p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="k">def</span> <span class="nf">luftmotstand</span><span class="p">(</span><span class="n">Cd</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-<span class="linenos">4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">luftmotstand</span><span class="p">(</span><span class="n">Cd</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -663,10 +658,10 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="k">def</span> <span class="nf">gravitasjon</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
-<span class="linenos">4</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">gravitasjon</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
@@ -699,13 +694,13 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="k">def</span> <span class="nf">euler_cromer_step</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-<span class="linenos">4</span>    <span class="n">v_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">5</span>    <span class="n">r_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span>    <span class="k">return</span> <span class="n">r_neste</span><span class="p">,</span> <span class="n">v_neste</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">euler_cromer_step</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="n">v_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">r_neste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">return</span> <span class="n">r_neste</span><span class="p">,</span> <span class="n">v_neste</span>
 </pre></div>
 </div>
 </div>
@@ -737,61 +732,61 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <li><p><span class="math notranslate nohighlight">\(\theta = 45^\circ\)</span> <em>(utgangsvinkel)</em></p></li>
 </ul>
 <p>Koden skal lagre posisjonene i en liste <code class="docutils literal notranslate"><span class="pre">posisjon</span></code> og hastighetene i en liste <code class="docutils literal notranslate"><span class="pre">hastighet</span></code>.</p>
-<p>I <a class="reference internal" href="#initial-vel"><span class="std std-numref">Fig. 36</span></a> ser du hvordan starthastigheten ser ut med en utgangsvinkel <span class="math notranslate nohighlight">\(\theta = 45^\circ\)</span>.</p>
+<p>I <a class="reference internal" href="#initial-vel"><span class="std std-numref">Fig. 31</span></a> ser du hvordan starthastigheten ser ut med en utgangsvinkel <span class="math notranslate nohighlight">\(\theta = 45^\circ\)</span>.</p>
 <figure class="align-default" id="initial-vel">
 <img alt="../../../_images/initial_velocity.pdf" src="../../../_images/initial_velocity.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Starthastigheten til kulen. Her er starthastigheten <span class="math notranslate nohighlight">\(\vec{v}_0\)</span>, der <span class="math notranslate nohighlight">\(x\)</span>-komponenten er <span class="math notranslate nohighlight">\(v_{0,x} = |\vec{v}_0|\cos \theta\)</span> og <span class="math notranslate nohighlight">\(y\)</span>-komponenten er <span class="math notranslate nohighlight">\(v_{0,y} = |\vec{v}_0|\sin \theta\)</span>, gitt utgangsvinkelen <span class="math notranslate nohighlight">\(\theta\)</span>.</span><a class="headerlink" href="#initial-vel" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Starthastigheten til kulen. Her er starthastigheten <span class="math notranslate nohighlight">\(\vec{v}_0\)</span>, der <span class="math notranslate nohighlight">\(x\)</span>-komponenten er <span class="math notranslate nohighlight">\(v_{0,x} = |\vec{v}_0|\cos \theta\)</span> og <span class="math notranslate nohighlight">\(y\)</span>-komponenten er <span class="math notranslate nohighlight">\(v_{0,y} = |\vec{v}_0|\sin \theta\)</span>, gitt utgangsvinkelen <span class="math notranslate nohighlight">\(\theta\)</span>.</span><a class="headerlink" href="#initial-vel" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="c1"># Definer parametere</span>
-<span class="linenos"> 4</span><span class="n">m</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># masse i kg</span>
-<span class="linenos"> 5</span><span class="n">Cd</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># luftmotstandskoeffisient (dimensjonsløs)</span>
-<span class="linenos"> 6</span><span class="n">radius</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># radius til kula i m. Halvparten av diameteren</span>
-<span class="linenos"> 7</span><span class="n">A</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tverrsnittsareal pi * radius^2 i m^2</span>
-<span class="linenos"> 8</span><span class="n">rho</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lufttetthet i kg/m^3</span>
-<span class="linenos"> 9</span><span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tyngdeakselerasjon m/s^2</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="c1"># Definer initialbetingelser</span>
-<span class="linenos">13</span><span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># posisjon i m</span>
-<span class="linenos">14</span><span class="n">theta</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># utgangsvinkel i radianer</span>
-<span class="linenos">15</span><span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># hastighet i m/s</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="n">posisjoner</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="c1"># posisjoner over tid</span>
-<span class="linenos">19</span><span class="n">hastigheter</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="c1"># fart over tid</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="c1"># Simuler</span>
-<span class="linenos">22</span><span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="c1"># steglengden i tid</span>
-<span class="linenos">23</span><span class="n">tidssteg</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># tidsstegnummer</span>
-<span class="linenos">24</span><span class="k">while</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge kula er over bakken</span>
-<span class="linenos">25</span>    <span class="c1"># Regn ut summen av kreftene i Newton</span>
-<span class="linenos">26</span>    <span class="n">netto_kraft</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># netto kraft på kula i N.</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span>    <span class="c1"># Regn ut akselerasjon</span>
-<span class="linenos">29</span>    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># akselerasjon i m/s^2</span>
-<span class="linenos">30</span>
-<span class="linenos">31</span>    <span class="c1"># Regn ut ny hastighet og posisjon</span>
-<span class="linenos">32</span>    <span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># ny posisjon og hastighet i m og m/s</span>
-<span class="linenos">33</span>
-<span class="linenos">34</span>    <span class="n">posisjoner</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-<span class="linenos">35</span>    <span class="n">hastigheter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-<span class="linenos">36</span>
-<span class="linenos">37</span>    <span class="n">tidssteg</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">38</span>
-<span class="linenos">39</span><span class="c1"># Plotter posisjon i xy-planet</span>
-<span class="linenos">40</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="linenos">41</span><span class="n">posisjoner</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">posisjoner</span><span class="p">)</span>
-<span class="linenos">42</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">posisjoner</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">posisjoner</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="linenos">43</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$ [m]&quot;</span><span class="p">)</span>
-<span class="linenos">44</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$ [m]&quot;</span><span class="p">)</span>
-<span class="linenos">45</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definer parametere</span>
+<span class="n">m</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># masse i kg</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># luftmotstandskoeffisient (dimensjonsløs)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># radius til kula i m. Halvparten av diameteren</span>
+<span class="n">A</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tverrsnittsareal pi * radius^2 i m^2</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lufttetthet i kg/m^3</span>
+<span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tyngdeakselerasjon m/s^2</span>
+
+
+<span class="c1"># Definer initialbetingelser</span>
+<span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># posisjon i m</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># utgangsvinkel i radianer</span>
+<span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># hastighet i m/s</span>
+
+
+<span class="n">posisjoner</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="c1"># posisjoner over tid</span>
+<span class="n">hastigheter</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="c1"># fart over tid</span>
+
+<span class="c1"># Simuler</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="c1"># steglengden i tid</span>
+<span class="n">tidssteg</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># tidsstegnummer</span>
+<span class="k">while</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge kula er over bakken</span>
+    <span class="c1"># Regn ut summen av kreftene i Newton</span>
+    <span class="n">netto_kraft</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># netto kraft på kula i N.</span>
+
+    <span class="c1"># Regn ut akselerasjon</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># akselerasjon i m/s^2</span>
+
+    <span class="c1"># Regn ut ny hastighet og posisjon</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># ny posisjon og hastighet i m og m/s</span>
+
+    <span class="n">posisjoner</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">hastigheter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="n">tidssteg</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Plotter posisjon i xy-planet</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">posisjoner</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">posisjoner</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">posisjoner</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">posisjoner</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$ [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$ [m]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -852,11 +847,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som gir <a class="reference internal" href="#posisjon-utgangsvinkel-45"><span class="std std-numref">Fig. 37</span></a>.</p>
+<p class="sd-card-text">som gir <a class="reference internal" href="#posisjon-utgangsvinkel-45"><span class="std std-numref">Fig. 32</span></a>.</p>
 <figure class="align-default" id="posisjon-utgangsvinkel-45">
 <img alt="../../../_images/posisjon_utgangsvinkel_45.pdf" src="../../../_images/posisjon_utgangsvinkel_45.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Posisjonen i xy-planet for en kule skutt ut med utgangsvinkel 45 grader.</span><a class="headerlink" href="#posisjon-utgangsvinkel-45" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Posisjonen i xy-planet for en kule skutt ut med utgangsvinkel 45 grader.</span><a class="headerlink" href="#posisjon-utgangsvinkel-45" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -879,12 +874,12 @@ E_k = \frac{1}{2}mv^2
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut lengden av siste hastighetsvektor</span>
-<span class="linenos">4</span><span class="n">kinetisk_energi</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut den kinetiske energien</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kinetisk_energi</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> J&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut lengden av siste hastighetsvektor</span>
+<span class="n">kinetisk_energi</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Regn ut den kinetiske energien</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kinetisk_energi</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> J&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -916,48 +911,48 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented.</span></code></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="c1"># Definer parametere</span>
-<span class="linenos"> 4</span><span class="n">m</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># masse i kg</span>
-<span class="linenos"> 5</span><span class="n">Cd</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># luftmotstandskoeffisient (dimensjonsløs)</span>
-<span class="linenos"> 6</span><span class="n">radius</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># radius til kula i m. Halvparten av diameteren</span>
-<span class="linenos"> 7</span><span class="n">A</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tverrsnittsareal pi * radius^2 i m^2</span>
-<span class="linenos"> 8</span><span class="n">rho</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lufttetthet i kg/m^3</span>
-<span class="linenos"> 9</span><span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tyngdeakselerasjon m/s^2</span>
-<span class="linenos">10</span><span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="c1"># steglengden i tid</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">utgangsvinkler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># utgangsvinkler i grader mellom 0 og 90</span>
-<span class="linenos">13</span><span class="n">kinetiske_energier</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">)</span> <span class="c1"># tomt array for å lagre kinetiske energier</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">theta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">):</span>
-<span class="linenos">16</span>    <span class="c1"># Definer initialbetingelser</span>
-<span class="linenos">17</span>    <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># posisjon i m</span>
-<span class="linenos">18</span>    <span class="n">theta</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># utgangsvinkel i radianer</span>
-<span class="linenos">19</span>    <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># hastighet i m/s</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span>    <span class="c1"># Simuler bevegelsen</span>
-<span class="linenos">22</span>    <span class="k">while</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge kula er over bakken</span>
-<span class="linenos">23</span>        <span class="c1"># Regn ut summen av kreftene i Newton</span>
-<span class="linenos">24</span>        <span class="n">netto_kraft</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># netto kraft på kula i N.</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span>        <span class="c1"># Regn ut akselerasjon</span>
-<span class="linenos">27</span>        <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># akselerasjon i m/s^2</span>
-<span class="linenos">28</span>
-<span class="linenos">29</span>        <span class="c1"># Regn ut ny hastighet og posisjon</span>
-<span class="linenos">30</span>        <span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># ny posisjon og hastighet i m og m/s</span>
-<span class="linenos">31</span>
-<span class="linenos">32</span>    
-<span class="linenos">33</span>    <span class="c1"># Regn ut kinetisk energi</span>
-<span class="linenos">34</span>    <span class="n">kinetiske_energier</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># kinetisk energi i J</span>
-<span class="linenos">35</span>
-<span class="linenos">36</span>
-<span class="linenos">37</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">,</span> <span class="n">kinetiske_energier</span><span class="p">)</span>
-<span class="linenos">38</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$ [grader]&quot;</span><span class="p">)</span>
-<span class="linenos">39</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E_k$ [J]&quot;</span><span class="p">)</span>
-<span class="linenos">40</span><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;30 J&quot;</span><span class="p">)</span>
-<span class="linenos">41</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="linenos">42</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definer parametere</span>
+<span class="n">m</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># masse i kg</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># luftmotstandskoeffisient (dimensjonsløs)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># radius til kula i m. Halvparten av diameteren</span>
+<span class="n">A</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tverrsnittsareal pi * radius^2 i m^2</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># lufttetthet i kg/m^3</span>
+<span class="n">g</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># tyngdeakselerasjon m/s^2</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1e-5</span> <span class="c1"># steglengden i tid</span>
+
+<span class="n">utgangsvinkler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># utgangsvinkler i grader mellom 0 og 90</span>
+<span class="n">kinetiske_energier</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">)</span> <span class="c1"># tomt array for å lagre kinetiske energier</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">theta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">):</span>
+    <span class="c1"># Definer initialbetingelser</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># posisjon i m</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># utgangsvinkel i radianer</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># hastighet i m/s</span>
+
+    <span class="c1"># Simuler bevegelsen</span>
+    <span class="k">while</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Så lenge kula er over bakken</span>
+        <span class="c1"># Regn ut summen av kreftene i Newton</span>
+        <span class="n">netto_kraft</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># netto kraft på kula i N.</span>
+
+        <span class="c1"># Regn ut akselerasjon</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># akselerasjon i m/s^2</span>
+
+        <span class="c1"># Regn ut ny hastighet og posisjon</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># ny posisjon og hastighet i m og m/s</span>
+
+    
+    <span class="c1"># Regn ut kinetisk energi</span>
+    <span class="n">kinetiske_energier</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># kinetisk energi i J</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">utgangsvinkler</span><span class="p">,</span> <span class="n">kinetiske_energier</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$ [grader]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E_k$ [J]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;30 J&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1015,11 +1010,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sd-card-text">som gir resultatet i <a class="reference internal" href="#energi-vs-utgangsvinkel"><span class="std std-numref">Fig. 38</span></a>.</p>
+<p class="sd-card-text">som gir resultatet i <a class="reference internal" href="#energi-vs-utgangsvinkel"><span class="std std-numref">Fig. 33</span></a>.</p>
 <figure class="align-default" id="energi-vs-utgangsvinkel">
 <img alt="../../../_images/energi_vs_utgangsvinkel.pdf" src="../../../_images/energi_vs_utgangsvinkel.pdf" />
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Den kinetiske energien til kula når den treffer bakkenivå som funksjon av utgangsvinkel.</span><a class="headerlink" href="#energi-vs-utgangsvinkel" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Den kinetiske energien til kula når den treffer bakkenivå som funksjon av utgangsvinkel.</span><a class="headerlink" href="#energi-vs-utgangsvinkel" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>

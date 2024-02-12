@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../python/errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -526,11 +521,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="newtons-metode">
 <h1>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this heading">#</a></h1>
-<p><strong>Newtons metode</strong> er en effektiv måte å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> dersom vi også kjenner til den deriverte <span class="math notranslate nohighlight">\(f'\)</span>. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f'\)</span>, som vi kjenner til. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_1\)</span>. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x_1\)</span>. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_2\)</span>. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. <a class="reference internal" href="#newtonsmetode-fig"><span class="std std-numref">Fig. 9</span></a> viser en animasjon av prosessen.</p>
+<p><strong>Newtons metode</strong> er en effektiv måte å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span> dersom vi også kjenner til den deriverte <span class="math notranslate nohighlight">\(f'\)</span>. Algoritmen er basert på å finne nullpunktet til tangenten til funksjonen <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\(x_0\)</span>. Vi kan finne nullpunktet til tangenten ved å bruke nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f'\)</span>, som vi kjenner til. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_1\)</span>. Vi kan så gjenta prosessen, og finne nullpunktet til tangenten til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x_1\)</span>. Dette gir oss et nytt punkt <span class="math notranslate nohighlight">\(x_2\)</span>. Vi kan fortsette slik til vi har en tilstrekkelig god tilnærming til nullpunktet. <a class="reference internal" href="#newtonsmetode-fig"><span class="std std-numref">Fig. 7</span></a> viser en animasjon av prosessen.</p>
 <figure class="align-default" id="newtonsmetode-fig">
 <img alt="../../../_images/NewtonIteration_Ani.gif" src="../../../_images/NewtonIteration_Ani.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> vist i blå. Av Ralf Pfeifer, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=2268473">Wikimedia Commons</a>.</span><a class="headerlink" href="#newtonsmetode-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Animasjonen viser fem steg i Newtons metode der man finner en tilnærming til nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> vist i blå. Av Ralf Pfeifer, CC BY-SA 3.0, <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=2268473">Wikimedia Commons</a>.</span><a class="headerlink" href="#newtonsmetode-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Vi kan formelt komme frem til en algoritme som følger. La <span class="math notranslate nohighlight">\(x_0\)</span> være et vilkårlig startpunkt.
@@ -594,24 +589,24 @@ f'(x) = 2x.
 <p>En Pythonkode som implementerer <a class="reference internal" href="#algo-newtonsmetode">Algorithm 2</a> med denne funksjonen er da</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 2</span>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 5</span>    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="n">x0</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Startverdi</span>
-<span class="linenos"> 8</span><span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># toleranse</span>
-<span class="linenos"> 9</span><span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># maks antall iterasjoner</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
-<span class="linenos">12</span><span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjon så langt.</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">num_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
-<span class="linenos">15</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">16</span>    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunktet er </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> og ble funnet etter </span><span class="si">{</span><span class="n">num_iter</span><span class="si">}</span><span class="s2"> iterasjoner.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Startverdi</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># toleranse</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># maks antall iterasjoner</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjon så langt.</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">num_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunktet er </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> og ble funnet etter </span><span class="si">{</span><span class="n">num_iter</span><span class="si">}</span><span class="s2"> iterasjoner.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -638,25 +633,25 @@ f'(x) \approx \frac{f(x + h) - f(x)}{h},
 <p>Følger vi <a class="reference internal" href="#algo-newtonsmetode">Algorithm 2</a> får vi følgende Pythonkode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 2</span>    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 5</span>    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-5</span>
-<span class="linenos"> 6</span>    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">h</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">x0</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Startverdi</span>
-<span class="linenos"> 9</span><span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># toleranse</span>
-<span class="linenos">10</span><span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># maks antall iterasjoner</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
-<span class="linenos">13</span><span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjon så langt.</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span><span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">num_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
-<span class="linenos">16</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">17</span>    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunktet er </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> og ble funnet etter </span><span class="si">{</span><span class="n">num_iter</span><span class="si">}</span><span class="s2"> iterasjoner.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-5</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">h</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Startverdi</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span> <span class="c1"># toleranse</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100_000</span> <span class="c1"># maks antall iterasjoner</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjon så langt.</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">num_iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunktet er </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> og ble funnet etter </span><span class="si">{</span><span class="n">num_iter</span><span class="si">}</span><span class="s2"> iterasjoner.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -682,28 +677,28 @@ f(x) = x^3 - 2x^2 - 5x + 6,
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut funksjonsverdien til</span>
-<span class="linenos"> 3</span><span class="sd">    f(x) = x^3 - 2x^2 - 5x + 6</span>
-<span class="linenos"> 4</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos"> 5</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut f&#39;(x).&quot;&quot;&quot;</span>
-<span class="linenos"> 9</span>    <span class="k">return</span> <span class="bp">NotImplemented</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="n">tol</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Toleranse.</span>
-<span class="linenos">13</span><span class="n">x0</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi.</span>
-<span class="linenos">14</span><span class="n">max_iter</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Maks antall iterasjoner.</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
-<span class="linenos">17</span><span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjoner så langt</span>
-<span class="linenos">18</span><span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe.</span>
-<span class="linenos">19</span>    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">20</span>    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunkt: </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut funksjonsverdien til</span>
+<span class="sd">    f(x) = x^3 - 2x^2 - 5x + 6</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="k">def</span> <span class="nf">dfdx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Regner ut f&#39;(x).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+
+<span class="n">tol</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Toleranse.</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Startverdi.</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Maks antall iterasjoner.</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="n">num_iter</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># antall iterasjoner så langt</span>
+<span class="k">while</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># Sett en betingelse for når løkken skal stoppe.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">num_iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nullpunkt: </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

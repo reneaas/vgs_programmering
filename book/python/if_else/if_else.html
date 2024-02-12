@@ -180,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matematikk/ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -587,11 +582,11 @@ flowchart TD
 </div><p>La oss se på et eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">2</span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn eller lik null.&quot;</span><span class="p">)</span>
-<span class="linenos">4</span><span class="k">else</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er negativ eller null.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er større enn eller lik null.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a er negativ eller null.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -605,7 +600,7 @@ flowchart TD
 <p>Vi kan printe ut betingelsen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> for å se at den faktisk evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -698,12 +693,12 @@ flowchart TD
 <p><em>Ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{res}</span><span class="s2"> er større enn eller lik -2&quot;</span><span class="p">)</span>
-<span class="linenos">5</span><span class="k">else</span><span class="p">:</span>
-<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="k">if</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{res}</span><span class="s2"> er større enn eller lik -2&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> er mindre enn -2.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -820,16 +815,16 @@ flowchart TD
 <p>La oss se på et program som velger ut moms avhengig av hvilken vare det er:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">varetype</span> <span class="o">=</span> <span class="s2">&quot;reise&quot;</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">if</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;mat&quot;</span><span class="p">:</span>
-<span class="linenos"> 4</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">15</span> 
-<span class="linenos"> 5</span><span class="k">elif</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;reise&quot;</span><span class="p">:</span>
-<span class="linenos"> 6</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">12</span> 
-<span class="linenos"> 7</span><span class="k">else</span><span class="p">:</span>
-<span class="linenos"> 8</span>    <span class="n">moms</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">moms</span><span class="w"> </span><span class="si">= }</span><span class="s2"> prosent på varen din av type `</span><span class="si">{</span><span class="n">varetype</span><span class="si">}</span><span class="s2">`.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">varetype</span> <span class="o">=</span> <span class="s2">&quot;reise&quot;</span>
+
+<span class="k">if</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;mat&quot;</span><span class="p">:</span>
+    <span class="n">moms</span> <span class="o">=</span> <span class="mi">15</span> 
+<span class="k">elif</span> <span class="n">varetype</span> <span class="o">==</span> <span class="s2">&quot;reise&quot;</span><span class="p">:</span>
+    <span class="n">moms</span> <span class="o">=</span> <span class="mi">12</span> 
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">moms</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">moms</span><span class="w"> </span><span class="si">= }</span><span class="s2"> prosent på varen din av type `</span><span class="si">{</span><span class="n">varetype</span><span class="si">}</span><span class="s2">`.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -938,12 +933,12 @@ Derfor er den riktig betingelsen <code class="docutils literal notranslate"><spa
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">alder</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hvor gammel er du? &quot;</span><span class="p">))</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">4</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="linenos">5</span><span class="k">else</span><span class="p">:</span>
-<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alder</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hvor gammel er du? &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -981,15 +976,15 @@ Derfor er den riktig betingelsen <code class="docutils literal notranslate"><spa
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn et tall: &quot;</span><span class="p">))</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="linenos">6</span><span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos">7</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tallene har samme verdi&quot;</span><span class="p">)</span>
-<span class="linenos">8</span><span class="k">else</span><span class="p">:</span>
-<span class="linenos">9</span>    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn et tall: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tallene har samme verdi&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1016,16 +1011,16 @@ Derfor er den riktig betingelsen <code class="docutils literal notranslate"><spa
 <p><em>Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<span class="linenos"> 4</span>    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
-<span class="linenos"> 5</span><span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
-<span class="linenos"> 6</span>    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="linenos"> 7</span><span class="k">else</span><span class="p">:</span>
-<span class="linenos"> 8</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+<span class="k">elif</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

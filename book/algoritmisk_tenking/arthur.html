@@ -72,8 +72,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/algoritmisk_tenking/arthur';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Løse ligninger med sympy" href="../python/symbolsk_python/ligninger.html" />
-    <link rel="prev" title="Funksjoner i Python" href="../python/funksjoner/funksjoner.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,9 +178,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../python/errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hvordan løse problemer med programmering</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../matematikk/ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -240,16 +238,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -542,7 +535,7 @@ For at Arthur skal kunne hjelpe oss med å løse et problem, må vi spesifisere<
 <figure class="align-default" id="ligningssystem1">
 <a class="reference internal image-reference" href="../../_images/ligningssystem1.png"><img alt="../../_images/ligningssystem1.png" src="../../_images/ligningssystem1.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Figuren viser hvordan ligningssystemet kan tolkes grafisk som skjæringspunktet mellom linjene <span class="math notranslate nohighlight">\(x + y = 10\)</span> og <span class="math notranslate nohighlight">\(2x - y = 8\)</span>.</span><a class="headerlink" href="#ligningssystem1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figuren viser hvordan ligningssystemet kan tolkes grafisk som skjæringspunktet mellom linjene <span class="math notranslate nohighlight">\(x + y = 10\)</span> og <span class="math notranslate nohighlight">\(2x - y = 8\)</span>.</span><a class="headerlink" href="#ligningssystem1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -663,7 +656,7 @@ G --> D
 <figure class="align-default" id="ligningssystem2">
 <a class="reference internal image-reference" href="../../_images/ligningssystem2.png"><img alt="../../_images/ligningssystem2.png" src="../../_images/ligningssystem2.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Figuren viser hvordan ligningssystemet kan tolkes grafisk som skjæringspunktet mellom kurvene <span class="math notranslate nohighlight">\(y = x^2 - 4x + 4\)</span> og <span class="math notranslate nohighlight">\(2y + x = 8\)</span>.</span><a class="headerlink" href="#ligningssystem2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Figuren viser hvordan ligningssystemet kan tolkes grafisk som skjæringspunktet mellom kurvene <span class="math notranslate nohighlight">\(y = x^2 - 4x + 4\)</span> og <span class="math notranslate nohighlight">\(2y + x = 8\)</span>.</span><a class="headerlink" href="#ligningssystem2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -700,24 +693,6 @@ G --> D
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../python/funksjoner/funksjoner.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Funksjoner i Python</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../python/symbolsk_python/ligninger.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

@@ -178,9 +178,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algoritmisk tenkning og problemløsning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numerisk matematikk</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algoritmisk_tenking/arthur.html">Hvordan løse problemer med programmering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matematikk/ligningssystemer_numerisk.html">Løse ligningssystemer numerisk med programmering</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
@@ -238,16 +238,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../matematikk/modeller/regresjon.html">Regresjon i Python</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../data_analyse/intro.html">Dataanalyse av reelle datasett</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/IO/read_files.html">Lese inn data fra filer 101</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_analyse/climate_change/climate_change.html">Klimaendringer</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fysikk med Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../fysikk/pi_factory/pi_fabrikken.html">Elastiske kollisjoner: en uventet <span class="math notranslate nohighlight">\(\pi\)</span>-fabrikk</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../fysikk/celestial_mechanics/planetbaner.html">Simulere planetbaner</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/solsystem_med_interaksjon.html">Simulering av Solsystemet med Interaksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fysikk/celestial_mechanics/three_body_problem.html">Trelegemeproblemet</a></li>
 </ul>
@@ -599,7 +594,7 @@ document.write(`
 <p>La oss starte smått å se på hvordan vi kan lage en liste med bare heltall. Vi kan lage en liste ved å skrive elementene i en liste innenfor firkantede parenteser <code class="docutils literal notranslate"><span class="pre">[]</span></code> og separere elementene med komma <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># Eksempel på en liste med bare heltall</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># Eksempel på en liste med bare heltall</span>
 </pre></div>
 </div>
 </div>
@@ -607,7 +602,7 @@ document.write(`
 <p>Vi kan printe ut listen hvis vi har lyst til å se på listen i sin helhet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -623,7 +618,7 @@ document.write(`
 <p>La oss se på et annet eksempel der vi lager en liste med tekststrenger. Vi kan lage en liste med tekststrenger ved å skrive tekststrengene innenfor firkantede parenteser <code class="docutils literal notranslate"><span class="pre">[]</span></code> og separere tekststrengene med komma <code class="docutils literal notranslate"><span class="pre">,</span></code>. Som eksempel kan vi lage en liste med navnene til planetene i solsystemet vårt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;venus&quot;</span><span class="p">,</span> <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span><span class="p">]</span> <span class="c1"># Pluto er dessverre bare en dvergplanet</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;venus&quot;</span><span class="p">,</span> <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span><span class="p">]</span> <span class="c1"># Pluto er dessverre bare en dvergplanet</span>
 </pre></div>
 </div>
 </div>
@@ -631,7 +626,7 @@ document.write(`
 <p>Igjen kan vi printe ut listen i sin helhet hvis vi har lyst til å se hva listen inneholder i sin helhet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="n">planeter</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">planeter</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -644,7 +639,7 @@ document.write(`
 <p>Men vi kan også printe ut listen på en mer oversiktlig måte ved å <em>pakke ut</em> lista med <code class="docutils literal notranslate"><span class="pre">*</span></code>-operatoren foran listen <code class="docutils literal notranslate"><span class="pre">*planeter</span></code> og separere elementene med ny linje ved å bruke <code class="docutils literal notranslate"><span class="pre">\n</span></code> i print:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">planeter</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># stjerna (*) pakker ut lista og sep=&quot;\n&quot; setter linjeskift mellom hvert element</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">planeter</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># stjerna (*) pakker ut lista og sep=&quot;\n&quot; setter linjeskift mellom hvert element</span>
 </pre></div>
 </div>
 </div>
@@ -705,8 +700,8 @@ neptun
 <p><em>Du kan da utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -738,8 +733,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">blanda_liste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">blanda_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blanda_liste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">blanda_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -775,7 +770,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Tenk deg at vi har listen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -783,7 +778,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Tenk deg at vi ønsker å legge til tallet <code class="docutils literal notranslate"><span class="pre">2</span></code> til element med indeks <code class="docutils literal notranslate"><span class="pre">3</span></code> i lista. Dette kan vi gjøre ved å skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span> <span class="c1"># Legger til 2 på indeks 3. Koden gjøre det samme som som l[3] = l[3] + 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span> <span class="c1"># Legger til 2 på indeks 3. Koden gjøre det samme som som l[3] = l[3] + 2</span>
 </pre></div>
 </div>
 </div>
@@ -791,7 +786,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Hvis vi så printer ut listen ser vi at elementet med indeks <code class="docutils literal notranslate"><span class="pre">3</span></code> har blitt endret til <code class="docutils literal notranslate"><span class="pre">6</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -807,7 +802,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Tenk deg at vi ønsker å multiplisere elementet med indeks <code class="docutils literal notranslate"><span class="pre">2</span></code> i lista med tallet <code class="docutils literal notranslate"><span class="pre">3</span></code>. Dette kan vi gjøre ved å skrive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">3</span> <span class="c1"># Ganger med 3 på indeks 2. Koden gjøre det samme som som l[2] = l[2] * 3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">3</span> <span class="c1"># Ganger med 3 på indeks 2. Koden gjøre det samme som som l[2] = l[2] * 3</span>
 </pre></div>
 </div>
 </div>
@@ -815,7 +810,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Vi kan sjekke at elementet med indeks 2 faktisk har blitt endret:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -841,9 +836,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Vi fortsetter med listen <code class="docutils literal notranslate"><span class="pre">l</span></code> fra de forrige eksemplene:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">element_0</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos">2</span><span class="n">element_1</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="linenos">3</span><span class="n">element_2</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element_0</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">element_1</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">element_2</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -851,9 +846,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Vi kan skrive ut hva elementene er for å sjekke at blir som forventet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element_0</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element_1</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element_2</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element_0</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element_1</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element_2</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -868,7 +863,7 @@ element_2 = 3
 <p>Listen <code class="docutils literal notranslate"><span class="pre">l</span></code> har 5 elementer, som vi kan hente ut med funksjonen <code class="docutils literal notranslate"><span class="pre">len(l)</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -881,7 +876,7 @@ element_2 = 3
 <p>Hva skjer hvis vi prøver å hente ut et element med indeks som er større enn <code class="docutils literal notranslate"><span class="pre">n-1</span> <span class="pre">=</span> <span class="pre">4</span></code>? Vi får en <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> som forteller oss at vi prøver å hente ut et element som ikke finnes. Som eksempel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -901,11 +896,11 @@ element_2 = 3
 <p>Skriv en Pythonkode som henter ut det <em>tredje</em> elementet i lista</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">planter</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">2</span>    <span class="s2">&quot;epletre&quot;</span><span class="p">,</span> <span class="s2">&quot;pæretrær&quot;</span><span class="p">,</span> <span class="s2">&quot;plommetre&quot;</span><span class="p">,</span> 
-<span class="linenos">3</span>    <span class="s2">&quot;kirsebærtre&quot;</span><span class="p">,</span> <span class="s2">&quot;fikentre&quot;</span><span class="p">,</span> <span class="s2">&quot;appelsintre&quot;</span><span class="p">,</span> 
-<span class="linenos">4</span>    <span class="s2">&quot;sitrontrær&quot;</span><span class="p">,</span> <span class="s2">&quot;avokadotre&quot;</span><span class="p">,</span> <span class="s2">&quot;bananplante&quot;</span><span class="p">,</span>
-<span class="linenos">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planter</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;epletre&quot;</span><span class="p">,</span> <span class="s2">&quot;pæretrær&quot;</span><span class="p">,</span> <span class="s2">&quot;plommetre&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;kirsebærtre&quot;</span><span class="p">,</span> <span class="s2">&quot;fikentre&quot;</span><span class="p">,</span> <span class="s2">&quot;appelsintre&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;sitrontrær&quot;</span><span class="p">,</span> <span class="s2">&quot;avokadotre&quot;</span><span class="p">,</span> <span class="s2">&quot;bananplante&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -913,8 +908,8 @@ element_2 = 3
 <p><em>Du kan bruke kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">tredje_plante</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tredje_plante</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tredje_plante</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tredje_plante</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -940,13 +935,13 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>La oss se på et eksempel der vi finner indeksen til elementet <code class="docutils literal notranslate"><span class="pre">&quot;jorda&quot;</span></code> i listen <code class="docutils literal notranslate"><span class="pre">planeter</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">2</span>    <span class="s2">&quot;merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;venus&quot;</span><span class="p">,</span> <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> 
-<span class="linenos">3</span>    <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span><span class="p">,</span>
-<span class="linenos">4</span><span class="p">]</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="n">index_jorda</span> <span class="o">=</span> <span class="n">planeter</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;jorda&quot;</span><span class="p">)</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index_jorda</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planeter</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;merkur&quot;</span><span class="p">,</span> <span class="s2">&quot;venus&quot;</span><span class="p">,</span> <span class="s2">&quot;jorda&quot;</span><span class="p">,</span> <span class="s2">&quot;mars&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;jupiter&quot;</span><span class="p">,</span> <span class="s2">&quot;saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;neptun&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">index_jorda</span> <span class="o">=</span> <span class="n">planeter</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;jorda&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index_jorda</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -959,7 +954,7 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>Vi får altså at indeksen som <code class="docutils literal notranslate"><span class="pre">&quot;jorda&quot;</span></code> befinner seg på er <code class="docutils literal notranslate"><span class="pre">2</span></code>. Vi kan sjekke at dette stemmer ved å skrive ut elementet med indeks <code class="docutils literal notranslate"><span class="pre">2</span></code> (selv om vi også kan se at det stemmer ved å se på lista. Vi kan se at jorda er element nummer 3 i lista som stemmer med at indeksen er <code class="docutils literal notranslate"><span class="pre">2</span></code> siden vi teller fra 0.):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">planeter</span><span class="p">[</span><span class="n">index_jorda</span><span class="p">]</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">planeter</span><span class="p">[</span><span class="n">index_jorda</span><span class="p">]</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -979,7 +974,7 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>Noen eksempler vil gjøre hvordan det fungerer klarere. Vi tar utgangspunkt i lista</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -989,8 +984,8 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>La oss først ta et banalt eksempel der vi bruker slicing til å hente ut alle elementene fra lista. Dette kan gjøres slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[:]</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1007,8 +1002,8 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>La oss nå se på et eksempel der vi ønsker å hente ut de tre første elementene fra lista. Dette kan gjøres slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1021,8 +1016,8 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>Her satt vi <code class="docutils literal notranslate"><span class="pre">startindeks=0</span></code> og <code class="docutils literal notranslate"><span class="pre">sluttindeks=3</span></code>. Det viser seg at hvis vi <em>ikke</em> spesifiserer <code class="docutils literal notranslate"><span class="pre">startindeks</span></code>, er den automatisk satt til <code class="docutils literal notranslate"><span class="pre">0</span></code>. Vi kan derfor også hente ut de tre første elementene uten å oppgi noen <code class="docutils literal notranslate"><span class="pre">startindeks</span></code>, som dette:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1038,8 +1033,8 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>La oss nå se på et eksempel der vi ønsker å hente ut hvert andre element fra lista. Dette kan gjøres slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># Hopper over hvert andre element, men starter på første element (indeks 0) og går til siste element</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ny_liste</span> <span class="o">=</span> <span class="n">l</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># Hopper over hvert andre element, men starter på første element (indeks 0) og går til siste element</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ny_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1056,7 +1051,7 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p>Hent ut alle oddetallene i listen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">heltall_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heltall_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1065,9 +1060,9 @@ fordi de tre første indeksene er <code class="docutils literal notranslate"><sp
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">oddetall_liste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">oddetall_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oddetall_liste</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">oddetall_liste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1094,11 +1089,11 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Hent ut de tre siste elementene i listen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">matvarer</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">2</span>    <span class="s2">&quot;melk&quot;</span><span class="p">,</span> <span class="s2">&quot;brød&quot;</span><span class="p">,</span> <span class="s2">&quot;ost&quot;</span><span class="p">,</span> <span class="s2">&quot;egg&quot;</span><span class="p">,</span>
-<span class="linenos">3</span>    <span class="s2">&quot;yoghurt&quot;</span><span class="p">,</span> <span class="s2">&quot;smør&quot;</span><span class="p">,</span> <span class="s2">&quot;syltetøy&quot;</span><span class="p">,</span> 
-<span class="linenos">4</span>    <span class="s2">&quot;knekkebrød&quot;</span><span class="p">,</span> <span class="s2">&quot;makrell i tomat&quot;</span><span class="p">,</span>
-<span class="linenos">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matvarer</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;melk&quot;</span><span class="p">,</span> <span class="s2">&quot;brød&quot;</span><span class="p">,</span> <span class="s2">&quot;ost&quot;</span><span class="p">,</span> <span class="s2">&quot;egg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;yoghurt&quot;</span><span class="p">,</span> <span class="s2">&quot;smør&quot;</span><span class="p">,</span> <span class="s2">&quot;syltetøy&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;knekkebrød&quot;</span><span class="p">,</span> <span class="s2">&quot;makrell i tomat&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1107,9 +1102,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">tre_siste_matvarer</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tre_siste_matvarer</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tre_siste_matvarer</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tre_siste_matvarer</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1147,8 +1142,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Metoden <code class="docutils literal notranslate"><span class="pre">append()</span></code> legger til et element på slutten av lista. Vi kan bruke den slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># legger til elementet `10`` på slutten av lista</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># legger til elementet `10`` på slutten av lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1163,7 +1158,7 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Legg til elementet <code class="docutils literal notranslate"><span class="pre">&quot;eple&quot;</span></code> på slutten av lista</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">handleliste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;melk&quot;</span><span class="p">,</span> <span class="s2">&quot;brød&quot;</span><span class="p">,</span> <span class="s2">&quot;ost&quot;</span><span class="p">,</span> <span class="s2">&quot;såpe&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">handleliste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;melk&quot;</span><span class="p">,</span> <span class="s2">&quot;brød&quot;</span><span class="p">,</span> <span class="s2">&quot;ost&quot;</span><span class="p">,</span> <span class="s2">&quot;såpe&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1171,8 +1166,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">handleliste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">handleliste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">handleliste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">handleliste</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1189,8 +1184,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Metoden <code class="docutils literal notranslate"><span class="pre">insert()</span></code> lar oss legge til et element på en spesifikk indeks. Vi kan bruke den slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># legger til elementet `-100` på indeks 2</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># legger til elementet `-100` på indeks 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1207,8 +1202,8 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Metoden <code class="docutils literal notranslate"><span class="pre">extend()</span></code> lar oss legge til flere elementer på slutten av lista. Vi kan bruke den slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">])</span> <span class="c1"># legger til elementene `100`, `200` og `300` på slutten av lista</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">])</span> <span class="c1"># legger til elementene `100`, `200` og `300` på slutten av lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1232,9 +1227,9 @@ Løsningsforslag<div class="sd-summary-down docutils">
 <p>Hvis du vet <em>hvor</em> i listen et element du ønsker å fjerne befinner seg, kan du bruke <code class="docutils literal notranslate"><span class="pre">pop</span></code> til å fjerne elementet. Du må da spesifisere indeksen til elementet du ønsker å fjerne. Vi kan bruke <code class="docutils literal notranslate"><span class="pre">pop</span></code> slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># lista før vi fjerner elementet</span>
-<span class="linenos">2</span><span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># -1 er siste element i lista!</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># lista etter vi fjerner elementet</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># lista før vi fjerner elementet</span>
+<span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># -1 er siste element i lista!</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># lista etter vi fjerner elementet</span>
 </pre></div>
 </div>
 </div>
@@ -1257,9 +1252,9 @@ l = [1, 2, -100, 3, 4, 5, 10, 100, 200]
 <p>Hvis du ikke vet <em>hvor</em> i listen et element du ønsker å fjerne befinner seg, kan du bruke <code class="docutils literal notranslate"><span class="pre">remove</span></code> til å fjerne elementet. Du må da spesifisere verdien til elementet du ønsker å fjerne. Vi kan bruke <code class="docutils literal notranslate"><span class="pre">remove</span></code> slik:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2"> før vi fjerner element med verdi 1&quot;</span><span class="p">)</span> <span class="c1"># lista før vi fjerner elementet</span>
-<span class="linenos">2</span><span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2"> etter vi fjerne element med verdi 1&quot;</span><span class="p">)</span> <span class="c1"># lista etter vi fjerner elementet</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2"> før vi fjerner element med verdi 1&quot;</span><span class="p">)</span> <span class="c1"># lista før vi fjerner elementet</span>
+<span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2"> etter vi fjerne element med verdi 1&quot;</span><span class="p">)</span> <span class="c1"># lista etter vi fjerner elementet</span>
 </pre></div>
 </div>
 </div>
@@ -1286,26 +1281,26 @@ l = [2, -100, 3, 4, 5, 10, 100, 200] etter vi fjerne element med verdi 1
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> eller <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Hjelpefunksjon for å sjekke om et tall er et primtall</span>
-<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="linenos"> 3</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="linenos"> 4</span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos"> 5</span>            <span class="k">return</span> <span class="kc">False</span>
-<span class="linenos"> 6</span>    <span class="k">return</span> <span class="kc">True</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">l</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag en liste med 2, 3, 5, 7 og 11</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="n">nye_tall</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="linenos">12</span><span class="n">tall</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># Start med 12</span>
-<span class="linenos">13</span><span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">nye_tall</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="linenos">14</span>    <span class="k">if</span> <span class="n">er_primtall</span><span class="p">(</span><span class="n">tall</span><span class="p">):</span>
-<span class="linenos">15</span>        <span class="k">pass</span> <span class="c1"># Legg til tallet i lista hvis det er et primtall</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>    <span class="n">tall</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span><span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Utvid lista med de nye tallene</span>
-<span class="linenos">20</span><span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Sett inn tallet 1 på indeks 0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hjelpefunksjon for å sjekke om et tall er et primtall</span>
+<span class="k">def</span> <span class="nf">er_primtall</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="n">l</span> <span class="o">=</span> <span class="bp">NotImplemented</span> <span class="c1"># Lag en liste med 2, 3, 5, 7 og 11</span>
+
+<span class="n">nye_tall</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tall</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># Start med 12</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">nye_tall</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">er_primtall</span><span class="p">(</span><span class="n">tall</span><span class="p">):</span>
+        <span class="k">pass</span> <span class="c1"># Legg til tallet i lista hvis det er et primtall</span>
+
+    <span class="n">tall</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">l</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Utvid lista med de nye tallene</span>
+<span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="bp">NotImplemented</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="p">)</span> <span class="c1"># Sett inn tallet 1 på indeks 0</span>
 </pre></div>
 </div>
 </div>
@@ -1362,14 +1357,14 @@ Forslag til metoder:</p>
 <p><em>Du kan ta utgangspunkt i kodeskallet under. Du må fylle inn der det står <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> og <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span> <span class="c1"># lager en liste med heltallene fra 1 til 10</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="c1"># Fjern partallene fra lista. </span>
-<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-<span class="linenos">5</span>    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># sjekk om tallet er partall</span>
-<span class="linenos">6</span>        <span class="k">pass</span> <span class="c1"># </span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># skriver ut lista etter endringene</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span> <span class="c1"># lager en liste med heltallene fra 1 til 10</span>
+
+<span class="c1"># Fjern partallene fra lista. </span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">NotImplemented</span><span class="p">:</span> <span class="c1"># sjekk om tallet er partall</span>
+        <span class="k">pass</span> <span class="c1"># </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">l</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># skriver ut lista etter endringene</span>
 </pre></div>
 </div>
 </div>
@@ -1467,11 +1462,11 @@ Hjelpefunksjon for å sjekke om et tall er et primtall<div class="sd-summary-dow
 </div>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)]</span> <span class="c1"># Alle heltall fra og med 1 til og med 100</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="n">primtall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">4</span><span class="n">partall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-<span class="linenos">5</span><span class="n">oddetall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)]</span> <span class="c1"># Alle heltall fra og med 1 til og med 100</span>
+
+<span class="n">primtall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">partall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+<span class="n">oddetall</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
 </pre></div>
 </div>
 </div>
