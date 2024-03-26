@@ -740,8 +740,32 @@ A = h \cdot (f(0) + f(4/3) + f(8/3)) = \frac{4}{3} \cdot (10 + 8.81 + 25.41) \ap
 </section>
 <section id="oppgave-2b">
 <h3>Oppgave 2b 💻<a class="headerlink" href="#oppgave-2b" title="Permalink to this heading">#</a></h3>
-<p>Skriv ferdig koden til eleven slik at det regner ut arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen i intervallet <span class="math notranslate nohighlight">\([0, 4]\)</span> ved å bruke 3 rektangler. <br>
+<p>Skriv ferdig koden til eleven slik at det regner ut en tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen i intervallet <span class="math notranslate nohighlight">\([0, 4]\)</span> ved å bruke like mange rektangler som eleven opprinnelige hadde prøvd ut. <br>
 Sjekk at svaret ditt stemmer med det du regnet ut i forrige oppgave.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi kan fullføre koden inspirert av hva vi gjorde i forrige oppgave. Da får vi et program som ser slik ut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">bredde</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>                    <span class="c1"># Bredde med 3 rektangler</span>
+
+<span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">bredde</span><span class="p">)</span>
+    <span class="n">areal</span> <span class="o">=</span> <span class="n">areal</span> <span class="o">+</span> <span class="n">bredde</span> <span class="o">*</span> <span class="n">høyde</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">areal</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut arealet med 2 desimaler</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">areal = 58.96</span>
+</pre></div>
+</div>
+<p>som betyr at arealet av de tre rektangelene er ca. 58.96.</p>
+</div>
 </section>
 <section id="oppgave-2c">
 <h3>Oppgave 2c 💻<a class="headerlink" href="#oppgave-2c" title="Permalink to this heading">#</a></h3>
