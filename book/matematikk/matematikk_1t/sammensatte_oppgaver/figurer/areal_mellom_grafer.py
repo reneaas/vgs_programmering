@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 def g(x):
-    return x**3 + x**2 - 4*x + 10
+    return -4*(x - 3)*(x**2 + 1)
 
 a = 0
-b = 4
+b = 3
 
 x = np.linspace(a, b, 1024)
 
@@ -43,18 +43,16 @@ ax[0].set_yticks([])
 ax[1].set_xticks([])
 ax[1].set_yticks([])
 
-ax[0].set_xlim(-0.5, 4.5)
-ax[0].set_ylim(-0.5, g(4))
+ax[0].set_xlim(a - 0.5, b + 0.5)
+ax[0].set_ylim(-0.5, max(g(x)) + 1)
 
-ax[1].set_xlim(-0.5, 4.5)
-ax[1].set_ylim(-0.5, g(4))
+ax[1].set_xlim(a - 0.5, b + 0.5)
+ax[1].set_ylim(-0.5, max(g(x)) + 1)
 
-plt.ylim(-0.5, g(4))
-plt.xlim(-0.5, 4.5)
 
 dx = 0.5
 x = 0
-for i in range(int(4 / dx)):
+for i in range(int((b - a) / dx)):
     rect = patches.Rectangle(
         xy=(x, 0),
         width=dx,
@@ -69,7 +67,7 @@ for i in range(int(4 / dx)):
 
 dx = 0.25
 x = 0
-for i in range(int(4 / dx)):
+for i in range(int((b - a) / dx)):
     rect = patches.Rectangle(
         xy=(x, 0),
         width=dx,
@@ -107,8 +105,8 @@ ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 ax.set_xticks([])
 ax.set_yticks([])
 
-ax.set_xlim(-0.5, 4.5)
-ax.set_ylim(-0.5, g(4))
+ax.set_xlim(a - 0.5, b + 0.5)
+ax.set_ylim(-0.5, max(g(x)) + 1)
 
 plt.fill_between(
     x=x,
