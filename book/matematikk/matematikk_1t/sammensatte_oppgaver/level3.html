@@ -679,31 +679,6 @@ f(x) = -4(x - 3)(x^2 + 1)
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">n_rektangler</span> <span class="o">=</span> <span class="mi">1_000_000</span>                <span class="c1"># 1_000_000 = 1000000</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">bredde</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_rektangler</span>                    
-
-<span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rektangler</span><span class="p">):</span>
-    <span class="n">høyde</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">bredde</span><span class="p">)</span>
-    <span class="n">areal</span> <span class="o">=</span> <span class="n">areal</span> <span class="o">+</span> <span class="n">bredde</span> <span class="o">*</span> <span class="n">høyde</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">areal</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut arealet med 2 desimaler</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>areal = 45.00
-</pre></div>
-</div>
-</div>
-</div>
 <section id="oppgave-2a">
 <h3>Oppgave 2a 📝<a class="headerlink" href="#oppgave-2a" title="Permalink to this heading">#</a></h3>
 <p><strong>Svar på følgende spørsmål uten å kjøre programmet:</strong></p>
@@ -719,7 +694,7 @@ f(x) = -4(x - 3)(x^2 + 1)
 </ol>
 <div class="math notranslate nohighlight">
 \[
-h = \frac{3 - 0}{3} = \frac{3}{3} = 1.
+h = \frac{b - a}{3} = \frac{3 - 0}{3} = \frac{3}{3} = 1.
 \]</div>
 <p>Videre har vi at høyden til hvert rektangel er gitt ved funksjonsverdien i venstre hjørne. De tre hjørnene vi er ute etter blir</p>
 <div class="math notranslate nohighlight">
@@ -740,7 +715,7 @@ A = h \cdot f(0) + h \cdot f(1) + h \cdot f(2) = 1\cdot 12 + 1 \cdot 16 + 1 \cdo
 </section>
 <section id="oppgave-2b">
 <h3>Oppgave 2b 💻<a class="headerlink" href="#oppgave-2b" title="Permalink to this heading">#</a></h3>
-<p>Skriv ferdig koden til eleven slik at det regner ut en tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen i intervallet <span class="math notranslate nohighlight">\([0, 4]\)</span> ved å bruke like mange rektangler som eleven opprinnelige hadde prøvd ut. <br>
+<p>Skriv ferdig koden til eleven slik at det regner ut en tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen i intervallet <span class="math notranslate nohighlight">\([0, 3]\)</span> ved å bruke like mange rektangler som eleven opprinnelige hadde prøvd ut. <br>
 Sjekk at svaret ditt stemmer med det du regnet ut i forrige oppgave.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
