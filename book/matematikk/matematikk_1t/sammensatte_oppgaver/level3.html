@@ -644,12 +644,12 @@ En mulig løsning av programmet blir derfor:</p>
 <p>Nok en elev jobber med en oppgave:</p>
 <div class="note admonition">
 <p class="admonition-title">En oppgave som ville gjort Arkimedes sjalu 🏺</p>
-<p>En funksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<p>En tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = x^3 + x^2 - 4x + 10
+f(x) = -4(x - 3)(x^2 + 1)
 \]</div>
-<p>Figuren under viser grafen til <span class="math notranslate nohighlight">\(f\)</span> i intervallet <span class="math notranslate nohighlight">\([0, 4]\)</span>. Området mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen er fargelagt.</p>
+<p>Figuren under viser grafen til <span class="math notranslate nohighlight">\(f\)</span> i intervallet <span class="math notranslate nohighlight">\([0, 3]\)</span>. Området mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen er fargelagt.</p>
 <figure class="align-default" id="areal-graf">
 <img alt="../../../../_images/areal.png" src="../../../../_images/areal.png" />
 </figure>
@@ -663,10 +663,10 @@ f(x) = x^3 + x^2 - 4x + 10
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">bredde</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>                    <span class="c1"># Bredde med 3 rektangler</span>
 
 <span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
@@ -675,6 +675,31 @@ f(x) = x^3 + x^2 - 4x + 10
     <span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">areal</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut arealet med 2 desimaler</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">n_rektangler</span> <span class="o">=</span> <span class="mi">1_000_000</span>                <span class="c1"># 1_000_000 = 1000000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">bredde</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_rektangler</span>                    
+
+<span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rektangler</span><span class="p">):</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">bredde</span><span class="p">)</span>
+    <span class="n">areal</span> <span class="o">=</span> <span class="n">areal</span> <span class="o">+</span> <span class="n">bredde</span> <span class="o">*</span> <span class="n">høyde</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">areal</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut arealet med 2 desimaler</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>areal = 45.00
 </pre></div>
 </div>
 </div>
@@ -689,27 +714,27 @@ f(x) = x^3 + x^2 - 4x + 10
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <ol class="arabic simple">
-<li><p>Eleven har tenkt at man kan tilnærme arealet undere grafen ved å lage rektangler som har bredde <span class="math notranslate nohighlight">\((b - a) / n\)</span>, der <span class="math notranslate nohighlight">\(n\)</span> er antall rektangler over intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>, og høyden til hvert rektangel er gitt ved funksjonsverdien i venstre hjørne på hvert rektangel.</p></li>
+<li><p>Eleven har tenkt at man kan tilnærme arealet undere grafen ved å lage rektangler som har bredde <span class="math notranslate nohighlight">\((b - a) / n\)</span>, der <span class="math notranslate nohighlight">\(n\)</span> er antall rektangler over intervallet <span class="math notranslate nohighlight">\([a, b] = [0, 3]\)</span>, og høyden til hvert rektangel er gitt ved funksjonsverdien i venstre hjørne på hvert rektangel.</p></li>
 <li><p>Eleven har valgt seg 3 rektangler i programmet. Bredden til hvert rektangel blir</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
-h = \frac{4 - 0}{3} = \frac{4}{3}.
+h = \frac{3 - 0}{3} = \frac{3}{3} = 1.
 \]</div>
 <p>Videre har vi at høyden til hvert rektangel er gitt ved funksjonsverdien i venstre hjørne. De tre hjørnene vi er ute etter blir</p>
 <div class="math notranslate nohighlight">
 \[
-x \in \{a, a + h, a + 2h\} = \{0, 4/3, 8/3\}.
+x \in \{a, a + h, a + 2h\} = \{0, 1, 2\}.
 \]</div>
 <p>Funksjonsverdiene i disse punktene blir</p>
 <div class="math notranslate nohighlight">
 \[
-f(0) = 10, \quad f(4/3) \approx 8.81, \quad f(8/3) \approx 25.41.
+f(0) = 12, \quad f(1) = 16, \quad f(2) = 20.
 \]</div>
-<p>som gir arealet</p>
+<p>Arealet av rektanglene blir derfor</p>
 <div class="math notranslate nohighlight">
 \[
-A = h \cdot (f(0) + f(4/3) + f(8/3)) = \frac{4}{3} \cdot (10 + 8.81 + 25.41) \approx 58.96
+A = h \cdot f(0) + h \cdot f(1) + h \cdot f(2) = 1\cdot 12 + 1 \cdot 16 + 1 \cdot 20 = 48.
 \]</div>
 </div>
 </section>
@@ -721,10 +746,10 @@ Sjekk at svaret ditt stemmer med det du regnet ut i forrige oppgave.</p>
 <p class="admonition-title">Løsningsforslag</p>
 <p>Vi kan fullføre koden inspirert av hva vi gjorde i forrige oppgave. Da får vi et program som ser slik ut:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">bredde</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>                    <span class="c1"># Bredde med 3 rektangler</span>
 
 <span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
@@ -736,25 +761,26 @@ Sjekk at svaret ditt stemmer med det du regnet ut i forrige oppgave.</p>
 </pre></div>
 </div>
 <p>som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">areal = 58.96</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">areal = 48.00</span>
 </pre></div>
 </div>
-<p>som betyr at arealet av de tre rektangelene er ca. 58.96.</p>
+<p>som betyr at arealet av de tre rektangelene er 48.</p>
 </div>
 </section>
 <section id="oppgave-2c">
 <h3>Oppgave 2c 💻<a class="headerlink" href="#oppgave-2c" title="Permalink to this heading">#</a></h3>
-<p>Endre programmet slik at det regner ut en <em>god</em> tilnærming til arealet under grafen. <br>
-Hva blir arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen i intervallet <span class="math notranslate nohighlight">\([0, 4]\)</span>?</p>
+<p>Endre programmet slik at det regner ut en <em>god</em> tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen. <br>
+Hva blir arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen i intervallet <span class="math notranslate nohighlight">\([0, 3]\)</span>?</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<p>Vi må på antall rektangler som brukes i programmet, der flere rektangler vil gi en bedre tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen. Under vises et forslag til programmet med 1 million rektangler:</p>
+<p>Vi må endre på antall rektangler i koden slik at det blir en god tilnærming. Jo flere rektangler, jo bedre. Men det er også en balansegang, for jo flere rektangler, jo mer tid tar det å regne ut arealet. <br>
+Vi kan få en tilstrekkelig god tilnærming ved velge oss 1 million rektangler. Koden kan da se slik ut:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
+<span class="n">n_rektangler</span> <span class="o">=</span> <span class="mi">1_000_000</span>                <span class="c1"># 1_000_000 = 1000000</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">n_rektangler</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">bredde</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_rektangler</span>                    
 
 <span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
@@ -766,10 +792,10 @@ Hva blir arealet mellom grafen til <span class="math notranslate nohighlight">\(
 </pre></div>
 </div>
 <p>som gir utskriften</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">areal</span> <span class="o">=</span> <span class="mf">93.33</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">45.00</span>
 </pre></div>
 </div>
-<p>som betyr at arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen er omtrent <span class="math notranslate nohighlight">\(93.33\)</span>.</p>
+<p>som betyr at arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen er 45 med to desimalers presisjon.</p>
 </div>
 </section>
 </section>
