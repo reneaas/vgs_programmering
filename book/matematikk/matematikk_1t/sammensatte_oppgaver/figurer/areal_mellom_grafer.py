@@ -65,7 +65,7 @@ for i in range(int((b - a) / dx)):
     ax[0].add_patch(rect)
 
 
-dx = 0.25
+dx = 0.125
 x = 0
 for i in range(int((b - a) / dx)):
     rect = patches.Rectangle(
