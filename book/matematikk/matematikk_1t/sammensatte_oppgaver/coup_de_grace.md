@@ -1,4 +1,4 @@
-# Coup de Grâce 1T
+# Coup de Grâce 1T - Eksamensøving
 Disse oppgavene passer for elever som har vært gjennom all matematikken i 1T. Typisk som eksamensforberedelse.
 Oppgavene er delt opp i ulike *levler*.
 Levlene er delt i 3:
