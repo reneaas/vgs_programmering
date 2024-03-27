@@ -468,6 +468,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c">Oppgave 2c 💻</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a">Oppgave 3a 📝</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b 💽</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3c">Oppgave 3c 💻</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -780,6 +786,245 @@ Vi kan få en tilstrekkelig god tilnærming ved velge oss 1 million rektangler. 
 </div>
 </section>
 </section>
+<section id="oppgave-3">
+<h2>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h2>
+<p>En elev jobber med en oppgave.</p>
+<div class="note admonition">
+<p class="admonition-title">Arkimedes’ drøm </p>
+<p>Arkimedes brukte omkretsen av en 96-kant til å bestemme en tilnærming til verdien av <span class="math notranslate nohighlight">\(\pi\)</span>. Han kom fram til at <span class="math notranslate nohighlight">\(\pi \approx 22/7\)</span>. <br>
+En sirkel med radius <span class="math notranslate nohighlight">\(1\)</span> kan uttrykkes med ligningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^2 + y^2 = 1
+\]</div>
+<p>som gir alle punktene <span class="math notranslate nohighlight">\((x, y)\)</span> som ligger på sirkelen sentrert i origo med radius <span class="math notranslate nohighlight">\(1\)</span>. Ligningen kan løses for <span class="math notranslate nohighlight">\(y\)</span> slik at vi får</p>
+<div class="math notranslate nohighlight">
+\[
+y = \pm \sqrt{1 - x^2}
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(x \in [-1, 1]\)</span>. <br></p>
+<p>Det positive fortegnet gir oss den øvre halvsirkelen og det negative fortegnet gir oss den nedre halvsirkelen. <br></p>
+<p><em>Per definisjon</em> er <span class="math notranslate nohighlight">\(\pi\)</span> definert som forholdet mellom omkretsen <span class="math notranslate nohighlight">\(C\)</span> og diameteren <span class="math notranslate nohighlight">\(d = 2r\)</span> til sirkelen. Det vil si:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi = \frac{C}{d} = \frac{C}{2r}
+\]</div>
+<p>Omkretsen av en sirkel med radius 1 må derfor, etter definisjonen, være</p>
+<div class="math notranslate nohighlight">
+\[
+C = 2\pi r = 2\pi.
+\]</div>
+<p>Lengden av den øvre halvdelen er halvparten av omkretsen og vil derfor være <span class="math notranslate nohighlight">\(\pi\)</span>. <br></p>
+<p>Lag et program som finner en tilnærming til <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+</div>
+<p>Eleven har laget seg en figur som viser hvordan eleven har tenkt å bestemme verdien av <span class="math notranslate nohighlight">\(\pi\)</span> ved hjelp av en halvsirkel.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../../_images/lengde_av_graf_4_segmenter.png"><img alt="../../../../_images/lengde_av_graf_4_segmenter.png" src="../../../../_images/lengde_av_graf_4_segmenter.png" style="width: 100%;" /></a>
+</figure>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../../../_images/lengde_av_graf_10_segmenter.png"><img alt="../../../../_images/lengde_av_graf_10_segmenter.png" src="../../../../_images/lengde_av_graf_10_segmenter.png" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+<p>Eleven har startet på et program for å bruke ideen sin:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x_katet</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>                   <span class="c1"># katet i x-retning i hver trekant med 4 trekanter</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="c1"># Må regne ut y-katet i trekanten og hypotenus i trekanten</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                           <span class="c1"># y-verdi i trekantens venstre hjørne </span>
+
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x_katet</span>                     <span class="c1"># Flytter x til neste trekant </span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.11f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>              <span class="c1"># Skriver ut lengden med 11 desimaler</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="oppgave-3a">
+<h3>Oppgave 3a 📝<a class="headerlink" href="#oppgave-3a" title="Permalink to this heading">#</a></h3>
+<p><strong>Svar på følgende spørsmål uten å kjøre programmet:</strong></p>
+<ol class="arabic simple">
+<li><p>Forklar hvordan eleven har tenkt å bestemme en tilnærming til <span class="math notranslate nohighlight">\(\pi\)</span>.</p></li>
+<li><p>Hva tror du skjer når vi bruker veldig mange trekanter?</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<ol class="arabic simple">
+<li><p>Eleven har tenkt at man kan tilnærme lengden av halvsirkelen ved å bruke lengden av rette linjer som følger halvsirkelen som blir hypotenusen til trekanter som er laget mellom punktene på sirkelen og <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
+<li><p>Når vi bruker veldig mange trekanter, vil hypotenusene til trekantene ligge tilnærmet langs sirkelbuen. Summerer vi opp lengden av hypotenusene til trekantene, vil vi komme nærme lengden av sirkelbuen.</p></li>
+</ol>
+</div>
+</section>
+<section id="oppgave-3b">
+<h3>Oppgave 3b 💽<a class="headerlink" href="#oppgave-3b" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Regn ut en tilnærming for hånd ved å bruke fire trekanter for å sjekke hva svaret omtrent bør bli. 📝</p></li>
+<li><p>Fullfør programmet til eleven slik at det regner ut en tilnærming til <span class="math notranslate nohighlight">\(\pi\)</span> ved å bruke like mange trekanter som eleven opprinnelige hadde prøvd ut. 💻 <br></p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<ol class="arabic">
+<li><p>Vi kan regne ut en tilnærming for hånd ved å bruke fire trekanter. Hvis vi deler intervallet <span class="math notranslate nohighlight">\([-1, 1]\)</span> i fire like store deler, får vi at <span class="math notranslate nohighlight">\(x\)</span>-verdiene til punktene blir</p>
+<div class="math notranslate nohighlight">
+\[
+    x \in \left\{-1, -\frac{1}{2}, 0, \frac{1}{2}, 1\right\}.
+    \]</div>
+<p>Funksjonsverdiene til øvre halvsirkel beskrevet av funksjonen</p>
+<div class="math notranslate nohighlight">
+\[
+    f(x) = \sqrt{1 - x^2}
+    \]</div>
+<p>blir da</p>
+<div class="math notranslate nohighlight">
+\[
+    f(x) \in \left\{0, \frac{\sqrt{3}}{2}, 1, \frac{\sqrt{3}}{2}, 0\right\}
+    \]</div>
+<p>La <span class="math notranslate nohighlight">\(\Delta x\)</span> (<span class="math notranslate nohighlight">\(x\)</span>-katet) være avstanden mellom to nærliggende <span class="math notranslate nohighlight">\(x\)</span>-verdier og <span class="math notranslate nohighlight">\(\Delta y\)</span> (<span class="math notranslate nohighlight">\(y\)</span>-katet) være avstanden mellom to nærliggende <span class="math notranslate nohighlight">\(y\)</span>-verdier. Da blir lengden av hypotenusene <span class="math notranslate nohighlight">\(h\)</span> til trekantene (etter Pytagoras’ setning)</p>
+<div class="math notranslate nohighlight">
+\[
+    h = \sqrt{(\Delta x)^2 + (\Delta y)^2}
+    \]</div>
+<p>Vi kan lage oss en tabell der vi regner katetene og hypotenusene til trekantene:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\Delta x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\Delta y\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(h\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{3}/2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{\left(1/2\right)^2 + \left(\sqrt{3}/2\right)^2} = \sqrt{1/4 + 3/4} = 1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1 - \sqrt{3}/2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{\left(1/2\right)^2 + (1 - \sqrt{3}/2)^2} = \sqrt{1/4 + 1 - \sqrt{3} + 3/4} = \sqrt{2-\sqrt{3}}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{3}/2 - 1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{\left(1/2\right)^2 + \left(\sqrt{3}/2 - 1\right)^2} = \sqrt{1/4 + 3/4 - \sqrt{3} + 1} = \sqrt{2-\sqrt{3}}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\sqrt{3}/2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{\left(1/2\right)^2 + \left(-\sqrt{3}/2\right)^2} = \sqrt{1/4 + 3/4} = 1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Lengden av hypotenusene til trekantene blir derfor</p>
+<div class="math notranslate nohighlight">
+\[
+    L = 2\cdot 1 + 2\cdot \sqrt{2 - \sqrt{3}} \approx 3.035.  
+    \]</div>
+</li>
+<li><p>Programmet mangler å regne ut <span class="math notranslate nohighlight">\(y\)</span>-katetene, hypotenusen og summen av hypotenusene. Vi kan fullføre programmet slik:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x_katet</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>                                  <span class="c1"># katet i x-retning i hver trekant med 4 trekanter</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="c1"># Må regne ut y-katet i trekanten og hypotenus i trekanten</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                                           <span class="c1"># y-verdi i trekantens venstre hjørne </span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x_katet</span><span class="p">)</span>                                 <span class="c1"># y-verdi i øvre hjørne</span>
+    <span class="n">y_katet</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>                                   <span class="c1"># y-katet i trekanten (høyden)</span>
+
+    <span class="n">hypotenus</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_katet</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y_katet</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>        <span class="c1"># Hypotenus i trekanten</span>
+    <span class="n">lengde</span> <span class="o">=</span> <span class="n">lengde</span> <span class="o">+</span> <span class="n">hypotenus</span>                         <span class="c1"># Legger til hypotenus i lengde</span>
+
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x_katet</span>                                     <span class="c1"># Flytter x til neste trekant </span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lengde</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">3.035276180410083</span>
+</pre></div>
+</div>
+<p>som stemmer godt overens med regning vi har gjort for hånd.</p>
+</li>
+</ol>
+</div>
+</section>
+<section id="oppgave-3c">
+<h3>Oppgave 3c 💻<a class="headerlink" href="#oppgave-3c" title="Permalink to this heading">#</a></h3>
+<p>Bruk programmet ditt til å finne en god tilnærming til <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\pi\)</span> er en irrasjonell tall, så vi kan aldri få en eksakt verdi, men her er verdien med 11 desimaler:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi \approx 3.14159265359
+\]</div>
+<p>Hvor mange trekanter trenger du for å få en tilnærming som har 11 desimaler riktig?</p>
+<div class="tip admonition">
+<p class="admonition-title">Viktig kodehint: Antall trekanter må velges til å være et partall!</p>
+<p>På datamaskin, representeres tall med 2-tallssystemet, så for å unngå avrundingsfeil må du velge antall trekanter til være et partall. <br></p>
+<p>Dette kan du gjøre ved sette for eksempel sette:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_trekanter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>men du må ha en høyere potens av <span class="math notranslate nohighlight">\(2\)</span> for å få en god tilnærming til <span class="math notranslate nohighlight">\(\pi\)</span> med 11 desimaler riktig. <br>
+Merk også at programmet ditt vil ta lenger tid å kjøre jo flere trekanter du bruker. Du kan forvente å måtte vente rundt 10 sekunder når du kjører programmet ved høyt nok antall trekanter.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi må øke antall trekanter i programmet for å finne et god tilnærming til lengden av buen til halvsirkelen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+
+<span class="n">n_trekanter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x_katet</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_trekanter</span>                         <span class="c1"># katet i x-retning i hver trekant med n trekanter</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">lengde</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_trekanter</span><span class="p">):</span>
+    <span class="c1"># Må regne ut y-katet i trekanten og hypotenus i trekanten</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                                           <span class="c1"># y-verdi i trekantens venstre hjørne </span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x_katet</span><span class="p">)</span>                                 <span class="c1"># y-verdi i øvre hjørne</span>
+    <span class="n">y_katet</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>                                   <span class="c1"># y-katet i trekanten (høyden)</span>
+
+    <span class="n">hypotenus</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_katet</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y_katet</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>        <span class="c1"># Hypotenus i trekanten</span>
+    <span class="n">lengde</span> <span class="o">=</span> <span class="n">lengde</span> <span class="o">+</span> <span class="n">hypotenus</span>                         <span class="c1"># Legger til hypotenus i lengde</span>
+
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x_katet</span>                                     <span class="c1"># Flytter x til neste trekant </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.11f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Med å velge antall trekanter til å være <span class="math notranslate nohighlight">\(2^{25} = 33 554 432\)</span> får vi utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lengde = 3.14159265359</span>
+</pre></div>
+</div>
+<p>som gir oss en tilnærming til <span class="math notranslate nohighlight">\(\pi\)</span> med 11 desimaler riktig.</p>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -855,6 +1100,12 @@ Vi kan få en tilstrekkelig god tilnærming ved velge oss 1 million rektangler. 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2a">Oppgave 2a 📝</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b">Oppgave 2b 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c">Oppgave 2c 💻</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a">Oppgave 3a 📝</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b 💽</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3c">Oppgave 3c 💻</a></li>
 </ul>
 </li>
 </ul>
