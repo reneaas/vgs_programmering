@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/matematikk_1t/sammensatte_oppgaver/level3';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Løse ligninger med sympy" href="../../../python/symbolsk_python/ligninger.html" />
+    <link rel="next" title="Numerisk integrasjon" href="../../matematikk_r2/numerisk_integrasjon/intro.html" />
     <link rel="prev" title="Coup de Grâce: Level 2 🔥🔥" href="level2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,6 +189,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk R2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk_r2/numerisk_integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk_r2/numerisk_integrasjon/level1.html">Level 1 🔥</a></li>
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../python/symbolsk_python/ligninger.html">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -200,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -460,6 +467,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a 📝</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b  💽</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c 💻</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1d">Oppgave 1d 💻</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a><ul class="nav section-nav flex-column">
@@ -498,10 +506,10 @@ document.write(`
 <p>En elev jobber med en oppgave:</p>
 <div class="note admonition">
 <p class="admonition-title">Oppgaven</p>
-<p>En funksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<p>En tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = 3x^3 - \frac{13}{5}x^2 - \frac{25}{5}x + 1.
+f(x) = x^3 + 2x^2 - x - 2
 \]</div>
 <p>Grafen til <span class="math notranslate nohighlight">\(f\)</span> er vist under.</p>
 <figure class="align-default" id="tredjegradsfunksjon">
@@ -513,14 +521,14 @@ f(x) = 3x^3 - \frac{13}{5}x^2 - \frac{25}{5}x + 1.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">25</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
 
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
-<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>     <span class="c1"># Betingelsen leses som |f(m)| &gt; 10**(-8)</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>             <span class="c1"># Betingelsen leses som |f(m)| &gt; 10**(-8)</span>
     <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>
     <span class="k">else</span><span class="p">:</span>
@@ -528,7 +536,7 @@ f(x) = 3x^3 - \frac{13}{5}x^2 - \frac{25}{5}x + 1.
 
     <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut med 2 desimaler</span>
 </pre></div>
 </div>
 </div>
@@ -573,24 +581,31 @@ m = \frac{a + b}{2}.
 <ol class="arabic simple">
 <li><p>Strategien til eleven går som følger. Gitt et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der <span class="math notranslate nohighlight">\(f(a)\)</span> og <span class="math notranslate nohighlight">\(f(b)\)</span> har forskjellig fortegn, så må det være et punkt på intervallet der hvor grafen til <span class="math notranslate nohighlight">\(f\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen. Derfor finnes det et nullpunkt <span class="math notranslate nohighlight">\(x \in [a, b]\)</span>.
 Tanken bak programmet er at hvis vi regner ut midtpunktet <span class="math notranslate nohighlight">\(m = (a + b) / 2\)</span>, så vil vi kunne lage oss et nytt intervall som er halvparten så stort. Da vil grafen til <span class="math notranslate nohighlight">\(f\)</span> enten skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen i intervallet <span class="math notranslate nohighlight">\([a, m]\)</span> eller i intervallet <span class="math notranslate nohighlight">\([m, b]\)</span>. Vi velger oss bare det nye intervallet der <span class="math notranslate nohighlight">\(f\)</span> har forskjellig fortegn i endepunktene, for da er vi sikre på at grafen til <span class="math notranslate nohighlight">\(f\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen i det nye intervallet. Gjentar vi dette tilstrekkelig mange ganger blir intervallet såpass lite at vi vil til slutt skvise oss så nærme punktet der <span class="math notranslate nohighlight">\(f\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen som vi bare måtte ønske. Med andre ord vil vi til slutt komme så nærmere et nullpunkt til <span class="math notranslate nohighlight">\(f\)</span> som vi bare måtte ønske.</p></li>
-<li><p>Programmet starter med <span class="math notranslate nohighlight">\(a = 0\)</span> og <span class="math notranslate nohighlight">\(b = 1\)</span>. Det er bare ett nullpunkt på dette intervallet som betyr at vi vil nærme oss nullpunktet som ligger på intervallet <span class="math notranslate nohighlight">\([0, 1]\)</span> med programmet.</p></li>
+<li><p>Programmet starter med <span class="math notranslate nohighlight">\(a = 0\)</span> og <span class="math notranslate nohighlight">\(b = 2\)</span>. Det er bare ett nullpunkt på dette intervallet som betyr at vi vil nærme oss nullpunktet som ligger på intervallet <span class="math notranslate nohighlight">\([0, 2]\)</span> med programmet. Dette nullpunktet kan vi lese av fra grafen svarer til <span class="math notranslate nohighlight">\(x = 1\)</span></p></li>
 </ol>
 </div>
 </section>
 <section id="oppgave-1b">
 <h3>Oppgave 1b  💽<a class="headerlink" href="#oppgave-1b" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Hvilket nullpunkt finner programmet i stedet hvis vi setter <span class="math notranslate nohighlight">\(a = 1\)</span> og <span class="math notranslate nohighlight">\(b = 2\)</span>? 📝</p></li>
-<li><p>Test forutsigelsen din ved å kjøre programmet med <span class="math notranslate nohighlight">\(a = 1\)</span> og <span class="math notranslate nohighlight">\(b = 2\)</span>.  💻</p></li>
+<li><p>Hvilket nullpunkt finner programmet i stedet hvis vi setter <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-3</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code>? 📝</p></li>
+<li><p>Test forutsigelsen din ved å kjøre programmet med <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-3</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code>.  💻</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<p>Det er bare ett nullpunkt på intervallet <span class="math notranslate nohighlight">\([1, 2]\)</span>, som vi kan se fra grafen til <span class="math notranslate nohighlight">\(f\)</span> i oppgaven. Derfor vil programmet nærme seg nullpunktet på intervallet <span class="math notranslate nohighlight">\([1, 2]\)</span>.
-Kjører vi programmet med <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code> får vi utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">m = 1.72</span>
+<ol class="arabic">
+<li><p>Alle nullpunktene ligger på intervallet <span class="math notranslate nohighlight">\([-3, 2]\)</span>. Men når vi trenger ut første verdi for <span class="math notranslate nohighlight">\(m\)</span>, vil vi få
+$<span class="math notranslate nohighlight">\(
+ m = \frac{a+b}{2} = \frac{-3 + 2}{2} = -\frac{1}{2}
+ \)</span><span class="math notranslate nohighlight">\(
+ Fra grafen til \)</span>f<span class="math notranslate nohighlight">\( kan vi se at \)</span>f(-1/2)<span class="math notranslate nohighlight">\( er negativ. \)</span>f(-3)<span class="math notranslate nohighlight">\( er også negativ, som betyr at programmet ikke vil bruke intervallet \)</span>[-3, -1/2]<span class="math notranslate nohighlight">\(. \)</span>f(2)<span class="math notranslate nohighlight">\( er derimot positiv, så programmet velger ut intervallet \)</span>[-1/2, 2]<span class="math notranslate nohighlight">\( og vil fortsette å halvere størrelsen på dette intervallet. Det er bare ett nullpunkt her, som er \)</span>x = 1$. Programmet finner derfor dette nullpunktet.</p></li>
+<li><p>Tester vi ut programmet med <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-3</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code> får vi utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">m = 1.00</span>
 </pre></div>
 </div>
-<p>som betyr at <span class="math notranslate nohighlight">\(x \approx 1.72\)</span> er et nullpunkt for <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>som betyr at programmet finner nullpunktet i <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
+</li>
+</ol>
 </div>
 </section>
 <section id="oppgave-1c">
@@ -609,7 +624,7 @@ Finn bunnpunktet med programmet.</p>
 <p class="admonition-title">Løsningsforslag</p>
 <p>Først bør vi lage en pythonfunksjon for <span class="math notranslate nohighlight">\(f'(x)\)</span>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_derivert</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">26</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">25</span> <span class="o">/</span> <span class="mi">5</span>
+    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Deretter må vi endre betingelsene i <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-testen slik at vi bruker <code class="docutils literal notranslate"><span class="pre">f_derivert</span></code> og ikke <code class="docutils literal notranslate"><span class="pre">f</span></code> når vi leter etter et nullpunkt. <br>
@@ -617,34 +632,108 @@ Videre må gjøre er å velge oss et intervall der hvor bunnpunktet ligger. Vi s
 Til slutt må vi skrive ut funksjonverdien til <span class="math notranslate nohighlight">\(f\)</span> i toppunktet.
 En mulig løsning av programmet blir derfor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">25</span><span class="o">*</span><span class="n">x</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
 
 <span class="k">def</span> <span class="nf">f_derivert</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">26</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">25</span> <span class="o">/</span> <span class="mi">5</span>
+    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
-<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f_derivert</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f_derivert</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>     
     <span class="k">if</span> <span class="n">f_derivert</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f_derivert</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">m</span>
-        
-    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">m = 1.09</span>
-<span class="go">f(m) = -3.65</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">m = 0.22</span>
+<span class="go">f(m) = -2.11</span>
 </pre></div>
 </div>
-<p>som betyr at bunnpunktet ligger omtrent i <span class="math notranslate nohighlight">\((1.09, -3.65)\)</span>.</p>
+<p>som betyr at bunnpunktet ligger omtrent i <span class="math notranslate nohighlight">\((0.22, -2.11)\)</span>.</p>
+</div>
+</section>
+<section id="oppgave-1d">
+<h3>Oppgave 1d 💻<a class="headerlink" href="#oppgave-1d" title="Permalink to this heading">#</a></h3>
+<p>Eleven leste i en bok om den deriverte til <span class="math notranslate nohighlight">\(f\)</span> og fant fram til følgende informasjon:</p>
+<div class="note admonition">
+<p class="admonition-title">Tilnærming til den deriverte til <span class="math notranslate nohighlight">\(f\)</span></p>
+<p>Den deriverte til en funksjon <span class="math notranslate nohighlight">\(f\)</span> kan tilnærmes med formelen</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) \approx \frac{f(x + h) - f(x)}{h}
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(h\)</span> er et lite positivt tall. <br>
+Vi kan tenke på tallet som avstanden mellom to punkter på <span class="math notranslate nohighlight">\(x\)</span>-aksen, nemlig <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(x + h\)</span>. <br></p>
+<p>Under vises en animasjon som viser sammenhengen mellom formelen over og den deriverte. <br></p>
+<figure class="align-default" id="derivasjon">
+<a class="reference internal image-reference" href="../../../../_images/derivasjon.gif"><img alt="../../../../_images/derivasjon.gif" src="../../../../_images/derivasjon.gif" style="width: 100%;" /></a>
+</figure>
+<p>Formelen gir oss stigningstallet til rette linjer som går gjennom to punkter <span class="math notranslate nohighlight">\((x, f(x))\)</span> og <span class="math notranslate nohighlight">\((x+h, f(x+h))\)</span> på grafen til <span class="math notranslate nohighlight">\(f\)</span>. Disse linjene kalles for <em>sekanter</em>. Stigningstallene gir gjennomsnittlig vekstfart.<br>
+Den <em>momentane vekstfarten</em> til <span class="math notranslate nohighlight">\(f\)</span>, som er det vi mener med <span class="math notranslate nohighlight">\(f'(x)\)</span> er stigningstallet til en tangent gjennom <span class="math notranslate nohighlight">\((x, f(x))\)</span>. Lar vi <span class="math notranslate nohighlight">\(h\)</span> bli liten vil den gjennomsnittlige vekstfarten nærme seg den momentane vekstfarten.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Endre programmet ditt til å bruke formelen som tilnærmer den deriverte i stedet for det eksakte uttrykket du bruke i forrige oppgave.</p></li>
+<li><p>Bruk programmet ditt til å finne bunnpunktet til <span class="math notranslate nohighlight">\(f\)</span>. Sammenlign med hva du fikk når du brukte det eksakte uttrykket for <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p></li>
+</ol>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Kodehint: en funksjon for den deriverte</p>
+<p>Du kan lage deg en funksjon på formen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_derivert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">formel_for_den_deriverte</span>
+</pre></div>
+</div>
+<p>der du må gi både en <span class="math notranslate nohighlight">\(x\)</span>-verdi og en verdi for <span class="math notranslate nohighlight">\(h\)</span>. <br></p>
+<p>Hvis du ikke helt finner ut hvordan fra hintet, kan du se koden for funksjonen under:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Koden for den deriverte til <span class="math notranslate nohighlight">\(f\)</span></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_derivert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+</pre></div>
+</div>
+<p>Du må bare passe på det en funksjon for <code class="docutils literal notranslate"><span class="pre">f</span></code> kommer <em>før</em> denne funksjonen i programmet, hvis ikke får du en feilmelding.</p>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi må justere programmet bittelitt slik at det bruker den tilnærmede verdien til programmet i stedet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">f_derivert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1e-5</span>                <span class="c1"># h = 10**(-5)</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f_derivert</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>     
+    <span class="k">if</span> <span class="n">f_derivert</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="n">f_derivert</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">m</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">m = 0.22</span>
+<span class="go">f(m) = -2.11</span>
+</pre></div>
+</div>
+<p>som betyr at vi får det samme bunnpunktet <span class="math notranslate nohighlight">\((0.22, -2.11)\)</span> når vi bruker formelen som tilnærmer den deriverte.</p>
 </div>
 </section>
 </section>
@@ -674,14 +763,16 @@ f(x) = -4(x - 3)(x^2 + 1)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
+
 <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">bredde</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>                    <span class="c1"># Bredde med 3 rektangler</span>
 
 <span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">høyde</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="mi">0</span>                           <span class="c1"># Høyden til hvert rektangel</span>
+    <span class="n">areal</span> <span class="o">=</span> <span class="mi">0</span>                           <span class="c1"># Legg til arealet </span>
+
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">areal</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut arealet med 2 desimaler</span>
 </pre></div>
@@ -1027,7 +1118,7 @@ Merk også at programmet ditt vil ta lenger tid å kjøre jo flere trekanter du 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lengde</span><span class="w"> </span><span class="si">= :</span><span class="s2">.11f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Ved å velge antall trekanter til å være <span class="math notranslate nohighlight">\(2^{25} = 33 554 432\)</span> får vi utskriften</p>
+<p>Ved å velge antall trekanter til å være <span class="math notranslate nohighlight">\(2^{25} = 33554432\)</span> får vi utskriften</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lengde = 3.14159265359</span>
 </pre></div>
 </div>
@@ -1077,11 +1168,11 @@ Merk også at programmet ditt vil ta lenger tid å kjøre jo flere trekanter du 
       </div>
     </a>
     <a class="right-next"
-       href="../../../python/symbolsk_python/ligninger.html"
+       href="../../matematikk_r2/numerisk_integrasjon/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
+        <p class="prev-next-title">Numerisk integrasjon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1104,6 +1195,7 @@ Merk også at programmet ditt vil ta lenger tid å kjøre jo flere trekanter du 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a 📝</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b  💽</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c 💻</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1d">Oppgave 1d 💻</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a><ul class="nav section-nav flex-column">

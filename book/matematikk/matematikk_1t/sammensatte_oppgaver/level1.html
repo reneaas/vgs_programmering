@@ -189,6 +189,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk R2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk_r2/numerisk_integrasjon/intro.html">Numerisk Integrasjon</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../matematikk_r2/numerisk_integrasjon/level1.html">Level 1 🔥</a></li>
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../python/symbolsk_python/ligninger.html">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
@@ -200,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../python/funksjoner/intro.html">Funksjoner i Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
@@ -497,7 +504,7 @@ document.write(`
 <section id="oppgave-1">
 <h2>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h2>
 <p>En kjent legende om en matematiker med navn Gauss sier at han som barn fikk i oppgave å summere tallene fra 1 til 100 for hånd. Han fant en smart måte å gjøre dette på, men vi kan heldigvis bruke programmering til å oppnå det samme.</p>
-<p>Under vises et program som regner ut summen av de 5 første heltallene.</p>
+<p>Under vises et program som regner ut summen av noen heltall.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
@@ -513,12 +520,8 @@ document.write(`
 <h3>Oppgave 1a 📝<a class="headerlink" href="#oppgave-1a" title="Permalink to this heading">#</a></h3>
 <p><strong>Svar på følgende spørsmål uten å kjøre programmet:</strong></p>
 <ol class="arabic simple">
-<li><p>Forklar hva linjene under gjør i programmet:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">range(1,</span> <span class="pre">6):</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">n</span></code></p></li>
-</ul>
-</li>
+<li><p>Hvilke heltall er det programmet summerer opp?</p></li>
+<li><p>Kan du forklare hva linja <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">n</span></code> gjør?</p></li>
 <li><p>Hvorfor tror du man setter <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">0</span></code> i starten av programmet?</p></li>
 <li><p>Hvilken verdi skriver programmet ut til slutt?</p></li>
 </ol>
@@ -526,7 +529,7 @@ document.write(`
 <p class="admonition-title">Løsningsforslag</p>
 <p>Linja</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">range(1,</span> <span class="pre">6):</span></code> forteller oss at gjenta noe med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke med verdien <span class="math notranslate nohighlight">\(n \in \{1, 2, 3, 4, 5\}\)</span> én etter én.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">range(1,</span> <span class="pre">6):</span></code> forteller oss at gjenta noe med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke med verdien <span class="math notranslate nohighlight">\(n \in \{1, 2, 3, 4, 5\}\)</span> én etter én. I løkka så summeres tallene med linja <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">n</span></code> som betyr at programmet regner ut summen 1, 2, 3, 4 og 5.</p></li>
 <li><p>Linja <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">n</span></code> overskriver verdien til variabelen <code class="docutils literal notranslate"><span class="pre">s</span></code> ved å øke den med verdien til <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
 </ol>
 <p>Verdien som skrives ut av programmet kan finnes ved å sette opp en tabell som følger hva programmet gjør:</p>
@@ -858,7 +861,6 @@ Hva blir svaret?</p>
 <p>Det viser seg at man har definert <span class="math notranslate nohighlight">\(0! = 1\)</span>.<br></p>
 <p>Endre programmet ditt slik at det også gir riktig verdi av <span class="math notranslate nohighlight">\(0!\)</span> <br></p>
 <p>Test ut programmet ditt og sjekk at det gir riktig svar.</p>
-<p>Årsaken til definisjonen er ikke så viktig, annet enn at det er av praktiske årsaker for å gjøre at formelen passer i flere situasjoner (matematikk er tross alt bare en oppfinnelse vi mennesker har laget for vår egen nytte - selv med 1000 konspirasjonsteorier og dokumentarer som prøver å overbevise deg om noe annet, så vi kan vel gjøre <em>hva vi vil</em>, <em>amirite</em>?).</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Kodehint: if-else-tester</p>
 <p>Her kan vi bruke en <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-test i koden for å håndtere tilfellet der for <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">0</span></code>, og der hvor hvor <span class="math notranslate nohighlight">\(n &gt; 1\)</span>. <br>
