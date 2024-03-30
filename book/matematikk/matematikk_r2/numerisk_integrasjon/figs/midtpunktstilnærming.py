@@ -56,7 +56,7 @@ for i in range(int((b - a) / dx)):
     rect = patches.Rectangle(
         xy=(x, 0),
         width=dx,
-        height=g(x),
+        height=g(x + 0.5*dx),
         color="teal",
         alpha=0.2,
     )
@@ -71,7 +71,7 @@ for i in range(int((b - a) / dx)):
     rect = patches.Rectangle(
         xy=(x, 0),
         width=dx,
-        height=g(x),
+        height=g(x + 0.5*dx),
         color="teal",
         alpha=0.2,
     )
@@ -79,42 +79,42 @@ for i in range(int((b - a) / dx)):
 
     ax[1].add_patch(rect)
 plt.tight_layout()
-plt.savefig("areal_figurer.png")
+plt.savefig("midtpunktstilnærming.png")
 
 plt.show()
 
 
 
-x = np.linspace(a, b, 1024)
-fig, ax = plt.subplots()
-ax.plot(x, g(x), color="teal", lw=2, alpha=0.7)
+# x = np.linspace(a, b, 1024)
+# fig, ax = plt.subplots()
+# ax.plot(x, g(x), color="teal", lw=2, alpha=0.7)
 
 
 
-ax.spines["left"].set_position("zero")
-ax.spines["right"].set_color("none")
-ax.spines["bottom"].set_position("zero")
-ax.spines["top"].set_color("none")
+# ax.spines["left"].set_position("zero")
+# ax.spines["right"].set_color("none")
+# ax.spines["bottom"].set_position("zero")
+# ax.spines["top"].set_color("none")
 
-ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
+# ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
+# ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 
-ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
+# ax.set_xlabel(r"$x$", fontsize=16, loc="right")
+# ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
-ax.set_xticks([])
-ax.set_yticks([])
+# ax.set_xticks([])
+# ax.set_yticks([])
 
-ax.set_xlim(a - 0.5, b + 0.5)
-ax.set_ylim(-0.5, max(g(x)) + 1)
+# ax.set_xlim(a - 0.5, b + 0.5)
+# ax.set_ylim(-0.5, max(g(x)) + 1)
 
-plt.fill_between(
-    x=x,
-    y1=0,
-    y2=g(x),
-    color="teal",
-    alpha=0.2,
-)
+# plt.fill_between(
+#     x=x,
+#     y1=0,
+#     y2=g(x),
+#     color="teal",
+#     alpha=0.2,
+# )
 
-plt.tight_layout()
-plt.savefig("areal.png")
+# plt.tight_layout()
+# plt.savefig("areal.png")
