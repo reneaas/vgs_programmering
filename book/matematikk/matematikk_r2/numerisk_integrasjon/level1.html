@@ -463,7 +463,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-rektangelmetoden-med-venstretilnaerming">Oppgave 1 - Rektangelmetoden med venstretilnærming</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a 📝</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c</a></li>
@@ -483,7 +483,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="level-1">
 <h1>Level 1 🔥<a class="headerlink" href="#level-1" title="Permalink to this heading">#</a></h1>
 <div class="tip admonition">
-<p class="admonition-title">Rektangelmetoden</p>
+<p class="admonition-title">Integrasjon og arealer</p>
 <p>Litt enkelt kan vi tenke på integralet</p>
 <div class="math notranslate nohighlight">
 \[
@@ -499,12 +499,13 @@ f(x) = -4(x-3)(x^2 + 1), \quad x \in [0, 3].
 <img alt="../../../../_images/areal1.png" src="../../../../_images/areal1.png" />
 </figure>
 </div>
-<section id="oppgave-1">
-<h2>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h2>
-<p>Den første tilnærmingen du skal se på er <em>venstretilnærming</em> til integralet.</p>
+<section id="oppgave-1-rektangelmetoden-med-venstretilnaerming">
+<h2>Oppgave 1 - Rektangelmetoden med venstretilnærming<a class="headerlink" href="#oppgave-1-rektangelmetoden-med-venstretilnaerming" title="Permalink to this heading">#</a></h2>
+<p>Den første tilnærmingen du skal se på er Rektangelmetoden med <em>venstretilnærming</em> til integralet.</p>
 <div class="tip admonition">
-<p class="admonition-title">Venstretilnærming</p>
-<p>Strategien er som følger:</p>
+<p class="admonition-title">Rektangelmetoden: venstretilnærming</p>
+<p>Vi ønsker å finne en tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen over intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>. En tilnærming er å lage seg mange rektangler som omtrent dekker området. Så summerer vi opp arealet av rektangler. Venstretilnærming refererer til en måte å regne ut høyden til rektanglene på.
+Strategien er som følger:</p>
 <ol class="arabic simple">
 <li><p>Del opp intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> i <span class="math notranslate nohighlight">\(n\)</span> like store delintervaller. Dette gir <span class="math notranslate nohighlight">\(n\)</span> rektangler!</p></li>
 <li><p>Regn ut høyden til vært rektangel ved å bruke funksjonsverdien <span class="math notranslate nohighlight">\(f(x)\)</span> i venstre ende av hvert delintervall.</p></li>
@@ -518,11 +519,10 @@ f(x) = -4(x-3)(x^2 + 1), \quad x \in [0, 3].
 </figcaption>
 </figure>
 </div>
-<p>I denne oppgaven skal du lære om venstretilnærming og bruke dette til å finne en tilnærming til integralet</p>
-<div class="math notranslate nohighlight">
-\[
+<p>La oss se på hvordan vi kan bruke venstretilnærming til å finne verdien av integralet
+$<span class="math notranslate nohighlight">\(
 \int\limits_{0}^{3} -4(x-3)(x^2 + 1) \, dx.
-\]</div>
+\)</span>$</p>
 <p>En kode som bruker venstretilnærming kan se slik ut:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +635,7 @@ f(x) = -4(x-3)(x^2 + 1), \quad x \in [0, 3].
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-rektangelmetoden-med-venstretilnaerming">Oppgave 1 - Rektangelmetoden med venstretilnærming</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a 📝</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c</a></li>
