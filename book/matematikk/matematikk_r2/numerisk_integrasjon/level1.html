@@ -466,7 +466,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-rektangelmetoden-med-venstretilnaerming">Oppgave 1 - Rektangelmetoden med venstretilnærming</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a 📝</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-rektangelmetoden-med-hoyretilnaerming">Oppgave 2 - Rektangelmetoden med høyretilnærming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
@@ -502,7 +505,7 @@ f(x) = -4(x-3)(x^2 + 1), \quad x \in [0, 3].
 </div>
 <section id="oppgave-1-rektangelmetoden-med-venstretilnaerming">
 <h2>Oppgave 1 - Rektangelmetoden med venstretilnærming<a class="headerlink" href="#oppgave-1-rektangelmetoden-med-venstretilnaerming" title="Permalink to this heading">#</a></h2>
-<p>Den første tilnærmingen du skal se på er Rektangelmetoden med <em>venstretilnærming</em> til integralet.</p>
+<p>Den første tilnærmingen du skal se på er rektangelmetoden med <em>venstretilnærming</em> til integralet.</p>
 <div class="tip admonition">
 <p class="admonition-title">Rektangelmetoden: venstretilnærming</p>
 <p>Vi ønsker å finne en tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen over intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>. En tilnærming er å lage seg mange rektangler som omtrent dekker området. Så summerer vi opp arealet av rektangler. Venstretilnærming refererer til en måte å regne ut høyden til rektanglene på.
@@ -568,8 +571,47 @@ Strategien er som følger:</p>
 <h3>Oppgave 1b<a class="headerlink" href="#oppgave-1b" title="Permalink to this heading">#</a></h3>
 <p>Endre programmet slik at det regner ut en god tilnærming til integralet. Prøv deg frem med ulike antall rektangler og sammenlign svarene.</p>
 </section>
-<section id="oppgave-1c">
-<h3>Oppgave 1c<a class="headerlink" href="#oppgave-1c" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="oppgave-2-rektangelmetoden-med-hoyretilnaerming">
+<h2>Oppgave 2 - Rektangelmetoden med høyretilnærming<a class="headerlink" href="#oppgave-2-rektangelmetoden-med-hoyretilnaerming" title="Permalink to this heading">#</a></h2>
+<p>I denne oppgaven skal du lære om rektangelmetoden der man bruker en <em>høyretilnærming</em> til integralet.</p>
+<div class="tip admonition">
+<p class="admonition-title">Rektangelmetoden: venstretilnærming</p>
+<p>Vi ønsker å finne en tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen over intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>. En tilnærming er å lage seg mange rektangler som omtrent dekker området. Så summerer vi opp arealet av rektangler. Høyretilnærming refererer til en måte å regne ut høyden til rektanglene på.
+Strategien er som følger:</p>
+<ol class="arabic simple">
+<li><p>Del opp intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> i <span class="math notranslate nohighlight">\(n\)</span> like store delintervaller. Dette gir <span class="math notranslate nohighlight">\(n\)</span> rektangler!</p></li>
+<li><p>Regn ut høyden til vært rektangel ved å bruke funksjonsverdien <span class="math notranslate nohighlight">\(f(x)\)</span> i høyre ende av hvert delintervall.</p></li>
+<li><p>Summer opp arealene til alle rektanglene for å finne en tilnærming til arealet mellom grafen og <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
+</ol>
+<p>Metoden kalles for <em>høyretilnærming</em> fordi vi bruker høyre ende av hvert delintervall til å finne høyden til rektanglene. Figuren under illustrerer ideen bak metoden.</p>
+<figure class="align-default" id="hoyretilnaerming">
+<img alt="../../../../_images/høyretilnærming.png" src="../../../../_images/høyretilnærming.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Høyretilnærming til integralet av <span class="math notranslate nohighlight">\(f(x) = -4(x-3)(x^2 + 1)\)</span> over intervallet <span class="math notranslate nohighlight">\([0, 3]\)</span>. Merk at det ser ut som vi mangler et rektangel fordi vi bruker høyre ende av hvert delintervall. Men <span class="math notranslate nohighlight">\(f(3) = 0\)</span> som betyr at høyden til rektangelet blir 0.</span><a class="headerlink" href="#hoyretilnaerming" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Her skal du lære om en midtpunktstilnærming til integralet.</p>
+<div class="tip admonition">
+<p class="admonition-title">Rektangelmetoden: midtpunktstilnærming</p>
+<p>Vi ønsker å finne en tilnærming til arealet mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen over intervallet <span class="math notranslate nohighlight">\([a, b]\)</span>. En tilnærming er å lage seg mange rektangler som omtrent dekker området. Så summerer vi opp arealet av rektangler. Midtpunktstilnærming refererer til en måte å regne ut høyden til rektanglene på.
+Strategien er som følger:</p>
+<ol class="arabic simple">
+<li><p>Del opp intervallet <span class="math notranslate nohighlight">\([a, b]\)</span> i <span class="math notranslate nohighlight">\(n\)</span> like store delintervaller. Dette gir <span class="math notranslate nohighlight">\(n\)</span> rektangler.</p></li>
+<li><p>Regn ut høyden til vært rektangel ved å bruke funksjonsverdien <span class="math notranslate nohighlight">\(f(x)\)</span> i midten av hvert delintervall.</p></li>
+<li><p>Summer opp arealene til alle rektanglene for å finne en tilnærming til arealet mellom grafen og <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
+</ol>
+<p>Metoden kalles for <em>midtpunktstilnærming</em> fordi vi bruker midtpunktet av hvert delintervall til å finne høyden til rektanglene. Figuren under illustrerer ideen bak metoden.</p>
+<figure class="align-default" id="midtpunktstilnaerming">
+<img alt="../../../../_images/midtpunktstilnærming.png" src="../../../../_images/midtpunktstilnærming.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Midtpunktstilnærming til integralet av <span class="math notranslate nohighlight">\(f(x) = -4(x-3)(x^2 + 1)\)</span> over intervallet <span class="math notranslate nohighlight">\([0, 3]\)</span>.</span><a class="headerlink" href="#midtpunktstilnaerming" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
 </section>
@@ -640,7 +682,10 @@ Strategien er som følger:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1-rektangelmetoden-med-venstretilnaerming">Oppgave 1 - Rektangelmetoden med venstretilnærming</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a 📝</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2-rektangelmetoden-med-hoyretilnaerming">Oppgave 2 - Rektangelmetoden med høyretilnærming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
