@@ -666,9 +666,9 @@ Kan du tenke deg et passende betingelse som må være sann for at løkka skal fo
 <p>Hvor mye må du sette inn? Er det realistisk?</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<p>La oss anta det er 2 år til russetiden, altså 24 måneder. Vi kan endre verdien til <code class="docutils literal notranslate"><span class="pre">innskudd</span></code> til vi når sparemålet innen 24 måneder.
-Setter vi <code class="docutils literal notranslate"><span class="pre">innskudd</span> <span class="pre">=</span> <span class="pre">2000</span></code>, når vi sparemålet innen 24 måneder. Programmet ditt kan da se slik ut:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">2000</span>                                  <span class="c1"># Månedlig innskudd</span>
+<p>La oss anta det er 1 år til russetiden, altså 12 måneder. Vi kan endre verdien til <code class="docutils literal notranslate"><span class="pre">innskudd</span></code> til vi når sparemålet innen 12 måneder.
+Setter vi <code class="docutils literal notranslate"><span class="pre">innskudd</span> <span class="pre">=</span> <span class="pre">2000</span></code>, når vi sparemålet innen 12 måneder. Programmet ditt kan da se slik ut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">4000</span>                                 <span class="c1"># Månedlig innskudd</span>
 <span class="n">rente</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">/</span> <span class="mi">100</span>                              <span class="c1"># 0.16% rente per måned</span>
 <span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span>                         <span class="c1"># Vekstfaktor for rente per måned</span>
 <span class="n">sparemål</span> <span class="o">=</span> <span class="mi">50_000</span>                               <span class="c1"># Målet vi ønsker å spare opp til</span>
@@ -681,8 +681,36 @@ Setter vi <code class="docutils literal notranslate"><span class="pre">innskudd<
 
     <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span>                           <span class="c1"># Så er vi i neste måned. Tida flyr når du har det morro!</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">måned</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>     
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">måned</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>    
 </pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sparebeløp = 52502.14 kr</span>
+<span class="go">måned = 12</span>
+</pre></div>
+</div>
+<p>som betyr at vi når sparebeløpet etter 12 måneder med et innskudd på 4000 kr.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">4000</span>                                 <span class="c1"># Månedlig innskudd</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">/</span> <span class="mi">100</span>                              <span class="c1"># 0.16% rente per måned</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span>                         <span class="c1"># Vekstfaktor for rente per måned</span>
+<span class="n">sparemål</span> <span class="o">=</span> <span class="mi">50_000</span>                               <span class="c1"># Målet vi ønsker å spare opp til</span>
+
+<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span>                           <span class="c1"># Første innskudd</span>
+<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">sparebeløp</span> <span class="o">&lt;</span> <span class="n">sparemål</span><span class="p">:</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span>       <span class="c1"># Øker sparebeløpet med renta.</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span>          <span class="c1"># Setter inn et innskudd på kontoen</span>
+
+    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span>                           <span class="c1"># Så er vi i neste måned. Tida flyr når du har det morro!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">måned</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -701,6 +729,42 @@ Setter vi <code class="docutils literal notranslate"><span class="pre">innskudd<
 <li><p>Hvor mange ganger per dag kjøper du noe på butikken med kortet ditt?</p></li>
 <li><p>Hvor mange dager i måneden handler du med kortet ditt? Hver eneste dag? 5 dager i uka?</p></li>
 </ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>La oss anta vi gjør følgende antakelser:</p>
+<ol class="arabic simple">
+<li><p>Vi trekker kortet 80 ganger per måned som svarer til mellom 2 - 3 ganger daglig.</p></li>
+<li><p>Vi trekker 10 kroner per dag.</p></li>
+</ol>
+<p>Da må vi justere innskuddet vi gjør per måned. Et program som løser dette kan se slik ut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">4000</span>                                             <span class="c1"># Månedlig innskudd</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">/</span> <span class="mi">100</span>                                          <span class="c1"># 0.16% rente per måned</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span>                                     <span class="c1"># Vekstfaktor for rente per måned</span>
+<span class="n">sparemål</span> <span class="o">=</span> <span class="mi">50_000</span>                                           <span class="c1"># Målet vi ønsker å spare opp til</span>
+<span class="n">trekk_per_måned</span> <span class="o">=</span> <span class="mi">80</span>                                        <span class="c1"># Antall Trekk per måned        </span>
+<span class="n">beløp_per_trekk</span> <span class="o">=</span> <span class="mi">10</span>                                        <span class="c1"># Beløp per trekk</span>
+
+
+<span class="n">innskudd</span> <span class="o">=</span> <span class="n">innskudd</span> <span class="o">+</span> <span class="n">trekk_per_måned</span> <span class="o">*</span> <span class="n">beløp_per_trekk</span>     <span class="c1"># Reelt innskudd tar med innskudd per trekk av kort også</span>
+<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span>                                       <span class="c1"># Første innskudd</span>
+<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">sparebeløp</span> <span class="o">&lt;</span> <span class="n">sparemål</span><span class="p">:</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span>                   <span class="c1"># Øker sparebeløpet med renta.</span>
+    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span>                      <span class="c1"># Setter inn et innskudd på kontoen</span>
+
+    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span>                                       <span class="c1"># Så er vi i neste måned. Tida flyr når du har det morro!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">måned</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sparebeløp = 53224.43 kr</span>
+<span class="go">måned = 10</span>
+</pre></div>
+</div>
+<p>altså når vi sparebeløpet når det har gått 10 måneder i stedet.</p>
 </div>
 </section>
 </section>
@@ -721,11 +785,6 @@ Programmet til eleven vises under:</p>
     <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">rentebeløp</span> <span class="o">+</span> <span class="n">innskudd</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                           <span class="c1"># Skriver ut med 2 desimaler.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparebeløp = 32813.84
 </pre></div>
 </div>
 </div>
