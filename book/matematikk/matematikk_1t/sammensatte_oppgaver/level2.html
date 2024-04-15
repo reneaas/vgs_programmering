@@ -472,7 +472,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1d">Oppgave 1d 💻</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1e">Oppgave 1e 💻</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a><ul class="nav section-nav flex-column">
@@ -480,13 +479,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b">Oppgave 2b 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c">Oppgave 2c 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d">Oppgave 2d 💻</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a">Oppgave 3a 📝</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b 💻</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3c">Oppgave 3c 💻</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3d">Oppgave 3d 💻</a></li>
 </ul>
 </li>
 </ul>
@@ -509,217 +501,6 @@ document.write(`
 </ol>
 <section id="oppgave-1">
 <h2>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h2>
-<p>I livet kommer sparing til å spille en viktig rolle for de fleste.
-Kanskje allerede nå har en sparekonto du setter inn penger på. <br></p>
-<p>Tenk deg at du skal sette inn en innskudd på 500 kr per måned. En typisk sparekonto vil ha en rente på 2% per år som svarer til ca. 0.16% per måned.</p>
-<p>Under vises et program som regner ut sparebeløpet du har på kontoen din etter 3 måneder dersom du setter inn <em>ett innskudd</em> på 500 kr på starten av periode, men setter ikke inn noe mer.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">500</span>                                  <span class="c1"># Månedlig innskudd</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">/</span> <span class="mi">100</span>                              <span class="c1"># 0.16% rente per måned</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span>                         <span class="c1"># Vekstfaktor for rente per måned</span>
-
-<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span>                           <span class="c1"># Første innskudd</span>
-<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">måned</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span>       <span class="c1"># Øker sparebeløpet med renta.</span>
-    
-
-    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span>                           <span class="c1"># Så er vi i neste måned. Tida flyr når du har det morro!</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut med to desimaler</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="oppgave-1a">
-<h3>Oppgave 1a 📝<a class="headerlink" href="#oppgave-1a" title="Permalink to this heading">#</a></h3>
-<p><strong>Svar på følgende spørsmål uten å kjøre programmet:</strong></p>
-<ol class="arabic simple">
-<li><p>Hva blir sparebeløpet programmet regner ut etter 3 måneder?</p></li>
-<li><p>Kan du regne ut sparebeløpet for hånd både slik programmet gjør det, og med teorien om eksponentiell vekst?</p></li>
-</ol>
-<p>Kopier og kjør programmet og sjekk om svarene dine stemmer.</p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Påminnelse: eksponentiell vekst</p>
-<p>Når du har en prosentvis endring på <span class="math notranslate nohighlight">\(p \%\)</span> per periode (per time, per dag, per måned, per år, osv.), så kan du uttrykke endringen ved hjelp av en vekstfaktor <span class="math notranslate nohighlight">\(V\)</span> som regnes ut med</p>
-<div class="math notranslate nohighlight">
-\[
-V = 1 + p
-\]</div>
-<p>Så verdien av beløpet <span class="math notranslate nohighlight">\(B_n\)</span> etter <span class="math notranslate nohighlight">\(n\)</span> perioder være</p>
-<div class="math notranslate nohighlight">
-\[
-B_n = B_0 \cdot V^n
-\]</div>
-<p>der <span class="math notranslate nohighlight">\(B_0\)</span> er beløpet i starten.</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<ol class="arabic">
-<li><p>Programmet regner ut sparebeløpet ved å gange inn en vekstfaktor gjentatte ganger. Programmet regner ut sparebeløpet ved å følge formelen</p>
-<div class="math notranslate nohighlight">
-\[
-    B_\text{neste} = B_\text{nå} \cdot V
-    \]</div>
-<p>der <span class="math notranslate nohighlight">\(V\)</span> er vekstfaktoren for renteøkning, <span class="math notranslate nohighlight">\(B_\text{nå}\)</span> er sparebeløpet nå, og <span class="math notranslate nohighlight">\(B_\text{neste}\)</span> er sparebeløpet etter neste periode. <br>
-Vi kan sette opp en tabell som følger hva programmet gjør:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Måned</p></th>
-<th class="head"><p>Sparebeløp</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(500\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(500 \cdot 1.0016 = 500.8\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(500.8 \cdot 1.0016 = 501.6\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(501.6 \cdot 1.0016 = 502.4\)</span></p></td>
-</tr>
-</tbody>
-</table>
-<p>Dermed vil sparebeløpet etter 3 måneder være ca. <span class="math notranslate nohighlight">\(502.4\)</span> kr.</p>
-</li>
-<li><p>Vi kan regne ut dette ved å bruke teorien om eksponentiell vekst som egentlig sier at vi kan finne beløpet etter 3 måneder ved å gange med <span class="math notranslate nohighlight">\(V^3\)</span>. Dermed har vi</p>
-<div class="math notranslate nohighlight">
-\[
-    B_3 = B_0\cdot V^3 =500 \cdot 1.0016^3 = 500 \cdot 1.0048 = 502.4
-    \]</div>
-</li>
-</ol>
-</div>
-</section>
-<section id="oppgave-1b">
-<h3>Oppgave 1b 💻<a class="headerlink" href="#oppgave-1b" title="Permalink to this heading">#</a></h3>
-<p>Programmet tar ikke med at du skal sette inn et nytt innskudd på 500 kr hver måned. <br>
-Endre programmet slik at det regner ut sparebeløpet etter 3 måneder dersom du også setter inn et innskudd hver måned. <br></p>
-<p>Hva blir sparebeløpet etter 3 måneder? Hvor mye har du tjent på renter i løpet av de 3 månedene?</p>
-<p><em>Du kan kopiere koden som står over og endre den!</em></p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Kodehint: Kode kjøres <em>sekvensielt</em> - så pass på rekkefølgen du skriver kodelinjene!</p>
-<p>Du bør tenke over <em>når</em> innskuddet skal legges til på sparebeløpet. Innskuddet ditt vil jo tross alt ikke påvirkes av renten umiddelbart når du har satt det inn. <br>
-Koden leses og kjøres i samme rekkefølge som den er skrevet. Vi sier at koden kjøres <em>sekvensielt</em> (i en spesifikk rekkefølge - linje for linje). <br>
-Rekkefølgen på kodelinjene er derfor viktig for at programmet skal gjøre det du vil det skal gjøre!</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<p>Vi mangler en linje som legger til innskuddet på sparebeløpet. Dette må vi legge på <em>etter</em> at vi legger til renten på beløpet som har stått på kontoen over perioden. <br>
-Vi legge til følgende linje i <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkka (etter der vi legger på renten):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">500</span>                                  <span class="c1"># Månedlig innskudd</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">/</span> <span class="mi">100</span>                              <span class="c1"># 0.16% rente per måned</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span>                         <span class="c1"># Vekstfaktor for rente per måned</span>
-
-<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span>                           <span class="c1"># Første innskudd</span>
-<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">måned</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span>       <span class="c1"># Øker sparebeløpet med renta.</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span>          <span class="c1"># Setter inn et innskudd på kontoen</span>
-
-    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span>                           <span class="c1"># Så er vi i neste måned. Tida flyr når du har det morro!</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sparebeløp</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>                <span class="c1"># Skriver ut med to desimaler</span>
-</pre></div>
-</div>
-<p>som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sparebeløp = 2004.81 kr</span>
-</pre></div>
-</div>
-<p>Så du vil altså ha 2004.81 kr etter 3 måneder dersom du setter inn 500 kr hver måned på en sparekonto med 0.16% rente per måned. Dette er ikke så rart siden du <em>startet</em> med et innskudd som betyr at du har gjort 4 innskudd. Uten rente hadde du hatt 2000 kr. Så du har tjent 4.81 kr i renter.</p>
-</div>
-</section>
-<section id="oppgave-1c">
-<h3>Oppgave 1c 💻<a class="headerlink" href="#oppgave-1c" title="Permalink to this heading">#</a></h3>
-<p>La oss si du har et sparemål på 50 000 kr. <br></p>
-<p>Endre programmet ditt slik at det når finner ut hvor mange måneder det vil ta før du når sparemålet ditt. <br>
-Overrasket over hvor lang tid det tar? Hva skjer</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">Kodehint: Hvilken betingelse bør du ha i while-løkka nå?</p>
-<p>Nå vil du ikke lenger at løkka skal stoppe etter et bestemt antall måneder, men heller at den holde på så lenge sparebeløpet ligger under sparemålet ditt. <br>
-Kan du tenke deg et passende betingelse som må være sann for at løkka skal fortsette å kjøre?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<p>Vi må endre betingelsen i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka slik at den kjører så lenge <code class="docutils literal notranslate"><span class="pre">sparebeløp</span></code> er mindre enn sparemålet. Vi kan godt lage en variabel <code class="docutils literal notranslate"><span class="pre">sparemål</span></code> som vi setter til 50 000 kr, og deretter endre betingelsen i <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkka til <code class="docutils literal notranslate"><span class="pre">sparebeløp</span> <span class="pre">&lt;</span> <span class="pre">sparemål</span></code>. Vi kunne også bare skrevet inn <code class="docutils literal notranslate"><span class="pre">sparebeløp</span> <span class="pre">&lt;</span> <span class="pre">50_000</span></code> som betingelse, men å legge til en variabel gjør at vi kan endre sparemålet lettere og koden blir mer lesbar.<br></p>
-<p>Koden kan da se slik ut:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">500</span>                                  <span class="c1"># Månedlig innskudd</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">/</span> <span class="mi">100</span>                              <span class="c1"># 0.16% rente per måned</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span>                         <span class="c1"># Vekstfaktor for rente per måned</span>
-<span class="n">sparemål</span> <span class="o">=</span> <span class="mi">50_000</span>                               <span class="c1"># Målet vi ønsker å spare opp til</span>
-
-<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span>                           <span class="c1"># Første innskudd</span>
-<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">sparebeløp</span> <span class="o">&lt;</span> <span class="n">sparemål</span><span class="p">:</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span>       <span class="c1"># Øker sparebeløpet med renta.</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span>          <span class="c1"># Setter inn et innskudd på kontoen</span>
-
-    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span>                           <span class="c1"># Så er vi i neste måned. Tida flyr når du har det morro!</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">måned</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>   
-</pre></div>
-</div>
-<p>som gir utskriften</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">måned = 92</span>
-</pre></div>
-</div>
-<p>Så 92 måneder med sparing skal til. Det er ca. 7 år og 8 måneder. Dang, det var litt lenge.</p>
-</div>
-</section>
-<section id="oppgave-1d">
-<h3>Oppgave 1d 💻<a class="headerlink" href="#oppgave-1d" title="Permalink to this heading">#</a></h3>
-<p>Bruk programmet ditt til å undersøke hvor stort innskuddet ditt må være for at du skal ha 50 000 kr på sparekontoen til russetiden. <br></p>
-<p>Hvor mye må du sette inn? Er det realistisk?</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<p>La oss anta det er 2 år til russetiden, altså 24 måneder. Vi kan endre verdien til <code class="docutils literal notranslate"><span class="pre">innskudd</span></code> til vi når sparemålet innen 24 måneder.
-Setter vi <code class="docutils literal notranslate"><span class="pre">innskudd</span> <span class="pre">=</span> <span class="pre">2000</span></code>, når vi sparemålet innen 24 måneder. Programmet ditt kan da se slik ut:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">innskudd</span> <span class="o">=</span> <span class="mi">2000</span>                                  <span class="c1"># Månedlig innskudd</span>
-<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">/</span> <span class="mi">100</span>                              <span class="c1"># 0.16% rente per måned</span>
-<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rente</span>                         <span class="c1"># Vekstfaktor for rente per måned</span>
-<span class="n">sparemål</span> <span class="o">=</span> <span class="mi">50_000</span>                               <span class="c1"># Målet vi ønsker å spare opp til</span>
-
-<span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">innskudd</span>                           <span class="c1"># Første innskudd</span>
-<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">sparebeløp</span> <span class="o">&lt;</span> <span class="n">sparemål</span><span class="p">:</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">*</span> <span class="n">vekstfaktor</span>       <span class="c1"># Øker sparebeløpet med renta.</span>
-    <span class="n">sparebeløp</span> <span class="o">=</span> <span class="n">sparebeløp</span> <span class="o">+</span> <span class="n">innskudd</span>          <span class="c1"># Setter inn et innskudd på kontoen</span>
-
-    <span class="n">måned</span> <span class="o">=</span> <span class="n">måned</span> <span class="o">+</span> <span class="mi">1</span>                           <span class="c1"># Så er vi i neste måned. Tida flyr når du har det morro!</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">måned</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>     
-</pre></div>
-</div>
-</div>
-</section>
-<section id="oppgave-1e">
-<h3>Oppgave 1e 💻<a class="headerlink" href="#oppgave-1e" title="Permalink to this heading">#</a></h3>
-<p>Modellen for sparing her er nokså enkel fordi du kun setter inn <em>ett</em> innskudd per måned. I virkeligheten vil du nok ha et mer komplekst sparemønster. <br></p>
-<p>En del banker tilbyr å trekke et fast beløp fra brukskontoen din og sette det inn på sparekontoen hver gang du trekker kortet. For eksempel er det vanlig at dette beløpet er på 10 kr <em>by default</em>. Rente vil naturligvis virke på dette beløpet også. <br></p>
-<ol class="arabic simple">
-<li><p>Gjør deg noen antakelser om hvor mye du bruker kortet ditt i løpet av en måned og hvor mye du da vil spare per dag hvis du antar at det trekkes 10 kr per gang du bruker kortet. <br></p></li>
-<li><p>Utvid programmet ditt til å ta med denne effekten og undersøk hva innskuddet kan være for at du skal nå sparemålet ditt innen russetiden når du tar hensyn til denne effekten på sparebeløpet ditt.</p></li>
-</ol>
-<div class="dropdown tip admonition">
-<p class="admonition-title">Hjelp, jeg trenger litt hjelp med å tenke ut en modell!</p>
-<p>En måte du kan gå fram er å svare på følgende spørsmål der svarene dine er tilnærminger som i gjennomsnitt vil være nokså sanne, men som ikke trenger å være nøyaktige:</p>
-<ol class="arabic simple">
-<li><p>Hvor mange ganger per dag kjøper du noe på butikken med kortet ditt?</p></li>
-<li><p>Hvor mange dager i måneden handler du med kortet ditt? Hver eneste dag? 5 dager i uka?</p></li>
-</ol>
-</div>
-</section>
-</section>
-<section id="oppgave-2">
-<h2>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h2>
 <p>En pasient skal ta en medisin som inneholder 1000 mg virkestoff hvor 70% av virkestoffet brytes ned i kroppen hvert døgn. <br>
 Pasienten skal ta én dose ved samme tidspunkt én gang i døgnet over lang tid.</p>
 <p>Under vises et program som modellerer mengden virkestoff i kroppen til pasienten over en tidsperiode når pasienten kun tar én dose.</p>
@@ -738,8 +519,8 @@ Pasienten skal ta én dose ved samme tidspunkt én gang i døgnet over lang tid.
 </div>
 </div>
 </div>
-<section id="oppgave-2a">
-<h3>Oppgave 2a 📝<a class="headerlink" href="#oppgave-2a" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-1a">
+<h3>Oppgave 1a 📝<a class="headerlink" href="#oppgave-1a" title="Permalink to this heading">#</a></h3>
 <p><strong>Svar på følgende spørsmål uten å kjøre programmet:</strong></p>
 <ol class="arabic simple">
 <li><p>Hvor mange døgn er det programmet modellerer?</p></li>
@@ -758,8 +539,8 @@ Pasienten skal ta én dose ved samme tidspunkt én gang i døgnet over lang tid.
 </ol>
 </div>
 </section>
-<section id="oppgave-2b">
-<h3>Oppgave 2b 💻<a class="headerlink" href="#oppgave-2b" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-1b">
+<h3>Oppgave 1b 💻<a class="headerlink" href="#oppgave-1b" title="Permalink to this heading">#</a></h3>
 <p>Programmet tar ikke hensyn til at pasienten skal innta en dose hver dag. <br>
 Utvid programmet slik at det modellerer mengden virkestoff i kroppen til pasienten over samme periode når pasienten tar en dose til samme tidspunkt hvert døgn.</p>
 <p>Hvor mye virkestoff har pasienten i kroppen etter samme periode?</p>
@@ -791,8 +572,8 @@ Det mangler derfor en linje:</p>
 <p>som betyr at etter 5 dager, så har pasienten ca. 1427.53 mg virkestoff i kroppen.</p>
 </div>
 </section>
-<section id="oppgave-2c">
-<h3>Oppgave 2c 💻<a class="headerlink" href="#oppgave-2c" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-1c">
+<h3>Oppgave 1c 💻<a class="headerlink" href="#oppgave-1c" title="Permalink to this heading">#</a></h3>
 <p>Endre programmet og sjekk hvor mye virkestoff pasienten får over veldig lang tid. <br></p>
 <p>Det viser seg at medikamentet ikke kan overskride en konsentrasjon på på <span class="math notranslate nohighlight">\(30 \ \text{mg/kg}\)</span>. <br>
 Anta at pasienten veier 80 kg. Er det trygt for pasienten å ta medisinen over lang tid?</p>
@@ -823,8 +604,8 @@ Deretter må vi regne ut konsentrasjonen av virkestoffet i kroppen til pasienten
 <p>Pasienten har altså en konsentasjon på 17.86 mg/kg i kroppen etter 1000 doser som betyr at det er trygt for pasienten å ta medisinen over lang tid.</p>
 </div>
 </section>
-<section id="oppgave-2d">
-<h3>Oppgave 2d 💻<a class="headerlink" href="#oppgave-2d" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-1d">
+<h3>Oppgave 1d 💻<a class="headerlink" href="#oppgave-1d" title="Permalink to this heading">#</a></h3>
 <p>En annen pasient skal ta medisinen to ganger i døgnet. <br></p>
 <p>Gjør nødvendige endringer i programmet ditt som modellerer mengden virkestoff i kroppen til pasienten over lang tid når pasienten tar to doser per døgn. <br>
 Anta pasienten veier 80 kg. Er det trygt for pasienten å ta dosen over lang tid?</p>
@@ -876,8 +657,8 @@ Programmet kan derfor justeres slik:</p>
 </div>
 </section>
 </section>
-<section id="oppgave-3">
-<h2>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-2">
+<h2>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h2>
 <p>Elev jobber med en oppgave:</p>
 <div class="note admonition">
 <p class="admonition-title">Oppgaven</p>
@@ -909,8 +690,8 @@ f(x) = x^4 + x^3 - 7x^2 - x + 6.
 </div>
 </div>
 </div>
-<section id="oppgave-3a">
-<h3>Oppgave 3a 📝<a class="headerlink" href="#oppgave-3a" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-2a">
+<h3>Oppgave 2a 📝<a class="headerlink" href="#oppgave-2a" title="Permalink to this heading">#</a></h3>
 <p><strong>Svar på spørsmålene uten å kjøre programmet!</strong></p>
 <ol class="arabic simple">
 <li><p>Hva er strategien som er brukt for å finne et av nullpunktene til <span class="math notranslate nohighlight">\(f\)</span> i programmet?</p></li>
@@ -924,8 +705,8 @@ f(x) = x^4 + x^3 - 7x^2 - x + 6.
 </ol>
 </div>
 </section>
-<section id="oppgave-3b">
-<h3>Oppgave 3b 💻<a class="headerlink" href="#oppgave-3b" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-2b">
+<h3>Oppgave 2b 💻<a class="headerlink" href="#oppgave-2b" title="Permalink to this heading">#</a></h3>
 <p>Endre programmet slik at det finner et av de andre nullpunktene til <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <p><em>Husk at du kan kopiere programmet og endre det!</em></p>
 <div class="dropdown admonition">
@@ -950,8 +731,8 @@ For eksempel vil vi dersom vi starter i <span class="math notranslate nohighligh
 </div>
 </div>
 </section>
-<section id="oppgave-3c">
-<h3>Oppgave 3c 💻<a class="headerlink" href="#oppgave-3c" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-2c">
+<h3>Oppgave 2c 💻<a class="headerlink" href="#oppgave-2c" title="Permalink to this heading">#</a></h3>
 <p>Juster programmet ditt slik at det i stedet finner toppunktet til <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Mattehint: hva vet du om <span class="math notranslate nohighlight">\(f'(x)\)</span> i toppunktet?</p>
@@ -1000,8 +781,8 @@ Videre kan vi merke oss at toppunktet ligger en plass på intervallet <span clas
 <p>som betyr at toppunktet ligger omtrent i <span class="math notranslate nohighlight">\((-0.1, 6.0)\)</span>.</p>
 </div>
 </section>
-<section id="oppgave-3d">
-<h3>Oppgave 3d 💻<a class="headerlink" href="#oppgave-3d" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-2d">
+<h3>Oppgave 2d 💻<a class="headerlink" href="#oppgave-2d" title="Permalink to this heading">#</a></h3>
 <p>Endre og bruk programmet ditt til å finne begge bunnpunktene til <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Mattehint: Hva vet du om <span class="math notranslate nohighlight">\(f'(x)\)</span> i bunnpunktene?</p>
@@ -1095,7 +876,6 @@ Dermed kan vi kjøre koden med å starte i <span class="math notranslate nohighl
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1d">Oppgave 1d 💻</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1e">Oppgave 1e 💻</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a><ul class="nav section-nav flex-column">
@@ -1103,13 +883,6 @@ Dermed kan vi kjøre koden med å starte i <span class="math notranslate nohighl
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2b">Oppgave 2b 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2c">Oppgave 2c 💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2d">Oppgave 2d 💻</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3a">Oppgave 3a 📝</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3b">Oppgave 3b 💻</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3c">Oppgave 3c 💻</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3d">Oppgave 3d 💻</a></li>
 </ul>
 </li>
 </ul>
