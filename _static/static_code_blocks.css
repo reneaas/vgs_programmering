@@ -1,0 +1,47 @@
+/* CSS rules for static code blocks */
+
+
+/* Target the general container for code blocks */
+.highlight {
+    position: relative;
+}
+  
+  
+/* Center line numbers and ensure they stay centered even with multiple digits */
+.highlight .linenos {
+    display: inline-block;
+    width: 0.7cm; /* Adjust this value to increase/decrease the width of the line number area */
+    text-align: center !important; /* Center align the line numbers */
+    padding-right: 0; /* Remove right padding to prevent alignment issues */
+    margin-right: 10px; /* Adjust this value to increase/decrease the distance */
+    color: #77777798 !important; /* Optional: Change the color of the line numbers */
+    background-color: #3f3f3f11 !important;
+}
+
+/* Ensure the code block doesn't overlap with the line numbers */
+.highlight pre {
+    margin-left: 3.5em; /* Adjust this value to match or slightly exceed the .linenos width and padding */
+}
+  
+  
+/* Configure line highlighting for light and dark mode */
+[data-mode=light] .highlight .hll {
+    background-color: #03ff9a38 !important; 
+}
+
+[data-mode=dark] .highlight .hll {
+    background-color: #6038688e !important; 
+}
+  
+/* Style for system wide preferance [data-mode=auto] */
+@media (prefers-color-scheme: dark) {
+    .highlight .hll {
+        background-color: #6038688e !important; 
+    }
+}
+  
+@media (prefers-color-scheme: light) {
+    .highlight .hll {
+        background-color: #03ff9a38 !important; 
+    }
+}

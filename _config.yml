@@ -1,49 +1,62 @@
 title: Programmering i Videregående Skole
 author: René Ask
 copyright: "2024"
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md]
+
+
+options:
+  numbered: true
 
 execute:
   execute_notebooks: off
 
 parse:
-  # number_source_lines: true
   myst_enable_extensions:
-    # don't forget to list any other extensions you want enabled,
-    # including those that are enabled by default!
     - dollarmath
     - amsmath
+    - html_image
+    - deflist
+    - tasklist
+    - attrs_inline
+    - attrs_block
+    - smartquotes
+    - colon_fence
 
-latex:
-  latex_documents:
-    targetname: book.tex
 
 repository:
-  url: https://github.com/reneaas/vgs_programmering/
+  url: https://github.com/reneaas/vgs_programmering
   path_to_book: book/
   branch: main/
-
-
-launch_buttons:
-  notebook_interface: "jupyterlab"  # or "classic"
-  binderhub_url: "https://mybinder.org/"
-  thebe: true
-  # colab_url: "https://colab.research.google.com"
 
 
 html:
   use_issues_button: true
   use_repository_button: true
-  nb_number_source_lines: true
+  nb_number_source_lines: false
+  extra_js:
+    - "_static"
+    - https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.4/mermaid.min.js
 
 
 sphinx:
-  config:
-    # language: nb
     # nb_number_source_lines: true    # Enables line numbers in code
+
   extra_extensions:
     - sphinx_proof
     - sphinx_inline_tabs
     - sphinxmermaid
     - sphinxcontrib.tikz
+    - sphinx_jupyterbook_latex
+
   extra_css_files:
-    - custom.css
+    - "_static"
+
+
+  config:
+    language: norwegian
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js
+    html_theme_options:
+      pygments_light_style: "github-light"
+      pygments_dark_style: "github-dark"
+    templates_path:
+      - "_templates"

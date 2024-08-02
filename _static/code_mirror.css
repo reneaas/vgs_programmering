@@ -1,0 +1,56 @@
+/* CSS rules for CodeMirror */
+
+
+/* Setter font og fontsize for koden */
+.CodeMirror * {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 14px; 
+}
+
+
+/* Spesiell highlighting på utvalgte fraser i kommentarer */
+.cm-todo {
+  color: red !important; 
+  font-weight: bold !important;
+}
+.cm-fiksmeg {
+  color: rgb(255, 0, 0) !important; 
+  font-weight: bold !important;
+}
+.cm-note {
+  color: red !important;
+  font-weight: bold !important;
+}
+
+
+/* Lager en border rundt kodeboksen for å utheve den */
+
+[data-mode=light] .CodeMirror {
+  border: 1px solid black; /* Add a black border */
+  border-radius: 4px;      /* Optional: Add rounded corners */
+}
+
+@media (prefers-color-scheme: light) {
+  .CodeMirror {
+    border: 1px solid black; /* Add a black border */
+    border-radius: 4px;      /* Optional: Add rounded corners */
+  }
+}
+
+
+
+[data-mode=dark] .CodeMirror {
+  border: 1px solid white; /* Add a black border */
+  border-radius: 4px;      /* Optional: Add rounded corners */
+}
+
+@media (prefers-color-scheme: dark) {
+  .CodeMirror {
+    border: 1px solid white; /* Add a black border */
+    border-radius: 4px;      /* Optional: Add rounded corners */
+  }
+}
+
+.CodeMirror-linenumbers {
+  padding-right: 10px; /* Adjust this value to change the space between line numbers and code */
+}
