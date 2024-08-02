@@ -1,0 +1,231 @@
+/* CSS rules for custom admonitions */
+
+/* Stil for teoriblokker */
+div.theory {
+    border-left-color: rgb(0, 80, 171);
+    background-color: rgba(0, 80, 171, 0.1);
+  }
+  
+  /* Style for the title of the custom admonition */
+  div.theory > .admonition-title {
+    background-color: rgba(0, 80, 160, 0.1);
+    position: relative; /* Ensure relative positioning */
+  }
+  
+  /* Add custom symbol after the title and replace default symbol */
+  div.theory > .admonition-title::after {
+    content: "🧠";
+  }
+
+    /* Stil for eksempler */
+    div.explore {
+      border-left-color: rgba(0, 128, 128, 0.6);
+    }
+    
+    div.explore > .admonition-title {
+      background-color: rgba(0, 128, 128, 0.3) !important;
+    }
+    
+    div.explore > .admonition-title:before {
+      color: rgba(0, 128, 128, 0.6);
+    }
+    
+    div.explore > .admonition-title::after {
+      content: "🔎";
+    }
+    
+  
+  /* Stil for eksempler */
+  div.example {
+    border-left-color: rgba(241, 130, 86, 0.6);
+  }
+  
+  div.example > .admonition-title {
+    background-color: rgba(241, 130, 86, 0.3) !important;
+  }
+  
+  div.example > .admonition-title:before {
+    color: rgba(241, 130, 86, 0.3);
+  }
+  
+  div.example > .admonition-title::after {
+    content: "📝";
+  }
+  
+  /* Stil for fasit */
+  div.answer {
+    border-left-color: rgba(171, 86, 241, 0.6);
+  }
+  
+  div.answer > .admonition-title {
+    background-color: rgba(171, 86, 241, 0);
+  }
+  
+  div.answer > .admonition-title::before {
+    color: rgba(171, 86, 241, 0);
+  }
+  
+  div.answer > .admonition-title::after {
+    content: "✅";
+  }
+  
+  /* Stil for løsningsforslag */
+  div.solution {
+    border-left-color: rgba(171, 86, 241, 0.6);
+  }
+  
+  div.solution > .admonition-title {
+    background-color: rgba(171, 86, 241, 0);
+  }
+  
+  div.solution > .admonition-title::before {
+    color: rgba(171, 86, 241, 0);
+  }
+  
+  div.solution > .admonition-title::after {
+    content: "🪄";
+  }
+  
+  
+  /* Stil for oppgaver: level 1 */
+  div.problem-level-1 {
+    border-left-color: rgba(0, 195, 255, 0.6);
+  }
+  
+  div.problem-level-1 > .admonition-title {
+    background-color: rgba(0, 195, 255, 0.2);
+  }
+  
+  div.problem-level-1 > .admonition-title::before {
+    color: rgba(0, 195, 255, 0.2);
+  }
+  
+  div.problem-level-1 > .admonition-title::after {
+    content: "🔥";
+  }
+  
+  /* Stil for oppgaver: level 2 */
+  div.problem-level-2 {
+    border-left-color: rgba(0, 195, 255, 0.6);
+  }
+  
+  div.problem-level-2 > .admonition-title {
+    background-color: rgba(0, 195, 255, 0.2);
+    padding-left: 1.2cm;
+  }
+  
+  div.problem-level-2 > .admonition-title::before {
+    color: rgba(0, 195, 255, 0.2);
+  }
+  
+  div.problem-level-2 > .admonition-title::after {
+    content: "🔥 🔥";
+    white-space: nowrap;
+    display: inline;
+  }
+  
+  /* Stil for oppgaver: level 3 */
+  div.problem-level-3 {
+    border-left-color: rgba(0, 195, 255, 0.6);
+  }
+  
+  div.problem-level-3 > .admonition-title {
+    background-color: rgba(0, 195, 255, 0.2);
+    padding-left: 1.7cm;
+  }
+  
+  div.problem-level-3 > .admonition-title::before {
+    color: rgba(0, 195, 255, 0.2);
+  }
+  
+  div.problem-level-3 > .admonition-title::after {
+    content: "🔥 🔥 🔥";
+    white-space: nowrap;
+    display: inline;
+  }
+  
+  
+  /* Stil for underveisoppgaver */
+  
+  div.check {
+    border-left-color: rgba(0, 35, 190, 0.6);
+  }
+  
+  div.check > .admonition-title {
+    background-color: rgba(0, 35, 190, 0.2);
+  }
+  
+  div.check > .admonition-title::after {
+    content: "✍🏼";
+  }
+  
+  /* Stil for diskusjonsspørsmål */
+  div.discussion {
+    border-left-color: rgba(15, 186, 3, 0.6);
+  }
+  
+  div.discussion > .admonition-title {
+    background-color: rgba(15, 186, 3, 0.2);
+  }
+  
+  div.discussion > .admonition-title::before {
+    color: rgba(15, 186, 3, 0.2);
+  }
+  
+  div.discussion > .admonition-title::after {
+    content: "💬";
+  }
+  
+  
+  /* Stil for oppgaver med programmering */
+  div.progging {
+    border-left-color: rgba(0, 195, 255, 0.6);
+  }
+  
+  div.progging > .admonition-title {
+    background-color: rgba(0, 195, 255, 0.2);
+  }
+  
+  div.progging > .admonition-title::before {
+    color: rgba(0, 195, 255, 0.2);
+  }
+  
+  div.progging > .admonition-title::after {
+    content: "💻";
+  }
+  
+  
+  /* Stil for side notes */
+  div.sidenote {
+    border-left-color: rgba(0, 195, 255, 0.6);
+  }
+  
+  div.sidenote > .admonition-title {
+    background-color: rgba(0, 195, 255, 0.2);
+  }
+  
+  div.sidenote > .admonition-title::before {
+    color: rgba(0, 195, 255, 0);
+  }
+  
+  div.sidenote > .admonition-title::after {
+    content: "📜";
+  }
+  
+  
+  /* Stil for hints */
+  div.hints {
+    border-left-color: rgba(0, 195, 255, 0.6);
+  }
+  
+  div.hints > .admonition-title {
+    background-color: rgba(0, 195, 255, 0);
+  }
+  
+  div.hints > .admonition-title::before {
+    color: rgba(0, 195, 255, 0);
+  }
+  
+  div.hints > .admonition-title::after {
+    content: "🔑";
+  }
