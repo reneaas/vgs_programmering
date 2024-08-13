@@ -1,0 +1,26 @@
+<div id="container-kode-programmering-if-else-utforsk-3"></div>
+<script type="text/javascript">
+    code = `
+varetype = input("Skriv inn varetype: 'mat', 'reise' eller 'annet': ")
+pris = float(input("Skriv inn pris: "))
+
+if varetype == "mat":        # Hvis varetype er "mat"
+    moms = 0.15
+elif varetype == "reise":    # Eller hvis varetype er "reise"
+    moms = 0.12
+else:                        # Hvis varetype verken er "mat" eller "reise"
+    moms = 0.25
+
+totalpris = pris * (1 + moms)
+
+print(f"{totalpris = :.2f} kr")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-if-else-utforsk-3",
+        code,
+        "kode-programmering-if-else-utforsk-3"
+    );
+</script>
+
+

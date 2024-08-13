@@ -24,18 +24,28 @@ parse:
 
 
 repository:
-  url: https://github.com/reneaas/vgs_programmering
+  url: https://github.com/reneaas/matematikk_1t/
   path_to_book: book/
   branch: main/
 
 
+
+extra_static_paths:
+  - "_static"
+
 html:
-  use_issues_button: true
-  use_repository_button: true
+  use_issues_button: false
+  use_repository_button: false
   nb_number_source_lines: false
   extra_js:
     - "_static"
     - https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.4/mermaid.min.js
+  extra_files:
+    - _static/codeWorker.js
+    - _static/setupEditor.js
+    - _static/generateInteractiveCode.js
+  extra_css:
+    - _static/code_mirror.css
 
 
 sphinx:
@@ -57,6 +67,7 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js
     html_theme_options:
       pygments_light_style: "github-light"
-      pygments_dark_style: "github-dark"
+      pygments_dark_style: "github-dark-high-contrast"
     templates_path:
       - "_templates"
+    
