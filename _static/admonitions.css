@@ -2,89 +2,231 @@
 
 /* Stil for teoriblokker */
 div.theory {
-    border-left-color: rgb(0, 80, 171);
-    background-color: rgba(0, 80, 171, 0.1);
-  }
+  border-left-color: rgb(0, 80, 171);
+  background-color: rgba(0, 80, 171, 0.1);
+}
   
-  /* Style for the title of the custom admonition */
-  div.theory > .admonition-title {
-    background-color: rgba(0, 80, 160, 0.1);
-    position: relative; /* Ensure relative positioning */
-  }
-  
-  /* Add custom symbol after the title and replace default symbol */
-  div.theory > .admonition-title::after {
-    content: "🧠";
-  }
 
-    /* Stil for eksempler */
-    div.explore {
-      border-left-color: rgba(0, 128, 128, 0.6);
-    }
-    
-    div.explore > .admonition-title {
-      background-color: rgba(0, 128, 128, 0.3) !important;
-    }
-    
-    div.explore > .admonition-title:before {
-      color: rgba(0, 128, 128, 0.6);
-    }
-    
-    div.explore > .admonition-title::after {
-      content: "🔎";
-    }
-    
+div.theory > .admonition-title {
+  background-color: rgba(0, 80, 160, 0.1);
+  position: relative; 
+}
   
-  /* Stil for eksempler */
-  div.example {
-    border-left-color: rgba(241, 130, 86, 0.6);
+
+[data-mode=light] div.theory > .admonition-title::after {
+  content: url("./icons/outline/light_mode/book.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.theory > .admonition-title::after {
+    content: url("./icons/outline/light_mode/book.svg");
+    width: 20px;
+    height: 20px;
   }
-  
-  div.example > .admonition-title {
-    background-color: rgba(241, 130, 86, 0.3) !important;
+}
+
+[data-mode=dark] div.theory > .admonition-title::after {
+  content: url("./icons/outline/dark_mode/book.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.theory > .admonition-title::after {
+    content: url("./icons/outline/dark_mode/book.svg");
+    width: 20px;
+    height: 20px;
   }
-  
-  div.example > .admonition-title:before {
-    color: rgba(241, 130, 86, 0.3);
+}
+
+
+
+/* Stil for eksempler */
+div.explore {
+  border-left-color: rgba(0, 128, 128, 0.6);
+}
+
+div.explore > .admonition-title {
+  background-color: rgba(0, 128, 128, 0.3) !important;
+}
+
+div.explore > .admonition-title:before {
+  color: rgba(0, 128, 128, 0.6);
+}
+
+
+[data-mode=light] div.explore > .admonition-title::after {
+  content: url("./icons/outline/light_mode/magnifying.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.explore > .admonition-title::after {
+    content: url("./icons/outline/light_mode/magniyfing.svg");
+    width: 20px;
+    height: 20px;
   }
+}
+
+[data-mode=dark] div.explore > .admonition-title::after {
+  content: url("./icons/outline/dark_mode/magnifying.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.explore > .admonition-title::after {
+    content: url("./icons/outline/dark_mode/magnifying.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+    
   
+/* Stil for eksempler */
+div.example {
+  border-left-color: rgba(241, 130, 86, 0.6);
+}
+  
+div.example > .admonition-title {
+  background-color: rgba(241, 130, 86, 0.3) !important;
+}
+  
+div.example > .admonition-title:before {
+  color: rgba(241, 130, 86, 0.3);
+}
+  
+
+
+[data-mode=light] div.example > .admonition-title::after {
+  content: url("./icons/outline/light_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+  
+@media (prefers-color-scheme: light) {
   div.example > .admonition-title::after {
-    content: "📝";
+    content: url("./icons/outline/light_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
   }
+}
   
-  /* Stil for fasit */
-  div.answer {
-    border-left-color: rgba(171, 86, 241, 0.6);
+[data-mode=dark] div.example > .admonition-title::after {
+  content: url("./icons/outline/dark_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.example > .admonition-title::after {
+    content: url("./icons/outline/dark_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
   }
+}
+
+
+
+
   
-  div.answer > .admonition-title {
-    background-color: rgba(171, 86, 241, 0);
-  }
+/* Stil for fasit */
+div.answer {
+  border-left-color: rgba(171, 86, 241, 0.6);
+}
+
+div.answer > .admonition-title {
+  background-color: rgba(171, 86, 241, 0);
+}
+
+div.answer > .admonition-title::before {
+  color: rgba(171, 86, 241, 0);
+}
+
+
+[data-mode=light] div.answer > .admonition-title::after {
+  content: url("./icons/outline/light_mode/square_check.svg");
+  width: 20px;
+  height: 20px;
+}
+
   
-  div.answer > .admonition-title::before {
-    color: rgba(171, 86, 241, 0);
-  }
-  
+@media (prefers-color-scheme: light) {
   div.answer > .admonition-title::after {
-    content: "✅";
+    content: url("./icons/outline/light_mode/square_check.svg");
+    width: 20px;
+    height: 20px;
   }
+}
   
-  /* Stil for løsningsforslag */
-  div.solution {
-    border-left-color: rgba(171, 86, 241, 0.6);
+[data-mode=dark] div.answer > .admonition-title::after {
+  content: url("./icons/outline/dark_mode/square_check.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.answer > .admonition-title::after {
+    content: url("./icons/outline/dark_mode/square_check.svg");
+    width: 20px;
+    height: 20px;
   }
+}
+
+
+
+
+
+/* Stil for løsningsforslag */
+div.solution {
+  border-left-color: rgba(171, 86, 241, 0.6);
+}
+
+div.solution > .admonition-title {
+  background-color: rgba(171, 86, 241, 0);
+}
+
+div.solution > .admonition-title::before {
+  color: rgba(171, 86, 241, 0);
+}
+
+div.solution > .admonition-title::after {
+  content: url("./icons/outline/unlock.svg");
+  width: 20px;
+  height: 20px;
+}
+
+
+[data-mode=light] div.solution > .admonition-title::after {
+  content: url("./icons/outline/light_mode/unlock.svg");
+  width: 20px;
+  height: 20px;
+}
   
-  div.solution > .admonition-title {
-    background-color: rgba(171, 86, 241, 0);
-  }
-  
-  div.solution > .admonition-title::before {
-    color: rgba(171, 86, 241, 0);
-  }
-  
+@media (prefers-color-scheme: light) {
   div.solution > .admonition-title::after {
-    content: "🪄";
+    content: url("./icons/outline/light_mode/unlock.svg");
+    width: 20px;
+    height: 20px;
   }
+}
+  
+[data-mode=dark] div.solution > .admonition-title::after {
+  content: url("./icons/outline/dark_mode/unlock.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.solution > .admonition-title::after {
+    content: url("./icons/outline/dark_mode/unlock.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
   
   
   /* Stil for oppgaver: level 1 */
@@ -111,7 +253,7 @@ div.theory {
   
   div.problem-level-2 > .admonition-title {
     background-color: rgba(0, 195, 255, 0.2);
-    padding-left: 1.2cm;
+    padding-left: 1.5cm;
   }
   
   div.problem-level-2 > .admonition-title::before {
@@ -120,9 +262,11 @@ div.theory {
   
   div.problem-level-2 > .admonition-title::after {
     content: "🔥 🔥";
+    /* content: url("./icons/outline/fire.svg") url("./icons/outline/fire.svg"); */
     white-space: nowrap;
     display: inline;
   }
+
   
   /* Stil for oppgaver: level 3 */
   div.problem-level-3 {
@@ -145,19 +289,52 @@ div.theory {
   }
   
   
-  /* Stil for underveisoppgaver */
+/* Stil for underveisoppgaver */
+
+div.check {
+  border-left-color: rgba(0, 35, 190, 0.6);
+}
+
+div.check > .admonition-title {
+  background-color: rgba(0, 35, 190, 0.2);
+}
+
+div.check > .admonition-title::after {
+  content: url("./icons/solid/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+[data-mode=light] div.check > .admonition-title::after {
+  content: url("./icons/solid/light_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
   
-  div.check {
-    border-left-color: rgba(0, 35, 190, 0.6);
-  }
-  
-  div.check > .admonition-title {
-    background-color: rgba(0, 35, 190, 0.2);
-  }
-  
+@media (prefers-color-scheme: light) {
   div.check > .admonition-title::after {
-    content: "✍🏼";
+    content: url("./icons/solid/light_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
   }
+}
+  
+[data-mode=dark] div.check > .admonition-title::after {
+  content: url("./icons/solid/dark_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.check > .admonition-title::after {
+    content: url("./icons/solid/dark_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
   
   /* Stil for diskusjonsspørsmål */
   div.discussion {
@@ -177,58 +354,114 @@ div.theory {
   }
   
   
-  /* Stil for oppgaver med programmering */
-  div.progging {
-    border-left-color: rgba(0, 195, 255, 0.6);
-  }
+/* Stil for oppgaver med programmering */
+div.progging {
+  border-left-color: rgba(0, 195, 255, 0.6);
+}
+
+div.progging > .admonition-title {
+  background-color: rgba(0, 195, 255, 0.2);
+}
+
+div.progging > .admonition-title::before {
+  color: rgba(0, 195, 255, 0.2);
+}
+
+div.progging > .admonition-title::after {
+  content: "💻";
+}
+
+
+/* Stil for side notes */
+div.sidenote {
+  border-left-color: rgba(0, 195, 255, 0.6);
+}
+
+div.sidenote > .admonition-title {
+  background-color: rgba(0, 195, 255, 0.2);
+}
+
+div.sidenote > .admonition-title::before {
+  color: rgba(0, 195, 255, 0);
+}
+
+
+
+[data-mode=light] div.sidenote > .admonition-title::after {
+  content: url("./icons/solid/light_mode/scroll.svg");
+  width: 20px;
+  height: 20px;
+}
   
-  div.progging > .admonition-title {
-    background-color: rgba(0, 195, 255, 0.2);
-  }
-  
-  div.progging > .admonition-title::before {
-    color: rgba(0, 195, 255, 0.2);
-  }
-  
-  div.progging > .admonition-title::after {
-    content: "💻";
-  }
-  
-  
-  /* Stil for side notes */
-  div.sidenote {
-    border-left-color: rgba(0, 195, 255, 0.6);
-  }
-  
-  div.sidenote > .admonition-title {
-    background-color: rgba(0, 195, 255, 0.2);
-  }
-  
-  div.sidenote > .admonition-title::before {
-    color: rgba(0, 195, 255, 0);
-  }
-  
+@media (prefers-color-scheme: light) {
   div.sidenote > .admonition-title::after {
-    content: "📜";
+    content: url("./icons/solid/light_mode/scroll.svg");
+    width: 20px;
+    height: 20px;
   }
+}
   
-  
-  /* Stil for hints */
-  div.hints {
-    border-left-color: rgba(0, 195, 255, 0.6);
+[data-mode=dark] div.sidenote > .admonition-title::after {
+  content: url("./icons/solid/dark_mode/scroll.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.sidenote > .admonition-title::after {
+    content: url("./icons/solid/dark_mode/scroll.svg");
+    width: 20px;
+    height: 20px;
   }
+}
+
+
+
+
   
-  div.hints > .admonition-title {
-    background-color: rgba(0, 195, 255, 0);
-  }
   
-  div.hints > .admonition-title::before {
-    color: rgba(0, 195, 255, 0);
-  }
+/* Stil for hints */
+div.hints {
+  border-left-color: rgba(0, 195, 255, 0.6);
+}
+
+div.hints > .admonition-title {
+  background-color: rgba(0, 195, 255, 0);
+}
+
+div.hints > .admonition-title::before {
+  color: rgba(0, 195, 255, 0);
+}
+
+
+[data-mode=light] div.hints > .admonition-title::after {
+  content: url("./icons/outline/light_mode/key.svg");
+  width: 20px;
+  height: 20px;
+}
   
+@media (prefers-color-scheme: light) {
   div.hints > .admonition-title::after {
-    content: "🔑";
+    content: url("./icons/outline/light_mode/key.svg");
+    width: 20px;
+    height: 20px;
   }
+}
+  
+[data-mode=dark] div.hints > .admonition-title::after {
+  content: url("./icons/outline/dark_mode/key.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.hints > .admonition-title::after {
+    content: url("./icons/outline/dark_mode/key.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
 
 
 /* Stil for kodefeil */
@@ -244,7 +477,32 @@ div.pythonerror > .admonition-title::before {
   color: rgba(217, 0, 255, 0);
 }
 
-div.pythonerror > .admonition-title::after {
-  content: "🐍";
+
+[data-mode=light] div.pythonerror > .admonition-title::after {
+  content: url("./icons/solid/light_mode/python.svg");
+  width: 20px;
+  height: 20px;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.pythonerror > .admonition-title::after {
+    content: url("./icons/solid/light_mode/python.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+  
+[data-mode=dark] div.pythonerror > .admonition-title::after {
+  content: url("./icons/solid/dark_mode/python.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.pythonerror > .admonition-title::after {
+    content: url("./icons/solid/dark_mode/python.svg");
+    width: 20px;
+    height: 20px;
+  }
 }
 
