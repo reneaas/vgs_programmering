@@ -36,14 +36,16 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=108d7419" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=56eb3b15" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=ac98a70a" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=176c25df" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsonsPuzzle.css?v=d67bb409" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=7fe56572" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=e32fe212" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=258bf6d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=dc4d8798" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -72,30 +74,68 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/python/symbolsk_python/likningsystemer';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../_static/setupEditor.js?v=7bd045fd"></script>
-    <script src="../../../_static/serviceWorker.js?v=040695f9"></script>
+    <script src="../../../_static/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../_static/code_mirror_special_highlighting.js?v=1d683d48"></script>
+    <script src="../../../_static/utils.js?v=8e047c30"></script>
+    <script src="../../../_static/setupEditor.js?v=d4cbd883"></script>
+    <script src="../../../_static/parsonsPuzzle.js?v=121dc86c"></script>
+    <script src="../../../_static/generateInteractiveCode.js?v=b5d19ef6"></script>
+    <script src="../../../_static/serviceWorker.js?v=9d61c2b7"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 
+<!-- Brython -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
+</script> -->
+
+<!-- 
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+</script> -->
+
+<!-- CodeMirror -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/midnight.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/nord.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
+<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
 <link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
 
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
+<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+    <script src="../../../_static/theme-switcher.js"></script>
+</head>
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
 
   </head>
   
@@ -202,58 +242,12 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduksjon til verktøykassa</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/variabler_new.html">Variabler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Feilmeldinger i Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner.html">Funksjoner i Python</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 1T</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/matematikk_1t/sammensatte_oppgaver/coup_de_grace.html">Coup de Grâce - Eksamensøving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/matematikk_1t/sammensatte_oppgaver/level1.html">Coup de Grâce: Level 1 🔥</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/matematikk_1t/sammensatte_oppgaver/level2.html">Coup de Grâce: Level 2 🔥🔥</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/matematikk_1t/sammensatte_oppgaver/level3.html">Coup de Grâce: Level 3 🔥🔥🔥</a></li>
-</ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 2P</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../matematikk/matematikk_2p/sparing/sparing.html">Sparing med programmering i Python</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk R2</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/matematikk_r2/numerisk_integrasjon/intro.html">Numerisk Integrasjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/matematikk_r2/numerisk_integrasjon/level1.html">Level 1 🔥</a></li>
-</ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ligninger.html">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="polynomdivisjon.html">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="derivasjon_1T.html">Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="ligningssystemer.html">Løse ligningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="ulikheter.html">Løse Ulikheter med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../funksjoner/intro.html">Funksjoner i Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="../iterasjon/list_loops.html">Løkker med lister</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../special_modules/matplotlib.html">Tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/variabler/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
 
     </div>
@@ -450,14 +444,14 @@ document.write(`
 <section id="lineaere-ligningssystemer-med-to-likninger-og-to-ukjente">
 <h3>Lineære ligningssystemer med to likninger og to ukjente<a class="headerlink" href="#lineaere-ligningssystemer-med-to-likninger-og-to-ukjente" title="Link to this heading">#</a></h3>
 <p>Et lineært likningsystem med to likninger og to ukjente kan skrives på formen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb27da7f-44c4-4758-86a1-b00e13664a31">
-<span class="eqno">()<a class="headerlink" href="#equation-bb27da7f-44c4-4758-86a1-b00e13664a31" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b956e4cb-3fcf-4916-9bd2-e9fc6a22f05f">
+<span class="eqno">()<a class="headerlink" href="#equation-b956e4cb-3fcf-4916-9bd2-e9fc6a22f05f" title="Permalink to this equation">#</a></span>\[\begin{align}
     ax + by &amp; = r, \\
     cx + dy &amp; = s. \\
 \end{align}\]</div>
 <p>For å løse slike likninger, kan vi benytte oss av <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> akkurat som med vanlig likninger, men da er vi nødt til å omforme begge to slik at vi får 0 på høyre side av likningene, som dette:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f939555-b0e2-4976-bd3d-26019f5961c3">
-<span class="eqno">()<a class="headerlink" href="#equation-0f939555-b0e2-4976-bd3d-26019f5961c3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6510f83b-aeb6-4118-bba8-5f4638c35bc8">
+<span class="eqno">()<a class="headerlink" href="#equation-6510f83b-aeb6-4118-bba8-5f4638c35bc8" title="Permalink to this equation">#</a></span>\[\begin{align}
     ax + by - r &amp; = 0, \\
     cx + dy - s &amp; = 0. \\
 \end{align}\]</div>
@@ -485,14 +479,14 @@ document.write(`
 <section id="eksempel-1-lineaert-likningsystem-med-noyaktig-en-losning">
 <h4>Eksempel 1: Lineært likningsystem med nøyaktig én løsning<a class="headerlink" href="#eksempel-1-lineaert-likningsystem-med-noyaktig-en-losning" title="Link to this heading">#</a></h4>
 <p>Vi skal løse likningsystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93569997-eb84-4ffe-ad96-6a4c29f156b1">
-<span class="eqno">()<a class="headerlink" href="#equation-93569997-eb84-4ffe-ad96-6a4c29f156b1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-35bceebd-a6f8-4c09-82f9-2200a2e25b90">
+<span class="eqno">()<a class="headerlink" href="#equation-35bceebd-a6f8-4c09-82f9-2200a2e25b90" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y &amp; = 5, \\
     4x + 5y &amp; = 6. \\
 \end{align}\]</div>
 <p>Først må vi omforme likningene slik at vi får 0 på høyre side</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab53d7e3-f5e7-42a6-ab0f-188e00cac59d">
-<span class="eqno">()<a class="headerlink" href="#equation-ab53d7e3-f5e7-42a6-ab0f-188e00cac59d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f4d3ffa4-028e-4387-886c-3d6ca3ca4b17">
+<span class="eqno">()<a class="headerlink" href="#equation-f4d3ffa4-028e-4387-886c-3d6ca3ca4b17" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y - 5 &amp; = 0, \\
     4x + 5y - 6 &amp; = 0. \\
 \end{align}\]</div>
@@ -526,14 +520,14 @@ x = -\frac{7}{2} \quad \wedge \quad y = 4.
 <section id="eksempel-2-lineaert-likningsystem-med-uendelig-mange-losninger">
 <h4>Eksempel 2: Lineært likningsystem med uendelig mange løsninger<a class="headerlink" href="#eksempel-2-lineaert-likningsystem-med-uendelig-mange-losninger" title="Link to this heading">#</a></h4>
 <p>Et lineært likningssystem med uendelig mange løsninger med to likninger og to ukjente, vil være likninger der to av dem er et multippel av hverandre. For eksempel</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e510f16a-08a5-4a2f-a919-6fdd34830e45">
-<span class="eqno">()<a class="headerlink" href="#equation-e510f16a-08a5-4a2f-a919-6fdd34830e45" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c36f7768-c609-4242-9a27-942111fb9176">
+<span class="eqno">()<a class="headerlink" href="#equation-c36f7768-c609-4242-9a27-942111fb9176" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y &amp; = 5, \\
     4x + 6y &amp; = 10. \\
 \end{align}\]</div>
 <p>Her er likning 2 bare 2 ganget med likning 1. Vi kan omforme likningene slik at vi får 0 på høyre side</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d409529-c02b-4215-9884-ce6175bba96d">
-<span class="eqno">()<a class="headerlink" href="#equation-3d409529-c02b-4215-9884-ce6175bba96d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-46802bc7-78d4-4f17-999d-cac955203e1e">
+<span class="eqno">()<a class="headerlink" href="#equation-46802bc7-78d4-4f17-999d-cac955203e1e" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x + 3y - 5 &amp; = 0, \\
     4x + 6y - 10 &amp; = 0. \\
 \end{align}\]</div>
@@ -573,14 +567,14 @@ x = \frac{5}{2} - \frac{3y}{2} \quad \wedge \quad y \in \mathbb{R}.
 <section id="eksempel-3-lineaert-likningsystem-uten-losning">
 <h4>Eksempel 3: Lineært likningsystem uten løsning<a class="headerlink" href="#eksempel-3-lineaert-likningsystem-uten-losning" title="Link to this heading">#</a></h4>
 <p>Et eksempel på en likning som ikke har noen løsning er</p>
-<div class="amsmath math notranslate nohighlight" id="equation-efa6d611-62bc-4eb9-9e46-ea5c01593249">
-<span class="eqno">()<a class="headerlink" href="#equation-efa6d611-62bc-4eb9-9e46-ea5c01593249" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3740631a-8cc5-4bfc-a1a8-feb3d12facaf">
+<span class="eqno">()<a class="headerlink" href="#equation-3740631a-8cc5-4bfc-a1a8-feb3d12facaf" title="Permalink to this equation">#</a></span>\[\begin{align}
     x + y &amp; = 3, \\
     x + y &amp; = 5. \\
 \end{align}\]</div>
 <p>Vi kan omforme likningene slik at vi får 0 på høyre side</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5dbdb66-35e3-4842-a0dd-75b35a05f064">
-<span class="eqno">()<a class="headerlink" href="#equation-e5dbdb66-35e3-4842-a0dd-75b35a05f064" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7c0910ee-f921-4e9e-82f1-8d1ddbb1508d">
+<span class="eqno">()<a class="headerlink" href="#equation-7c0910ee-f921-4e9e-82f1-8d1ddbb1508d" title="Permalink to this equation">#</a></span>\[\begin{align}
     x + y - 3 &amp; = 0, \\
     x + y - 5 &amp; = 0. \\
 \end{align}\]</div>
@@ -611,8 +605,8 @@ x = \frac{5}{2} - \frac{3y}{2} \quad \wedge \quad y \in \mathbb{R}.
 <section id="eksempel-4-den-helt-generelle-losningen">
 <h3>Eksempel 4: Den helt generelle løsningen<a class="headerlink" href="#eksempel-4-den-helt-generelle-losningen" title="Link to this heading">#</a></h3>
 <p>I introduksjonen skrev vi opp de helt generelle likningene for et lineært likningssystem med to likninger og to ukjente:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5acded12-8003-4c74-856f-405b06574e22">
-<span class="eqno">()<a class="headerlink" href="#equation-5acded12-8003-4c74-856f-405b06574e22" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5df1042b-22c5-4ea3-bdb9-7a924cdff784">
+<span class="eqno">()<a class="headerlink" href="#equation-5df1042b-22c5-4ea3-bdb9-7a924cdff784" title="Permalink to this equation">#</a></span>\[\begin{align}
     ax + by &amp; = r, \\
     cx + dy &amp; = s. \\
 \end{align}\]</div>
@@ -669,14 +663,14 @@ e^x + \sin(y) = 0.
 <section id="eksempel-1-ikke-lineaert-likningssystem-med-en-av-variablene-opphoyd-i-en-potens">
 <h4>Eksempel 1: Ikke-lineært likningssystem med én av variablene opphøyd i en potens<a class="headerlink" href="#eksempel-1-ikke-lineaert-likningssystem-med-en-av-variablene-opphoyd-i-en-potens" title="Link to this heading">#</a></h4>
 <p>Vi skal løse likningsystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36876468-d7fa-4662-b1dc-fe3db0ab28f1">
-<span class="eqno">()<a class="headerlink" href="#equation-36876468-d7fa-4662-b1dc-fe3db0ab28f1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2a388bad-59fb-44f6-8928-ae077cc71f90">
+<span class="eqno">()<a class="headerlink" href="#equation-2a388bad-59fb-44f6-8928-ae077cc71f90" title="Permalink to this equation">#</a></span>\[\begin{align}
     x^2 - 2y &amp; = -3, \\
     x + y &amp; = 1. \\
 \end{align}\]</div>
 <p>Akkurat som med de lineære likningene, må vi få 0 på høyre side av likningene. Skriver vi om likningene i likningsystemet får vi</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0efa95fb-477c-4267-82ba-96d42b5e31a3">
-<span class="eqno">()<a class="headerlink" href="#equation-0efa95fb-477c-4267-82ba-96d42b5e31a3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-036da1db-0b6e-4806-82db-4a4c7b33ea44">
+<span class="eqno">()<a class="headerlink" href="#equation-036da1db-0b6e-4806-82db-4a4c7b33ea44" title="Permalink to this equation">#</a></span>\[\begin{align}
     x^2 - 2y + 3 &amp; = 0, \\
     x + y - 1 &amp; = 0. \\
 \end{align}\]</div>
@@ -715,8 +709,8 @@ x = -1 \quad \wedge \quad y = 2.
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningssystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-daf1e2e5-28c7-4982-86ee-b4b45c050e30">
-<span class="eqno">()<a class="headerlink" href="#equation-daf1e2e5-28c7-4982-86ee-b4b45c050e30" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c3103b83-4930-4707-9012-4e023737dda3">
+<span class="eqno">()<a class="headerlink" href="#equation-c3103b83-4930-4707-9012-4e023737dda3" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x - 3y &amp; = -1, \\
     4x + 5y &amp; = 2. \\
 \end{align}\]</div>
@@ -742,8 +736,8 @@ x = -1 \quad \wedge \quad y = 2.
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Løsningsforslag</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Først må vi skrive om likningssystemet slik at høyresiden er 0 i begge likningene. Det vil si:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c4a2ee1-2ecb-455e-ae7e-30ce4749fe9b">
-<span class="eqno">()<a class="headerlink" href="#equation-3c4a2ee1-2ecb-455e-ae7e-30ce4749fe9b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7e5fe122-791c-4e8f-8167-4d1d2d7caa46">
+<span class="eqno">()<a class="headerlink" href="#equation-7e5fe122-791c-4e8f-8167-4d1d2d7caa46" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x - 3y + 1 &amp; = 0, \\
     4x + 5y - 2 &amp; = 0. \\
 \end{align}\]</div>
@@ -775,8 +769,8 @@ x = \frac{1}{22} \quad \wedge \quad y = \frac{4}{11}.
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningssystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b3b259b-7ad3-4eac-9a5a-fc5473bdcef8">
-<span class="eqno">()<a class="headerlink" href="#equation-4b3b259b-7ad3-4eac-9a5a-fc5473bdcef8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-14d024a4-1836-45a9-be36-2484823eb85b">
+<span class="eqno">()<a class="headerlink" href="#equation-14d024a4-1836-45a9-be36-2484823eb85b" title="Permalink to this equation">#</a></span>\[\begin{align}
     x + 2y &amp; = 3, \\
     x + y &amp; = 1. \\
 \end{align}\]</div>
@@ -811,8 +805,8 @@ x = -1 \quad \wedge \quad y = 2.
 <section id="oppgave-3">
 <h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
 <p>Bruk <code class="docutils literal notranslate"><span class="pre">sympy</span></code> til å løse likningssystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a22092bf-2cd8-4c04-ae8d-c104bbf580f8">
-<span class="eqno">()<a class="headerlink" href="#equation-a22092bf-2cd8-4c04-ae8d-c104bbf580f8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dfb90577-8ba2-4e58-a436-c04391cdaac3">
+<span class="eqno">()<a class="headerlink" href="#equation-dfb90577-8ba2-4e58-a436-c04391cdaac3" title="Permalink to this equation">#</a></span>\[\begin{align}
     x^2 + 2y &amp; = 3, \\
     x + y &amp; = 1. \\
 \end{align}\]</div>
@@ -838,8 +832,8 @@ x = -1 \quad \wedge \quad y = 2.
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Løsningsforslag</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Først må vi skrive om likningssystemet slik at det er 0 på høyre side av begge likningene. Da får vi</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f751ed3a-052a-481f-9ba8-8020d0cfb898">
-<span class="eqno">()<a class="headerlink" href="#equation-f751ed3a-052a-481f-9ba8-8020d0cfb898" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5568b404-acf8-44b8-964b-71197fbdbb2b">
+<span class="eqno">()<a class="headerlink" href="#equation-5568b404-acf8-44b8-964b-71197fbdbb2b" title="Permalink to this equation">#</a></span>\[\begin{align}
     x^2 + 2y - 3 &amp; = 0, \\
     x + y - 1 &amp; = 0. \\
 \end{align}\]</div>

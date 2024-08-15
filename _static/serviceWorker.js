@@ -4,11 +4,8 @@ const urlsToCache = [
     'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.asm.wasm',
     'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/lib/codemirror.js',
     'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/lib/codemirror.css',
-    'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/theme/midnight.min.css',
-    'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/theme/monokai.min.css',
-    'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/theme/eclipse.min.css',
     'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/mode/python/python.js',
-    // Add other necessary files
+    "https://cdn.jsdelivr.net/npm/marked/marked.min.js",
 ];
 
 

@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Regning med Python &#8212; Programmering i Videregående Skole</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsonsPuzzle.css?v=d67bb409" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=7fe56572" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=e32fe212" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=258bf6d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/regning/regning';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../_static/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
+    <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
+    <script src="../../../_static/utils.js?v=8e047c30"></script>
+    <script src="../../../_static/setupEditor.js?v=d4cbd883"></script>
+    <script src="../../../_static/parsonsPuzzle.js?v=121dc86c"></script>
+    <script src="../../../_static/generateInteractiveCode.js?v=b5d19ef6"></script>
+    <script src="../../../_static/serviceWorker.js?v=9d61c2b7"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="if-else-setninger" href="../if_else/if_else.html" />
+    <link rel="prev" title="Variabler" href="../variabler/variabler.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+
+<!-- Brython -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
+</script> -->
+
+<!-- 
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+</script> -->
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
+<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+    <script src="../../../_static/theme-switcher.js"></script>
+</head>
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering i Videregående Skole</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../variabler/variabler.html">Variabler</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/book/programmering/regning/regning.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Regning med Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Innhold </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolge">Regnerekkefølge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="regning-med-python">
+<h1>Regning med Python<a class="headerlink" href="#regning-med-python" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Læringsmål: regning med Python</p>
+<p>Etter å ha lest dette delkapittelet, er målet at du skal kunne:</p>
+<ul class="simple">
+<li><p>Bruke python til å regne ut enkle og sammensatte regnestykker.</p></li>
+</ul>
+</div>
+<p>Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator som lar oss regne matematisk på en måte vi ikke ellers kan gjøre på noen annen måte. Dette kan være å gjenta en utregning millioner av ganger frem til vi oppnår et ønsket resultat, eller bare regne ut en enkel matematisk formel.</p>
+<section id="regneoperasjoner-i-python">
+<h2>Regneoperasjoner i Python<a class="headerlink" href="#regneoperasjoner-i-python" title="Link to this heading">#</a></h2>
+<p>Vi starter med de viktigste regneoperasjonene</p>
+<div class="sidenote margin admonition">
+<p class="admonition-title">Divisjon og brøker</p>
+<p>I Python, så vil en brøk alltid regnes ut til et heltall (<code class="code docutils literal highlight highlight-python"><span class="nb">int</span></code>) eller et desimaltall (<code class="code docutils literal highlight highlight-python"><span class="nb">float</span></code>). Det er ingen innebygd måte å representere brøker på direkte.</p>
+</div>
+<div class="theory admonition">
+<p class="admonition-title">Viktige regneoperasjoner i Python</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operasjon</p></th>
+<th class="head"><p>Symbol i Python</p></th>
+<th class="head"><p>Kodeeksempel</p></th>
+<th class="head"><p>Matematikk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Addisjon</p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="o">+</span></code></p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(3 + 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Subtraksjon</p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="o">-</span></code></p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(3 - 4\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Multiplikasjon</p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="o">*</span></code></p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(3 \cdot 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Divisjon</p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="o">/</span></code></p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{3}{4}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Potens</p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="o">**</span></code></p></td>
+<td><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">**</span> <span class="mi">4</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(3^4\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 1</p>
+<p>Under vises et interaktivt kodevindu der noen regneoperasjoner blir utført.</p>
+<p>Prøv å bestemme hvilke verdier variablene <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">c</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">q</span></code> får før du kjører programmet. <br>
+Kjør programmet for å sjekke svaret ditt!</p>
+<div id="container-kode-programmering-regning-utforsk-1"></div>
+<script type="text/javascript">
+    code = `
+a = -1 + 3
+b = 5 - (-2)
+c = 3 * 2
+p = 6 / 3
+q = 2 ** 3
+
+# Skriver ut resultatet
+print(f"{a = } \\n{b = } \\n{c = } \\n{p = } \\n{q = }")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-regning-utforsk-1",
+        code,
+        "kode-programmering-regning-utforsk-1"
+    );
+</script>
+
+
+</div>
+</section>
+<section id="regnerekkefolge">
+<h2>Regnerekkefølge<a class="headerlink" href="#regnerekkefolge" title="Link to this heading">#</a></h2>
+<p>Python følger samme regnerekkefølge du har møtt i matematikken, bortsett fra at divisjon kommer alltid før multiplikasjon.</p>
+<div class="theory admonition">
+<p class="admonition-title">Regnerekkefølge i Python</p>
+<p>Regnerekkefølgen i Python er:</p>
+<ol class="arabic simple">
+<li><p>Parenteser</p></li>
+<li><p>Potenser</p></li>
+<li><p>Divisjon</p></li>
+<li><p>Multiplikasjon</p></li>
+<li><p>Addisjon og subtraksjon</p></li>
+</ol>
+</div>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 2</p>
+<p>Under vises et interaktiv kodevindu der regneoperasjoner som bruker regnerekkefølgen utføres.</p>
+<p>Prøv å bruke regnerekkefølgen til å bestemme verdiene til variablene <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">c</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">q</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">r</span></code> før du kjører programmet. <br></p>
+<div id="container-kode-programmering-regning-utforsk-2"></div>
+<script type="text/javascript">
+    code = `
+a = 2 + 3 * 4
+b = 2 * (3 + 4)
+c = 2 ** 4 / 2
+p = 2 ** (4 / 2)
+q = 3 ** 4 / 9 * 2 - 2
+r = (5 - 2) ** (1 + 3) / (5 + 4) * 2 - 3 + 1
+
+# Skriver ut resultatet
+print(f"{a = } \\n{b = } \\n{c = } \\n{p = } \\n{q = } \\n{r = }")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-regning-utforsk-2",
+        code,
+        "kode-programmering-regning-utforsk-2"
+    );
+</script>
+
+
+</div>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>I tabellen under vises noen regnestykker. Fyll ut koden i det interaktive kodevinduet under for å regne ut svarene.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variabel</p></th>
+<th class="head"><p>Regnestykke</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">a</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(3 + 2 \cdot 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">b</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(6 - 2 + 5\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">c</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{9}{3} + 3\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">d</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\cdot (-2) + 4\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<div id="container-kode-programmering-regning-oppgave-1"></div>
+<script type="text/javascript">
+    code = `
+a = # FYLL INN
+b = # FYLL INN
+c = # FYLL INN
+d = # FYLL INN
+
+# Skriver ut resultatet
+print(f"{a = } \\n{b = } \\n{c = } \\n{d = }")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-regning-oppgave-1",
+        code,
+        "kode-programmering-regning-oppgave-1"
+    );
+</script>
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">4</span>
+<span class="linenos">2</span><span class="n">b</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="linenos">3</span><span class="n">c</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="linenos">4</span><span class="n">d</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="c1"># Skriver ut resultatet</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">c</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="problem-level-2 admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>I tabellen under vises noen regnestykker. Fyll ut koden i det interaktive kodevinduet under for å regne ut svarene.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variabel</p></th>
+<th class="head"><p>Regnestykke</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">a</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(7 + 3 \cdot (10 - 4)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">b</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{8 + 2}{2} + 5\cdot 3\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">c</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{12}{3\cdot 2}\cdot 4 + 1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">d</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(4\cdot (5 + 3^2) - \dfrac{6}{2}\cdot 3\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<div id="container-kode-programmering-regning-oppgave-2"></div>
+<script type="text/javascript">
+    code = `
+a = # FYLL INN
+b = # FYLL INN
+c = # FYLL INN
+d = # FYLL INN
+
+# Skriver ut resultatet
+print(f"{a = } \\n{b = } \\n{c = } \\n{d = }")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-regning-oppgave-2",
+        code,
+        "kode-programmering-regning-oppgave-2"
+    );
+</script>
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="mi">3</span>
+<span class="linenos">3</span><span class="n">c</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">/</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">4</span><span class="n">d</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">6</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="c1"># Skriver ut resultatet</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">c</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="problem-level-3 admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>En elev har forsøkt å regne ut</p>
+<div class="math notranslate nohighlight">
+\[
+r = \dfrac{2^3}{4\cdot 2} + \dfrac{1}{2}\cdot (1 + 3)
+\]</div>
+<p>ved å skrive koden under. Koden inneholder <strong>to feil</strong>.</p>
+<p>Finn feilene og rett de opp.</p>
+<div id="container-kode-programmering-regning-oppgave-3"></div>
+<script type="text/javascript">
+    code = `
+r = 2 * 3 / 4 * 2 + 1 / 2 * (1 + 3)     # FIKS MEG
+
+print(f"{r = }")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-regning-oppgave-3",
+        code,
+        "kode-programmering-regning-oppgave-3"
+    );
+</script>
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Feilene:</p>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span></code> skal være <code class="code docutils literal highlight highlight-python"><span class="mi">2</span><span class="o">**</span><span class="mi">3</span></code></p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span></code> skal være <code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>           <span class="c1"># FIKS MEG</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/programmering/regning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../variabler/variabler.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Variabler</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../if_else/if_else.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Innhold
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolge">Regnerekkefølge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av René Ask
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

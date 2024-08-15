@@ -34,14 +34,16 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=108d7419" />
-    <link rel="stylesheet" type="text/css" href="_static/misc.css?v=56eb3b15" />
-    <link rel="stylesheet" type="text/css" href="_static/code_mirror.css?v=ac98a70a" />
-    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/github_dark_cm.css?v=176c25df" />
+    <link rel="stylesheet" type="text/css" href="_static/parsonsPuzzle.css?v=d67bb409" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=7fe56572" />
+    <link rel="stylesheet" type="text/css" href="_static/misc.css?v=e32fe212" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror.css?v=258bf6d2" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
     <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
-    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/github_light_cm.css?v=dc4d8798" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -68,10 +70,14 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="_static/setupEditor.js?v=7bd045fd"></script>
-    <script src="_static/serviceWorker.js?v=040695f9"></script>
+    <script src="_static/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="_static/code_mirror_special_highlighting.js?v=1d683d48"></script>
+    <script src="_static/utils.js?v=8e047c30"></script>
+    <script src="_static/setupEditor.js?v=d4cbd883"></script>
+    <script src="_static/parsonsPuzzle.js?v=121dc86c"></script>
+    <script src="_static/generateInteractiveCode.js?v=b5d19ef6"></script>
+    <script src="_static/serviceWorker.js?v=9d61c2b7"></script>
   <script src="_static/searchtools.js"></script>
   <script src="_static/language_data.js"></script>
   <script src="searchindex.js"></script>
@@ -80,21 +86,55 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 
+<!-- Brython -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
+</script> -->
+
+<!-- 
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+</script> -->
+
+<!-- CodeMirror -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/midnight.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/nord.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
+<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
 <link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
+<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
 <link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css">
 
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
+<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+    <script src="_static/theme-switcher.js"></script>
+</head>
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
 
   </head>
   
@@ -201,58 +241,12 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/python/intro.html">Introduksjon til verktøykassa</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/variabler_og_regning/variabler_new.html">Variabler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/variabler_og_regning/regning.html">Å regne med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/iterasjon/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/iterasjon/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/if_else/if_else.html"><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code> tester</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/errors/errors.html">Feilmeldinger i Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/funksjoner/funksjoner.html">Funksjoner i Python</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 1T</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="book/matematikk/matematikk_1t/sammensatte_oppgaver/coup_de_grace.html">Coup de Grâce - Eksamensøving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="book/matematikk/matematikk_1t/sammensatte_oppgaver/level1.html">Coup de Grâce: Level 1 🔥</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/matematikk/matematikk_1t/sammensatte_oppgaver/level2.html">Coup de Grâce: Level 2 🔥🔥</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/matematikk/matematikk_1t/sammensatte_oppgaver/level3.html">Coup de Grâce: Level 3 🔥🔥🔥</a></li>
-</ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 2P</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/matematikk/matematikk_2p/sparing/sparing.html">Sparing med programmering i Python</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk R2</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="book/matematikk/matematikk_r2/numerisk_integrasjon/intro.html">Numerisk Integrasjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="book/matematikk/matematikk_r2/numerisk_integrasjon/level1.html">Level 1 🔥</a></li>
-</ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS i Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/python/symbolsk_python/ligninger.html">Løse ligninger med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/symbolsk_python/polynomdivisjon.html">Polynomdivisjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/symbolsk_python/derivasjon_1T.html">Derivasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/symbolsk_python/ligningssystemer.html">Løse ligningssystemer med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/symbolsk_python/ulikheter.html">Løse Ulikheter med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/symbolsk_python/integrasjon.html">Symbolsk Integrasjon med <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for Viderekomne</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="book/python/funksjoner/intro.html">Funksjoner i Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="book/python/funksjoner/element%C3%A6re_funksjoner.html">Elementære (Matematiske) Funksjoner i Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/python/funksjoner/funksjoner_med_flere_variabler.html">Funksjoner med flere variabler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/python/funksjoner/funksjoner_med_delt_forskrift.html">Funksjoner med delt forskrift</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/iterasjon/list_loops.html">Løkker med lister</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/python/special_modules/matplotlib.html">Tegne grafer med <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Avansert Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/python/funksjoner/funksjoner_avansert.html">Pythonfunksjoner slik proffene gjør det</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/programmering/variabler/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/programmering/while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/programmering/feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
 
     </div>

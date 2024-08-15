@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>while-løkker &#8212; Programmering i Videregående Skole</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsonsPuzzle.css?v=d67bb409" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=7fe56572" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=e32fe212" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=258bf6d2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/while_loops/while_loops';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../_static/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
+    <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
+    <script src="../../../_static/utils.js?v=8e047c30"></script>
+    <script src="../../../_static/setupEditor.js?v=d4cbd883"></script>
+    <script src="../../../_static/parsonsPuzzle.js?v=121dc86c"></script>
+    <script src="../../../_static/generateInteractiveCode.js?v=b5d19ef6"></script>
+    <script src="../../../_static/serviceWorker.js?v=9d61c2b7"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="for-løkker" href="../for_loops/for_loops.html" />
+    <link rel="prev" title="if-else-setninger" href="../if_else/if_else.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+
+<!-- Brython -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
+</script> -->
+
+<!-- 
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+</script> -->
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
+<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+    <script src="../../../_static/theme-switcher.js"></script>
+</head>
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering i Videregående Skole</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../variabler/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/book/programmering/while_loops/while_loops.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>while-løkker</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Innhold </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="while-lokker">
+<h1><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker<a class="headerlink" href="#while-lokker" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Læringsmål: <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</p>
+<p>Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:</p>
+<ul class="simple">
+<li><p>Lese <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker.</p></li>
+<li><p>Skrive <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker som løser matematiske problemer.</p></li>
+</ul>
+</div>
+<p>En <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke er noe vi bruker når vi ønsker å gjenta en eller flere kodelinjer igjen og igjen så lenge en betingelse er oppfylt.</p>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 1</p>
+<p>Under vises et interaktivt program som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke til å skrive ut de <strong>fem</strong> første naturlige tallene. Her skal du utforske ulike biter av <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkken.</p>
+<div id="container-kode-programmering-while-løkker-utforsk-1"></div>
+<script type="text/javascript">
+    code = `
+i = 1
+
+while i <= 5:
+    print(f"{i = }")
+    i = i + 1
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-while-løkker-utforsk-1",
+        code,
+        "kode-programmering-while-løkker-utforsk-1"
+    );
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Prøv å endre <em>betingelsen</em> slik at programmet skriver ut de <strong>ti</strong> første naturlige tallene.</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Betingelsen kan settes til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span></code> for å skrive ut de ti første naturlige tallene.</p>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Kan du forklare hva linja <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span></code> gjør i programmet?  <br> Prøv å kjøre koden ved å endre til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span></code>. Hva skjer? <br> Hva med <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span></code>? <br> Kan du forklare hva en sånn kodelinje gjør generelt ut ifra observasjonene dine?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span></code> øker verdien til <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> med <span class="math notranslate nohighlight">\(1\)</span> ved hver iterasjon.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span></code> øker verdien til <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> med <span class="math notranslate nohighlight">\(2\)</span> ved hver iterasjon.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span></code> øker verdien til <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> med <span class="math notranslate nohighlight">\(3\)</span> ved hver iterasjon.</p></li>
+</ul>
+<p>Generelt vil <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">n</span></code> øke verdien til <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> med <code class="code docutils literal highlight highlight-python"><span class="n">n</span></code> ved hver iterasjon.</p>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Gjør endringer slik at programmet skriver ut alle <strong>partall</strong> opp til og med 10.</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi må gjøre tre endringer fra det opprinnelige programmet:</p>
+<ul class="simple">
+<li><p>Sette startverdien til <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> til 2 slik at vi starter på et partall.</p></li>
+<li><p>Sette betingelsen til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span></code>.</p></li>
+<li><p>Endre linja <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span></code> til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span></code> slik at vi øker verdien til <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> med 2 ved hver iterasjon.</p></li>
+</ul>
+<p>Koden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class="hll"><span class="linenos">2</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+</span><span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="hll"><span class="linenos">4</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span>
+</span></pre></div>
+</div>
+</div>
+</div>
+<p>Nå kan vi ta med oss litt generell teori:</p>
+<div class="theory admonition">
+<p class="admonition-title">Syntaks: <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</p>
+<p>En <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke brukes for å gjenta en kodeblokk så lenge en <strong>betingelse</strong> er sann. Generelt kan en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke skrives på følgende måte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">betingelse</span><span class="p">:</span>
+    <span class="c1"># Gjøre noe så lenge `betingelse` er sann!</span>
+</pre></div>
+</div>
+</div>
+<p>Du skal få utforske litt mer der du skal løse matematiske problemer du <em>ikke</em> kan løse for hånd!</p>
+<div class="sidenote margin admonition">
+<p class="admonition-title">Fun fact: Gauss</p>
+<p>En matematiker som het Gauss fikk angiveligvis i oppgave å summere opp de 100 første naturlige tallene for hånd som straff fordi han var urolig i timen. Læreren tenkte det ville oppta han en god stund, men Gauss fant en lur løsning for å regne ut summen raskt. Dog, ikke like raskt som med et program...</p>
+</div>
+<div class="explore admonition" id="programmering-while-loops-utforsk-2">
+<p class="admonition-title">Utforsk 2</p>
+<p>Under vises et interaktivt program som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke til å regne ut summen av de <strong>fem</strong> første naturlige tallene.</p>
+<div id="container-kode-programmering-while-løkker-utforsk-2"></div>
+<script type="text/javascript">
+    code = `
+s = 0   
+i = 1
+
+while i <= 5:
+    s = s + i
+    i = i + 1
+
+print(f"{s = }")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-while-løkker-utforsk-2",
+        code,
+        "kode-programmering-while-løkker-utforsk-2"
+    );
+</script>
+
+    
+    
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Kan du få programmet til å regne ut summen av de <strong>ti</strong> første naturlige tallene? Sjekk at du får riktig svar ved å regne det ut for hånd.</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi endrer betingelsen til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span></code> for å regne ut summen av de ti første naturlige tallene. Svaret blir <span class="math notranslate nohighlight">\(55\)</span>.</p>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Kan du få programmet til å regne ut summen av de <span class="math notranslate nohighlight">\(100\)</span> første naturlige tallene? Kan du stole på resultatet ditt? Hvorfor/hvorfor ikke?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<ul class="simple">
+<li><p>Vi endrer betingelsen til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span></code> for å regne ut summen av de <span class="math notranslate nohighlight">\(100\)</span> første naturlige tallene. Svaret blir da <span class="math notranslate nohighlight">\(5050\)</span>.</p></li>
+<li><p>Vi kan stole på resultatet fordi vi har bekreftet at programmet fungerer som det skal for de fem og ti første naturlige tallene. Det er ingen grunn til at det ikke skal fungere like godt for de <span class="math notranslate nohighlight">\(100\)</span> første naturlige tallene. Eller de <span class="math notranslate nohighlight">\(10000\)</span> første naturlige tallene, for den saks skyld.</p></li>
+</ul>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Kan du få programmet til å regne ut summen av bare partall eller bare oddetall opp til og med 100? Hvilke av de to summene er størst?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<ul class="simple">
+<li><p>I begge tilfeller setter vi betingelsen til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span></code>.</p></li>
+<li><p>I begge tilfeller endrer vi linja <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span></code> til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span></code> for å få annenhvert tall.</p></li>
+<li><p>Startverdien til <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> er avhengig av hva hvilken sum vi ønsker å regne ut:</p>
+<ul>
+<li><p>Oddetall: <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span></code></p></li>
+<li><p>Partall: <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">=</span> <span class="mi">2</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Summene blir:</p>
+<ul class="simple">
+<li><p>Oddetall: <span class="math notranslate nohighlight">\(2500\)</span></p></li>
+<li><p>Partall: <span class="math notranslate nohighlight">\(2550\)</span></p></li>
+</ul>
+<p>Summen av partallene er altså størst.</p>
+<p>Fullstendig program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>   
+<span class="linenos">2</span><span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># NOTE: Startverdi for partall. Sett i = 1 for oddetall. </span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+<span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Kvadrattallene <span class="math notranslate nohighlight">\(x\)</span> er tall som kan skrives som <span class="math notranslate nohighlight">\(x = i^2\)</span> for et naturlig tall <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Under vises et interaktivt kodevindu med en uferdig kode som skal summere opp de fem første kvadrattallene.</p>
+<div id="container-kode-programmering-while-løkker-oppgave-1"></div>
+<script type="text/javascript">
+    code = `
+s = 0
+i = 1
+
+while i <= 5:
+    s =         # FYLL INN: legg til kvadrattall
+    i = i + 1
+    
+print(f"{s = }")
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-while-løkker-oppgave-1",
+        code,
+        "kode-programmering-while-løkker-oppgave-1"
+    );
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Fiks programmet slik at det regner ut summen av de fem første kvadrattallene. Sjekk svaret ved å regne for hånd.</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi må legge på <code class="code docutils literal highlight highlight-python"><span class="n">i</span><span class="o">**</span><span class="mi">2</span></code> til <code class="code docutils literal highlight highlight-python"><span class="n">s</span></code> ved hver iterasjon. <br>
+Dette oppnår vi med kodelinjen <code class="code docutils literal highlight highlight-python"><span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span></code>. Koden blir da</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>   
+<span class="linenos">2</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+<span class="hll"><span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+</span><span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kjører vi koden, blir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s = 55</span>
+</pre></div>
+</div>
+<p>Altså er summen av de fem første kvadrattallene <span class="math notranslate nohighlight">\(55\)</span>.</p>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Juster programmet slik at det regner ut summen av de <span class="math notranslate nohighlight">\(100\)</span> første kvadrattallene. Hva blir svaret?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi må endre betingelsen i <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span></code> for å regne ut summen av de <span class="math notranslate nohighlight">\(100\)</span> første kvadrattallene.
+Koden blir altså</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>   
+<span class="linenos">2</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="hll"><span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+</span><span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Da får vi utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s = 338350</span>
+</pre></div>
+</div>
+<p>Svaret er altså <span class="math notranslate nohighlight">\(338350\)</span>.</p>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Endre programmet slik at det regner ut summen av de <span class="math notranslate nohighlight">\(100\)</span> første kubikktallene <span class="math notranslate nohighlight">\(x \in \{1^3, 2^3 , 3^3, \ldots, 100^3\}\)</span>.</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi må endre linja <code class="code docutils literal highlight highlight-python"><span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span></code> til <code class="code docutils literal highlight highlight-python"><span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">3</span></code> for å legge til kubikktall i stedet for kvadrattall. Dermed får vi</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">2</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+<span class="hll"><span class="linenos">5</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">3</span>
+</span><span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kjører vi koden, får vi utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s = 25502500</span>
+</pre></div>
+</div>
+<p>Svaret er altså <span class="math notranslate nohighlight">\(25502500\)</span>.</p>
+</div>
+</div>
+<div class="problem-level-2 admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>En matematisk størrelse som dukker opp i mange sammenhenger er <span class="math notranslate nohighlight">\(n\)</span>-fakultet. <span class="math notranslate nohighlight">\(n\)</span>-fakultet skrives <span class="math notranslate nohighlight">\(n!\)</span> og er definert som produktet av alle naturlige tall opp til og med <span class="math notranslate nohighlight">\(n\)</span>. Matematisk skriver vi:</p>
+<div class="math notranslate nohighlight">
+\[
+n! = 1 \cdot 2 \cdot 3 \cdot \ldots \cdot n
+\]</div>
+<p>For eksempel er</p>
+<div class="math notranslate nohighlight">
+\[
+4! = 1 \cdot 2 \cdot 3 \cdot 4 = 24.
+\]</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Under vises et program som regner ut <span class="math notranslate nohighlight">\(4!\)</span> i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i et interaktivt kodevindu og kjør det.</p>
+</dd>
+</dl>
+<div id="container-parsons-puzzle-programmering-while-løkker-oppgave-2" class="puzzle-container">
+    <div id="draggable-code"></div>
+    <div id="drop-area"></div>
+    <button id="check-solution" class="button button-check-solution">Sjekk løsning!</button>
+    <button id="reset-puzzle" class="button button-reset-puzzle">Reset puslespill ↪️</button>
+    <div id="feedback"></div>
+</div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const codeString = 
+`i = 1 ;p = 1
+
+while i <= 4:
+    p = p * i
+    i = i + 1
+
+print(f"{p = }")
+`;
+    
+        // Initialize the puzzle
+        initializeParsonsPuzzle('container-parsons-puzzle-programmering-while-løkker-oppgave-2', codeString);
+    });
+</script>
+<br>
+<div id="container-kode-programmering-while-løkker-oppgave-2"></div>
+<script type="text/javascript">
+    code = `
+# FYLL INN: kopier koden fra løsningen av puslespillet og lim inn her
+`;   
+
+    generateInteractiveCode(
+        "container-kode-programmering-while-løkker-oppgave-2",
+        code,
+        "kode-programmering-while-løkker-oppgave-2"
+    );
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Juster programmet slik at det regner ut <span class="math notranslate nohighlight">\(10!\)</span></p>
+</dd>
+<dd><p>Hva blir svaret?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi endrer betingelsen i <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka til <code class="code docutils literal highlight highlight-python"><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span></code> for å regne ut <span class="math notranslate nohighlight">\(10!\)</span> - Koden blir da</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">2</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="hll"><span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+</span><span class="linenos">5</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">i</span>
+<span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kjører vi koden får vi utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 3628800</span>
+</pre></div>
+</div>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Fra teorien om kombinatorikk, kan man komme fram til at antall måter å stokke en kortstokk med 52 kort på er <span class="math notranslate nohighlight">\(52!\)</span>. <br> Bruk programmet til å bestemme dette tallet. Hva blir svaret?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="linenos">2</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="hll"><span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">52</span><span class="p">:</span>
+</span><span class="linenos">5</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">i</span>
+<span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">7</span>    
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 80658175170943878571660636856403766975289505440883277824000000000000</span>
+</pre></div>
+</div>
+<p>For å få bedre oversikt over hva dette tallet er, kan vi skrive om <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-setningen som</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= :</span><span class="s2">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dette skriver ut tallet med “vitenskapelig” notasjon (standardform, <em>kinda</em>). Utskriften blir da</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 8.065818e+67</span>
+</pre></div>
+</div>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+52! = 8.065818 \times 10^{67},
+\]</div>
+<p>med en presisjon på 7 siffer.</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/programmering/while_loops"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../if_else/if_else.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../for_loops/for_loops.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Innhold
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av René Ask
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
