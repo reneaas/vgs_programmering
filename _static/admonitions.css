@@ -506,3 +506,15 @@ div.pythonerror > .admonition-title::before {
   }
 }
 
+
+
+
+/* Append an icon after the title in any admonition with the 'admonition-icon-write' class */
+.admonition.admonition-icon-write > .admonition-title::after {
+  content: url('/_static/icons/stickers/edit.svg'); /* Path to your SVG icon */
+  display: inline-block;
+  margin-left: 8px; /* Space between the title and the new icon */
+  vertical-align: middle; /* Aligns the icon vertically with the title */
+  width: 24px; /* Adjust the icon size */
+  height: 24px;
+}

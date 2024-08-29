@@ -1,0 +1,217 @@
+/* Pairing Puzzle container */
+.pairing-puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+}
+
+/* Draggable items - enhanced with shadow, borders, and spacing */
+.pairing-puzzle-container .draggable-item {
+    background-color: var(--draggable-background-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.draggable-container {
+    display: grid-flex; /* Use grid layout for better alignment */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 10px; /* Space between items */
+    justify-content: flex-start; /* Aligns items to the start of the row */
+    align-items: flex-start; /* Align items to the start vertically to prevent stretching */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    background-color: var(--draggable-container-background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Draggable items */
+.draggable-item {
+    background-color: var(--draggable-background-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    padding: 4px 4px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    display: inline-block;
+    width: 100%; /* Allow the item to take up the full width of the drop zone */
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    box-sizing: border-box; /* Include padding and border in size calculations */
+    white-space: normal; /* Allow text to wrap to the next line if necessary */
+    overflow: visible; /* Ensure content is visible */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    margin: 1px;
+}
+
+
+/* Drop zone container */
+.pairing-puzzle-container .drop-zone-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Drop zones - flexible size with vertical growth */
+.pairing-puzzle-container .drop-zone {
+    background-color: var(--draggable-background-color);
+    border: 2px dashed var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: auto; /* Allow the width to grow based on content */
+    min-width: 180px; /* Maintain a minimum width */
+    min-height: 100px; /* Maintain a minimum height */
+    box-sizing: border-box;
+    overflow: visible; /* Ensure content is not hidden */
+    margin-top: 10px;
+}
+
+/* Drop area hover effect */
+.pairing-puzzle-container .drop-zone.dragover {
+    background-color: var(--hover-background-color);
+    border-color: var(--hover-border-color);
+}
+
+/* Placeholder inside drop zones */
+.pairing-puzzle-container .placeholder {
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: var(--placeholder-background-color);
+    border: 1px dashed var(--placeholder-border-color);
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Button container */
+.pairing-puzzle-container .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Button styles */
+.pairing-puzzle-container .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Fade-in animation for the toast */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.toast.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Light Mode */
+[data-mode="light"] {
+    --background-color: #f9f9f9;
+    --border-color: #ccc;
+    --draggable-background-color: #ffffff;
+    --draggable-container-background-color: #eeeeee84;
+    --text-color: #24292f;
+    --primary-color: #007bff;
+    --hover-background-color: #e9ecef;
+    --hover-border-color: #0056b3;
+    --placeholder-background-color: #bcbbbb;
+    --placeholder-border-color: #999;
+    --button-text-color: black;
+}
+
+/* Dark Mode */
+[data-mode="dark"] {
+    --background-color: #202020;
+    --border-color: #ccc;
+    --draggable-background-color: #252d40;
+    --draggable-container-background-color: #252d40;
+    --text-color: #ffffff;
+    --primary-color: #007bff;
+    --hover-background-color: #333333;
+    --hover-border-color: #0056b3;
+    --placeholder-background-color: #000000;
+    --placeholder-border-color: #999;
+    --button-text-color: black;
+}
+
+/* Auto Mode (default to match system preference) */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] {
+        --background-color: #f9f9f9;
+        --border-color: #ccc;
+        --draggable-background-color: #ffffff;
+        --draggable-container-background-color: #d5d5d5;
+        --text-color: #24292f;
+        --primary-color: #007bff;
+        --hover-background-color: #e9ecef;
+        --hover-border-color: #0056b3;
+        --placeholder-background-color: #bcbbbb;
+        --placeholder-border-color: #999;
+        --button-text-color: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] {
+        --background-color: #202020;
+        --border-color: #ccc;
+        --draggable-background-color: #252d40;
+        --draggable-container-background-color: #252d40;
+        --text-color: #ffffff;
+        --primary-color: #007bff;
+        --hover-background-color: #333333;
+        --hover-border-color: #0056b3;
+        --placeholder-background-color: #000000;
+        --placeholder-border-color: #999;
+        --button-text-color: black;
+    }
+}
+
+
+
+/* Target code blocks in pairing puzzles */
+.draggable-item pre, .draggable-item code {
+    padding: 4px; /* Adjust the padding to your preference */
+    margin: 0;    /* Remove any default margin */
+    font-size: 14px; /* Adjust the font size if needed */
+    line-height: 1.4; /* Adjust line height for better readability */
+    border-radius: 4px; /* Optional: add a small border radius */
+}

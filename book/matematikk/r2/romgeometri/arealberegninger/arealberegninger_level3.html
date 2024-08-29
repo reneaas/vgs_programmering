@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Level 3 🔥🔥🔥 &#8212; Programmering i Videregående Skole</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/static_code_blocks.css?v=b6831e29" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/admonitions.css?v=2a3b7936" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/misc.css?v=14b32792" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/code_mirror.css?v=73e49c55" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pairPuzzle/game.css?v=9f94e4b0" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/matematikk/r2/romgeometri/arealberegninger/arealberegninger_level3';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../../../_static/geogebra-setup.js?v=c67998b1"></script>
+    <script src="../../../../../_static/static_code_blocks.js?v=d0b96be4"></script>
+    <script src="../../../../../_static/utils.js?v=8e047c30"></script>
+    <script src="../../../../../_static/serviceWorker.js?v=19bb19ce"></script>
+    <script src="../../../../../_static/interactiveCode/codeEditor.js?v=c31f5c90"></script>
+    <script src="../../../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
+    <script src="../../../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
+    <script src="../../../../../_static/interactiveCode/pythonRunner.js?v=309bc2ed"></script>
+    <script src="../../../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../../../_static/parsons_puzzle/parsonsPuzzle.js?v=4f5b9685"></script>
+    <script src="../../../../../_static/pairPuzzle/game.js?v=9b1f0ac6"></script>
+    <script src="../../../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
+    <script src="../../../../../_static/pairPuzzle/dropZone.js?v=35c3e4a6"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+
+<!-- Brython -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
+</script> -->
+
+<!-- 
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+</script> -->
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
+<link rel="stylesheet" href="../../../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../../../_static/code_mirror_themes/one_dark_cm.css">
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
+<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+    <script src="../../../../../_static/theme-switcher.js"></script>
+</head>
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering i Videregående Skole</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../programmering/variabler/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../programmering/while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../programmering/feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 2P</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2p/likninger_og_likningssystemer/intro.html">Programmering av likninger og likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2p/likninger_og_likningssystemer/for_loops/for_loops.html">Bakgrunnsstoff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2p/likninger_og_likningssystemer/likninger/likninger.html">Likninger med programmering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2p/likninger_og_likningssystemer/likningssystemer/likningssystemer.html">Likningssystemer</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/book/matematikk/r2/romgeometri/arealberegninger/arealberegninger_level3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Level 3 🔥🔥🔥</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Innhold </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="level-3">
+<h1>Level 3 🔥🔥🔥<a class="headerlink" href="#level-3" title="Link to this heading">#</a></h1>
+<section id="oppgave-1">
+<h2>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h2>
+<p>En regulær <span class="math notranslate nohighlight">\(n\)</span>-kant er en plangeometrisk figur bestående av <span class="math notranslate nohighlight">\(n\)</span> hjørner hvor med linjestykker trukket mellom nabohjørner slik at alle linjestykker har samme lengde, og vinkelen i hvert hjørne er det samme.</p>
+<section id="oppgave-1a">
+<h3>Oppgave 1a<a class="headerlink" href="#oppgave-1a" title="Link to this heading">#</a></h3>
+<p>Under vises en figur av en en regulær <span class="math notranslate nohighlight">\(6\)</span>-kant som er <em>innskrevet</em> i en sirkel med radius <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<figure class="align-default" id="kant">
+<img alt="../../../../../_images/6_kant.png" src="../../../../../_images/6_kant.png" />
+</figure>
+<p>Bruk vektorregning til å finne arealet av <span class="math notranslate nohighlight">\(6\)</span>-kanten som er innskrevet i sirkelen uttrykt ved radius <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Hint 1: Hjelpefigur</p>
+<p>Du kan få bruk for hjelpefiguren under:</p>
+<figure class="align-default" id="kant-innskrevet-hjelpefigur">
+<img alt="../../../../../_images/6_kant_innskrevet_hjelpefigur.png" src="../../../../../_images/6_kant_innskrevet_hjelpefigur.png" />
+</figure>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Hint 2: Toppvinkler</p>
+<p>Se først hint 1. <br>
+Deretter, hva må toppvinkelen i trekanten som er spent ut av vektorene <span class="math notranslate nohighlight">\(\vec{r}_1\)</span> og <span class="math notranslate nohighlight">\(\vec{r}_2\)</span> være? <br></p>
+<p>Det kan være lurt å tenke på hvor stor andel av en full rotasjon av enhetssirkelen som vinkelen <span class="math notranslate nohighlight">\(u\)</span> vil svare til.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Arealet <span class="math notranslate nohighlight">\(G\)</span> av <span class="math notranslate nohighlight">\(6\)</span>-kanten som er innskrevet i en sirkel med radius <span class="math notranslate nohighlight">\(r\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+G = \frac{3\sqrt{3}}{2}r^2.
+\]</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>La oss først lage oss en hjelpefigur der vi tegner inn to vektorer <span class="math notranslate nohighlight">\(\vec{r}_1\)</span> og <span class="math notranslate nohighlight">\(\vec{r}_2\)</span> som starter i origo og peker mot to hjørner i <span class="math notranslate nohighlight">\(6\)</span>-kanten. Disse vil danne en likebeint trekant (som tilfeldigvis også er en likesidet trekant for en <span class="math notranslate nohighlight">\(6\)</span>-kant, men det har vi ikke <em>vist</em> selv om det ser sånn ut fra figuren - og vi trenger ikke den informasjonen uansett for å løse problemet).</p>
+<figure class="align-default">
+<img alt="../../../../../_images/6_kant_innskrevet_hjelpefigur.png" src="../../../../../_images/6_kant_innskrevet_hjelpefigur.png" />
+</figure>
+<p>Vi kan observere at vi kan spenne ut <span class="math notranslate nohighlight">\(6\)</span> slike trekanter som må bety at toppvinkelen <span class="math notranslate nohighlight">\(u\)</span> i trekanten vår må oppfylle</p>
+<div class="math notranslate nohighlight">
+\[
+6u = 2\pi \quad \Leftrightarrow \quad u = \frac{2\pi}{6} = \frac{\pi}{3}.
+\]</div>
+<p>Videre vil arealet av hver trekant være</p>
+<div class="math notranslate nohighlight">
+\[
+G_1 = \frac{1}{2} \cdot |\vec{r}_1 \times \vec{r}_2| = \frac{1}{2} \cdot |\vec{r}_1| \cdot |\vec{r}_2| \cdot \sin u = \frac{1}{2}r^2 \sin u,
+\]</div>
+<p>siden <span class="math notranslate nohighlight">\(|\vec{r}_1|= |\vec{r}_2| = r\)</span>. Og siden <span class="math notranslate nohighlight">\(u = \pi/3\)</span> har vi at</p>
+<div class="math notranslate nohighlight">
+\[
+G_1 = \frac{1}{2}r^2 \sin \left(\frac{\pi}{3}\right) = \frac{1}{2}r^2 \cdot \frac{\sqrt{3}}{2} = \frac{\sqrt{3}}{4}r^2.
+\]</div>
+<p>Men det er 6 slike trekanter i <span class="math notranslate nohighlight">\(6\)</span>-kanten, så arealet av hele <span class="math notranslate nohighlight">\(6\)</span>-kanten blir</p>
+<div class="math notranslate nohighlight">
+\[
+G = 6\cdot G_1 = 6 \cdot \frac{\sqrt{3}}{4}r^2 = \frac{3\sqrt{3}}{2}r^2.
+\]</div>
+</div>
+</section>
+<section id="oppgave-1b">
+<h3>Oppgave 1b<a class="headerlink" href="#oppgave-1b" title="Link to this heading">#</a></h3>
+<p>Finn en formel for arealet av en regulær <span class="math notranslate nohighlight">\(n\)</span>-kant som er innskrevet i en sirkel med radius <span class="math notranslate nohighlight">\(r\)</span> ved å bruke vektorregning.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Hint 1: Hjelpefigur</p>
+<p>Du kan generalisere resultatetet ditt fra oppgave 1a direkte. Men under er en hjelpefigur med en <span class="math notranslate nohighlight">\(10\)</span>-kant for ekstra hjelp:</p>
+<figure class="align-default" id="id1">
+<img alt="../../../../../_images/10_kant_innskrevet_hjelpefigur.png" src="../../../../../_images/10_kant_innskrevet_hjelpefigur.png" />
+</figure>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Arealet av en regulær <span class="math notranslate nohighlight">\(n\)</span>-kant innskrevet i en sirkel med radius <span class="math notranslate nohighlight">\(r\)</span> er</p>
+<div class="math notranslate nohighlight">
+\[
+G(n) = \frac{n}{2}r^2 \sin\left(\frac{2\pi}{n}\right)
+\]</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi kan generalisere resultatet fra oppgave 1a direkte. For en <span class="math notranslate nohighlight">\(6\)</span>-kant, ble arealet gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+G = 6 \cdot G_1 = 6\cdot \frac{1}{2}r^2 \sin u,
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(u = 2\pi/6\)</span>.</p>
+<p>I det generelle tilfellet, vil vi bare måtte erstatte <span class="math notranslate nohighlight">\(6\)</span> med <span class="math notranslate nohighlight">\(n\)</span>, slik at vi får</p>
+<div class="math notranslate nohighlight">
+\[
+G = n \cdot G_1 = n \cdot n\cdot\frac{1}{2}r^2 \sin u,
+\]</div>
+<p>samtidig som toppvinkelen <span class="math notranslate nohighlight">\(u = 2\pi/n\)</span>. Dermed får vi en generell formel for arealet av en regulær <span class="math notranslate nohighlight">\(n\)</span>-kant som er innskrevet i en sirkel med radius <span class="math notranslate nohighlight">\(r\)</span> med:</p>
+<div class="math notranslate nohighlight">
+\[
+G(n) = \frac{n}{2}r^2 \sin\left(\frac{2\pi}{n}\right).
+\]</div>
+</div>
+</section>
+<section id="oppgave-1c">
+<h3>Oppgave 1c<a class="headerlink" href="#oppgave-1c" title="Link to this heading">#</a></h3>
+<p>Undersøk hva som skjer med arealet av den innskrevne regulære <span class="math notranslate nohighlight">\(n\)</span>-kanten i grensen <span class="math notranslate nohighlight">\(n\to \infty\)</span>. <br>
+Hva forventer du svaret bør bli?</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Hint 1: Variabelskifte</p>
+<p>Her kan det være lurt å gjøre et variabelskifte med <span class="math notranslate nohighlight">\(u = 2\pi/n\)</span> som gir oss at</p>
+<div class="math notranslate nohighlight">
+\[
+n \to \infty \quad \Leftrightarrow \quad u \to 0^+.
+\]</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Hint 2: L’Hôpitals regel</p>
+<p>En versjon av L’Hôpitals regel sier at dersom</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x\to a} f(x) = 0 \quad \text{og} \quad \lim_{x\to a} g(x) = 0,
+\]</div>
+<p>så gjelder</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x)}{g'(x)}.
+\]</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Arealet i grensen <span class="math notranslate nohighlight">\(n\to \infty\)</span> konvergerer mot arealet av sirkelen som er <span class="math notranslate nohighlight">\(\pi r^2\)</span>. <em>Overrasket?</em> <br>
+Arkimedes jobba hardt for å komme fram til hva <span class="math notranslate nohighlight">\(\pi\)</span> var ved å bruke en 96-kant. Men han kjente verken til trigonometri eller til grenseverdier. Om han bare hadde kjennskap til matematikken slik <em>vi</em> kjenner den... <em>Oh well. Sux to be him I guess</em>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi har at funksjonen som beskriver arealet av en <span class="math notranslate nohighlight">\(n\)</span>-kant som er innskrevet i en sirkel med radius <span class="math notranslate nohighlight">\(r\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+G(n) = \frac{n}{2}r^2 \sin\left(\frac{2\pi}{n}\right).
+\]</div>
+<p>For å se på grensen <span class="math notranslate nohighlight">\(n\to \infty\)</span>, kan det være nyttig å innføre variabelen</p>
+<div class="math notranslate nohighlight">
+\[
+u = \frac{2\pi}{n}.
+\]</div>
+<p>Da får vi at uttrykket for arealet kan skrives som</p>
+<div class="math notranslate nohighlight">
+\[
+G(u) = \pi r^2 \frac{\sin u}{u}.
+\]</div>
+<p>Da har vi at <span class="math notranslate nohighlight">\(n \to \infty\)</span> vil gi at <span class="math notranslate nohighlight">\(u \to 0^+\)</span>. Dermed kan vi skrive</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{n\to\infty} G(n) = \lim_{u \to 0^+} G(u) = \lim_{u \to 0^+} \pi r^2 \frac{\sin u}{u} = \pi r^2 \lim_{u \to 0^+} \frac{(\sin u)'}{u'} = \pi r^2 \lim_{u \to 0^+} \frac{\cos u}{1} = \pi r^2.
+\]</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/matematikk/r2/romgeometri/arealberegninger"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Innhold
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1a">Oppgave 1a</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1b">Oppgave 1b</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1c">Oppgave 1c</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av René Ask
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

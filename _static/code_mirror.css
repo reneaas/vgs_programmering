@@ -79,7 +79,8 @@
 }
 
 .error-line {
-  color: green;
+  color: red;
+  background-color: rgba(0, 161, 248, 0.305);
   font-weight: bold !important;
 }
 
@@ -164,4 +165,17 @@
 .pythonoutput {
   max-height: 300px;
   overflow-y: auto;
+}
+
+
+
+/* Dynamically highlight error lines in editor */
+.cm-highlight {
+  background-color: rgba(255, 0, 0, 0.2); /* Light red background */
+}
+
+
+/* Change the background and text color of the highlighted selection */
+.CodeMirror-selected {
+  background-color: #0196bc41 !important; 
 }

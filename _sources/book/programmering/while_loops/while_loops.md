@@ -19,6 +19,8 @@ class: explore
 
 Under vises et interaktivt program som bruker en `while`{l=python}-løkke til å skrive ut de **fem** første naturlige tallene. Her skal du utforske ulike biter av `while`{l=python}-løkken.
 
+<br>
+
 :::{raw} html
 ---
 file: interaktiv_kode/utforsk/utforsk_1.html
@@ -117,6 +119,7 @@ name: programmering-while-loops-utforsk-2
 ---
 Under vises et interaktivt program som bruker en `while`{l=python}-løkke til å regne ut summen av de **fem** første naturlige tallene. 
 
+<br>
 
 :::{raw} html
 ---
@@ -124,6 +127,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2.html
 ---
 :::
 
+<br>
 
 Deloppgave 1
 : Kan du få programmet til å regne ut summen av de **ti** første naturlige tallene? Sjekk at du får riktig svar ved å regne det ut for hånd.
@@ -211,6 +215,7 @@ file: ./interaktiv_kode/oppgaver/oppgave_1.html
 ---
 :::
 
+<br>
 
 Deloppgave 1
 : Fiks programmet slik at det regner ut summen av de fem første kvadrattallene. Sjekk svaret ved å regne for hånd. 
@@ -335,6 +340,8 @@ $$
 Deloppgave 1
 : Under vises et program som regner ut $4!$ i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i et interaktivt kodevindu og kjør det.
 
+<br>
+
 :::{raw} html
 ---
 file: ./parsons_puzzle/oppgaver/oppgave_2.html
@@ -434,6 +441,4 @@ med en presisjon på 7 siffer.
 
 
 :::::
-
-
 

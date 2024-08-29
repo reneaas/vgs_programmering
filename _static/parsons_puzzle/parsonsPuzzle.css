@@ -1,0 +1,315 @@
+/* Define color variables for each mode */
+:root {
+    --background-color: #f9f9f9;
+    --border-color: #ccc;
+    --draggable-background-color: #ffffff;
+    --drop-area-background-color: #ffffff;
+    --drop-area-border-color: #007bff;
+    --text-color: #24292f;
+    --hover-background-color: #e9ecef;
+    --hover-border-color: #0056b3;
+    --placeholder-background-color: #bcbbbb;
+    --placeholder-border-color: #999;
+    --button-background-color-check: #28a745;
+    --button-background-color-reset: #ffc107;
+    --button-text-color: black;
+    --modal-background-color: #fefefe;
+    --modal-border-color: #888;
+    --draggable-item-background-color: #ffffff;
+    --draggable-item-border-color: #007bff;
+    --toast-background-color: rgba(0, 128, 128, 0.9);
+}
+
+/* Dark mode variables */
+[data-mode="dark"] {
+    --background-color: #202020;
+    --border-color: #ccc;
+    --draggable-background-color: #141923;
+    --drop-area-background-color: #3b3b3b;
+    --drop-area-border-color: #007bff;
+    --text-color: #ffffff;
+    --hover-background-color: #333333;
+    --hover-border-color: #0056b3;
+    --placeholder-background-color: #000000;
+    --placeholder-border-color: #999;
+    --button-background-color-check: #28a745;
+    --button-background-color-reset: #ffc107;
+    --button-text-color: black;
+    --modal-background-color: #181818;
+    --modal-border-color: #888;
+    --draggable-item-background-color: #252d40;
+    --draggable-item-border-color: #1b1b1b;
+    --toast-background-color: rgba(0, 128, 128, 0.9);
+}
+
+/* Auto mode using system preferences */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] {
+        --background-color: #f9f9f9;
+        --border-color: #ccc;
+        --draggable-background-color: #ffffff;
+        --drop-area-background-color: #ffffff;
+        --drop-area-border-color: #007bff;
+        --text-color: #24292f;
+        --hover-background-color: #e9ecef;
+        --hover-border-color: #0056b3;
+        --placeholder-background-color: #bcbbbb;
+        --placeholder-border-color: #999;
+        --button-background-color-check: #28a745;
+        --button-background-color-reset: #ffc107;
+        --button-text-color: black;
+        --modal-background-color: #fefefe;
+        --modal-border-color: #888;
+        --draggable-item-background-color: #ffffff;
+        --draggable-item-border-color: #007bff;
+        --toast-background-color: rgba(0, 128, 128, 0.9);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] {
+        --background-color: #202020;
+        --border-color: #ccc;
+        --draggable-background-color: #141923;
+        --drop-area-background-color: #3b3b3b;
+        --drop-area-border-color: #007bff;
+        --text-color: #ffffff;
+        --hover-background-color: #333333;
+        --hover-border-color: #0056b3;
+        --placeholder-background-color: #000000;
+        --placeholder-border-color: #999;
+        --button-background-color-check: #28a745;
+        --button-background-color-reset: #ffc107;
+        --button-text-color: black;
+        --modal-background-color: #181818;
+        --modal-border-color: #888;
+        --draggable-item-background-color: #252d40;
+        --draggable-item-border-color: #1b1b1b;
+        --toast-background-color: rgba(0, 128, 128, 0.9);
+    }
+}
+
+/* Main container for Parsons puzzle */
+.puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+}
+
+/* Draggable code area */
+/* .draggable-code {
+    width: 100%;
+    background-color: var(--draggable-background-color);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
+} */
+
+/* Draggable items */
+.draggable-code {
+    background-color: var(--draggable-background-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    display: inline-block;
+    white-space: normal; /* Allows text to wrap if it’s too long */
+    width: 100%; /* Width is automatically adjusted based on content */
+    height: auto; /* Height is automatically adjusted based on content */
+    max-width: 100%; /* Prevents the item from exceeding the container width */
+    box-sizing: border-box; /* Includes padding and border in width calculation */
+    transition: all 0.2s ease;
+}
+
+.pairing-puzzle-container .draggable-code {
+    background-color: var(--draggable-background-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    display: inline-block;
+    width: 100%;
+    /* max-width: 180px; */
+    /* min-width: 100px; */
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Drop area */
+.drop-area {
+    width: 100%;
+    background-color: var(--drop-area-background-color);
+    border: 2px dashed var(--drop-area-border-color);
+    min-height: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* General draggable item styles */
+.draggable {
+    background-color: var(--draggable-item-background-color);
+    color: var(--text-color);
+    border: 1px solid var(--draggable-item-border-color);
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    cursor: grab;
+}
+
+/* Placeholder in drop area */
+.placeholder {
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: var(--placeholder-background-color);
+    border: 1px dashed var(--placeholder-border-color);
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* .draggable:active {
+    background-color: #e0f7fa;
+    opacity: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+    border: 2px solid #007bff;
+    cursor: grabbing;
+    color: #000000;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+} */
+
+/* Drop area hover effect */
+/* .drop-area.dragover {
+    background-color: var(--hover-background-color);
+    border-color: var(--hover-border-color);
+} */
+
+/* Feedback when dragging */
+/* .dragging {
+    display: block;
+    background-color: #e0f7fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+    opacity: 0.9 !important;
+} */
+
+/* Code block styles */
+pre.highlight {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Button styles */
+.button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-check-solution {
+    background-color: var(--button-background-color-check);
+    color: var(--button-text-color) !important;
+}
+
+.button-reset-puzzle {
+    background-color: var(--button-background-color-reset);
+    color: var(--button-text-color) !important;
+}
+
+/* Modal container (hidden by default) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal content */
+.modal-content {
+    background-color: var(--modal-background-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--modal-border-color);
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Copy button */
+.button-copy-code {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-copy-code:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    background-color: var(--toast-background-color);
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    font-size: 20px;
+    z-index: 1000;
+    display: block;
+    text-align: center;
+}
