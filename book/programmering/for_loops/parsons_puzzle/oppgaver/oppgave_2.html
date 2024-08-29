@@ -1,14 +1,7 @@
-<div id="container-parsons-puzzle-programmering-for-løkker-oppgave-2" class="puzzle-container">
-    <div id="draggable-code"></div>
-    <div id="drop-area"></div>
-    <button id="check-solution" class="button button-check-solution">Sjekk løsning!</button>
-    <button id="reset-puzzle" class="button button-reset-puzzle">Reset puslespill ↪️</button>
-    <div id="feedback"></div>
-</div>
+<div id="container-parsons-puzzle-programmering-for-løkker-oppgave-2" class="puzzle-container"></div>
 
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-        const codeString = 
+    codeString = 
 `p = 1
 
 for n in range(1, 5, 1):
@@ -17,7 +10,6 @@ for n in range(1, 5, 1):
 print(f"{p = }")
 `;
     
-        // Initialize the puzzle
-        initializeParsonsPuzzle('container-parsons-puzzle-programmering-for-løkker-oppgave-2', codeString);
-    });
+    // Initialize the puzzle
+    makeParsonsPuzzle('container-parsons-puzzle-programmering-for-løkker-oppgave-2', codeString);
 </script>

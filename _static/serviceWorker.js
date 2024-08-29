@@ -6,6 +6,10 @@ const urlsToCache = [
     'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/lib/codemirror.css',
     'https://cdn.jsdelivr.net/npm/codemirror@5.65.2/mode/python/python.js',
     "https://cdn.jsdelivr.net/npm/marked/marked.min.js",
+    "https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js",
+    "https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js",
+    "https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css",
+
 ];
 
 

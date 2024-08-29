@@ -1,0 +1,23 @@
+<div id="container-pair-puzzle-matematikk-2p-for-loops-underveisoppgave-2" class="pairing-puzzle-container"></div>
+
+<!-- Include KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const pairs = [
+            ['<pre><code class="python">for i in range(-10, 11):\n    if i == 2:\n        print(i)</code></pre>', '$2$'],
+            ['<pre><code class="python">for i in range(-10, 11):\n    if i == 6:\n        print(i)</code></pre>', '$6$'],
+            ['<pre><code class="python">for i in range(-10, 11):\n    if i > 7:\n        print(i)</code></pre>', '$8, 9, 10$'],
+            ['<pre><code class="python">for i in range(-10, 11):\n    if i < -7:\n        print(i)</code></pre>', '$-10, -9, -8$'],
+            ['<pre><code class="python">for i in range(-10, 11):\n    if i == 2 or i == 6:\n        print(i)</code></pre>', '$2, 6$'],
+            ['<pre><code class="python">for i in range(-10, 11):\n    if i == -4 or i == 5:\n        print(i)</code></pre>', '$-4, 5$'],
+        ];
+
+        // Initialize the puzzle
+        initGame('container-pair-puzzle-matematikk-2p-for-loops-underveisoppgave-2', pairs);
+    });
+</script>

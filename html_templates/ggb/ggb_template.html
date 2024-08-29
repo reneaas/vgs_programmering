@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Bytt ut `container-id` med unik id. -->
+    <div id="SETT-INN-UNIK-CONTAINER-ID-HER"></div>
+
+    <script>
+        // Define options for the GeoGebra applet
+        var options = {
+            appName: 'classic',
+            width: 700,
+            height: 400,
+            showMenuBar: false,
+            showAlgebraInput: false,
+            showToolBar: false,
+            enableLabelDrags: false,
+            enableShiftDragZoom: true,
+            enableRightClick: false,
+            errorDialogsActive: false,
+            useBrowserForJS: false,
+            language: "nb",
+            ggbBase64: "SETT INN BASE64-STRENG HER", 
+            appletOnLoad: function(api) {
+                // Example event handler: listen for 'update' events from the applet
+                api.registerUpdateListener(function(objName) {
+                    console.log(objName + ' was updated.');
+                });
+
+                // Example of defining a new button in GeoGebra that triggers custom JavaScript
+                api.evalCommand('Button("Click Me!", "javascript:alert(\'Button clicked!\')")');
+            }
+        };
+
+        setupGeogebra('SETT-INN-UNIK-CONTAINER-ID-HER', options);
+    </script>
+</body>
+</html>

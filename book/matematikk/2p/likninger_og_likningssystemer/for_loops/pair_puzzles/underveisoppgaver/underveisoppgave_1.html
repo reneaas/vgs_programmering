@@ -1,0 +1,22 @@
+<div id="container-pair-puzzle-matematikk-2p-for-loops-underveisoppgave-1" class="pairing-puzzle-container"></div>
+
+<!-- Include KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const pairs = [
+            ['<pre><code class="python">for i in range(1, 11, 2):\n    print(i)</code></pre>', '$1, 3, 5, 7, 9$'],
+            ['<pre><code class="python">for i in range(10, 0, -2):\n    print(i)</code></pre>', '$10, 8, 6, 4, 2$'],
+            ['<pre><code class="python">for i in range(10, 0, -3):\n    print(i)</code></pre>', '$10, 7, 4, 1$'],
+            ['<pre><code class="python">for i in range(2, 11, 4):\n    print(i)</code></pre>', '$2, 6, 10$'],
+            ['<pre><code class="python">for i in range(5):\n    print(i)</code></pre>', '$0, 1, 2, 3, 4$'],
+        ];
+
+        // Initialize the puzzle
+        initGame('container-pair-puzzle-matematikk-2p-for-loops-underveisoppgave-1', pairs);
+    });
+</script>

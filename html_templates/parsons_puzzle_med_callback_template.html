@@ -1,0 +1,21 @@
+<div id="container-parsons-puzzle-tema-undertema-oppgavetype-oppgavenummer" class="puzzle-container"></div>
+<div id="container-kode-tema-undertema-oppgavetype-oppgavenummer" style="display: none"></div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`FYLL INN KODE HER
+
+`;
+
+        const puzzleContainerId = 'container-parsons-puzzle-tema-undertema-oppgavetype-oppgavenummer';
+        const editorId = 'container-kode-tema-undertema-oppgavetype-oppgavenummer';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
+</script>
