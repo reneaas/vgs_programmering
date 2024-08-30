@@ -11,6 +11,8 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal:
 
 Å løse likninger med programmering er en mye brukt metode i matematikken. I matematikk 2P skal vi avgrense oss til å bruke `for`{l=python}-løkker til å løse noen typer likninger med programmering. 
 
+## Lineære likninger
+
 
 ::::{admonition} Utforsk 1
 ---
@@ -72,6 +74,74 @@ file: ./pair_puzzles/underveisoppgaver/underveisoppgave_1.html
 ---
 :::
 
+::::
+
+## Andregradslikninger
+
+::::{admonition} Utforsk 2
+---
+class: explore
+---
+Under vises et interaktivt program som finner løsningene til likningen
+
+$$
+x^2 - x - 6 = 0.
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_2.html
+---
+::: 
+
+<br>
+
+Deloppgave 1
+: Kjør programmet og se på utskriften. <br> 1. Kan du forklare hva programmet gjør? <br> 2. Kan du forklare hvordan man skriver et andregradsuttrykk med Pythonkode?
 
 
+Deloppgave 2
+: Endre på koden slik at programmet løser likningen
+
+    $$
+    x^2 - 5x + 6 = 0.
+    $$
+
+    Kjør programmet og sjekk at det gir riktig svar.
+
+Deloppgave 3
+: Endre på koden slik at programmet løser likningen
+
+    $$
+    x^2 - 2x = 0.
+    $$
+
+    Kjør programmet og sjekk at det gir riktig svar.
+
+Deloppgave 4
+: Endre på koden slik at programmet løser likningen
+
+    $$
+    x^2 - 4 = 0.
+    $$
+
+    Kjør programmet og sjekk at det gir riktig svar.
+
+::::
+
+
+---
+
+::::{admonition} Underveisoppgave 2
+---
+class: check, full-width
+---
+Under vises noen programkoder som løser noen likninger. Pusle sammen riktig program med riktig likning.
+
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgaver/underveisoppgave_2.html
+---
+:::
 ::::

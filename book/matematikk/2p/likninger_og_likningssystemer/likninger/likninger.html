@@ -388,7 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -404,6 +406,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Innhold </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineaere-likninger">Lineære likninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andregradslikninger">Andregradslikninger</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -424,6 +435,8 @@ document.write(`
 </ul>
 </div>
 <p>Å løse likninger med programmering er en mye brukt metode i matematikken. I matematikk 2P skal vi avgrense oss til å bruke <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker til å løse noen typer likninger med programmering.</p>
+<section id="lineaere-likninger">
+<h2>Lineære likninger<a class="headerlink" href="#lineaere-likninger" title="Link to this heading">#</a></h2>
 <div class="explore admonition">
 <p class="admonition-title">Utforsk 1</p>
 <p>Under vises et interaktivt program som løser likningen</p>
@@ -501,6 +514,87 @@ document.write(`
 </script>
 </div>
 </section>
+<section id="andregradslikninger">
+<h2>Andregradslikninger<a class="headerlink" href="#andregradslikninger" title="Link to this heading">#</a></h2>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 2</p>
+<p>Under vises et interaktivt program som finner løsningene til likningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^2 - x - 6 = 0.
+\]</div>
+<div id="container-kode-matematikk-2p-likninger-utforsk-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const code = 
+`for x in range(-10, 11):
+    if x**2 - x - 6 == 0:
+        print(f"Løsning: {x = }")
+`;   
+
+
+        makeInteractiveCode("container-kode-matematikk-2p-likninger-utforsk-2", code);
+    });
+</script>
+
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Kjør programmet og se på utskriften. <br> 1. Kan du forklare hva programmet gjør? <br> 2. Kan du forklare hvordan man skriver et andregradsuttrykk med Pythonkode?</p>
+</dd>
+<dt>Deloppgave 2</dt><dd><p>Endre på koden slik at programmet løser likningen</p>
+<div class="math notranslate nohighlight">
+\[
+    x^2 - 5x + 6 = 0.
+    \]</div>
+<p>Kjør programmet og sjekk at det gir riktig svar.</p>
+</dd>
+<dt>Deloppgave 3</dt><dd><p>Endre på koden slik at programmet løser likningen</p>
+<div class="math notranslate nohighlight">
+\[
+    x^2 - 2x = 0.
+    \]</div>
+<p>Kjør programmet og sjekk at det gir riktig svar.</p>
+</dd>
+<dt>Deloppgave 4</dt><dd><p>Endre på koden slik at programmet løser likningen</p>
+<div class="math notranslate nohighlight">
+\[
+    x^2 - 4 = 0.
+    \]</div>
+<p>Kjør programmet og sjekk at det gir riktig svar.</p>
+</dd>
+</dl>
+</div>
+<hr class="docutils" />
+<div class="check full-width admonition">
+<p class="admonition-title">Underveisoppgave 2</p>
+<p>Under vises noen programkoder som løser noen likninger. Pusle sammen riktig program med riktig likning.</p>
+<div id="container-pair-puzzle-matematikk-2p-likninger-underveisoppgave-2" class="pairing-puzzle-container"></div>
+
+<!-- Include KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const pairs = [
+            ['<pre><code class="python">for x in range(-10, 11):\n    if x**2 + x - 12 == 0:\n        print(x)</code></pre>', '$x^2 + x - 12 = 0$'],
+            ['<pre><code class="python">for x in range(-10, 11):\n    if x**2 - x - 12 == 0:\n        print(x)</code></pre>', '$x^2 - x - 12 = 0$'],
+            ['<pre><code class="python">for x in range(-10, 11):\n    if x**2 - 7*x + 6 == 0:\n        print(x)</code></pre>', '$x^2 - 7x + 6 = 0$'],
+            ['<pre><code class="python">for x in range(-10, 11):\n    if x**2 - 4*x == 0:\n        print(x)</code></pre>', '$x^2 - 4x = 0$'],
+            ['<pre><code class="python">for x in range(-10, 11):\n    if x**2 - 25 == 0:\n        print(x)</code></pre>', '$x^2 - 25 = 0$'],
+        ];
+
+        // Initialize the puzzle
+        initGame('container-pair-puzzle-matematikk-2p-likninger-underveisoppgave-2', pairs);
+    });
+</script>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -556,6 +650,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Innhold
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineaere-likninger">Lineære likninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andregradslikninger">Andregradslikninger</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
