@@ -99,6 +99,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2.html
 Deloppgave 1
 : Kjør programmet og se på utskriften. <br> 1. Kan du forklare hva programmet gjør? <br> 2. Kan du forklare hvordan man skriver et andregradsuttrykk med Pythonkode?
 
+<br>
 
 Deloppgave 2
 : Endre på koden slik at programmet løser likningen
@@ -109,6 +110,8 @@ Deloppgave 2
 
     Kjør programmet og sjekk at det gir riktig svar.
 
+<br>
+
 Deloppgave 3
 : Endre på koden slik at programmet løser likningen
 
@@ -117,6 +120,8 @@ Deloppgave 3
     $$
 
     Kjør programmet og sjekk at det gir riktig svar.
+
+<br>
 
 Deloppgave 4
 : Endre på koden slik at programmet løser likningen
@@ -145,3 +150,47 @@ file: ./pair_puzzles/underveisoppgaver/underveisoppgave_2.html
 ---
 :::
 ::::
+
+
+<!-- 
+::::{admonition} Oppgave 1 
+---
+class: problem-level-1
+---
+
+Et program som løser en likning er vist i tilfeldig rekkefølge under.
+
+Deloppgave 1
+: Pusle sammen programmet i riktig rekkefølge for å få et fullstendig program. 
+
+<br>
+
+:::{raw} html
+---
+file: ./parsons_puzzle/oppgaver/oppgave_1.html
+---
+:::
+
+<br>
+
+Deloppgave 2
+: Endre på programmet slik at det løser likningen
+
+    $$
+    x^2 - 9x = 0
+    $$
+
+    Kjør programmet og sjekk at det gir riktig svar.
+
+<br>
+
+Deloppgave 3
+: Endre på programmet slik at det løser likningen
+
+    $$
+    x^2 - 81 = 0
+    $$
+
+    Kjør programmet og sjekk at det gir riktig svar.
+
+::::  -->
