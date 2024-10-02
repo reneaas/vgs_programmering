@@ -455,7 +455,7 @@ file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_c.html
 ::::{tab-item} d
 Det nærmeste solsystemet til oss er *Alpha Centauri*. Avstanden til Alpha Centauri er ca. $4.25 \ \text{lysår}$. 
 
-Bruk programmet under til å bestemme hvor lang mange år det ville tatt å kjøre med en bil som har en fart på $100 \ \mathrm{km/h}$ til Alpha Centauri.
+Bruk programmet under til å bestemme hvor mange år det ville tatt å kjøre med en bil som har en fart på $100 \ \mathrm{km/h}$ til Alpha Centauri.
 
 :::{admonition} Hint
 ---
