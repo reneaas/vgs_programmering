@@ -1,0 +1,25 @@
+<div id="container-parsons-puzzle-programmering-regning-oppgave-2" class="puzzle-container"></div>
+<div id="container-kode-programmering-regning-oppgave-2" style="display: none"></div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`print(2 * 3)
+print(-3 * 5 + 4)
+print(-1 ** 2 + 1)
+print((-1) ** 2 + 2)
+print((3 + 1) / 2)
+
+`;
+
+        const puzzleContainerId = 'container-parsons-puzzle-programmering-regning-oppgave-2';
+        const editorId = 'container-kode-programmering-regning-oppgave-2';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
+</script>

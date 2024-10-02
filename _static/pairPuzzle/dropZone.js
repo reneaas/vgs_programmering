@@ -106,11 +106,11 @@ class DropZone {
 
   // Add color feedback to the drop zone
   setCorrect() {
-    this.element.style.backgroundColor = 'rgba(0, 128, 0, 0.8)';
+    this.element.style.backgroundColor = 'rgba(0, 128, 0, 0.5)';
   }
 
   setIncorrect() {
-    this.element.style.backgroundColor = 'red';
+    this.element.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
   }
 
   resetColor() {

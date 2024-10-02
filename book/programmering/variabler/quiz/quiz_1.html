@@ -1,0 +1,65 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-programmering-intro-print-variabler" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hva vil dette programmet skrive ut? <pre><code class="python">print(3)</code></pre>',
+                answers: [
+                    { content: '3', isCorrect: true },
+                    { content: 'print(3)', isCorrect: false },
+                    { content: 'Ingen utskrift', isCorrect: false },
+                    { content: 'En feilmelding', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skjer når du bruker en variabel i en `print`-setning? Se på koden: <pre><code class="python">x = 10\nprint(x)</code></pre>',
+                answers: [
+                    { content: 'Variabelnavnet blir skrevet ut', isCorrect: false },
+                    { content: 'Verdien til variabelen blir skrevet ut', isCorrect: true },
+                    { content: '10 + x blir skrevet ut', isCorrect: false },
+                    { content: 'Ingen utskrift', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva vil programmet skrive ut? <pre><code class="python">x = 5\ny = 2\nprint(x, y)</code></pre>',
+                answers: [
+                    { content: '52', isCorrect: false },
+                    { content: 'x y', isCorrect: false },
+                    { content: '5 2', isCorrect: true },
+                    { content: 'print(x, y)', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva vil programmet skrive ut? <pre><code class="python">navn = "Ola"\nprint("Hei, " + navn)</code></pre>',
+                answers: [
+                    { content: 'Hei, Ola', isCorrect: true },
+                    { content: 'Hei, navn', isCorrect: false },
+                    { content: 'print("Hei, " + navn)', isCorrect: false },
+                    { content: 'En feilmelding', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva gjør bokstaven `f` i en `f-string` i Python? <pre><code class="python">print(f"Hei, {navn}")</code></pre>',
+                answers: [
+                    { content: 'Den setter variabelverdier inn i teksten', isCorrect: true },
+                    { content: 'Den ignoreres av Python', isCorrect: false },
+                    { content: 'Den legger til en ny linje', isCorrect: false },
+                    { content: 'Den skriver ut teksten som den er', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-programmering-intro-print-variabler', questionsData);
+    });
+</script>

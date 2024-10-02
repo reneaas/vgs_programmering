@@ -58,12 +58,13 @@ class Game {
 
   createItems() {
     const itemsContainer = document.getElementById(`draggable-container-${this.uniqueId}`);
-    this.pairs.forEach((pair, index) => {
-      const item1 = new DraggableItem(`x-${index}`, pair[0], index);
-      const item2 = new DraggableItem(`y-${index}`, pair[1], index);
-      this.items.push(item1, item2);
+    this.pairs.forEach((group, groupIndex) => {
+      group.forEach((item, itemIndex) => {
+        const draggableItem = new DraggableItem(`item-${groupIndex}-${itemIndex}`, item, groupIndex);
+        this.items.push(draggableItem);
+      });
     });
-
+  
     // Shuffle items before adding them to the container
     this.items.sort(() => 0.5 - Math.random());
     this.items.forEach((item) => itemsContainer.appendChild(item.createElement()));
@@ -106,13 +107,6 @@ class Game {
     if (allCorrect) {
         this.showToast();
     }
-    // setTimeout(() => {
-    //   if (allCorrect) {
-    //       this.showToast();
-    //   } else {
-    //       alert('Prøv igjen!');
-    //   }
-    // }, 100); 
 }
 
   resetPuzzle() {

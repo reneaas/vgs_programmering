@@ -4,6 +4,7 @@ class CodeEditor {
         this.editor = this.initializeEditor(editorId); // Initialize the CodeMirror editor instance
         this.editor = this.addCommentOverlay(this.editor); // Add custom overlay for highlighting comments
         this.setupThemeListener();         // Set up a listener to detect and apply theme changes
+        this.refreshOnVisibilityChange(); // Add this line
     }
 
     /**
@@ -23,6 +24,19 @@ class CodeEditor {
             indentUnit: 4,                 // Number of spaces per indentation level
             extraKeys: {
                 Tab: cm => this.replaceTabWithSpaces(cm), // Replace tab key press with spaces
+                "Enter": function(cm) {
+                    var cursor = cm.getCursor();
+                    var line = cm.getLine(cursor.line);
+                    var currentIndent = line.match(/^\s*/)[0];  // Get current indentation level
+
+                    if (/:\s*$/.test(line)) {
+                        // If line ends with a colon, add an extra indent
+                        cm.replaceSelection("\n" + currentIndent + Array(cm.getOption("indentUnit") + 1).join(" "), "end");
+                    } else {
+                        // Otherwise, maintain the current indent level
+                        cm.replaceSelection("\n" + currentIndent, "end");
+                    }
+                    }
             },
         });
     }
@@ -78,18 +92,32 @@ class CodeEditor {
 
     /**
      * Adds a custom overlay for highlighting specific comments for 
-     * Supports # TODO, # FIKS MEG, # FYLL INN, # NOTE, # FIKSMEG
+     * Supports # TODO, # FIKS MEG, # FYLL INN, # NOTE, # FIKSMEG, # IGNORER
      * @returns {Object} - The overlay mode configuration for CodeMirror.
      */
     addCommentOverlay(editor) {
         editor.addOverlay({
             token: function(stream) {
-                const keywords = ["# TODO", "# FIKSMEG", "# FIKS MEG", "# NOTE", "# FYLL INN"];
+                const keywords = [
+                    "# TODO", 
+                    "# FIKSMEG", 
+                    "# FIKS MEG", 
+                    "# NOTE", 
+                    "# FYLL INN", 
+                    "# IGNORER", 
+                    "# IKKE RØR",
+                    "# FOKUS",
+                    "# FORKLARING",
+                    "# <--",
+                    "# MERK",
+                ];
+
                 for (const keyword of keywords) {
-                    if (stream.match(keyword)) {
+                    if (stream.match(keyword) || (keyword === "# TODO" && stream.match("# <--"))) {
                         return keyword.replace("# ", "").toLowerCase().replace(" ", "");
                     }
                 }
+                
                 while (stream.next() != null && !keywords.some(keyword => stream.match(keyword, false))) {}
                 return null;
             }
@@ -146,5 +174,18 @@ class CodeEditor {
      */
     scrollToLine(line) {
         this.editor.scrollIntoView({ line: line, ch: 0 }, 200);
+    }
+
+    refreshOnVisibilityChange() {
+        const editorElement = this.editor.getWrapperElement();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.editor.refresh();
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        observer.observe(editorElement);
     }
 }

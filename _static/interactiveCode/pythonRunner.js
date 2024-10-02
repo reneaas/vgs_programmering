@@ -12,17 +12,22 @@ class PythonRunner {
      * Prepares and runs the code provided in the editor.
      * @param {Object} editor - The CodeMirror editor instance containing the code.
      */
-    async run(editor) {
+    async run(editor, outputId = null) {
         this.editorInstance = editor;
         this.editorInstance.clearLineHighlights();
         let code = editor.getValue();
         this.currentCode = code;
+
+        if (outputId) {
+            this.outputId = outputId;
+        }
 
         // Handle input statements and modify the code accordingly
         const inputStatements = this.findInputStatements(this.currentCode);
         if (inputStatements.length > 0) {
             const userValues = await this.getUserInputs(inputStatements);
             this.currentCode = this.replaceInputStatements(this.currentCode, userValues);
+            console.log("Modified code:", this.currentCode);
         }
  
         // Prepare the final code to be run (including custom eval functions, etc.)
@@ -277,18 +282,44 @@ class PythonRunner {
         const fromImportRegex = /^\s*from\s+([^;\s]+)\s+import/gm;
     
         const packages = new Set();
+        const standardLibs = new Set([
+            'abc', 'aifc', 'argparse', 'array', 'ast', 'asynchat', 'asyncio', 'asyncore', 'atexit', 'audioop', 'base64', 
+            'bdb', 'binascii', 'binhex', 'bisect', 'builtins', 'bz2', 'cProfile', 'calendar', 'cgi', 'cgitb', 'chunk', 
+            'cmath', 'cmd', 'code', 'codecs', 'codeop', 'collections', 'colorsys', 'compileall', 'concurrent', 'configparser', 
+            'contextlib', 'copy', 'copyreg', 'crypt', 'csv', 'ctypes', 'curses', 'dataclasses', 'datetime', 'dbm', 'decimal', 
+            'difflib', 'dis', 'distutils', 'doctest', 'email', 'encodings', 'ensurepip', 'enum', 'errno', 'faulthandler', 
+            'fcntl', 'filecmp', 'fileinput', 'fnmatch', 'formatter', 'fractions', 'ftplib', 'functools', 'gc', 'getopt', 
+            'getpass', 'gettext', 'glob', 'grp', 'gzip', 'hashlib', 'heapq', 'hmac', 'html', 'http', 'imaplib', 'imghdr', 
+            'imp', 'importlib', 'inspect', 'io', 'ipaddress', 'itertools', 'json', 'keyword', 'lib2to3', 'linecache', 'locale', 
+            'logging', 'lzma', 'mailbox', 'mailcap', 'marshal', 'math', 'mimetypes', 'mmap', 'modulefinder', 'msilib', 'msvcrt', 
+            'multiprocessing', 'netrc', 'nntplib', 'numbers', 'operator', 'optparse', 'os', 'ossaudiodev', 'parser', 'pathlib', 
+            'pdb', 'pickle', 'pickletools', 'pipes', 'pkgutil', 'platform', 'plistlib', 'poplib', 'posix', 'pprint', 'profile', 
+            'pstats', 'pty', 'pwd', 'py_compile', 'pyclbr', 'pydoc', 'queue', 'quopri', 'random', 're', 'readline', 'reprlib', 
+            'resource', 'rlcompleter', 'runpy', 'sched', 'secrets', 'select', 'selectors', 'shelve', 'shlex', 'shutil', 'signal', 
+            'site', 'smtpd', 'smtplib', 'sndhdr', 'socket', 'socketserver', 'spwd', 'sqlite3', 'ssl', 'stat', 'statistics', 
+            'string', 'stringprep', 'struct', 'subprocess', 'sunau', 'symbol', 'symtable', 'sys', 'sysconfig', 'tabnanny', 
+            'tarfile', 'telnetlib', 'tempfile', 'termios', 'test', 'textwrap', 'threading', 'time', 'timeit', 'tkinter', 'token', 
+            'tokenize', 'trace', 'traceback', 'tracemalloc', 'tty', 'turtle', 'turtledemo', 'types', 'typing', 'unicodedata', 
+            'unittest', 'urllib', 'uu', 'uuid', 'venv', 'warnings', 'wave', 'weakref', 'webbrowser', 'winreg', 'winsound', 
+            'wsgiref', 'xdrlib', 'xml', 'xmlrpc', 'zipapp', 'zipfile', 'zipimport', 'zlib'
+        ]);
+    
         let match;
     
         // Process "import" statements
         while ((match = importRegex.exec(code)) !== null) {
-            // If the package includes a dot (like "matplotlib.pyplot"), take only the first part
-            packages.add(match[1].split('.')[0]);
+            const packageName = match[1].split('.')[0];
+            if (!standardLibs.has(packageName)) {
+                packages.add(packageName);
+            }
         }
     
         // Process "from ... import" statements
         while ((match = fromImportRegex.exec(code)) !== null) {
-            // Capture the complete module/package path before the import
-            packages.add(match[1].split('.')[0]);
+            const packageName = match[1].split('.')[0];
+            if (!standardLibs.has(packageName)) {
+                packages.add(packageName);
+            }
         }
     
         console.log("Packages to load:", Array.from(packages));
@@ -347,27 +378,6 @@ sys.stderr = PyConsole()
         `;
     }
 
-    /**
-     * Returns a list of known Python errors with explanations.
-     * @returns {Object} - A dictionary of known Python errors and their explanations.
-     */
-    getKnownErrors() {
-        return {
-            'SyntaxError': `
-                A SyntaxError occurs when you write code that does not follow the rules of Python. Common cases include:
-                <li> Forgetting a colon (:) after a for or while loop. </li>
-                <li> Forgetting to close parentheses, brackets, or string quotes. </li>
-                <li> Forgetting an operator. </li>
-            `,
-            'NameError': `
-                A NameError occurs when you try to use a variable that has not been defined.
-                Common cases include:
-                <li> Using a variable that is not yet defined. </li>
-                <li> Misspelling a variable name or using incorrect capitalization. </li>
-            `,
-            // Add more errors as needed...
-        };
-    }
 
     /**
      * Finds input statements in the code.
@@ -419,61 +429,124 @@ sys.stderr = PyConsole()
     }
 
     /**
-     * Replaces input statements in the code with user-provided values.
+     * Replaces input statements in the code with user-provided values. 
      * @param {string} code - The Python code.
      * @param {Object} userValues - A dictionary of user-provided values.
      * @returns {string} - The modified code with input statements replaced.
      */
+
     replaceInputStatements(code, userValues) {
         let codeLines = code.split('\n');
-
+    
         codeLines = codeLines.map(line => {
             for (let variable in userValues) {
-                const inputRegex = new RegExp(`\\s*${variable}\\s*=\\s*(float|eval)?\\(?input\\(.*?\\)\\)?`, 'g');
-                
-
+                console.log("Variable: ", variable);
+                // Adjust the regex to handle Unicode characters in variable names
+                const inputRegex = new RegExp(`\\b${variable}\\b\\s*=\\s*(float|int|eval)?\\(?input\\(.*?\\)\\)?`, 'gu');
+    
                 if (inputRegex.test(line)) {
-                    //Perform safe evaluation of user input. 
-                    // TODO: add possibility to use strings as well.                  
-                    const userValue = JSON.stringify(userValues[variable]);
-                    line = `${variable} = float(${userValue}) if '.' in ${userValue} else int(${userValue})`.trim();
-                    // line = `${variable} = safe_eval(${userValue})`;
+                    let userValue = userValues[variable];
+    
+                    // Detect the type of the user input
+                    if (!isNaN(userValue)) {
+                        // Check if the input is a number (int or float)
+                        //userValue = Number(userValue); // Convert the string to a number
+                    } else if (typeof userValue === 'string') {
+                        // Check if the input is a string and doesn't contain only numbers
+                        userValue = `"${userValue}"`; // Add quotes around string inputs
+                    }
+                    
+                    line = line.replace(inputRegex, `${variable} = ${userValue}`);
                 }
             }
             return line;
         });
-
+    
         return codeLines.join('\n');
     }
+}
 
 
-    getsafeEvalCode() {
-        return `
-def safe_eval(user_input):
-    try:
-        return float(user_input) if '.' in user_input else int(user_input)
-    except ValueError:
-        return user_input
-\n
-`;
+
+// stepByStepPythonRunner.js
+
+class StepByStepPythonRunner extends PythonRunner {
+    constructor(outputId, errorBoxId, codeSetupInstance) {
+        super(outputId, errorBoxId);
+        this.codeSetupInstance = codeSetupInstance;
+        this.pyodide = null;
+        this.initializePyodide();
     }
 
-    /**
-     * Prepares the code for execution by adding any necessary helper functions or context.
-     * @param {string} code - The Python code to be prepared.
-     * @returns {string} - The prepared code.
-     */
-    prepareCodeForExecution(code) {
-        const safeEvalCode = `
-def safe_eval(user_input):
-    try:
-        return float(user_input) if '.' in user_input else int(user_input)
-    except ValueError:
-        return user_input
-\n
-`;
-        return safeEvalCode + code;
+    async initializePyodide() {
+        this.pyodide = await loadPyodide();
     }
 
+    async run(editor) {
+        const code = editor.getValue();
+        await this.executeCodeStepByStep(code);
+    }
 
+    async executeCodeStepByStep(code) {
+        try {
+            const executionStates = await this.getExecutionStates(code);
+            this.codeSetupInstance.updateExecutionStates(executionStates);
+        } catch (err) {
+            this.handleExecutionError(err);
+        }
+    }
+
+    async getExecutionStates(code) {
+        // Import necessary modules in Pyodide
+        await this.pyodide.loadPackage('micropip');
+        await this.pyodide.runPythonAsync(`
+            import sys
+            sys.setrecursionlimit(1000)
+            import json
+            import sys
+            sys.modules['_pydevd_frame_eval'] = None
+        `);
+
+        // Define the code to extract execution states
+        const traceScript = `
+def trace_calls(frame, event, arg):
+    if event != 'line':
+        return
+    co = frame.f_code
+    func_name = co.co_name
+    line_no = frame.f_lineno
+    locals_copy = frame.f_locals.copy()
+    execution_state = {
+        'lineNumber': line_no,
+        'locals': locals_copy
+    }
+    execution_states.append(execution_state)
+    return trace_calls
+
+execution_states = []
+sys.settrace(trace_calls)
+try:
+    exec(code, {})
+except Exception as e:
+    execution_states.append({'error': str(e)})
+finally:
+    sys.settrace(None)
+`;
+        // Inject the user code into the script
+        const fullScript = `code = """${code}"""\n` + traceScript + `\njson.dumps(execution_states)`;
+
+        // Run the script in Pyodide
+        const result = await this.pyodide.runPythonAsync(fullScript);
+
+        // Parse the result
+        const executionStates = JSON.parse(result);
+        return executionStates;
+    }
+
+    handleExecutionError(error) {
+        const errorBoxElement = document.getElementById(this.errorBoxId);
+        if (errorBoxElement) {
+            errorBoxElement.textContent = error.message;
+        }
+    }
 }

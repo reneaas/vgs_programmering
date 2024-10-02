@@ -1,0 +1,92 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-programmering-regning-oppgave-1" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">print(2 * 3 + 5)</code></pre>',
+                answers: [
+                    { content: '11', isCorrect: true },
+                    { content: '16', isCorrect: false },
+                    { content: '10', isCorrect: false },
+                    { content: '30', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 2 \ny = 3 * x + 6 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '12', isCorrect: true },
+                    { content: '24', isCorrect: false },
+                    { content: '6', isCorrect: false },
+                    { content: '15', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">a = 2 \nb = 3 \nc = a ** b \n\nprint(c)</code></pre>',
+                answers: [
+                    { content: '8', isCorrect: true },
+                    { content: '6', isCorrect: false },
+                    { content: '9', isCorrect: false },
+                    { content: '5', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut $-2$? </code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">a = -5 \nb = 4 \nc = -2 * a - 3 * b \n\nprint(c)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">a = 5 \nb = -4 \nc = -a + 2 * b \n\nprint(c)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">a = -2 \nb = 3 \nc = 2 * a * b \n\nprint(c)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">a = 1 \nb = -2 \nc = a - b \n\nprint(c)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 10 \ny = x / 2 + 3 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '8.0', isCorrect: true },
+                    { content: '7', isCorrect: false },
+                    { content: '10', isCorrect: false },
+                    { content: '6.5', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 4 \ny = (x + 3) * 2 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '14', isCorrect: true },
+                    { content: '10', isCorrect: false },
+                    { content: '7', isCorrect: false },
+                    { content: '18', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 2 \ny = 8 / (x + 2) * 2 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '4', isCorrect: true },
+                    { content: '1', isCorrect: false },
+                    { content: '8', isCorrect: false },
+                    { content: '2', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke av programmene skriver ut et oddetall?',
+                answers: [
+                    { content: '<pre><code class="python">n = 3 \ny = 2 * n - 1 \n\nprint(y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">n = 1 \ny = 2 * n + 3 \n\nprint(y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">n = 3 \ny = 2 * n \n\nprint(y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">n = 3 \ny = 2 ** (n + 1) \n\nprint(y)</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-programmering-regning-oppgave-1', questionsData);
+    });
+</script>

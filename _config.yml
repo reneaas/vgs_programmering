@@ -24,42 +24,38 @@ parse:
 
 
 repository:
-  url: https://github.com/reneaas/matematikk_1t/
+  url: https://github.com/reneaas/vgs_progging/
   path_to_book: book/
   branch: main/
 
 
+pdfhtml:
+  extra_css:
+    - _static/pdf_custom.css
+    - _static
+  
 
 extra_static_paths:
-  - "_static"
+  - _static
 
 html:
   use_issues_button: false
   use_repository_button: false
   nb_number_source_lines: false
   extra_js:
-    - "_static"
+    - _static
     - https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.4/mermaid.min.js
-  extra_files:
-    - _static/codeWorker.js
-    - _static/setupEditor.js
-    - _static/generateInteractiveCode.js
   extra_css:
-    - _static/code_mirror.css
+    - _static/
 
 
 sphinx:
-    # nb_number_source_lines: true    # Enables line numbers in code
-
   extra_extensions:
     - sphinx_proof
     - sphinx_inline_tabs
     - sphinxmermaid
     - sphinxcontrib.tikz
     - sphinx_jupyterbook_latex
-
-  extra_css_files:
-    - "_static"
 
 
   config:
@@ -70,4 +66,3 @@ sphinx:
       pygments_dark_style: "github-dark-high-contrast"
     templates_path:
       - "_templates"
-    

@@ -1,5 +1,55 @@
 /* CSS rules for custom admonitions */
 
+div.interactive {
+  /* No visual changes for the web view */
+  /* Created to flag interactive problems to be hidden for the printed edition */
+  display: block;
+}
+
+div.noninteractive {
+  display: none;
+}
+
+/* Stil for oppsummering */
+div.summary {
+  border-left-color: rgb(0, 128, 128);
+  background-color: rgba(0, 128, 128, 0.1);
+}
+
+div.summary > .admonition-title {
+  background-color: rgba(0, 128, 128, 0.1);
+  position: relative; 
+}
+
+[data-mode=light] div.summary > .admonition-title::after {
+  content: url("./icons/outline/light_mode/summary.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.summary > .admonition-title::after {
+    content: url("./icons/outline/light_mode/summary.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+[data-mode=dark] div.summary > .admonition-title::after {
+  content: url("./icons/outline/dark_mode/summary.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.summary > .admonition-title::after {
+    content: url("./icons/outline/dark_mode/summary.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
 /* Stil for teoriblokker */
 div.theory {
   border-left-color: rgb(0, 80, 171);
@@ -287,6 +337,25 @@ div.solution > .admonition-title::after {
     white-space: nowrap;
     display: inline;
   }
+
+/* Stil for eksempelkode */
+div.examplecode {
+  border-left-color: rgba(241, 130, 86, 0.6);
+}
+  
+div.examplecode > .admonition-title {
+  background-color: rgba(241, 130, 86, 0.3) !important;
+}
+  
+div.examplecode > .admonition-title:before {
+  color: rgba(241, 130, 86, 0.3);
+}
+
+div.examplecode > .admonition-title::after {
+  content: "💻";
+  white-space: nowrap;
+  display: inline;
+}
   
   
 /* Stil for underveisoppgaver */
@@ -518,3 +587,4 @@ div.pythonerror > .admonition-title::before {
   width: 24px; /* Adjust the icon size */
   height: 24px;
 }
+

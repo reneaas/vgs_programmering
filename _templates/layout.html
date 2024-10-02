@@ -5,41 +5,33 @@
 <!-- Pyodide -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 
-<!-- Brython -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
-</script> -->
-
-<!-- 
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
-</script> -->
 
 <!-- CodeMirror -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
-<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
 <link rel="stylesheet" href="{{ pathto('_static/code_mirror_themes/github_light_cm.css', 1) }}">
 <link rel="stylesheet" href="{{ pathto('_static/code_mirror_themes/github_dark_cm.css', 1) }}">
 <link rel="stylesheet" href="{{ pathto('_static/code_mirror_themes/one_dark_cm.css', 1) }}">
 
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
+<!-- CodeMirror scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
-<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
-<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<!-- highlighting of code in Parsons puzzle -->
 <head>
     <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
     <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
     <script src="{{ pathto('_static/theme-switcher.js', 1) }}"></script>
 </head>
+
+<!-- Interactive code -->
+<!-- <script src="{{ pathto('_static/interactiveCode/codeEditor.js', 1) }}"></script>
+<script src="{{ pathto('_static/interactiveCode/interactiveCodeSetup.js', 1) }}"></script>
+<script src="{{ pathto('_static/interactiveCode/pythonRunner.js', 1) }}"></script>
+<script src="{{ pathto('_static/interactiveCode/workerManager.js', 1) }}"></script>
+<script src="{{ pathto('_static/interactiveCode/predictionInteractiveCodeSetup.js', 1) }}"></script>
+<script src="{{ pathto('_static/interactiveCode/stepByStepPythonRunner.js', 1) }}"></script>
+<script src="{{ pathto('_static/interactiveCode/stepByStepInteractiveCodeSetup.js', 1) }}"></script> -->
 
 
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -47,8 +39,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 
-<!-- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
 
 {% endblock %}

@@ -1,13 +1,13 @@
-# Variabler
+# Variabler og `print`{l=python}-funksjonen
 
 :::{admonition} Læringsmål: variabler
 ---
 class: tip
 ---
-Etter å ha lest dette delkapittelet, er målet at du skal kunne:
-* Forklare hva en **variabel** er.
-* Vite hva som menes med **variabelnavn**, **verdi** og **datatype**.
-* Kjenne til noen viktige datatyper i Python som er relevante for programmering i matematikken.
+Etter å ha lest dette delkapittelet, er målet at du skal:
+* Kunne bruke `print`{l=python}-funksjonen til å skrive ut verdien til en variabel.
+* Kunne forklare hva en variabel er og lage dine egne variabler.
+* Kunne skrive ut verdien til en variabel.
 :::
 
 
@@ -20,96 +20,97 @@ En variabel er den grunnleggende byggesteinen i Python. Det er noe vi selv lager
 ---
 class: theory
 ---
-En **variabel** er en brukerdefinert ting som:
-* Har et **variabelnavn** som vi selv velger.
-* Har en **verdi** som vi selv gir.
-* Har en **datatype** som avhenger av hva slags verdi vi gir variabelen.
+En **variabel** er en brukerdefinert ting som har
+* Et variabelnavn
+* En verdi
 ::::
 
 La oss se på noen eksempler på variabler i Python
 
 
-:::{admonition} Innebygde funksjoner
+
+---
+
+:::{admonition} `#`{l=python}-tegnet
 ---
 class: sidenote, margin
 ---
-`print`{l=python}-funksjonen
-: skriver ut verdien til en variabel.
-
-`type`{l=python}-funksjonen
-: henter ut datatypen til en variabel.
-
-`#`-tegnet
-: brukes for å kommentere koden. Alt etter `#`-tegnet ignoreres av Python.
+`#`{l=python}-tegnet
+: brukes for å kommentere koden. Alt som følger bak `#`{l=python}-tegnet ignoreres av Python når koden kjøres. Det er ment for å skrive forklarende kommentarer til oss som leser koden!
 :::
 
-
-::::{admonition} Eksempel 1: variabler
+::::::{admonition} Utforsk 1
 ---
-class: example
+class: explore
 ---
-Under vises en kort Python-kode: 
 
-```{code-block} python
+:::::{tab-set}
 ---
-linenos: 
+class: tabs-custom
 ---
-a = 5                       # Definerer en variabel med navn `a` med verdi `5`
-print(f"{a = }")            # Skriver ut verdien til variabelen `a`
-print(f"{type(a) = }")      # Skriver ut datatypen til variabelen `a`
-```
 
-Kjører du koden over, får du utskriften:
+::::{tab-item} Del 1: Skriv ut verdier
+Her er et lite program som skriver ut noen verdier direkte. Før du kjører det, prøv å lese gjennom koden og tenk på hva programmet vil skrive ut. Dette hjelper deg med å forstå hvordan datamaskinen "ser" koden.
 
-``` console
-a = 5
-type(a) = <class 'int'>
-```
-som forteller oss at verdien til `a`{l=python} er `5`{l=python} og datatypen til `a`{l=python} er `int`{l=python}. Denne datatypen står for *integer* som er engelsk for *heltall*.
+- **Oppgave:** Les programmet og skriv ned hva du tror det vil skrive ut. Etterpå kan du kjøre det for å se om du hadde rett!
+
+:::{raw} html
+---
+file: interaktiv_kode/utforsk/utforsk_1/del_1.html
+---
+::: 
+
 ::::
 
-Vi tar et eksempel til på litt flere variabler og datatyper, før du skal prøve ut forståelsen din! 
+::::{tab-item} Del 2: Skriv ut variabler
+Ofte bruker vi variabler for å lagre verdier som vi skal jobbe med i programmet. Tenk på variabler som "bokser" som holder på tall, tekst, eller andre typer data vi trenger senere.
 
+I dette programmet definerer vi noen variabler og skriver ut verdiene deres. 
 
-::::{admonition} Eksempel 2: flere variabler og datatyper
+- **Oppgave:** Les gjennom programmet, og prøv å forutsi hva det vil skrive ut basert på variablene. Skriv ned hypotesen din og sjekk om den stemmer når du kjører programmet.
+
+:::{raw} html
 ---
-class: example
+file: interaktiv_kode/utforsk/utforsk_1/del_2.html
 ---
-| Kode | Variabelnavn | Verdi | Datatype |
-| :--- | :--- | :---| :--- | 
-| `b = -2`{l=python}    | `b`{l=python} | `-2`{l=python} | `int`{l=python} (heltall) |
-| `c = 3.14`{l=python}  | `c`{l=python} | `3.14`{l=python} | `float`{l=python} <br> (*flyttall* - desimaltall) |
-| `min_melding = "Sup?"`{l=python} | `min_melding`{l=python} | `"Sup?"`{l=python} | `str`{l=python} (tekst) |
-| `sant = True`{l=python} <br> `usant = False`{l=python} | `sant`{l=python} <br> `usant`{l=python} | `True`{l=python} <br> `False`{l=python} | `bool`{l=python} <br> (boolsk - to muligheter: `True`{l=python}/`False`{l=python}) |
+::: 
+
 ::::
 
-Så er det **din tur**!
+::::{tab-item} Del 3: Kombinere tekst og variabler med `print`{l=python}
+Ofte ønsker vi å skrive ut både tekst og verdier fra variabler samtidig, for å lage meningsfulle meldinger. For å gjøre dette kan vi bruke noe som heter `f`-strings, som lar oss kombinere tekst og variabler på en enkel måte.
 
-::::{admonition} Underveisoppgave 1
+I dette programmet ser du hvordan vi kan bruke `f`-strings til å sette inn verdien av en variabel i en tekststreng.
+
+- **Oppgave:** Kjør programmet og legg merke til hva som skjer når `f` står foran tekststrengen. Hvor i teksten settes variabelverdien inn? Skriv ned hva du oppdager!
+
+:::{raw} html
+---
+file: interaktiv_kode/utforsk/utforsk_1/del_3.html
+---
+::: 
+
+::::
+:::::
+::::::
+
+---
+
+::::{admonition} Underveisquiz 1
 ---
 class: check
 ---
-Fyll ut tabellen under:
-
-| Kode | Variabelnavn | Verdi | Datatype |
-| :--- | :--- | :---| :--- |
-| `x = 2.2`{l=python} |  |  |  |
-|  | `min_hilsen`{l=python} | `"Halla"`{l=python} | |
-| `y = 3`{l=python} |  |  |  |
-| `på_skole = True`{l=python} | | | |  
-
-
-:::{admonition} Løsning
+:::{raw} html
 ---
-class: solution, dropdown
+file: quiz/quiz_1.html
 ---
-| Kode | Variabelnavn | Verdi | Datatype |
-| :--- | :--- | :---| :--- |
-| `x = 2.2`{l=python} | `x`{l=python} | `2.2`{l=python} | `float`{l=python} |
-| `min_hilsen = "Halla"`{l=python} | `min_hilsen`{l=python} | `"Halla"`{l=python} | `str`{l=python} |
-| `y = 3`{l=python} | `y`{l=python} | `3`{l=python} | `int`{l=python} |
-| `på_skole = True`{l=python} | `på_skole`{l=python} | `True`{l=python} | `bool`{l=python} | 
 :::
+
+::::
+
+---
+
+
 
 ::::
 

@@ -18,6 +18,26 @@ document.addEventListener("DOMContentLoaded", function() {
             block.style.color = '#ff0000';
             block.style.fontWeight = 'bold';
         }
+
+        if (block.textContent.trim().startsWith('# FYLL INN')) {
+            block.style.color = '#ff0000';
+            block.style.fontWeight = 'bold';
+        }
+
+        if (block.textContent.trim().startsWith('# <--')) {
+            block.style.color = '#ff0000';
+            block.style.fontWeight = 'bold';
+        }
+
+        if (block.textContent.trim().startsWith('# MERK')) {
+            block.style.color = '#ff0000';
+            block.style.fontWeight = 'bold';
+        }
+
+        if (block.textContent.trim().startsWith('# IKKE RØR')) {
+            block.style.color = '#ff0000';
+            block.style.fontWeight = 'bold';
+        }
     });
 });
 
