@@ -201,7 +201,7 @@ class ParsonsPuzzle {
         toast.className = 'toast';
         toast.style.display = 'none';
         toast.innerHTML = `
-            <p>Riktig! Bra jobba! 🔥</p>
+            <p>Riktig! 🔥</p>
         `;
 
         document.body.appendChild(toast);
@@ -216,7 +216,7 @@ class ParsonsPuzzle {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <pre><code id="fullCode-${puzzleContainerId}" class="highlight python"></code></pre>
-                <button id="copyCodeButton-${puzzleContainerId}" class="button button-check-solution">Bra jobba! 🔥 Kopier koden!</button>
+                <button id="copyCodeButton-${puzzleContainerId}" class="button button-check-solution">Riktig! 🔥 Kopier koden!</button>
             </div>
         `;
         document.body.appendChild(modal);

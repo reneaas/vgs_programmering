@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Variabler &#8212; Programmering i Videregående Skole</title>
+    <title>Variabler og print-funksjonen &#8212; Programmering i Videregående Skole</title>
   
   
   
@@ -37,16 +37,20 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=2a3b7936" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=14b32792" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=73e49c55" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=4da46511" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f1d13629" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=041db16c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/game.css?v=9f94e4b0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=9f94e4b0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=754a94b0" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -73,19 +77,24 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/variabler/variabler';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
-    <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
+    <script src="../../../_static/static_code_blocks.js?v=e512471c"></script>
     <script src="../../../_static/utils.js?v=8e047c30"></script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
-    <script src="../../../_static/interactiveCode/codeEditor.js?v=c31f5c90"></script>
-    <script src="../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
-    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
-    <script src="../../../_static/interactiveCode/pythonRunner.js?v=309bc2ed"></script>
     <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
-    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=4f5b9685"></script>
-    <script src="../../../_static/pairPuzzle/game.js?v=9b1f0ac6"></script>
+    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=39d08f72"></script>
+    <script src="../../../_static/multipleChoiceQuiz/sequentialMultipleChoiceQuiz.js?v=77586b6d"></script>
+    <script src="../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuiz.js?v=7d161c2c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=f427eb04"></script>
+    <script src="../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
     <script src="../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
-    <script src="../../../_static/pairPuzzle/dropZone.js?v=35c3e4a6"></script>
+    <script src="../../../_static/pairPuzzle/game.js?v=56c2b5af"></script>
+    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
+    <script src="../../../_static/interactiveCode/pythonRunner.js?v=20da586f"></script>
+    <script src="../../../_static/interactiveCode/predictionInteractiveCodeSetup.js?v=12884769"></script>
+    <script src="../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
+    <script src="../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Regning med Python" href="../regning/regning.html" />
@@ -96,41 +105,33 @@
 <!-- Pyodide -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 
-<!-- Brython -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
-</script> -->
-
-<!-- 
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
-</script> -->
 
 <!-- CodeMirror -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
-<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
 <link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
 <link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
 <link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
 
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
+<!-- CodeMirror scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
-<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
-<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<!-- highlighting of code in Parsons puzzle -->
 <head>
     <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
     <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
     <script src="../../../_static/theme-switcher.js"></script>
 </head>
+
+<!-- Interactive code -->
+<!-- <script src="../../../_static/interactiveCode/codeEditor.js"></script>
+<script src="../../../_static/interactiveCode/interactiveCodeSetup.js"></script>
+<script src="../../../_static/interactiveCode/pythonRunner.js"></script>
+<script src="../../../_static/interactiveCode/workerManager.js"></script>
+<script src="../../../_static/interactiveCode/predictionInteractiveCodeSetup.js"></script>
+<script src="../../../_static/interactiveCode/stepByStepPythonRunner.js"></script>
+<script src="../../../_static/interactiveCode/stepByStepInteractiveCodeSetup.js"></script> -->
 
 
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -138,9 +139,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 
-<!-- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
 
 
   </head>
@@ -246,11 +245,11 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variabler</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../regning/regning.html">Regning med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 2P</span></p>
@@ -399,7 +398,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Variabler</h1>
+    <h1>Variabler og print-funksjonen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -421,15 +420,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="variabler">
-<h1>Variabler<a class="headerlink" href="#variabler" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="variabler-og-print-funksjonen">
+<h1>Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen<a class="headerlink" href="#variabler-og-print-funksjonen" title="Link to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Læringsmål: variabler</p>
-<p>Etter å ha lest dette delkapittelet, er målet at du skal kunne:</p>
+<p>Etter å ha lest dette delkapittelet, er målet at du skal:</p>
 <ul class="simple">
-<li><p>Forklare hva en <strong>variabel</strong> er.</p></li>
-<li><p>Vite hva som menes med <strong>variabelnavn</strong>, <strong>verdi</strong> og <strong>datatype</strong>.</p></li>
-<li><p>Kjenne til noen viktige datatyper i Python som er relevante for programmering i matematikken.</p></li>
+<li><p>Kunne bruke <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen til å skrive ut verdien til en variabel.</p></li>
+<li><p>Kunne forklare hva en variabel er og lage dine egne variabler.</p></li>
+<li><p>Kunne skrive ut verdien til en variabel.</p></li>
 </ul>
 </div>
 <section id="hva-er-en-variabel">
@@ -437,148 +436,220 @@ document.write(`
 <p>En variabel er den grunnleggende byggesteinen i Python. Det er noe vi selv lager (såkalt <em>brukerdefinert</em>). Vi bruker variabelen til å gjøre noe - i matematikk bruker vi det typisk til å regne ut noe og lagre tall.</p>
 <div class="theory admonition">
 <p class="admonition-title">Variabel i Python</p>
-<p>En <strong>variabel</strong> er en brukerdefinert ting som:</p>
+<p>En <strong>variabel</strong> er en brukerdefinert ting som har</p>
 <ul class="simple">
-<li><p>Har et <strong>variabelnavn</strong> som vi selv velger.</p></li>
-<li><p>Har en <strong>verdi</strong> som vi selv gir.</p></li>
-<li><p>Har en <strong>datatype</strong> som avhenger av hva slags verdi vi gir variabelen.</p></li>
+<li><p>Et variabelnavn</p></li>
+<li><p>En verdi</p></li>
 </ul>
 </div>
 <p>La oss se på noen eksempler på variabler i Python</p>
+<hr class="docutils" />
 <div class="sidenote margin admonition">
-<p class="admonition-title">Innebygde funksjoner</p>
+<p class="admonition-title"><code class="code docutils literal highlight highlight-python"><span class="c1">#</span></code>-tegnet</p>
 <dl class="simple myst">
-<dt><code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</dt><dd><p>skriver ut verdien til en variabel.</p>
-</dd>
-<dt><code class="code docutils literal highlight highlight-python"><span class="nb">type</span></code>-funksjonen</dt><dd><p>henter ut datatypen til en variabel.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">#</span></code>-tegnet</dt><dd><p>brukes for å kommentere koden. Alt etter <code class="docutils literal notranslate"><span class="pre">#</span></code>-tegnet ignoreres av Python.</p>
+<dt><code class="code docutils literal highlight highlight-python"><span class="c1">#</span></code>-tegnet</dt><dd><p>brukes for å kommentere koden. Alt som følger bak <code class="code docutils literal highlight highlight-python"><span class="c1">#</span></code>-tegnet ignoreres av Python når koden kjøres. Det er ment for å skrive forklarende kommentarer til oss som leser koden!</p>
 </dd>
 </dl>
 </div>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 1: variabler</p>
-<p>Under vises en kort Python-kode:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>                       <span class="c1"># Definerer en variabel med navn `a` med verdi `5`</span>
-<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>            <span class="c1"># Skriver ut verdien til variabelen `a`</span>
-<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>      <span class="c1"># Skriver ut datatypen til variabelen `a`</span>
-</pre></div>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 1</p>
+<div class="sd-tab-set tabs-custom docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Del 1: Skriv ut verdier</label><div class="sd-tab-content docutils">
+<p>Her er et lite program som skriver ut noen verdier direkte. Før du kjører det, prøv å lese gjennom koden og tenk på hva programmet vil skrive ut. Dette hjelper deg med å forstå hvordan datamaskinen “ser” koden.</p>
+<ul class="simple">
+<li><p><strong>Oppgave:</strong> Les programmet og skriv ned hva du tror det vil skrive ut. Etterpå kan du kjøre det for å se om du hadde rett!</p></li>
+</ul>
+<div id="container-kode-variabler-utforsk-1-del-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`print(2)
+print(-5)
+print("Hei!")
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-variabler-utforsk-1-del-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-<p>Kjører du koden over, får du utskriften:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a = 5</span>
-<span class="go">type(a) = &lt;class &#39;int&#39;&gt;</span>
-</pre></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Del 2: Skriv ut variabler</label><div class="sd-tab-content docutils">
+<p>Ofte bruker vi variabler for å lagre verdier som vi skal jobbe med i programmet. Tenk på variabler som “bokser” som holder på tall, tekst, eller andre typer data vi trenger senere.</p>
+<p>I dette programmet definerer vi noen variabler og skriver ut verdiene deres.</p>
+<ul class="simple">
+<li><p><strong>Oppgave:</strong> Les gjennom programmet, og prøv å forutsi hva det vil skrive ut basert på variablene. Skriv ned hypotesen din og sjekk om den stemmer når du kjører programmet.</p></li>
+</ul>
+<div id="container-kode-variabler-utforsk-1-del-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`a = 2
+b = -3
+c = a * b       # Ganger 'a' og 'b' sammen og lagrer resultatet i 'c'
+
+print(a)
+print(b)
+print(c)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-variabler-utforsk-1-del-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-<p>som forteller oss at verdien til <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code> er <code class="code docutils literal highlight highlight-python"><span class="mi">5</span></code> og datatypen til <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code> er <code class="code docutils literal highlight highlight-python"><span class="nb">int</span></code>. Denne datatypen står for <em>integer</em> som er engelsk for <em>heltall</em>.</p>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Del 3: Kombinere tekst og variabler med <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code></label><div class="sd-tab-content docutils">
+<p>Ofte ønsker vi å skrive ut både tekst og verdier fra variabler samtidig, for å lage meningsfulle meldinger. For å gjøre dette kan vi bruke noe som heter <code class="docutils literal notranslate"><span class="pre">f</span></code>-strings, som lar oss kombinere tekst og variabler på en enkel måte.</p>
+<p>I dette programmet ser du hvordan vi kan bruke <code class="docutils literal notranslate"><span class="pre">f</span></code>-strings til å sette inn verdien av en variabel i en tekststreng.</p>
+<ul class="simple">
+<li><p><strong>Oppgave:</strong> Kjør programmet og legg merke til hva som skjer når <code class="docutils literal notranslate"><span class="pre">f</span></code> står foran tekststrengen. Hvor i teksten settes variabelverdien inn? Skriv ned hva du oppdager!</p></li>
+</ul>
+<div id="container-kode-variabler-utforsk-1-del-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = 2
+
+print("x")          # Vi skriver bare ut 'x'
+print("{x}")        # Uten 'f' foran tekststrengen får vi ikke verdien :(
+print(f"{x}")       # Vi bytter ut '{x}' med verdien til x
+print(f"{x = }")    # Vi bytter ut '{x = }' med 'x = verdien til x' i utskriften
+`;
+
+        makeInteractiveCode(
+            "container-kode-variabler-utforsk-1-del-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-<p>Vi tar et eksempel til på litt flere variabler og datatyper, før du skal prøve ut forståelsen din!</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 2: flere variabler og datatyper</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Kode</p></th>
-<th class="head text-left"><p>Variabelnavn</p></th>
-<th class="head text-left"><p>Verdi</p></th>
-<th class="head text-left"><p>Datatype</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">b</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="o">-</span><span class="mi">2</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">int</span></code> (heltall)</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">c</span> <span class="o">=</span> <span class="mf">3.14</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">c</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="mf">3.14</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">float</span></code> <br> (<em>flyttall</em> - desimaltall)</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">min_melding</span> <span class="o">=</span> <span class="s2">&quot;Sup?&quot;</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">min_melding</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="s2">&quot;Sup?&quot;</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">str</span></code> (tekst)</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">sant</span> <span class="o">=</span> <span class="kc">True</span></code> <br> <code class="code docutils literal highlight highlight-python"><span class="n">usant</span> <span class="o">=</span> <span class="kc">False</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">sant</span></code> <br> <code class="code docutils literal highlight highlight-python"><span class="n">usant</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> <br> <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">bool</span></code> <br> (boolsk - to muligheter: <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>/<code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code>)</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
-<p>Så er det <strong>din tur</strong>!</p>
+<hr class="docutils" />
 <div class="check admonition">
-<p class="admonition-title">Underveisoppgave 1</p>
-<p>Fyll ut tabellen under:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Kode</p></th>
-<th class="head text-left"><p>Variabelnavn</p></th>
-<th class="head text-left"><p>Verdi</p></th>
-<th class="head text-left"><p>Datatype</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">x</span> <span class="o">=</span> <span class="mf">2.2</span></code></p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">min_hilsen</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="s2">&quot;Halla&quot;</span></code></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span></code></p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">på_skole</span> <span class="o">=</span> <span class="kc">True</span></code></p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-</tbody>
-</table>
+<p class="admonition-title">Underveisquiz 1</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-programmering-intro-print-variabler" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hva vil dette programmet skrive ut? <pre><code class="python">print(3)</code></pre>',
+                answers: [
+                    { content: '3', isCorrect: true },
+                    { content: 'print(3)', isCorrect: false },
+                    { content: 'Ingen utskrift', isCorrect: false },
+                    { content: 'En feilmelding', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skjer når du bruker en variabel i en `print`-setning? Se på koden: <pre><code class="python">x = 10\nprint(x)</code></pre>',
+                answers: [
+                    { content: 'Variabelnavnet blir skrevet ut', isCorrect: false },
+                    { content: 'Verdien til variabelen blir skrevet ut', isCorrect: true },
+                    { content: '10 + x blir skrevet ut', isCorrect: false },
+                    { content: 'Ingen utskrift', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva vil programmet skrive ut? <pre><code class="python">x = 5\ny = 2\nprint(x, y)</code></pre>',
+                answers: [
+                    { content: '52', isCorrect: false },
+                    { content: 'x y', isCorrect: false },
+                    { content: '5 2', isCorrect: true },
+                    { content: 'print(x, y)', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva vil programmet skrive ut? <pre><code class="python">navn = "Ola"\nprint("Hei, " + navn)</code></pre>',
+                answers: [
+                    { content: 'Hei, Ola', isCorrect: true },
+                    { content: 'Hei, navn', isCorrect: false },
+                    { content: 'print("Hei, " + navn)', isCorrect: false },
+                    { content: 'En feilmelding', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva gjør bokstaven `f` i en `f-string` i Python? <pre><code class="python">print(f"Hei, {navn}")</code></pre>',
+                answers: [
+                    { content: 'Den setter variabelverdier inn i teksten', isCorrect: true },
+                    { content: 'Den ignoreres av Python', isCorrect: false },
+                    { content: 'Den legger til en ny linje', isCorrect: false },
+                    { content: 'Den skriver ut teksten som den er', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-programmering-intro-print-variabler', questionsData);
+    });
+</script>
 </div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Kode</p></th>
-<th class="head text-left"><p>Variabelnavn</p></th>
-<th class="head text-left"><p>Verdi</p></th>
-<th class="head text-left"><p>Datatype</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">x</span> <span class="o">=</span> <span class="mf">2.2</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">x</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="mf">2.2</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">float</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">min_hilsen</span> <span class="o">=</span> <span class="s2">&quot;Halla&quot;</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">min_hilsen</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="s2">&quot;Halla&quot;</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">str</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">y</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">int</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">på_skole</span> <span class="o">=</span> <span class="kc">True</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="n">på_skole</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code></p></td>
-<td class="text-left"><p><code class="code docutils literal highlight highlight-python"><span class="nb">bool</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<hr class="docutils" />
+<div class="docutils">
 <div class="check admonition">
 <p class="admonition-title">Underveisoppgave 2</p>
 <p>Under vises et interaktivt kodevindu. Fyll ut koden under og kjør programmet.</p>
@@ -626,6 +697,7 @@ print(f"{navn = } \\n{alder = } år \\n{høyde = } cm")
 <span class="go">alder = 29 </span>
 <span class="go">høyde = 180.0</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

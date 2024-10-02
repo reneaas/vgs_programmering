@@ -37,16 +37,20 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=2a3b7936" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=14b32792" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=73e49c55" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=4da46511" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f1d13629" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=041db16c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/game.css?v=9f94e4b0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=9f94e4b0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=754a94b0" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -75,64 +79,61 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/regning/regning';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
-    <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
+    <script src="../../../_static/static_code_blocks.js?v=e512471c"></script>
     <script src="../../../_static/utils.js?v=8e047c30"></script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
-    <script src="../../../_static/interactiveCode/codeEditor.js?v=c31f5c90"></script>
-    <script src="../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
-    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
-    <script src="../../../_static/interactiveCode/pythonRunner.js?v=309bc2ed"></script>
     <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
-    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=4f5b9685"></script>
-    <script src="../../../_static/pairPuzzle/game.js?v=9b1f0ac6"></script>
+    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=39d08f72"></script>
+    <script src="../../../_static/multipleChoiceQuiz/sequentialMultipleChoiceQuiz.js?v=77586b6d"></script>
+    <script src="../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuiz.js?v=7d161c2c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=f427eb04"></script>
+    <script src="../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
     <script src="../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
-    <script src="../../../_static/pairPuzzle/dropZone.js?v=35c3e4a6"></script>
+    <script src="../../../_static/pairPuzzle/game.js?v=56c2b5af"></script>
+    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
+    <script src="../../../_static/interactiveCode/pythonRunner.js?v=20da586f"></script>
+    <script src="../../../_static/interactiveCode/predictionInteractiveCodeSetup.js?v=12884769"></script>
+    <script src="../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
+    <script src="../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="if-else-setninger" href="../if_else/if_else.html" />
-    <link rel="prev" title="Variabler" href="../variabler/variabler.html" />
+    <link rel="next" title="for-løkker" href="../for_loops/for_loops.html" />
+    <link rel="prev" title="Variabler og print-funksjonen" href="../variabler/variabler.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
 <!-- Pyodide -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 
-<!-- Brython -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js">
-</script> -->
-
-<!-- 
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
-</script> -->
 
 <!-- CodeMirror -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
-<!-- <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
-<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css"> -->
 <link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
 <link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
 <link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
 
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
+<!-- CodeMirror scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
-<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
-<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<!-- highlighting of code in Parsons puzzle -->
 <head>
     <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
     <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
     <script src="../../../_static/theme-switcher.js"></script>
 </head>
+
+<!-- Interactive code -->
+<!-- <script src="../../../_static/interactiveCode/codeEditor.js"></script>
+<script src="../../../_static/interactiveCode/interactiveCodeSetup.js"></script>
+<script src="../../../_static/interactiveCode/pythonRunner.js"></script>
+<script src="../../../_static/interactiveCode/workerManager.js"></script>
+<script src="../../../_static/interactiveCode/predictionInteractiveCodeSetup.js"></script>
+<script src="../../../_static/interactiveCode/stepByStepPythonRunner.js"></script>
+<script src="../../../_static/interactiveCode/stepByStepInteractiveCodeSetup.js"></script> -->
 
 
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -140,9 +141,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 
-<!-- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
+
 
 
   </head>
@@ -248,11 +247,11 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../variabler/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variabler/variabler.html">Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Regning med Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 2P</span></p>
@@ -411,9 +410,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolge">Regnerekkefølge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnearter-i-python">Regnearter i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formler">Formler</a></li>
 </ul>
             </nav>
         </div>
@@ -431,19 +429,83 @@ document.write(`
 <p class="admonition-title">Læringsmål: regning med Python</p>
 <p>Etter å ha lest dette delkapittelet, er målet at du skal kunne:</p>
 <ul class="simple">
-<li><p>Bruke python til å regne ut enkle og sammensatte regnestykker.</p></li>
+<li><p>Bruke Pythonkode til å regne ut enkle regnestykker.</p></li>
+<li><p>Brule Pythonkode til å regne med formler.</p></li>
 </ul>
 </div>
-<p>Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator som lar oss regne matematisk på en måte vi ikke ellers kan gjøre på noen annen måte. Dette kan være å gjenta en utregning millioner av ganger frem til vi oppnår et ønsket resultat, eller bare regne ut en enkel matematisk formel.</p>
-<section id="regneoperasjoner-i-python">
-<h2>Regneoperasjoner i Python<a class="headerlink" href="#regneoperasjoner-i-python" title="Link to this heading">#</a></h2>
-<p>Vi starter med de viktigste regneoperasjonene</p>
-<div class="sidenote margin admonition">
-<p class="admonition-title">Divisjon og brøker</p>
-<p>I Python, så vil en brøk alltid regnes ut til et heltall (<code class="code docutils literal highlight highlight-python"><span class="nb">int</span></code>) eller et desimaltall (<code class="code docutils literal highlight highlight-python"><span class="nb">float</span></code>). Det er ingen innebygd måte å representere brøker på direkte.</p>
+<p>Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator som lar oss regne matematisk på en måte vi ellers ikke kan gjøre på noen annen måte. Dette kan være å gjenta en utregning millioner av ganger frem til vi oppnår et ønsket resultat, eller bare regne ut en enkel matematisk formel.</p>
+<section id="regnearter-i-python">
+<h2>Regnearter i Python<a class="headerlink" href="#regnearter-i-python" title="Link to this heading">#</a></h2>
+<p>Vi starter med å bli kjent med de vanlige regneartene vi bruker i matematikken.</p>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 1: regnearter</p>
+<div class="sd-tab-set tabs-custom docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+a</label><div class="sd-tab-content docutils">
+<p>Under vises et program som bruker de ulike regneartene i Python til å regne ut noe og skrive ut svaret.</p>
+<p>Les programmet og forutsi hva som skrives ut. Skriv inn hypotesen din under for å sjekke.</p>
 </div>
-<div class="theory admonition">
-<p class="admonition-title">Viktige regneoperasjoner i Python</p>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+b</label><div class="sd-tab-content docutils">
+<p>Bruk programmet til å regne ut svarene på følgende regnestykker:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(3 + 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3 - 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \cdot 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{3}{4}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^4\)</span></p></li>
+</ul>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div id="container-kode-regning-utforsk-utforsk-1-steg-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`print(8 + 2)            # Pluss
+print(8 - 2)            # Minus
+print(8 * 2)            # Gange
+print(8 / 2)            # Dele
+print(8 ** 2)           # Potens
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-regning-utforsk-utforsk-1-steg-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<p>Etter utforsk 1, kan du ta en titt på oppsummeringsboksen under.</p>
+<div class="summary dropdown admonition">
+<p class="admonition-title">Oppsummering: regneartene i Python</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operasjon</p></th>
@@ -482,220 +544,310 @@ document.write(`
 </table>
 </div>
 </div>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 1</p>
-<p>Under vises et interaktivt kodevindu der noen regneoperasjoner blir utført.</p>
-<p>Prøv å bestemme hvilke verdier variablene <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">c</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">q</span></code> får før du kjører programmet. <br>
-Kjør programmet for å sjekke svaret ditt!</p>
-<div id="container-kode-programmering-regning-utforsk-1"></div>
-<script type="text/javascript">
-    code = `
-a = -1 + 3
-b = 5 - (-2)
-c = 3 * 2
-p = 6 / 3
-q = 2 ** 3
+<!-- :::::{admonition} Utforsk 1
+---
+class: explore
+---
+Under vises et interaktivt kodevindu der noen regneoperasjoner blir utført.
 
-# Skriver ut resultatet
-print(f"{a = } \\n{b = } \\n{c = } \\n{p = } \\n{q = }")
-`;   
+Prøv å bestemme hvilke verdier variablene `a`{l=python}, `b`{l=python}, `c`{l=python}, `p`{l=python} og `q`{l=python} får før du kjører programmet. <br>
+Kjør programmet for å sjekke svaret ditt!
 
-    generateInteractiveCode(
-        "container-kode-programmering-regning-utforsk-1",
-        code,
-    );
-</script>
+:::{raw} html
+---
+file: interaktiv_kode/utforsk/utforsk_1.html
+---
+:::
 
-
-</div>
+::::: -->
 </section>
-<section id="regnerekkefolge">
-<h2>Regnerekkefølge<a class="headerlink" href="#regnerekkefolge" title="Link to this heading">#</a></h2>
-<p>Python følger samme regnerekkefølge du har møtt i matematikken, bortsett fra at divisjon kommer alltid før multiplikasjon.</p>
-<div class="theory admonition">
-<p class="admonition-title">Regnerekkefølge i Python</p>
-<p>Regnerekkefølgen i Python er:</p>
-<ol class="arabic simple">
-<li><p>Parenteser</p></li>
-<li><p>Potenser</p></li>
-<li><p>Divisjon</p></li>
-<li><p>Multiplikasjon</p></li>
-<li><p>Addisjon og subtraksjon</p></li>
-</ol>
-</div>
+<section id="formler">
+<h2>Formler<a class="headerlink" href="#formler" title="Link to this heading">#</a></h2>
+<p>Det er sjelden vi skriver regnestykker manuelt slik som vi så på i utforsk 1. Vi er oftest interessert i å regne ut noe med en formel som inneholder variabler. Vi ønsker med andre ord å bruke Python som en avansert kalkulator.</p>
 <div class="explore admonition">
-<p class="admonition-title">Utforsk 2</p>
-<p>Under vises et interaktiv kodevindu der regneoperasjoner som bruker regnerekkefølgen utføres.</p>
-<p>Prøv å bruke regnerekkefølgen til å bestemme verdiene til variablene <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">c</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">q</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">r</span></code> før du kjører programmet. <br></p>
-<div id="container-kode-programmering-regning-utforsk-2"></div>
-<script type="text/javascript">
-    code = `
-a = 2 + 3 * 4
-b = 2 * (3 + 4)
-c = 2 ** 4 / 2
-p = 2 ** (4 / 2)
-q = 3 ** 4 / 9 * 2 - 2
-r = (5 - 2) ** (1 + 3) / (5 + 4) * 2 - 3 + 1
-
-# Skriver ut resultatet
-print(f"{a = } \\n{b = } \\n{c = } \\n{p = } \\n{q = } \\n{r = }")
-`;   
-
-    generateInteractiveCode(
-        "container-kode-programmering-regning-utforsk-2",
-        code,
-    );
-</script>
-
-
-</div>
-</section>
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<div class="problem-level-1 admonition">
-<p class="admonition-title">Oppgave 1</p>
-<p>I tabellen under vises noen regnestykker. Fyll ut koden i det interaktive kodevinduet under for å regne ut svarene.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Variabel</p></th>
-<th class="head"><p>Regnestykke</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">a</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(3 + 2 \cdot 4\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">b</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(6 - 2 + 5\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">c</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{9}{3} + 3\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">d</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(5\cdot (-2) + 4\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<br>
-<div id="container-kode-programmering-regning-oppgave-1"></div>
-<script type="text/javascript">
-    code = `
-a = # FYLL INN
-b = # FYLL INN
-c = # FYLL INN
-d = # FYLL INN
-
-# Skriver ut resultatet
-print(f"{a = } \\n{b = } \\n{c = } \\n{d = }")
-`;   
-
-    generateInteractiveCode(
-        "container-kode-programmering-regning-oppgave-1",
-        code,
-    );
-</script>
-
-
-
-
-
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">4</span>
-<span class="linenos">2</span><span class="n">b</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span>
-<span class="linenos">3</span><span class="n">c</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span>
-<span class="linenos">4</span><span class="n">d</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="c1"># Skriver ut resultatet</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">c</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="problem-level-2 admonition">
-<p class="admonition-title">Oppgave 2</p>
-<p>I tabellen under vises noen regnestykker. Fyll ut koden i det interaktive kodevinduet under for å regne ut svarene.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Variabel</p></th>
-<th class="head"><p>Regnestykke</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">a</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(7 + 3 \cdot (10 - 4)\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">b</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{8 + 2}{2} + 5\cdot 3\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">c</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{12}{3\cdot 2}\cdot 4 + 1\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">d</span></code></p></td>
-<td><p><span class="math notranslate nohighlight">\(4\cdot (5 + 3^2) - \dfrac{6}{2}\cdot 3\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<br>
-<div id="container-kode-programmering-regning-oppgave-2"></div>
-<script type="text/javascript">
-    code = `
-a = # FYLL INN
-b = # FYLL INN
-c = # FYLL INN
-d = # FYLL INN
-
-# Skriver ut resultatet
-print(f"{a = } \\n{b = } \\n{c = } \\n{d = }")
-`;   
-
-    generateInteractiveCode(
-        "container-kode-programmering-regning-oppgave-2",
-        code,
-    );
-</script>
-
-
-
-
-
-
-
-
-
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
-<span class="linenos">2</span><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="mi">3</span>
-<span class="linenos">3</span><span class="n">c</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">/</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="linenos">4</span><span class="n">d</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">6</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="c1"># Skriver ut resultatet</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">c</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\n</span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="problem-level-3 admonition">
-<p class="admonition-title">Oppgave 3</p>
-<p>En elev har forsøkt å regne ut</p>
+<p class="admonition-title">Utforsk 2: formler</p>
+<p>Strekning, fart og tid er tre størrelser som henger sammen. Vi kan bruke formelen</p>
 <div class="math notranslate nohighlight">
 \[
-r = \dfrac{2^3}{4\cdot 2} + \dfrac{1}{2}\cdot (1 + 3)
+s = v\cdot t
 \]</div>
-<p>ved å skrive koden under. Koden inneholder <strong>to feil</strong>.</p>
-<p>Finn feilene og rett de opp.</p>
+<p>til å regne ut strekningen <span class="math notranslate nohighlight">\(s\)</span> dersom vi har farten <span class="math notranslate nohighlight">\(v\)</span> og tiden <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="sd-tab-set tabs-custom docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+a</label><div class="sd-tab-content docutils">
+<p>I programkoden under regnes det ut en strekning <span class="math notranslate nohighlight">\(s\)</span> basert på en fart <span class="math notranslate nohighlight">\(v\)</span> og en tid <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Les programmet og forutsi hva som skrives ut. Skriv inn hypotesen din under for å sjekke.</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+b</label><div class="sd-tab-content docutils">
+<p>Bruk programmet til å regne ut strekningen når <span class="math notranslate nohighlight">\(v = 80 \ \mathrm{km / h}\)</span> og <span class="math notranslate nohighlight">\(t = 2.5 \ \mathrm{h}\)</span>.</p>
+<p>Hva blir strekningen?</p>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">v</span> <span class="o">=</span> <span class="mi">80</span>          <span class="c1"># kilometer per time</span>
+<span class="linenos">2</span><span class="n">t</span> <span class="o">=</span> <span class="mf">2.5</span>         <span class="c1"># timer</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">s</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">t</span>       <span class="c1"># strekning i kilometer</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+c</label><div class="sd-tab-content docutils">
+<p>En bil kjører i <span class="math notranslate nohighlight">\(90 \ \mathrm{km / h}\)</span> og kjører en avstand på <span class="math notranslate nohighlight">\(342 \ \mathrm{km}\)</span>.</p>
+<p>Juster programmet slik at du kan regne ut tiden det tok å kjøre denne strekningen. Hvor lang tid tok det?</p>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p>Vi kan enten prøve oss frem med ulike verdier av <span class="math notranslate nohighlight">\(t\)</span> til vi får riktig avstand, eller så kan vi skrive om formelen til å regne ut tiden <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+t = \dfrac{s}{v}
+\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">v</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="linenos">2</span><span class="n">s</span> <span class="o">=</span> <span class="mi">342</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">t</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="n">v</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div id="container-kode-variabler-utforsk-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`v = 20      # kilometer per time
+t = 2       # timer
+
+s = v * t   # strekning i kilometer
+
+print(s)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-variabler-utforsk-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Gjennomfør quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-programmering-regning-oppgave-1" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">print(2 * 3 + 5)</code></pre>',
+                answers: [
+                    { content: '11', isCorrect: true },
+                    { content: '16', isCorrect: false },
+                    { content: '10', isCorrect: false },
+                    { content: '30', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 2 \ny = 3 * x + 6 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '12', isCorrect: true },
+                    { content: '24', isCorrect: false },
+                    { content: '6', isCorrect: false },
+                    { content: '15', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">a = 2 \nb = 3 \nc = a ** b \n\nprint(c)</code></pre>',
+                answers: [
+                    { content: '8', isCorrect: true },
+                    { content: '6', isCorrect: false },
+                    { content: '9', isCorrect: false },
+                    { content: '5', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut $-2$? </code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">a = -5 \nb = 4 \nc = -2 * a - 3 * b \n\nprint(c)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">a = 5 \nb = -4 \nc = -a + 2 * b \n\nprint(c)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">a = -2 \nb = 3 \nc = 2 * a * b \n\nprint(c)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">a = 1 \nb = -2 \nc = a - b \n\nprint(c)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 10 \ny = x / 2 + 3 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '8.0', isCorrect: true },
+                    { content: '7', isCorrect: false },
+                    { content: '10', isCorrect: false },
+                    { content: '6.5', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 4 \ny = (x + 3) * 2 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '14', isCorrect: true },
+                    { content: '10', isCorrect: false },
+                    { content: '7', isCorrect: false },
+                    { content: '18', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">x = 2 \ny = 8 / (x + 2) * 2 \n\nprint(y)</code></pre>',
+                answers: [
+                    { content: '4', isCorrect: true },
+                    { content: '1', isCorrect: false },
+                    { content: '8', isCorrect: false },
+                    { content: '2', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke av programmene skriver ut et oddetall?',
+                answers: [
+                    { content: '<pre><code class="python">n = 3 \ny = 2 * n - 1 \n\nprint(y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">n = 1 \ny = 2 * n + 3 \n\nprint(y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">n = 3 \ny = 2 * n \n\nprint(y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">n = 3 \ny = 2 ** (n + 1) \n\nprint(y)</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-programmering-regning-oppgave-1', questionsData);
+    });
+</script>
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Når et program ble kjørt, ga det utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">6</span>
+<span class="go">-11</span>
+<span class="go">0</span>
+<span class="go">3</span>
+<span class="go">2.0</span>
+</pre></div>
+</div>
+<p>Programmet er vist i tilfeldig rekkefølge under. Sett sammen programmet i riktig rekkefølge.</p>
+<div id="container-parsons-puzzle-programmering-regning-oppgave-2" class="puzzle-container"></div>
+<div id="container-kode-programmering-regning-oppgave-2" style="display: none"></div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`print(2 * 3)
+print(-3 * 5 + 4)
+print(-1 ** 2 + 1)
+print((-1) ** 2 + 2)
+print((3 + 1) / 2)
+
+`;
+
+        const puzzleContainerId = 'container-parsons-puzzle-programmering-regning-oppgave-2';
+        const editorId = 'container-kode-programmering-regning-oppgave-2';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
+</script>
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>To enheter som er brukt for å måle temperatur er Celsius og Fahrenheit. En av statene som er mest kjent for å bruke Fahrenheit er USA.</p>
+<p>En formel som forteller oss hva temperaturen i Celsius <span class="math notranslate nohighlight">\(C\)</span> er når vi kjenner temperaturen i Fahrenheit <span class="math notranslate nohighlight">\(F\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+C = \dfrac{5}{9} \cdot (F - 32)
+\]</div>
+<div class="sd-tab-set tabs-custom docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+a</label><div class="sd-tab-content docutils">
+<p>Fyll ut programmet under med formelen for å regne ut temperaturen i Celsius.</p>
+<p>Prøv programmet ditt ved å kjøre programmet med <span class="math notranslate nohighlight">\(F = 32\)</span>. <br> Da skal temperaturen i Celsius være <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">F</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn temperatur i Fahrenheit: &quot;</span><span class="p">))</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+b</label><div class="sd-tab-content docutils">
+<p>Det finnes en temperatur der både temperaturen i Fahrenheit og Celsius blir den samme.</p>
+<p>Bruk programmet ditt til å lete etter denne temperaturen ved å prøve ut ulike verdier for <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p>Hva er temperaturen da?</p>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>Når du prøver deg fram, kan du bruke følgende strategi:</p>
+<ol class="arabic simple">
+<li><p>Start med å prøve deg fram med en temperatur i Fahrenheit.</p></li>
+<li><p>Når forskjellen i temperatur i Celsius og Fahrenheit begynner å bli mindre, så nærmer du deg den riktige verdien.</p></li>
+</ol>
+</div>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p><span class="math notranslate nohighlight">\(F = -40\)</span> gir <span class="math notranslate nohighlight">\(C = -40\)</span>. Da er temperaturen den samme i Fahrenheit og Celsius.</p>
+</div>
+</div>
+</div>
+<br>
 <div id="container-kode-programmering-regning-oppgave-3"></div>
 <script type="text/javascript">
-    code = `
-r = 2 * 3 / 4 * 2 + 1 / 2 * (1 + 3)     # FIKS MEG
+    code = 
+`F = float(input("Skriv inn temperatur i Fahrenheit: ")) # IKKE RØR
 
-print(f"{r = }")
+C = # FYLL INN: formelen for temperatur i celsius
+
+print(C)
+
 `;   
 
-    generateInteractiveCode(
+    makeInteractiveCode(
         "container-kode-programmering-regning-oppgave-3",
         code,
     );
@@ -705,21 +857,228 @@ print(f"{r = }")
 
 
 
+</div>
+<div class="problem-level-2 admonition">
+<p class="admonition-title">Oppgave 4</p>
+<p>Universet er fryktelig stort. Vi kan sette tall på avstander i Universet, men når tall blir veldig store, blir de ganske vanskelige å tolke for menneskehjernen - vi har liksom ikke noen innebygd forståelse av ting vi ikke omgir oss på den lille planeten vi kaller Jorden (som vi sikkert kan være enig om er forholdsvis stor den også!).</p>
+<p>Her skal du regne litt på størrelser i Universet og omforme avstandene til noe vi kan tolke og forstå.</p>
+<div class="sd-tab-set tabs-custom docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+a</label><div class="sd-tab-content docutils">
+<p>Avstanden til vår nærmeste nabo, <em>månen</em>, er på ca. <span class="math notranslate nohighlight">\(384 \, 400 \ \mathrm{km}\)</span>. Tenk deg at vi skulle kjørt til månen med samme fart som en bil på E6 som har en fartsgrense på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span>.</p>
+<p>Bruk programmet under til å bestemme hvor mange dager det tar før vi kommer fram til månen.</p>
+<div id="container-kode-programmering-regning-oppgave-4-a"></div>
+<script type="text/javascript">
+    code = 
+`fart =      # FYLL INN: bilfart i km/h
+avstand =   # FYLL INN: avstand i km
+tid =       # FYLL INN: formel for tid gitt avstand og fart
+
+timer_per_dag =             # FYLL INN: antall timer per dag
+tid = tid / timer_per_dag   # <-- Omdanner enheten fra timer til dager!
+
+print(tid)
+`;   
+
+    makeInteractiveCode(
+        "container-kode-programmering-regning-oppgave-4-a",
+        code,
+    );
+</script>
 
 
 
 
-<div class="answer dropdown admonition">
+
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+b</label><div class="sd-tab-content docutils">
+<p>Avstanden til solen er omtrent <span class="math notranslate nohighlight">\(149 \, 600 \, 000 \ \mathrm{km}\)</span>.</p>
+<p>Vi tenker oss igjen at vi skal kjøre til solen med fart på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span>.</p>
+<p>Bruk programmet under til å bestemme hvor mange år det ville tatte å kjøre til solen.</p>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>For å regne ut antall timer per år, kan vi utføre regnestykket</p>
+<div class="math notranslate nohighlight">
+\[
+\text{timer per år} = (\text{timer per dag}) \cdot (\text{dager per år})
+\]</div>
+</div>
+<div id="container-kode-programmering-regning-oppgave-4-b"></div>
+<script type="text/javascript">
+    code = 
+`strekning = 149_600_000  # km til solen
+fart = 100  # bilfart i km/h
+
+tid = # FYLL INN: regn ut antall timer reisen tar
+timer_per_år = # FYLL INN: regn ut antall timer per år
+tid = # FYLL INN: omgjør fra antall timer til antall år
+
+print(tid)
+`;   
+
+    makeInteractiveCode(
+        "container-kode-programmering-regning-oppgave-4-b",
+        code,
+    );
+</script>
+
+
+
+
+
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+c</label><div class="sd-tab-content docutils">
+<div class="summary admonition">
+<p class="admonition-title">Fakta om lys</p>
+<ul class="simple">
+<li><p>Lys beveger seg med en konstant fart på ca. <span class="math notranslate nohighlight">\(300 \, 000 \ \mathrm{km/s}\)</span>. Vi kaller dette for <em>lysfarten</em>.</p></li>
+<li><p>Avstanden lyset reiser på 1 jordår, kaller vi for et <em>lysår</em>. For å regne ut denne avstanden kan vi bruke formelen</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+s = v\cdot t
+\]</div>
+</div>
+<p>Bruk programmet under til å bestemme hvor mange kilometer et lysår er.</p>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>For å regne ut antall sekunder per år, kan vi utføre regnestykket</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+    \text{sekunder} \\
+    \text{per} \\
+    \text{år}
+\end{pmatrix}
+= 
+\begin{pmatrix}
+    \text{sekunder} \\
+    \text{per} \\
+    \text{minutt}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    \text{minutter} \\
+    \text{per} \\
+    \text{time}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    \text{timer} \\
+    \text{per} \\
+    \text{dag}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    \text{dager} \\
+    \text{per} \\
+    \text{år}
+\end{pmatrix}
+\end{split}\]</div>
+</div>
+<div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
-<p>Feilene:</p>
-<ol class="arabic simple">
-<li><p><code class="code docutils literal highlight highlight-python"><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span></code> skal være <code class="code docutils literal highlight highlight-python"><span class="mi">2</span><span class="o">**</span><span class="mi">3</span></code></p></li>
-<li><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span></code> skal være <code class="code docutils literal highlight highlight-python"><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span></code></p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>           <span class="c1"># FIKS MEG</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<p>Programkode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">lysfart</span> <span class="o">=</span> <span class="mi">300_000</span> <span class="c1"># km / s</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">t_år</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
+<span class="linenos">4</span><span class="n">lysår</span> <span class="o">=</span> <span class="n">lysfart</span> <span class="o">*</span> <span class="n">t_år</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lysår</span><span class="w"> </span><span class="si">= :</span><span class="s2">_</span><span class="si">}</span><span class="s2"> km.&quot;</span><span class="p">)</span> <span class="c1"># IKKE RØR: formatterer utskriften pent!</span>
 </pre></div>
+</div>
+<p>Utskriften blir:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lysår = 9_460_800_000_000 km.</span>
+</pre></div>
+</div>
+<p>Som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+1 \ \text{lysår} = 9 \, 460 \, 800 \, 000 \, 000 \ \mathrm{km}.
+\]</div>
+</div>
+<div id="container-kode-programmering-regning-oppgave-4-c"></div>
+<script type="text/javascript">
+    code = 
+`lysfart = 300_000 # km / s
+
+t_år = # FYLL INN: regn ut antall sekunder på 1 år
+lysår = # FYLL INN: avstanden lyset reiser på 1 år i km
+
+print(f"{lysår = :_} km.") # IKKE RØR: formatterer utskriften pent!
+`;   
+
+    makeInteractiveCode(
+        "container-kode-programmering-regning-oppgave-4-c",
+        code,
+    );
+</script>
+
+
+
+
+
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+d</label><div class="sd-tab-content docutils">
+<p>Det nærmeste solsystemet til oss er <em>Alpha Centauri</em>. Avstanden til Alpha Centauri er ca. <span class="math notranslate nohighlight">\(4.25 \ \text{lysår}\)</span>.</p>
+<p>Bruk programmet under til å bestemme hvor lang mange år det ville tatt å kjøre med en bil som har en fart på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span> til Alpha Centauri.</p>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>Bruk avstanden du fant for lysår i kilometer fra oppgave c. Eller bare kopier kodelinjene som regner det ut!</p>
+</div>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p>Programkode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">fart</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># bilfarten km/h </span>
+<span class="linenos"> 2</span><span class="n">lysår</span> <span class="o">=</span> <span class="mi">9_460_800_000_000</span> <span class="c1"># km</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">strekning</span> <span class="o">=</span> <span class="mf">4.25</span> <span class="o">*</span> <span class="n">lysår</span>
+<span class="linenos"> 5</span><span class="n">reisetid</span> <span class="o">=</span> <span class="n">strekning</span> <span class="o">/</span> <span class="n">fart</span>
+<span class="linenos"> 6</span><span class="n">timer_per_år</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">reisetid</span> <span class="o">=</span> <span class="n">reisetid</span> <span class="o">/</span> <span class="n">timer_per_år</span>  <span class="c1"># &lt;-- omdanner fra timer til år</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">reisetid</span><span class="w"> </span><span class="si">:</span><span class="s2">_.0f</span><span class="si">}</span><span class="s2"> år.&quot;</span><span class="p">)</span> <span class="c1"># IKKE RØR: formatterer utskriften pent!</span>
+</pre></div>
+</div>
+<p>Utskriften blir:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">45_900_000 år.</span>
+</pre></div>
+</div>
+<p>som betyr at vi måtte kjørt bil i <span class="math notranslate nohighlight">\(45 \, 900 \, 000 \ \text{år}\)</span>. Nå har vi igjen møtt på et tall som er ufattelig å tolke for menneskehjernen. Men vi kan i det minste konkludere at det nærmeste solsystemet vi kjenner til er svært svært langt unna.</p>
+</div>
+<div id="container-kode-programmering-regning-oppgave-4-d"></div>
+<script type="text/javascript">
+    code = 
+`fart = 100 # bilfarten km/h 
+lysår = # FYLL INN: lysår i km. Kopier fra forrige oppgave!
+
+strekning = # FYLL INN: regn ut avstanden til Alpha Centauri i km
+reisetid = # FYLL INN: regn ut reisetiden i år
+timer_per_år = # FYLL INN: regn ut antall timer per år
+
+reisetid = reisetid / timer_per_år  # <-- omdanner fra timer til år
+
+print(f"{reisetid :_.0f} år.") # IKKE RØR: formatterer utskriften pent!
+`;   
+
+    makeInteractiveCode(
+        "container-kode-programmering-regning-oppgave-4-d",
+        code,
+    );
+</script>
+
+
+
+
+
 </div>
 </div>
 </div>
@@ -762,15 +1121,15 @@ print(f"{r = }")
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Variabler</p>
+        <p class="prev-next-title">Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</p>
       </div>
     </a>
     <a class="right-next"
-       href="../if_else/if_else.html"
+       href="../for_loops/for_loops.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</p>
+        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -790,9 +1149,8 @@ print(f"{r = }")
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regneoperasjoner-i-python">Regneoperasjoner i Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnerekkefolge">Regnerekkefølge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regnearter-i-python">Regnearter i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formler">Formler</a></li>
 </ul>
   </nav></div>
 
