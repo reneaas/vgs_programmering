@@ -193,6 +193,13 @@ file: interaktiv_kode/utforsk/utforsk_2.html
 
 ---
 
+:::{admonition} Deling før ganging
+---
+class: sidenote, margin
+---
+Merk at i Python så skjer deling før ganging! Dette får du bruk for i oppgave 1.
+:::
+
 ::::{admonition} Oppgave 1
 ---
 class: problem-level-1
