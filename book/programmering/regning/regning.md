@@ -7,10 +7,10 @@ class: tip
 ---
 Etter å ha lest dette delkapittelet, er målet at du skal kunne:
 * Bruke Pythonkode til å regne ut enkle regnestykker.
-* Brule Pythonkode til å regne med formler.
+* Bruke Pythonkode til å regne med formler.
 :::
 
-Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator som lar oss regne matematisk på en måte vi ellers ikke kan gjøre på noen annen måte. Dette kan være å gjenta en utregning millioner av ganger frem til vi oppnår et ønsket resultat, eller bare regne ut en enkel matematisk formel. 
+Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å løse en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder. 
 
 ## Regnearter i Python
 
@@ -319,7 +319,7 @@ file: ./interaktiv_kode/oppgaver/oppgave_3.html
 ---
 class: problem-level-2
 ---
-Universet er fryktelig stort. Vi kan sette tall på avstander i Universet, men når tall blir veldig store, blir de ganske vanskelige å tolke for menneskehjernen - vi har liksom ikke noen innebygd forståelse av ting vi ikke omgir oss på den lille planeten vi kaller Jorden (som vi sikkert kan være enig om er forholdsvis stor den også!).
+Universet er fryktelig stort. Vi kan sette tall på avstander i Universet, men når tall blir veldig store, blir de ganske vanskelige å tolke for menneskehjernen - vi har liksom ikke noen innebygd forståelse av ting vi ikke omgir oss med på den lille planeten vi kaller Jorden (som vi sikkert kan være enig om er forholdsvis stor den også!).
 
 Her skal du regne litt på størrelser i Universet og omforme avstandene til noe vi kan tolke og forstå.
 
