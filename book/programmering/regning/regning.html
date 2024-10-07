@@ -39,10 +39,13 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=4da46511" />
     <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f1d13629" />
     <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=041db16c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=c6b7c59c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=d0756f9e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/mathjax.css?v=54189cd9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
@@ -254,15 +257,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 2P</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/intro.html">Programmering av likninger og likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/bakgrunnsstoff/bakgrunnsstoff.html">Bakgrunnsstoff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/likninger/likninger.html">Likninger med programmering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/likningssystemer/likningssystemer.html">Likningssystemer</a></li>
-</ul>
-</details></li>
-</ul>
 
     </div>
 </nav></div>
@@ -433,13 +427,13 @@ document.write(`
 <li><p>Bruke Pythonkode til å regne med formler.</p></li>
 </ul>
 </div>
-<p>Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å løse en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder.</p>
+<p>Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å regne ut en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder.</p>
 <section id="regnearter-i-python">
 <h2>Regnearter i Python<a class="headerlink" href="#regnearter-i-python" title="Link to this heading">#</a></h2>
 <p>Vi starter med å bli kjent med de vanlige regneartene vi bruker i matematikken.</p>
 <div class="explore admonition">
 <p class="admonition-title">Utforsk 1: regnearter</p>
-<div class="sd-tab-set tabs-custom docutils">
+<div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 a</label><div class="sd-tab-content docutils">
@@ -572,7 +566,7 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 s = v\cdot t
 \]</div>
 <p>til å regne ut strekningen <span class="math notranslate nohighlight">\(s\)</span> dersom vi har farten <span class="math notranslate nohighlight">\(v\)</span> og tiden <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<div class="sd-tab-set tabs-custom docutils">
+<div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 a</label><div class="sd-tab-content docutils">
@@ -655,6 +649,10 @@ print(s)
 
 </div>
 <hr class="docutils" />
+<div class="sidenote margin admonition">
+<p class="admonition-title">Deling før ganging</p>
+<p>Merk at i Python så skjer deling før ganging! Dette får du bruk for i oppgave 1.</p>
+</div>
 <div class="problem-level-1 admonition">
 <p class="admonition-title">Oppgave 1</p>
 <p>Gjennomfør quizen!</p>
@@ -798,7 +796,7 @@ print((3 + 1) / 2)
 \[
 C = \dfrac{5}{9} \cdot (F - 32)
 \]</div>
-<div class="sd-tab-set tabs-custom docutils">
+<div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 a</label><div class="sd-tab-content docutils">
@@ -862,26 +860,41 @@ print(C)
 <p class="admonition-title">Oppgave 4</p>
 <p>Universet er fryktelig stort. Vi kan sette tall på avstander i Universet, men når tall blir veldig store, blir de ganske vanskelige å tolke for menneskehjernen - vi har liksom ikke noen innebygd forståelse av ting vi ikke omgir oss med på den lille planeten vi kaller Jorden (som vi sikkert kan være enig om er forholdsvis stor den også!).</p>
 <p>Her skal du regne litt på størrelser i Universet og omforme avstandene til noe vi kan tolke og forstå.</p>
-<div class="sd-tab-set tabs-custom docutils">
+<div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
 a</label><div class="sd-tab-content docutils">
-<p>Avstanden til vår nærmeste nabo, <em>månen</em>, er på ca. <span class="math notranslate nohighlight">\(384 \, 400 \ \mathrm{km}\)</span>. Tenk deg at vi skulle kjørt til månen med samme fart som en bil på E6 som har en fartsgrense på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span>.</p>
-<p>Bruk programmet under til å bestemme hvor mange dager det tar før vi kommer fram til månen.</p>
+<p>I mange sammenhenger må vi omforme mellom forskjellige enheter av tid for å tolke tallet. For eksempel vil ikke 7200 sekunder, 45 000 timer eller 892 dager være spesielt nyttige måter å uttrykke hvor lang tid noe tar.</p>
+<p>I kodevinduet under vises et eksempel der en tid i sekunder omformes til tid i dager. Da bruker vi følgende omgjøringsfaktor til å omforme enheten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text{faktor} =
+\begin{pmatrix}
+    \text{sekunder} \\
+    \text{per} \\
+    \text{minutt}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    \text{minutter} \\
+    \text{per} \\
+    \text{time}
+\end{pmatrix}
+\end{split}\]</div>
+<p>Les programmet og forutsi hva som skrives ut. Skriv inn hypotesene din under for å sjekke!</p>
 <div id="container-kode-programmering-regning-oppgave-4-a"></div>
 <script type="text/javascript">
     code = 
-`fart =      # FYLL INN: bilfart i km/h
-avstand =   # FYLL INN: avstand i km
-tid =       # FYLL INN: formel for tid gitt avstand og fart
+`tid = 7200     # sekunder
 
-timer_per_dag =             # FYLL INN: antall timer per dag
-tid = tid / timer_per_dag   # <-- Omdanner enheten fra timer til dager!
+sekunder_per_time = 60 * 60     # 60 s/min * 60 min/time = 60 * 60 s/time
+
+tid = tid / sekunder_per_time   # <-- Omgjør 'tid' fra sekunder til timer!
 
 print(tid)
 `;   
 
-    makeInteractiveCode(
+    makePredictionInteractiveCode(
         "container-kode-programmering-regning-oppgave-4-a",
         code,
     );
@@ -895,26 +908,25 @@ print(tid)
 <input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-8">
 b</label><div class="sd-tab-content docutils">
-<p>Avstanden til solen er omtrent <span class="math notranslate nohighlight">\(149 \, 600 \, 000 \ \mathrm{km}\)</span>.</p>
-<p>Vi tenker oss igjen at vi skal kjøre til solen med fart på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span>.</p>
-<p>Bruk programmet under til å bestemme hvor mange år det ville tatte å kjøre til solen.</p>
+<p>Avstanden til vår nærmeste nabo, <em>månen</em>, er på ca. <span class="math notranslate nohighlight">\(384 \, 400 \ \mathrm{km}\)</span>. Tenk deg at vi skulle kjørt til månen med samme fart som en bil på E6 som har en fartsgrense på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span>.</p>
+<p>Bruk programmet under til å bestemme hvor mange dager det tar før vi kommer fram til månen.</p>
 <div class="dropdown hints admonition">
 <p class="admonition-title">Hint</p>
-<p>For å regne ut antall timer per år, kan vi utføre regnestykket</p>
+<p>Du kan få bruk for vei-fart-tid formelen:</p>
 <div class="math notranslate nohighlight">
 \[
-\text{timer per år} = (\text{timer per dag}) \cdot (\text{dager per år})
+s = v\cdot t
 \]</div>
 </div>
 <div id="container-kode-programmering-regning-oppgave-4-b"></div>
 <script type="text/javascript">
     code = 
-`strekning = 149_600_000  # km til solen
-fart = 100  # bilfart i km/h
+`fart = 100                       # km/h
+strekning = 384_400              # km
+tid = # FYLL INN: formel for å regne ut 'tid'
 
-tid = # FYLL INN: regn ut antall timer reisen tar
-timer_per_år = # FYLL INN: regn ut antall timer per år
-tid = # FYLL INN: omgjør fra antall timer til antall år
+timer_per_dag = # FYLL INN: antall timer per dag
+tid = # FYLL INN: formel for å omgjøre 'tid' fra timer til dager
 
 print(tid)
 `;   
@@ -929,10 +941,76 @@ print(tid)
 
 
 
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p>Programkode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fart</span> <span class="o">=</span> <span class="mi">100</span>                       <span class="c1"># km/h</span>
+<span class="n">strekning</span> <span class="o">=</span> <span class="mi">384_400</span>              <span class="c1"># km</span>
+<span class="n">tid</span> <span class="o">=</span> <span class="n">avstand</span> <span class="o">/</span> <span class="n">fart</span>             <span class="c1"># h (timer) </span>
+
+<span class="n">timer_per_dag</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="n">tid</span> <span class="o">=</span> <span class="n">tid</span> <span class="o">/</span> <span class="n">timer_per_dag</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-9">
 c</label><div class="sd-tab-content docutils">
+<p>Avstanden til solen er omtrent <span class="math notranslate nohighlight">\(149 \, 600 \, 000 \ \mathrm{km}\)</span>.</p>
+<p>Vi tenker oss igjen at vi skal kjøre til solen med fart på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span>.</p>
+<p>Bruk programmet under til å bestemme hvor mange år det ville tatte å kjøre til solen.</p>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>For å regne ut antall timer per år, kan vi utføre regnestykket</p>
+<div class="math notranslate nohighlight">
+\[
+\text{timer per år} = (\text{timer per dag}) \cdot (\text{dager per år})
+\]</div>
+</div>
+<div id="container-kode-programmering-regning-oppgave-4-c"></div>
+<script type="text/javascript">
+    code = 
+`strekning = 149_600_000  # km til solen
+fart = 100  # bilfart i km/h
+
+tid = # FYLL INN: regn ut antall timer reisen tar
+timer_per_år = # FYLL INN: regn ut antall timer per år
+tid = # FYLL INN: omgjør fra antall timer til antall år
+
+print(tid)
+`;   
+
+    makeInteractiveCode(
+        "container-kode-programmering-regning-oppgave-4-c",
+        code,
+    );
+</script>
+
+
+
+
+
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p>Programkode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">strekning</span> <span class="o">=</span> <span class="mi">149_600_000</span>  <span class="c1"># km til solen</span>
+<span class="linenos">2</span><span class="n">fart</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># bilfart i km/h</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">tid</span> <span class="o">=</span> <span class="n">strekning</span> <span class="o">/</span> <span class="n">fart</span>
+<span class="linenos">5</span><span class="n">timer_per_år</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
+<span class="linenos">6</span><span class="n">tid</span> <span class="o">=</span> <span class="n">tid</span> <span class="o">/</span> <span class="n">timer_per_år</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">tid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+d</label><div class="sd-tab-content docutils">
 <div class="summary admonition">
 <p class="admonition-title">Fakta om lys</p>
 <ul class="simple">
@@ -981,6 +1059,27 @@ s = v\cdot t
 \end{pmatrix}
 \end{split}\]</div>
 </div>
+<div id="container-kode-programmering-regning-oppgave-4-d"></div>
+<script type="text/javascript">
+    code = 
+`lysfart = 300_000 # km / s
+
+t_år = # FYLL INN: regn ut antall sekunder på 1 år
+lysår = # FYLL INN: avstanden lyset reiser på 1 år i km
+
+print(f"{lysår = :_} km.") # IKKE RØR: formatterer utskriften pent!
+`;   
+
+    makeInteractiveCode(
+        "container-kode-programmering-regning-oppgave-4-d",
+        code,
+    );
+</script>
+
+
+
+
+
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p>Programkode:</p>
@@ -1002,19 +1101,33 @@ s = v\cdot t
 1 \ \text{lysår} = 9 \, 460 \, 800 \, 000 \, 000 \ \mathrm{km}.
 \]</div>
 </div>
-<div id="container-kode-programmering-regning-oppgave-4-c"></div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+e</label><div class="sd-tab-content docutils">
+<p>Det nærmeste solsystemet til oss er <em>Alpha Centauri</em>. Avstanden til Alpha Centauri er ca. <span class="math notranslate nohighlight">\(4.25 \ \text{lysår}\)</span>.</p>
+<p>Bruk programmet under til å bestemme hvor mange år det ville tatt å kjøre med en bil som har en fart på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span> til Alpha Centauri.</p>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>Bruk avstanden du fant for lysår i kilometer fra oppgave c. Eller bare kopier kodelinjene som regner det ut!</p>
+</div>
+<div id="container-kode-programmering-regning-oppgave-4-e"></div>
 <script type="text/javascript">
     code = 
-`lysfart = 300_000 # km / s
+`fart = 100 # bilfarten km/h 
+lysår = # FYLL INN: lysår i km. Kopier fra forrige oppgave!
 
-t_år = # FYLL INN: regn ut antall sekunder på 1 år
-lysår = # FYLL INN: avstanden lyset reiser på 1 år i km
+strekning = # FYLL INN: regn ut avstanden til Alpha Centauri i km
+reisetid = # FYLL INN: regn ut reisetiden i år
+timer_per_år = # FYLL INN: regn ut antall timer per år
 
-print(f"{lysår = :_} km.") # IKKE RØR: formatterer utskriften pent!
+reisetid = reisetid / timer_per_år  # <-- omdanner fra timer til år
+
+print(f"{reisetid :_.0f} år.") # IKKE RØR: formatterer utskriften pent!
 `;   
 
     makeInteractiveCode(
-        "container-kode-programmering-regning-oppgave-4-c",
+        "container-kode-programmering-regning-oppgave-4-e",
         code,
     );
 </script>
@@ -1023,16 +1136,6 @@ print(f"{lysår = :_} km.") # IKKE RØR: formatterer utskriften pent!
 
 
 
-</div>
-<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
-d</label><div class="sd-tab-content docutils">
-<p>Det nærmeste solsystemet til oss er <em>Alpha Centauri</em>. Avstanden til Alpha Centauri er ca. <span class="math notranslate nohighlight">\(4.25 \ \text{lysår}\)</span>.</p>
-<p>Bruk programmet under til å bestemme hvor mange år det ville tatt å kjøre med en bil som har en fart på <span class="math notranslate nohighlight">\(100 \ \mathrm{km/h}\)</span> til Alpha Centauri.</p>
-<div class="dropdown hints admonition">
-<p class="admonition-title">Hint</p>
-<p>Bruk avstanden du fant for lysår i kilometer fra oppgave c. Eller bare kopier kodelinjene som regner det ut!</p>
-</div>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p>Programkode:</p>
@@ -1054,31 +1157,6 @@ d</label><div class="sd-tab-content docutils">
 </div>
 <p>som betyr at vi måtte kjørt bil i <span class="math notranslate nohighlight">\(45 \, 900 \, 000 \ \text{år}\)</span>. Nå har vi igjen møtt på et tall som er ufattelig å tolke for menneskehjernen. Men vi kan i det minste konkludere at det nærmeste solsystemet vi kjenner til er svært svært langt unna.</p>
 </div>
-<div id="container-kode-programmering-regning-oppgave-4-d"></div>
-<script type="text/javascript">
-    code = 
-`fart = 100 # bilfarten km/h 
-lysår = # FYLL INN: lysår i km. Kopier fra forrige oppgave!
-
-strekning = # FYLL INN: regn ut avstanden til Alpha Centauri i km
-reisetid = # FYLL INN: regn ut reisetiden i år
-timer_per_år = # FYLL INN: regn ut antall timer per år
-
-reisetid = reisetid / timer_per_år  # <-- omdanner fra timer til år
-
-print(f"{reisetid :_.0f} år.") # IKKE RØR: formatterer utskriften pent!
-`;   
-
-    makeInteractiveCode(
-        "container-kode-programmering-regning-oppgave-4-d",
-        code,
-    );
-</script>
-
-
-
-
-
 </div>
 </div>
 </div>

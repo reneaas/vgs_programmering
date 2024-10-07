@@ -39,10 +39,13 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=4da46511" />
     <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f1d13629" />
     <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=041db16c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=c6b7c59c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=d0756f9e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/mathjax.css?v=54189cd9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
@@ -254,15 +257,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk 2P</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/intro.html">Programmering av likninger og likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/bakgrunnsstoff/bakgrunnsstoff.html">Bakgrunnsstoff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/likninger/likninger.html">Likninger med programmering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../matematikk/2p/likninger_og_likningssystemer/likningssystemer/likningssystemer.html">Likningssystemer</a></li>
-</ul>
-</details></li>
-</ul>
 
     </div>
 </nav></div>
@@ -410,7 +404,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-lokker-for-a-lage-tall"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å lage tall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-lokker-for-a-gjenta-noe"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å gjenta noe</a></li>
 </ul>
             </nav>
         </div>
@@ -424,293 +419,841 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="for-lokker">
 <h1><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker<a class="headerlink" href="#for-lokker" title="Link to this heading">#</a></h1>
-<div class="warning margin admonition">
-<p class="admonition-title">Gjør dette først!</p>
-<p>Du bør ha lest om <a class="reference internal" href="../while_loops/while_loops.html"><span class="std std-doc">while-løkker</span></a> før du leser dette kapittelet, eller være godt kjent med bruken av <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker.</p>
-</div>
 <div class="tip admonition">
-<p class="admonition-title">Læringsmål: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</p>
-<p>Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:</p>
+<p class="admonition-title">Læringsmål</p>
+<p>Etter dette delkapittelet, er målet at du skal:</p>
 <ul class="simple">
-<li><p>Lese og forstå <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker som brukes <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen.</p></li>
-<li><p>Skrive grunnleggende <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker som bruker <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen til å løse matematiske problemer.</p></li>
+<li><p>Kunne bruke <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker med <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen for å lage en liste med tall.</p></li>
+<li><p>Kunne bruke <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker til å gjenta én eller kodelinjer et bestemt antall ganger.</p></li>
 </ul>
 </div>
-<p>En <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke kan tenkes på som en <em>spesiell</em> type <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke som automatiserer tellingen for deg. Det finnes mange typer <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker, men vi skal konsentrere oss om en som er mest nyttig i matematikk.</p>
-<p>Vi starter med en sammenlikning av <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker og <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker:</p>
+<section id="for-lokker-for-a-lage-tall">
+<h2><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å lage tall<a class="headerlink" href="#for-lokker-for-a-lage-tall" title="Link to this heading">#</a></h2>
+<p>En <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke er noe som kan brukes til å lage en liste med tall. Dette er det første vi skal se på.</p>
 <div class="explore admonition">
 <p class="admonition-title">Utforsk 1</p>
-<p>Under vises to interaktive kodevinduer. Begge kodene skriver ut de 5 første naturlige tallene, men den éne bruker en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke og den andre bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke.</p>
-<!-- ::::{grid}
----
+<p>Her skal du bli kjent med <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen som ofte brukes sammen med <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+a</label><div class="sd-tab-content docutils">
+<p>Under vises tre eksempler på programmer som bruker <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span></code>-funksjonen med tre tall <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code>, <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">c</span></code>.</p>
+<p>Kjør programmene og se på utskriften deres. Bruk de tre kodeeksemplene til å formulere en hypotese på hva de tre tallene bestemmer.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-1-a-eksempel-1"></div>
+<script type="text/javascript">
 
-gutter: 1
----
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(2, 6, 1):
+    print(x)
+`;
 
-:::{grid-item-card} 
-`for`{l=python}-løkke
-```{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1_for_loop.html
----
-```
-:::
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-1-a-eksempel-1",
+            code,
+        );
+    });
+</script>
 
-:::{grid-item-card} 
-`while`{l=python}-løkke
-```{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1_while_loop.html
----
-```
-:::
-:::: -->
-<dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Undersøk hva de tre tallene i <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code> gjør for noe ved å prøve ut forskjellige kombinasjoner av tall. Kan du forklare rollen til de tre tallene?</p>
-</dd>
-<dd><p><em>Tips</em>: Prøv ut ett tall av gangen! Du kan også bruke negative tall.</p>
-</dd>
-</dl>
-<br>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>De tre tallene har følgende betydning:</p>
-<ul class="simple">
-<li><p>Det første tallet er startverdien til tellingen.</p></li>
-<li><p>Det andre tallet er slutten på tellingen. Men det siste tallet er aldri inkludert.</p></li>
-<li><p>Det tredje tallet er avstanden mellom hvert tall, kalt for steglengden.</p></li>
-</ul>
-<p>Vi kan altså tenke på de det som at vi skriver <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">,</span> <span class="n">steglengde</span><span class="p">)</span></code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-<dl class="simple myst">
-<dt>Deloppgave 2</dt><dd><p>Undersøk hva som skjer hvis du bare bruker ett tall, som <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span></code>.</p>
-</dd>
-<dd><p>Undersøk hva som skjer når du bruker to tall, som <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span></code>.</p>
-</dd>
-<dd><p>Hva er sammenhengen med når du bruker tre tall?</p>
-</dd>
-</dl>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<ul class="simple">
-<li><p>Hvis du bare bruker ett tall, som <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span></code>, så vil startverdien være 0 og steglengden være 1. Det er det samme som å skrive <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code>. Mer generelt kan vi skrive <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">stopp</span><span class="p">)</span></code>. Da vil vi automatisk ha startverdien 0 og steglengden 1.</p></li>
-<li><p>Hvis vi bruker to tall, som <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span></code>, så vil startverdien være 1 og steglengden være 1. Det er det samme som å skrive <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code>. Mer generelt kan vi skrive <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">)</span></code>. Da vil vi automatisk ha steglengden 1.</p></li>
-</ul>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-1-a-eksempel-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for y in range(-1, 5, 2):
+    print(y)
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-1-a-eksempel-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 3</dt><dd><p>Undersøk om du kan få <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka til å skrive ut de 10 første naturlige tallene.</p>
-</dd>
-</dl>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi må endre stoppverdien til <code class="code docutils literal highlight highlight-python"><span class="mi">11</span></code> for å få med tallet 10.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-</span><span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Fra deloppgave 2, lærte vi også at vi ikke trenger å ta med steglengden når den er 1. Derfor kan vi skrive <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span></code> i stedet.</p>
-</div>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 4</dt><dd><p>Undersøk om du kan få <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka til å skrive ut alle partall fra 2 til 10.</p>
-</dd>
-</dl>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi må sette følgende verdier:</p>
-<ul class="simple">
-<li><p>Startverdi: 2</p></li>
-<li><p>Stoppverdi: 11 (husk at vi aldri får med det siste tallet)</p></li>
-<li><p>Steglengde: 2</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-</span><span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 5</dt><dd><p>Kan du få <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka til å skrive ut tallene fra 10 til 1 i synkende rekkefølge?</p>
-</dd>
-</dl>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi må sette følgende verdier:</p>
-<ul class="simple">
-<li><p>Startverdi: 10</p></li>
-<li><p>Stoppverdi: 0 (husk at vi aldri får med det siste tallet)</p></li>
-<li><p>Steglengde: -1</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-</span><span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Nå har du fått litt oversikt over hvordan en enkel <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke fungerer. Nå skal du se på hvordan du kan få en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke til å løse tilsvarende problemer som du løste når du så på <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker.</p>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 2</p>
-<p>Under vises en kode som regner ut summen av de 5 første naturlige tallene.</p>
-<dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Endre programet slik at det regner ut summen av de 10 første naturlige tallene.</p>
-</dd>
-</dl>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi endrer stoppverdien til <code class="code docutils literal highlight highlight-python"><span class="mi">11</span></code> for å få med tallet 10.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="hll"><span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-</span><span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Eksempel 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-1-a-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for z in range(7, 3, -1):
+    print(z)
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-1-a-eksempel-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 </div>
 <br>
-<dl class="simple myst">
-<dt>Deloppgave 2</dt><dd><p>Endre programmet slik at det regner ut summen av de 100 første naturlige tallene. (Det kan lurt å ta bort <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-setningen i <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka for å unngå for mye utskrift.)</p>
-</dd>
-</dl>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi endrer stoppverdien til <code class="code docutils literal highlight highlight-python"><span class="mi">101</span></code> for å få med tallet 100.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="hll"><span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-</span><span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen ble: </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="dropdown check admonition">
+<p class="admonition-title">Test hypotesen din her når du er klar!</p>
+<p>Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.</p>
+<p>Skriv inn under og sjekk!</p>
+<div id="container-kode-for-loops-utforsk-1-a-test-deg-selv"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-5, 7, 3):
+    print(x)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-for-loops-utforsk-1-a-test-deg-selv",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+b</label><div class="sd-tab-content docutils">
+<p>Under vises tre eksempler på programmer som bruker <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen som <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code>.</p>
+<p>Kjør programmene og se på utskriften deres. Bruk de tre kodeeksemplene til å formulere en hypotese på hva de to tallene bestemmer og hvordan denne skrivemåten henger sammen med skrivemåten i deloppgave a.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-1-b-eksempel-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(2, 6):
+    print(x)
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-1-b-eksempel-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-1-b-eksempel-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-1, 5):
+    print(x)
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-1-b-eksempel-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Eksempel 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-1-b-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(5, 2): # <-- Det er ikke feil at du ikke får noen utskrift!
+    print(x)
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-1-b-eksempel-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 </div>
 <br>
-<dl class="simple myst">
-<dt>Deloppgave 3</dt><dd><p>Endre programmet slik at det regner ut summen av de 100 første kvadrattallene.</p>
-</dd>
-</dl>
-<div class="hints dropdown admonition">
-<p class="admonition-title">Hint: Kvadrattall?</p>
-<p>Et kvadrattall er et tall på formen <span class="math notranslate nohighlight">\(n^2\)</span> for et naturlig tall <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="dropdown check admonition">
+<p class="admonition-title">Test hypotesen din her når du er klar!</p>
+<p>Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.</p>
+<p>Skriv inn under og sjekk!</p>
+<div id="container-kode-for-loops-utforsk-1-b-test-deg-selv"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-2, 3):
+    print(x)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-for-loops-utforsk-1-b-test-deg-selv",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi må endre på formelen som oppdaterer verdien til <code class="code docutils literal highlight highlight-python"><span class="n">s</span></code> slik at vi legger til et kvadrattall <code class="code docutils literal highlight highlight-python"><span class="n">i</span><span class="o">**</span><span class="mi">2</span></code> i stedet for et naturlig tall <code class="docutils literal notranslate"><span class="pre">i</span></code> (linje 3).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-<span class="hll"><span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
-</span><span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen ble: </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 4</dt><dd><p>Et partall kan skrives på formen <span class="math notranslate nohighlight">\(2i\)</span> for et naturlig tall <span class="math notranslate nohighlight">\(i \in \mathbb{N}\)</span>. Endre programmet slik at det regner ut summen av de 100 første partallene</p>
-</dd>
-</dl>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi endrer på formelen som oppdaterer verdien til <code class="code docutils literal highlight highlight-python"><span class="n">s</span></code> slik at vi legger til et partall <code class="code docutils literal highlight highlight-python"><span class="mi">2</span><span class="o">*</span><span class="n">i</span></code> i stedet for et naturlig tall <code class="docutils literal notranslate"><span class="pre">i</span></code> (linje 3).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">2</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
-<span class="hll"><span class="linenos">3</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span>
-</span><span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen ble: </span><span class="si">{</span><span class="n">s</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<div class="problem-level-1 admonition">
-<p class="admonition-title">Oppgave 1</p>
-<p>Vi husker at <span class="math notranslate nohighlight">\(x\)</span> er et kvadrattall dersom <span class="math notranslate nohighlight">\(x = n^2\)</span> for et tall <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>. <br>
-Under vises et uferdig program som skal bruke en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke til å legge sammen de 5 første kvadrattallene.</p>
-<div id="container-kode-programmering-for-løkker-oppgave-1"></div>
-<script type="text/javascript">
-    code = `
-s = 0
-for n in range(1, 6): 
-    s = # FYLL INN: legg på kvadrattall
-
-print(f"{s = }")
-`;   
-
-    generateInteractiveCode(
-        "container-kode-programmering-for-løkker-oppgave-1",
-        code,
-    );
-</script>
-
-<dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Gjør ferdig koden og kjør programmet. <br> Sjekk at utskriften stemmer ved regning.</p>
-</dd>
-<dt>Delopppgave 2</dt><dd><p>Endre programmet slik at det regner ut summen av de 10 første kvadrattallene. <br> Stemmer svaret du får ved å kjøre programmet?</p>
-</dd>
-<dt>Deloppgave 3</dt><dd><p>Endre programmet til å regne ut summen av de 100 første kubikktallene. <br> Hva blir summen?</p>
-</dd>
-</dl>
+<p>Ta gjerne en titt på oppsummeringen av utforsk 1 før du går videre!</p>
+<div class="summary dropdown admonition">
+<p class="admonition-title">Oppsummering: utforsk 1</p>
+<p>Når vi bruker <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen til å lage en liste med tall kan vi enten bruke den som:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+<code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">,</span> <span class="n">steglengde</span><span class="p">)</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">,</span> <span class="n">steglengde</span><span class="p">):</span>
+    <span class="c1"># kode som skal gjentas</span>
+</pre></div>
 </div>
-<div class="problem-level-2 admonition">
-<p class="admonition-title">Oppgave 2</p>
-<p>Vi minner om at <span class="math notranslate nohighlight">\(n\)</span>-fakultet er definert som</p>
-<div class="math notranslate nohighlight">
-\[
-n! = 1 \cdot 2 \cdot \ldots \cdot (n - 1) \cdot n.
-\]</div>
-<p>For eksempel er</p>
-<div class="math notranslate nohighlight">
-\[
-4! = 1 \cdot 2 \cdot 3 \cdot 4 = 24.
-\]</div>
-<dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Under vises et program som regner ut <span class="math notranslate nohighlight">\(4!\)</span> der kodelinjene er plassert i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i det interaktivt kodevinduet og kjør det.  <br> Blir svaret riktig?</p>
-</dd>
-</dl>
-<div id="container-parsons-puzzle-programmering-for-løkker-oppgave-2" class="puzzle-container"></div>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> er det første tallet i listen.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">stopp</span></code> er stoppekriteriet. Vi stopper alltid <em>før</em> dette tallet.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">steglengde</span></code> er hvor mye vi skal endre på løkkevariabelen <code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> på hver runde i løkken.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> kalles for <strong>løkkevariabelen</strong> fordi den lages av løkka og endres for hver runde i løkka automatisk.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eksempel</p></th>
+<th class="head"><p>Liste med tall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 2, 3, 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 3, 5, 7, 9\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(5, 4, 3, 2\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+<code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">)</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">):</span>
+    <span class="c1"># kode som skal gjentas</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> er det første tallet i listen.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">stopp</span></code> er stoppekriteriet. Vi stopper alltid <em>før</em> dette tallet.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">steglengde</span></code> er satt fast til <code class="code docutils literal highlight highlight-python"><span class="mi">1</span></code> som standardverdi her.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">y</span></code> kalles for <strong>løkkevariabelen</strong> fordi den lages av løkka og endres for hver runde i løkka automatisk.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eksempel</p></th>
+<th class="head"><p>Liste med tall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 2, 3, 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 2, 3, 4, 5, 6, 7, 8, 9\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></p></td>
+<td><p>Ingen tall lages</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="check admonition">
+<p class="admonition-title">Quiz 1</p>
+<p>Ta quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-for-løkker-quiz-1" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
 
 <script type="text/javascript">
-    codeString = 
-`p = 1
+    document.addEventListener("DOMContentLoaded", () => {
 
-for n in range(1, 5, 1):
-    p = p * n 
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(1, 5, 1): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$1, 2, 3, 4$', isCorrect: true },
+                    { content: '$1, 2, 3, 4, 5$', isCorrect: false },
+                    { content: '$1, 2, 3$', isCorrect: false },
+                    { content: '$1, 2, 3, 4, 5, 6$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(1, 5, 2): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$1, 3$', isCorrect: true },
+                    { content: '$1, 3, 5$', isCorrect: false },
+                    { content: '$1, 3, 4$', isCorrect: false },
+                    { content: '$0, 2, 4$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva er det første tallet som skrives ut av programmet? <pre><code class="python">for x in range(7, -1, -2): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$7$', isCorrect: true },
+                    { content: '$6$', isCorrect: false },
+                    { content: '$-2$', isCorrect: false },
+                    { content: '$-1$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva er det siste tallet som skrives ut av programmet? <pre><code class="python">for x in range(4, 11, 3): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$10$', isCorrect: true },
+                    { content: '$7$', isCorrect: false },
+                    { content: '$11$', isCorrect: false },
+                    { content: '$9$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program gir utskriften <pre><code class="console">-4 \n-2 \n0 \n2 \n4</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-4, 5, 2): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-4, 4, 2): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-4, 2, 4): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-4, 2, 5): \n    print(x)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke to programmer gir samme utskrift?',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-2, 4, 1): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-2, 4): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(4, -2, 1): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(4, 2, -1): \n    print(x)</code></pre>', isCorrect: false },
+                ]
+            },
 
-print(f"{p = }")
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(10, 0): \n    print(x)</code></pre>',
+                answers: [
+                    { content: 'Ingen', isCorrect: true },
+                    { content: '$10, 9, \\ldots, 3, 2, 1$', isCorrect: false },
+                    { content: '$10, 9, \\ldots, 3, 2, 1, 0$', isCorrect: false },
+                    { content: '$0, 1, 2, \\ldots, 9$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke(t) program gir utskriften <pre><code class="console">0 \n10 \n20 \n30 \n40 \n50</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(0, 60, 10): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(0, 6, 1): \n    print(10 * x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(0, 50, 10): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(0, 51, 10): \n    print(x)</code></pre>', isCorrect: true },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-for-løkker-quiz-1', questionsData);
+    });
+</script>
+</div>
+<hr class="docutils" />
+<p>En annen vanlig måte å jobbe med <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker på, er at ønsker å gjenta en eller flere utregninger et bestemt antall ganger. Dette skal du se nærmere på i utforsk 2.</p>
+</section>
+<section id="for-lokker-for-a-gjenta-noe">
+<h2><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å gjenta noe<a class="headerlink" href="#for-lokker-for-a-gjenta-noe" title="Link to this heading">#</a></h2>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 2</p>
+<p>Her skal du bli kjent med hvordan <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker kan brukes til å gjenta en eller flere kodelinjer et bestemt antall ganger.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+a</label><div class="sd-tab-content docutils">
+<p>Under vises tre eksempler på programmer som bruker <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker med kun ett tall i <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen.</p>
+<p>Kjør eksempelkodene og se på utskriften. Lag en hypotese om hvordan denne typen <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker fungerer.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-2-a-eksempel-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(5):
+    print(x)
 `;
-    
-    // Initialize the puzzle
-    makeParsonsPuzzle('container-parsons-puzzle-programmering-for-løkker-oppgave-2', codeString);
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-2-a-eksempel-1",
+            code,
+        );
+    });
 </script>
-<br>
-<div id="container-kode-programmering-for-løkker-oppgave-2"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-2-a-eksempel-2"></div>
 <script type="text/javascript">
-    code = `
-# FYLL INN: kopier koden fra løsningen av puslespillet og lim inn her
-`;   
 
-    generateInteractiveCode(
-        "container-kode-programmering-for-løkker-oppgave-2",
-        code,
-    );
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for y in range(2):
+    print(y)
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-2-a-eksempel-2",
+            code,
+        );
+    });
 </script>
 
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 2</dt><dd><p>Endre programmet slik at det regner ut <span class="math notranslate nohighlight">\(7!\)</span>. <br> Hva blir svaret? svaret ved regning.</p>
-</dd>
-</dl>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 3</dt><dd><p>Dobbeltfakultet <span class="math notranslate nohighlight">\(n!!\)</span> er definert som at du tar produktet av annenhvert tall. Hvis tallet <span class="math notranslate nohighlight">\(n\)</span> er et oddetall, starter du på <span class="math notranslate nohighlight">\(1\)</span>. Hvis <span class="math notranslate nohighlight">\(n\)</span> er et partall, starter du på <span class="math notranslate nohighlight">\(2\)</span>. For eksempel er</p>
-<div class="math notranslate nohighlight">
-\[
-    5!! = 1 \cdot 3 \cdot 5 = 15  \quad \text{og} \quad 6!! = 2 \cdot 4 \cdot 6 = 48.
-    \]</div>
-<p>Endre programmet slik at det regner ut <span class="math notranslate nohighlight">\(6!!\)</span> <br> Stemmer svaret overens med svaret over?</p>
-</dd>
-</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Eksempel 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-2-a-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for z in range(-5): # MERK: det er IKKE feil at du ikke får utskrift her
+    print(z)
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-2-a-eksempel-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="dropdown check admonition">
+<p class="admonition-title">Skriv inn hypotesen din her når du er klar!</p>
+<div id="container-kode-for-loops-utforsk-2-a-test-deg-selv"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(3):
+    print(x)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-for-loops-utforsk-2-a-test-deg-selv",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+b</label><div class="sd-tab-content docutils">
+<p>En tallfølge er en sekvens av tall som følger en bestemt regel. For eksempel er <span class="math notranslate nohighlight">\(2, 5, 8, 11\)</span> en tallfølge som øker med <span class="math notranslate nohighlight">\(3\)</span> for hvert tall.</p>
+<p>Under vises tre kodeeksempler som bruker <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker til å lage bestemte tallfølger. Kjør programmene og se på hvilke tallfølger de gir. Bruk de tre kodeeksemplene til å
+formulere en hypotese på hvordan <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker du kan lage tallfølger med <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-2-b-eksempel-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = 2
+for _ in range(5):
+    print(x)
+    x = x + 2
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-2-b-eksempel-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-2-b-eksempel-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = -6
+for _ in range(4):
+    print(x)
+    x = x + 3
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-2-b-eksempel-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Eksempel 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-for-loops-utforsk-2-b-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = 10
+for _ in range(5):
+    print(x)
+    x = x - 2
+`;
+
+        makeInteractiveCode(
+            "container-kode-for-loops-utforsk-2-b-eksempel-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="sidenote dropdown admonition">
+<p class="admonition-title">Merknad: bruk av <code class="code docutils literal highlight highlight-python"><span class="n">_</span></code> i <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</p>
+<p>I kodeeksemplene her vil du se at løkkevariabelen er <code class="code docutils literal highlight highlight-python"><span class="n">_</span></code>. Det er vanlig å bruke <code class="code docutils literal highlight highlight-python"><span class="n">_</span></code> som løkkevariabel når vi ikke bruker løkkevariabelen til å utføre noen handler. Typisk betyr dette at <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka bare skal gjenta noe et bestemt antall ganger og det spiller ingen rolle hva løkkevariabelen sin er verdi er underveis. Det holder bare styr på hvor mange ganger løkka har kjørt og når den skal stoppe.</p>
+</div>
+<hr class="docutils" />
+<div class="dropdown check admonition">
+<p class="admonition-title">Test hypotesen din her når du er klar!</p>
+<p>Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.</p>
+<p>Skriv inn under og sjekk!</p>
+<div id="container-kode-for-loops-utforsk-2-b-test-deg-selv"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = 4
+for _ in range(2):
+    print(x)
+    x = x - 4
+
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-for-loops-utforsk-2-b-test-deg-selv",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="summary dropdown admonition">
+<p class="admonition-title">Oppsummering: utforsk 2</p>
+<p>Oppsummering av utforsk 2 kommer her.</p>
+</div>
+<hr class="docutils" />
+<div class="check admonition">
+<p class="admonition-title">Quiz 2</p>
+<p>Ta quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-for-løkker-quiz-2" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(5): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$0, 1, 2, 3, 4$', isCorrect: true },
+                    { content: '$1, 2, 3, 4, 5$', isCorrect: false },
+                    { content: '$1, 2, 3, 4$', isCorrect: false },
+                    { content: '$0, 2, 4$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvor mange ganger gjentas koden i <code class="python">for</code>-løkka? <pre><code class="python">for x in range(10): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$10$', isCorrect: true },
+                    { content: '$5$', isCorrect: false },
+                    { content: '$9$', isCorrect: false },
+                    { content: '$11$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallene $2, 5, 8, 11$?',
+                answers: [
+                    { content: '<pre><code class="python">x = 2 \nfor x in range(4): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = 2 \nfor x in range(3): \n    print(x)\n    x = x + 4</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 4 \nfor x in range(2): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 2 \nfor x in range(4): \n    print(x)\n    x = x - 3</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-for-løkker-quiz-2', questionsData);
+    });
+</script>
 </div>
 </section>
 </section>
@@ -779,7 +1322,8 @@ print(f"{p = }")
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-lokker-for-a-lage-tall"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å lage tall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-lokker-for-a-gjenta-noe"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å gjenta noe</a></li>
 </ul>
   </nav></div>
 

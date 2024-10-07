@@ -10,7 +10,7 @@ Etter å ha lest dette delkapittelet, er målet at du skal kunne:
 * Bruke Pythonkode til å regne med formler.
 :::
 
-Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å løse en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder. 
+Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å regne ut en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder. 
 
 ## Regnearter i Python
 
@@ -23,7 +23,7 @@ class: explore
 
 ::::{tab-set}
 ---
-class: tabs-custom
+class: tabs-parts
 ---
 :::{tab-item} a
 Under vises et program som bruker de ulike regneartene i Python til å regne ut noe og skrive ut svaret.
@@ -120,7 +120,7 @@ til å regne ut strekningen $s$ dersom vi har farten $v$ og tiden $t$.
 
 ::::{tab-set}
 ---
-class: tabs-custom
+class: tabs-parts
 ---
 
 :::{tab-item} a
@@ -193,6 +193,13 @@ file: interaktiv_kode/utforsk/utforsk_2.html
 
 ---
 
+:::{admonition} Deling før ganging
+---
+class: sidenote, margin
+---
+Merk at i Python så skjer deling før ganging! Dette får du bruk for i oppgave 1.
+:::
+
 ::::{admonition} Oppgave 1
 ---
 class: problem-level-1
@@ -249,7 +256,7 @@ $$
 
 :::::{tab-set}
 ---
-class: tabs-custom
+class: tabs-parts
 ---
 ::::{tab-item} a
 Fyll ut programmet under med formelen for å regne ut temperaturen i Celsius.
@@ -308,6 +315,7 @@ file: ./interaktiv_kode/oppgaver/oppgave_3.html
 ::::::
 
 
+
 ::::::{admonition} Oppgave 4
 ---
 class: problem-level-2
@@ -318,22 +326,81 @@ Her skal du regne litt på størrelser i Universet og omforme avstandene til noe
 
 :::::{tab-set}
 ---
-class: tabs-custom
+class: tabs-parts
 ---
-
 ::::{tab-item} a
-Avstanden til vår nærmeste nabo, *månen*, er på ca. $384 \, 400 \ \mathrm{km}$. Tenk deg at vi skulle kjørt til månen med samme fart som en bil på E6 som har en fartsgrense på $100 \ \mathrm{km/h}$. 
+I mange sammenhenger må vi omforme mellom forskjellige enheter av tid for å tolke tallet. For eksempel vil ikke 7200 sekunder, 45 000 timer eller 892 dager være spesielt nyttige måter å uttrykke hvor lang tid noe tar. 
 
-Bruk programmet under til å bestemme hvor mange dager det tar før vi kommer fram til månen. 
+I kodevinduet under vises et eksempel der en tid i sekunder omformes til tid i dager. Da bruker vi følgende omgjøringsfaktor til å omforme enheten:
+
+$$
+\text{faktor} =
+\begin{pmatrix}
+    \text{sekunder} \\
+    \text{per} \\
+    \text{minutt}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    \text{minutter} \\
+    \text{per} \\
+    \text{time}
+\end{pmatrix}
+$$
+
+
+Les programmet og forutsi hva som skrives ut. Skriv inn hypotesene din under for å sjekke!
 
 :::{raw} html
 ---
 file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_a.html
 ---
 :::
+
+
+::::
+::::{tab-item} b
+Avstanden til vår nærmeste nabo, *månen*, er på ca. $384 \, 400 \ \mathrm{km}$. Tenk deg at vi skulle kjørt til månen med samme fart som en bil på E6 som har en fartsgrense på $100 \ \mathrm{km/h}$. 
+
+Bruk programmet under til å bestemme hvor mange dager det tar før vi kommer fram til månen. 
+
+:::{admonition} Hint
+---
+class: dropdown, hints
+---
+Du kan få bruk for vei-fart-tid formelen:
+
+$$
+s = v\cdot t
+$$
+:::
+
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_b.html
+---
+:::
+
+````{admonition} Fasit
+---
+class: dropdown, answer
+---
+Programkode:
+```{code-block} python
+fart = 100                       # km/h
+strekning = 384_400              # km
+tid = avstand / fart             # h (timer) 
+
+timer_per_dag = 24
+tid = tid / timer_per_dag
+
+print(tid)
+```
+````
 ::::
 
-::::{tab-item} b
+::::{tab-item} c
 Avstanden til solen er omtrent $149 \, 600 \, 000 \ \mathrm{km}$.
 
 Vi tenker oss igjen at vi skal kjøre til solen med fart på $100 \ \mathrm{km/h}$. 
@@ -354,12 +421,33 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_b.html
+file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_c.html
 ---
 :::
+
+
+````{admonition} Fasit
+---
+class: dropdown, answer
+---
+Programkode:
+```{code-block} python
+---
+linenos: true
+---
+strekning = 149_600_000  # km til solen
+fart = 100  # bilfart i km/h
+
+tid = strekning / fart
+timer_per_år = 24 * 365
+tid = tid / timer_per_år
+
+print(tid)
+```
+````
 ::::
 
-::::{tab-item} c
+::::{tab-item} d
 
 :::{admonition} Fakta om lys
 ---
@@ -415,6 +503,13 @@ $$
 $$
 :::
 
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_d.html
+---
+:::
+
 :::{admonition} Fasit
 ---
 class: dropdown, answer
@@ -444,15 +539,9 @@ $$
 $$
 
 :::
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_c.html
----
-:::
 ::::
 
-::::{tab-item} d
+::::{tab-item} e
 Det nærmeste solsystemet til oss er *Alpha Centauri*. Avstanden til Alpha Centauri er ca. $4.25 \ \text{lysår}$. 
 
 Bruk programmet under til å bestemme hvor mange år det ville tatt å kjøre med en bil som har en fart på $100 \ \mathrm{km/h}$ til Alpha Centauri.
@@ -462,6 +551,13 @@ Bruk programmet under til å bestemme hvor mange år det ville tatt å kjøre me
 class: dropdown, hints
 ---
 Bruk avstanden du fant for lysår i kilometer fra oppgave c. Eller bare kopier kodelinjene som regner det ut!
+:::
+
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_e.html
+---
 :::
 
 :::{admonition} Fasit
@@ -493,12 +589,6 @@ Utskriften blir:
 ```
 
 som betyr at vi måtte kjørt bil i $45 \, 900 \, 000 \ \text{år}$. Nå har vi igjen møtt på et tall som er ufattelig å tolke for menneskehjernen. Men vi kan i det minste konkludere at det nærmeste solsystemet vi kjenner til er svært svært langt unna.
-:::
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_d.html
----
 :::
 
 ::::
