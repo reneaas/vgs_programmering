@@ -1,0 +1,47 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-for-løkker-quiz-2" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(5): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$0, 1, 2, 3, 4$', isCorrect: true },
+                    { content: '$1, 2, 3, 4, 5$', isCorrect: false },
+                    { content: '$1, 2, 3, 4$', isCorrect: false },
+                    { content: '$0, 2, 4$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvor mange ganger gjentas koden i <code class="python">for</code>-løkka? <pre><code class="python">for x in range(10): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$10$', isCorrect: true },
+                    { content: '$5$', isCorrect: false },
+                    { content: '$9$', isCorrect: false },
+                    { content: '$11$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallene $2, 5, 8, 11$?',
+                answers: [
+                    { content: '<pre><code class="python">x = 2 \nfor x in range(4): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = 2 \nfor x in range(3): \n    print(x)\n    x = x + 4</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 4 \nfor x in range(2): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 2 \nfor x in range(4): \n    print(x)\n    x = x - 3</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-for-løkker-quiz-2', questionsData);
+    });
+</script>

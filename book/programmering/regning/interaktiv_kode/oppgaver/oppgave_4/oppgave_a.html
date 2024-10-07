@@ -1,17 +1,16 @@
 <div id="container-kode-programmering-regning-oppgave-4-a"></div>
 <script type="text/javascript">
     code = 
-`fart =      # FYLL INN: bilfart i km/h
-avstand =   # FYLL INN: avstand i km
-tid =       # FYLL INN: formel for tid gitt avstand og fart
+`tid = 7200     # sekunder
 
-timer_per_dag =             # FYLL INN: antall timer per dag
-tid = tid / timer_per_dag   # <-- Omdanner enheten fra timer til dager!
+sekunder_per_time = 60 * 60     # 60 s/min * 60 min/time = 60 * 60 s/time
+
+tid = tid / sekunder_per_time   # <-- Omgjør 'tid' fra sekunder til timer!
 
 print(tid)
 `;   
 
-    makeInteractiveCode(
+    makePredictionInteractiveCode(
         "container-kode-programmering-regning-oppgave-4-a",
         code,
     );
