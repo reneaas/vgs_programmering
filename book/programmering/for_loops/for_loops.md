@@ -627,7 +627,8 @@ Under vises tre eksempler på programmer som bruker nøstede `for`{l=python}-lø
 
 Ved siden av programmene er det tilhørende animasjoner som viser hvilke punkter som lager og i hvilken rekkefølge det skjer.
 
-> Det er lagt inn en linje med `time.sleep(1)`{l=python} i programmene som pauser kjøringen i 1 sekund mellom hver runde. På den måten kan du synkronisere kjøringen av koden med starten av animasjonene.
+Legg spesielt merke til rekkefølgen på de to `for`{l=python}-løkkene og hvordan det påvirker hvilken rekkefølge man løper gjennom punktene i rutenettet.
+
 ::::::::::::::{tab-set}
 :::::::::::::{tab-item} Eksempel 1
 
@@ -720,3 +721,133 @@ file: ./quiz/quiz_3/quiz_3.html
 
 
 :::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Underveisoppgave 4
+---
+class: check, full-width
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/a.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/a.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/b.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/b.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/c.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/c.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/d.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/d.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+::::::::::::::
+
+:::::::::::::::
+
