@@ -1,11 +1,11 @@
+// pythonRunner.js
+
 class PythonRunner {
-    constructor(outputId, errorBoxId) {
+    constructor(outputId, errorBoxId, preloadPackages = null) {
         this.outputId = outputId;            // ID of the HTML element where output will be displayed
         this.errorBoxId = errorBoxId;        // ID of the HTML element for displaying errors
-        this.workerManager = new WorkerManager();
-        this.workerManager.setMessageCallback(this.handleWorkerMessage.bind(this)); // Set the message callback
-        this.workerManager.setErrorCallback(this.handleWorkerError.bind(this));     // Set the error callback
-        this.pyConsoleScript = this.getPyConsoleScript();  // Load the Python console script
+        this.workerManager = WorkerManager.getInstance(preloadPackages);
+        this.preloadPackages = preloadPackages;
     }
 
     /**
@@ -13,6 +13,15 @@ class PythonRunner {
      * @param {Object} editor - The CodeMirror editor instance containing the code.
      */
     async run(editor, outputId = null) {
+        // Wait until worker is ready and preload packages are loaded
+        try {
+            await this.workerManager.workerReadyPromise;
+        } catch (error) {
+            console.error("Worker failed to initialize:", error);
+            this.handleErrorMessage("Failed to initialize Python environment.");
+            return;
+        }
+
         this.editorInstance = editor;
         this.editorInstance.clearLineHighlights();
         let code = editor.getValue();
@@ -29,20 +38,47 @@ class PythonRunner {
             this.currentCode = this.replaceInputStatements(this.currentCode, userValues);
             console.log("Modified code:", this.currentCode);
         }
- 
-        // Prepare the final code to be run (including custom eval functions, etc.)
 
         // Extract and load necessary packages
         const packages = this.extractPackageNames(this.currentCode);
 
         console.log("Packages to load:", packages);
         if (packages.length > 0) {
-            this.workerManager.loadPackages(packages);
-        } else {
-            this.workerManager.runCode(this.pyConsoleScript);
-            this.workerManager.runCode(this.currentCode);
+            try {
+                await this.workerManager.loadPackages(packages);
+            } catch (error) {
+                // Handle package load error
+                console.error("Failed to load packages:", error);
+                this.handleErrorMessage(error.message);
+                return;
+            }
         }
+
+        // const callback = (data) => {
+        //     if (data.type === 'stdout' || data.type === 'stderr') {
+        //         this.handleWorkerMessage(data);
+        //     }
+        //     if (data.type === 'executionComplete') {
+        //         // Code execution is complete
+        //         console.log("Code execution complete for messageId:", data.messageId);
+        //     }
+        // };
+
+        const callback = (data) => {
+            if (data.type === 'stdout') {
+                this.handleWorkerMessage(data);
+            } else if (data.type === 'stderr') {
+                this.handleErrorMessage(data.msg);  // Displays the error
+            }
+            if (data.type === 'executionComplete') {
+                console.log("Code execution complete for messageId:", data.messageId);
+            }
+        };
+        
+
+        this.workerManager.runCode(this.currentCode, callback);
     }
+
 
     /**
      * Handles incoming messages from the WorkerManager.
@@ -59,19 +95,23 @@ class PythonRunner {
         }
 
         if (type === 'stdout') {
-            let escapedMsg = msg.replace(/</g, '&lt;').replace(/>/g, '&gt;'); //Escape the symbols '<' and '>'
-            outputElement.innerHTML += this.formatErrorMessage(escapedMsg);
-            this.highlightLine(this.editorInstance, escapedMsg);
+            // Replace "&" with "∧", "oo" with "∞", and "|" with "∨"
+            let formattedMsg = msg
+            .replace(/And\(([^)]+)\)/g, (match, p1) => {
+                // Split conditions by comma, trim spaces, and wrap each in parentheses
+                const conditions = p1.split(',').map(cond => cond.trim());
+                return conditions.map(cond => `(${cond})`).join(' ∧ ');
+            })
+            // .replace(/&/g, '∧')
+            .replace(/oo/g, '∞')
+            .replace(/\|/g, '∨');
+            outputElement.innerHTML += this.formatErrorMessage(formattedMsg);
+            this.highlightLine(this.editorInstance, data.msg);
             this.scrollToBottom(outputElement);
 
         } else if (type === 'stderr') {
             console.log("Error message:", msg);
-
-        } else if (type === 'packagesLoaded') {
-            // After loading packages, execute the code
-            console.log("Packages loaded successfully.");
-            this.workerManager.runCode(this.pyConsoleScript);
-            this.workerManager.runCode(this.currentCode);
+            this.handleErrorMessage(msg);
         }
     }
 
@@ -80,24 +120,15 @@ class PythonRunner {
     }
 
     /**
-     * Handles errors from the WorkerManager.
-     * @param {ErrorEvent} error - The error event from the worker.
+     * Handles error messages from the worker.
+     * @param {string} msg - The error message.
      */
-    handleWorkerError(error) {
+    handleErrorMessage(msg) {
         const errorElement = document.getElementById(this.errorBoxId);
         if (errorElement) {
-            errorElement.textContent = `Error: ${error.message}`;
+            errorElement.innerHTML = this.formatErrorMessage(msg);
         }
-    }
-
-    /**
-     * Executes Python code using the worker.
-     * @param {string} code - The Python code to be executed.
-     */
-    executeCode(code) {
-        this.currentCode = code; // Store the current code for later use
-        this.workerManager.runCode(this.pyConsoleScript); // Load the Python console setup first
-        this.workerManager.runCode(code); // Execute the user’s code
+        this.highlightLine(this.editorInstance, msg);
     }
 
     /**
@@ -111,12 +142,13 @@ class PythonRunner {
 
 
     highlightLine(editor, msg) {
-        const linePattern = /File "&lt;exec&gt;", line (\d+)/g;
+        const linePattern = /File "<exec>", line (\d+)/;
         const match = linePattern.exec(msg);
         if (match) {
             const lineNumber = parseInt(match[1]) - 1;
             console.log("Highlighting line:", lineNumber);
             editor.highlightLine(lineNumber);
+            console.log("Highlighting error at line:", lineNumber);
         }
     }
 
@@ -236,16 +268,15 @@ class PythonRunner {
                 `;
                 knownError = true;
             }
-    
-            if (knownError) {
-                this.addAdmonitionToContainer(title, content, this.errorBoxId); 
-            }
+            
+            // Currently does not work as intended
+            // if (knownError) {
+            //     this.addAdmonitionToContainer(title, content, this.errorBoxId); 
+            // }
         }
     
-        
-    
         // Highlight the line number in the pattern 'File "<exec>", line <number>'
-        const fileLinePattern = /File "&lt;exec&gt;", line (\d+)/g;
+        const fileLinePattern = /File "<exec>", line (\d+)/g;
         formattedMessage = formattedMessage.replace(fileLinePattern, (match, p1) => {
             return match.replace(`line ${p1}`, `<span class="error-line">line ${p1}</span>`);
         });
@@ -326,58 +357,6 @@ class PythonRunner {
     
         return Array.from(packages);
     }
-
-    /**
-     * Prepares the Python console setup script.
-     * @returns {string} - The Python console setup script.
-     */
-    getPyConsoleScript() {
-        return `
-import sys
-from js import postMessage
-import json
-
-class PyConsole:
-    def __init__(self):
-        self.buffer = ""
-
-    def write(self, msg):
-        self.buffer += msg
-        if "\\n" in msg:
-            self.flush()
-
-    def flush(self):
-        if self.buffer:
-            try:
-                postMessage(json.dumps({'type': 'stdout', 'msg': self.buffer}))
-            except Exception as e:
-                self.handle_error(e)
-        self.buffer = ""
-
-    def handle_error(self, e):
-        error_message = str(e)
-        postMessage(json.dumps({'type': 'stderr', 'msg': error_message}))
-
-sys.stdout = PyConsole()
-sys.stderr = PyConsole()
-`;
-    }
-
-    /**
-     * Creates an admonition block for displaying known Python error explanations.
-     * @param {string} title - The title of the admonition block (e.g., "SyntaxError").
-     * @param {string} content - The content explaining the error.
-     * @returns {string} - The HTML content for the admonition block.
-     */
-    createAdmonition(title, content) {
-        return `
-        <div class="admonition pythonerror margin">
-            <p class="admonition-title">${title}</p>
-            <p>${content}</p>
-        </div>
-        `;
-    }
-
 
     /**
      * Finds input statements in the code.
@@ -463,90 +442,5 @@ sys.stderr = PyConsole()
         });
     
         return codeLines.join('\n');
-    }
-}
-
-
-
-// stepByStepPythonRunner.js
-
-class StepByStepPythonRunner extends PythonRunner {
-    constructor(outputId, errorBoxId, codeSetupInstance) {
-        super(outputId, errorBoxId);
-        this.codeSetupInstance = codeSetupInstance;
-        this.pyodide = null;
-        this.initializePyodide();
-    }
-
-    async initializePyodide() {
-        this.pyodide = await loadPyodide();
-    }
-
-    async run(editor) {
-        const code = editor.getValue();
-        await this.executeCodeStepByStep(code);
-    }
-
-    async executeCodeStepByStep(code) {
-        try {
-            const executionStates = await this.getExecutionStates(code);
-            this.codeSetupInstance.updateExecutionStates(executionStates);
-        } catch (err) {
-            this.handleExecutionError(err);
-        }
-    }
-
-    async getExecutionStates(code) {
-        // Import necessary modules in Pyodide
-        await this.pyodide.loadPackage('micropip');
-        await this.pyodide.runPythonAsync(`
-            import sys
-            sys.setrecursionlimit(1000)
-            import json
-            import sys
-            sys.modules['_pydevd_frame_eval'] = None
-        `);
-
-        // Define the code to extract execution states
-        const traceScript = `
-def trace_calls(frame, event, arg):
-    if event != 'line':
-        return
-    co = frame.f_code
-    func_name = co.co_name
-    line_no = frame.f_lineno
-    locals_copy = frame.f_locals.copy()
-    execution_state = {
-        'lineNumber': line_no,
-        'locals': locals_copy
-    }
-    execution_states.append(execution_state)
-    return trace_calls
-
-execution_states = []
-sys.settrace(trace_calls)
-try:
-    exec(code, {})
-except Exception as e:
-    execution_states.append({'error': str(e)})
-finally:
-    sys.settrace(None)
-`;
-        // Inject the user code into the script
-        const fullScript = `code = """${code}"""\n` + traceScript + `\njson.dumps(execution_states)`;
-
-        // Run the script in Pyodide
-        const result = await this.pyodide.runPythonAsync(fullScript);
-
-        // Parse the result
-        const executionStates = JSON.parse(result);
-        return executionStates;
-    }
-
-    handleExecutionError(error) {
-        const errorBoxElement = document.getElementById(this.errorBoxId);
-        if (errorBoxElement) {
-            errorBoxElement.textContent = error.message;
-        }
     }
 }

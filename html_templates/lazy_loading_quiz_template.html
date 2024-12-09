@@ -1,0 +1,86 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-tema-undertema-oppgavetype-oppgavenummer" class="quiz-main-container">
+    <!-- Placeholder content -->
+    <div id="quiz-placeholder-tema-undertema-oppgavetype-oppgavenummer" style="height: 300px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+        <p>Laster inn quiz...⏳</p>
+    </div>
+</div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilke programkode(r) vil finne nullpunktet til $f(x) = 5x - 10$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 3):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(6):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-1, 2):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 0):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilken av programkodene under vil gi samme utskrift som <pre><code class="python">for x in range(-2, 4):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">x = -2 \nwhile x <= 4: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = -2 \nwhile x < 4: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = -4 \nwhile x <= 2: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = -4 \nwhile x < 2: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva må $a$ og $b$ være for at $$4x^3 - 12x^2 + 16 = (x + 1)(ax + b)^2$$ skal være en identitet?',
+                answers: [
+                    { content: '$a = 1 \land b = 3$', isCorrect: false },
+                    { content: '$a = 2 \land b = 4$', isCorrect: false },
+                    { content: '$a = 2 \land b = -4$', isCorrect: true },
+                    { content: '$a = -2 \land b = 4$', isCorrect: true },
+                ]
+            },
+        ];
+
+        // Function to initialize the quiz
+        function initializeQuiz() {
+            const quizContainerId = 'quiz-container-tema-undertema-oppgavetype-oppgavenummer';
+            const quiz = new SequentialMultipleChoiceQuiz(quizContainerId, questionsData);
+
+            // Remove the placeholder after initializing the quiz
+            const placeholder = document.getElementById('quiz-placeholder-tema-undertema-oppgavetype-oppgavenummer');
+            if (placeholder) {
+                placeholder.remove();
+            }
+
+            // Disconnect the observer since we don't need it anymore
+            observer.disconnect();
+        }
+
+        // Set up the IntersectionObserver
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '100px', // Start loading before the user reaches the quiz
+            threshold: 0.1 // Adjust as needed
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // The placeholder is in view, initialize the quiz
+                    initializeQuiz();
+                }
+            });
+        }, observerOptions);
+
+        // Start observing the placeholder
+        const placeholder = document.getElementById('quiz-placeholder-tema-undertema-oppgavetype-oppgavenummer');
+        if (placeholder) {
+            observer.observe(placeholder);
+        }
+    });
+</script>

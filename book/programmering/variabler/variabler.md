@@ -4,7 +4,6 @@
 ---
 class: tip
 ---
-Etter å ha lest dette delkapittelet, er målet at du skal:
 * Kunne bruke `print`{l=python}-funksjonen til å skrive ut verdien til en variabel.
 * Kunne forklare hva en variabel er og lage dine egne variabler.
 * Kunne skrive ut verdien til en variabel.
@@ -52,7 +51,7 @@ class: tabs-custom
 ::::{tab-item} Del 1: Skriv ut verdier
 Her er et lite program som skriver ut noen verdier direkte. Før du kjører det, prøv å lese gjennom koden og tenk på hva programmet vil skrive ut. Dette hjelper deg med å forstå hvordan datamaskinen "ser" koden.
 
-- **Oppgave:** Les programmet og skriv ned hva du tror det vil skrive ut. Etterpå kan du kjøre det for å se om du hadde rett!
+- **Oppgave:** Les gjennom programmet, og prøv å forutsi hva det vil skrive ut basert på variablene. Skriv ned hypotesen din og sjekk om den stemmer når du kjører programmet.
 
 :::{raw} html
 ---
@@ -95,18 +94,18 @@ file: interaktiv_kode/utforsk/utforsk_1/del_3.html
 ::::::
 
 ---
-
+<!-- 
 ::::{admonition} Underveisquiz 1
 ---
 class: check
 ---
 :::{raw} html
 ---
-file: quiz/quiz_1.html
+file: quiz/quiz_1/quiz_1.html
 ---
 :::
 
-::::
+:::: -->
 
 ---
 
@@ -114,7 +113,7 @@ file: quiz/quiz_1.html
 
 ::::
 
-::::{admonition} Underveisoppgave 2
+::::{admonition} Underveisoppgave 1
 ---
 class: check
 ---
@@ -131,12 +130,13 @@ file: interaktiv_kode/underveisoppgaver/underveisoppgave_2.html
 ---
 class: answer, dropdown
 ---
+Jeg begynner å *dra* på åra, men her har du en mulig løsning:
 ```{code-block} python
 ---
 linenos: true
 ---
 navn = "René" 
-alder = 29
+alder = 30
 høyde = 180.0
 
 
@@ -147,7 +147,7 @@ som gir utskriften
 
 ```console
 navn = 'René' 
-alder = 29 
+alder = 30
 høyde = 180.0
 ```
 :::

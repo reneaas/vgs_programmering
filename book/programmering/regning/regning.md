@@ -5,7 +5,6 @@
 ---
 class: tip
 ---
-Etter å ha lest dette delkapittelet, er målet at du skal kunne:
 * Bruke Pythonkode til å regne ut enkle regnestykker.
 * Bruke Pythonkode til å regne med formler.
 :::
@@ -67,7 +66,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/steg_1.html
 :::
 :::::
 
-Etter utforsk 1, kan du ta en titt på oppsummeringsboksen under.
+> Etter utforsk 1, kan du ta en titt på oppsummeringsboksen under.
 
 ::::{admonition} Oppsummering: regneartene i Python
 ---
@@ -204,7 +203,7 @@ Merk at i Python så skjer deling før ganging! Dette får du bruk for i oppgave
 ---
 class: problem-level-1
 ---
-Gjennomfør quizen! 
+Gjennomfør quizen! Mer enn et alternativ kan være riktig.
 
 :::{raw} html
 ---
@@ -596,3 +595,4 @@ som betyr at vi måtte kjørt bil i $45 \, 900 \, 000 \ \text{år}$. Nå har vi 
 
 
 ::::::
+

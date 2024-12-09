@@ -1,0 +1,59 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-for-løkker-quiz-3" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        const img_style = 'display: block; width: 60%; margin-left: auto; margin-right: auto;';
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: `Hvilket program passer med animasjonen? <img src="../../../_static/figurer/programmering/for_loops/quiz/quiz_3/spm_1.gif" style="${img_style}">`,
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-2, 3):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for y in range(-3, 4):\n    for x in range(-2, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, 2):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(-2, 3):\n    for x in range(-2, 2):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: `Hvilket program passer med animasjonen? <img src="../../../_static/figurer/programmering/for_loops/quiz/quiz_3/spm_2.gif" style="${img_style}">`,
+                answers: [
+                    { content: '<pre><code class="python">for y in range(-3, 4):\n    for x in range(-2, 3):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-2, 3):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, 2):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(-3, 3):\n    for x in range(-2, 2):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: `Hvilket program passer med animasjonen? <img src="../../../_static/figurer/programmering/for_loops/quiz/quiz_3/spm_3.gif" style="${img_style}">`,
+                answers: [
+                    { content: '<pre><code class="python">for y in range(1, 4):\n    for x in range(-2, 0):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(1, 4):\n    for y in range(-2, 0):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, -1):\n    for y in range(1, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(1, 3):\n    for x in range(-2, -1):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: `Hvilket program passer med animasjonen? <img src="../../../_static/figurer/programmering/for_loops/quiz/quiz_3/spm_4.gif" style="${img_style}">`,
+                answers: [
+                { content: '<pre><code class="python">for x in range(0, 3):\n    for y in range(-2, 1):\n        print(x, y)</code></pre>', isCorrect: true },
+                { content: '<pre><code class="python">for x in range(0, 2):\n    for y in range(-2, 0):\n        print(x, y)</code></pre>', isCorrect: false },
+                { content: '<pre><code class="python">for y in range(-2, 1):\n    for x in range(0, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                { content: '<pre><code class="python">for y in range(-2, 0):\n    for x in range(0, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-for-løkker-quiz-3', questionsData);
+
+    });
+</script>

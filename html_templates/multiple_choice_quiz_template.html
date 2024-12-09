@@ -10,6 +10,8 @@
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", () => {
 
+        const img_style = 'display: block; width: 80%; margin-left: auto; margin-right: auto;';
+
         // Define your questions and answers
         const questionsData = [
             {
@@ -31,12 +33,12 @@
                 ]
             },
             {
-                content: 'Hva må $a$ og $b$ være for at $$4x^3 - 12x^2 + 16 = (x + 1)(ax + b)^2$$ skal være en identitet?',
+                content: `Hvilket program passer med animasjonen? <img src="figurer/lineære_funksjoner/likningssystemer/programmering/quiz/quiz_3/spm_1.gif" style="${img_style}">`,
                 answers: [
-                    { content: '$a = 1 \land b = 3$', isCorrect: false },
-                    { content: '$a = 2 \land b = 4$', isCorrect: false },
-                    { content: '$a = 2 \land b = -4$', isCorrect: true },
-                    { content: '$a = -2 \land b = 4$', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-2, 3):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for y in range(-3, 4):\n    for x in range(-2, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, 2):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(-2, 3):\n    for x in range(-2, 2):\n        print(x, y)</code></pre>', isCorrect: false },
                 ]
             },
         ];
@@ -44,4 +46,12 @@
         // Initialize the multiple-choice quiz
         const quiz = new SequentialMultipleChoiceQuiz('quiz-container-tema-undertema-oppgavetype-oppgavenummer', questionsData);
     });
+
+    
+
 </script>
+
+
+
+
+

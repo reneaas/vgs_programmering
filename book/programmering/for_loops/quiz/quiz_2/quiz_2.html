@@ -31,12 +31,30 @@
                 ]
             },
             {
-                content: 'Hvilket program skriver ut tallene $2, 5, 8, 11$?',
+                content: 'Hvilket program skriver ut tallfølgen $2, 5, 8, 11$?',
                 answers: [
-                    { content: '<pre><code class="python">x = 2 \nfor x in range(4): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: true },
-                    { content: '<pre><code class="python">x = 2 \nfor x in range(3): \n    print(x)\n    x = x + 4</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">x = 4 \nfor x in range(2): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">x = 2 \nfor x in range(4): \n    print(x)\n    x = x - 3</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 2 \nfor _ in range(4): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = 2 \nfor _ in range(3): \n    print(x)\n    x = x + 4</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 4 \nfor _ in range(2): \n    print(x)\n    x = x + 3</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 2 \nfor _ in range(4): \n    print(x)\n    x = x - 3</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallfølgen $-3, 3, 9, 15$?',
+                answers: [
+                    { content: '<pre><code class="python">x = -3 \nfor _ in range(4): \n    print(x)\n    x = x + 6</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = -3 \nfor _ in range(3): \n    print(x)\n    x = x + 6</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 3 \nfor _ in range(3): \n    print(x)\n    x = x + 6</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 15 \nfor _ in range(4): \n    print(x)\n    x = x - 6</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva må <code class="python">x = ??</code> byttes ut med for at vi skal få tallfølgen $1, 3, 5, 7$? <pre><code class="python">x = 1 \nfor _ in range(4): \n    print(x)\n    x = ??</code></pre>',
+                answers: [
+                    { content: '<code class="python">x = x + 2</code>', isCorrect: true },
+                    { content: '<code class="python">x = 2 * x</code>', isCorrect: false },
+                    { content: '<code class="python">x = 2 * x + 1</code>', isCorrect: false },
+                    { content: '<code class="python">x = 2 * x - 1</code>', isCorrect: false },
                 ]
             },
         ];
