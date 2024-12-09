@@ -1,7 +1,9 @@
 class InteractiveCodeSetup {
-    constructor(containerId, initialCode) {
+    constructor(containerId, initialCode, preloadPackages = null) {
         this.containerId = containerId;
         this.initialCode = initialCode;
+        this.preloadPackages = preloadPackages;
+        console.log("InteractiveCodeSetup - Preload packages:", this.preloadPackages);
         this.uniqueId = this.generateUUID();
         console.log("Unique ID:", this.uniqueId);
 
@@ -71,7 +73,7 @@ class InteractiveCodeSetup {
 
     setupInteractiveEditor() {
         this.editorInstance = new CodeEditor(this.editorId); // Initialize the CodeEditor
-        this.runnerInstance = new PythonRunner(this.outputId, this.errorBoxId); // Initialize the PythonRunner
+        this.runnerInstance = new PythonRunner(this.outputId, this.errorBoxId, this.preloadPackages); // Initialize the PythonRunner
 
         // Add event listeners for buttons
         document.getElementById(this.runButtonId).addEventListener("click", () => this.runCode());
@@ -104,6 +106,6 @@ class InteractiveCodeSetup {
 }
 
 
-function makeInteractiveCode(containerId, initialCode) {
-    return new InteractiveCodeSetup(containerId, initialCode);
+function makeInteractiveCode(containerId, initialCode, preloadPackages = null) {
+    return new InteractiveCodeSetup(containerId, initialCode, preloadPackages);
 }

@@ -4,9 +4,9 @@
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
 * Kunne bruke `for`{l=python}-løkker med `range`{l=python}-funksjonen for å lage en liste med tall. 
 * Kunne bruke `for`{l=python}-løkker til å gjenta én eller kodelinjer et bestemt antall ganger.
+* Kunne tolke og skrive nøstede `for`{l=python}-løkker for å lage rutenett med punkter $(x, y)$.
 
 ::::
 
@@ -31,6 +31,21 @@ class: tabs-parts
 Under vises tre eksempler på programmer som bruker `range(a, b, c)`{l=python}-funksjonen med tre tall `a`{l=python}, `b`{l=python} og `c`{l=python}.
 
 Kjør programmene og se på utskriften deres. Bruk de tre kodeeksemplene til å formulere en hypotese på hva de tre tallene bestemmer.
+
+::::{admonition} Test hypotesen din her når du er klar!
+---
+class: dropdown, check
+---
+Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.
+
+Skriv inn under og sjekk!
+
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/test_deg_selv.html
+---
+:::
+::::
 
 ````{tab-set}
 ```{tab-item} Eksempel 1
@@ -63,7 +78,12 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/eksempel_3.html
 ```
 ````
 
-<br>
+::::::
+
+::::::{tab-item} b
+Under vises tre eksempler på programmer som bruker `range`{l=python}-funksjonen som `range(a, b)`{l=python}. 
+
+Kjør programmene og se på utskriften deres. Bruk de tre kodeeksemplene til å formulere en hypotese på hva de to tallene bestemmer og hvordan denne skrivemåten henger sammen med skrivemåten i deloppgave a.
 
 ::::{admonition} Test hypotesen din her når du er klar!
 ---
@@ -75,17 +95,10 @@ Skriv inn under og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/test_deg_selv.html
+file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/test_deg_selv.html
 ---
 :::
 ::::
-
-::::::
-
-::::::{tab-item} b
-Under vises tre eksempler på programmer som bruker `range`{l=python}-funksjonen som `range(a, b)`{l=python}. 
-
-Kjør programmene og se på utskriften deres. Bruk de tre kodeeksemplene til å formulere en hypotese på hva de to tallene bestemmer og hvordan denne skrivemåten henger sammen med skrivemåten i deloppgave a.
 
 ````{tab-set}
 ```{tab-item} Eksempel 1
@@ -120,22 +133,6 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/eksempel_3.html
 
 ````
 
-<br>
-
-::::{admonition} Test hypotesen din her når du er klar!
----
-class: dropdown, check
----
-Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.
-
-Skriv inn under og sjekk!
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/test_deg_selv.html
----
-:::
-::::
 
 
 ::::::
@@ -145,9 +142,10 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/test_deg_selv.html
 ::::::::::::::
 
 ---
-Ta gjerne en titt på oppsummeringen av utforsk 1 før du går videre! 
 
-::::::::{admonition} Oppsummering: utforsk 1
+> Ta gjerne en titt på oppsummeringen av utforsk 1 før du går videre! 
+
+::::::::{admonition} Oppsummering: Utforsk 1
 ---
 class: summary, dropdown
 ---
@@ -196,7 +194,7 @@ for y in range(start, stopp):
 
 :::::{admonition} Quiz 1
 ---
-class: check
+class: quiz
 ---
 Ta quizen!
 
@@ -210,11 +208,209 @@ file: ./quiz/quiz_1/quiz_1.html
 
 ---
 
-En annen vanlig måte å jobbe med `for`{l=python}-løkker på, er at ønsker å gjenta en eller flere utregninger et bestemt antall ganger. Dette skal du se nærmere på i utforsk 2.
+:::::::::::::::{admonition} Underveisoppgave 1
+---
+class: check
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts 
+---
+:::::::::::::{tab-item} a
+
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/a.html
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/b.html
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/c.html
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/d.html
+---
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+1, 4, 7, 10. 
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/a.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(1, 11, 3):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+-4, 0, 4, 8, 12. 
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/b.html
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(-4, 13, 4):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+0, 100, 200, 300, 400, 500. 
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/c.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(0, 501, 100):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+15, 9, 3, -3, -9, -15.
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/d.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(15, -16, -6):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+---
 
 
 ## `for`{l=python}-løkker for å gjenta noe 
 
+En annen vanlig måte å jobbe med `for`{l=python}-løkker på, er at man ønsker å gjenta en eller flere utregninger et bestemt antall ganger. Dette skal du se nærmere på i Utforsk 2.
 
 :::::::{admonition} Utforsk 2
 ---
@@ -232,6 +428,19 @@ Under vises tre eksempler på programmer som bruker `for`{l=python}-løkker med 
 
 Kjør eksempelkodene og se på utskriften. Lag en hypotese om hvordan denne typen `for`{l=python}-løkker fungerer.
 
+
+::::{admonition} Skriv inn hypotesen din her når du er klar!
+---
+class: dropdown, check
+---
+
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/test_deg_selv.html
+---
+:::
+
+::::
 
 ````{tab-set}
 ```{tab-item} Eksempel 1
@@ -265,19 +474,6 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/eksempel_3.html
 ```
 ````
 
-::::{admonition} Skriv inn hypotesen din her når du er klar!
----
-class: dropdown, check
----
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/test_deg_selv.html
----
-:::
-
-::::
-
 :::::
 
 :::::{tab-item} b
@@ -285,6 +481,22 @@ En tallfølge er en sekvens av tall som følger en bestemt regel. For eksempel e
 
 Under vises tre kodeeksempler som bruker `for`{l=python}-løkker til å lage bestemte tallfølger. Kjør programmene og se på hvilke tallfølger de gir. Bruk de tre kodeeksemplene til å 
 formulere en hypotese på hvordan `for`{l=python}-løkker du kan lage tallfølger med `for`{l=python}-løkker.
+
+::::{admonition} Test hypotesen din her når du er klar!
+---
+class: dropdown, check
+---
+Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.
+
+Skriv inn under og sjekk!
+
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/test_deg_selv.html
+---
+:::
+
+::::
 
 
 ````{tab-set}
@@ -327,24 +539,6 @@ class: sidenote, dropdown
 I kodeeksemplene her vil du se at løkkevariabelen er `_`{l=python}. Det er vanlig å bruke `_`{l=python} som løkkevariabel når vi ikke bruker løkkevariabelen til å utføre noen handler. Typisk betyr dette at `for`{l=python}-løkka bare skal gjenta noe et bestemt antall ganger og det spiller ingen rolle hva løkkevariabelen sin er verdi er underveis. Det holder bare styr på hvor mange ganger løkka har kjørt og når den skal stoppe.
 :::
 
----
-
-::::{admonition} Test hypotesen din her når du er klar!
----
-class: dropdown, check
----
-Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.
-
-Skriv inn under og sjekk!
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/test_deg_selv.html
----
-:::
-
-::::
-
 :::::
 
 
@@ -355,19 +549,59 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/test_deg_selv.html
 
 ---
 
-:::::{admonition} Oppsummering: utforsk 2
+:::::::::::::::{admonition} Oppsummering: Utforsk 2
 ---
 class: summary, dropdown
 ---
-Oppsummering av utforsk 2 kommer her.
-:::::
+
+::::::::::::::{tab-set}
+:::::::::::::{tab-item} Gjentakelse av kodelinjer
+Vi kan gjenta noen kodelinjer et bestemt antall ganger ved å skrive:
+
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(N):
+    # Noen kodelinjer her. Disse gjentas `N` ganger.
+:::
+
+| Eksempel | Tall | Beskrivelse |
+|-----------|----------|----------|
+| `for x in range(3)`{l=python} | $0, 1, 2$. | 3 gjentakelser. |
+| `for x in range(5)`{l=python} | $0, 1, 2, 3, 4$ | 5 gjentakelser. |
+| `for x in range(-2)`{l=python} | Ingen tall | Ingen gjentakelse. |
+
+:::::::::::::
+
+:::::::::::::{tab-item} Gjentakelse av kodelinjer uten løkke-variabel
+Når vi skal gjenta noen kodelinjer et bestemt antall ganger, men ikke skal bruke løkkevariabelen til noe, skriver vi:
+
+:::{code-block} python
+---
+linenos: true
+---
+# bruker `_` som løkkevariabel fordi den ikke brukes i utregninger.
+for _ in range(N):
+    # Noen kodelinjer her. Disse gjentas `N` ganger.
+:::
+
+| Eksempel | Beskrivelse |
+|-----------|----------|
+| `for _ in range(3)`{l=python} | Gir 3 gjentakelser. |
+| `for _ in range(5)`{l=python} | 5 gjentakelser. |
+| `for _ in range(-2)`{l=python} | Ingen gjentakelser. |
+:::::::::::::
+::::::::::::::
+
+:::::::::::::::
 
 
 ---
 
 :::::{admonition} Quiz 2
 ---
-class: check
+class: quiz
 ---
 Ta quizen!
 
@@ -378,3 +612,111 @@ file: ./quiz/quiz_2/quiz_2.html
 :::
 
 :::::
+
+---
+
+## Nøstede `for`{l=python}-løkker
+
+Nøstede `for`{l=python}-løkker er `for`{l=python}-løkker som er plassert inni hverandre. Når vi jobber med likningssystemer, bruker vi ofte dette til å lage et rutenett av punkter $(x, y)$. Dette skal du se nærmere på i Utforsk 3.
+
+:::::::::::::::{admonition} Utforsk 3
+---
+class: explore, full-width
+---
+Under vises tre eksempler på programmer som bruker nøstede `for`{l=python}-løkker til å lage et rutenett av punkter $(x, y)$. 
+
+Ved siden av programmene er det tilhørende animasjoner som viser hvilke punkter som lager og i hvilken rekkefølge det skjer.
+
+> Det er lagt inn en linje med `time.sleep(1)`{l=python} i programmene som pauser kjøringen i 1 sekund mellom hver runde. På den måten kan du synkronisere kjøringen av koden med starten av animasjonene.
+::::::::::::::{tab-set}
+:::::::::::::{tab-item} Eksempel 1
+
+:::::{grid}
+::::{grid-item} **Programkode**
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_3/eksempel_1.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/utforsk_3/eksempler/eksempel_1.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+:::::::::::::
+
+:::::::::::::{tab-item} Eksempel 2
+
+:::::{grid}
+::::{grid-item} **Programkode**
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_3/eksempel_2.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/utforsk_3/eksempler/eksempel_2.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+:::::::::::::
+
+:::::::::::::{tab-item} Eksempel 3
+
+:::::{grid}
+::::{grid-item} **Programkode**
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_3/eksempel_3.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/utforsk_3/eksempler/eksempel_3.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Quiz 3
+---
+class: quiz
+---
+Ta quizen!
+
+:::{raw} html
+---
+file: ./quiz/quiz_3/quiz_3.html
+---
+:::
+
+
+:::::::::::::::

@@ -11,6 +11,7 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
         this.predictionOutputId = `prediction-output-${this.uniqueId}`;
         this.predictionOutputContainerId = `prediction-output-container-${this.uniqueId}`;
         this.predictionContainerId = `prediction-container-${this.uniqueId}`;
+        // this.initialCode = initialCode;
 
         // Flag to track whether the prediction has been displayed
         this.predictionDisplayed = false;
@@ -32,8 +33,8 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
         // Build the prediction input HTML
         const predictionHtml = `
             <div id="${this.predictionContainerId}" class="prediction-container">
-                <textarea id="${this.predictionInputId}" rows="3" placeholder="Skriv inn svaret ditt her! \n \nTrykk Shift + Enter for en ny linje."></textarea>
-                <button id="${this.lockPredictionButtonId}" class="button button-lock-prediction">Sjekk svaret!</button>
+            <textarea id="${this.predictionInputId}" rows="3" placeholder="Skriv inn svaret ditt her! \n \nTrykk på Enter (&#9166;) for en ny linje."></textarea>
+            <button id="${this.lockPredictionButtonId}" class="button button-lock-prediction">Sjekk svaret!</button>
             </div>
         `;
 
@@ -165,7 +166,7 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
             container.innerHTML = '';
 
             // Create a new instance of InteractiveCodeSetup
-            new InteractiveCodeSetup(this.containerId, this.editorInstance.getValue());
+            new InteractiveCodeSetup(this.containerId, this.initialCode);
         } else {
             console.error(`Container with ID ${this.containerId} not found.`);
         }

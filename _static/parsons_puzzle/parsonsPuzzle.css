@@ -18,6 +18,11 @@
     --draggable-item-background-color: #ffffff;
     --draggable-item-border-color: #007bff;
     --toast-background-color: rgba(0, 128, 128, 0.9);
+    --toast-success-background-color: rgba(25, 135, 84, 0.9); /* Green */
+    --toast-success-text-color: #ffffff;
+    --toast-error-background-color: rgba(220, 53, 69, 0.9); /* Red */
+    --toast-error-text-color: #ffffff;
+
 }
 
 /* Dark mode variables */
@@ -98,6 +103,7 @@
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background-color: var(--background-color);
+    position: relative;
 }
 
 /* Draggable code area */
@@ -301,15 +307,36 @@ pre.highlight {
     margin-top: 5px;
 }
 
+
 /* Toast Notification */
 .toast {
-    position: fixed;
-    background-color: var(--toast-background-color);
-    color: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    font-size: 20px;
+    position: absolute; /* Ensure it's positioned relative to the container */
+    padding: 15px;
+    border-radius: 8px;
     z-index: 1000;
-    display: block;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
     text-align: center;
+    /* Remove background-color and color to allow specific classes to set them */
+}
+
+/* Success Toast */
+.toast-success {
+    background-color: var(--toast-success-background-color);
+    color: var(--toast-success-text-color);
+}
+
+/* Error Toast */
+.toast-error {
+    background-color: var(--toast-error-background-color);
+    color: var(--toast-error-text-color);
+}
+
+/* Toast Message */
+.toast p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    /* color is set in specific toast classes */
 }

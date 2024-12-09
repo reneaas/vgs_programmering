@@ -1,0 +1,92 @@
+/* Container Styles */
+.draggable-code, .drop-area {
+    position: relative;
+    min-height: 100px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.drop-area {
+    background-color: #f9f9f9;
+    overflow: auto;
+}
+
+/* Code Lines */
+.code-line {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 0 !important;
+    cursor: grab;
+}
+
+.code-line.dragging {
+    cursor: grabbing;
+    opacity: 0.7;
+}
+
+.code-content {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.code-content code {
+    display: block;
+}
+
+/* Placeholder */
+.placeholder-code-line {
+    height: 40px; /* Adjust to match code line height */
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    margin-bottom: 5px;
+}
+
+/* Indentation Guides */
+.indentation-guide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-left: 2px dotted #007bff;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Buttons and Toasts (reuse from previous code) */
+.button-container {
+    margin-top: 10px;
+}
+
+.button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.toast {
+    position: absolute;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toast-success {
+    background-color: rgba(40, 167, 69, 0.9); /* Green */
+    color: #fff;
+}
+
+.toast-error {
+    background-color: rgba(220, 53, 69, 0.9); /* Red */
+    color: #fff;
+}
+
+.modal {
+    /* Modal styles */
+}
