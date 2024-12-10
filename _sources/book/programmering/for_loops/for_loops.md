@@ -42,7 +42,7 @@ Skriv inn under og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/test_deg_selv.html
+file: ./python/utforsk/utforsk_1/oppgave_a/test_deg_selv.html
 ---
 :::
 ::::
@@ -52,7 +52,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/test_deg_selv.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/eksempel_1.html
+file: ./python/utforsk/utforsk_1/oppgave_a/eksempel_1.html
 ---
 :::
 
@@ -61,7 +61,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/eksempel_1.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/eksempel_2.html
+file: ./python/utforsk/utforsk_1/oppgave_a/eksempel_2.html
 ---
 :::
 
@@ -71,7 +71,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/eksempel_2.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_a/eksempel_3.html
+file: ./python/utforsk/utforsk_1/oppgave_a/eksempel_3.html
 ---
 :::
 
@@ -95,7 +95,7 @@ Skriv inn under og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/test_deg_selv.html
+file: ./python/utforsk/utforsk_1/oppgave_b/test_deg_selv.html
 ---
 :::
 ::::
@@ -105,7 +105,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/test_deg_selv.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/eksempel_1.html
+file: ./python/utforsk/utforsk_1/oppgave_b/eksempel_1.html
 ---
 :::
 
@@ -115,7 +115,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/eksempel_1.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/eksempel_2.html
+file: ./python/utforsk/utforsk_1/oppgave_b/eksempel_2.html
 ---
 :::
 
@@ -125,7 +125,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/eksempel_2.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/oppgave_b/eksempel_3.html
+file: ./python/utforsk/utforsk_1/oppgave_b/eksempel_3.html
 ---
 :::
 
@@ -224,7 +224,7 @@ Skriv inn forutsigelsen din og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/a.html
+file: ./python/underveisoppgaver/underveisoppgave_1/a.html
 ---
 :::
 
@@ -238,7 +238,7 @@ Skriv inn forutsigelsen din og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/b.html
+file: ./python/underveisoppgaver/underveisoppgave_1/b.html
 ---
 :::
 
@@ -252,7 +252,7 @@ Skriv inn forutsigelsen din og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/c.html
+file: ./python/underveisoppgaver/underveisoppgave_1/c.html
 ---
 :::
 
@@ -266,7 +266,7 @@ Skriv inn forutsigelsen din og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/d.html
+file: ./python/underveisoppgaver/underveisoppgave_1/d.html
 ---
 :::
 
@@ -297,7 +297,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/a.html
+file: ./python/underveisoppgaver/underveisoppgave_2/a.html
 ---
 :::
 
@@ -325,7 +325,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/b.html
+file: ./python/underveisoppgaver/underveisoppgave_2/b.html
 ---
 :::
 
@@ -354,7 +354,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/c.html
+file: ./python/underveisoppgaver/underveisoppgave_2/c.html
 ---
 :::
 
@@ -382,7 +382,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/d.html
+file: ./python/underveisoppgaver/underveisoppgave_2/d.html
 ---
 :::
 
@@ -436,7 +436,7 @@ class: dropdown, check
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/test_deg_selv.html
+file: ./python/utforsk/utforsk_2/oppgave_a/test_deg_selv.html
 ---
 :::
 
@@ -447,7 +447,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/test_deg_selv.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/eksempel_1.html
+file: ./python/utforsk/utforsk_2/oppgave_a/eksempel_1.html
 ---
 :::
 
@@ -457,7 +457,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/eksempel_1.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/eksempel_2.html
+file: ./python/utforsk/utforsk_2/oppgave_a/eksempel_2.html
 ---
 :::
 
@@ -467,7 +467,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/eksempel_2.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_a/eksempel_3.html
+file: ./python/utforsk/utforsk_2/oppgave_a/eksempel_3.html
 ---
 :::
 
@@ -492,7 +492,7 @@ Skriv inn under og sjekk!
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/test_deg_selv.html
+file: ./python/utforsk/utforsk_2/oppgave_b/test_deg_selv.html
 ---
 :::
 
@@ -504,7 +504,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/test_deg_selv.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/eksempel_1.html
+file: ./python/utforsk/utforsk_2/oppgave_b/eksempel_1.html
 ---
 :::
 
@@ -514,7 +514,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/eksempel_1.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/eksempel_2.html
+file: ./python/utforsk/utforsk_2/oppgave_b/eksempel_2.html
 ---
 :::
 
@@ -524,7 +524,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/eksempel_2.html
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/oppgave_b/eksempel_3.html
+file: ./python/utforsk/utforsk_2/oppgave_b/eksempel_3.html
 ---
 :::
 
@@ -636,7 +636,7 @@ Legg spesielt merke til rekkefølgen på de to `for`{l=python}-løkkene og hvord
 ::::{grid-item} **Programkode**
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_3/eksempel_1.html
+file: ./python/utforsk/utforsk_3/eksempel_1.html
 ---
 :::
 ::::
@@ -659,7 +659,7 @@ class: no-click
 ::::{grid-item} **Programkode**
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_3/eksempel_2.html
+file: ./python/utforsk/utforsk_3/eksempel_2.html
 ---
 :::
 ::::
@@ -682,7 +682,7 @@ class: no-click
 ::::{grid-item} **Programkode**
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_3/eksempel_3.html
+file: ./python/utforsk/utforsk_3/eksempel_3.html
 ---
 :::
 ::::
@@ -741,7 +741,7 @@ Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til h
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/a.html
+file: ./python/underveisoppgaver/underveisoppgave_4/a.html
 ---
 :::
 ::::
@@ -770,7 +770,7 @@ Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til h
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/b.html
+file: ./python/underveisoppgaver/underveisoppgave_4/b.html
 ---
 :::
 ::::
@@ -799,7 +799,7 @@ Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til h
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/c.html
+file: ./python/underveisoppgaver/underveisoppgave_4/c.html
 ---
 :::
 ::::
@@ -828,7 +828,7 @@ Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til h
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_4/d.html
+file: ./python/underveisoppgaver/underveisoppgave_4/d.html
 ---
 :::
 ::::
