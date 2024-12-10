@@ -1,0 +1,74 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-while-løkker-quiz-1" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilken tallfølge skrives ut av programmet? <pre><code class="python">x = 0 \nwhile x < 4:\n    print(x)\n    x = x + 1</code></pre>',
+                answers: [
+                    { content: '$0, 1, 2, 3$', isCorrect: true },
+                    { content: '$1, 2, 3, 4$', isCorrect: false },
+                    { content: '$0, 1, 2, 3, 4$', isCorrect: false },
+                    { content: '$0, 2, 4$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilken tallfølge skrives ut av programmet? <pre><code class="python">x = -2 \nwhile x <= 6:\n    print(x)\n    x = x + 2</code></pre>',
+                answers: [
+                    { content: '$-2, 0, 2, 4, 6$', isCorrect: true },
+                    { content: '$-2, 0, 2, 4$', isCorrect: false },
+                    { content: '$-2, 0, 2$', isCorrect: false },
+                    { content: '$6, 4, 2, 0, -2$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallfølgen $1, 5, 9, 13$?',
+                answers: [
+                    { content: '<pre><code class="python">x = 1 \nwhile x < 15:\n    print(x)\n    x = x + 4</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = 1 \nwhile x < 13:\n    print(x)\n    x = x + 4</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 5 \nwhile x <= 13:\n    print(x)\n    x = x + 2</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 1 \nwhile x > 13:\n    print(x)\n    x = x + 4</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallfølgen $10, 8, 6, 4, 2, 0$?',
+                answers: [
+                    { content: '<pre><code class="python">x = 10 \nwhile x >= 0:\n    print(x)\n    x = x - 2</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = 10 \nwhile x > 0:\n    print(x)\n    x = x - 2</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 10 \nwhile x > 0:\n    print(x)\n    x = x - 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 0 \nwhile x <= 10:\n    print(x)\n    x = x + 2</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallfølgen $-30, -20, -10, 0, 10, 20, 30$?',
+                answers: [
+                    { content: '<pre><code class="python">x = -30 \nwhile x <= 30:\n    print(x)\n    x = x + 10</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = -30 \nwhile x <= 30:\n    print(x)\n    x = x * 10</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 30 \nwhile x >= -30:\n    print(x)\n    x = x - 10</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = -30 \nwhile x < 30:\n    print(x)\n    x = x + 10</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva må byttes ut i med <code class="python">x = ??</code> for at programmet skal skrive ut tallfølgen $-10, -5, 0, 5, 10$? <pre><code class="python">x = -10 \nwhile x <= 10:\n    print(x)\n    x = ??</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">x = x + 5</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = x * 5</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = x - 5</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = x / 5</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-while-løkker-quiz-1', questionsData);
+    });
+</script>
