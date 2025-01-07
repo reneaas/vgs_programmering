@@ -28,8 +28,6 @@ repo_root = find_repo_root(current_dir)
 # Add the GitHub repository root to sys.path
 sys.path.append(repo_root)
 
-# Now you can import modules from the GitHub repo root
-from python_utils.plot_utils import make_figure, savefig
 
 parts = current_dir.split("/")
 for i in range(len(parts)):
@@ -168,7 +166,7 @@ dir.mkdir(parents=True, exist_ok=True)
 ani.save(
     f"{dir}/{fname}",
     writer="imagemagick",
-    fps=4,
+    fps=2,
     progress_callback=progress_callback,
 )
 plt.close()

@@ -46,8 +46,8 @@ x_min = -3
 x_max = 1
 n_x = len([i for i in range(x_min, x_max + 1)])
 
-y_min = 2
-y_max = 2
+y_min = -1
+y_max = 3
 n_y = len([i for i in range(y_min, y_max + 1)])
 
 x_values = np.linspace(x_min, x_max, n_x)
