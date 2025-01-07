@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMirror Terminal Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/monokai.min.css">
+    <style>
+        .CodeMirror {
+            height: auto;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="code" name="code"></textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <script>
+        // Initialize CodeMirror
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            lineNumbers: true,
+            mode: "javascript",
+            theme: "monokai",
+            readOnly: true
+        });
+
+        // Function to animate dots in place
+        function animateDots(editor, times, delay, callback) {
+            let count = 0;
+            let dotIndex = 0;
+            const dots = ["", ".", "..", "..."];
+            function typeDots() {
+                if (count < times) {
+                    const line = editor.getLine(editor.lastLine());
+                    editor.replaceRange(dots[dotIndex], {line: editor.lastLine(), ch: line.length - 3}, {line: editor.lastLine(), ch: line.length});
+                    dotIndex = (dotIndex + 1) % dots.length;
+                    if (dotIndex === 0) count++;
+                    setTimeout(typeDots, delay);
+                } else {
+                    callback();
+                }
+            }
+            typeDots();
+        }
+
+        // Function to animate text
+        function animateText(editor, text, delay = 50) {
+            let index = 0;
+            let currentLine = editor.lastLine();
+            function type() {
+                if (index < text.length) {
+                    let char = text[index];
+                    editor.replaceRange(char, {line: currentLine});
+                    index++;
+                    if (char === "\n" || (index === text.length && text.endsWith("..."))) {
+                        let lineText = editor.getLine(currentLine);
+                        if (lineText.endsWith("...")) {
+                            animateDots(editor, 3, 250, () => {
+                                currentLine++;
+                                type();
+                            });
+                        } else {
+                            currentLine++;
+                            setTimeout(type, delay);
+                        }
+                    } else {
+                        setTimeout(type, delay);
+                    }
+                }
+            }
+            type();
+        }
+
+        // Text to display
+        const text = [
+            "Velkommen til programmerings-Universet...\n",
+            "Velg deg et tema under verktøykassa til venstre...\n",
+            "Hold motet oppe...\n",
+            "Dette fikser du! 🔥 You got this 💪🏻\n"
+
+        ].join("");
+
+        // Start the animation
+        animateDots(editor, 3, 250, () => {
+            animateText(editor, text);
+        });
+        // animateText(editor, text);
+    </script>
+</body>
+</html>

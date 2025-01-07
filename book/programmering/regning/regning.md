@@ -319,6 +319,8 @@ file: ./interaktiv_kode/oppgaver/oppgave_3.html
 ---
 class: problem-level-2
 ---
+> Denne oppgaven er spesielt rettet mot de som tar **fysikk** som programfag.
+
 Universet er fryktelig stort. Vi kan sette tall på avstander i Universet, men når tall blir veldig store, blir de ganske vanskelige å tolke for menneskehjernen - vi har liksom ikke noen innebygd forståelse av ting vi ikke omgir oss med på den lille planeten vi kaller Jorden (som vi sikkert kan være enig om er forholdsvis stor den også!).
 
 Her skal du regne litt på størrelser i Universet og omforme avstandene til noe vi kan tolke og forstå.
