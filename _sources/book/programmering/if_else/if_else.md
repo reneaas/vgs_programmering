@@ -23,7 +23,7 @@ Utforsk og kjør programmet, og forklar hva programmet gjør.
 
 :::{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_1.html
+file: python/utforsk/utforsk_1.html
 ---
 :::
 :::::
@@ -93,7 +93,7 @@ Hvilke verdier kan du sette `a`{l=python} og `b`{l=python} slik at **flest mulig
 
 :::{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_2.html
+file: python/utforsk/utforsk_2.html
 ---
 :::
 
@@ -163,9 +163,67 @@ Endre varetype til "annet" og prisen til 100. <br> Hva blir utskriften? Sjekk sv
 
 :::{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_3.html
+file: python/utforsk/utforsk_3.html
 :::
 
 
 :::::::::::::::
 
+
+---
+
+## Oppgaver 
+
+:::::::::::::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Programmet under løser en likning. 
+
+Les programmet og forutsi hva programmet skriver ut. Skriv inn hypotesen din og sjekk svaret!
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Juster programmet slik at det løser likningen 
+
+$$
+-3x + 9 = 0.
+$$
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+Juster programmet slik at det løser likningen 
+
+$$
+x^2 - x - 6 = 0.
+$$
+
+
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_1/a.html
+---
+:::
+
+
+
+:::::::::::::::
