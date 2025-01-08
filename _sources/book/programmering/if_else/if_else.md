@@ -241,10 +241,71 @@ $$
 x^3 - 4x^2 - 7x + 10 = 0.
 $$
 
+:::{admonition} Hint
+---
+class: dropdown, hints
+---
+Bruk samme strategi som i oppgave 1.
+:::
+
 :::{raw} html
 ---
 file: ./python/oppgaver/oppgave_2/oppgave_2.html
 ---
 :::
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+Programmet under sjekker om en trekant med sidelengder $a$, $b$ og $c$ er en rettvinklet trekant. 
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn hypotesen din under og sjekk svaret!
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+For å sjekke om flere betingelser er oppfylt samtidig med en `if`{l=python}-test, kan man skrive
+
+```python
+if betingelse1 and betingelse2:
+    ...
+```
+
+Juster programmet slik at det sjekker om trekanten er rettvinklet uten å anta at $a$ og $b$ er de to katetene.
+
+Prøv ut programmet med forskjellige verdier for $a$, $b$ og $c$.
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_3/oppgave_3.html
+---
+:::
+
+
+
 
 :::::::::::::::

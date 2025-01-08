@@ -664,6 +664,10 @@ for x in range(-10, 11):
 \[
 x^3 - 4x^2 - 7x + 10 = 0.
 \]</div>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>Bruk samme strategi som i oppgave 1.</p>
+</div>
 <div id="container-kode-programmering-if-tester-oppgave-2"></div>
 <script type="text/javascript">
 
@@ -676,6 +680,66 @@ x^3 - 4x^2 - 7x + 10 = 0.
 
         makePredictionInteractiveCode(
             "container-kode-programmering-if-tester-oppgave-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>Programmet under sjekker om en trekant med sidelengder <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span> er en rettvinklet trekant.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+a</label><div class="sd-tab-content docutils">
+<p>Les programmet under og forutsi hva programmet skriver ut.</p>
+<p>Skriv inn hypotesen din under og sjekk svaret!</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+b</label><div class="sd-tab-content docutils">
+<p>For å sjekke om flere betingelser er oppfylt samtidig med en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-test, kan man skrive</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse1</span> <span class="ow">and</span> <span class="n">betingelse2</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Juster programmet slik at det sjekker om trekanten er rettvinklet uten å anta at <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> er de to katetene.</p>
+<p>Prøv ut programmet med forskjellige verdier for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span>.</p>
+</div>
+</div>
+<div id="container-kode-programmering-if-tester-oppgave-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`a = 3
+b = 4
+c = 5
+
+if a**2 + b**2 == c**2:
+    print("Trekanten er rettvinklet.")
+else:
+    print("Trekanten er ikke rettvinklet.")
+
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-programmering-if-tester-oppgave-3",
             code,
         );
     });
