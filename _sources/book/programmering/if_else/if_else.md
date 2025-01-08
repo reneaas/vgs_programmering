@@ -211,8 +211,6 @@ $$
 x^2 - x - 6 = 0.
 $$
 
-
-
 :::::::::::::
 
 ::::::::::::::
@@ -225,5 +223,28 @@ file: ./python/oppgaver/oppgave_1/a.html
 :::
 
 
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 2 
+---
+class: problem-level-2
+---
+Skriv et program som løser likningen
+
+$$
+x^3 - 4x^2 - 7x + 10 = 0.
+$$
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_2/oppgave_2.html
+---
+:::
 
 :::::::::::::::
