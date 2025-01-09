@@ -1,4 +1,4 @@
-class turtleCode {
+class TurtleCode {
     /**
      * @param {string} containerId - ID of an existing <div> that will hold this environment.
      * @param {string} [initialCode=""] - Initial Python code to display in the editor.
@@ -95,43 +95,29 @@ class turtleCode {
         let userCode = this.editor.getValue();
         this.outputEl.innerHTML = ""; // clear output
 
-        // Check dark mode in JavaScript
-//   const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-//         if (isDarkMode) {
-//             // Prepend or append a line to set the turtle color to white
-//             userCode = `
-// import turtle
-// turtle.color("white")
-// ` + userCode;
-//         }
 
-    // 1) Detect user/OS color scheme preferences
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const prefersNoPref = window.matchMedia("(prefers-color-scheme: no-preference)").matches;
-
-    console.log("Dark mode:", prefersDark);
-    console.log("Light mode:", prefersLight);
-    console.log("No preference:", prefersNoPref);
-
-    const mode = document.documentElement.getAttribute("data-mode");
-    // default to black
-    let forcedColor = "black";
-    if (mode === "dark") {
-        forcedColor = "white";
-    }
-    else if (mode === "auto") {
-        if (prefersDark) {
+        const mode = document.documentElement.getAttribute("data-mode");
+        // default to black
+        let forcedColor = "black";
+        if (mode === "dark") {
             forcedColor = "white";
         }
-    }
+        else if (mode === "light") {
+            forcedColor = "black";
+        }
+        else if (mode === "auto") {
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            forcedColor = prefersDarkScheme ? "white" : "black";
+        }
+
+        console.log("Mode", mode);
 
 
     // Safely prepend a snippet that ensures turtle is white
     // We also do a basic check to ensure turtle is imported before coloring
     // (some users might not have "import turtle" at all).
     // "import turtle" will just re-import gracefully if the user already had it.
-    const snippet = `
+        const snippet = `
 try:
     import turtle
     turtle.color("${forcedColor}")
@@ -139,7 +125,7 @@ except:
     pass
 
 `;
-    userCode = snippet + userCode;
+        userCode = snippet + userCode;
   
         // Output function for Python's print
         const outf = (text) => {
@@ -181,5 +167,5 @@ except:
 }
 
 function makeTurtleCode(containerId, initialCode = "", cmOptions = {}) {
-    return new turtleCode(containerId, initialCode, cmOptions);
+    return new TurtleCode(containerId, initialCode, cmOptions);
 }
