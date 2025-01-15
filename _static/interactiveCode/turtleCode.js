@@ -30,14 +30,20 @@ class TurtleCode {
 
         // A flex container to hold the editor (left) and the turtle div (right)
         const editorAndCanvasContainer = document.createElement("div");
+
+        editorAndCanvasContainer.classList.add("turtle-env"); // for styling
+
         editorAndCanvasContainer.style.display = "flex";
         editorAndCanvasContainer.style.flexWrap = "wrap"; // in case of narrow screens
         editorAndCanvasContainer.style.width = "100%";
 
         // --- LEFT COLUMN: Editor, Run Button, Output ---
         const editorContainer = document.createElement("div");
+
+        editorContainer.classList.add("turtle-left"); // for styling
+
         editorContainer.style.flex = "1";          // Take 50% of available width
-        editorContainer.style.minWidth = "400px";  // Reasonable min width
+        editorContainer.style.minWidth = "100px";  // Reasonable min width
         editorContainer.style.display = "flex";
         editorContainer.style.flexDirection = "column";
 
@@ -70,19 +76,24 @@ class TurtleCode {
 
         // --- RIGHT COLUMN: Turtle Div ---
         const canvasContainer = document.createElement("div");
+
+        // canvasContainer.classList.add("turtle-right"); // for styling
+
         canvasContainer.style.flex = "1";          // Take the other 50%
         canvasContainer.style.minWidth = "350px";  // Reasonable min width
         canvasContainer.style.display = "flex";
         canvasContainer.style.flexDirection = "column";
         canvasContainer.style.alignItems = "center";
+        canvasContainer.style.justifyContent = "center";
 
         // Turtle div
         this.canvasEl = document.createElement("div");
         this.canvasEl.id = `skulpt-canvas-${this.uniqueSuffix}`;
         this.canvasEl.style.border = "1px solid #ccc";
-        this.canvasEl.style.width = "90%";   // Adjust as needed
+        this.canvasEl.style.width = "95%";   // Adjust as needed
         this.canvasEl.style.height = "400px"; 
         this.canvasEl.style.marginTop = "0em";
+        this.canvasEl.style.boxSizing = "border-box";
         canvasContainer.appendChild(this.canvasEl);
 
         editorAndCanvasContainer.appendChild(canvasContainer);
@@ -113,14 +124,21 @@ class TurtleCode {
         console.log("Mode", mode);
 
 
-    // Safely prepend a snippet that ensures turtle is white
-    // We also do a basic check to ensure turtle is imported before coloring
-    // (some users might not have "import turtle" at all).
-    // "import turtle" will just re-import gracefully if the user already had it.
+        // Safely prepend a snippet that ensures turtle is white
+        // We also do a basic check to ensure turtle is imported before coloring
+        // (some users might not have "import turtle" at all).
+        // "import turtle" will just re-import gracefully if the user already had it.
         const snippet = `
 try:
     import turtle
     turtle.color("${forcedColor}")
+    screen = turtle.Screen()
+
+    # screen.setup(width=300, height=300)
+
+    # Set a coordinate system so the center of the visible area is (0,0).
+    # For example, left = -200, right = 200, bottom = -150, top = 150
+    # screen.setworldcoordinates(-200, -150, 200, 150)
 except:
     pass
 

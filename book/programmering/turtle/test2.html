@@ -1,13 +1,15 @@
-<div id="container-kode-turtle-test"></div>
+<div id="container-kode-turtle-test-2"></div>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", () => {
         const code = `from turtle import *
 
-for i in range(4):
+n = 4
+dtheta = 360 / n
+for i in range(n):
     forward(50)
-    right(90)
+    right(dtheta)
 `;
 
-        makeTurtleCode("container-kode-turtle-test", code);
+        makeTurtleCode("container-kode-turtle-test-2", code);
     });
 </script>
