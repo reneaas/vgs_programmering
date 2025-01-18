@@ -6,7 +6,7 @@ file: ./velkommen.html
 ---
 :::
 
-<br>
+
 
 :::::{grid} 1 1 2 2
 ---
@@ -140,6 +140,7 @@ link-type: doc
 
 
 ^^^
+
 :::{code-block} python
 ---
 linenos: true
