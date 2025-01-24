@@ -5,7 +5,7 @@
 class: tip
 ---
 * Kunne bruke `for`{l=python}-løkker med `range`{l=python}-funksjonen for å lage en liste med tall. 
-* Kunne bruke `for`{l=python}-løkker til å gjenta én eller kodelinjer et bestemt antall ganger.
+* Kunne bruke `for`{l=python}-løkker til å gjenta én eller flere kodelinjer et bestemt antall ganger.
 * Kunne tolke og skrive nøstede `for`{l=python}-løkker for å lage rutenett med punkter $(x, y)$.
 
 ::::
