@@ -86,10 +86,87 @@ file: ./python/utforsk/utforsk_1/a.html
 ::::::::::::
 
 
+::::::::::::{tab-item} b
+
+En likning er gitt ved
+
+$$
+x^2 - x - 2 = 0.
+$$
+
+Fyll ut programmet og bestem løsningene til likningen. 
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/b.html
+---
+:::
+
+::::::::::::
+
+
+::::::::::::{tab-item} c
+En likning er gitt ved
+
+$$
+x^3 - 2x^2 - 5x + 6 = 0.
+$$
+
+Fyll ut programmet og bestem løsningene til likningen.
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/c.html
+---
+:::
+
+::::::::::::
+
+
 
 :::::::::::::
 
 
 :::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Underveisoppgave 1
+---
+class: check
+---
+Bruk **strategi 1** fra Utforsk 1 til å bestemme heltallsløsningene til likningene.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
 
 

@@ -216,7 +216,7 @@ file: ./underveisoppgaver/oppgave_1/c/python.html
 ---
 
 
-## Løkker
+## `for`{l=python}-løkker
 I Utforsk 1 og Underveisoppgave 1 måtte vi gjenta samme kommando flere ganger. Måten vi gjorde det på da var bare å kopiere samme kodelinje flere ganger. Det ingen tvil om at dette er en ganske tungvinn måte å skrive kode på. Det har vi heldigvis en løsning på i programmering – ved å bruke **løkker**.
 
 
