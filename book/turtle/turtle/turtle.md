@@ -276,17 +276,135 @@ file: ./utforsk/utforsk_2/utforsk_2.html
 
 :::::::::::::::
 
+---
+
+
+:::::::::::::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts 
+---
+:::::::::::::{tab-item} a
+Nedenfor tegnes en figur.
+
+:::{figure} ./underveisoppgaver/oppgave_2/a/animasjon.gif
+---
+width: 50%
+class: no-click
+---
+:::
+
+
+Fyll ut programmet under slik at det tegner figuren på samme måte.
+
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_2/a/python.html
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Nedenfor tegnes en figur.
+
+:::{figure} ./underveisoppgaver/oppgave_2/b/animasjon.gif
+---
+width: 50%
+class: no-click
+---
+:::
+
+
+Fyll ut programmet under slik at det tegner figuren på samme måte.
+
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_2/b/python.html
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Nedenfor tegnes en figur.
+
+:::{figure} ./underveisoppgaver/oppgave_2/c/animasjon.gif
+---
+width: 40%
+class: no-click
+---
+:::
+
+
+Fyll ut programmet under slik at det tegner figuren på samme måte.
+
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_2/c/python.html
+---
+:::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
 
 ## Variabler
 
-I Utforsk 2, brukte vi en `for`{l=python}-løkke til å tegne forskjellige figurer. Men for å tegne en ny figur, måtte likevel koden endres på flere steder.
-Vi kan komme rundt dette ved å bruke **variabler**, som du skal se nærmere på i Utforsk 3.
+I Utforsk 2, brukte vi en `for`{l=python}-løkke til å tegne forskjellige figurer. Men for å tegne en ny figur, måtte likevel koden endres på flere steder ved at vi byttet ut tallene på flere steder.
+Vi kan komme rundt denne svakheten kan vi bruke bruke **variabler**, som du skal se nærmere på i Utforsk 3.
 
 :::::::::::::::{admonition} Utforsk 3
 ---
 class: explore
 ---
 
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+Under vises et program som tegner en figur ved å bruke variabler til å lagre tallene som skal brukes flere steder i koden.
+
+Kjør programmet og se på figuren som tegnes. Kan du forklare hvordan programmet fungerer?
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Endre på programmet så det tegner et kvadrat.
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Endre på programmet så det tegner en **6-kant**. 
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Endre på programmet så det tegner en **12-kant**. 
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+Endre på programmet så det tegner en sirkel. 
+
+:::::::::::::
+
+::::::::::::::
 
 :::{raw} html
 ---
@@ -296,15 +414,107 @@ file: ./utforsk/utforsk_3/utforsk_3.html
 
 :::::::::::::::
 
-
 ---
-
-
-:::::::::::::::{admonition} Underveisoppgave 2
+<!-- 
+:::::::::::::::{admonition} Underveisoppgave 3
 ---
 class: check
 ---
 
+::::::::::::::{tab-set} 
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll ut programmet så det tegner et rektangel som har sidelengder $l = 100$ og $b = 50$. 
 
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_3/a/python.html
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_3/b/python.html
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+
+:::::::::::::
+
+::::::::::::::
+
+
+::::::::::::::: -->
+
+
+## `while`{l=python}-løkker
+
+Vi har sett hvordan vi kan bruke `for`{l=python}-løkker til å gjenta en handling et bestemt antall ganger. `for`{l=python}-løkker er nyttige så lenge vi på forhånd vet hvor mange ganger vi skal gjenta én eller flere handlinger. I mange tilfeller ønsker vi å gjenta noe så lenge en betingelse er oppfylt. Da kan vi bruke en `while`{l=python}-løkke.
+
+:::::::::::::::{admonition} Utforsk 4
+---
+class: explore
+---
+
+Nedenfor vises et program som tegner en figur ved å bruke en `while`{l=python}-løkke til å tegne en figur.
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Les programmet og kjør det.
+
+Kan du forklare hvordan programmet fungerer? 
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Kan du endre på programmet slik at det tegner en figur tilsvarende denne: 
+
+:::{figure} ./utforsk/utforsk_4/b/animasjon.gif
+---
+width: 25%
+class: no-click
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+I figuren nedenfor er vinkelen i hvert hjørne 60 grader. Lengden på sidene blir 5 mindre for hver gang.
+
+Endre på programmet slik at det tegner denne figuren. 
+
+:::{figure} ./utforsk/utforsk_4/c/animasjon.gif
+---
+width: 25%
+class: no-click
+---
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+:::{raw} html
+---
+file: ./utforsk/utforsk_4/utforsk_4.html
+---
+:::
 
 :::::::::::::::
