@@ -9,10 +9,16 @@ forward(100)
 right(90)
 `;
 
-        makeTurtleCode(
-            "container-kode-tema-undertema-oppgavetype-nummer",
-            code,
-        );
+        const intervalId = setInterval(() => {
+            if (typeof Sk!== 'undefined') {
+            clearInterval(intervalId);
+            makeTurtleCode("container-kode-tema-undertema-oppgavetype-nummer", code);
+            }
+        }, 100); // Check every 100ms
+        // makeTurtleCode(
+        //     "container-kode-tema-undertema-oppgavetype-nummer",
+        //     code,
+        // );
     });
 </script>
 

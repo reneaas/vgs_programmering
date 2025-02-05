@@ -134,7 +134,7 @@ else:
 
 ::::{grid-item-card}
 ---
-link: book/programmering/turtle/turtle
+link: book/turtle/turtle/turtle
 link-type: doc
 ---
 **Turtle programmering** 🐢

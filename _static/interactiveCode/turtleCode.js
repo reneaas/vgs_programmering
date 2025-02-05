@@ -13,7 +13,7 @@ class TurtleCode {
         this.initialCode = initialCode;
         this.cmOptions = cmOptions;
     
-        this.uniqueSuffix = Date.now(); // to avoid ID collisions
+        this.uniqueSuffix = generateUUID();
     
         this.createUI();
       
@@ -184,6 +184,6 @@ except:
     }
 }
 
-function makeTurtleCode(containerId, initialCode = "", cmOptions = {}) {
+async function makeTurtleCode(containerId, initialCode = "", cmOptions = {}) {
     return new TurtleCode(containerId, initialCode, cmOptions);
 }

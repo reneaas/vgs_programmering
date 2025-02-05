@@ -1,0 +1,66 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-likninger-quiz-1-while-loops" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const img_style = 'display: block; width: 80%; margin-left: auto; margin-right: auto;';
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilket program skriver ut tallfølgen $1, 2, 3, 4, 5$?',
+                answers: [
+                    { content: '<pre><code class="python">x = 1 \nwhile x < 6:\n    print(x)\n    x = x + 1</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = 1 \nwhile x < 5:\n    print(x)\n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 0 \nwhile x < 5:\n    print(x)\n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 0 \nwhile x < 6:\n    print(x)\n    x = x + 1</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallfølgen $-3, -2, -1, 0, 1, 2, 3$?',
+                answers: [
+                    { content: '<pre><code class="python">x = -3 \nwhile x <= 3:\n    print(x)\n    x = x + 1</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = -3 \nwhile x < 3:\n    print(x)\n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 3 \nwhile x < 3:\n    print(x)\n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = -3 \nwhile x < 3:\n    print(x)\n    x = x + 3</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut tallfølgen $0, 10, 20, 30, 40, 50$?',
+                answers: [
+                    { content: '<pre><code class="python">x = 0 \nwhile x <= 50:\n    print(x)\n    x = x + 10</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = 0 \nwhile x <= 50:\n    print(x)\n    x = x * 10</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 0 \nwhile x < 50:\n    print(x)\n    x = x + 10</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = 0 \nwhile x < 50:\n    print(x)\n    x = x * 10</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke tallfølge skrives ut av programmet? <pre><code class="python">x = 0 \nwhile x < 6:\n    print(x)\n    x = x + 2</code></pre>',
+                answers: [
+                    { content: '$$0, 2, 4$$', isCorrect: true },
+                    { content: '$$0, 2, 4, 6$$', isCorrect: false },
+                    { content: '$$2, 4$$', isCorrect: false },
+                    { content: '$$2, 4, 6$$', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-likninger-quiz-1-while-loops', questionsData);
+    });
+
+    
+
+</script>
+
+
+
+
+
