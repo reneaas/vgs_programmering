@@ -131,7 +131,12 @@ class TurtleCode {
         const snippet = `
 try:
     import turtle
+    turtle.hideturtle()
     turtle.color("${forcedColor}")
+    turtle.penup()
+    turtle.goto(-50, 0)
+    turtle.pendown()
+    turtle.showturtle()
     screen = turtle.Screen()
 
     # screen.setup(width=300, height=300)

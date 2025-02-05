@@ -81,6 +81,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/turtle/turtle/turtle';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
@@ -88,7 +90,7 @@
     <script src="../../../_static/utils.js?v=14803243"></script>
     <script src="../../../_static/static_code_blocks.js?v=e512471c"></script>
     <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
-    <script src="../../../_static/interactiveCode/turtleCode.js?v=f73f2517"></script>
+    <script src="../../../_static/interactiveCode/turtleCode.js?v=a960389b"></script>
     <script src="../../../_static/interactiveCode/workerManager.js?v=028e9de9"></script>
     <script src="../../../_static/interactiveCode/pythonRunner.js?v=8bbb0f19"></script>
     <script src="../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
@@ -553,6 +555,9 @@ Under vises en oversikt over de viktigste så i prinsippet kan tegne alle typer 
 <tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">pendown</span><span class="p">()</span></code></p></td>
 <td><p>Senker pennen slik at skilpadden tegner.</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="n">speed</span><span class="p">(</span><span class="n">heltall</span><span class="p">)</span></code></p></td>
+<td><p>Setter farten til skilpadden. <code class="code docutils literal highlight highlight-python"><span class="n">speed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code> er sakte. <code class="code docutils literal highlight highlight-python"><span class="n">speed</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span></code> er nest-raskest og <code class="docutils literal notranslate"><span class="pre">speed(0)</span></code> er raskest. Heltallene mellom 1 og 9 gir gradvis større fart.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -757,7 +762,6 @@ c</label><div class="sd-tab-content docutils">
 for i in range(????):
     # FYLL INN: tegn figuren
 
-
 `;
 
         makeTurtleCode("container-kode-turtle-underveisoppgave-2-c", code);
@@ -888,7 +892,7 @@ b</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-20" name="sd-tab-set-5" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-20">
 c</label><div class="sd-tab-content docutils">
-<p>I figuren nedenfor er vinkelen i hvert hjørne 60 grader. Lengden på sidene blir 5 mindre for hver gang.</p>
+<p>I figuren nedenfor er vinkelen i hvert hjørne 120 grader (hvor mange grader må du snu deg da?). Lengden på sidene blir 5 mindre for hver gang.</p>
 <p>Endre på programmet slik at det tegner denne figuren.</p>
 <figure class="align-default">
 <a class="no-click reference internal image-reference" href="../../../_images/animasjon7.gif"><img alt="../../../_images/animasjon7.gif" class="no-click" src="../../../_images/animasjon7.gif" style="width: 25%;" /></a>
@@ -911,6 +915,119 @@ while L > 0:
         makeTurtleCode("container-kode-turtle-utforsk-4", code);
     });
 </script>
+</div>
+<hr class="docutils" />
+<div class="check full-width admonition">
+<p class="admonition-title">Underveisoppgave 4</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+a</label><div class="sd-tab-content docutils">
+<p>Nedenfor tegnes en geometrisk figur der</p>
+<ul class="simple">
+<li><p>Hvert linjestykke blir <span class="math notranslate nohighlight">\(5\)</span> lenger for hver gang.</p></li>
+<li><p>Vinkelen mellom hvert linjestykke er <span class="math notranslate nohighlight">\(90\)</span> grader.</p></li>
+<li><p>Det tegnes til sammen <span class="math notranslate nohighlight">\(20\)</span> linjestykker.</p></li>
+<li><p>Det første linjestykke har lengde <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
+</ul>
+<figure class="align-default">
+<a class="no-click reference internal image-reference" href="../../../_images/animasjon8.gif"><img alt="../../../_images/animasjon8.gif" class="no-click" src="../../../_images/animasjon8.gif" style="width: 40%;" /></a>
+</figure>
+<p>Fyll ut programmet slik at det tegnes figuren over.</p>
+<div id="container-kode-turtle-underveisoppgave-4-a"></div>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = `from turtle import *
+
+n = 20 # antall linjestykker
+lengde = # FYLL INN: startlengde
+while n > 0:
+    # FYLL INN: flytt fremover
+    # FYLL INN: snu 90 grader
+
+    # ta bort et linjestykke
+    n = # FYLL INN
+
+    # Øk lengden
+    lengde = # FYLL INN
+
+`;
+
+        makeTurtleCode("container-kode-turtle-underveisoppgave-4-a", code);
+    });
+</script>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+b</label><div class="sd-tab-content docutils">
+<p>Nedenfor tegnes en spiral der</p>
+<ul class="simple">
+<li><p>Hvert linjestykke blir <span class="math notranslate nohighlight">\(1\)</span> lenger for hver gang.</p></li>
+<li><p>Vinkelen mellom hvert linjestykke er <span class="math notranslate nohighlight">\(150\)</span> grader (så man snur seg <span class="math notranslate nohighlight">\(180-150=30\)</span> grader mot venstre).</p></li>
+<li><p>Til sammen tegnes det <span class="math notranslate nohighlight">\(30\)</span> linjestykker.</p></li>
+<li><p>Det første linjestykke har lengde <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
+</ul>
+<figure class="align-default">
+<a class="no-click reference internal image-reference" href="../../../_images/animasjon9.gif"><img alt="../../../_images/animasjon9.gif" class="no-click" src="../../../_images/animasjon9.gif" style="width: 40%;" /></a>
+</figure>
+<p>Fyll ut programmet slik at det tegner figuren over.</p>
+<div id="container-kode-turtle-underveisoppgave-4-b"></div>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = `from turtle import *
+
+n = 20 # antall linjestykker
+lengde = # FYLL INN: startlengde
+while n > 0:
+    # FYLL INN: flytt fremover
+    # FYLL INN: snu 30 grader
+
+    # ta bort et linjestykke
+    n = # FYLL INN
+
+    # Øk lengden
+    lengde = # FYLL INN
+
+`;
+
+        makeTurtleCode("container-kode-turtle-underveisoppgave-4-b", code);
+    });
+</script>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+c</label><div class="sd-tab-content docutils">
+<p>Nedenfor tegnes det en spiral der</p>
+<ul class="simple">
+<li><p>Lengden til hvert linjestykke er <span class="math notranslate nohighlight">\(10 \%\)</span> lenger enn det forrige.</p></li>
+<li><p>Vinkelen mellom hvert linjestykke er <span class="math notranslate nohighlight">\(140\)</span> grader (hvor mange grader må du snu deg da?)</p></li>
+<li><p>Den totale lengden av linjestykkene overgår ikke <span class="math notranslate nohighlight">\(1000\)</span>.</p></li>
+<li><p>Det første linjestykke har lengde <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
+</ul>
+<figure class="align-default">
+<a class="no-click reference internal image-reference" href="../../../_images/animasjon10.gif"><img alt="../../../_images/animasjon10.gif" class="no-click" src="../../../_images/animasjon10.gif" style="width: 40%;" /></a>
+</figure>
+<div id="container-kode-turtle-underveisoppgave-4-c"></div>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = `from turtle import *
+
+total_lengde = 0
+    lengde = 1
+    while ????: # FYLL INN: 
+        # FYLL INN: flytt fremover
+        # FYLL INN: snu mot høyre
+
+        total_lengde = total_lengde + lengde
+        lengde = # FYLL INN: øk lengden
+
+`;
+
+        makeTurtleCode("container-kode-turtle-underveisoppgave-4-c", code);
+    });
+</script>
+</div>
+</div>
 </div>
 </section>
 </section>

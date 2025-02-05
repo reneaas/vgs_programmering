@@ -119,6 +119,7 @@ class: summary
 | `left(120)`{l=python} | Snur skilpadden 120 grader mot venstre. |
 | `penup()`{l=python} | Løfter pennen slik at skilpadden ikke tegner. |
 | `pendown()`{l=python} | Senker pennen slik at skilpadden tegner. |
+| `speed(heltall)`{l=python} | Setter farten til skilpadden. `speed(1)`{l=python} er sakte. `speed(9)`{l=python} er nest-raskest og `speed(0)` er raskest. Heltallene mellom 1 og 9 gir gradvis større fart. |
 
 
 :::::
@@ -496,7 +497,7 @@ class: no-click
 
 
 :::::::::::::{tab-item} c
-I figuren nedenfor er vinkelen i hvert hjørne 60 grader. Lengden på sidene blir 5 mindre for hver gang.
+I figuren nedenfor er vinkelen i hvert hjørne 120 grader (hvor mange grader må du snu deg da?). Lengden på sidene blir 5 mindre for hver gang.
 
 Endre på programmet slik at det tegner denne figuren. 
 
@@ -516,5 +517,94 @@ class: no-click
 file: ./utforsk/utforsk_4/utforsk_4.html
 ---
 :::
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Underveisoppgave 4
+---
+class: check, full-width
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Nedenfor tegnes en geometrisk figur der 
+* Hvert linjestykke blir $5$ lenger for hver gang. 
+* Vinkelen mellom hvert linjestykke er $90$ grader. 
+* Det tegnes til sammen $20$ linjestykker. 
+* Det første linjestykke har lengde $1$.
+
+:::{figure} ./underveisoppgaver/oppgave_4/a/animasjon.gif
+---
+width: 40%
+class: no-click
+---
+:::
+
+Fyll ut programmet slik at det tegnes figuren over.
+
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_4/a/python.html
+---
+:::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Nedenfor tegnes en spiral der 
+
+* Hvert linjestykke blir $1$ lenger for hver gang. 
+* Vinkelen mellom hvert linjestykke er $150$ grader (så man snur seg $180-150=30$ grader mot venstre).
+* Til sammen tegnes det $30$ linjestykker. 
+* Det første linjestykke har lengde $1$.
+
+:::{figure} ./underveisoppgaver/oppgave_4/b/animasjon.gif
+---
+width: 40%
+class: no-click
+---
+:::
+
+Fyll ut programmet slik at det tegner figuren over.
+
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_4/b/python.html
+---
+:::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Nedenfor tegnes det en spiral der
+* Lengden til hvert linjestykke er $10 \%$ lenger enn det forrige.
+* Vinkelen mellom hvert linjestykke er $140$ grader (hvor mange grader må du snu deg da?)
+* Den totale lengden av linjestykkene overgår ikke $1000$. 
+* Det første linjestykke har lengde $1$.
+
+:::{figure} ./underveisoppgaver/oppgave_4/c/animasjon.gif
+---
+width: 40%
+class: no-click
+---
+:::
+
+
+:::{raw} html
+---
+file: ./underveisoppgaver/oppgave_4/c/python.html
+---
+:::
+
+:::::::::::::
+::::::::::::::
 
 :::::::::::::::
