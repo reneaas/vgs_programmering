@@ -75,7 +75,9 @@ class: tabs-parts
 ---
 ::::::::::::{tab-item} a
 
-Under vises et program som anvender denne strategi ved å bruke en `for`{l=python}-løkke og en `if`{l=python}-test. 
+Under vises et program som anvender denne strategi ved å bruke en `for`{l=python}-løkke og en `if`{l=python}-test.
+
+Les programmet og forutsi hva programmet skriver ut. Skriv inn under og sjekk svaret ditt!
 
 :::{raw} html
 ---
