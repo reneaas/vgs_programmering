@@ -465,9 +465,11 @@ file: ./python/utforsk/utforsk_3/c.html
 
 :::::::::::::
 
+:::::::::::::::
+
 ---
 
-:::::::::::::{admonition} Underveisoppgave 3
+:::::::::::::::{admonition} Underveisoppgave 3
 ---
 class: check
 ---
@@ -550,7 +552,7 @@ file: ./python/underveisoppgaver/oppgave_3/d.html
 ::::::::::::::
 
 
-:::::::::::::
+:::::::::::::::
 
 
 
