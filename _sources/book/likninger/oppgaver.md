@@ -9,7 +9,7 @@ class: tip
 * Kunne skrive programmer som bruker bestemte algoritmer til å løse likninger.
 ::::
 
-> **Forkunnskaper**: <br> Her må du være kjent med både `for`{l=python}-løkker, `while`{l=python}-løkker og `if`{l=python}-tester. Vi starter derfor med litt repetisjon:
+> **Forkunnskaper**: <br> Her må du være kjent med både `for`{l=python}-løkker og `while`{l=python}-løkker. Vi starter derfor med litt repetisjon:
 
 :::::::::::::::{admonition} Repetisjonsquiz 1
 ---
@@ -386,7 +386,6 @@ file: ./python/underveisoppgaver/oppgave_2/c.html
 
 :::::::::::::::
 
-<!-- 
 ---
 
 
@@ -397,7 +396,8 @@ Noen ganger går det veldig sakte å bruke strategi 1 eller strategi 2 for å fi
 ---
 class: explore
 ---
-I animasjonen nedenfor vises en strategi der man bruker nullpunktene til tangenter til å gradvis nærmere seg nullpunktet til en funksjon $f$. 
+
+I animasjonen nedenfor vises en strategi der man bruker nullpunktene til tangenter til å gradvis nærmere seg nullpunktet til en funksjon $f$. Strategien kalles for **Newtons metode**.
 
 
 :::{video} ./koder/animasjoner/media/videos/newtons_metode/1080p60/NewtonsMethod.mp4
@@ -412,19 +412,52 @@ width: 95%
 class: tabs-parts
 ---
 :::::::::::{tab-item} a
+Forklar hva $x_1$, $y_1$ og $a$ er i ettpunktsformelen nedenfor dersom likningen skal være en tangent til grafen til en funksjon $f$.
 
+$$
+y - y_1 = a(x - x_1)
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$(x_1, y_1) = (x_1, f(x_1))$ og $a$ er stigningstallet til tangenten som blir $a = f'(x_1)$. 
+::::
 
 :::::::::::
 
 
 :::::::::::{tab-item} b
+Finn en formel for nullpunktet til en tangent som er skrevet på formen 
+
+$$
+y - y_1 = a(x - x_1)
+$$
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = x_1 - \dfrac{y_1}{a}
+$$
+::::
+
 
 
 :::::::::::
 
 
 :::::::::::{tab-item} c
+Fyll ut programmet nedenfor der du bruker Newtons metode til å finne en tilnærming til et av nullpunktene til $f$. 
 
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_3/c.html
+---
+:::
 
 :::::::::::
 
@@ -432,9 +465,98 @@ class: tabs-parts
 
 :::::::::::::
 
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Underveisoppgave 3
+---
+class: check
+---
+Bruk Newtons metode til å bestemme nullpunktene til funksjonene. 
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts 
+---
+:::::::::::::{tab-item} a
+$$
+f(x) = -x^2 + 16.
+$$
+
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/oppgave_3/a.html
+---
+:::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+
+
+$$
+f(x) = x^2 - 3x + 2.
+$$
+
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/oppgave_3/b.html
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+
+$$
+f(x) = x^3 - 3x^2 - 4x + 12.
+$$
+
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/oppgave_3/c.html
+---
+:::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} d
+
+
+$$
+f(x) = x^3 + 5x^2 + 2x - 8
+$$
+
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/oppgave_3/d.html
+---
+:::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
 
 
 
 
 
- -->
+
+
