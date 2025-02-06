@@ -265,6 +265,8 @@ $$
 
 ved å bruke **strategi 2**. Les programmet og forutsi hvilke verdier som skrives ut av programmet.
 
+Les programmet og forutsi hva programmet skriver ut. Skriv inn svaret ditt under!
+
 :::{raw} html
 ---
 file: ./python/utforsk/utforsk_2/a.html
