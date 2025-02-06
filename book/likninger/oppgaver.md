@@ -250,7 +250,7 @@ Gitt en funksjon $f$ kan vi løse likningen $f(x) = 0$ med følgende steg:
 
 Det er hensiktsmessig å velge $\Delta x$ til å være en brøk $\dfrac{1}{2^m}$ for et heltall $m$ for å unngå avrundingsfeil på datamaskinen. 
 
-> I praksis kan det være lurt å velge $\delta = 2\cdot \Delta x$ for å finne løsningene.
+> Når vi skriver `abs(f(x))`{l=python} i et program, regner vi ut $|f(x)|$. Dette betyr at vi får absoluttverdien til $f(x)$.
 ::::::::::::::
 
 
