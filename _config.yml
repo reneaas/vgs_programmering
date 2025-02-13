@@ -5,14 +5,16 @@ exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.
 
 
 launch_buttons:
+  notebook_interface: "jupyterlab"  # or "classic"
   binderhub_url: "https://mybinder.org"
   thebe: true
+  colab_url: "https://colab.research.google.com"
 
 options:
   numbered: true
 
 execute:
-  execute_notebooks: off
+  execute_notebooks: auto
 
 parse:
   myst_enable_extensions:
@@ -28,9 +30,9 @@ parse:
 
 
 repository:
-  url: https://github.com/reneaas/vgs_progging/
-  path_to_book: book/
-  branch: main/
+  url: https://github.com/reneaas/vgs_programmering
+  path_to_book: book
+  branch: main
 
 
 pdfhtml:
