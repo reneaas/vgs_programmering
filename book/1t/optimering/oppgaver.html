@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Optimering &#8212; Programmering i Videregående Skole</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=30f71dd5" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=116f3964" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=f94e6bdf" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=b0ab4282" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=909868bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=14d1535c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=54189cd9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=c9cad18c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/escapeRoom/style.css?v=b30732ed" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/1t/optimering/oppgaver';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
+    <script src="../../../_static/static_code_blocks.js?v=e512471c"></script>
+    <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
+    <script src="../../../_static/utils.js?v=14803243"></script>
+    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=9ab656ac"></script>
+    <script src="../../../_static/interactiveCode/pythonRunner.js?v=8bbb0f19"></script>
+    <script src="../../../_static/interactiveCode/workerManager.js?v=028e9de9"></script>
+    <script src="../../../_static/interactiveCode/turtleCode.js?v=a960389b"></script>
+    <script src="../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
+    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
+    <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuiz.js?v=7d161c2c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/sequentialMultipleChoiceQuiz.js?v=5e45fa59"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=f8e9756b"></script>
+    <script src="../../../_static/multipleChoiceQuiz/timedMultipleChoiceQuiz.js?v=79e3619c"></script>
+    <script src="../../../_static/skulpt/skulpt.js?v=51c28977"></script>
+    <script src="../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
+    <script src="../../../_static/pairPuzzle/game.js?v=56c2b5af"></script>
+    <script src="../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
+    <script src="../../../_static/escapeRoom/escapeRoom.js?v=cdbaa3bb"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Vektorregning" href="../../r1/vektorregning/teori.html" />
+    <link rel="prev" title="Likninger" href="../../likninger/oppgaver.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
+
+<!-- CodeMirror scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- Skulpt -->
+
+<!-- <script src="../../../_static/skulpt/skulpt.js.html" defer></script> 
+<script src="../../../_static/skulpt/skulpt-stdlib.js.html" defer></script> -->
+
+
+
+<!-- <script src="../../../_static/skulpt-stdlib.js" defer></script>
+<script src="../../../_static/skulpt.js" defer></script> -->
+
+<!-- <script src="../../../_static/skulpt-stdlib.js.html" defer></script>
+<script src="../../../_static/skulpt.js.html" defer></script> -->
+
+<!-- <script src="/_static/skulpt-stdlib.js" defer></script>
+<script src="/_static/skulpt.js" defer></script> -->
+
+<!-- highlighting of code in Parsons puzzle -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+    <script src="../../../_static/theme-switcher.js"></script>
+</head>
+
+<!-- Interactive code -->
+<!-- <script src="../../../_static/interactiveCode/codeEditor.js"></script>
+<script src="../../../_static/interactiveCode/interactiveCodeSetup.js"></script>
+<script src="../../../_static/interactiveCode/pythonRunner.js"></script>
+<script src="../../../_static/interactiveCode/workerManager.js"></script>
+<script src="../../../_static/interactiveCode/predictionInteractiveCodeSetup.js"></script>
+<script src="../../../_static/interactiveCode/stepByStepPythonRunner.js"></script>
+<script src="../../../_static/interactiveCode/stepByStepInteractiveCodeSetup.js"></script> -->
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering i Videregående Skole</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Verktøykassa</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/variabler/variabler.html">Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Turtle programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../turtle/turtle/turtle.html">Kræsjkurs 💥 i programmering med <code class="code docutils literal highlight highlight-python"><span class="n">turtle</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matematikk</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../likninger/oppgaver.html">Likninger</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../r1/vektorregning/teori.html">Vektorregning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/book/1t/optimering/oppgaver.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Optimering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="optimering">
+<h1>Optimering<a class="headerlink" href="#optimering" title="Link to this heading">#</a></h1>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Nedenfor vises to funksjoner definert med Python kode, to <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker.</p>
+<p>I <a class="reference internal" href="#fig-1t-optimering-oppgave-1-merged"><span class="std std-numref">Fig. 1</span></a> vises to strategier som hver seg hører til én funksjon og én <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke.</p>
+<p>Bestem hvilken funksjon, <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke og figur som hører sammen.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p><strong>Funksjon 1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<br>
+</div>
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p><strong>Funksjon 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">12</span>
+</pre></div>
+</div>
+<br>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p><strong><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke I</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<br>
+</div>
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p><strong><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke II</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<br>
+</div>
+</div>
+</div>
+<figure class="align-default" id="fig-1t-optimering-oppgave-1-merged">
+<a class="no-click reference internal image-reference" href="../../../_images/merged_figure.svg"><img alt="../../../_images/merged_figure.svg" class="no-click" src="../../../_images/merged_figure.svg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">viser to forskjellige strategier for å finne ekstremalpunktet til en funksjon. Figuren til venstre viser en strategi for å finne ekstremalpunktet når det er et toppunkt, og figuren til høyre viser en strategi for å finne ekstremalpunktet når det er et bunnpunkt.</span><a class="headerlink" href="#fig-1t-optimering-oppgave-1-merged" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<!-- :::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+
+::::: -->
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>En andregradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = (x + 1)(x - 5)
+\]</div>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+a</label><div class="sd-tab-content docutils">
+<p>Bestem ekstremalpunktet til funksjonen <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+x = 2.
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+b</label><div class="sd-tab-content docutils">
+<p>Fyll ut programmet nedenfor og bruk én av strategiene som vist i <a class="reference internal" href="#fig-1t-optimering-oppgave-1-merged"><span class="std std-numref">Fig. 1</span></a> for å finne ekstremalpunktet til funksjonen <span class="math notranslate nohighlight">\(f\)</span>.</p>
+
+<div id="container-kode-1t-optimering-oppgave-2-b"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return # FYLL INN funksjonsuttrykk
+
+x = # FYLL INN startverdi
+
+while ????: # FYLL INN betingelse
+    x = # FYLL INN 
+
+print(x)
+`;
+
+        makeInteractiveCode(
+            "container-kode-1t-optimering-oppgave-2-b",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Siden <span class="math notranslate nohighlight">\(f\)</span> har et bunnpunkt, bruker vi strategien i figur B fra <a class="reference internal" href="#fig-1t-optimering-oppgave-1-merged"><span class="std std-numref">Fig. 1</span></a>. Betingelsen i <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkken blir derfor at vi skal øke <span class="math notranslate nohighlight">\(x\)</span> med <span class="math notranslate nohighlight">\(1\)</span> så lenge <span class="math notranslate nohighlight">\(f(x) &gt; f(x + 1)\)</span>.</p>
+<p><strong>Programkode</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
+<span class="linenos">3</span>    
+<span class="linenos">4</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="linenos">5</span><span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">6</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> 
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="problem-level-2 admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>En rasjonal funksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \dfrac{x^2 - 6x + 5}{(x - 2)(x - 4)}
+\]</div>
+<p>I <a class="reference internal" href="#fig-1t-optimering-oppgave-3"><span class="std std-numref">Fig. 2</span></a> vises grafen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<figure class="align-default" id="fig-1t-optimering-oppgave-3">
+<a class="no-click reference internal image-reference" href="../../../_images/graf.svg"><img alt="../../../_images/graf.svg" class="no-click" src="../../../_images/graf.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">viser grafen til en rasjonal funksjon <span class="math notranslate nohighlight">\(f\)</span>.</span><a class="headerlink" href="#fig-1t-optimering-oppgave-3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+a</label><div class="sd-tab-content docutils">
+<p>Bestem nullpunktene og asymptotene til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<ul class="simple">
+<li><p>Nullpunkter: <span class="math notranslate nohighlight">\(x = 1\)</span> og <span class="math notranslate nohighlight">\(x = 5\)</span></p></li>
+<li><p>Vertikale asymptoter: <span class="math notranslate nohighlight">\(x = 2\)</span> og <span class="math notranslate nohighlight">\(x = 4\)</span>.</p></li>
+<li><p>Horisontal asymptote: <span class="math notranslate nohighlight">\(y = 1\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+b</label><div class="sd-tab-content docutils">
+<p>Bestem i hvilket intervall <span class="math notranslate nohighlight">\(f\)</span> har et ekstremalpunkt.</p>
+<div class="hints dropdown admonition">
+<p class="admonition-title">Hint</p>
+<p>Hvor vil en tangent i grafen til <span class="math notranslate nohighlight">\(f\)</span> har stigningstall <span class="math notranslate nohighlight">\(0\)</span>?</p>
+</div>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+x \in \langle 2, 4 \rangle. 
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+c</label><div class="sd-tab-content docutils">
+<p>Lag et program som finner ekstremalpunktet til <span class="math notranslate nohighlight">\(f\)</span> ved å bruke én av strategiene i <a class="reference internal" href="#fig-1t-optimering-oppgave-1-merged"><span class="std std-numref">Fig. 1</span></a> fra oppgave 1.</p>
+<blockquote>
+<div><p>Tips: Her er det lurt å øke <span class="math notranslate nohighlight">\(x\)</span> med et lite tall, f.eks <span class="math notranslate nohighlight">\(0.25\)</span> i stedet for å øke <span class="math notranslate nohighlight">\(x\)</span> med <span class="math notranslate nohighlight">\(1\)</span>. Husk at <span class="math notranslate nohighlight">\(f(x)\)</span> ikke er definert i bruddpunktene sine heller.</p>
+</div></blockquote>
+
+<div id="container-kode-1t-optimering-oppgave-3-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    teller = # FYLL INN tellerpolynomet
+    nevner = # FYLL INN nevnerpolynomet
+    return teller / nevner
+    
+    
+x = # FYLL INN startverdi
+while ????: # FYLL INN betingelse
+    x = x + 0.25
+    
+print(x)
+`;
+
+        makeInteractiveCode(
+            "container-kode-1t-optimering-oppgave-3-c",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Vi leter etter et bunnpunkt, så vi bruker betingelsen <span class="math notranslate nohighlight">\(f(x) &gt; f(x + 0.25)\)</span> i <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkken for å gå i “nedoverbakke” mot bunnpunktet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">teller</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="linenos"> 3</span>    <span class="n">nevner</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">teller</span> <span class="o">/</span> <span class="n">nevner</span>
+<span class="linenos"> 5</span>    
+<span class="linenos"> 6</span>    
+<span class="linenos"> 7</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.25</span>
+<span class="linenos"> 8</span><span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span><span class="p">):</span>
+<span class="linenos"> 9</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span>
+<span class="linenos">10</span>    
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>utskriften forteller oss at <span class="math notranslate nohighlight">\(x = 3\)</span> er ekstremalpunktet til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="problem-level-3 admonition">
+<p class="admonition-title">Oppgave 4</p>
+<p>En rasjonal funksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \dfrac{8}{x^2 + 16} \quad \text{der} \quad D_f = [0, \to \rangle
+\]</div>
+<p>I <a class="reference internal" href="#fig-1t-optimering-oppgave-4"><span class="std std-numref">Fig. 3</span></a> vises grafen til <span class="math notranslate nohighlight">\(f\)</span>.
+Et rektangel har hjørner i <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((3, 0)\)</span>, <span class="math notranslate nohighlight">\((3, f(3))\)</span> og <span class="math notranslate nohighlight">\((0, f(3))\)</span>.</p>
+<figure class="align-default" id="fig-1t-optimering-oppgave-4">
+<a class="no-click reference internal image-reference" href="../../../_images/graf1.svg"><img alt="../../../_images/graf1.svg" class="no-click" src="../../../_images/graf1.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">viser en rasjonal funksjon <span class="math notranslate nohighlight">\(f\)</span> og et rektangel med hjørner i <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((3, 0)\)</span>, <span class="math notranslate nohighlight">\((3, f(3))\)</span> og <span class="math notranslate nohighlight">\((0, f(3))\)</span>.</span><a class="headerlink" href="#fig-1t-optimering-oppgave-4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+a</label><div class="sd-tab-content docutils">
+<p>Bestem arealet til rektangelet i <a class="reference internal" href="#fig-1t-optimering-oppgave-4"><span class="std std-numref">Fig. 3</span></a>.</p>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{areal} = \dfrac{3 \cdot 8}{3^2 + 16} = \dfrac{24}{25}.
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+b</label><div class="sd-tab-content docutils">
+<p>Et annet rektangel har hjørner i <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((x, 0)\)</span>, <span class="math notranslate nohighlight">\((x, f(x))\)</span> og <span class="math notranslate nohighlight">\((0, f(x))\)</span>.</p>
+<p>Bestem arealet <span class="math notranslate nohighlight">\(A(x)\)</span> til rektangelet.</p>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+A(x) = x \cdot f(x) = \dfrac{8x}{x^2 + 16}.
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+c</label><div class="sd-tab-content docutils">
+<p>Lag et program som skriver ut en oversikt over arealet <span class="math notranslate nohighlight">\(A(n)\)</span> til rektangeler med hjørner i <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((n, 0)\)</span>, <span class="math notranslate nohighlight">\((n, f(n))\)</span> og <span class="math notranslate nohighlight">\((0, f(n))\)</span> for <span class="math notranslate nohighlight">\(n \in \{1, 2, \ldots, 10\}\)</span>.</p>
+
+<div id="container-kode-1t-optimering-oppgave-4-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    teller = # FYLL INN
+    nevner = # FYLL INN
+    return # FYLL INN 
+
+def A(x):
+    return # FYLL INN 
+
+
+for x in ????:
+    print(f"{x = } \t {A(x) = :.2f}")
+`;
+
+        makeInteractiveCode(
+            "container-kode-1t-optimering-oppgave-4-c",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">teller</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="linenos"> 3</span>    <span class="n">nevner</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">16</span>
+<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">teller</span> <span class="o">/</span> <span class="n">nevner</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 7</span>    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+<span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="si">= }</span><span class="s2"> 	 </span><span class="si">{</span><span class="n">A</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="si">= :</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">n = 1 	 A(n) = 0.47</span>
+<span class="go">n = 2 	 A(n) = 0.80</span>
+<span class="go">n = 3 	 A(n) = 0.96</span>
+<span class="go">n = 4 	 A(n) = 1.00</span>
+<span class="go">n = 5 	 A(n) = 0.98</span>
+<span class="go">n = 6 	 A(n) = 0.92</span>
+<span class="go">n = 7 	 A(n) = 0.86</span>
+<span class="go">n = 8 	 A(n) = 0.80</span>
+<span class="go">n = 9 	 A(n) = 0.74</span>
+<span class="go">n = 10 	 A(n) = 0.69</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+d</label><div class="sd-tab-content docutils">
+<p>Lag et program som bestemmer <span class="math notranslate nohighlight">\(x\)</span> slik at arealet av rektangelet blir størst mulig.</p>
+
+<div id="container-kode-1t-optimering-oppgave-4-d"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    teller = # FYLL INN
+    nevner = # FYLL INN
+    return # FYLL INN 
+
+def A(x):
+    return # FYLL INN 
+
+
+# Skriv en passende løkke her
+
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-1t-optimering-oppgave-4-d",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">teller</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="linenos"> 3</span>    <span class="n">nevner</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">16</span>
+<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">teller</span> <span class="o">/</span> <span class="n">nevner</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 7</span>    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">11</span><span class="k">while</span> <span class="n">A</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span><span class="p">):</span>
+<span class="linenos">12</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span>
+<span class="linenos">13</span>    
+<span class="linenos">14</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Program skriver ut <span class="math notranslate nohighlight">\(4.0\)</span> som betyr at <span class="math notranslate nohighlight">\(x = 4\)</span> gir størst mulig areal for rektangelet.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/1t/optimering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../likninger/oppgaver.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Likninger</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../r1/vektorregning/teori.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vektorregning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av René Ask
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
