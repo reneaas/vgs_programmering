@@ -1,6 +1,6 @@
 def main():
     polylongdiv(
-        fname="filnavn",
+        fname=__file__.split("/")[-1].replace(".py", ""),
         p="x^3 + 2x^2 - 3x - 6",
         q="x - 2",
         stage=None,
@@ -34,6 +34,6 @@ if __name__ == "__main__":
     # Add the GitHub repository root to sys.path
     sys.path.append(repo_root)
 
-    from python_utils.polydiv import polylongdiv
+    from python_util.polydiv import polylongdiv
 
     main()
