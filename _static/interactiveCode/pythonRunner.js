@@ -1,7 +1,7 @@
 // pythonRunner.js
 
 class PythonRunner {
-    constructor(outputId, errorBoxId, preloadPackages = null) {
+    constructor(outputId, errorBoxId, preloadPackages = ['casify']) {
         this.outputId = outputId;            // ID of the HTML element where output will be displayed
         this.errorBoxId = errorBoxId;        // ID of the HTML element for displaying errors
         this.workerManager = WorkerManager.getInstance(preloadPackages);
@@ -42,6 +42,10 @@ class PythonRunner {
         // Extract and load necessary packages
         const packages = this.extractPackageNames(this.currentCode);
 
+        if (!packages.includes('matplotlib')) {
+            packages.push('matplotlib');
+        }
+
         console.log("Packages to load:", packages);
         if (packages.length > 0) {
             try {
@@ -69,8 +73,22 @@ class PythonRunner {
                 this.handleWorkerMessage(data);
             } else if (data.type === 'stderr') {
                 this.handleErrorMessage(data.msg);  // Displays the error
-            }
-            if (data.type === 'executionComplete') {
+            } else if (data.type === 'plot') {
+                const outputElement = document.getElementById(this.outputId);
+                if (!outputElement) {
+                    console.error("Output element not found:", this.outputId);
+                    return;
+                }
+    
+                const img = document.createElement('img');
+                img.src = 'data:image/png;base64,' + data.data;
+                img.style.width = '100%'; // Or any other appropriate styling
+                img.style.height = 'auto'; // Or any other appropriate styling
+                img.style.maxHeight = '500px';  // Example: set a max width
+    
+                outputElement.appendChild(img);
+                this.scrollToBottom(outputElement); // Scroll to show new plot
+            } else if (data.type === 'executionComplete') {
                 console.log("Code execution complete for messageId:", data.messageId);
             }
         };

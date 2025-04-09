@@ -39,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=30f71dd5" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=116f3964" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=c7a780b7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=bf5bef53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=f94e6bdf" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=b0ab4282" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/geogebra.css?v=a394f485" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
     <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=909868bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=14d1535c" />
@@ -52,7 +53,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=54189cd9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=f2a0e64a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=c9cad18c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/escapeRoom/style.css?v=b30732ed" />
   
@@ -86,9 +87,9 @@
     <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
     <script src="../../../_static/utils.js?v=14803243"></script>
     <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=9ab656ac"></script>
-    <script src="../../../_static/interactiveCode/pythonRunner.js?v=8bbb0f19"></script>
-    <script src="../../../_static/interactiveCode/workerManager.js?v=028e9de9"></script>
-    <script src="../../../_static/interactiveCode/turtleCode.js?v=a960389b"></script>
+    <script src="../../../_static/interactiveCode/pythonRunner.js?v=768e9740"></script>
+    <script src="../../../_static/interactiveCode/workerManager.js?v=17965024"></script>
+    <script src="../../../_static/interactiveCode/turtleCode.js?v=9599ca89"></script>
     <script src="../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
     <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
     <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
@@ -110,7 +111,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
 <!-- Pyodide -->
-<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.js"></script>
 
 
 <!-- CodeMirror -->
@@ -124,37 +125,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-<!-- Skulpt -->
-
-<!-- <script src="../../../_static/skulpt/skulpt.js.html" defer></script> 
-<script src="../../../_static/skulpt/skulpt-stdlib.js.html" defer></script> -->
-
-
-
-<!-- <script src="../../../_static/skulpt-stdlib.js" defer></script>
-<script src="../../../_static/skulpt.js" defer></script> -->
-
-<!-- <script src="../../../_static/skulpt-stdlib.js.html" defer></script>
-<script src="../../../_static/skulpt.js.html" defer></script> -->
-
-<!-- <script src="/_static/skulpt-stdlib.js" defer></script>
-<script src="/_static/skulpt.js" defer></script> -->
-
 <!-- highlighting of code in Parsons puzzle -->
 <head>
     <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
     <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
-    <script src="../../../_static/theme-switcher.js"></script>
 </head>
 
-<!-- Interactive code -->
-<!-- <script src="../../../_static/interactiveCode/codeEditor.js"></script>
-<script src="../../../_static/interactiveCode/interactiveCodeSetup.js"></script>
-<script src="../../../_static/interactiveCode/pythonRunner.js"></script>
-<script src="../../../_static/interactiveCode/workerManager.js"></script>
-<script src="../../../_static/interactiveCode/predictionInteractiveCodeSetup.js"></script>
-<script src="../../../_static/interactiveCode/stepByStepPythonRunner.js"></script>
-<script src="../../../_static/interactiveCode/stepByStepInteractiveCodeSetup.js"></script> -->
 
 
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -456,7 +432,7 @@ document.write(`
 <section id="hva-er-en-variabel">
 <h2>Hva er en variabel?<a class="headerlink" href="#hva-er-en-variabel" title="Link to this heading">#</a></h2>
 <p>En variabel er den grunnleggende byggesteinen i Python. Det er noe vi selv lager (såkalt <em>brukerdefinert</em>). Vi bruker variabelen til å gjøre noe - i matematikk bruker vi det typisk til å regne ut noe og lagre tall.</p>
-<div class="theory admonition">
+<div class="summary admonition">
 <p class="admonition-title">Variabel i Python</p>
 <p>En <strong>variabel</strong> er en brukerdefinert ting som har</p>
 <ul class="simple">
@@ -483,37 +459,22 @@ Del 1: Skriv ut verdier</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><strong>Oppgave:</strong> Les gjennom programmet, og prøv å forutsi hva det vil skrive ut basert på variablene. Skriv ned hypotesen din og sjekk om den stemmer når du kjører programmet.</p></li>
 </ul>
-<div id="container-kode-variabler-utforsk-1-del-1"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
+        <div id="container-code-2bc70335"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
 `print(2)
 print(-5)
-print("Hei!")
-`;
+print("Hei!")`;
 
-        makePredictionInteractiveCode(
-            "container-kode-variabler-utforsk-1-del-1",
-            code,
-        );
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+                makePredictionInteractiveCode(
+                    "container-code-2bc70335",
+                    code,
+                );
+            });
+        </script>
+        </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Del 2: Skriv ut variabler</label><div class="sd-tab-content docutils">
@@ -522,41 +483,26 @@ Del 2: Skriv ut variabler</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><strong>Oppgave:</strong> Les gjennom programmet, og prøv å forutsi hva det vil skrive ut basert på variablene. Skriv ned hypotesen din og sjekk om den stemmer når du kjører programmet.</p></li>
 </ul>
-<div id="container-kode-variabler-utforsk-1-del-2"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
+        <div id="container-code-4f82044b"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
 `a = 2
 b = -3
 c = a * b       # Ganger 'a' og 'b' sammen og lagrer resultatet i 'c'
 
 print(a)
 print(b)
-print(c)
-`;
+print(c)`;
 
-        makePredictionInteractiveCode(
-            "container-kode-variabler-utforsk-1-del-2",
-            code,
-        );
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+                makePredictionInteractiveCode(
+                    "container-code-4f82044b",
+                    code,
+                );
+            });
+        </script>
+        </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Del 3: Kombinere tekst og variabler med <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code></label><div class="sd-tab-content docutils">
@@ -565,89 +511,60 @@ Del 3: Kombinere tekst og variabler med <code class="code docutils literal highl
 <ul class="simple">
 <li><p><strong>Oppgave:</strong> Kjør programmet og legg merke til hva som skjer når <code class="docutils literal notranslate"><span class="pre">f</span></code> står foran tekststrengen. Hvor i teksten settes variabelverdien inn? Skriv ned hva du oppdager!</p></li>
 </ul>
-<div id="container-kode-variabler-utforsk-1-del-3"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
+        <div id="container-code-4ed0e2c8"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
 `x = 2
 
-print("x")          # Vi skriver bare ut 'x'
-print("{x}")        # Uten 'f' foran tekststrengen får vi ikke verdien :(
-print(f"{x}")       # Vi bytter ut '{x}' med verdien til x
-print(f"{x = }")    # Vi bytter ut '{x = }' med 'x = verdien til x' i utskriften
+# Vi skriver bare ut 'x'
+print("x")
+
+# Uten 'f' foran tekststrengen får vi ikke verdien :(
+print("{x}")
+
+# Vi bytter ut '{x}' med verdien til x
+print(f"{x}") 
+
+# Vi bytter ut '{x = }' med 'x = verdi' i utskriften
+print(f"{x = }")    
 `;
 
-        makeInteractiveCode(
-            "container-kode-variabler-utforsk-1-del-3",
-            code,
-        );
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                makeInteractiveCode(
+                    "container-code-4ed0e2c8",
+                    code,
+                );
+            });
+        </script>
+        </div>
 </div>
 </div>
-</div>
-<hr class="docutils" />
-<!-- 
-::::{admonition} Underveisquiz 1
----
-class: check
----
-:::{raw} html
----
-file: quiz/quiz_1/quiz_1.html
----
-:::
-
-:::: -->
 <hr class="docutils" />
 <div class="docutils">
 <div class="check admonition">
 <p class="admonition-title">Underveisoppgave 1</p>
 <p>Under vises et interaktivt kodevindu. Fyll ut koden under og kjør programmet.</p>
-<div id="container-kode-programmering-variabler-underveisoppgave-2"></div>
-<script type="text/javascript">
-    code = `
-navn =  # FYLL INN 
+
+        <div id="container-code-9bb40250"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`navn =  # FYLL INN 
 alder = # FYLL INN i år
 høyde = # FYLL INN i cm
 
 
 # Skriver ut dataen
-print(f"{navn = } \\n{alder = } år \\n{høyde = } cm")
-`;   
+print(f"{navn = } \\n{alder = } år \\n{høyde = } cm")`;
 
-    makeInteractiveCode(
-        "container-kode-programmering-variabler-underveisoppgave-2",
-        code,
-    );
-</script>
-
-
-
-
-
-
-
-
-
-
-
-<div class="answer dropdown admonition">
+                makeInteractiveCode(
+                    "container-code-9bb40250",
+                    code,
+                );
+            });
+        </script>
+        <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p>Jeg begynner å <em>dra</em> på åra, men her har du en mulig løsning:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">navn</span> <span class="o">=</span> <span class="s2">&quot;René&quot;</span> 

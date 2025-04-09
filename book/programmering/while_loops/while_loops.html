@@ -39,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=30f71dd5" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=116f3964" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=c7a780b7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=bf5bef53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=f94e6bdf" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=b0ab4282" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/geogebra.css?v=a394f485" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
     <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=909868bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=14d1535c" />
@@ -52,7 +53,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=54189cd9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=f2a0e64a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=c9cad18c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/escapeRoom/style.css?v=b30732ed" />
   
@@ -88,9 +89,9 @@
     <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
     <script src="../../../_static/utils.js?v=14803243"></script>
     <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=9ab656ac"></script>
-    <script src="../../../_static/interactiveCode/pythonRunner.js?v=8bbb0f19"></script>
-    <script src="../../../_static/interactiveCode/workerManager.js?v=028e9de9"></script>
-    <script src="../../../_static/interactiveCode/turtleCode.js?v=a960389b"></script>
+    <script src="../../../_static/interactiveCode/pythonRunner.js?v=768e9740"></script>
+    <script src="../../../_static/interactiveCode/workerManager.js?v=17965024"></script>
+    <script src="../../../_static/interactiveCode/turtleCode.js?v=9599ca89"></script>
     <script src="../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
     <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
     <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
@@ -112,7 +113,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
 <!-- Pyodide -->
-<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.js"></script>
 
 
 <!-- CodeMirror -->
@@ -126,37 +127,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-<!-- Skulpt -->
-
-<!-- <script src="../../../_static/skulpt/skulpt.js.html" defer></script> 
-<script src="../../../_static/skulpt/skulpt-stdlib.js.html" defer></script> -->
-
-
-
-<!-- <script src="../../../_static/skulpt-stdlib.js" defer></script>
-<script src="../../../_static/skulpt.js" defer></script> -->
-
-<!-- <script src="../../../_static/skulpt-stdlib.js.html" defer></script>
-<script src="../../../_static/skulpt.js.html" defer></script> -->
-
-<!-- <script src="/_static/skulpt-stdlib.js" defer></script>
-<script src="/_static/skulpt.js" defer></script> -->
-
 <!-- highlighting of code in Parsons puzzle -->
 <head>
     <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
     <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
-    <script src="../../../_static/theme-switcher.js"></script>
 </head>
 
-<!-- Interactive code -->
-<!-- <script src="../../../_static/interactiveCode/codeEditor.js"></script>
-<script src="../../../_static/interactiveCode/interactiveCodeSetup.js"></script>
-<script src="../../../_static/interactiveCode/pythonRunner.js"></script>
-<script src="../../../_static/interactiveCode/workerManager.js"></script>
-<script src="../../../_static/interactiveCode/predictionInteractiveCodeSetup.js"></script>
-<script src="../../../_static/interactiveCode/stepByStepPythonRunner.js"></script>
-<script src="../../../_static/interactiveCode/stepByStepInteractiveCodeSetup.js"></script> -->
 
 
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -410,9 +386,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -428,14 +402,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Innhold </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekursive-sammenhenger">Rekursive sammenhenger</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -1091,143 +1057,6 @@ while ??:   # FYLL INN
 </div>
 </div>
 </div>
-<hr class="docutils" />
-<section id="rekursive-sammenhenger">
-<h2>Rekursive sammenhenger<a class="headerlink" href="#rekursive-sammenhenger" title="Link to this heading">#</a></h2>
-<p><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker egner seg godt for å utforske sammenhenger som er rekursive. En rekursiv sammenheng er ofte gitt ved en formel der det neste tallet i en tallfølge er bestemt av det forrige.</p>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 2</p>
-<p>Under vises tre eksempler på rekursive sammenhenger og et program som regner ut noen tall i tallfølgen den rekursive sammenhengen gir opphav til.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-11">
-Eksempel 1</label><div class="sd-tab-content docutils">
-<p>Rekursjonsformel:</p>
-<div class="math notranslate nohighlight">
-\[
-x_{n + 1} = x_n + 2, \quad x_1 = 1
-\]</div>
-<div id="container-kode-while-løkker-utforsk-2-eksempel-1"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`x = 1  # Startverdi
-n = 1   # Første ledd i følgen
-while n < 5:
-    print(x)
-    x = x + 2   # Rekursjonsformel 
-    n = n + 1   # øk n med 1 --> neste ledd i følgen
-`;
-
-        makeInteractiveCode(
-            "container-kode-while-løkker-utforsk-2-eksempel-1",
-            code,
-        );
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<input id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-12">
-Eksempel 2</label><div class="sd-tab-content docutils">
-<p>Rekursjonsformel:</p>
-<div class="math notranslate nohighlight">
-\[
-x_{n + 1} = 3\cdot x_n, \quad x_1 = 3
-\]</div>
-<div id="container-kode-while-løkker-utforsk-2-eksempel-2"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`x = 3  # Startverdi
-n = 1   # Første ledd i følgen
-while n < 3:
-    print(x)
-    x = 3 * x   # Rekursjonsformel 
-    n = n + 1   # øk n med 1 --> neste ledd i følgen
-`;
-
-        makeInteractiveCode(
-            "container-kode-while-løkker-utforsk-2-eksempel-2",
-            code,
-        );
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-13">
-Eksempel 3</label><div class="sd-tab-content docutils">
-<p>Rekursjonsformel:</p>
-<div class="math notranslate nohighlight">
-\[
-x_{n + 1} = 2x_n + 1, \quad x_1 = 1
-\]</div>
-<div id="container-kode-while-løkker-utforsk-2-eksempel-3"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`x = 1  # Startverdi
-n = 1   # Første ledd i følgen
-while n <= 5:
-    print(x)
-    x = 2*x + 1     # Rekursjonsformel 
-    n = n + 1       # øk n med 1 --> neste ledd i følgen
-`;
-
-        makeInteractiveCode(
-            "container-kode-while-løkker-utforsk-2-eksempel-3",
-            code,
-        );
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1284,21 +1113,6 @@ while n <= 5:
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Innhold
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekursive-sammenhenger">Rekursive sammenhenger</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

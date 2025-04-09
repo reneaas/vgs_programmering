@@ -17,7 +17,7 @@ En variabel er den grunnleggende byggesteinen i Python. Det er noe vi selv lager
 
 ::::{admonition} Variabel i Python
 ---
-class: theory
+class: summary
 ---
 En **variabel** er en brukerdefinert ting som har
 * Et variabelnavn
@@ -53,11 +53,15 @@ Her er et lite program som skriver ut noen verdier direkte. Før du kjører det,
 
 - **Oppgave:** Les gjennom programmet, og prøv å forutsi hva det vil skrive ut basert på variablene. Skriv ned hypotesen din og sjekk om den stemmer når du kjører programmet.
 
-:::{raw} html
+:::{interactive-code}
 ---
-file: interaktiv_kode/utforsk/utforsk_1/del_1.html
+predict: true
 ---
-::: 
+print(2)
+print(-5)
+print("Hei!")
+
+:::
 
 ::::
 
@@ -68,11 +72,19 @@ I dette programmet definerer vi noen variabler og skriver ut verdiene deres.
 
 - **Oppgave:** Les gjennom programmet, og prøv å forutsi hva det vil skrive ut basert på variablene. Skriv ned hypotesen din og sjekk om den stemmer når du kjører programmet.
 
-:::{raw} html
+:::{interactive-code}
 ---
-file: interaktiv_kode/utforsk/utforsk_1/del_2.html
+predict: true
 ---
-::: 
+a = 2
+b = -3
+c = a * b       # Ganger 'a' og 'b' sammen og lagrer resultatet i 'c'
+
+print(a)
+print(b)
+print(c)
+
+:::
 
 ::::
 
@@ -83,29 +95,27 @@ I dette programmet ser du hvordan vi kan bruke `f`-strings til å sette inn verd
 
 - **Oppgave:** Kjør programmet og legg merke til hva som skjer når `f` står foran tekststrengen. Hvor i teksten settes variabelverdien inn? Skriv ned hva du oppdager!
 
-:::{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1/del_3.html
----
-::: 
+
+:::{interactive-code}
+x = 2
+
+# Vi skriver bare ut 'x'
+print("x")
+
+# Uten 'f' foran tekststrengen får vi ikke verdien :(
+print("{x}")
+
+# Vi bytter ut '{x}' med verdien til x
+print(f"{x}") 
+
+# Vi bytter ut '{x = }' med 'x = verdi' i utskriften
+print(f"{x = }")    
+
+:::
 
 ::::
 :::::
 ::::::
-
----
-<!-- 
-::::{admonition} Underveisquiz 1
----
-class: check
----
-:::{raw} html
----
-file: quiz/quiz_1/quiz_1.html
----
-:::
-
-:::: -->
 
 ---
 
@@ -119,10 +129,15 @@ class: check
 ---
 Under vises et interaktivt kodevindu. Fyll ut koden under og kjør programmet.
 
-:::{raw} html
----
-file: interaktiv_kode/underveisoppgaver/underveisoppgave_2.html
----
+
+:::{interactive-code}
+navn =  # FYLL INN 
+alder = # FYLL INN i år
+høyde = # FYLL INN i cm
+
+
+# Skriver ut dataen
+print(f"{navn = } \\n{alder = } år \\n{høyde = } cm")
 :::
 
 
