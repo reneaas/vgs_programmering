@@ -32,7 +32,8 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build .
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
+        jupyter-book build . --all
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action

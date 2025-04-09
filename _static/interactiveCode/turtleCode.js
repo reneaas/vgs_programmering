@@ -1,3 +1,12 @@
+function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = (Math.random() * 16) | 0;
+        const v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
+}
+
+
 class TurtleCode {
     /**
      * @param {string} containerId - ID of an existing <div> that will hold this environment.
@@ -13,7 +22,7 @@ class TurtleCode {
         this.initialCode = initialCode;
         this.cmOptions = cmOptions;
     
-        this.uniqueSuffix = generateUUID();
+        this.uniqueSuffix = generateUUID(); // to avoid ID collisions
     
         this.createUI();
       
@@ -131,12 +140,7 @@ class TurtleCode {
         const snippet = `
 try:
     import turtle
-    turtle.hideturtle()
     turtle.color("${forcedColor}")
-    turtle.penup()
-    turtle.goto(-50, 0)
-    turtle.pendown()
-    turtle.showturtle()
     screen = turtle.Screen()
 
     # screen.setup(width=300, height=300)
@@ -189,6 +193,6 @@ except:
     }
 }
 
-async function makeTurtleCode(containerId, initialCode = "", cmOptions = {}) {
+function makeTurtleCode(containerId, initialCode = "", cmOptions = {}) {
     return new TurtleCode(containerId, initialCode, cmOptions);
 }

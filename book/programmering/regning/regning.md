@@ -9,6 +9,9 @@ class: tip
 * Bruke Pythonkode til å regne med formler.
 :::
 
+
+
+
 Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å regne ut en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder. 
 
 ## Regnearter i Python
@@ -28,6 +31,17 @@ class: tabs-parts
 Under vises et program som bruker de ulike regneartene i Python til å regne ut noe og skrive ut svaret.
 
 Les programmet og forutsi hva som skrives ut. Skriv inn hypotesen din under for å sjekke.
+
+```{interactive-code}
+---
+predict: true
+---
+print(8 + 2)            # Pluss
+print(8 - 2)            # Minus
+print(8 * 2)            # Gange
+print(8 / 2)            # Dele
+print(8 ** 2)           # Potens
+```
 :::
 
 :::{tab-item} b
@@ -38,6 +52,10 @@ Bruk programmet til å regne ut svarene på følgende regnestykker:
 * $3 \cdot 4$
 * $\dfrac{3}{4}$
 * $3^4$
+
+```{interactive-code}
+# Skriv din kode her
+```
 
 ````{admonition} Fasit
 ---
@@ -59,11 +77,7 @@ print(3 ** 4)
 
 <br>
 
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/steg_1.html
----
-:::
+
 :::::
 
 > Etter utforsk 1, kan du ta en titt på oppsummeringsboksen under.
@@ -82,22 +96,6 @@ class: summary, dropdown
 
 ::::
 
-<!-- :::::{admonition} Utforsk 1
----
-class: explore
----
-Under vises et interaktivt kodevindu der noen regneoperasjoner blir utført.
-
-Prøv å bestemme hvilke verdier variablene `a`{l=python}, `b`{l=python}, `c`{l=python}, `p`{l=python} og `q`{l=python} får før du kjører programmet. <br>
-Kjør programmet for å sjekke svaret ditt!
-
-:::{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1.html
----
-:::
-
-::::: -->
 
 
 ## Formler
@@ -182,9 +180,18 @@ print(t)
 
 <br>
 
-:::{raw} html
+
+
+:::{interactive-code}
 ---
-file: interaktiv_kode/utforsk/utforsk_2.html
+predict: true
+---
+v = 20      # kilometer per time
+t = 2       # timer
+
+s = v * t   # strekning i kilometer
+
+print(s)
 :::
 
 ::::: 
@@ -232,11 +239,14 @@ Når et program ble kjørt, ga det utskriften
 
 Programmet er vist i tilfeldig rekkefølge under. Sett sammen programmet i riktig rekkefølge.
 
-:::{raw} html
----
-file: ./parsons_puzzle/oppgaver/oppgave_2.html
----
+:::{parsons-puzzle}
+print(2 * 3)
+print(-3 * 5 + 4)
+print(-1 ** 2 + 1)
+print((-1) ** 2 + 2)
+print((3 + 1) / 2)
 :::
+
 :::::
 
 ---
@@ -305,296 +315,16 @@ $F = -40$ gir $C = -40$. Da er temperaturen den samme i Fahrenheit og Celsius.
 
 <br>
 
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_3.html
----
+
+:::{interactive-code}
+F = float(input("Skriv inn temperatur i Fahrenheit: ")) # IKKE RØR
+
+C = # FYLL INN: formelen for temperatur i celsius
+
+print(C)
+
 :::
 
 ::::::
 
-
-
-::::::{admonition} Oppgave 4
----
-class: problem-level-2
----
-> Denne oppgaven er spesielt rettet mot de som tar **fysikk** som programfag.
-
-Universet er fryktelig stort. Vi kan sette tall på avstander i Universet, men når tall blir veldig store, blir de ganske vanskelige å tolke for menneskehjernen - vi har liksom ikke noen innebygd forståelse av ting vi ikke omgir oss med på den lille planeten vi kaller Jorden (som vi sikkert kan være enig om er forholdsvis stor den også!).
-
-Her skal du regne litt på størrelser i Universet og omforme avstandene til noe vi kan tolke og forstå.
-
-:::::{tab-set}
----
-class: tabs-parts
----
-::::{tab-item} a
-I mange sammenhenger må vi omforme mellom forskjellige enheter av tid for å tolke tallet. For eksempel vil ikke 7200 sekunder, 45 000 timer eller 892 dager være spesielt nyttige måter å uttrykke hvor lang tid noe tar. 
-
-I kodevinduet under vises et eksempel der en tid i sekunder omformes til tid i dager. Da bruker vi følgende omgjøringsfaktor til å omforme enheten:
-
-$$
-\text{faktor} =
-\begin{pmatrix}
-    \text{sekunder} \\
-    \text{per} \\
-    \text{minutt}
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-    \text{minutter} \\
-    \text{per} \\
-    \text{time}
-\end{pmatrix}
-$$
-
-
-Les programmet og forutsi hva som skrives ut. Skriv inn hypotesene din under for å sjekke!
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_a.html
----
-:::
-
-
-::::
-::::{tab-item} b
-Avstanden til vår nærmeste nabo, *månen*, er på ca. $384 \, 400 \ \mathrm{km}$. Tenk deg at vi skulle kjørt til månen med samme fart som en bil på E6 som har en fartsgrense på $100 \ \mathrm{km/h}$. 
-
-Bruk programmet under til å bestemme hvor mange dager det tar før vi kommer fram til månen. 
-
-:::{admonition} Hint
----
-class: dropdown, hints
----
-Du kan få bruk for vei-fart-tid formelen:
-
-$$
-s = v\cdot t
-$$
-:::
-
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_b.html
----
-:::
-
-````{admonition} Fasit
----
-class: dropdown, answer
----
-Programkode:
-```{code-block} python
-fart = 100                       # km/h
-strekning = 384_400              # km
-tid = avstand / fart             # h (timer) 
-
-timer_per_dag = 24
-tid = tid / timer_per_dag
-
-print(tid)
-```
-````
-::::
-
-::::{tab-item} c
-Avstanden til solen er omtrent $149 \, 600 \, 000 \ \mathrm{km}$.
-
-Vi tenker oss igjen at vi skal kjøre til solen med fart på $100 \ \mathrm{km/h}$. 
-
-Bruk programmet under til å bestemme hvor mange år det ville tatte å kjøre til solen.
-
-
-:::{admonition} Hint
----
-class: dropdown, hints
----
-For å regne ut antall timer per år, kan vi utføre regnestykket
-
-$$
-\text{timer per år} = (\text{timer per dag}) \cdot (\text{dager per år})
-$$
-:::
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_c.html
----
-:::
-
-
-````{admonition} Fasit
----
-class: dropdown, answer
----
-Programkode:
-```{code-block} python
----
-linenos: true
----
-strekning = 149_600_000  # km til solen
-fart = 100  # bilfart i km/h
-
-tid = strekning / fart
-timer_per_år = 24 * 365
-tid = tid / timer_per_år
-
-print(tid)
-```
-````
-::::
-
-::::{tab-item} d
-
-:::{admonition} Fakta om lys
----
-class: summary
----
-* Lys beveger seg med en konstant fart på ca. $300 \, 000 \ \mathrm{km/s}$. Vi kaller dette for *lysfarten*.
-* Avstanden lyset reiser på 1 jordår, kaller vi for et *lysår*. For å regne ut denne avstanden kan vi bruke formelen 
-
-$$
-s = v\cdot t
-$$ 
-:::
-
-Bruk programmet under til å bestemme hvor mange kilometer et lysår er.
-
-
-:::{admonition} Hint
----
-class: dropdown, hints
----
-For å regne ut antall sekunder per år, kan vi utføre regnestykket
-
-$$
-\begin{pmatrix}
-    \text{sekunder} \\
-    \text{per} \\
-    \text{år}
-\end{pmatrix}
-= 
-\begin{pmatrix}
-    \text{sekunder} \\
-    \text{per} \\
-    \text{minutt}
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-    \text{minutter} \\
-    \text{per} \\
-    \text{time}
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-    \text{timer} \\
-    \text{per} \\
-    \text{dag}
-\end{pmatrix}
-\cdot
-\begin{pmatrix}
-    \text{dager} \\
-    \text{per} \\
-    \text{år}
-\end{pmatrix}
-$$
-:::
-
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_d.html
----
-:::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-Programkode:
-```{code-block} python
----
-linenos: true
----
-lysfart = 300_000 # km / s
-
-t_år = 60 * 60 * 24 * 365
-lysår = lysfart * t_år
-
-print(f"{lysår = :_} km.") # IKKE RØR: formatterer utskriften pent!
-```
-Utskriften blir: 
-
-```console
-lysår = 9_460_800_000_000 km.
-```
-
-Som betyr at 
-
-$$
-1 \ \text{lysår} = 9 \, 460 \, 800 \, 000 \, 000 \ \mathrm{km}.
-$$
-
-:::
-::::
-
-::::{tab-item} e
-Det nærmeste solsystemet til oss er *Alpha Centauri*. Avstanden til Alpha Centauri er ca. $4.25 \ \text{lysår}$. 
-
-Bruk programmet under til å bestemme hvor mange år det ville tatt å kjøre med en bil som har en fart på $100 \ \mathrm{km/h}$ til Alpha Centauri.
-
-:::{admonition} Hint
----
-class: dropdown, hints
----
-Bruk avstanden du fant for lysår i kilometer fra oppgave c. Eller bare kopier kodelinjene som regner det ut!
-:::
-
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_4/oppgave_e.html
----
-:::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-Programkode:
-
-```{code-block} python
----
-linenos: true
----
-fart = 100 # bilfarten km/h 
-lysår = 9_460_800_000_000 # km
-
-strekning = 4.25 * lysår
-reisetid = strekning / fart
-timer_per_år = 24 * 365
-
-reisetid = reisetid / timer_per_år  # <-- omdanner fra timer til år
-
-print(f"{reisetid :_.0f} år.") # IKKE RØR: formatterer utskriften pent!
-```
-
-Utskriften blir:
-
-```console
-45_900_000 år.
-```
-
-som betyr at vi måtte kjørt bil i $45 \, 900 \, 000 \ \text{år}$. Nå har vi igjen møtt på et tall som er ufattelig å tolke for menneskehjernen. Men vi kan i det minste konkludere at det nærmeste solsystemet vi kjenner til er svært svært langt unna.
-:::
-
-::::
-:::::
-
-
-::::::
 
