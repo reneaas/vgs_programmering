@@ -25,4 +25,142 @@ a.no-click {
 .navbar-brand img {
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintain the aspect ratio */
+    border-radius: 16px;
   }
+
+
+
+
+/* Base styles for figures */
+.adaptive-figure img,
+.adaptive-figure svg {
+    /* background: transparent !important; 
+    background-color: inherit !important; */
+    transition: filter 0.1s ease; /* Smooth transition between modes */
+    max-width: 100%;
+    /* height: auto; */
+    display: block;
+    /* margin: 1em auto; */
+}
+
+/* Light mode (default) */
+[data-mode="light"] .adaptive-figure img
+[data-mode="light"] .adaptive-figure svg,
+[data-mode="light"] img.adaptive-figure {
+    filter: invert(0%); /* Normal */
+}
+
+/* Dark mode styles */
+[data-mode="dark"] .adaptive-figure img,
+[data-mode="dark"] .adaptive-figure svg,
+[data-mode="dark"] img.adaptive-figure {
+    filter: invert(100%) hue-rotate(180deg) !important;
+    /* background: transparent !important;  */
+    background-color: inherit !important;
+    /* background-color: #f2f2f2 !important; */
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] .adaptive-figure img ,
+[data-mode="auto"] .adaptive-figure svg,
+[data-mode="auto"] img.adaptive-figure {
+    filter: invert(100%) hue-rotate(180deg) !important;
+    background-color: inherit !important;
+    }
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .adaptive-figure img
+    [data-mode="auto"] .adaptive-figure svg,
+    [data-mode="auto"] img.adaptive-figure {
+        filter: invert(0%) !important;
+    }
+}
+
+
+
+
+
+
+/* Base styles for manim gifs */
+.manim-figure img,
+.manim-figure svg {
+    background: transparent !important; /* Force transparent background */
+    background-color: inherit !important;
+    transition: filter 0.1s ease; /* Smooth transition between modes */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
+
+/* Light mode (default) */
+[data-mode="light"] .manim-figure img {
+    filter: invert(100%); /* Normal */
+    filter: invert(100%) hue-rotate(180deg) !important; /* Invert colors for dark mode */
+}
+
+/* Dark mode styles */
+[data-mode="dark"] .manim-figure img,
+[data-mode="dark"] .manim-figure svg {
+    filter: invert(0%); /* Normal */
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] .manim-figure img {
+    filter: invert(0%) !important; /* Normal */
+}
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .manim-figure img {
+        filter: invert(100%) !important;
+    }
+}
+
+
+
+
+
+
+
+/* Light mode (default) */
+[data-mode="light"] video {
+    filter: invert(100%) hue-rotate(220deg) !important; /* Invert colors for dark mode */
+}
+
+/* Dark mode styles */
+[data-mode="dark"] video {
+    filter: invert(0%); /* Normal */
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] video {
+    filter: invert(0%) !important; /* Normal */
+}
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] video {
+        filter: invert(100%) hue-rotate(220deg) !important; /* Invert colors for dark mode */
+    }
+}
+
+
+
+
+.quiz-image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.quiz-image {
+    max-width: 80%;
+}

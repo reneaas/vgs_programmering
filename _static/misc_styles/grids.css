@@ -1,0 +1,91 @@
+/* Fix grid items inside admonitions */
+/* .admonition .sd-card,
+.admonition .sd-card-body {
+    margin: 0 !important;
+    padding: 0.5rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+} */
+
+/* Ensure admonition containers handle overflow properly */
+/* .admonition {
+    overflow: hidden !important;
+} */
+
+/* Fix padding in grid structures */
+.admonition .sd-container-fluid,
+.admonition .sd-row {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+:root {
+    /* --sd-border-radius: 12px; */
+    --sd-card-bg-light: white;
+    --sd-card-title-light: #0051ff20;
+
+
+    --sd-card-bg-dark:  #090b167b;
+    --sd-card-title-dark: #0b1f5684;
+  }
+  
+  /* -----------------------------------------------------------------------------
+     override the theme’s card‑background variable based on the current mode
+     Jupyter Book wraps <html> in [data-mode="light" | "dark"]
+  -----------------------------------------------------------------------------*/
+
+
+html[data-mode="light"] {
+    --sd-color-card-background: var(--sd-card-bg-light);
+}
+html[data-mode="dark"] {
+    --sd-color-card-background: var(--sd-card-bg-dark);
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-mode="auto"] {
+        --sd-color-card-background: var(--sd-card-bg-light);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    html[data-mode="auto"] {
+        --sd-color-card-background: var(--sd-card-bg-dark);
+    }
+}
+
+.sd-card .sd-card-body {
+    background-color: var(--sd-color-card-background) !important;
+    border-radius: 0 0 18px 18px !important;
+}
+
+.sd-card {
+    border-radius: 18px 18px 18px 18px !important;
+}
+
+.sd-card-header {
+    border-radius: 18px 18px 0 0 !important;
+}
+
+
+[data-mode=dark] .sd-card-header {
+    background-color: var(--sd-card-title-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .sd-card-header {
+        background-color: var(--sd-card-title-dark) !important;
+    }
+}
+
+[data-mode=light] .sd-card-header {
+    background-color: var(--sd-card-title-light) !important;
+}
+
+@media (prefers-color-scheme: light) {
+    .sd-card-header {
+        background-color: var(--sd-card-title-light) !important;
+    }
+}

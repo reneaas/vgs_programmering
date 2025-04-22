@@ -27,7 +27,7 @@ class CASWindowDirective(CASDirective):
             title = "CAS-vindu"
 
         # Get dimensions from options or use defaults
-        width = self.options.get("width", "650")
+        width = self.options.get("width", "720")
         height = self.options.get("height", "700")
 
         # Create the admonition node
