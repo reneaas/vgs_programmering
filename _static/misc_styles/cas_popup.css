@@ -1,0 +1,194 @@
+/* ========= GeoGebra CAS Button Styles ========= */
+
+:root {
+    --cas-background-color-dark: #151822;
+}
+
+.ggb-cas-button {
+    background-color: #2ecc71;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ggb-cas-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ggb-cas-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ========= Dialog Base Styles ========= */
+.ui-dialog {
+    border-radius: 28px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    border: none;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transform: translateZ(0); /* Performance boost */
+    animation: dialogFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: fixed !important;
+    z-index: 1000;
+}
+
+@keyframes dialogFadeIn {
+    from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ui-dialog-titlebar {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 28px !important;
+}
+
+.ui-dialog-content {
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ========= Close Button Styles ========= */
+.ui-dialog-titlebar-close {
+    background-color: rgba(229, 57, 53, 0.9);
+    border-radius: 50%;
+    border: none;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -14px;
+    transition: all 0.2s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.ui-dialog-titlebar-close::before,
+.ui-dialog-titlebar-close::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+}
+
+.ui-dialog-titlebar-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ui-dialog-titlebar-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ui-dialog-titlebar-close:hover {
+    background-color: rgba(229, 57, 53, 1);
+    transform: scale(1.1);
+}
+
+.ui-dialog-titlebar-close .ui-icon {
+    display: none;
+}
+
+/* ========= Light Mode Styles ========= */
+[data-mode="light"] .ui-dialog {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-mode="light"] .ui-dialog-titlebar {
+    background-color: #f8f9fa;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+[data-mode="light"] .ui-dialog-content {
+    background-color: white;
+    color: #333;
+}
+
+/* ========= Dark Mode Styles ========= */
+[data-mode="dark"] .ui-dialog {
+    background-color: var(--cas-background-color-dark);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-mode="dark"] .ui-dialog-titlebar {
+    background-color: var(--cas-background-color-dark);
+    color: #e6e6e6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-mode="dark"] .ui-dialog-content {
+    background-color: #252a33;
+    color: #e6e6e6;
+}
+
+[data-mode="dark"] .ui-dialog-titlebar-close {
+    background-color: rgba(244, 67, 54, 0.8);
+}
+
+[data-mode="dark"] .ui-dialog-titlebar-close:hover {
+    background-color: rgb(244, 67, 54);
+}
+
+/* ========= Auto Mode Styles (System Preference) ========= */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .ui-dialog {
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    [data-mode="auto"] .ui-dialog-titlebar {
+        background-color: #f8f9fa;
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+    
+    [data-mode="auto"] .ui-dialog-content {
+        background-color: white;
+        color: #333;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .ui-dialog {
+        background-color: var(--cas-background-color-dark);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    [data-mode="auto"] .ui-dialog-titlebar {
+        background-color: var(--cas-background-color-dark);
+        color: #e6e6e6;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    [data-mode="auto"] .ui-dialog-content {
+        background-color: #252a33;
+        color: #e6e6e6;
+    }
+    
+    [data-mode="auto"] .ui-dialog-titlebar-close {
+        background-color: rgba(244, 67, 54, 0.8);
+    }
+    
+    [data-mode="auto"] .ui-dialog-titlebar-close:hover {
+        background-color: rgb(244, 67, 54);
+    }
+}

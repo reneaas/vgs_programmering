@@ -1,9 +1,33 @@
 /* CSS rules for static code blocks */
 
+:root {
+    --code-background-color-dark-mode: #12151d;
+    --code-background-color-light-mode: #f8f8f8;
+}
 
 /* Target the general container for code blocks */
 .highlight {
     position: relative;
+}
+
+[data-mode=light] .highlight pre {
+    background-color: var(--code-background-color-light-mode);
+}
+
+@media (prefers-color-scheme: light) {
+    .highlight pre {
+        background-color: var(--code-background-color-light-mode);
+    }
+}
+
+[data-mode=dark] .highlight pre {
+    background-color: var(--code-background-color-dark-mode);
+}
+
+@media (prefers-color-scheme: dark) {
+    .highlight pre {
+        background-color: var(--code-background-color-dark-mode);
+    }
 }
   
   

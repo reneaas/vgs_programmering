@@ -171,7 +171,7 @@ class SequentialMultipleChoiceQuiz {
         if (this.currentQuestionIndex > 0 && this.correctlyAnsweredQuestions.has(this.currentQuestionIndex - 1)) {
             this.currentQuestionIndex--;
             this.showQuestion();
-            this.scrollToQuizContainer(); // Scroll to the quiz container
+            // this.scrollToQuizContainer(); // Scroll to the quiz container
         }
     }
 
@@ -179,7 +179,7 @@ class SequentialMultipleChoiceQuiz {
         if (this.correctlyAnsweredQuestions.has(this.currentQuestionIndex)) {
             this.currentQuestionIndex++;
             this.showQuestion();
-            this.scrollToQuizContainer(); // Scroll to the quiz container
+            // this.scrollToQuizContainer(); // Scroll to the quiz container
         }
     }
 
