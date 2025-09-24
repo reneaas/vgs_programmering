@@ -222,9 +222,11 @@ Fyll ut programmet under slik at det tegner figuren over på samme måte.
 :::{turtle}
 from turtle import *
 
-for i in range(3):
-    forward(100)
-    left(120)
+forward(100)
+left(120)
+
+# TODO: skriv din kode her
+# FYLL INN: gjør ferdig figuren
 
 :::
 

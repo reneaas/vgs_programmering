@@ -87,33 +87,6 @@ print(c)
 :::
 
 ::::
-
-::::{tab-item} Del 3: Kombinere tekst og variabler med `print`{l=python}
-Ofte ønsker vi å skrive ut både tekst og verdier fra variabler samtidig, for å lage meningsfulle meldinger. For å gjøre dette kan vi bruke noe som heter `f`-strings, som lar oss kombinere tekst og variabler på en enkel måte.
-
-I dette programmet ser du hvordan vi kan bruke `f`-strings til å sette inn verdien av en variabel i en tekststreng.
-
-- **Oppgave:** Kjør programmet og legg merke til hva som skjer når `f` står foran tekststrengen. Hvor i teksten settes variabelverdien inn? Skriv ned hva du oppdager!
-
-
-:::{interactive-code}
-x = 2
-
-# Vi skriver bare ut 'x'
-print("x")
-
-# Uten 'f' foran tekststrengen får vi ikke verdien :(
-print("{x}")
-
-# Vi bytter ut '{x}' med verdien til x
-print(f"{x}") 
-
-# Vi bytter ut '{x = }' med 'x = verdi' i utskriften
-print(f"{x = }")    
-
-:::
-
-::::
 :::::
 ::::::
 
