@@ -1,43 +1,43 @@
 name: deploy-book
 
-# Only run this when the master branch changes
+# Only run this when the main branch changes
 on:
   push:
     branches:
-    - main
-    # If your git repository has the Jupyter Book within some-subfolder next to
-    # unrelated files, you can make this run only if a file within that specific
-    # folder has been modified.
-    #
-    # paths:
-    # - some-subfolder/**
+      - main
 
-# This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    # Install dependencies
-    - name: Set up Python 3.12.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.12.8
+      # Install dependencies
+      - name: Set up Python 3.12.3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12.3
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-    # Build the book
-    - name: Build the book
-      run: |
-        export PYTHONPATH=$PYTHONPATH:$(pwd)
-        jupyter-book build . --all
+      # Build the book
+      - name: Build the book
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          jupyter-book clean . --all
+          rm -rf _build .jupyter_cache
+          jupyter-book build . --all
 
-    # Push the book's HTML to github-pages
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_dir: ./_build/html
+
+      # Deploy to GitHub Pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./_build/html
+          keep_files: true  # Ensures existing files like CNAME remain
+
+
+          
