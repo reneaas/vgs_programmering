@@ -50,8 +50,10 @@ s_\mathrm{neste} \approx s + \Delta s = s + v \cdot \Delta t
 $$
 
 
+Denne måten å estimere hva farten og posisjonen er kalles for **Eulers metode** (ja, *den* Euler! Gærningen har flere ting oppkalt etter seg enn noen andre i historien – *kanskje*). 
+
 :::::::::::::::{summary} Eulers metode i ett tidssteg
-Gitt at ved et tidspunkt $t$, så er akselerasjonen $a$, farten $v$ og posisjonen $s$, så vil farten og posisjonen etter et tidsintervall $\Delta t$ være omtrent:
+Gitt at ved et tidspunkt $t$, så er akselerasjonen $a$, farten $v$ og posisjonen $s$, så vil farten og posisjonen etter et tidsintervall $\Delta t$ være omtrent gitt ved:
 
 $$
 \begin{align*}
@@ -337,8 +339,6 @@ while t < t_slutt:
 print(f"{v = } m/s")
 print(f"{s = } m")
 :::
-
-
 
 ::::
 :::::::::::::::
