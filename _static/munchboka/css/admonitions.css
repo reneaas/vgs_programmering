@@ -1,0 +1,2883 @@
+/* CSS rules for custom admonitions */
+
+
+:root {
+  /* light mode */
+  --admonition-background-color-light: rgb(255, 255, 255); 
+
+
+  /* dark mode */
+  --admonition-background-color-dark: #2632380e;
+  /* --admonition-background-color-dark: rgba(0, 14, 49, 0.01); */
+}
+
+[data-mode="light"] .admonition.tip {
+  background-color: var(--admonition-background-color-light) !important;
+}
+[data-mode="dark"] .admonition.tip {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: light) {
+  .admonition.tip {
+    background-color: var(--admonition-background-color-light) !important;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .admonition.tip {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+
+.admonition {
+  border-radius: 16px !important;
+}
+
+.admonition-title {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+div.interactive {
+  /* No visual changes for the web view */
+  /* Created to flag interactive problems to be hidden for the printed edition */
+  display: block;
+}
+
+div.noninteractive {
+  display: none;
+}
+
+/* Stil for quiz */
+div.quiz {
+  border-left-color: rgb(128, 0, 85);
+  background-color: rgba(128, 0, 85, 0);
+}
+
+div.quiz > .admonition-title {
+  background-color: rgba(128, 0, 85, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+[data-mode=light] div.quiz > .admonition-title::after {
+  content: url("../icons/outline/light_mode/question.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.quiz > .admonition-title::after {
+    content: url("../icons/outline/light_mode/question.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-mode=dark] div.quiz > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/question.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.quiz > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/question.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+[data-mode=light] div.quiz {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.quiz {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.quiz {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.quiz {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+/* Stil for oppsummering */
+div.reminder {
+  border-left-color: rgb(128, 0, 85);
+  background-color: rgba(128, 0, 85, 0.025);
+}
+
+div.reminder > .admonition-title {
+  background-color: rgba(128, 0, 85, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+[data-mode=light] div.reminder > .admonition-title::after {
+  content: url("../icons/outline/light_mode/backward.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.reminder > .admonition-title::after {
+    content: url("../icons/outline/light_mode/backward.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-mode=dark] div.reminder > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/backward.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.reminder > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/backward.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-mode=light] div.reminder {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.reminder {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.reminder {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.reminder {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+/* Stil for oppsummering */
+div.summary {
+  border-left-color: rgb(0, 128, 128);
+}
+
+div.summary > .admonition-title {
+  background-color: rgba(0, 128, 128, 0.1);
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+[data-mode=light] div.summary > .admonition-title::after {
+  content: url("../icons/outline/light_mode/summary.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.summary > .admonition-title::after {
+    content: url("../icons/outline/light_mode/summary.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+[data-mode=dark] div.summary > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/summary.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.summary > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/summary.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-mode=light] div.summary {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.summary {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.summary {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.summary {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+/* Stil for teoriblokker */
+div.theory {
+  border-left-color: rgb(0, 80, 171);
+  background-color: rgba(0, 80, 171, 0.1);
+}
+  
+
+div.theory > .admonition-title {
+  background-color: rgba(0, 80, 160, 0.1);
+  position: relative; 
+}
+  
+
+[data-mode=light] div.theory > .admonition-title::after {
+  content: url("../icons/outline/light_mode/book.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.theory > .admonition-title::after {
+    content: url("../icons/outline/light_mode/book.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-mode=dark] div.theory > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/book.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.theory > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/book.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+[data-mode=light] div.theory {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.theory {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.theory {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.theory {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+/* Stil for eksempler */
+[data-mode="dark"] div.explore {
+  border-left-color: rgba(0, 207, 207, 0.6);
+}
+
+[data-mode="light"] div.explore {
+  border-left-color: rgba(0, 131, 131, 0.6);
+} 
+
+@media (prefers-color-scheme: light) {
+  div.explore {
+    border-left-color: rgba(0, 131, 131, 0.6);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  div.explore {
+    border-left-color: rgba(0, 207, 207, 0.6);
+  }
+}
+
+div.explore > .admonition-title {
+  background-color: rgba(0, 128, 128, 0.3) !important;
+}
+
+div.explore > .admonition-title:before {
+  color: rgba(0, 128, 128, 0.6);
+}
+
+
+[data-mode=light] div.explore > .admonition-title::after {
+  content: url("../icons/outline/light_mode/magnifying.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  div.explore > .admonition-title::after {
+    content: url("../icons/outline/light_mode/magnifying.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-mode=dark] div.explore > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/magnifying.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.explore > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/magnifying.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+[data-mode=light] div.explore {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.explore {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.explore {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.explore {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+    
+
+/* Stil for eksempler */
+div.example {
+  border-left-color: #FFC107;
+}
+  
+div.example > .admonition-title {
+  background-color: #ffecb390 !important;
+}
+  
+div.example > .admonition-title:before {
+  color: #ffecb399;
+}
+
+[data-mode=dark] div.example > .admonition-title {
+  background-color: #ff6f0013 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.example > .admonition-title {
+    background-color: #ff6f0013 !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  div.example > .admonition-title {
+    background-color: #ffecb390 !important;
+  }
+}
+  
+
+
+[data-mode=light] div.example > .admonition-title::after {
+  content: url("../icons/outline/light_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.example > .admonition-title::after {
+    content: url("../icons/outline/light_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+  
+[data-mode=dark] div.example > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.example > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-mode=light] div.example {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.example {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.example {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.example {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+
+
+
+  
+/* Stil for fasit */
+div.answer {
+  border-left-color: rgba(171, 86, 241, 0.6);
+}
+
+div.answer > .admonition-title {
+  background-color: rgba(171, 86, 241, 0);
+}
+
+div.answer > .admonition-title::before {
+  color: rgba(171, 86, 241, 0);
+}
+
+
+[data-mode=light] div.answer > .admonition-title::after {
+  content: url("../icons/outline/light_mode/square_check.svg");
+  width: 20px;
+  height: 20px;
+}
+
+  
+@media (prefers-color-scheme: light) {
+  div.answer > .admonition-title::after {
+    content: url("../icons/outline/light_mode/square_check.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+  
+[data-mode=dark] div.answer > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/square_check.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.answer > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/square_check.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+
+[data-mode=light] div.answer {
+  background-color: var(--admonition-background-color-light) !important;
+}
+
+[data-mode=dark] div.answer > .admonition-title {
+  background-color: rgba(33, 33, 60, 0.647) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.answer > .admonition-title {
+    background-color: rgba(33, 33, 60, 0.647) !important;
+  }
+}
+
+[data-mode=light] div.answer > .admonition-title {
+  background-color: white !important;
+}
+
+@media (prefers-color-scheme: light) {
+  div.answer > .admonition-title {
+    background-color: white !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  div.answer {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+
+[data-mode=dark] div.answer {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.answer {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+/* Subtler hover for answer in light mode */
+[data-mode=light] div.answer.toggle > .admonition-title:hover {
+  box-shadow: inset 0 0 0 20px rgba(171, 86, 241, 0.04) !important;
+}
+
+@media (prefers-color-scheme: light) {
+  div.answer.toggle > .admonition-title:hover {
+    box-shadow: inset 0 0 0 20px rgba(171, 86, 241, 0.04) !important;
+  }
+}
+
+/* Slightly brighter hover for answer in dark mode */
+[data-mode=dark] div.answer.toggle > .admonition-title:hover {
+  box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.02) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.answer.toggle > .admonition-title:hover {
+    box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.02) !important;
+  }
+}
+
+
+/* Stil for løsningsforslag */
+div.solution {
+  border-left-color: rgba(171, 86, 241, 0.6);
+}
+
+div.solution > .admonition-title {
+  background-color: rgba(171, 86, 241, 0);
+}
+
+div.solution > .admonition-title::before {
+  color: rgba(171, 86, 241, 0);
+}
+
+div.solution > .admonition-title::after {
+  content: url("../icons/outline/light_mode/unlock.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+div.solution.solution-soft-locked > .admonition-title::after {
+  content: url("../icons/outline/light_mode/key.svg");
+  display: inline-block;
+}
+
+
+[data-mode=light] div.solution > .admonition-title::after {
+  content: url("../icons/outline/light_mode/unlock.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+[data-mode=light] div.solution.solution-soft-locked > .admonition-title::after {
+  content: url("../icons/outline/light_mode/key.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.solution > .admonition-title::after {
+    content: url("../icons/outline/light_mode/unlock.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+
+  div.solution.solution-soft-locked > .admonition-title::after {
+    content: url("../icons/outline/light_mode/key.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+}
+  
+[data-mode=dark] div.solution > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/unlock.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+[data-mode=dark] div.solution.solution-soft-locked > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/key.svg");
+  display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.solution > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/unlock.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+
+  div.solution.solution-soft-locked > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/key.svg");
+    display: inline-block;
+  }
+}
+
+
+[data-mode=light] div.solution {
+  background-color: var(--admonition-background-color-light) !important;
+}
+
+[data-mode=dark] div.solution > .admonition-title {
+  background-color: rgba(33, 33, 60, 0.647) !important;
+  color: #e2eef3;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.solution > .admonition-title {
+    background-color: rgba(33, 33, 60, 0.647) !important;
+    color: #e2eef3;
+  }
+}
+
+[data-mode=light] div.solution > .admonition-title {
+  background-color: white !important;
+  color: #243447;
+}
+
+@media (prefers-color-scheme: light) {
+  div.solution > .admonition-title {
+    background-color: white !important;
+    color: #243447;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  div.solution {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Subtler hover for solution in light mode */
+[data-mode=light] div.solution.toggle > .admonition-title:hover {
+  box-shadow: inset 0 0 0 20px rgba(171, 86, 241, 0.04) !important;
+}
+
+@media (prefers-color-scheme: light) {
+  div.solution.toggle > .admonition-title:hover {
+    box-shadow: inset 0 0 0 20px rgba(171, 86, 241, 0.04) !important;
+  }
+}
+
+/* Slightly brighter hover for solution in dark mode */
+[data-mode=dark] div.solution.toggle > .admonition-title:hover {
+  box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.02) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.solution.toggle > .admonition-title:hover {
+    box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.02) !important;
+  }
+}
+
+div.solution.solution-soft-locked > :not(.admonition-title):not(.solution-lock-status) {
+  display: none !important;
+}
+
+div.solution.solution-soft-locked > .admonition-title {
+  cursor: pointer;
+}
+
+div.solution > .solution-lock-status {
+  padding: 0.2rem 0.9rem 0.85rem;
+  font-size: 0.92rem;
+  color: #5c5873;
+}
+
+[data-mode=dark] div.solution > .solution-lock-status {
+  color: #b9c1d9;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.solution > .solution-lock-status {
+    color: #b9c1d9;
+  }
+}
+
+.solution-lock-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(9, 18, 33, 0.55);
+  z-index: 10000;
+}
+
+.solution-lock-modal {
+  width: min(32rem, 100%);
+  padding: 1.25rem 1.25rem 1rem;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #1f2937;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.28);
+}
+
+.solution-lock-modal h3 {
+  margin: 0 0 0.75rem;
+  color: #0f172a;
+}
+
+.solution-lock-modal-text,
+.solution-lock-modal-countdown {
+  margin: 0 0 0.85rem;
+  line-height: 1.5;
+}
+
+.solution-lock-modal-countdown {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.solution-lock-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.solution-lock-modal-button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.solution-lock-modal-button.secondary {
+  background: #eef2f7;
+  color: #243447;
+}
+
+.solution-lock-modal-button.primary {
+  background: #174A63;
+  color: #ffffff;
+}
+
+[data-mode=dark] .solution-lock-modal {
+  background: #0f1b30;
+  color: #e2eef3;
+}
+
+[data-mode=dark] .solution-lock-modal h3 {
+  color: #e2eef3;
+}
+
+[data-mode=dark] .solution-lock-modal-countdown {
+  color: #9eb7c6;
+}
+
+[data-mode=dark] .solution-lock-modal-button.secondary {
+  background: #203346;
+  color: #e2eef3;
+}
+
+[data-mode=dark] .solution-lock-modal-button.primary {
+  background: #2a7081;
+}
+
+@media (prefers-color-scheme: dark) {
+  .solution-lock-modal {
+    background: #0f1b30;
+    color: #e2eef3;
+  }
+
+  .solution-lock-modal h3 {
+    color: #e2eef3;
+  }
+
+  .solution-lock-modal-countdown {
+    color: #9eb7c6;
+  }
+
+  .solution-lock-modal-button.secondary {
+    background: #203346;
+    color: #e2eef3;
+  }
+
+  .solution-lock-modal-button.primary {
+    background: #2a7081;
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.solution {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.solution {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   Stil for solution-2: inline, non-admonition løsningsforslag
+   Placed directly inside its parent (e.g. an answer admonition) for full
+   horizontal width. Toggled by a clickable button.
+   ---------------------------------------------------------------------- */
+
+div.solution-2 {
+  margin-top: 0.75rem;
+  border-left: 2px solid transparent;
+  padding-left: 0.55rem;
+  transition: border-left-color 0.3s ease;
+}
+
+div.solution-2.is-open {
+  border-left-color: rgba(171, 86, 241, 0.45);
+}
+
+button.solution-2-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border: 1.5px solid rgba(171, 86, 241, 0.5);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button.solution-2-toggle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.34em solid transparent;
+  border-bottom: 0.34em solid transparent;
+  border-left: 0.48em solid currentColor;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  transform-origin: 42% 50%;
+}
+
+button.solution-2-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+[data-mode=light] button.solution-2-toggle {
+  color: #4b2080;
+  border-color: rgba(171, 86, 241, 0.5);
+}
+
+[data-mode=light] button.solution-2-toggle:hover {
+  background: rgba(171, 86, 241, 0.07);
+  border-color: rgba(171, 86, 241, 0.75);
+}
+
+@media (prefers-color-scheme: light) {
+  button.solution-2-toggle {
+    color: #4b2080;
+    border-color: rgba(171, 86, 241, 0.5);
+  }
+
+  button.solution-2-toggle:hover {
+    background: rgba(171, 86, 241, 0.07);
+    border-color: rgba(171, 86, 241, 0.75);
+  }
+}
+
+[data-mode=dark] button.solution-2-toggle {
+  color: #c99eff;
+  border-color: rgba(171, 86, 241, 0.4);
+}
+
+[data-mode=dark] button.solution-2-toggle:hover {
+  background: rgba(171, 86, 241, 0.12);
+  border-color: rgba(171, 86, 241, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  button.solution-2-toggle {
+    color: #c99eff;
+    border-color: rgba(171, 86, 241, 0.4);
+  }
+
+  button.solution-2-toggle:hover {
+    background: rgba(171, 86, 241, 0.12);
+    border-color: rgba(171, 86, 241, 0.65);
+  }
+}
+
+/* Hidden by default; JS drives the open/close animation */
+div.solution-2-content {
+  display: none;
+  margin-top: 0.6rem;
+  padding-left: 0.8rem !important;
+  clear: both;
+}
+
+/* -------------------------------------------------------------------------
+   Timer lock state for solution-2
+   ---------------------------------------------------------------------- */
+
+/* Status text inserted after the toggle button by solution_timer.js */
+div.solution-2 > .solution-lock-status {
+  display: block;
+  margin-top: 0.35rem;
+  padding-left: 0.1rem;
+  font-size: 0.88rem;
+  color: #5c5873;
+}
+
+[data-mode=dark] div.solution-2 > .solution-lock-status {
+  color: #b9c1d9;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.solution-2 > .solution-lock-status {
+    color: #b9c1d9;
+  }
+}
+
+/* Visual cue on the button while the solution is locked */
+div.solution-2.solution-soft-locked > button.solution-2-toggle {
+  opacity: 0.55;
+  border-style: dashed;
+}
+
+
+/* div.solution-2-content {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  margin-top: 0.6rem;
+  padding-left: 0.8rem !important;
+}
+
+div.solution-2.is-open > div.solution-2-content {
+  visibility: visible;
+  pointer-events: auto;
+} */
+
+
+/* -------------------------------------------------------------------------
+   Stil for answer-2: inline, non-admonition fasit
+   Same structure as solution-2 but uses a green colour scheme.
+   ---------------------------------------------------------------------- */
+
+div.answer-2 {
+  margin-top: 0.75rem;
+  border-left: 2px solid transparent;
+  padding-left: 0.55rem !important;
+  transition: border-left-color 0.3s ease;
+}
+
+div.answer-2.is-open {
+  border-left-color: rgba(34, 197, 94, 0.5);
+}
+
+button.answer-2-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border: 1.5px solid rgba(34, 197, 94, 0.5);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button.answer-2-toggle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.34em solid transparent;
+  border-bottom: 0.34em solid transparent;
+  border-left: 0.48em solid currentColor;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  transform-origin: 42% 50%;
+}
+
+button.answer-2-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+[data-mode=light] button.answer-2-toggle {
+  color: #166534;
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+[data-mode=light] button.answer-2-toggle:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.75);
+}
+
+@media (prefers-color-scheme: light) {
+  button.answer-2-toggle {
+    color: #166534;
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+
+  button.answer-2-toggle:hover {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.75);
+  }
+}
+
+[data-mode=dark] button.answer-2-toggle {
+  color: #86efac;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+[data-mode=dark] button.answer-2-toggle:hover {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  button.answer-2-toggle {
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.4);
+  }
+
+  button.answer-2-toggle:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.65);
+  }
+}
+
+/* Hidden by default; JS drives the open/close animation */
+div.answer-2-content {
+  display: none;
+  margin-top: 0.6rem;
+  padding-left: 0.4rem;
+  clear: both;
+}
+
+
+/* div.answer-2-content {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  margin-top: 0.6rem;
+  padding-left: 0.8rem !important;
+}
+
+div.answer-2.is-open > div.answer-2-content {
+  visibility: visible !important;
+  pointer-events: auto;
+} */
+
+
+
+
+
+
+
+  
+  
+/* Stil for oppgaver: level 1 */
+div.problem-level-1 {
+  border-left-color: rgba(0, 98, 190, 0.6);
+}
+
+div.problem-level-1 > .admonition-title {
+  background-color: rgba(0, 98, 190, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+[data-mode=dark] div.problem-level-1 {
+  border-left-color: rgb(0, 98, 190, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-1 {
+    border-left-color: rgb(0, 98, 190, 0.8);
+  }
+}
+
+/* div.problem-level-1 > .admonition-title::before {
+  color: rgba(0, 195, 255, 0.2);
+} */
+
+div.problem-level-1 > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=light] div.problem-level-1 > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=dark] div.problem-level-1 > .admonition-title::after {
+  content: 
+    url("../icons/outline/dark_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: light) {
+  div.problem-level-1 > .admonition-title::after {
+    content: 
+      url("../icons/outline/light_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-1 > .admonition-title::after {
+    content: 
+      url("../icons/outline/dark_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+/* Light modes for problem-level-1 */
+
+[data-mode=light] div.problem-level-1 {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.problem-level-1 {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-1 */
+
+[data-mode=dark] div.problem-level-1 {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-1 {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+  
+  /* Stil for oppgaver: level 2 */
+  div.problem-level-2 {
+    border-left-color: rgba(0, 98, 190, 0.6);
+  }
+  
+  div.problem-level-2 > .admonition-title {
+    background-color: rgba(0, 98, 190, 0.2);
+    padding-left: 1.35cm;
+    display: flex;
+    align-items: center;
+  }
+
+
+[data-mode=dark] div.problem-level-2 {
+  border-left-color: rgb(0, 98, 190, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-2 {
+    border-left-color: rgb(0, 98, 190, 0.8);
+  }
+}
+  
+  /* div.problem-level-2 > .admonition-title::before {
+    color: rgba(0, 195, 255, 0.2);
+  } */
+  
+div.problem-level-2 > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=light] div.problem-level-2 > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=dark] div.problem-level-2 > .admonition-title::after {
+  content: 
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: light) {
+  div.problem-level-2 > .admonition-title::after {
+    content: 
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-2 > .admonition-title::after {
+    content: 
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+
+
+/* Light modes for problem-level-2 */
+
+[data-mode=light] div.problem-level-2 {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.problem-level-2 {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-2 */
+
+[data-mode=dark] div.problem-level-2 {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-2 {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+  
+  /* Stil for oppgaver: level 3 */
+  div.problem-level-3 {
+    border-left-color: rgba(0, 98, 190, 0.6);
+  }
+  
+  div.problem-level-3 > .admonition-title {
+    background-color: rgba(0, 98, 190, 0.2);
+    padding-left: 1.85cm;
+    display: flex;
+    align-items: center;
+  }
+  
+
+[data-mode=dark] div.problem-level-3 {
+  border-left-color: rgb(0, 98, 190, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-3 {
+    border-left-color: rgb(0, 98, 190, 0.8);
+  }
+}
+  /* div.problem-level-3 > .admonition-title::before {
+    color: rgba(0, 195, 255, 0.2);
+  } */
+  
+div.problem-level-3 > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=light] div.problem-level-3 > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=dark] div.problem-level-3 > .admonition-title::after {
+  content: 
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: light) {
+  div.problem-level-3 > .admonition-title::after {
+    content: 
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-3 > .admonition-title::after {
+    content: 
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+/* Light modes for problem-level-3 */
+
+[data-mode=light] div.problem-level-3 {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.problem-level-3 {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for problem-level-3 */
+
+[data-mode=dark] div.problem-level-3 {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.problem-level-3 {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+/* Stil for eksempelkode */
+div.examplecode {
+  border-left-color: rgba(241, 130, 86, 0.6);
+}
+  
+div.examplecode > .admonition-title {
+  background-color: rgba(241, 130, 86, 0.3) !important;
+}
+  
+div.examplecode > .admonition-title:before {
+  color: rgba(241, 130, 86, 0.3);
+}
+
+div.examplecode > .admonition-title::after {
+  content: "💻";
+  white-space: nowrap;
+  display: inline;
+}
+  
+  
+/* Stil for underveisoppgaver */
+
+
+[data-mode=light] div.check {
+  border-left-color: rgba(0, 35, 190, 0.6);
+}
+@media (prefers-color-scheme: light) {
+  div.check { 
+    border-left-color: rgba(0, 35, 190, 0.6);
+  }
+}
+
+[data-mode=dark] div.check {
+  border-left-color: rgb(0, 68, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+  div.check {
+    border-left-color: rgb(0, 68, 255);
+  }
+}
+
+
+div.check > .admonition-title {
+  background-color: rgba(0, 35, 190, 0.2);
+}
+
+div.check > .admonition-title::after {
+  content: url("../icons/solid/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+[data-mode=light] div.check > .admonition-title::after {
+  content: url("../icons/solid/light_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.check > .admonition-title::after {
+    content: url("../icons/solid/light_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+  
+[data-mode=dark] div.check > .admonition-title::after {
+  content: url("../icons/solid/dark_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.check > .admonition-title::after {
+    content: url("../icons/solid/dark_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+/* Light modes for underveisoppgaver */
+
+[data-mode=light] div.check {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.check {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for Underveisoppgaver */
+
+[data-mode=dark] div.check {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.check {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+  
+  /* Stil for diskusjonsspørsmål */
+  div.discussion {
+    border-left-color: rgba(15, 186, 3, 0.6);
+  }
+  
+  div.discussion > .admonition-title {
+    background-color: rgba(15, 186, 3, 0.2);
+  }
+  
+  div.discussion > .admonition-title::before {
+    color: rgba(15, 186, 3, 0.2);
+  }
+  
+  div.discussion > .admonition-title::after {
+    content: "💬";
+  }
+  
+  
+/* Stil for oppgaver med programmering */
+div.progging {
+  border-left-color: rgba(0, 144, 176, 0.6);
+}
+
+div.progging > .admonition-title {
+  background-color: rgba(0, 144, 176, 0.2);
+}
+
+div.progging > .admonition-title::before {
+  color: rgba(0, 255, 213, 0.2);
+}
+
+div.progging > .admonition-title::after {
+  content: "💻";
+}
+
+
+/* Stil for side notes */
+div.sidenote {
+  border-left-color: rgba(0, 195, 255, 0.6);
+}
+
+div.sidenote > .admonition-title {
+  background-color: rgba(0, 195, 255, 0.2);
+}
+
+div.sidenote > .admonition-title::before {
+  color: rgba(0, 195, 255, 0);
+}
+
+
+
+[data-mode=light] div.sidenote > .admonition-title::after {
+  content: url("../icons/solid/light_mode/scroll.svg");
+  width: 20px;
+  height: 20px;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.sidenote > .admonition-title::after {
+    content: url("../icons/solid/light_mode/scroll.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+  
+[data-mode=dark] div.sidenote > .admonition-title::after {
+  content: url("../icons/solid/dark_mode/scroll.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.sidenote > .admonition-title::after {
+    content: url("../icons/solid/dark_mode/scroll.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+
+  
+  
+/* Stil for hints */
+div.hints {
+  border-left-color: rgba(0, 195, 255, 0.6);
+}
+
+div.hints > .admonition-title {
+  background-color: rgba(0, 195, 255, 0);
+}
+
+div.hints > .admonition-title::before {
+  color: rgba(0, 195, 255, 0);
+}
+
+
+[data-mode=light] div.hints > .admonition-title::after {
+  content: url("../icons/outline/light_mode/key.svg");
+  width: 20px;
+  height: 20px;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.hints > .admonition-title::after {
+    content: url("../icons/outline/light_mode/key.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+  
+[data-mode=dark] div.hints > .admonition-title::after {
+  content: url("../icons/outline/dark_mode/key.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.hints > .admonition-title::after {
+    content: url("../icons/outline/dark_mode/key.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+/* Stil for kodefeil */
+div.pythonerror {
+  border-left-color: rgba(217, 0, 255, 0.6);
+}
+
+div.pythonerror > .admonition-title {
+  background-color: rgba(217, 0, 255, 0);
+}
+
+div.pythonerror > .admonition-title::before {
+  color: rgba(217, 0, 255, 0);
+}
+
+
+[data-mode=light] div.pythonerror > .admonition-title::after {
+  content: url("../icons/solid/light_mode/python.svg");
+  width: 20px;
+  height: 20px;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.pythonerror > .admonition-title::after {
+    content: url("../icons/solid/light_mode/python.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+  
+[data-mode=dark] div.pythonerror > .admonition-title::after {
+  content: url("../icons/solid/dark_mode/python.svg");
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.pythonerror > .admonition-title::after {
+    content: url("../icons/solid/dark_mode/python.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+
+/* Append an icon after the title in any admonition with the 'admonition-icon-write' class */
+.admonition.admonition-icon-write > .admonition-title::after {
+  content: url('/_static/icons/stickers/edit.svg'); /* Path to your SVG icon */
+  display: inline-block;
+  margin-left: 8px; /* Space between the title and the new icon */
+  vertical-align: middle; /* Aligns the icon vertically with the title */
+  width: 24px; /* Adjust the icon size */
+  height: 24px;
+}
+
+
+
+[data-mode=light] blockquote {
+  color: #007acc; /* Replace with any color code you prefer */
+  background-color: rgba(183, 215, 255, 0.251); /* Replace with any color code you prefer */
+  border-left: 5px solid #007acc; /* Optional: changes the left border color */
+  padding-left: 10px; /* Optional: adds some padding */
+}
+
+@media (prefers-color-scheme: light) {
+  blockquote {
+    color: #007acc !important; /* Replace with any color code you prefer */
+    background-color: rgba(183, 215, 255, 0.251) !important; /* Replace with any color code you prefer */
+    border-left: 5px solid #007acc !important; /* Optional: changes the left border color */
+    padding-left: 10px; /* Optional: adds some padding */
+  }
+}
+
+
+[data-mode=dark] blockquote {
+  color: #007acc !important; /* Replace with any color code you prefer */
+  background-color: #007acc26 !important; /* Replace with any color code you prefer */
+  border-left: 5px solid #007acc !important; /* Optional: changes the left border color */
+  padding-left: 10px; /* Optional: adds some padding */
+}
+
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    color: #007acc !important; /* Replace with any color code you prefer */
+    background-color: #007acc26 !important; /* Replace with any color code you prefer */
+    border-left: 5px solid #007acc !important; /* Optional: changes the left border color */
+    padding-left: 10px; /* Optional: adds some padding */
+  }
+}
+
+
+
+
+
+.admonition.dropdown.toggle-hidden { /* Replace with your actual class */
+  height: 40px !important; /* Adjust as needed */
+  overflow: hidden !important; /* Hide any overflow */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Stil for blandede oppgaver, eksamensoppgaver osv */
+
+
+/* -------------------------------------------------------------------------
+   Stil for exercise-2: styled h2-level heading that marks exercise starts.
+   No admonition box — full page width, visually distinct divider style.
+   ---------------------------------------------------------------------- */
+
+.exercise-2-heading {
+  display: flex;
+  align-items: center;
+  margin: 2.5rem 0 1rem;
+  padding: 0.55rem 0 0.55rem 0.9rem;
+  border-left: 3px solid rgba(0, 98, 190, 0.55);
+  border-radius: 0 8px 8px 0;
+  gap: 0.6em;
+}
+
+.exercise-2-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+[data-mode=light] .exercise-2-heading {
+  border-left-color: rgba(0, 98, 190, 0.6);
+  background: rgba(0, 98, 190, 0.04);
+}
+
+[data-mode=light] .exercise-2-title {
+  color: #0d3060;
+}
+
+@media (prefers-color-scheme: light) {
+  .exercise-2-heading {
+    border-left-color: rgba(0, 98, 190, 0.6);
+    background: rgba(0, 98, 190, 0.04);
+  }
+
+  .exercise-2-title {
+    color: #0d3060;
+  }
+}
+
+[data-mode=dark] .exercise-2-heading {
+  border-left-color: rgba(80, 160, 255, 0.55);
+  background: rgba(80, 160, 255, 0.05);
+}
+
+[data-mode=dark] .exercise-2-title {
+  color: #9ac4f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .exercise-2-heading {
+    border-left-color: rgba(80, 160, 255, 0.55);
+    background: rgba(80, 160, 255, 0.05);
+  }
+
+  .exercise-2-title {
+    color: #9ac4f0;
+  }
+}
+
+
+[data-mode=light] div.exercise {
+  border-left-color: rgba(0, 98, 190, 0.6);
+}
+
+div.exercise > .admonition-title {
+  background-color: rgba(0, 98, 190, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.exercise { 
+    border-left-color: rgba(0, 98, 190, 0.6);
+  }
+}
+
+[data-mode=dark] div.exercise {
+  border-left-color: rgb(0, 98, 190, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  div.exercise {
+    border-left-color: rgb(0, 98, 190, 0.8);
+  }
+}
+
+
+div.exercise > .admonition-title::after {
+  content: url("../icons/solid/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+div.exercise.exercise-aids > .admonition-title::after {
+  content: url("../icons/solid/light_mode/computer.svg");
+  width: 20px;
+  height: 20px;
+  transform: translateX(-4px);
+}
+
+[data-mode=light] div.exercise > .admonition-title::after {
+  content: url("../icons/solid/light_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+[data-mode=light] div.exercise.exercise-aids > .admonition-title::after {
+  content: url("../icons/solid/light_mode/computer.svg");
+  width: 20px;
+  height: 20px;
+  transform: translateX(-4px);
+}
+  
+@media (prefers-color-scheme: light) {
+  div.exercise > .admonition-title::after {
+    content: url("../icons/solid/light_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
+  }
+
+  div.exercise.exercise-aids > .admonition-title::after {
+    content: url("../icons/solid/light_mode/computer.svg");
+    width: 20px;
+    height: 20px;
+    transform: translateX(-4px);
+  }
+}
+  
+[data-mode=dark] div.exercise > .admonition-title::after {
+  content: url("../icons/solid/dark_mode/pencil_square.svg");
+  width: 20px;
+  height: 20px;
+}
+
+[data-mode=dark] div.exercise.exercise-aids > .admonition-title::after {
+  content: url("../icons/solid/dark_mode/computer.svg");
+  width: 20px;
+  height: 20px;
+  transform: translateX(-4px);
+}
+
+@media (prefers-color-scheme: dark) {
+  div.exercise > .admonition-title::after {
+    content: url("../icons/solid/dark_mode/pencil_square.svg");
+    width: 20px;
+    height: 20px;
+  }
+
+  div.exercise.exercise-aids > .admonition-title::after {
+    content: url("../icons/solid/dark_mode/computer.svg");
+    width: 20px;
+    height: 20px;
+    transform: translateX(-4px);
+  }
+}
+
+
+/* Light modes for underveisoppgaver */
+
+[data-mode=light] div.exercise {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.exercise {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for Underveisoppgaver */
+
+[data-mode=dark] div.exercise {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.exercise {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+
+
+/* Stil med RPG-fargekoding for hver vanskelighetsgrad: Common */
+
+
+[data-mode=light] div.common {
+  border-left-color: #26A69A;
+}
+
+[data-mode=light] div.common > .admonition-title {
+  background-color: #E0F2F1;
+  display: flex;
+  align-items: center;
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.common { 
+    border-left-color: #26A69A;
+  }
+  div.common > .admonition-title {
+    background-color: #E0F2F1;
+    display: flex;
+    align-items: center;
+  }
+}
+
+[data-mode=dark] div.common {
+  border-left-color: #00897B;
+}
+
+[data-mode=dark] div.common > .admonition-title {
+  background-color: #004d403f;
+  display: flex;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.common {
+    border-left-color: #26A69A;
+  }
+
+  div.common > .admonition-title {
+    background-color: #004d403f;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+div.common > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=light] div.common > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.common > .admonition-title::after {
+    content: 
+      url("../icons/outline/light_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+  
+[data-mode=dark] div.common > .admonition-title::after {
+  content: 
+    url("../icons/outline/dark_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.common > .admonition-title::after {
+    content: 
+      url("../icons/outline/dark_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+/* Light modes for underveisoppgaver */
+
+[data-mode=light] div.common {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.common {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for Underveisoppgaver */
+
+[data-mode=dark] div.common {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.common {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Stil med RPG-fargekoding for hver vanskelighetsgrad: Rare */
+[data-mode=light] div.rare {
+  border-left-color: #1E88E5;
+}
+
+div.rare > .admonition-title {
+  padding-left: 1.35cm;
+  display: flex;
+  align-items: center;
+}
+
+[data-mode=light] div.rare > .admonition-title {
+  background-color: #E3F2FD;
+  padding-left: 1.35cm;
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  div.rare { 
+    border-left-color: #1E88E5;
+  }
+
+  div.rare > .admonition-title {
+    background-color: #E3F2FD;
+    padding-left: 1.35cm;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+[data-mode=dark] div.rare {
+  border-left-color: #1E88E5;
+}
+
+[data-mode=dark] div.rare > .admonition-title {
+  background-color: #0d48a134;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  div.rare {
+    border-left-color: #1E88E5;
+  }
+
+  div.rare > .admonition-title {
+    background-color: #0d48a134;
+  }
+}
+
+
+div.rare > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=light] div.rare > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.rare > .admonition-title::after {
+    content: 
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+  
+[data-mode=dark] div.rare > .admonition-title::after {
+  content: 
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.rare > .admonition-title::after {
+    content: 
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+/* Light modes for underveisoppgaver */
+
+[data-mode=light] div.rare {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.rare {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for Underveisoppgaver */
+
+[data-mode=dark] div.rare {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.rare {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stil med RPG-fargekoding for hver vanskelighetsgrad: Epic */
+[data-mode=light] div.epic {
+  border-left-color: #9C27B0;
+}
+
+[data-mode=light] div.epic > .admonition-title {
+  background-color: #F3E5F5;
+  padding-left: 1.85cm;
+  display: flex;
+  align-items: center;
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.epic { 
+    border-left-color: #9C27B0;
+  }
+  div.epic > .admonition-title {
+    background-color: #F3E5F5;
+    padding-left: 1.85cm;
+    display: flex;
+    align-items: center;
+  }
+}
+
+[data-mode=dark] div.epic{
+  border-left-color: #9C27B0;
+}
+
+[data-mode=dark] div.epic > .admonition-title {
+  background-color: #691b9a31;
+  padding-left: 1.85cm;
+  display: flex;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.epic {
+    border-left-color: #9C27B0;
+  }
+  div.epic > .admonition-title {
+    background-color: #691b9a31;
+    padding-left: 1.85cm;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+div.epic > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-mode=light] div.epic > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.epic > .admonition-title::after {
+    content: 
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+  
+[data-mode=dark] div.epic > .admonition-title::after {
+  content: 
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.epic > .admonition-title::after {
+    content: 
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+/* Light modes for underveisoppgaver */
+
+[data-mode=light] div.epic {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.epic {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for Underveisoppgaver */
+
+[data-mode=dark] div.epic {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.epic {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+
+
+/* Stil med RPG-fargekoding for hver vanskelighetsgrad: Legendary */
+div.legendary > .admonition-title {
+  padding-left: 2.35cm;
+  display: flex;
+  align-items: center;
+}
+
+
+
+[data-mode=light] div.legendary {
+  border-left-color: #FFA000;
+}
+
+[data-mode=light] div.legendary > .admonition-title {
+  background-color:#FFF8E1;
+  display: flex;
+  align-items: center;
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.legendary { 
+    border-left-color: #FF9700;
+  }
+
+  div.legendary > .admonition-title {
+    background-color: #ffe0b2;
+  }
+}
+
+[data-mode=dark] div.legendary {
+  border-left-color: #FFA000;
+}
+
+[data-mode=dark] div.legendary > .admonition-title {
+  background-color: #ff6f000c;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.legendary {
+    border-left-color: #FFA000;
+  }
+
+  div.legendary > .admonition-title {
+    background-color: #ff6f000c;
+  }
+}
+
+
+[data-mode=light] div.legendary > .admonition-title::after {
+  content: 
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg") ""
+    url("../icons/outline/light_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+  
+@media (prefers-color-scheme: light) {
+  div.legendary > .admonition-title::after {
+    content: 
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg") ""
+      url("../icons/outline/light_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+  
+[data-mode=dark] div.legendary > .admonition-title::after {
+  content: 
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg") ""
+    url("../icons/outline/dark_mode/fire.svg");
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.legendary > .admonition-title::after {
+    content: 
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg") ""
+      url("../icons/outline/dark_mode/fire.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+/* Light modes for underveisoppgaver */
+
+[data-mode=light] div.legendary {
+  background-color: white !important;
+  background-color: var(--admonition-background-color-light);
+}
+
+
+@media (prefers-color-scheme: light) {
+  div.legendary {
+    background-color: var(--admonition-background-color-light);
+  }
+}
+
+/* Dark modes for Underveisoppgaver */
+
+[data-mode=dark] div.legendary {
+  background-color: var(--admonition-background-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.legendary {
+    background-color: var(--admonition-background-color-dark) !important;
+  }
+}
+
+
+
+
+
+
+div.goals {
+  margin-top: 0.75rem;
+  border-left: 2px solid transparent;
+  padding-left: 0.55rem !important;
+  transition: border-left-color 0.3s ease;
+  padding-bottom: 2rem;
+}
+
+div.goals.is-open {
+  border-left-color: rgba(34, 197, 94, 0.5);
+}
+
+button.goals-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border: 1.5px solid rgba(34, 197, 94, 0.5);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button.goals-toggle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.34em solid transparent;
+  border-bottom: 0.34em solid transparent;
+  border-left: 0.48em solid currentColor;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  transform-origin: 42% 50%;
+}
+
+button.goals-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+[data-mode=light] button.goals-toggle {
+  color: #166534;
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+[data-mode=light] button.goals-toggle:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.75);
+}
+
+@media (prefers-color-scheme: light) {
+  button.goals-toggle {
+    color: #166534;
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+
+  button.goals-toggle:hover {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.75);
+  }
+}
+
+[data-mode=dark] button.goals-toggle {
+  color: #86efac;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+[data-mode=dark] button.goals-toggle:hover {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  button.goals-toggle {
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.4);
+  }
+
+  button.goals-toggle:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.65);
+  }
+}
+
+/* Hidden by default; JS drives the open/close animation */
+div.goals-content {
+  display: none;
+  margin-top: 0.6rem;
+  padding-left: 0.4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.proof {
+  margin-top: 0.75rem;
+  border-left: 2px solid transparent;
+  padding-left: 0.55rem !important;
+  transition: border-left-color 0.3s ease;
+}
+
+div.proof.is-open {
+  border-left-color: rgba(34, 197, 94, 0.5);
+}
+
+button.proof-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border: 1.5px solid rgba(34, 197, 94, 0.5);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button.proof-toggle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.34em solid transparent;
+  border-bottom: 0.34em solid transparent;
+  border-left: 0.48em solid currentColor;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  transform-origin: 42% 50%;
+}
+
+button.proof-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+[data-mode=light] button.proof-toggle {
+  color: #166534;
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+[data-mode=light] button.proof-toggle:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.75);
+}
+
+@media (prefers-color-scheme: light) {
+  button.proof-toggle {
+    color: #166534;
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+
+  button.proof-toggle:hover {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.75);
+  }
+}
+
+[data-mode=dark] button.proof-toggle {
+  color: #86efac;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+[data-mode=dark] button.proof-toggle:hover {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  button.proof-toggle {
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.4);
+  }
+
+  button.proof-toggle:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.65);
+  }
+}
+
+/* Hidden by default; JS drives the open/close animation */
+div.proof-content {
+  display: none;
+  margin-top: 0.6rem;
+  padding-left: 0.4rem;
+}
+
+
+
+
+
+
+
+div.hint {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-left: 2px solid transparent;
+  padding-left: 0.55rem !important;
+  transition: border-left-color 0.3s ease;
+}
+
+div.hint.is-open {
+  border-left-color: rgba(34, 170, 197, 0.5);
+}
+
+button.hint-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border: 1.5px solid rgba(34, 170, 197, 0.5);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button.hint-toggle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.34em solid transparent;
+  border-bottom: 0.34em solid transparent;
+  border-left: 0.48em solid currentColor;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  transform-origin: 42% 50%;
+}
+
+button.hint-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+[data-mode=light] button.hint-toggle {
+  color: rgba(19, 97, 113, 0.881);
+  border-color: rgba(34, 170, 197, 0.5);
+}
+
+[data-mode=light] button.hint-toggle:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 170, 197, 0.75);
+}
+
+@media (prefers-color-scheme: light) {
+  button.hint-toggle {
+    color: rgba(19, 97, 113, 0.881);
+    border-color: rgba(34, 170, 197, 0.5);
+  }
+
+  button.hint-toggle:hover {
+    background: rgba(34, 170, 197, 0.08);
+    border-color: rgba(34, 170, 197, 0.75);
+  }
+}
+
+[data-mode=dark] button.hint-toggle {
+  color: rgba(34, 170, 197, 0.881);
+  border-color: rgba(34, 170, 197, 0.4);
+}
+
+[data-mode=dark] button.hint-toggle:hover {
+  background: rgba(34, 170, 197, 0.12);
+  border-color: rgba(34, 170, 197, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  button.hint-toggle {
+    color: rgba(34, 170, 197, 0.881);
+    border-color: rgba(34, 170, 197, 0.4);
+  }
+
+  button.hint-toggle:hover {
+    background: rgba(34, 170, 197, 0.12);
+    border-color: rgba(34, 170, 197, 0.65);
+  }
+}
+
+/* Hidden by default; JS drives the open/close animation */
+div.hint-content {
+  display: none;
+  margin-top: 0.6rem;
+  padding-left: 0.4rem;
+}

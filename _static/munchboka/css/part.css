@@ -1,0 +1,194 @@
+/* ============================================================
+   Part directive  (.part)
+   Collapsible card: header row (label + toggle) + body panel.
+   ============================================================ */
+
+/* ── Card wrapper ───────────────────────────────────────────── */
+div.part {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 98, 190, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin: 0.9rem 0 2rem 0.5rem;
+  clear: both;
+}
+
+/* ── Header row (label + toggle button) ─────────────────────── */
+div.part-header {
+  display: flex;
+  align-items: stretch;
+}
+
+/* ── Label panel ────────────────────────────────────────────── */
+div.part-label {
+  flex-shrink: 0;
+  min-width: 2.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.4rem;
+
+  font-weight: 700;
+  color: rgb(0, 62, 120);
+  background-color: rgba(0, 98, 190, 0.20);
+
+  border-right: 1px solid rgba(0, 98, 190, 0.30);
+}
+
+/* ── Toggle button ──────────────────────────────────────────── */
+button.part-toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+
+  border: none;
+  padding: 0.55rem 0.75rem;
+  background: rgba(0, 98, 190, 0.06);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+button.part-toggle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.32em solid transparent;
+  border-bottom: 0.32em solid transparent;
+  border-left: 0.45em solid currentColor;
+  transition: transform 0.25s ease;
+  display: inline-block;
+  flex: 0 0 auto;
+  transform-origin: 42% 50%;
+}
+
+div.part-open button.part-toggle::before {
+  transform: rotate(90deg);
+}
+
+/* ── Body panel ─────────────────────────────────────────────── */
+div.part-body {
+  min-width: 0;
+  overflow: hidden;
+
+  background-color: var(--admonition-background-color-light, #ffffff);
+  padding: 0.5rem 1rem !important;
+  box-sizing: border-box;
+
+  border-top: 1px solid rgba(0, 98, 190, 0.15);
+}
+
+/* Keep first/last child flush with the vertical padding edges */
+div.part-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+div.part-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+div.part-body > .admonition,
+div.part-body > div {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ── Light mode ─────────────────────────────────────────────── */
+[data-mode="light"] div.part {
+  border-color: rgba(0, 98, 190, 0.6);
+}
+
+[data-mode="light"] div.part-label {
+  color: rgb(0, 62, 120);
+  background-color: rgba(0, 98, 190, 0.20);
+  border-right-color: rgba(0, 98, 190, 0.30);
+}
+
+[data-mode="light"] button.part-toggle {
+  color: #0d3060;
+  background: rgba(0, 98, 190, 0.06);
+}
+
+[data-mode="light"] button.part-toggle:hover {
+  background: rgba(0, 98, 190, 0.13);
+}
+
+@media (prefers-color-scheme: light) {
+  div.part-label {
+    color: rgb(0, 62, 120);
+    background-color: rgba(0, 98, 190, 0.20);
+  }
+
+  button.part-toggle {
+    color: #0d3060;
+    background: rgba(0, 98, 190, 0.06);
+  }
+
+  button.part-toggle:hover {
+    background: rgba(0, 98, 190, 0.13);
+  }
+}
+
+/* ── Dark mode ──────────────────────────────────────────────── */
+[data-mode="dark"] div.part {
+  border-color: rgba(0, 98, 190, 0.80);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+[data-mode="dark"] div.part-label,
+html[data-mode="dark"] div.part-label {
+  color: #c8dcf5;
+  background-color: rgba(0, 98, 190, 0.30);
+  border-right-color: rgba(0, 98, 190, 0.45);
+}
+
+[data-mode="dark"] button.part-toggle,
+html[data-mode="dark"] button.part-toggle {
+  color: #9ac4f0;
+  background: rgba(0, 98, 190, 0.12);
+}
+
+[data-mode="dark"] button.part-toggle:hover,
+html[data-mode="dark"] button.part-toggle:hover {
+  background: rgba(0, 98, 190, 0.22);
+}
+
+[data-mode="dark"] div.part-body,
+html[data-mode="dark"] div.part-body {
+  background-color: var(--admonition-background-color-dark, #2632380e);
+  border-top-color: rgba(0, 98, 190, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-mode="auto"] div.part {
+    border-color: rgba(0, 98, 190, 0.80);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  }
+
+  [data-mode="auto"] div.part-label {
+    color: #c8dcf5;
+    background-color: rgba(0, 98, 190, 0.30);
+    border-right-color: rgba(0, 98, 190, 0.45);
+  }
+
+  [data-mode="auto"] button.part-toggle {
+    color: #9ac4f0;
+    background: rgba(0, 98, 190, 0.12);
+  }
+
+  [data-mode="auto"] button.part-toggle:hover {
+    background: rgba(0, 98, 190, 0.22);
+  }
+
+  [data-mode="auto"] div.part-body {
+    background-color: var(--admonition-background-color-dark, #2632380e);
+    border-top-color: rgba(0, 98, 190, 0.25);
+  }
+}

@@ -1,0 +1,171 @@
+/* Escape Room directive styles with light/dark mode (aligned with Jeopardy) */
+:root {
+  color-scheme: light dark;
+  /* Light mode tokens */
+  --er-bg: #FAFAFA;        /* page background */
+  --er-surface: #FFFFFF;    /* card surface */
+  --er-text: #1F1F1F;       /* primary text */
+  --er-outline: #E0E3EB;    /* borders */
+  --er-primary: #1A73E8;    /* accent */
+  --er-danger: #D93025;     /* errors */
+  --er-success: #188038;    /* green for progress */
+  --er-accent: #7C3AED;     /* inviting accent for secondary action */
+  --er-accent-border: #6D28D9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode tokens */
+    --er-bg: #121212;
+    --er-surface: #1E1E1E;
+    --er-text: #E8EAED;
+    --er-outline: #2A2E34;
+    --er-primary: #1B66C9;
+    --er-danger: #EA4335;
+    --er-success: #1E8E3E;  /* green for progress in dark */
+    --er-accent: #8B5CF6;   /* lighter violet for dark */
+    --er-accent-border: #7C3AED;
+  }
+}
+
+.escape-room-container {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1rem auto;
+  color: var(--er-text);
+  /* In light mode, let the page background show through */
+  background: transparent !important;
+}
+/* In dark mode, keep container on the dark surface token */
+@media (prefers-color-scheme: dark) {
+  .escape-room-container { background: var(--er-bg); }
+}
+
+.er-root { background: transparent; }
+.er-header { margin-bottom: 0.5rem; font-weight: 600; }
+.er-progress { opacity: 0.8; }
+.er-title { margin: 0.25rem 0 0.5rem 0; }
+.er-body { background: var(--er-surface); border: 1px solid var(--er-outline); border-radius: 8px; padding: 1rem; color: var(--er-text); }
+.er-q { font-size: 1.05rem; background: inherit; }
+
+/* Visual progress bar */
+.er-progressbar {
+  width: 100%;
+  height: 8px;
+  background: var(--er-outline);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+.er-progressbar-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--er-success);
+  transition: width 0.3s ease;
+}
+
+/* Resume prompt */
+.er-resume-prompt {
+  background: var(--er-surface);
+  color: var(--er-text);
+  border: 1px solid var(--er-outline);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.er-resume-text { font-weight: 600; }
+.er-resume-actions { display: flex; gap: 0.5rem; }
+
+.escape-room-image-container { text-align: center; margin: 0.5rem 0; }
+.escape-room-image-container img { max-width: 100%; height: auto; border-radius: 6px; }
+
+.er-controls { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.75rem; }
+.er-controls input[type="text"] { flex: 1; padding: 0.5rem 0.6rem; border: 1px solid var(--er-outline); border-radius: 6px; background: transparent; color: var(--er-text); }
+.er-controls input[type="text"]::placeholder { color: #5F6368; opacity: 0.9; }
+.er-btn { padding: 0.5rem 0.75rem; border: none; border-radius: 6px; cursor: pointer; }
+.er-btn.primary { background: var(--er-primary); color: #fff; }
+.er-btn.primary:hover { filter: brightness(1.05); }
+.er-btn.accent {
+  background: var(--er-accent);
+  color: #FFFFFF;
+  border: 2px solid var(--er-accent-border);
+}
+.er-btn.accent:hover { filter: brightness(1.05); }
+
+.er-feedback { min-height: 1.25rem; margin-top: 0.25rem; color: var(--er-danger); }
+.er-complete { background: var(--er-surface); border: 1px solid var(--er-outline); border-radius: 8px; padding: 1rem; text-align: center; font-weight: 700; }
+
+/* Auto theme (OS/browser preference) */
+@media (prefers-color-scheme: light) {
+  .er-body { background: #E8F0FE; color: #000000; }
+  .er-progress { color: #000000; opacity: 1; }
+  .er-progressbar { background: #E0E3EB; }
+  .er-controls input[type="text"] { background: #FFFFFF; color: #000000; border-color: var(--er-outline); }
+  .er-controls input[type="text"]::placeholder { color: #5F6368; }
+  /* Completion tile uses same light blue card as questions */
+  .er-complete { background: #E8F0FE; color: #000000; }
+  /* Resume prompt uses same light blue card */
+  .er-resume-prompt { background: #E8F0FE; color: #000000; }
+}
+@media (prefers-color-scheme: dark) {
+  .er-body { background: var(--er-surface); color: var(--er-text); }
+  .er-controls input[type="text"] { background: #2A2E34; color: var(--er-text); border-color: var(--er-outline); }
+  .er-controls input[type="text"]::placeholder { color: #9AA0A6; }
+}
+
+/* Explicit theme overrides if site provides toggles (align with Jeopardy approach) */
+html.light-mode .er-body,
+body.light-mode .er-body,
+html[data-theme='light'] .er-body,
+body[data-theme='light'] .er-body,
+[data-mode='light'] .er-body { background: #E8F0FE !important; color: #000000 !important; }
+[data-mode='light'] .er-controls input[type="text"],
+html.light-mode .er-controls input[type="text"],
+body.light-mode .er-controls input[type="text"],
+html[data-theme='light'] .er-controls input[type="text"],
+body[data-theme='light'] .er-controls input[type="text"] { background: #FFFFFF !important; color: #000000 !important; border-color: var(--er-outline) !important; }
+
+html.dark-mode .er-body,
+body.dark-mode .er-body,
+html[data-theme='dark'] .er-body,
+body[data-theme='dark'] .er-body,
+[data-mode='dark'] .er-body { background: var(--er-surface) !important; color: var(--er-text) !important; }
+[data-mode='dark'] .er-controls input[type="text"],
+html.dark-mode .er-controls input[type="text"],
+body.dark-mode .er-controls input[type="text"],
+html[data-theme='dark'] .er-controls input[type="text"],
+body[data-theme='dark'] .er-controls input[type="text"] { background: #2A2E34 !important; color: var(--er-text) !important; border-color: var(--er-outline) !important; }
+
+/* Explicit light-mode overrides for progress text */
+html.light-mode .er-progress,
+body.light-mode .er-progress,
+html[data-theme='light'] .er-progress,
+body[data-theme='light'] .er-progress,
+[data-mode='light'] .er-progress { color: #000000 !important; opacity: 1 !important; }
+
+/* Explicit light mode progress bar background */
+html.light-mode .er-progressbar,
+body.light-mode .er-progressbar,
+html[data-theme='light'] .er-progressbar,
+body[data-theme='light'] .er-progressbar,
+[data-mode='light'] .er-progressbar { background: #E0E3EB !important; }
+
+/* Explicit light mode completion tile */
+html.light-mode .er-complete,
+body.light-mode .er-complete,
+html[data-theme='light'] .er-complete,
+body[data-theme='light'] .er-complete,
+[data-mode='light'] .er-complete { background: #E8F0FE !important; color: #000000 !important; }
+
+/* Explicit light mode resume prompt */
+html.light-mode .er-resume-prompt,
+body.light-mode .er-resume-prompt,
+html[data-theme='light'] .er-resume-prompt,
+body[data-theme='light'] .er-resume-prompt,
+[data-mode='light'] .er-resume-prompt { background: #E8F0FE !important; color: #000000 !important; }
+
+/* When embedded inside admonitions, add extra right padding to avoid clipping */
+.admonition .escape-room-container { padding-right: 3rem; }

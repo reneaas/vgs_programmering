@@ -1,0 +1,156 @@
+/* GitHub-like DARK theme for rendered code blocks.
+   Scoped to dark-mode attributes so it can coexist with a light theme.
+*/
+
+html.dark-mode,
+body.dark-mode,
+html[data-theme='dark'],
+body[data-theme='dark'],
+[data-mode='dark'] {
+}
+
+html.dark-mode pre, html.dark-mode code,
+body.dark-mode pre, body.dark-mode code,
+html[data-theme='dark'] pre, html[data-theme='dark'] code,
+body[data-theme='dark'] pre, body[data-theme='dark'] code,
+[data-mode='dark'] pre, [data-mode='dark'] code {
+  background-color: #0d1117;
+  color: #e6edf3;
+}
+
+pre {
+  border-radius: 1.4rem !important;
+}
+
+html.dark-mode pre, body.dark-mode pre,
+html[data-theme='dark'] pre, body[data-theme='dark'] pre,
+[data-mode='dark'] pre {
+  border: 1px solid #30363d;
+  /* border-radius: 6px; */
+}
+
+/* Basic token colors assuming highlight.js / pygments style classes */
+html.dark-mode .hljs-comment,
+body.dark-mode .hljs-comment,
+html[data-theme='dark'] .hljs-comment,
+body[data-theme='dark'] .hljs-comment,
+[data-mode='dark'] .hljs-comment {
+  color: #8b949e;
+}
+
+html.dark-mode .hljs-keyword,
+body.dark-mode .hljs-keyword,
+html[data-theme='dark'] .hljs-keyword,
+body[data-theme='dark'] .hljs-keyword,
+[data-mode='dark'] .hljs-keyword {
+  color: #ff7b72;
+}
+
+html.dark-mode .hljs-string,
+body.dark-mode .hljs-string,
+html[data-theme='dark'] .hljs-string,
+body[data-theme='dark'] .hljs-string,
+[data-mode='dark'] .hljs-string {
+  color: #7ee787;
+}
+
+html.dark-mode .hljs-number,
+body.dark-mode .hljs-number,
+html[data-theme='dark'] .hljs-number,
+body[data-theme='dark'] .hljs-number,
+[data-mode='dark'] .hljs-number {
+  color: #79c0ff;
+}
+
+html.dark-mode .hljs-title,
+body.dark-mode .hljs-title,
+html[data-theme='dark'] .hljs-title,
+body[data-theme='dark'] .hljs-title,
+[data-mode='dark'] .hljs-title {
+  color: #d2a8ff;
+}
+
+/* Fallback for generic code tokens used by sphinx/highlight.js */
+html.dark-mode .nb-output pre,
+body.dark-mode .nb-output pre,
+html[data-theme='dark'] .nb-output pre,
+body[data-theme='dark'] .nb-output pre,
+[data-mode='dark'] .nb-output pre {
+  background-color: #161b22;
+}
+  
+  .cm-s-github-dark .cm-literal {
+    color: #a5d6ff;
+  }
+  
+  .cm-s-github-dark .cm-variable {
+    color: #e6edf3;
+  }
+  
+  .cm-s-github-dark .cm-punctuation {
+    color: #e6edf3;
+  }
+  
+  .cm-s-github-dark .cm-number {
+    color: #a5d6ff;
+  }
+  
+  .cm-s-github-dark .cm-string {
+    color: #a5d6ff;
+  }
+  
+  .cm-s-github-dark .cm-variable-2 {
+    color: #e6edf3;
+  }
+  
+  .cm-s-github-dark .cm-variable-3 {
+    color: #f0883e;
+    font-weight: bold;
+  }
+  
+  .cm-s-github-dark .cm-atom {
+    color: #79c0ff;
+    font-weight: bold;
+  }
+  
+  .cm-s-github-dark .cm-def {
+    color: #d2a8ff;
+    font-weight: bold;
+  }
+  
+  .cm-s-github-dark .cm-tag {
+    color: #7ee787;
+  }
+  
+  .cm-s-github-dark .cm-string-2 {
+    color: #a5d6ff;
+  }
+  
+  /* Generic Styling */
+  .cm-s-github-dark .cm-em {
+    font-style: italic;
+  }
+  
+  .cm-s-github-dark .cm-strong {
+    font-weight: bold;
+  }
+  
+  .cm-s-github-dark .cm-header {
+    color: #79c0ff;
+    font-weight: bold;
+  }
+  
+  .cm-s-github-dark .cm-quote {
+    color: #8b949e;
+    font-style: italic;
+  }
+  
+  .cm-s-github-dark .cm-link {
+    color: #79c0ff;
+    text-decoration: underline;
+  }
+
+
+button.copybtn {
+  border-radius: 1.4rem;
+}

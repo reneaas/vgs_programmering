@@ -1,0 +1,532 @@
+/* Define color variables for each mode */
+:root {
+    --parsons-puzzle-background-color: #f9f9f9 !important;
+    --parsons-puzzle-border-color: #ccc;
+    --parsons-puzzle-draggable-background-color: #ffffff;
+    --parsons-puzzle-drop-area-background-color: #ffffff;
+    --parsons-puzzle-drop-area-border-color: #007bff;
+    --parsons-puzzle-text-color: #24292f;
+    --parsons-puzzle-hover-background-color: #e9ecef;
+    --parsons-puzzle-hover-border-color: #0056b3;
+    --parsons-puzzle-placeholder-background-color: #bcbbbb;
+    --parsons-puzzle-placeholder-border-color: #999;
+    --parsons-puzzle-button-background-color-check: #28a745;
+    --parsons-puzzle-button-background-color-reset: #ffc107;
+    --parsons-puzzle-button-text-color: black;
+    --parsons-puzzle-modal-background-color: #fefefe;
+    --parsons-puzzle-modal-border-color: #888;
+    --parsons-puzzle-draggable-item-background-color: #e8e8e8;
+    --parsons-puzzle-draggable-item-border-color: #007bff;
+    --parsons-puzzle-toast-background-color: rgba(0, 128, 128, 0.9);
+    --parsons-puzzle-toast-success-background-color: rgba(25, 135, 84, 0.9);
+    --parsons-puzzle-toast-success-text-color: #ffffff;
+    --parsons-puzzle-toast-error-background-color: rgba(220, 53, 69, 0.9);
+    --parsons-puzzle-toast-error-text-color: #ffffff;
+    /* If you use a "primary" color elsewhere: */
+    --parsons-puzzle-primary-color: #007bff;
+}
+
+/* Dark mode variables */
+[data-mode="dark"] {
+    --parsons-puzzle-background-color: #202020 !important;
+    --parsons-puzzle-border-color: #ccc;
+    --parsons-puzzle-draggable-background-color: #141923;
+    --parsons-puzzle-drop-area-background-color: #3b3b3b;
+    --parsons-puzzle-drop-area-border-color: #007bff;
+    --parsons-puzzle-text-color: #ffffff;
+    --parsons-puzzle-hover-background-color: #333333;
+    --parsons-puzzle-hover-border-color: #0056b3;
+    --parsons-puzzle-placeholder-background-color: #000000;
+    --parsons-puzzle-placeholder-border-color: #999;
+    --parsons-puzzle-button-background-color-check: #28a745;
+    --parsons-puzzle-button-background-color-reset: #ffc107;
+    --parsons-puzzle-button-text-color: black;
+    --parsons-puzzle-modal-background-color: #181818;
+    --parsons-puzzle-modal-border-color: #888;
+    --parsons-puzzle-draggable-item-background-color: #252d40;
+    --parsons-puzzle-draggable-item-border-color: #1b1b1b;
+    --parsons-puzzle-toast-background-color: rgba(0, 128, 128, 0.9);
+}
+
+/* Auto mode using system preferences */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] {
+        --parsons-puzzle-background-color: #f9f9f9 !important;
+        --parsons-puzzle-border-color: #ccc;
+        --parsons-puzzle-draggable-background-color: #ffffff;
+        --parsons-puzzle-drop-area-background-color: #ffffff;
+        --parsons-puzzle-drop-area-border-color: #007bff;
+        --parsons-puzzle-text-color: #24292f;
+        --parsons-puzzle-hover-background-color: #e9ecef;
+        --parsons-puzzle-hover-border-color: #0056b3;
+        --parsons-puzzle-placeholder-background-color: #bcbbbb;
+        --parsons-puzzle-placeholder-border-color: #999;
+        --parsons-puzzle-button-background-color-check: #28a745;
+        --parsons-puzzle-button-background-color-reset: #ffc107;
+        --parsons-puzzle-button-text-color: black;
+        --parsons-puzzle-modal-background-color: #fefefe;
+        --parsons-puzzle-modal-border-color: #888;
+        --parsons-puzzle-draggable-item-background-color: #e8e8e8;
+        --parsons-puzzle-draggable-item-border-color: #007bff;
+        --parsons-puzzle-toast-background-color: rgba(0, 128, 128, 0.9);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] {
+        --parsons-puzzle-background-color: #202020 !important;
+        --parsons-puzzle-border-color: #ccc;
+        --parsons-puzzle-draggable-background-color: #141923;
+        --parsons-puzzle-drop-area-background-color: #3b3b3b;
+        --parsons-puzzle-drop-area-border-color: #007bff;
+        --parsons-puzzle-text-color: #ffffff;
+        --parsons-puzzle-hover-background-color: #333333;
+        --parsons-puzzle-hover-border-color: #0056b3;
+        --parsons-puzzle-placeholder-background-color: #000000;
+        --parsons-puzzle-placeholder-border-color: #999;
+        --parsons-puzzle-button-background-color-check: #28a745;
+        --parsons-puzzle-button-background-color-reset: #ffc107;
+        --parsons-puzzle-button-text-color: black;
+        --parsons-puzzle-modal-background-color: #181818;
+        --parsons-puzzle-modal-border-color: #888;
+        --parsons-puzzle-draggable-item-background-color: #252d40;
+        --parsons-puzzle-draggable-item-border-color: #1b1b1b;
+        --parsons-puzzle-toast-background-color: rgba(0, 128, 128, 0.9);
+    }
+}
+
+/* Main container for Parsons puzzle */
+.puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid var(--parsons-puzzle-border-color);
+    border-radius: 8px;
+    background-color: var(--parsons-puzzle-background-color) !important;
+    position: relative;
+}
+
+/* Draggable code area (alternate) */
+/* .draggable-code {
+    width: 100%;
+    background-color: var(--parsons-puzzle-draggable-background-color);
+    padding: 10px;
+    border: 1px solid var(--parsons-puzzle-border-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
+} */
+
+/* Draggable items */
+.draggable-code {
+    background-color: var(--parsons-puzzle-draggable-background-color) !important;
+    color: var(--parsons-puzzle-text-color);
+    border: 2px solid var(--parsons-puzzle-primary-color);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    display: inline-block;
+    white-space: normal;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* .pairing-puzzle-container .draggable-code {
+    background-color: var(--parsons-puzzle-draggable-background-color) !important;
+    color: var(--parsons-puzzle-text-color);
+    border: 2px solid var(--parsons-puzzle-primary-color);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+} */
+
+/* Drop area */
+.drop-area {
+    width: 100%;
+    background-color: var(--parsons-puzzle-drop-area-background-color) !important;
+    border: 2px dashed var(--parsons-puzzle-drop-area-border-color);
+    min-height: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Indentation-mode: show vertical guides for allowed indentation levels */
+.drop-area.parsons-drop-area--indent {
+    overflow: hidden;
+}
+
+.drop-area.parsons-drop-area--indent .parsons-indentation-preview {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--parsons-puzzle-hover-background-color);
+    opacity: 0.55;
+    pointer-events: none;
+    /* Above the dragged tile (z-index ~1000) */
+    z-index: 2200;
+}
+
+.drop-area.parsons-drop-area--indent .parsons-indentation-preview::after {
+    content: attr(data-level);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: var(--parsons-puzzle-drop-area-background-color);
+    color: var(--parsons-puzzle-text-color);
+    border: 1px solid var(--parsons-puzzle-drop-area-border-color);
+}
+
+.drop-area.parsons-drop-area--indent .parsons-indentation-guide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-left: 2px dashed var(--parsons-puzzle-drop-area-border-color);
+    opacity: 0.75;
+    pointer-events: none;
+    /* Above the dragged tile (z-index ~1000) */
+    z-index: 2100;
+}
+
+.drop-area.parsons-drop-area--indent .parsons-indentation-guide.is-active {
+    opacity: 1;
+    border-left-style: solid;
+    border-left-width: 3px;
+}
+
+/* Tile while being dragged in indentation-mode */
+.parsons-tile.parsons-dragging {
+    cursor: grabbing;
+    opacity: 0.95;
+}
+
+/* Placeholder slot during custom dragging */
+.parsons-drag-placeholder {
+    margin-bottom: 5px;
+    border: 1px dashed var(--parsons-puzzle-placeholder-border-color);
+    background-color: transparent;
+    border-radius: 3px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Drop preview rectangle during custom drag (indentation-mode) */
+.parsons-drag-placeholder.parsons-drop-preview {
+    background-color: var(--parsons-puzzle-hover-background-color);
+    opacity: 0.45;
+    border: 2px dashed var(--parsons-puzzle-hover-border-color);
+    /* Above the dragged tile (which uses z-index ~1000) */
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.parsons-drag-placeholder.parsons-drop-preview::after {
+    content: attr(data-level);
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: var(--parsons-puzzle-drop-area-background-color);
+    color: var(--parsons-puzzle-text-color);
+    border: 1px solid var(--parsons-puzzle-drop-area-border-color);
+    opacity: 0.9;
+}
+
+/* General draggable item styles */
+.draggable {
+    background-color: var(--parsons-puzzle-draggable-item-background-color) !important;
+    color: var(--parsons-puzzle-text-color);
+    border: 1px solid var(--parsons-puzzle-draggable-item-border-color);
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    cursor: grab;
+}
+
+/* Placeholder in drop area */
+.placeholder {
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: var(--parsons-puzzle-placeholder-background-color) !important;
+    border: 1px dashed var(--parsons-puzzle-placeholder-border-color);
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Dragging styles (commented out) */
+/* .draggable:active {
+    background-color: #e0f7fa;
+    opacity: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+    border: 2px solid #007bff;
+    cursor: grabbing;
+    color: #000000;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+} */
+
+/* Drop area hover effect */
+/* .drop-area.dragover {
+    background-color: var(--parsons-puzzle-hover-background-color);
+    border-color: var(--parsons-puzzle-hover-border-color);
+} */
+
+/* Feedback when dragging */
+/* .dragging {
+    display: block;
+    background-color: #e0f7fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+    opacity: 0.9 !important;
+} */
+
+/* Code block styles */
+pre.highlight {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Button styles — matches quiz-2 pill button design */
+.puzzle-container .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    background: transparent;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.puzzle-container .button svg {
+    flex: 0 0 auto;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: middle;
+}
+
+/* Check solution button — green */
+.puzzle-container .button-check-solution {
+    border: 1.5px solid rgba(34, 197, 94, 0.5);
+    color: #166534 !important;
+    background: transparent;
+}
+
+[data-mode=light] .puzzle-container .button-check-solution {
+    color: #166534 !important;
+    border-color: rgba(34, 197, 94, 0.5);
+}
+
+[data-mode=light] .puzzle-container .button-check-solution:hover {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.75);
+}
+
+@media (prefers-color-scheme: light) {
+    .puzzle-container .button-check-solution {
+        color: #166534 !important;
+        border-color: rgba(34, 197, 94, 0.5);
+    }
+
+    .puzzle-container .button-check-solution:hover {
+        background: rgba(34, 197, 94, 0.08);
+        border-color: rgba(34, 197, 94, 0.75);
+    }
+}
+
+[data-mode=dark] .puzzle-container .button-check-solution {
+    color: #86efac !important;
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+[data-mode=dark] .puzzle-container .button-check-solution:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+    .puzzle-container .button-check-solution {
+        color: #86efac !important;
+        border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    .puzzle-container .button-check-solution:hover {
+        background: rgba(34, 197, 94, 0.12);
+        border-color: rgba(34, 197, 94, 0.65);
+    }
+}
+
+/* Reset button — amber */
+.puzzle-container .button-reset-puzzle {
+    border: 1.5px solid rgba(234, 179, 8, 0.5);
+    color: #92400e !important;
+    background: transparent;
+}
+
+.puzzle-container .button-reset-puzzle:hover {
+    background: rgba(234, 179, 8, 0.05);
+    border-color: rgba(234, 179, 8, 0.75);
+}
+
+[data-mode=light] .puzzle-container .button-reset-puzzle {
+    color: #92400e !important;
+    border-color: rgba(234, 179, 8, 0.5) !important;
+    background: transparent !important;
+}
+
+[data-mode=light] .puzzle-container .button-reset-puzzle:hover {
+    background: rgba(234, 179, 8, 0.05) !important;
+    border-color: rgba(234, 179, 8, 0.75) !important;
+}
+
+[data-mode=dark] .puzzle-container .button-reset-puzzle {
+    color: #fde68a !important;
+    border-color: rgba(234, 179, 8, 0.4) !important;
+    background: transparent !important;
+}
+
+[data-mode=dark] .puzzle-container .button-reset-puzzle:hover {
+    background: rgba(234, 179, 8, 0.12) !important;
+    border-color: rgba(234, 179, 8, 0.65) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .puzzle-container .button-reset-puzzle {
+        color: #fde68a !important;
+        border-color: rgba(234, 179, 8, 0.4) !important;
+        background: transparent !important;
+    }
+
+    .puzzle-container .button-reset-puzzle:hover {
+        background: rgba(234, 179, 8, 0.12) !important;
+        border-color: rgba(234, 179, 8, 0.65) !important;
+    }
+}
+
+/* Modal container (hidden by default) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal content */
+.modal-content {
+    background-color: var(--parsons-puzzle-modal-background-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--parsons-puzzle-modal-border-color);
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Copy button */
+.button-copy-code {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-copy-code:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+/* Toast Notification */
+.toast {
+    position: absolute;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Success Toast */
+.toast-success {
+    background-color: var(--parsons-puzzle-toast-success-background-color);
+    color: var(--parsons-puzzle-toast-success-text-color);
+}
+
+/* Error Toast */
+.toast-error {
+    background-color: var(--parsons-puzzle-toast-error-background-color);
+    color: var(--parsons-puzzle-toast-error-text-color);
+}
+
+/* Toast Message */
+.toast p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}

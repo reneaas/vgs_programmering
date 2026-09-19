@@ -1,0 +1,208 @@
+/* GitHub-like LIGHT theme for rendered code blocks.
+   Scoped to light-mode attributes so it can coexist with a dark theme.
+*/
+
+html.light-mode,
+body.light-mode,
+html[data-theme='light'],
+body[data-theme='light'],
+[data-mode='light'] {
+}
+
+html.light-mode pre, html.light-mode code,
+body.light-mode pre, body.light-mode code,
+html[data-theme='light'] pre, html[data-theme='light'] code,
+body[data-theme='light'] pre, body[data-theme='light'] code,
+[data-mode='light'] pre, [data-mode='light'] code {
+  background-color: #ffffff;
+  color: #24292f;
+}
+
+html.light-mode pre, body.light-mode pre,
+html[data-theme='light'] pre, body[data-theme='light'] pre,
+[data-mode='light'] pre {
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+}
+
+/* Basic token colors assuming highlight.js / pygments style classes */
+html.light-mode .hljs-comment,
+body.light-mode .hljs-comment,
+html[data-theme='light'] .hljs-comment,
+body[data-theme='light'] .hljs-comment,
+[data-mode='light'] .hljs-comment {
+  color: #6e7781;
+}
+
+html.light-mode .hljs-keyword,
+body.light-mode .hljs-keyword,
+html[data-theme='light'] .hljs-keyword,
+body[data-theme='light'] .hljs-keyword,
+[data-mode='light'] .hljs-keyword {
+  color: #cf222e;
+}
+
+html.light-mode .hljs-string,
+body.light-mode .hljs-string,
+html[data-theme='light'] .hljs-string,
+body[data-theme='light'] .hljs-string,
+[data-mode='light'] .hljs-string {
+  color: #116329;
+}
+
+html.light-mode .hljs-number,
+body.light-mode .hljs-number,
+html[data-theme='light'] .hljs-number,
+body[data-theme='light'] .hljs-number,
+[data-mode='light'] .hljs-number {
+  color: #0550ae;
+}
+
+html.light-mode .hljs-title,
+body.light-mode .hljs-title,
+html[data-theme='light'] .hljs-title,
+body[data-theme='light'] .hljs-title,
+[data-mode='light'] .hljs-title {
+  color: #0550ae;
+}
+
+/* Override the CDN github.min.css #e36229 which is too light on cheap screens */
+html.light-mode .hljs-built_in,
+body.light-mode .hljs-built_in,
+html[data-theme='light'] .hljs-built_in,
+body[data-theme='light'] .hljs-built_in,
+[data-mode='light'] .hljs-built_in {
+  color: #953800;
+}
+
+/* Fallback for generic code tokens used by sphinx/highlight.js */
+html.light-mode .nb-output pre,
+body.light-mode .nb-output pre,
+html[data-theme='light'] .nb-output pre,
+body[data-theme='light'] .nb-output pre,
+[data-mode='light'] .nb-output pre {
+  background-color: #f6f8fa;
+}
+
+/*
+  CodeMirror theme rules for the interactive-code editor.
+  The `interactive-code` directive sets the CodeMirror theme to `github-light` in light mode.
+  If these selectors are missing, keywords (def/for/if/return/...) will render as plain text.
+*/
+.cm-s-github-light.CodeMirror {
+  background-color: #ffffff;
+  color: #24292f;
+}
+
+.cm-s-github-light .CodeMirror-gutters {
+  background-color: #ffffff;
+  border-right: 1px solid #d1d5da;
+}
+
+.cm-s-github-light .CodeMirror-linenumber {
+  color: #6e7781;
+}
+
+.cm-s-github-light .CodeMirror-cursor {
+  border-left: 1px solid #24292f;
+}
+
+.cm-s-github-light .CodeMirror-selected {
+  background: #0969da4a;
+}
+
+.cm-s-github-light .cm-comment {
+  color: #6e7781;
+}
+
+.cm-s-github-light .cm-error {
+  color: #cf222e;
+}
+
+.cm-s-github-light .cm-keyword {
+  color: #cf222e;
+}
+
+.cm-s-github-light .cm-operator {
+  color: #116329;
+  font-weight: bold;
+}
+
+.cm-s-github-light .cm-literal {
+  color: #953800;
+}
+
+.cm-s-github-light .cm-variable {
+  color: #8250df;
+}
+
+.cm-s-github-light .cm-punctuation {
+  color: #24292f;
+}
+
+.cm-s-github-light .cm-number {
+  color: #953800;
+}
+
+.cm-s-github-light .cm-string {
+  color: #0550ae;
+}
+
+.cm-s-github-light .cm-attribute {
+  color: #953800;
+}
+
+.cm-s-github-light .cm-builtin {
+  color: #953800;
+}
+
+.cm-s-github-light .cm-variable-2 {
+  color: #116329;
+}
+
+.cm-s-github-light .cm-variable-3 {
+  color: #0550ae;
+  font-weight: bold;
+}
+
+.cm-s-github-light .cm-atom {
+  color: #0550ae;
+  font-weight: bold;
+}
+
+.cm-s-github-light .cm-def {
+  color: #0550ae;
+  /* font-weight: bold; */
+}
+
+.cm-s-github-light .cm-tag {
+  color: #116329;
+}
+
+.cm-s-github-light .cm-string-2 {
+  color: #0550ae;
+}
+
+/* Generic Styling */
+.cm-s-github-light .cm-em {
+  font-style: italic;
+}
+
+.cm-s-github-light .cm-strong {
+  font-weight: bold;
+}
+
+.cm-s-github-light .cm-header {
+  color: #0550ae;
+  font-weight: bold;
+}
+
+.cm-s-github-light .cm-quote {
+  color: #6e7781;
+  font-style: italic;
+}
+
+.cm-s-github-light .cm-link {
+  color: #116329;
+  text-decoration: underline;
+}

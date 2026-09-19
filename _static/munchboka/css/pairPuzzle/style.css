@@ -1,0 +1,299 @@
+/* -----------------------------------------------------------------------------
+   Scoped, namespaced CSS variables: all vars prefixed with “--pp-”
+   and living only inside the .pairing-puzzle-container.
+   This avoids any clash with global or other modules’ variables.
+-----------------------------------------------------------------------------*/
+.pairing-puzzle-container {
+  /* light‐mode defaults */
+  --pp-background-color:       #f9f9f9;
+  --pp-border-color:           #ccc;
+  --pp-draggable-bg-color:     #ffffff;
+  --pp-container-bg-color:     #eeeeee84;
+  --pp-text-color:             #24292f;
+  --pp-primary-color:          #007bff;
+  --pp-hover-bg-color:         #e9ecef;
+  --pp-hover-border-color:     #0056b3;
+  --pp-placeholder-bg-color:   #bcbbbb;
+  --pp-placeholder-border-color:#999;
+  --pp-button-text-color:      black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid var(--pp-border-color);
+  border-radius: 8px;
+  background-color: var(--pp-background-color);
+}
+
+/* Dark Mode overrides, scoped to the container */
+[data-mode="dark"] .pairing-puzzle-container {
+  --pp-background-color:        #181818;
+  --pp-border-color:            #ccc;
+  --pp-draggable-bg-color:      #252d40;
+  --pp-container-bg-color:      #0f131b;
+  --pp-text-color:              #ffffff;
+  --pp-primary-color:           #007bff;
+  --pp-hover-bg-color:          #333333;
+  --pp-hover-border-color:      #0056b3;
+  --pp-placeholder-bg-color:    #000000;
+  --pp-placeholder-border-color:#999;
+  --pp-button-text-color:       black;
+}
+
+/* Auto Mode: light system theme */
+@media (prefers-color-scheme: light) {
+  [data-mode="auto"] .pairing-puzzle-container {
+    --pp-background-color:       #f9f9f9;
+    --pp-border-color:           #ccc;
+    --pp-draggable-bg-color:     #ffffff;
+    --pp-container-bg-color:     #d5d5d5;
+    --pp-text-color:             #24292f;
+    --pp-primary-color:          #007bff;
+    --pp-hover-bg-color:         #e9ecef;
+    --pp-hover-border-color:     #0056b3;
+    --pp-placeholder-bg-color:   #bcbbbb;
+    --pp-placeholder-border-color:#999;
+    --pp-button-text-color:      black;
+  }
+}
+
+/* Auto Mode: dark system theme */
+@media (prefers-color-scheme: dark) {
+  [data-mode="auto"] .pairing-puzzle-container {
+    --pp-background-color:        #181818;
+    --pp-border-color:            #ccc;
+    --pp-draggable-bg-color:      #252d40;
+    --pp-container-bg-color:      #0f131b;
+    --pp-text-color:              #ffffff;
+    --pp-primary-color:           #007bff;
+    --pp-hover-bg-color:          #333333;
+    --pp-hover-border-color:      #0056b3;
+    --pp-placeholder-bg-color:    #000000;
+    --pp-placeholder-border-color:#999;
+    --pp-button-text-color:       black;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Component styles consuming the namespaced vars
+-----------------------------------------------------------------------------*/
+.pairing-puzzle-container .draggable-item {
+  background-color: var(--pp-draggable-bg-color);
+  color:            var(--pp-text-color);
+  border:           2px solid var(--pp-primary-color);
+  padding:          5px;
+  margin-bottom:    10px;
+  border-radius:    5px;
+  box-shadow:       0 4px 8px rgba(0,0,0,0.1);
+  cursor:           grab;
+  display:          inline-block;
+  white-space:      nowrap;
+  box-sizing:       border-box;
+  transition:       all 0.2s ease;
+}
+
+.pairing-puzzle-container .draggable-container {
+  display:          flex;
+  flex-wrap:        wrap;
+  gap:              10px;
+  justify-content:  flex-start;
+  align-items:      flex-start;
+  width:            100%;
+  padding:          10px 15px;
+  background-color: var(--pp-container-bg-color);
+  border:           2px solid var(--pp-primary-color);
+  border-radius:    5px;
+  box-shadow:       0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pairing-puzzle-container .drop-zone {
+  background-color: var(--pp-draggable-bg-color);
+  border:           2px dashed var(--pp-primary-color);
+  padding:          10px;
+  border-radius:    8px;
+  display:          flex !important;
+  flex-wrap:        wrap;
+  justify-content:  center;
+  align-items:      center;
+  gap:              10px;
+  min-width:        120px;
+  flex:             0 1 auto;
+  box-sizing:       border-box;
+  margin-top:       10px;
+}
+
+.pairing-puzzle-container .drop-zone.dragover {
+  background-color: var(--pp-hover-bg-color);
+  border-color:     var(--pp-hover-border-color);
+}
+
+.pairing-puzzle-container .placeholder {
+  height:           50px;
+  margin-bottom:    5px;
+  background-color: var(--pp-placeholder-bg-color);
+  border:           1px dashed var(--pp-placeholder-border-color);
+  width:            100%;
+  padding:          5px;
+  box-sizing:       border-box;
+  text-align:       center;
+}
+
+.pairing-puzzle-container .button-container {
+  display:          flex;
+  flex-wrap:        wrap;
+  justify-content:  center;
+  align-items:      center;
+  gap:              10px;
+  margin-top:       20px;
+}
+
+.pairing-puzzle-container .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 4px 2px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.pairing-puzzle-container .button-run {
+  border: 1.5px solid rgba(34, 197, 94, 0.5);
+  color: #166534;
+  background: transparent;
+}
+
+.pairing-puzzle-container .button-run:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.75);
+}
+
+.pairing-puzzle-container .button-reset {
+  border: 1.5px solid rgba(234, 179, 8, 0.5);
+  color: #92400e;
+  background: transparent;
+}
+
+.pairing-puzzle-container .button-reset:hover {
+  background: rgba(234, 179, 8, 0.05);
+  border-color: rgba(234, 179, 8, 0.75);
+}
+
+[data-mode="light"] .pairing-puzzle-container .button-run {
+  color: #166534;
+  border-color: rgba(34, 197, 94, 0.5);
+  background: transparent;
+}
+
+[data-mode="light"] .pairing-puzzle-container .button-run:hover {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.75);
+}
+
+[data-mode="light"] .pairing-puzzle-container .button-reset {
+  color: #92400e;
+  border-color: rgba(234, 179, 8, 0.5);
+  background: transparent;
+}
+
+[data-mode="light"] .pairing-puzzle-container .button-reset:hover {
+  background: rgba(234, 179, 8, 0.05);
+  border-color: rgba(234, 179, 8, 0.75);
+}
+
+[data-mode="dark"] .pairing-puzzle-container .button-run {
+  color: #86efac;
+  border-color: rgba(34, 197, 94, 0.4);
+  background: transparent;
+}
+
+[data-mode="dark"] .pairing-puzzle-container .button-run:hover {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.65);
+}
+
+[data-mode="dark"] .pairing-puzzle-container .button-reset {
+  color: #fde68a;
+  border-color: rgba(234, 179, 8, 0.4);
+  background: transparent;
+}
+
+[data-mode="dark"] .pairing-puzzle-container .button-reset:hover {
+  background: rgba(234, 179, 8, 0.12);
+  border-color: rgba(234, 179, 8, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-mode="auto"] .pairing-puzzle-container .button-run {
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.4);
+    background: transparent;
+  }
+
+  [data-mode="auto"] .pairing-puzzle-container .button-run:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.65);
+  }
+
+  [data-mode="auto"] .pairing-puzzle-container .button-reset {
+    color: #fde68a;
+    border-color: rgba(234, 179, 8, 0.4);
+    background: transparent;
+  }
+
+  [data-mode="auto"] .pairing-puzzle-container .button-reset:hover {
+    background: rgba(234, 179, 8, 0.12);
+    border-color: rgba(234, 179, 8, 0.65);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  [data-mode="auto"] .pairing-puzzle-container .button-run {
+    color: #166534;
+    border-color: rgba(34, 197, 94, 0.5);
+    background: transparent;
+  }
+
+  [data-mode="auto"] .pairing-puzzle-container .button-run:hover {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.75);
+  }
+
+  [data-mode="auto"] .pairing-puzzle-container .button-reset {
+    color: #92400e;
+    border-color: rgba(234, 179, 8, 0.5);
+    background: transparent;
+  }
+
+  [data-mode="auto"] .pairing-puzzle-container .button-reset:hover {
+    background: rgba(234, 179, 8, 0.05);
+    border-color: rgba(234, 179, 8, 0.75);
+  }
+}
+
+
+/* optional: code blocks inside draggable items */
+.pairing-puzzle-container .draggable-item pre,
+.pairing-puzzle-container .draggable-item code {
+  padding:     4px;
+  margin:      0;
+  font-size:   14px;
+  line-height: 1.4;
+  border-radius: 4px;
+}
+
+
+.drop-zone-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: stretch;
+}

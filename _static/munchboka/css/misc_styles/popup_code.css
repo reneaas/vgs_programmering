@@ -1,0 +1,80 @@
+/* Make dialog height adapt to content */
+.popup-dialog.code-dialog {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* Give the dialog content room to breathe */
+.popup-dialog.code-dialog .ui-dialog-content {
+    height: auto !important;
+    min-height: 200px !important;
+    overflow: visible !important;
+    padding: 0 !important;
+}
+
+/* Ensure the code container can expand properly */
+.popup-dialog.code-dialog .code-container {
+    min-height: 200px !important;
+    height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Make CodeMirror fill the container */
+.popup-dialog.code-dialog .CodeMirror {
+    flex: 1 1 auto !important;
+    min-height: 200px !important;
+    height: auto !important;
+}
+
+/* Support for other potential editor types */
+.popup-dialog.code-dialog .ace_editor {
+    min-height: 200px !important;
+    height: auto !important;
+    width: 100% !important;
+}
+
+/* Make the resize handle more visible */
+.popup-dialog.code-dialog .ui-resizable-handle {
+    background-color: rgba(0,0,0,0.1) !important;
+    border-radius: 4px !important;
+}
+.popup-dialog.code-dialog .ui-resizable-handle:hover {
+    background-color: rgba(0,0,0,0.2) !important;
+}
+
+/* Dark mode adjustments */
+[data-mode="dark"] .popup-dialog.code-dialog .ui-resizable-handle {
+    background-color: rgba(255,255,255,0.1) !important;
+}
+[data-mode="dark"] .popup-dialog.code-dialog .ui-resizable-handle:hover {
+    background-color: rgba(255,255,255,0.2) !important;
+}
+
+.popup-button {
+    background-color: #2ecc71;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popup-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}

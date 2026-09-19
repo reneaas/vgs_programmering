@@ -1,0 +1,78 @@
+.munch-3d { width: 100%; max-width: 100%; margin-inline: auto; }
+/* The wrapping <figure> (figure.interactive-figure) gets the real `width:` option
+   as an inline style so align-left/right floats size like plot/plot3d figures
+   instead of a 100%-wide block's undefined float shrink-to-fit behavior. Cap it
+   at 100% so an explicit px/percent width never overflows a narrower parent
+   container (grid column, admonition, sidebar, ...). */
+figure.interactive-figure:has(> .munch-3d) { max-width: 100%; box-sizing: border-box; }
+/* figures.css sets margin-left/right: 0 !important on align-left/right figures, which
+   hugs surrounding text right up against the panel. Give the (higher-specificity)
+   interactive-figure some breathing room instead. */
+figure.interactive-figure.align-right:has(> .munch-3d) { margin-left: 1.5em !important; }
+figure.interactive-figure.align-left:has(> .munch-3d) { margin-right: 1.5em !important; }
+.munch-3d-board { width: 100%; height: 460px; max-height: 75vh; border: 1px solid var(--pst-color-border, #aaa); border-radius: 6px; background: #ffffff; color: inherit; touch-action: none; }
+/* Same trick used for static matplotlib figures (see general_style.css): render the light
+   palette always, then invert+hue-rotate the whole board in dark mode so the canvas,
+   labels, and every author-chosen color adapt together without any theme-aware JS. */
+[data-mode="dark"] .munch-3d-board { filter: invert(1) hue-rotate(180deg); }
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .munch-3d-board { filter: invert(1) hue-rotate(180deg); }
+}
+.munch-3d-controls { display: flex; flex-direction: column; gap: .6rem; margin-block: .75rem; }
+.munch-3d-controls label { display: flex; align-items: center; gap: .75rem; }
+.munch-3d-controls input[type=range] { flex: 1; min-width: 0; }
+.munch-3d-controls output { min-width: 4em; font-variant-numeric: tabular-nums; }
+.munch-3d-buttons { display: flex; gap: .4rem; flex-wrap: wrap; }
+/* Pill-shaped buttons with an inline Heroicon, matching answer-2/solution-2/interactive-code. */
+.munch-3d-buttons button {
+    display: inline-flex; align-items: center; gap: .4em;
+    border-radius: 999px; padding: .4rem .9rem;
+    background: transparent; color: inherit;
+    font-size: .92rem; font-weight: 600; cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+}
+.munch-3d-buttons button svg { flex: 0 0 auto; display: block; width: 1.1em; height: 1.1em; pointer-events: none; }
+/* Reset view — amber, same recipe as .button-reset in interactive_code.css */
+.munch-3d-buttons button.munch-3d-button-reset { border: 1.5px solid rgba(234, 179, 8, .5); }
+[data-mode=light] .munch-3d-buttons button.munch-3d-button-reset { color: #92400e; }
+[data-mode=light] .munch-3d-buttons button.munch-3d-button-reset:hover { background: rgba(234, 179, 8, .08); border-color: rgba(234, 179, 8, .75); }
+@media (prefers-color-scheme: light) {
+    .munch-3d-buttons button.munch-3d-button-reset { color: #92400e; }
+    .munch-3d-buttons button.munch-3d-button-reset:hover { background: rgba(234, 179, 8, .08); border-color: rgba(234, 179, 8, .75); }
+}
+[data-mode=dark] .munch-3d-buttons button.munch-3d-button-reset { color: #fde68a; border-color: rgba(234, 179, 8, .4); }
+[data-mode=dark] .munch-3d-buttons button.munch-3d-button-reset:hover { background: rgba(234, 179, 8, .12); border-color: rgba(234, 179, 8, .65); }
+@media (prefers-color-scheme: dark) {
+    .munch-3d-buttons button.munch-3d-button-reset { color: #fde68a; border-color: rgba(234, 179, 8, .4); }
+    .munch-3d-buttons button.munch-3d-button-reset:hover { background: rgba(234, 179, 8, .12); border-color: rgba(234, 179, 8, .65); }
+}
+/* Camera navigation (rotate/tilt/zoom) — blue */
+.munch-3d-buttons button.munch-3d-button-nav { border: 1.5px solid rgba(59, 130, 246, .5); }
+[data-mode=light] .munch-3d-buttons button.munch-3d-button-nav { color: #1e40af; }
+[data-mode=light] .munch-3d-buttons button.munch-3d-button-nav:hover { background: rgba(59, 130, 246, .08); border-color: rgba(59, 130, 246, .75); }
+@media (prefers-color-scheme: light) {
+    .munch-3d-buttons button.munch-3d-button-nav { color: #1e40af; }
+    .munch-3d-buttons button.munch-3d-button-nav:hover { background: rgba(59, 130, 246, .08); border-color: rgba(59, 130, 246, .75); }
+}
+[data-mode=dark] .munch-3d-buttons button.munch-3d-button-nav { color: #bfdbfe; border-color: rgba(59, 130, 246, .4); }
+[data-mode=dark] .munch-3d-buttons button.munch-3d-button-nav:hover { background: rgba(59, 130, 246, .12); border-color: rgba(59, 130, 246, .65); }
+@media (prefers-color-scheme: dark) {
+    .munch-3d-buttons button.munch-3d-button-nav { color: #bfdbfe; border-color: rgba(59, 130, 246, .4); }
+    .munch-3d-buttons button.munch-3d-button-nav:hover { background: rgba(59, 130, 246, .12); border-color: rgba(59, 130, 246, .65); }
+}
+.munch-3d-status { font-size: .85rem; }
+.munch-3d-ready .munch-3d-fallback { display: none; }
+.munch-3d:not([data-initialized]) .munch-3d-board { display: none; }
+.munch-3d-error .munch-3d-board, .munch-3d-error .munch-3d-controls { display: none; }
+@media print {
+    .munch-3d-board, .munch-3d-controls, .munch-3d-status { display: none !important; }
+    .munch-3d .munch-3d-fallback { display: block !important; }
+}
+.munch-3d-board { position: relative; overflow: hidden; box-sizing: border-box; }
+.munch-3d-board canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.munch-3d-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.munch-3d-label { position: absolute; white-space: nowrap; line-height: 1.3; }
+.munch-3d-label .katex { font-size: 1em; }
+.munch-3d:not(.munch-3d-ready) .munch-3d-controls { display: none; }
+/* Override the shared interactive-figure rule, which enables every descendant. */
+.interactive-figure .munch-3d-labels, .interactive-figure .munch-3d-labels * { pointer-events: none !important; }

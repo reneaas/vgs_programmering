@@ -1,0 +1,92 @@
+/* Base container layout */
+.dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dialogue-entry {
+  padding: 0.5em 1em;
+  border-radius: 1.4rem;
+  max-width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Speaker alignment */
+.speaker1 {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.speaker2 {
+  align-self: flex-end;
+  text-align: left;
+}
+
+/* Name formatting */
+.speaker-name {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.speaker-text {
+  white-space: pre-wrap;
+}
+
+/* Default (light mode) bubble colors */
+[data-mode="light"] .speaker1 {
+  background-color: #e0f7fa;
+}
+
+[data-mode="light"] .speaker2 {
+  background-color: #ffe0b2;
+}
+
+/* Dark mode bubble colors */
+[data-mode="dark"] .speaker1 {
+  background-color: #00334d;
+  color: #e0f7fa;
+}
+
+[data-mode="dark"] .speaker2 {
+  background-color: #d802026d;
+  color: #ffe0b2;
+}
+
+/* Auto mode inherits from system preferences */
+@media (prefers-color-scheme: dark) {
+  [data-mode="auto"] .speaker1 {
+    background-color: #00334d;
+    color: #e0f7fa;
+  }
+
+  [data-mode="auto"] .speaker2 {
+    background-color: #d802026d;
+    color: #ffe0b2;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  [data-mode="auto"] .speaker1 {
+    background-color: #e0f7fa;
+    color: black;
+  }
+
+  [data-mode="auto"] .speaker2 {
+    background-color: #ffe0b2;
+    color: black;
+  }
+}
+
+
+.speaker2 {
+  border-top-right-radius: 0;
+}
+
+.speaker1 {
+  border-top-left-radius: 0;
+}

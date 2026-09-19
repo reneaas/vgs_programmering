@@ -1,0 +1,115 @@
+/* =======================
+   Wrapper & Trigger
+   ======================= */
+
+   .popup-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .popup-trigger {
+    cursor: pointer;
+    border-bottom: 1px dashed #4a86e8;
+    color: #1a73e8; 
+    transition: color 0.2s, border-color 0.2s;
+  }
+  
+  .popup-trigger:hover {
+    color: #0d5bcd;
+    border-bottom-color: #0d5bcd;
+  }
+  
+  /* =======================
+     Bubble Base Style
+     ======================= */
+  
+  .popup-bubble {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 0.75em 1em;
+    border-radius: 8px;
+    font-size: 0.95em;
+    line-height: 1.5;
+    z-index: 1000;
+    max-width: 500px;
+    width: max-content;
+    white-space: normal;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(4px);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* =======================
+     Show when active
+     ======================= */
+  
+  .popup-bubble[style*="display: block"] {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  /* =======================
+     Light Mode
+     ======================= */
+  
+  [data-mode="light"] .popup-bubble {
+    background: #f9f9f9;
+    color: #222;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  [data-mode="light"] .popup-trigger {
+    color: #0023d1;
+    border-bottom-color: #8f00d1;
+  }
+  
+  /* =======================
+     Dark Mode
+     ======================= */
+  
+  [data-mode="dark"] .popup-bubble {
+    background: #1e1e1e !important;
+    color: #e0e0e0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  [data-mode="dark"] .popup-trigger {
+    color: #66b5ff;
+    border-bottom-color: #66b5ff;
+  }
+  
+  /* =======================
+     Auto (respects OS)
+     ======================= */
+  
+  @media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .popup-bubble {
+      background: #1e1e1e !important;
+      color: #e0e0e0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+  
+    [data-mode="auto"] .popup-trigger {
+      color: #66b5ff;
+      border-bottom-color: #66b5ff;
+    }
+  
+    [data-mode="auto"] .popup-trigger:hover {
+      color: #7ac1ff;
+      border-bottom-color: #7ac1ff;
+    }
+  }
+  
+  @media (prefers-color-scheme: light) {
+    [data-mode="auto"] .popup-bubble {
+      background: #f9f9f9;
+      color: #222;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  }

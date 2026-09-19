@@ -1,0 +1,578 @@
+/* Minimal default styles for munchboka-edutools */
+
+
+.bd-header {
+  display: none !important;
+}
+
+/* Workaround: on some WebKit/iOS builds, toggling the primary/secondary sidebar
+   via the checkbox-hack (:checked ~ .bd-container .bd-sidebar-primary) changes
+   `margin-left`/`visibility` but the browser fails to repaint the fixed-position
+   sidebar, so the button appears unresponsive on mobile. Forcing a compositing
+   layer makes the state change repaint reliably. */
+.bd-sidebar-primary,
+.bd-sidebar-secondary {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: margin-left, margin-right, visibility;
+}
+
+
+.quiz-main-container {
+  margin: 1rem 0;
+}
+.quiz-image.adaptive-figure {
+  max-width: 100%;
+  height: auto;
+}
+
+/* pydata-sphinx-theme gives every <img> (unless .only-dark/.dark-light) a white
+   background-color and, in dark mode, a brightness/contrast filter — meant for
+   photos with a baked-in white background. That shows through as an unwanted
+   solid box (or checkerboard, for images with no real alpha channel) behind
+   transparent logo/branding images. Opt out with class="transparent-logo". */
+img.transparent-logo {
+  background: transparent !important;
+  filter: none !important;
+}
+
+/* The theme's own `logo:` config (sidebar brand image, book _config.yml) renders
+   as img.logo__image.only-light/.only-dark — only the "only-dark" variant is
+   exempted from the rule above, so a transparent-PNG/webp logo still gets a
+   white box behind it in light mode. Enforce transparency on both variants. */
+.logo__image {
+  background: transparent !important;
+  filter: none !important;
+}
+
+/* --- Figure and graph styles --- */
+
+/* Prevent any anchor marked no-click from being clickable (used by inline SVG figures) */
+a.no-click,
+.no-scaled-link {
+  pointer-events: none !important;
+}
+
+
+.bd-content .sd-tab-set .sd-tab-content {
+    background-color: transparent !important;
+}
+
+
+figure {
+    pointer-events: none !important;
+}
+
+figure.interactive-figure,
+figure.interactive-figure * {
+
+  pointer-events: auto !important;
+
+}
+
+/* Container-level adaptive figure: ensure any contained raster/SVG scales responsively */
+.adaptive-figure img,
+.adaptive-figure svg,
+img.adaptive-figure,
+svg.graph-inline-svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optional plot figure spacing */
+figure.plot-figure {
+  margin: 1em auto;
+}
+
+/* Theme-aware adjustment for dark mode when the theme sets data-mode on <html> */
+[data-mode="dark"] .adaptive-figure img,
+[data-mode="dark"] .adaptive-figure svg,
+[data-mode="dark"] img.adaptive-figure,
+[data-mode="dark"] svg.graph-inline-svg {
+  /* Invert for dark mode to preserve contrast of typical light-on-white math figures */
+  filter: invert(100%) hue-rotate(180deg) !important;
+  background: transparent !important;
+  background-color: inherit !important;
+}
+
+/* Auto mode follows system preference; keep same background behavior */
+@media (prefers-color-scheme: dark) {
+  [data-mode="auto"] .adaptive-figure img,
+  [data-mode="auto"] .adaptive-figure svg,
+  [data-mode="auto"] img.adaptive-figure,
+  [data-mode="auto"] svg.graph-inline-svg {
+    filter: invert(100%) hue-rotate(180deg) !important;
+    background: transparent !important;
+    background-color: inherit !important;
+  }
+}
+
+/* Explicit light mode (or default) keeps figures normal */
+[data-mode="light"] .adaptive-figure img,
+[data-mode="light"] .adaptive-figure svg,
+[data-mode="light"] img.adaptive-figure,
+[data-mode="light"] svg.graph-inline-svg {
+  filter: invert(0%) !important;
+}
+
+/* Allow opt-out by adding the class no-invert alongside adaptive-figure */
+.adaptive-figure.no-invert img,
+.adaptive-figure.no-invert svg,
+img.adaptive-figure.no-invert,
+svg.graph-inline-svg.no-invert,
+[data-mode="dark"] .adaptive-figure.no-invert img,
+[data-mode="dark"] .adaptive-figure.no-invert svg,
+[data-mode="auto"] .adaptive-figure.no-invert img,
+[data-mode="auto"] .adaptive-figure.no-invert svg {
+  filter: invert(0%) hue-rotate(0deg) !important;
+}
+
+
+h2 {
+    margin-top: 3rem;
+
+    padding: 0.75rem 1rem;
+
+    /* background: #0d48a113; */
+
+    /* border-left: 6px solid var(--pst-color-primary); */
+    /* border: 4px solid #0d48a1d5 */
+    border: 4px solid #4799b0d5;
+    /* border-radius: 0.7rem; */
+    border-radius: 1.4rem;
+    background: var(--exercise-body-bg) !important;
+
+}
+
+
+h3 {
+    margin-top: 3rem;
+
+    padding: 0.75rem 1rem;
+
+    /* background: #0d48a108; */
+
+    /* border-left: 6px solid var(--pst-color-primary); */
+    border: 4px solid #4799b0d5;
+    /* border-radius: 0.7rem; */
+    border-radius: 1.4rem;
+    background: var(--exercise-body-bg) !important;
+}
+
+
+h4 {
+    margin-top: 3rem;
+
+    padding: 0.75rem 1rem;
+
+    /* background: #0d48a108; */
+
+    /* border-left: 6px solid var(--pst-color-primary); */
+    border: 4px solid #4799b0d5;
+    /* border-radius: 0.7rem; */
+    border-radius: 1.4rem;
+    background: var(--exercise-body-bg) !important;
+}
+
+
+h5 {
+    margin-top: 3rem;
+
+    padding: 0.75rem 1rem;
+
+    /* background: #0d48a108; */
+
+    /* border-left: 6px solid var(--pst-color-primary); */
+    border: 4px solid #4799b0d5;
+    /* border-radius: 0.7rem; */
+    border-radius: 1.4rem;
+    background: var(--exercise-body-bg) !important;
+}
+
+
+:root {
+  /* --exercise-color: #1e8fe538; */
+  --exercise-color: rgb(0, 114, 178);
+  --exercise-color-light: #1e88e538;
+  --exercise-border-color: var(--exercise-color-light);
+  --exercise-bg: #1e88e51a;
+  --exercise-body-bg: #2179c707;
+  --exercise-color-dark: rgb(0, 114, 178);
+
+  --summary-color: #43a04738;
+  --summary-border-color: #43a04738;
+  --summary-bg: #43a0471a;
+  --summary-body-bg: #43a04707;
+}
+
+.exercise-section {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--exercise-color-light);
+    padding-left: 0.5rem;
+    /* background: var(--exercise-body-bg) !important; */
+}
+
+.exercise-section > h2,
+.exercise-section > h3,
+.exercise-section > h4,
+.exercise-section > h5 {
+    padding: 0.6rem 0.9rem;
+    border-left: none;
+    /* border-right: none; */
+    /* border-left: 6px solid var(--exercise-color); */
+    /* background: var(--exercise-bg); */
+    /* border-radius: 0.35rem 0.35rem 0 0; */
+    border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
+}
+
+.exercise-body {
+    padding: 1rem 1rem 1rem 1rem !important;
+    /* border-left: 6px solid var(--exercise-color); */
+    border: 1px solid var(--exercise-color-light);
+    border-top: none !important;
+    /* border-radius: 0 0 0.7rem 0.7rem; */
+    border-radius: 1.4rem;
+    /* background: var(--exercise-body-bg) !important; */
+    display: flow-root;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .exercise-section {
+        border-color: var(--exercise-color-dark);
+    }
+    [data-mode="auto"] .exercise-section > h2,
+    [data-mode="auto"] .exercise-section > h3,
+    [data-mode="auto"] .exercise-section > h4,
+    [data-mode="auto"] .exercise-section > h5 {
+        border-color: var(--exercise-color-dark);
+    }
+    [data-mode="auto"] .exercise-body {
+        border-color: var(--exercise-color-dark);
+    }
+}
+
+[data-mode="dark"] .exercise-section {
+    border-color: var(--exercise-color-dark);
+}
+
+[data-mode="dark"] .exercise-section > h2,
+[data-mode="dark"] .exercise-section > h3,
+[data-mode="dark"] .exercise-section > h4,
+[data-mode="dark"] .exercise-section > h5 {
+    border-color: var(--exercise-color-dark);
+}
+
+[data-mode="dark"] .exercise-body {
+    border-color: var(--exercise-color-dark);
+}
+
+
+
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .exercise-section {
+        border-color: var(--exercise-color-light);
+    }
+    [data-mode="auto"] .exercise-section > h2,
+    [data-mode="auto"] .exercise-section > h3,
+    [data-mode="auto"] .exercise-section > h4,
+    [data-mode="auto"] .exercise-section > h5 {
+        border-color: var(--exercise-color-light);
+    }
+    [data-mode="auto"] .exercise-body {
+        border-color: var(--exercise-color-light);
+    }
+}
+
+[data-mode="light"] .exercise-section {
+    border-color: var(--exercise-color-light);
+}
+
+[data-mode="light"] .exercise-section > h2,
+[data-mode="light"] .exercise-section > h3,
+[data-mode="light"] .exercise-section > h4,
+[data-mode="light"] .exercise-section > h5 {
+    border-color: var(--exercise-color-light);
+}
+
+[data-mode="light"] .exercise-body {
+    border-color: var(--exercise-color-light);
+}
+
+
+
+
+
+
+
+:root {
+  --summary-color-light: rgba(0, 120, 180, 0.7);
+  --summary-color-dark: rgba(0, 120, 160, 1);
+}
+
+
+
+.summary-section {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--summary-color);
+    border-color: var(--summary-color-light) !important;
+    padding-left: 0.5rem;
+    /* background: rgba(0, 128, 128, 0.1) !important; */
+}
+
+[data-mode="dark"] .summary-section {
+    border-color: var(--summary-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .summary-section {
+        border-color: var(--summary-color-dark) !important;
+    }
+}
+
+
+.summary-section > h2,
+.summary-section > h3,
+.summary-section > h4,
+.summary-section > h5 {
+    padding: 0.6rem 0.9rem;
+    border-left: none;
+    /* border-left: 6px solid var(--exercise-color); */
+    /* background: var(--summary-bg) !important; */
+    /* border-radius: 0.35rem 0.35rem 0 0; */
+    /* border-radius: 1.4rem 1.4rem 0 0; */
+    border-radius: 1.4rem 1.4rem 1.4rem 1.4rem;
+    border-color: var(--summary-color-light) !important;
+    /* background: rgba(97, 123, 123, 0.1) !important; */
+    background: none !important;
+}
+
+[data-mode="dark"] .summary-section > h2,
+[data-mode="dark"] .summary-section > h3,
+[data-mode="dark"] .summary-section > h4,
+[data-mode="dark"] .summary-section > h5 {
+    border-color: var(--summary-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .summary-section > h2,
+    [data-mode="auto"] .summary-section > h3,
+    [data-mode="auto"] .summary-section > h4,
+    [data-mode="auto"] .summary-section > h5 {
+        border-color: var(--summary-color-dark) !important;
+    }
+}
+
+
+.summary-body {
+    padding: 1rem 1rem 1rem 1rem !important;
+    /* border-left: 6px solid var(--exercise-color); */
+    border: 1px solid var(--summary-color-light) !important;
+    border-top: none !important;
+    /* border-radius: 0 0 0.7rem 0.7rem; */
+    border-radius: 1.4rem;
+    background: none !important;
+    display: flow-root;
+}
+
+[data-mode="dark"] .summary-body {
+    border-color: var(--summary-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .summary-body {
+        border-color: var(--summary-color-dark) !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+:root {
+  --example-color-light: #ffb907b5;
+  --example-color-dark: #FFC107;
+}
+
+
+
+.example-section {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--example-color-light);
+    border-color: var(--example-color-light) !important;
+    padding-left: 0.5rem;
+    /* background: rgba(0, 128, 128, 0.1) !important; */
+}
+
+[data-mode="dark"] .example-section {
+    border-color: var(--example-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .example-section {
+        border-color: var(--example-color-dark) !important;
+    }
+}
+
+
+.example-section > h2,
+.example-section > h3,
+.example-section > h4,
+.example-section > h5 {
+    padding: 0.6rem 0.9rem;
+    border-left: none;
+    /* border-left: 6px solid var(--exercise-color); */
+    /* background: var(--summary-bg) !important; */
+    /* border-radius: 0.35rem 0.35rem 0 0; */
+    /* border-radius: 1.4rem 1.4rem 0 0; */
+    border-radius: 1.4rem;
+    border-color: var(--example-color-light) !important;
+    /* background: rgba(97, 123, 123, 0.1) !important; */
+    background: none !important;
+}
+
+[data-mode="dark"] .example-section > h2,
+[data-mode="dark"] .example-section > h3,
+[data-mode="dark"] .example-section > h4,
+[data-mode="dark"] .example-section > h5 {
+    border-color: var(--example-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .example-section > h2,
+    [data-mode="auto"] .example-section > h3,
+    [data-mode="auto"] .example-section > h4,
+    [data-mode="auto"] .example-section > h5 {
+        border-color: var(--example-color-dark) !important;
+    }
+}
+
+
+.example-body {
+    padding: 1rem 1rem 1rem 1rem !important;
+    /* border-left: 6px solid var(--exercise-color); */
+    border: 1px solid var(--example-color-light) !important;
+    border-top: none !important;
+    /* border-radius: 0 0 0.7rem 0.7rem; */
+    border-radius: 1.4rem;
+    background: none !important;
+    display: flow-root;
+}
+
+[data-mode="dark"] .example-body {
+    border-color: var(--example-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .example-body {
+        border-color: var(--example-color-dark) !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --explore-color-light: rgba(128, 0, 85, 0.475);
+  --explore-color-dark: rgb(128, 0, 85);
+}
+
+
+
+.explore-section {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--explore-color-light);
+    border-color: var(--explore-color-light) !important;
+    padding-left: 0.5rem;
+    /* background: rgba(0, 128, 128, 0.1) !important; */
+}
+
+[data-mode="dark"] .explore-section {
+    border-color: var(--explore-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .explore-section {
+        border-color: var(--explore-color-dark) !important;
+    }
+}
+
+
+.explore-section > h2,
+.explore-section > h3,
+.explore-section > h4,
+.explore-section > h5 {
+    padding: 0.6rem 0.9rem;
+    border-left: none;
+    /* border-left: 6px solid var(--exercise-color); */
+    /* background: var(--summary-bg) !important; */
+    /* border-radius: 0.35rem 0.35rem 0 0; */
+    /* border-radius: 1.4rem 1.4rem 0 0; */
+    border-radius: 1.4rem;
+    border-color: var(--explore-color-light) !important;
+    /* background: rgba(97, 123, 123, 0.1) !important; */
+    background: none !important;
+}
+
+[data-mode="dark"] .explore-section > h2,
+[data-mode="dark"] .explore-section > h3,
+[data-mode="dark"] .explore-section > h4,
+[data-mode="dark"] .explore-section > h5 {
+    border-color: var(--explore-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .explore-section > h2,
+    [data-mode="auto"] .explore-section > h3,
+    [data-mode="auto"] .explore-section > h4,
+    [data-mode="auto"] .explore-section > h5 {
+        border-color: var(--explore-color-dark) !important;
+    }
+}
+
+
+.explore-body {
+    padding: 1rem 1rem 1rem 1rem !important;
+    /* border-left: 6px solid var(--exercise-color); */
+    border: 1px solid var(--explore-color-light) !important;
+    border-top: none !important;
+    /* border-radius: 0 0 0.7rem 0.7rem; */
+    border-radius: 1.4rem;
+    background: none !important;
+    display: flow-root;
+}
+
+[data-mode="dark"] .explore-body {
+    border-color: var(--explore-color-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .explore-body {
+        border-color: var(--explore-color-dark) !important;
+    }
+}
+
+
+
+
+div.highlight {
+    border-radius: 1.4rem !important;
+}

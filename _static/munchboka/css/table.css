@@ -1,0 +1,126 @@
+
+
+.table.thread {
+    --bs-table-bg: rgba(0, 179, 255, 0.307) !important;
+}
+
+/* munchboka-edutools {table} directive */
+
+.munchboka-table-container {
+    /* The frame handles rounding/outline, the scroll wrapper handles overflow. */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.munchboka-table-frame {
+    --munchboka-table-border-color: rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--munchboka-table-border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Frame alignment (useful with `width:`) */
+.munchboka-table-frame--align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.munchboka-table-frame--align-left {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.munchboka-table-frame--align-right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.munchboka-table-scroll {
+    overflow-x: auto;
+}
+
+table.munchboka-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+table.munchboka-table th,
+table.munchboka-table td {
+    border: 1px solid var(--munchboka-table-border-color);
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Placement overrides (per column/row/label) */
+table.munchboka-table .munchboka-table-align-left {
+    text-align: left;
+}
+
+table.munchboka-table .munchboka-table-align-center {
+    text-align: center;
+}
+
+table.munchboka-table .munchboka-table-align-right {
+    text-align: right;
+}
+
+/* Remove borders on the outermost cells so the frame border is the only outer outline. */
+table.munchboka-table thead tr:first-child > th,
+table.munchboka-table thead tr:first-child > td,
+table.munchboka-table tbody tr:first-child > th,
+table.munchboka-table tbody tr:first-child > td {
+    border-top: 0;
+}
+
+/* If the table has a header row, draw a separator between header and body. */
+table.munchboka-table thead tr:last-child > th,
+table.munchboka-table thead tr:last-child > td {
+    border-bottom: 1px solid var(--munchboka-table-border-color);
+}
+
+table.munchboka-table thead + tbody tr:first-child > th,
+table.munchboka-table thead + tbody tr:first-child > td {
+    border-top: 1px solid var(--munchboka-table-border-color);
+}
+
+table.munchboka-table tr:last-child > th,
+table.munchboka-table tr:last-child > td {
+    border-bottom: 0;
+}
+
+table.munchboka-table tr > th:first-child,
+table.munchboka-table tr > td:first-child {
+    border-left: 0;
+}
+
+table.munchboka-table tr > th:last-child,
+table.munchboka-table tr > td:last-child {
+    border-right: 0;
+}
+
+/* Dark mode: follow the same convention as other edutools CSS.
+   - Explicit dark: [data-mode="dark"]
+   - Auto: [data-mode="auto"] + prefers-color-scheme
+*/
+
+[data-mode="dark"] table.munchboka-table,
+html[data-theme="dark"] table.munchboka-table {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+[data-mode="dark"] .munchboka-table-frame,
+html[data-theme="dark"] .munchboka-table-frame {
+    --munchboka-table-border-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .munchboka-table-frame {
+        --munchboka-table-border-color: rgba(255, 255, 255, 0.25);
+    }
+}
+
+table.munchboka-table th.munchboka-table-label {
+    background-color: rgba(0, 114, 178, 0.2);
+}

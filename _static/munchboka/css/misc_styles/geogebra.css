@@ -1,0 +1,28 @@
+
+
+.highlight-geogebra {
+    color: black;
+}
+
+
+
+[data-mode="light"] .ggb-window {
+    filter: invert(0%) !important; /* Normal */
+}
+
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .ggb-window {
+        filter: invert(0%) !important;
+    }
+}
+
+[data-mode="dark"] .ggb-window {
+    filter: invert(100%) hue-rotate(180deg) !important; /* Invert colors for dark mode */
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .ggb-window {
+        filter: invert(100%) hue-rotate(180deg) !important;
+    }
+}
+

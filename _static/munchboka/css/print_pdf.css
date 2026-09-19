@@ -1,0 +1,396 @@
+/* ========================================
+   PRINT-SPECIFIC CSS FOR PDF OUTPUT
+   ========================================
+   
+   This file handles special formatting when printing or exporting to PDF.
+   
+   Features:
+   1. Hide interactive elements (dropdowns, popups, CAS windows)
+   2. Flatten tab-set/tab-item structures for print
+   3. Hide answer and solution directives in main content
+   4. Collect and display all answers at the end
+   5. Hide CAS-popup buttons
+   
+   ======================================== */
+
+@media print {
+    /* ========================================
+       0. PRINT TYPOGRAPHY
+       ======================================== */
+
+    /* Reduce overall text size in printed/PDF output.
+       (Browser default is typically 16px; 14px is a good print baseline.) */
+    html {
+        font-size: 12px !important;
+    }
+
+    /* Slightly tighter leading reads better in print */
+    body {
+        line-height: 1.35 !important;
+    }
+
+    /* ========================================
+       1. HIDE INTERACTIVE ELEMENTS
+       ======================================== */
+    
+    .dropdown,
+    .interactive,
+    .margin {
+        display: none !important;
+    }
+
+    .noninteractive {
+        display: block !important;
+    }
+
+    /* Hide CAS/GGB popup open-buttons in downloaded/printed PDF */
+    .cas-popup-button,
+    .ggb-cas-button,
+    .ggb-popup-button {
+        display: none !important;
+    }
+
+    /* Hide the sidebar wrapper used by :layout: sidebar (avoids empty boxes in print) */
+    .sidebar-cas {
+        display: none !important;
+    }
+    
+    /* Hide the actual popup wrapper (the dialog that would open) */
+    .popup-wrapper,
+    div[id^="dialog-ggb-cas"] {
+        display: none !important;
+    }
+    
+    /* Hide all dropdown toggles */
+    details,
+    .sd-summary-title {
+        display: none !important;
+    }
+    
+    /* Hide exercises containing quizzes */
+    .admonition.exercise:has(.quiz-main-container) {
+        display: none !important;
+    }
+    
+    /* ========================================
+       2. FLATTEN TAB-SET STRUCTURES
+       ======================================== */
+    
+    /* Show all tabs sequentially instead of hiding them */
+    .sd-tab-set {
+        display: block !important;
+    }
+    
+    /* Hide tab radio buttons and labels (the clickable part) */
+    .sd-tab-set > input[type="radio"],
+    .sd-tab-set > input[type="radio"] + label {
+        display: none !important;
+    }
+    
+    /* Show all tab content panels sequentially */
+    .sd-tab-set > .sd-tab-content {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 0 0.5em !important;
+        border-left: 3px solid #e0e0e0;
+        padding-left: 1em;
+        margin-bottom: 1em;
+        page-break-inside: avoid;
+    }
+    
+    /* Add part labels before each tab content */
+    .sd-tab-content::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 0.5em;
+        color: #333;
+    }
+    
+    /* If we can't get data-label, use generic labels */
+    /* Start from 1 to include first tab, use only letter labels */
+    .tabs-parts .sd-tab-content:nth-of-type(1)::before {
+        content: "a)";
+    }
+    
+    .tabs-parts .sd-tab-content:nth-of-type(2)::before {
+        content: "b)";
+    }
+    
+    .tabs-parts .sd-tab-content:nth-of-type(3)::before {
+        content: "c)";
+    }
+    
+    .tabs-parts .sd-tab-content:nth-of-type(4)::before {
+        content: "d)";
+    }
+    
+    .tabs-parts .sd-tab-content:nth-of-type(5)::before {
+        content: "e)";
+    }
+    
+    .tabs-parts .sd-tab-content:nth-of-type(6)::before {
+        content: "f)";
+    }
+    
+    .tabs-parts .sd-tab-content:nth-of-type(7)::before {
+        content: "g)";
+    }
+    
+    /* ========================================
+       3. HIDE ANSWER AND SOLUTION DIRECTIVES
+       ======================================== */
+    
+    /* Hide answer and solution admonitions in main content */
+    .admonition.answer,
+    .admonition.solution,
+    div.answer,
+    div.solution {
+        display: none !important;
+    }
+    
+    /* Also hide hints dropdown */
+    .admonition.hints,
+    div.hints {
+        display: none !important;
+    }
+    
+    /* ========================================
+       4. EXERCISE FORMATTING
+       ======================================== */
+    
+    /* Ensure exercises look good in print and preserve their styling */
+    .admonition.exercise,
+    div.exercise {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        page-break-before: auto;
+        page-break-after: auto;
+        margin-bottom: 2em;
+        /* Preserve border from admonitions.css */
+        border-left: 4px solid rgba(0, 98, 190, 0.6) !important;
+        /* Preserve background colors */
+        background-color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    /* Keep tab content parts together */
+    .sd-tab-content {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Prevent orphan/widow lines in exercises */
+    .admonition.exercise p,
+    div.exercise p {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* Preserve exercise title styling */
+    .admonition.exercise > .admonition-title,
+    div.exercise > .admonition-title {
+        background-color: rgba(0, 98, 190, 0.2) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Admonition title icon spacing in print
+       Theme reserves `2rem` on the left for its icon (`left: .5rem; width: 1rem`).
+       Our custom icons are often `20px` wide (fixed px). When we reduce the print
+       base font-size, `2rem` becomes too small and the icon can overlap the title
+       text. Increase left padding in print to keep spacing consistent with web.
+    */
+    .admonition > .admonition-title,
+    div.admonition > .admonition-title {
+        padding-left: 3rem;
+    }
+
+    /* Some custom icons shift left slightly for web; disable that in print to
+       avoid pushing the icon into the text area. */
+    div.exercise.exercise-aids > .admonition-title::after {
+        transform: none !important;
+    }
+    
+    /* ========================================
+       5. ANSWER KEY PAGE (AT THE END)
+       ======================================== */
+    
+    /* This section would need JavaScript or server-side processing
+       to actually collect and move answers to the end.
+       For now, we provide the structure for manual implementation. */
+    
+    /* Create a page break before answer key */
+    .answer-key-section {
+        page-break-before: always;
+        margin-top: 2em;
+    }
+    
+    .answer-key-section h1 {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 1em;
+        border-bottom: 2px solid #333;
+        padding-bottom: 0.5em;
+    }
+    
+    .answer-key-item {
+        margin-bottom: 1em;
+        padding: 0.5em;
+        border-left: 3px solid #4CAF50;
+        padding-left: 1em;
+    }
+    
+    .answer-key-item .answer-reference {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.3em;
+        page-break-after: avoid;
+    }
+    
+    /* Keep each answer part together on one page */
+    .answer-key-item .answer-content {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-before: auto;
+        page-break-after: auto;
+        display: block;
+    }
+    
+    /* ========================================
+       6. GRID AND CARD LAYOUT FOR PRINT
+       ======================================== */
+    
+    /* Prevent page breaks inside grid items and cards */
+    .sd-card,
+    .sd-card-body,
+    .sd-col {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        -webkit-column-break-inside: avoid !important;
+    }
+    
+    /* Preserve grid layout for print */
+    .sd-row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+    
+    /* Ensure proper column widths are maintained based on row-cols */
+    .sd-row-cols-lg-1 > .sd-col { flex: 0 0 auto; width: 100% !important; }
+    .sd-row-cols-lg-2 > .sd-col { flex: 0 0 auto; width: 50% !important; }
+    .sd-row-cols-lg-3 > .sd-col { flex: 0 0 auto; width: 33.333333% !important; }
+    .sd-row-cols-lg-4 > .sd-col { flex: 0 0 auto; width: 25% !important; }
+    .sd-row-cols-lg-6 > .sd-col { flex: 0 0 auto; width: 16.666667% !important; }
+    
+    /* Base column styling */
+    .sd-col {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        box-sizing: border-box;
+    }
+    
+    /* Card styling for print */
+    .sd-card {
+        border: 1px solid #ddd !important;
+        padding: 1rem !important;
+        margin-bottom: 1rem;
+        background-color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    /* ========================================
+       7. GENERAL PRINT IMPROVEMENTS
+       ======================================== */
+    
+    /* Avoid breaking figures and tables */
+    figure,
+    table,
+    .admonition {
+        page-break-inside: avoid;
+    }
+    
+    /* Ensure good contrast for text */
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    /* Remove unnecessary backgrounds (but not for exercises which have their own colors) */
+    .admonition-title:not(.exercise > .admonition-title) {
+        background-color: #f5f5f5 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    /* Ensure links are readable */
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+    
+    /* Don't show URLs after links in print (cleaner look) */
+    a[href]:after {
+        content: none !important;
+    }
+    
+    /* Hide navigation and other UI elements */
+    nav,
+    .navbar,
+    .sidebar,
+    .bd-sidebar,
+    .headerlink,
+    .topbar,
+    .footer,
+    .bd-footer {
+        display: none !important;
+    }
+    
+    /* Ensure code blocks are readable */
+    pre,
+    code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-size: 0.85em;
+    }
+    
+    /* ========================================
+       8. ALTERNATIVE: SHOW ANSWERS INLINE
+       ======================================== */
+    
+    /* If you want to show answers inline but differently styled,
+       uncomment this section and comment out the "display: none" above
+       
+    .admonition.answer,
+    div.answer {
+        display: block !important;
+        border: 2px dashed #4CAF50;
+        background: #f0f8f0 !important;
+        padding: 0.5em;
+        margin-top: 0.5em;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .admonition.answer .admonition-title,
+    div.answer .admonition-title {
+        background: #4CAF50 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    */
+}
+
+
+
+
+  

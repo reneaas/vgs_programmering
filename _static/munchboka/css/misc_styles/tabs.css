@@ -1,0 +1,200 @@
+:root {
+    /* Sizing and Spacing */
+    --tab-padding: 0.5em;
+    --tab-margin: 0.2em;
+    --tab-padding-custom: 6px 30px;
+    --tab-flex-basis: 20%;
+    --tab-shadow-hover: 0 4px 8px var(--tab-shadow-color);
+    --tab-shadow-selected: 0 6px 12px var(--tab-selected-shadow-color);
+    --tab-transform-hover: translateY(-2px);
+    --tab-transform-selected: translateY(-2px);
+
+    /* Transition settings */
+    --transition-duration: 0.3s;
+    --transition-timing: ease;
+
+    /* Light Mode Colors */
+    --light-tab-bg-color: #c0c0c0;
+    --light-tab-text-color: #333333;
+    --light-tab-hover-bg-color: #e0e0e0;
+    --light-tab-shadow-color: rgba(0, 0, 0, 0.1);
+    --light-tab-selected-bg-color: #c7eeff;
+    --light-tab-selected-text-color: #000000;
+    --light-tab-selected-shadow-color: rgba(0, 0, 0, 0.2);
+
+    /* Dark Mode Colors */
+    --dark-tab-bg-color: #424242;
+    --dark-tab-text-color: #e0e0e0;
+    --dark-tab-hover-bg-color: #616161;
+    --dark-tab-shadow-color: rgba(255, 255, 255, 0.1);
+    --dark-tab-selected-bg-color: #c7eeff;
+    --dark-tab-selected-text-color: #000000;
+    --dark-tab-selected-shadow-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Arrangement and sizing specific to .tabs-custom.sd-tab-set */
+.tabs-custom.sd-tab-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.tabs-custom.sd-tab-set > input[type="radio"] + label {
+    flex: 1 0 var(--tab-flex-basis); /* Adjust to set the number of tabs per row */
+    padding: var(--tab-padding);
+    margin: var(--tab-margin);
+    text-align: left;
+    white-space: normal;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+/* Custom arrangement for tabs-parts */
+.tabs-parts.sd-tab-set > input[type="radio"] + label {
+    padding: var(--tab-padding-custom);
+    text-align: center;
+    white-space: normal;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+/* Coloring rules applied to all .sd-tab-set */
+.sd-tab-set > input[type="radio"] + label {
+    cursor: pointer;
+    transition: background-color var(--transition-duration) var(--transition-timing), box-shadow var(--transition-duration) var(--transition-timing), transform var(--transition-duration) var(--transition-timing);
+}
+
+/* Base styles for light mode */
+[data-mode="light"] .sd-tab-set > input[type="radio"] + label {
+    background-color: var(--light-tab-bg-color);
+    color: var(--light-tab-text-color);
+}
+
+[data-mode="light"] .sd-tab-set > input[type="radio"] + label:hover {
+    background-color: var(--light-tab-hover-bg-color);
+    box-shadow: var(--tab-shadow-hover);
+    transform: var(--tab-transform-hover);
+}
+
+[data-mode="light"] .sd-tab-set > input[type="radio"]:checked + label {
+    background-color: var(--light-tab-selected-bg-color);
+    color: var(--light-tab-selected-text-color);
+    box-shadow: var(--tab-shadow-selected);
+    font-weight: bold;
+    transform: var(--tab-transform-selected);
+}
+
+/* Base styles for dark mode */
+[data-mode="dark"] .sd-tab-set > input[type="radio"] + label {
+    background-color: var(--dark-tab-bg-color);
+    color: var(--dark-tab-text-color);
+}
+
+[data-mode="dark"] .sd-tab-set > input[type="radio"] + label:hover {
+    background-color: var(--dark-tab-hover-bg-color);
+    box-shadow: var(--tab-shadow-hover);
+    transform: var(--tab-transform-hover);
+}
+
+[data-mode="dark"] .sd-tab-set > input[type="radio"]:checked + label {
+    background-color: var(--dark-tab-selected-bg-color);
+    color: var(--dark-tab-selected-text-color);
+    box-shadow: var(--tab-shadow-selected);
+    font-weight: bold;
+    transform: var(--tab-transform-selected);
+}
+
+/* Base styles for auto mode */
+[data-mode="auto"] .sd-tab-set > input[type="radio"] + label {
+    background-color: var(--tab-bg-color);
+    color: var(--tab-text-color);
+}
+
+[data-mode="auto"] .sd-tab-set > input[type="radio"] + label:hover {
+    background-color: var(--tab-hover-bg-color);
+    box-shadow: var(--tab-shadow-hover);
+    transform: var(--tab-transform-hover);
+}
+
+[data-mode="auto"] .sd-tab-set > input[type="radio"]:checked + label {
+    background-color: var(--tab-selected-bg-color);
+    color: var(--tab-selected-text-color);
+    box-shadow: var(--tab-shadow-selected);
+    font-weight: bold;
+    transform: var(--tab-transform-selected);
+}
+
+/* Variable definitions for data-mode="light" */
+[data-mode="light"] {
+    --tab-bg-color: var(--light-tab-bg-color);
+    --tab-text-color: var(--light-tab-text-color);
+    --tab-hover-bg-color: var(--light-tab-hover-bg-color);
+    --tab-shadow-color: var(--light-tab-shadow-color);
+    --tab-selected-bg-color: var(--light-tab-selected-bg-color);
+    --tab-selected-text-color: var(--light-tab-selected-text-color);
+    --tab-selected-shadow-color: var(--light-tab-selected-shadow-color);
+}
+
+/* Variable definitions for data-mode="dark" */
+[data-mode="dark"] {
+    --tab-bg-color: var(--dark-tab-bg-color);
+    --tab-text-color: var(--dark-tab-text-color);
+    --tab-hover-bg-color: var(--dark-tab-hover-bg-color);
+    --tab-shadow-color: var(--dark-tab-shadow-color);
+    --tab-selected-bg-color: var(--dark-tab-selected-bg-color);
+    --tab-selected-text-color: var(--dark-tab-selected-text-color);
+    --tab-selected-shadow-color: var(--dark-tab-selected-shadow-color);
+}
+
+/* CSS variables for auto mode based on system preference */
+@media (prefers-color-scheme: light) {
+    :root {
+        --tab-bg-color: var(--light-tab-bg-color);
+        --tab-text-color: var(--light-tab-text-color);
+        --tab-hover-bg-color: var(--light-tab-hover-bg-color);
+        --tab-shadow-color: var(--light-tab-shadow-color);
+        --tab-selected-bg-color: var(--light-tab-selected-bg-color);
+        --tab-selected-text-color: var(--light-tab-selected-text-color);
+        --tab-selected-shadow-color: var(--light-tab-selected-shadow-color);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --tab-bg-color: var(--dark-tab-bg-color);
+        --tab-text-color: var(--dark-tab-text-color);
+        --tab-hover-bg-color: var(--dark-tab-hover-bg-color);
+        --tab-shadow-color: var(--dark-tab-shadow-color);
+        --tab-selected-bg-color: var(--dark-tab-selected-bg-color);
+        --tab-selected-text-color: var(--dark-tab-selected-text-color);
+        --tab-selected-shadow-color: var(--dark-tab-selected-shadow-color);
+    }
+}
+
+/* Styling for the tab panels */
+.sd-tab-panel {
+    padding: 1em;
+}
+
+.sd-tab-label {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+
+
+/* Mobile responsiveness for .tabs-custom */
+@media screen and (max-width: 600px) {
+    .tabs-custom.sd-tab-set > input[type="radio"] + label {
+        flex: 1 0 100%; /* Stack tabs vertically on small screens */
+    }
+}
+
+
+
+
+/* Apply to all tab sets inside any admonition */
+.admonition .sd-tab-content {
+    background-color: inherit !important; /* Automatically inherit the background color from any admonition */
+
+}
+

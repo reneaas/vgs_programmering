@@ -1,0 +1,114 @@
+/* OpenDyslexic font faces (add the .woff2 files under _static/fonts/) */
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("OpenDyslexic-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("OpenDyslexic-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("OpenDyslexic-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+/* Toggle via class on <html> for broad coverage without touching code/math */
+.od-enabled {
+  --pst-font-family-base: "OpenDyslexic", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --pst-font-family-heading: "OpenDyslexic", var(--pst-font-family-heading);
+}
+.od-enabled body {
+  font-family: var(--pst-font-family-base);
+}
+.od-enabled h1, .od-enabled h2, .od-enabled h3,
+.od-enabled h4, .od-enabled h5, .od-enabled h6 {
+  font-family: var(--pst-font-family-heading);
+}
+/* Keep code blocks and inline code in a monospace stack when OpenDyslexic is enabled */
+.od-enabled pre,
+.od-enabled code,
+.od-enabled kbd,
+.od-enabled samp,
+.od-enabled tt,
+.od-enabled .highlight,
+.od-enabled .highlight pre,
+.od-enabled .literal-block {
+  font-family: var(--pst-font-family-monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace) !important;
+}
+/* Visual feedback on the header icon */
+a#od-toggle[aria-pressed="true"] { color: var(--pst-color-primary); }
+
+
+/* Make the accessibility icon bigger and easier to tap */
+#od-toggle {
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+#od-toggle .fa-universal-access {
+  font-size: 1.3rem;   /* try 1.75rem or 2rem if you want it larger */
+}
+/* Optional: visible pressed state */
+#od-toggle[aria-pressed="true"] { color: var(--pst-color-primary); }
+
+
+
+/* Increase overall sizes only when OpenDyslexic is enabled */
+/* Bump body text size */
+.od-enabled .bd-article {
+  font-size: 1rem; /* ~17px; adjust to taste */
+}
+
+
+.od-enabled .bd-article .admonition {
+  font-size: 1rem; /* reset to default */
+}
+.od-enabled .bd-article .admonition * {
+  font-size: inherit; /* keep the reset within admonitions */
+}
+
+
+
+/* Optionally scale headings */
+.od-enabled h1 { font-size: 2.0rem; }
+.od-enabled h2 { font-size: 1.6rem; }
+.od-enabled h3 { font-size: 1.35rem; }
+
+/* Make sure math stays at normal size even if a parent scales */
+/* .od-enabled mjx-container,
+.od-enabled .MathJax,
+.od-enabled .math,
+.od-enabled .katex {
+  font-size: 1em !important;
+} */
+
+
+/* Ensure the header icon row centers its children */
+.navbar-icon-links,
+.header-article__right {
+  align-items: center; /* these containers are flex in pydata-sphinx-theme */
+}
+
+/* Center the OD toggle vertically like other header buttons */
+#od-toggle.headerbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;      /* match your theme switcher height */
+  padding: 0 .5rem;
+  line-height: 1;
+}
+
+#od-toggle .fa-universal-access {
+  line-height: 1;
+  vertical-align: middle;
+  /* optional size bump */
+  /* font-size: 1.5rem; */
+}
