@@ -62,25 +62,69 @@ sphinx:
     - sphinxcontrib.tikz
     - sphinx_jupyterbook_latex
     - sphinxcontrib.video
-    - "_ext.cas"
-    - "_ext.cas_window"
-    - "_ext.interactive_code"
-    - "_ext.parsons"
-    - "_ext.problems"
-    - "_ext.solution"
-    - "_ext.answer"
-    - "_ext.explore"
-    - "_ext.hints"
-    - "_ext.example"
-    - "_ext.summary"
-    - "_ext.quiz"
-    - "_ext.turtle"
+    - munchboka_edutools
 
 
   config:
     language: norwegian
     html_baseurl: "https://prog.munchboka.no"
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js
+    html_theme_options:
+      pygments_light_style: "github-light"
+      pygments_dark_style: "github-dark-high-contrast"
+    templates_path:
+      - "_templates"
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js
+    mathjax3_config:
+      loader:
+        load: ['[tex]/physics']
+      tex:
+        packages: {'[+]': ['physics']}
+        macros:
+          annotateAbove: ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2]
+          annotateBelow: ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2]
+          cline: ["\\underline{\\phantom{#1}}", 1]
+          and: ["\\quad \\land \\quad"]
+          or: ["\\quad \\lor \\quad"]
+          liff: ["\\quad \\iff \\quad"]
+          limplies: ["\\quad \\implies \\quad"]
+          limpliedby: ["\\quad \\impliedby \\quad"]
+          lland: ["\\; \\land \\;"]
+          degree: ["^\\circ"]
+          qog: ["\\quad \\text{og} \\quad"]
+          qder: ["\\quad \\text{der} \\quad"]
+          qeller: ["\\quad \\text{eller} \\quad"]
+          qhvis: ["\\quad \\text{hvis} \\quad"]
+          qfor: ["\\quad \\text{for} \\quad"]
+          natural: ["\\mathbb{N}"]
+          integer: ["\\mathbb{Z}"]
+          rational: ["\\mathbb{Q}"]
+          real: ["\\mathbb{R}"]
+          irrational: ["\\mathbb{Q}^c"]
+          qcomma: [",\\quad"]
+          nimplies: ["\\quad\\mathrel{\\not\\!\\!\\!\\implies}\\quad"]
+          nimpliedby: ["\\quad\\mathrel{\\not\\!\\!\\!\\impliedby}\\quad"]
+          niff: ["\\quad\\mathrel{\\not\\!\\!\\!\\iff}\\quad"]
+          cubica: ["\\raisebox{-0.4ex}{\\small\\(\\frown\\!\\smile\\)}", 0]
+          cubicb: ["\\raisebox{-0.4ex}{\\small\\(\\smile\\!\\frown\\)}", 0]
+          t: ["\\mathrm{#1}", 1]
+          dot: ["\\vec{#1} \\cdot \\vec{#2}", 2]
+          len: ["\\abs{\\vec{#1}}", 1]
+          lvec: ["\\overrightarrow{#1}", 1]
+          v: ["\\left[#1, #2\\right]", 2]
+          proj: ["\\mathrm{proj}_{#1}\\left(#2\\right)", 2]
+          mstack: ["\\begin{array}{c}#1\\end{array}", 1]
+          d: ["\\, \\mathrm{d}"]
+          dx: ["\\, \\mathrm{d} x"]
+          du: ["\\, \\mathrm{d} u"]
+          dz: ["\\, \\mathrm{d} z"]
+          dt: ["\\, \\mathrm{d} t"]
+          dy: ["\\, \\mathrm{d} y"]
+          ds: ["\\, \\mathrm{d} s"]
+          eq: ["\\, (\\mathrm{#1})", 1]
+
+
+
     html_theme_options:
       pygments_light_style: "github-light"
       pygments_dark_style: "github-dark-high-contrast"
