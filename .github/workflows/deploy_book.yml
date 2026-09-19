@@ -18,9 +18,30 @@ jobs:
         with:
           python-version: 3.12.3
 
+      - name: Install system dependencies (LaTeX + pdf2svg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-science \
+            texlive-plain-generic \
+            cm-super \
+            dvipng \
+            dvisvgm \
+            ghostscript \
+            pdf2svg
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+
+      - name: Show munchboka-edutools version
+        run: |
+          python -c "import importlib.metadata as m; print('munchboka-edutools', m.version('munchboka-edutools'))"
 
       # Build the book
       - name: Build the book
