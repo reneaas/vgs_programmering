@@ -9,6 +9,8 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v2
 
@@ -35,7 +37,7 @@ jobs:
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
-          github_token: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html
           keep_files: true  # Ensures existing files like CNAME remain
 
