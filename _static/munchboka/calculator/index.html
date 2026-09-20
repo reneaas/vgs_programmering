@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CW scientific calculator</title>
+<link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+<main>
+<div id="calculator-fit">
+<section id="calculator" aria-label="fx-82CW style scientific calculator">
+  <header class="brand"><strong>CASIO</strong><span>fx-82CW</span></header>
+  <div class="bezel">
+    <div id="lcd" role="region" aria-label="Calculator display" tabindex="0">
+      <div id="status"></div><div id="screen"></div>
+    </div>
+    <div class="classwiz">CLASSWIZ</div>
+  </div>
+  <div id="navigation" class="navigation" aria-label="Navigation keys"></div>
+  <div id="scientific" class="scientific" aria-label="Scientific keys"></div>
+  <div id="numeric" class="numeric" aria-label="Number keys"></div>
+</section>
+</div>
+<p class="simulator-note">Independent CW-style simulator · <button id="about" type="button">About &amp; keyboard</button></p>
+<div id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+<dialog id="help">
+  <h1>CW-style scientific calculator</h1>
+  <p>An independent, open source simulator inspired by the Casio fx-82CW. Not made or endorsed by Casio, and not a ROM emulator.</p>
+  <p>Use the keypad or your keyboard. Enter executes, Backspace deletes, Escape goes back, and the arrow keys move the cursor or menu selection. F1 opens HOME, F2 SETTINGS, F3 CATALOG and F4 FORMAT. Tab moves between physical buttons. Paste a mathematical expression with Ctrl/Cmd+V.</p>
+  <p>Fractions, powers and roots have editable slots. Use the arrow keys to move between them. SHIFT selects the blue key labels. SHIFT EXE gives a decimal answer.</p>
+  <p>Includes Calculate, a one/two-function Table, one-variable statistics and linear regression, and dice/coin simulations. CW precision, all error limits and exact-output rules have not been certified against hardware. Other regression families, frequency columns, coordinate conversion, QR links and the complete CW menu set are not implemented.</p>
+  <p>Calculations and settings are saved locally for this popup. SETTINGS → Reset clears them.</p>
+  <p><a href="https://support.casio.com/global/en/calc/manual/fx-82CW_85CW_350CW_en/" target="_blank" rel="noopener">Casio fx-82CW manual</a> · <a href="vendor/LICENCE.decimal.md" target="_blank">decimal.js license</a></p>
+  <form method="dialog"><button>Close</button></form>
+</dialog>
+<noscript>This calculator requires JavaScript.</noscript>
+</main>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>

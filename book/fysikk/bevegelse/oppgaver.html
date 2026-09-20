@@ -55,10 +55,12 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/general_style.css?v=dfcc20d4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/calculator_popup.css?v=9c5cafe2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/escapeRoom/escape-room.css?v=9eb2d604" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/flashcards.css?v=816457f1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/interactive_code.css?v=44933e1a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/jeopardy.css?v=951b6e4f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/popup_code.css?v=b88b7ace" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/quiz.css?v=bc8164d8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" />
@@ -84,28 +86,6 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=21537df6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=68f9364b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=bf5bef53" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=57404909" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/polydiv/style.css?v=3450aa48" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=c9cad18c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/clickable_figures/style.css?v=d35dfce7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/popup/popup.css?v=2d27c3a4" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=a560da15" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/geogebra.css?v=fd180d66" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=65ca5f79" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/cas_popup.css?v=1aba96b2" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/grids.css?v=7667ba21" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=f2a0e64a" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/escapeRoom/style.css?v=b30732ed" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=42d54795" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -126,9 +106,10 @@
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../_static/tabs.js?v=3ee01567"></script>
     <script src="../../../_static/munchboka/js/solution_timer.js?v=192f5d3d"></script>
+    <script src="../../../_static/munchboka/js/calculator_popup.js?v=93ae1e49"></script>
     <script src="../../../_static/munchboka/js/escapeRoom/escape-room.js?v=1498b374"></script>
     <script src="../../../_static/munchboka/js/flashcards.js?v=293ceac2"></script>
-    <script src="../../../_static/munchboka/js/interactiveCode/interactiveCodeSetup.js?v=ce240afa"></script>
+    <script src="../../../_static/munchboka/js/interactiveCode/interactiveCodeSetup.js?v=9bcf659f"></script>
     <script src="../../../_static/munchboka/js/interactiveCode/codeEditor.js?v=d7a9df79"></script>
     <script src="../../../_static/munchboka/js/interactiveCode/pythonRunner.js?v=e9f0c2d2"></script>
     <script src="../../../_static/munchboka/js/interactiveCode/workerManager.js?v=024a7849"></script>
@@ -170,24 +151,6 @@
     <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
     <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../_static/skulpt/skulpt.js?v=51c28977"></script>
-    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=9ab656ac"></script>
-    <script src="../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
-    <script src="../../../_static/interactiveCode/turtleCode.js?v=9599ca89"></script>
-    <script src="../../../_static/interactiveCode/workerManager.js?v=17965024"></script>
-    <script src="../../../_static/interactiveCode/pythonRunner.js?v=768e9740"></script>
-    <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
-    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
-    <script src="../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
-    <script src="../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
-    <script src="../../../_static/pairPuzzle/game.js?v=56c2b5af"></script>
-    <script src="../../../_static/clickable_figures/clickable_figure.js?v=dd2467e6"></script>
-    <script src="../../../_static/popup/popup.js?v=08fa2f0c"></script>
-    <script src="../../../_static/escapeRoom/escapeRoom.js?v=cdbaa3bb"></script>
-    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=f8e9756b"></script>
-    <script src="../../../_static/multipleChoiceQuiz/sequentialMultipleChoiceQuiz.js?v=8d38189d"></script>
-    <script src="../../../_static/multipleChoiceQuiz/timedMultipleChoiceQuiz.js?v=79e3619c"></script>
-    <script src="../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
-    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuiz.js?v=7d161c2c"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
@@ -196,6 +159,7 @@
     <script src="../../../_static/munchboka/js/geogebra-setup.js?v=8e77fc11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="../../../_static/munchboka/js/popup_code.js?v=da823f0c"></script>
     <link rel="canonical" href="https://prog.munchboka.no/book/fysikk/bevegelse/oppgaver.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -501,6 +465,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-1">Oppgave 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-2">Oppgave 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-3">Oppgave 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-4">Oppgave 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-5">Oppgave 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-6">Oppgave 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-7">Oppgave 7</a></li>
 </ul>
             </nav>
         </div>
@@ -524,8 +492,7 @@ document.write(`
 a)</div>
 <button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
 <div class="part-body docutils container">
-<p>Beregn farten og høyden til steinen over bakken etter <span class="math notranslate nohighlight">\(1\)</span> sekund med <strong>Eulers</strong> metode.</p>
-<p>Bruk en steglengde på <span class="math notranslate nohighlight">\(\Delta t = 0.5 \, \mathrm{s}\)</span>.</p>
+<p>Bruk bevegelseslikningen til å finne farten og høyden til steinen etter <span class="math notranslate nohighlight">\(1\)</span> sekund.</p>
 </div>
 </div>
 <div class="part part-open docutils container">
@@ -534,8 +501,18 @@ a)</div>
 b)</div>
 <button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
 <div class="part-body docutils container">
+<p>Beregn farten og høyden til steinen over bakken etter <span class="math notranslate nohighlight">\(1\)</span> sekund med <strong>Eulers</strong> metode.</p>
+<p>Bruk steglengden <span class="math notranslate nohighlight">\(\Delta t = 0.5 \, \mathrm{s}\)</span>.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+c)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
 <p>Beregn farten og høyden til steinen over bakken etter <span class="math notranslate nohighlight">\(1\)</span> sekund med <strong>Euler-Cromers</strong> metode.</p>
-<p>Bruk en steglengde på <span class="math notranslate nohighlight">\(\Delta t = 0.5 \, \mathrm{s}\)</span>.</p>
+<p>Bruk steglengden <span class="math notranslate nohighlight">\(\Delta t = 0.5 \, \mathrm{s}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -644,7 +621,7 @@ D</div>
 a)</div>
 <button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
 <div class="part-body docutils container">
-<p>Hvilket program kan brukes til å finne hvor lang tid det tar før steinen er på sitt høyeste punkt over bakken?</p>
+<p>Hvilket program kan brukes til å finne hvor høyt over bakken steinen er på sitt høyeste punkt?</p>
 </div>
 </div>
 <div class="part part-open docutils container">
@@ -680,21 +657,234 @@ d)</div>
 <section class="exercise-section" id="exercise-Oppgave-3">
 <h2>Oppgave 3<a class="headerlink" href="#exercise-Oppgave-3" title="Link to this heading">#</a></h2>
 <div class="exercise-body docutils container">
-<p>En ball kastes rett opp fra en høyde <span class="math notranslate nohighlight">\(1.5 \, \mathrm{m}\)</span> med en startfart <span class="math notranslate nohighlight">\(v_0 = 10 \, \mathrm{m/s}\)</span>. Ballen er i fritt fall etter at den har blitt kastet.</p>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+a)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Nedenfor vises et program som regner på bevegelsen til en kule som er i fritt fall.</p>
+<p>Bruk bevegelseslikningene til å finne omtrent hvilken verdi programmet skriver ut når det kjøres. Sjekk svaret ditt!</p>
 
-        <div id="container-code-59aefbb5"></div>
+        <div id="container-code-1388c6bd"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
-``;
+`v = 10
+s = 0
+a = -9.81
+t = 0
+dt = 1e-3
 
-                makeInteractiveCode(
-                    "container-code-59aefbb5",
+while v > 0:
+    t = t + dt
+    v = v + a * dt
+    s = s + v * dt
+
+print(s)`;
+
+                makePredictionInteractiveCode(
+                    "container-code-1388c6bd",
                     code,
                 );
             });
         </script>
         </div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+b)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Programmet nedenfor regner på bevegelsen til en bil som bremser ned.</p>
+<p>Bruk bevegelseslikningene til å finne verdien som programmet skriver ut når det kjøres. Sjekk svaret nedenfor.</p>
+
+        <div id="container-code-d8ece7e7"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`v = 20 
+s = 0
+a = -5.0
+t = 0
+dt = 1e-3
+
+while v > 0:
+    t = t + dt
+    v = v + a * dt
+    s = s + v * dt
+
+print(s)`;
+
+                makePredictionInteractiveCode(
+                    "container-code-d8ece7e7",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="exercise-section" id="exercise-Oppgave-4">
+<h2>Oppgave 4<a class="headerlink" href="#exercise-Oppgave-4" title="Link to this heading">#</a></h2>
+<div class="exercise-body docutils container">
+<p>En bil kjører med farten <span class="math notranslate nohighlight">\(25\)</span> m/s. Føreren bremser med en konstant akselerasjon <span class="math notranslate nohighlight">\(-4.0 \, \mathrm{m/s^2}\)</span></p>
+<div class="popup-code-launcher"><button type="button" class="popup-code-button ggb-cas-button" aria-haspopup="dialog" aria-controls="popup-code-book-fysikk-bevegelse-oppgaver-0b0c92de7f644c1dadb6b4f2fed82412" aria-expanded="false" data-popup-code="{&quot;width&quot;: 500, &quot;height&quot;: 550, &quot;title&quot;: &quot;Kodevindu&quot;, &quot;predict&quot;: false, &quot;code&quot;: &quot;t = 0   # starttid\nv = 25  # startfart\ns = 0   # startposisjon\n\ndt = 1e-3\n\nwhile ????:\n    a = ????\n    v = ????\n    s = ????\n    t = ????\n\n\nprint(s)&quot;}">Åpne kodevindu</button><div id="popup-code-book-fysikk-bevegelse-oppgaver-0b0c92de7f644c1dadb6b4f2fed82412" class="popup-code-content" style="display:none"><div id="popup-code-book-fysikk-bevegelse-oppgaver-0b0c92de7f644c1dadb6b4f2fed82412-editor"></div></div></div><div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+a)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Bruk bevegelseslikningene til å finne bremselengden til bilen.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+b)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Fyll inn alle linjer i kodevindu som er markert med <code class="code docutils literal highlight highlight-python"><span class="err">????</span></code>.</p>
+<p>Kjør programmet og tolk resultatet.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+c)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Bruk programmet til å sammenligne bremselengden dersom man kjører i <span class="math notranslate nohighlight">\(80\)</span> km/h, sammenlignet med <span class="math notranslate nohighlight">\(90\)</span> km/h.</p>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="exercise-section" id="exercise-Oppgave-5">
+<h2>Oppgave 5<a class="headerlink" href="#exercise-Oppgave-5" title="Link to this heading">#</a></h2>
+<div class="exercise-body docutils container">
+<p>En stein slippes fra ro fra en høyde på 100 meter over bakken.</p>
+<div class="popup-code-launcher"><button type="button" class="popup-code-button ggb-cas-button" aria-haspopup="dialog" aria-controls="popup-code-book-fysikk-bevegelse-oppgaver-e5c99b1b27764a53a7d1238491fb45fd" aria-expanded="false" data-popup-code="{&quot;width&quot;: 500, &quot;height&quot;: 550, &quot;title&quot;: &quot;Kodevindu&quot;, &quot;predict&quot;: false, &quot;code&quot;: &quot;# Konstanter for simuleringen\ng = 9.81 # m/s^2\n\n# Startverdier for simuleringen\ns = 100    # m\nv = 0      # m/s\nt = 0      # s\n\ndt = 1e-3   # s\n\nwhile ????:\n    a = ????\n    v = ????\n    s = ????\n    t = ????\n\nprint(t) # skriv ut tiden det tar for steinen \u00e5 treffe bakken\n&quot;}">Åpne kodevindu</button><div id="popup-code-book-fysikk-bevegelse-oppgaver-e5c99b1b27764a53a7d1238491fb45fd" class="popup-code-content" style="display:none"><div id="popup-code-book-fysikk-bevegelse-oppgaver-e5c99b1b27764a53a7d1238491fb45fd-editor"></div></div></div><div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+a)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Bruk bevegelseslikningene til å finne hvor lang tid det før steinen treffer bakken.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+b)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Fyll ut alle kodelinjer markert med <code class="code docutils literal highlight highlight-python"><span class="err">????</span></code> i kodevinduet.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+c)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Undersøk forskjellige verdier av steglengden <code class="code docutils literal highlight highlight-python"><span class="n">dt</span></code> i programmet.</p>
+<p>Prøv ulike potenser av <span class="math notranslate nohighlight">\(10\)</span> og finn hvilken potens som gir deg et svar som er nærmest det du regnet ut med bevegelseslikningene.</p>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="exercise-section" id="exercise-Oppgave-6">
+<h2>Oppgave 6<a class="headerlink" href="#exercise-Oppgave-6" title="Link to this heading">#</a></h2>
+<div class="exercise-body docutils container">
+<p>En stein blir sluppet fra et fly og opplever en akselerasjon både på grunn av tyngdekraften, men også luftmotsatnden. Når steinen har en fart <span class="math notranslate nohighlight">\(v\)</span>, så opplever den en akselerasjon gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+a = -g + b\cdot v^2
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(b\)</span> er en fysisk konstant som angir hvor sterk luftmotstanden er. For steinen er <span class="math notranslate nohighlight">\(b = 0.01 \, \mathrm{kg/m}\)</span></p>
+<div class="popup-code-launcher"><button type="button" class="popup-code-button ggb-cas-button" aria-haspopup="dialog" aria-controls="popup-code-book-fysikk-bevegelse-oppgaver-e4c49e3bc0984edc9234854d7f992a30" aria-expanded="false" data-popup-code="{&quot;width&quot;: 500, &quot;height&quot;: 550, &quot;title&quot;: &quot;Kodevindu&quot;, &quot;predict&quot;: false, &quot;code&quot;: &quot;# Konstanter for simuleringen\n\ng = 9.81    # m/s^2\nb = 0.01     # kg/m\ndt = 1e-3   # s\n\n# Startverdier\nt = 0       # s\nv = 0       # m/s\ns = 3000    # m\n\nwhile ????: \n    a = ????\n    v = ????\n    s = ????\n    t = ????\n\n\nprint(v)&quot;}">Åpne kodevindu</button><div id="popup-code-book-fysikk-bevegelse-oppgaver-e4c49e3bc0984edc9234854d7f992a30" class="popup-code-content" style="display:none"><div id="popup-code-book-fysikk-bevegelse-oppgaver-e4c49e3bc0984edc9234854d7f992a30-editor"></div></div></div><p>Programmet skal først beregne hvor stor fart steinen har rett før treffer bakken.</p>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+a)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Fyll inn alle linjer i kodevindu som er markert med <code class="code docutils literal highlight highlight-python"><span class="err">????</span></code>.</p>
+<p>Bruk programmet til å bestemme farten steinen har rett før den treffer bakken.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+b)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Hvor lang tid tar det før steinen treffer bakken? (Bruk programmet ditt til å finne det ut).</p>
+</div>
+</div>
+<p>Etter hvert om steinen faller, så vil den til slutt oppnå det som kalles for <strong>terminalfart</strong>. Det vil si at farten blir konstant og akselerasjon blir lik 0.</p>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+c)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Finn terminalfarten til steinen.</p>
+<p>Bruk så programmet ditt til å se om du får samme terminalfart.</p>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section class="exercise-section" id="exercise-Oppgave-7">
+<h2>Oppgave 7<a class="headerlink" href="#exercise-Oppgave-7" title="Link to this heading">#</a></h2>
+<div class="exercise-body docutils container">
+<p>En fallskjermhopper er utsatt for tyngdekraft og luftmotstand gjennom hele fallet. Når fallskjermhopperen har en fart <span class="math notranslate nohighlight">\(v\)</span>, vil akselerasjonen <span class="math notranslate nohighlight">\(a\)</span> da være gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+a = -g + bv^2 
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(b\)</span> er en konstant som forteller hvor kraftig luftmotstanden er og <span class="math notranslate nohighlight">\(g\)</span> er tyngdeakselerasjonen. Nederst finner du et interaktivt kodevindu du kan bruke til å simulere fallskjermhopperens bevegelse.</p>
+<p>Vi kan dele opp bevegelsen i to faser:</p>
+<ul class="simple">
+<li><p><strong>Fase 1</strong>: Fallskjermhopperen falleren fritt under påvirkning av tyngdekraft og luftmotstand. Konstant <span class="math notranslate nohighlight">\(b\)</span> er et lite tall i denne perioden.</p></li>
+<li><p><strong>Fase 2</strong>: Fallskjermhopperen har åpnet fallskjermen og luftmotstanden blir mye større. Konstanten <span class="math notranslate nohighlight">\(b\)</span> er nå endret til en større verdi.</p></li>
+</ul>
+<p>Vi tenker oss at fallskjermhopperen skal dra ut fallskjermen når han er 1000 meter over bakken.</p>
+<div class="popup-code-launcher"><button type="button" class="popup-code-button ggb-cas-button" aria-haspopup="dialog" aria-controls="popup-code-book-fysikk-bevegelse-oppgaver-1c1b57af49bc409cb485506f66c76099" aria-expanded="false" data-popup-code="{&quot;width&quot;: 500, &quot;height&quot;: 550, &quot;title&quot;: &quot;Kodevindu&quot;, &quot;predict&quot;: false, &quot;code&quot;: &quot;# Konstanter for simuleringen\n\ng = 9.81    # m/s^2\ndt = 1e-3   # s\n\n# Startverdier\nt = 0       # s\nv = 0       # m/s\ns = 3000    # m\n\nwhile ????: \n\n    if ????:\n        b = ????\n    else:\n        b = ????\n\n    a = ????\n    v = ????\n    s = ????\n    t = ????\n\n\nprint(v) # skriv ut farten til fallskjermhopperen ved bakken&quot;}">Åpne kodevindu</button><div id="popup-code-book-fysikk-bevegelse-oppgaver-1c1b57af49bc409cb485506f66c76099" class="popup-code-content" style="display:none"><div id="popup-code-book-fysikk-bevegelse-oppgaver-1c1b57af49bc409cb485506f66c76099-editor"></div></div></div><div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+a)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Fyll inn i programmet i kodevinuet hvor det er markert med <code class="code docutils literal highlight highlight-python"><span class="err">????</span></code> for å simulere fallskjermhopperen fram til fallskjermhopperen treffer bakken.</p>
+<p>Bruk programmet til å finne farten fallskjermhopperen har i det han treffer bakken.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+b)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Bruk programmet til å finne hvor lang tid det tar før han treffer bakken.</p>
+</div>
+</div>
+<div class="part part-open docutils container">
+<div class="part-header docutils container">
+<div class="part-label docutils container">
+c)</div>
+<button class="part-toggle" data-open="Skjul oppgaven" data-closed="Vis oppgaven">Skjul oppgaven</button></div>
+<div class="part-body docutils container">
+<p>Bruk programmet til å finne hvilken verdi for <span class="math notranslate nohighlight">\(b\)</span> som gjør at fallskjermhopperen treffer bakken i <span class="math notranslate nohighlight">\(1.0 \, \mathrm{m/s}\)</span>.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -756,6 +946,10 @@ d)</div>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-1">Oppgave 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-2">Oppgave 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-3">Oppgave 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-4">Oppgave 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-5">Oppgave 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-6">Oppgave 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-Oppgave-7">Oppgave 7</a></li>
 </ul>
   </nav></div>
 

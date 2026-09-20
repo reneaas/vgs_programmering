@@ -1,0 +1,21 @@
+.popup-code-button { margin-block: 1em; }
+.ui-dialog.popup-code-window {
+    position: fixed !important;
+    z-index: 10000 !important;
+    /* Stable coordinates while dragging and reopening. */
+    animation: none;
+}
+.popup-code-window .ui-dialog-titlebar {
+    cursor: move;
+    touch-action: none;
+}
+.popup-code-window .popup-code-content.ui-dialog-content {
+    padding: 12px !important;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+.popup-code-window .CodeMirror { width: 100%; }
+.popup-code-window .ui-resizable-handle { min-width: 16px; min-height: 16px; }
+@media print {
+    .popup-code-launcher, .popup-code-window { display: none !important; }
+}

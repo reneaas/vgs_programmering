@@ -58,7 +58,7 @@ class InteractiveCodeSetup {
 
         const html = `
             <div class="ic-container">
-                <textarea id="${this.editorId}" name="code-${this.uniqueId}">${this.initialCode}</textarea>
+                <textarea id="${this.editorId}" name="code-${this.uniqueId}"></textarea>
                 
                 <button id="${this.runButtonId}" class="button button-run">Kjør kode ${runIcon}</button>
                 <button id="${this.resetButtonId}" class="button button-reset">Reset kode ${resetIcon}</button>
@@ -69,6 +69,8 @@ class InteractiveCodeSetup {
         `;
 
         container.innerHTML = html;
+        // Assign as text so HTML entities and closing textarea tags stay literal code.
+        document.getElementById(this.editorId).value = this.initialCode;
     }
 
     setupInteractiveEditor() {
