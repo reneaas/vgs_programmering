@@ -1,0 +1,18 @@
+@media print { .munchboka-notebook-frame { display: none !important; } }
+
+.munchboka-notebook-frame {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--pst-color-border, #aabbb2);
+  border-radius: 8px;
+  background: var(--pst-color-background, transparent);
+  color-scheme: inherit;
+}
+
+/* :fullscreen: makes a page consist almost entirely of the notebook, sized to
+   the viewport instead of a fixed pixel height (docutils rejects "vh" as a
+   length option, so this can't be done via :height: alone). */
+.munchboka-notebook-fullscreen .munchboka-notebook-frame {
+  height: calc(100vh - 9rem);
+  min-height: 480px;
+}
