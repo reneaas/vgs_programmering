@@ -241,7 +241,7 @@ print(s)
 
 
 :::::::::::::::{exercise} Oppgave 4
-En bil kjører med farten $25$ m/s. Føreren bremser med en konstant akselerasjon $-4.0 \, \mathrm{m/s^2}$
+En bil kjører med farten $25$ m/s. Føreren bremser med en konstant akselerasjon $-4.0 \, \mathrm{m/s^2}$ fram til bilen stopper helt.
 
 
 :::{popup-code}
