@@ -349,20 +349,20 @@ Prøv ulike potenser av $10$ og finn hvilken potens som gir deg et svar som er n
 
 
 :::::::::::::::{exercise} Oppgave 6
-En stein blir sluppet fra et fly og opplever en akselerasjon både på grunn av tyngdekraften, men også luftmotsatnden. Når steinen har en fart $v$, så opplever den en akselerasjon gitt ved 
+En stein blir sluppet fra et fly og opplever en akselerasjon både på grunn av tyngdekraften, men også luftmotstand. Når steinen har en fart $v$, så opplever den en akselerasjon gitt ved 
 
 $$
 a = -g + b\cdot v^2
 $$
 
-der $b$ er en fysisk konstant som angir hvor sterk luftmotstanden er. For steinen er $b = 0.01 \, \mathrm{kg/m}$ 
+der $b$ er en fysisk konstant som angir hvor sterk luftmotstanden er. For steinen er $b = 0.01 \, \mathrm{m^{-1}}$ 
 
 
 :::{popup-code}
 # Konstanter for simuleringen
 
 g = 9.81    # m/s^2
-b = 0.01     # kg/m
+b = 0.01     # m^-1 = 1/m
 dt = 1e-3   # s
 
 # Startverdier
