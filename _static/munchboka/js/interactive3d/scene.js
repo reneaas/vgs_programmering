@@ -262,7 +262,33 @@
         }
         return {items:result,errors};
     }
-    const api = {evaluate,geometry,objects,ticks,clippedLine,planePolygon,add,sub,dot};
+    // Inverts a drag gesture: given a point's own coordinate expressions and the single
+    // slider variable they're parametrized by, find the value whose projected screen
+    // position is closest to the pointer. `project` maps a 3D point to 2D screen
+    // coordinates (renderer-supplied, so this stays free of any DOM/camera knowledge).
+    function solveDragValue(coords, varName, vars, lo, hi, target, project) {
+        const distance2 = value => {
+            const point = coords.map(tree => evaluate(tree, {...vars, [varName]: value}));
+            if (!point.every(Number.isFinite)) return Infinity;
+            const [x, y] = project(point);
+            return (x - target[0]) ** 2 + (y - target[1]) ** 2;
+        };
+        const samples = 60;
+        let best = lo, bestDistance = Infinity;
+        for (let i = 0; i <= samples; i++) {
+            const value = lo + (hi - lo) * i / samples, d = distance2(value);
+            if (d < bestDistance) { bestDistance = d; best = value; }
+        }
+        // Refine within the bracket around the best coarse sample via ternary search;
+        // a tight-enough bracket keeps this valid even for a non-monotonic curve.
+        let a = Math.max(lo, best - (hi - lo) / samples), b = Math.min(hi, best + (hi - lo) / samples);
+        for (let i = 0; i < 24; i++) {
+            const m1 = a + (b - a) / 3, m2 = b - (b - a) / 3;
+            if (distance2(m1) < distance2(m2)) b = m2; else a = m1;
+        }
+        return (a + b) / 2;
+    }
+    const api = {evaluate,geometry,objects,ticks,clippedLine,planePolygon,add,sub,dot,solveDragValue};
     if (typeof module !== "undefined" && module.exports) module.exports = api;
     else root.MunchScene3D = api;
 })(typeof window !== "undefined" ? window : globalThis);

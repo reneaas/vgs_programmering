@@ -11,6 +11,9 @@ figure.interactive-figure:has(> .munch-3d) { max-width: 100%; box-sizing: border
 figure.interactive-figure.align-right:has(> .munch-3d) { margin-left: 1.5em !important; }
 figure.interactive-figure.align-left:has(> .munch-3d) { margin-right: 1.5em !important; }
 .munch-3d-board { width: 100%; height: 460px; max-height: 75vh; border: 1px solid var(--pst-color-border, #aaa); border-radius: 6px; background: #ffffff; color: inherit; touch-action: none; }
+/* Hover/drag affordance for a `point:`'s own `drag=` handle; toggled in three-runtime.js. */
+.munch-3d-board.munch-3d-hover-point { cursor: grab; }
+.munch-3d-board.munch-3d-dragging { cursor: grabbing; }
 /* Same trick used for static matplotlib figures (see general_style.css): render the light
    palette always, then invert+hue-rotate the whole board in dark mode so the canvas,
    labels, and every author-chosen color adapt together without any theme-aware JS. */

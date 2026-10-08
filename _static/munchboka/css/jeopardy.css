@@ -408,10 +408,13 @@ body[data-theme='dark'] .jeopardy-modal-body,
 .jeopardy-q { font-size: 1.05rem; margin-bottom: 1rem; background: inherit !important; }
 .jeopardy-a { display: none; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--jp-outline); }
 
-/* Reduce spacing for "Fasit" heading in answer */
-.jeopardy-a > h3:first-child {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+/* Compact answer label, independent of the site's heading rules. */
+.jeopardy-a > .jeopardy-answer-label {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: inherit;
 }
 
 /* Improve wrapping with hyphens inside modal content */

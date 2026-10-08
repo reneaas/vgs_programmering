@@ -1,0 +1,69 @@
+.mb-masonry {
+    --mb-masonry-gap: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mb-masonry-gap);
+    padding: 0;
+    margin: 1rem 0;
+}
+
+
+:root {
+    --mb-masonry-color: rgb(0, 200, 255);
+}
+
+.mb-masonry-card {
+    box-sizing: border-box;
+    min-width: 0;
+    margin: 0;
+    border: 1px solid var(--pst-color-border, #8886);
+    border-radius: 18px;
+    background: var(--sd-color-card-background, var(--pst-color-surface, Canvas));
+    /* background: var(--mb-masonry-color, var(--pst-color-surface, Canvas)); */
+    color: inherit;
+    overflow-wrap: anywhere;
+    display: flow-root;
+}
+
+.mb-masonry-card > .mb-masonry-title {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--pst-color-border, #8886);
+    border-radius: 17px 17px 0 0;
+    background: var(--mb-masonry-title-background, #0051ff20);
+    color: inherit;
+    font-weight: bold;
+}
+
+.mb-masonry-body {
+    padding: 1rem;
+    display: flow-root;
+    min-width: 0;
+    padding-left: 0.5rem !important;
+}
+
+.mb-masonry-body > :first-child { margin-top: 0; }
+.mb-masonry-body > :last-child { margin-bottom: 0; }
+.mb-masonry-body img { max-width: 100%; }
+
+/* Without JavaScript, cards remain an ordinary vertical stack. */
+.mb-masonry[data-ready] > .mb-masonry-card {
+    position: absolute;
+    width: var(--mb-card-width);
+    left: var(--mb-card-left);
+    top: var(--mb-card-top);
+}
+
+@media print {
+    .mb-masonry[data-ready] {
+        display: block;
+        height: auto !important;
+    }
+    .mb-masonry[data-ready] > .mb-masonry-card {
+        position: static;
+        width: auto;
+        margin-bottom: var(--mb-masonry-gap);
+        break-inside: avoid;
+    }
+}
